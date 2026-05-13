@@ -1,0 +1,21 @@
+{
+  "description": "Schema for first-hand and near-first-hand anesthetic experience reports.",
+  "fields": {
+    "id": "Stable slug for the report.",
+    "title": "Short title for the report or excerpt.",
+    "author": "Author, subject, or quoted witness.",
+    "year": "Publication year or year of the source containing the report.",
+    "source_url": "Primary source path or URL used for the report.",
+    "local_path": "Relative path to the saved plaintext file.",
+    "filename": "Plaintext filename under texts/first_hand/.",
+    "substance": "Anesthetic/intoxicant substance involved.",
+    "report_type": "authored_first_person, quoted_first_person, reported_first_person, or interpretive_retrospective.",
+    "state_phase": "Phase of experience: induction, peak, coming_to, afterglow, retrospective, or combinations.",
+    "substance_certainty": "known, probable, or ambiguous.",
+    "include_for_training": "Boolean indicating whether this report is suitable for the first-hand training subset.",
+    "verification_status": "Short provenance/QA label, for example verified_against_ingested_source, quoted_in_later_public_domain_history, or needs_primary_page_verification.",
+    "why": "Reason this report belongs in the first-hand corpus.",
+    "char_count": "Character count of the saved text including corpus header.",
+    "word_count_approx": "Approximate word count after extraction."
+  }
+}

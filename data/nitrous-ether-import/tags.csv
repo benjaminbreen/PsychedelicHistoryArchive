@@ -1,0 +1,21 @@
+id,slug,name,description,tag_type
+be27bc24-a84e-5a96-9602-eb195a042187,1800-1950,1800-1950,,era
+8333c627-5985-50a9-b4e2-0af9373ebe66,alcohol,alcohol,,substance
+d3185858-4d23-5b53-a600-6906627f5b81,anaesthetic-revelation,Anaesthetic revelation,,topic
+559398ce-2578-5f7d-a896-8e953bd5cf05,anaesthetics,anaesthetics,,substance
+dde17d0b-10e9-5f61-b1bf-86407adc6171,chloroform,chloroform,,substance
+a4d580e4-134c-5933-9642-0c007ec5ae52,cocaine,cocaine,,substance
+f77a3a19-925a-54ee-b41c-bcb9fbd4687a,ether,ether,,substance
+779ef89a-36e4-5d6f-810f-fe606eac0ecf,experimental-science-self-experiment-report,experimental science; self-experiment report,,genre
+778799ac-11a9-5dd1-812e-92df090845f8,first-person-psychological-report,first-person psychological report,,genre
+8dfbe858-bc92-5d29-b8a9-769dc1001f20,hemp,hemp,,substance
+cdf0d955-a680-56fa-a583-77f66d3a5000,medical-history,medical history,,genre
+ab3297c4-9ff7-55c0-8e00-01f122b5d2ca,mystical-philosophy-self-experiment-reflection,mystical philosophy; self-experiment reflection,,genre
+4944675f-fa7e-5ad4-ab77-5451836e2aea,nitrous-oxide,nitrous oxide,,substance
+01f52ec4-3675-56d8-870a-7d0a0346369b,nitrous-oxide-and-ether,Nitrous oxide and ether,,topic
+db7bc7c7-1a6f-57f5-a434-ffe0beb0aaed,philosophical-essays,philosophical essays,,genre
+36eef54b-62c3-536a-bea5-6ba1379a00e8,philosophical-lectures,philosophical lectures,,genre
+3979f2dd-a263-507b-bc7c-0e861bf527f3,philosophical-treatise,philosophical treatise,,genre
+274608d9-eb43-5e6c-8f2c-6383dd0455e1,psychology-of-religion,psychology of religion,,genre
+b480ea94-66fc-5033-ba69-1288e9173e1b,review-essay,review essay,,genre
+1954f7f3-9ac8-51ed-bbe6-04d14cb31a84,review-essay-philosophical-appreciation,review essay; philosophical appreciation,,genre

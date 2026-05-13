@@ -1,0 +1,122 @@
+[
+  {
+    "id": "0f997e1f-9fef-5482-a136-70edc7ff37cf",
+    "document_id": "f11b2730-ecc7-5ba6-b5d8-343a3b1ce8b6",
+    "page_id": null,
+    "kind": "cover_image",
+    "storage_path": "documents/f11b2730-ecc7-5ba6-b5d8-343a3b1ce8b6/images/researches-chemical-and-philosophical-chiefly-concerning-nitrous-oxide/01-humphry-davy.jpg",
+    "mime_type": "image/jpeg",
+    "byte_size": 6371358,
+    "width": 2688,
+    "height": 3751,
+    "checksum": "50ebb261699f46b29b9d1c5930b5957010cf348a6e6f07d3eca909c986ed6399"
+  },
+  {
+    "id": "cbed0da5-f543-5f6f-8040-10869df3a329",
+    "document_id": "d96b9be3-01fa-5400-a92e-9c99722a5ae2",
+    "page_id": null,
+    "kind": "cover_image",
+    "storage_path": "documents/d96b9be3-01fa-5400-a92e-9c99722a5ae2/images/the-anaesthetic-revelation-and-the-gist-of-philosophy/01-anaesthetic-revelation.jpg",
+    "mime_type": "image/jpeg",
+    "byte_size": 11615,
+    "width": 180,
+    "height": 233,
+    "checksum": "d2ffd6201e152d30ff2bdb5814d0146450e1546c02cb1fb80e436538fd51595c"
+  },
+  {
+    "id": "890c48c8-2618-5c6d-84fe-eea86d2af812",
+    "document_id": "0541a905-f47f-5812-9cb2-e1b2f9855a63",
+    "page_id": null,
+    "kind": "cover_image",
+    "storage_path": "documents/0541a905-f47f-5812-9cb2-e1b2f9855a63/images/subjective-effects-of-nitrous-oxide/01-william-james-self-portrait.jpg",
+    "mime_type": "image/jpeg",
+    "byte_size": 366008,
+    "width": 981,
+    "height": 1311,
+    "checksum": "605bfa3c780f628b26fedc3699a114f2d58999f7c642e2f84f3be7a4757325b2"
+  },
+  {
+    "id": "b0a7857e-eb3b-5d4b-bf1c-5e65a4254a33",
+    "document_id": "258c6303-3d34-577d-996c-736b5bfd9aff",
+    "page_id": null,
+    "kind": "cover_image",
+    "storage_path": "documents/258c6303-3d34-577d-996c-736b5bfd9aff/images/review-of-the-anaesthetic-revelation-and-the-gist-of-philosophy/01-william-james-young.jpg",
+    "mime_type": "image/jpeg",
+    "byte_size": 16250064,
+    "width": 3345,
+    "height": 4000,
+    "checksum": "a95f7b8f1d32748939bd8e8b979606557f1f44f94324f4eedbe25193ebe04e9f"
+  },
+  {
+    "id": "24f2e3cc-5488-5689-9b85-b782e537e608",
+    "document_id": "caada67a-1069-5269-9985-1436c91938fd",
+    "page_id": null,
+    "kind": "cover_image",
+    "storage_path": "documents/caada67a-1069-5269-9985-1436c91938fd/images/the-will-to-believe-and-other-essays-in-popular-philosophy/01-william-james-self-portrait.jpg",
+    "mime_type": "image/jpeg",
+    "byte_size": 366008,
+    "width": 981,
+    "height": 1311,
+    "checksum": "605bfa3c780f628b26fedc3699a114f2d58999f7c642e2f84f3be7a4757325b2"
+  },
+  {
+    "id": "731821f9-2e60-5050-a516-1894a963c395",
+    "document_id": "a22389f7-1ddb-5959-a02b-a53556779ff1",
+    "page_id": null,
+    "kind": "cover_image",
+    "storage_path": "documents/a22389f7-1ddb-5959-a02b-a53556779ff1/images/the-varieties-of-religious-experience/01-william-james-young.jpg",
+    "mime_type": "image/jpeg",
+    "byte_size": 16250064,
+    "width": 3345,
+    "height": 4000,
+    "checksum": "a95f7b8f1d32748939bd8e8b979606557f1f44f94324f4eedbe25193ebe04e9f"
+  },
+  {
+    "id": "e13f3ccc-e066-509c-b289-6a3999ddcdc6",
+    "document_id": "19f93d91-be36-583b-83c1-e511fff95f41",
+    "page_id": null,
+    "kind": "cover_image",
+    "storage_path": "documents/19f93d91-be36-583b-83c1-e511fff95f41/images/a-pluralistic-universe/01-william-james-self-portrait.jpg",
+    "mime_type": "image/jpeg",
+    "byte_size": 366008,
+    "width": 981,
+    "height": 1311,
+    "checksum": "605bfa3c780f628b26fedc3699a114f2d58999f7c642e2f84f3be7a4757325b2"
+  },
+  {
+    "id": "51d86f0f-ca8e-5e59-8077-750855bcabf0",
+    "document_id": "73917888-e7a6-5511-a813-d101cce32096",
+    "page_id": null,
+    "kind": "cover_image",
+    "storage_path": "documents/73917888-e7a6-5511-a813-d101cce32096/images/a-pluralistic-mystic/01-william-james-young.jpg",
+    "mime_type": "image/jpeg",
+    "byte_size": 16250064,
+    "width": 3345,
+    "height": 4000,
+    "checksum": "a95f7b8f1d32748939bd8e8b979606557f1f44f94324f4eedbe25193ebe04e9f"
+  },
+  {
+    "id": "d352cf09-ea87-5e62-9032-2711b998b2ed",
+    "document_id": "358dcaf0-53d9-5406-b4c8-1e06bb01b2f3",
+    "page_id": null,
+    "kind": "cover_image",
+    "storage_path": "documents/358dcaf0-53d9-5406-b4c8-1e06bb01b2f3/images/pluriverse-an-essay-in-the-philosophy-of-pluralism/01-anaesthetic-revelation.jpg",
+    "mime_type": "image/jpeg",
+    "byte_size": 11615,
+    "width": 180,
+    "height": 233,
+    "checksum": "d2ffd6201e152d30ff2bdb5814d0146450e1546c02cb1fb80e436538fd51595c"
+  },
+  {
+    "id": "aa9b42ac-fa31-5975-844c-7bc77180ab58",
+    "document_id": "1c23d1c7-c0c0-533b-bffb-8e4852a16f10",
+    "page_id": null,
+    "kind": "cover_image",
+    "storage_path": "documents/1c23d1c7-c0c0-533b-bffb-8e4852a16f10/images/anaesthetics-antient-and-modern-an-historical-sketch-of-anaesthesia/01-anaesthetic-revelation.jpg",
+    "mime_type": "image/jpeg",
+    "byte_size": 11615,
+    "width": 180,
+    "height": 233,
+    "checksum": "d2ffd6201e152d30ff2bdb5814d0146450e1546c02cb1fb80e436538fd51595c"
+  }
+]

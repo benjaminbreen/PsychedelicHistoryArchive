@@ -1,0 +1,436 @@
+[
+  {
+    "id": "df55c58a-b8f9-542a-9df9-80b10aafdca9",
+    "slug": "1700s",
+    "name": "1700s",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "137ed54a-0077-58eb-a9ad-aa64574b1a38",
+    "slug": "1750s",
+    "name": "1750s",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8e042eac-862f-5d2b-9e77-72921223206b",
+    "slug": "1800s",
+    "name": "1800s",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "33a8ee73-77e1-54b1-974b-9eccd94aa3a4",
+    "slug": "1870",
+    "name": "1870",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "2bec8fa9-980c-5028-a8a5-c297f93ae5f6",
+    "slug": "1882",
+    "name": "1882",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "23303307-6a8b-51ad-86b8-ae959289ffb6",
+    "slug": "1893",
+    "name": "1893",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "3162a3f5-0dfd-5dff-847c-365dd0a6da02",
+    "slug": "1940s",
+    "name": "1940s",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "1679aced-1148-59b7-bd29-336ef2e9183f",
+    "slug": "1946",
+    "name": "1946",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "63288915-ecd5-5b55-ab30-41e68697b65d",
+    "slug": "1950s",
+    "name": "1950s",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "76135ee5-301c-532c-b8ab-de51a7d309bf",
+    "slug": "1954",
+    "name": "1954",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "5ce84b1d-6b04-555c-ba8e-5217cdd75277",
+    "slug": "1955",
+    "name": "1955",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "b41909be-8a18-5be8-bd08-5851bd051adc",
+    "slug": "1957",
+    "name": "1957",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "23bf3c60-2228-5231-a11b-1af165d7c68c",
+    "slug": "1960s",
+    "name": "1960s",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "62ca70ff-e5b5-50e1-93a6-cde6ce566192",
+    "slug": "1962",
+    "name": "1962",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "7fbbc082-75f4-529b-8a0f-fa63816802d6",
+    "slug": "1963",
+    "name": "1963",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "49db24bb-72a9-5613-bdfc-db78b3ccd98e",
+    "slug": "1965",
+    "name": "1965",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "88ce49ae-33d0-5585-8e57-f34ab67f942b",
+    "slug": "1966",
+    "name": "1966",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "7d529b15-428e-5172-8d63-88b0ca5dcee2",
+    "slug": "1969",
+    "name": "1969",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d9097d68-815a-54c4-adf7-db853a629110",
+    "slug": "academic-articles",
+    "name": "Academic articles",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "56d8407e-b5ec-5a27-ace8-8504649a7b01",
+    "slug": "amazonia",
+    "name": "Amazonia",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "48259b96-0745-517a-92c6-97ad11175a86",
+    "slug": "animal-research",
+    "name": "Animal research",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "1eef25f7-ee1a-5f33-8823-42b633e1168a",
+    "slug": "anthropology",
+    "name": "Anthropology",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "b86d9c3b-0090-56c9-8b55-327e9684d8a7",
+    "slug": "argentina",
+    "name": "Argentina",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "bde3436f-8a02-5a63-898c-0e6613c959e9",
+    "slug": "audio-recordings",
+    "name": "Audio recordings",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "ffc687e3-50af-5cdd-93cc-00bd6ea553e6",
+    "slug": "ayahuasca",
+    "name": "Ayahuasca",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "9c19e28e-055b-5f59-b2ec-7e8e6f59236e",
+    "slug": "cannabis",
+    "name": "cannabis",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "8b61353b-2510-5183-90c3-07bf2460fd25",
+    "slug": "counterculture",
+    "name": "Counterculture",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "f32471aa-f62f-54d6-b86e-215a3ee887c8",
+    "slug": "documentary-film",
+    "name": "Documentary film",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "c8af6d2e-5249-5e9d-a274-3dfc166fe1cc",
+    "slug": "esalen",
+    "name": "Esalen",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "57aa1025-4fc4-592e-a77b-f243f3359c62",
+    "slug": "esp",
+    "name": "ESP",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "1f4d866c-2de3-56ff-8b13-66b51f9dbe85",
+    "slug": "field-notes",
+    "name": "Field Notes",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "428175b2-faba-54a7-9a83-9c57f32e6ab9",
+    "slug": "government-research",
+    "name": "Government research",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "f03c4758-6380-5311-98b9-60047ce8d8d5",
+    "slug": "harold-abramson",
+    "name": "Harold Abramson",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "f2394d92-f4a4-50a7-8471-f147597174e7",
+    "slug": "harold-fabing",
+    "name": "Harold Fabing",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "964c76f5-9aa7-5bc8-ad61-231c4eae9bb4",
+    "slug": "human-potential",
+    "name": "Human potential",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e3f8e55b-03f8-5328-a3ab-8c3e5cbf05a2",
+    "slug": "jesuits",
+    "name": "Jesuits",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4a6d15f8-4242-51dc-9be4-e782cdf8dd82",
+    "slug": "joe-k-adams",
+    "name": "Joe K. Adams",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "263411c6-525d-5525-bf22-ee509091c296",
+    "slug": "john-c-lilly",
+    "name": "John C. Lilly",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4f7fff45-1825-55d0-affc-bdfc56369621",
+    "slug": "lsd",
+    "name": "LSD",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "079a9811-c6dd-5c3e-afa3-b281d8ab13f9",
+    "slug": "luisa-de-lvarez-de-toledo",
+    "name": "Luisa de Álvarez de Toledo",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "477d54cf-b574-53cb-a50c-eed0762d75a1",
+    "slug": "manuscripts",
+    "name": "Manuscripts",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "ed4404b1-4011-5ba9-86cf-0460c1e12aaa",
+    "slug": "margaret-mead",
+    "name": "Margaret Mead",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "f4b0a623-572f-53a2-9be4-bea1e995450f",
+    "slug": "medical-film",
+    "name": "Medical film",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "57959a4b-e861-56ce-9cce-db2c4c5c3730",
+    "slug": "mental-research-institute",
+    "name": "Mental Research Institute",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "cbd2de92-fbf9-5e68-8f53-09611ad91bc8",
+    "slug": "military",
+    "name": "Military",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4e361576-6684-5620-bfcb-47ab55aba8e2",
+    "slug": "mkultra",
+    "name": "MKULTRA",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "6a900c0b-8c6d-5001-967a-59780f4901d2",
+    "slug": "narcosynthesis",
+    "name": "Narcosynthesis",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "ac85c39d-4d73-566d-b5c0-50665a217f5e",
+    "slug": "newspaper-articles",
+    "name": "Newspaper articles",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "4944675f-fa7e-5ad4-ab77-5451836e2aea",
+    "slug": "nitrous-oxide",
+    "name": "Nitrous oxide",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "fa974fd1-e8de-5224-bf56-6006bbcf0c18",
+    "slug": "printed-books",
+    "name": "Printed books",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "e57d79ba-fcc5-5a7e-b595-35da70e9ca1a",
+    "slug": "psychedelic-therapy",
+    "name": "Psychedelic therapy",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "a5333495-bd36-5fc7-bf56-69213b9e0dfd",
+    "slug": "psychoanalysis",
+    "name": "Psychoanalysis",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "08f9a6b1-4ba0-50bb-ac47-27a2f9c280e8",
+    "slug": "psychotomimetic",
+    "name": "Psychotomimetic",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8bc1e3cb-73bc-54aa-aa4d-9cbe686c1826",
+    "slug": "ptsd",
+    "name": "PTSD",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "502cd1ed-0861-5123-b1e5-17ceb79a8afa",
+    "slug": "sidney-cohen",
+    "name": "Sidney Cohen",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8990c94f-e90c-5f19-81c7-576b6e7a6a79",
+    "slug": "testimony",
+    "name": "Testimony",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "9abed070-4fa4-5831-b248-c2908e004186",
+    "slug": "timothy-leary",
+    "name": "Timothy Leary",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d018ab48-cdc3-5c2f-af07-55be13e7d5fb",
+    "slug": "trial-records",
+    "name": "Trial records",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "14ad2a05-c058-51c0-9727-9055e4ef3683",
+    "slug": "trip-reports",
+    "name": "Trip reports",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "eec1e472-ff18-58a2-8e02-078a089dc7f9",
+    "slug": "ucla",
+    "name": "UCLA",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4a258303-75a5-5694-aa91-13c1d7219210",
+    "slug": "united-states",
+    "name": "United States",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "ad88d0c5-1bcf-569d-88c7-4ae5da6263fa",
+    "slug": "william-james",
+    "name": "William James",
+    "description": "",
+    "tag_type": "topic"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "64690185-f7fc-56b2-a1e8-29b65549e48e",
+    "slug": "benjamin-paul-blood",
+    "name": "Benjamin Paul Blood",
+    "sort_name": "Benjamin Paul Blood",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "a6776bd4-2a8c-55d4-a05d-55c4c5acc3f8",
+    "slug": "burroughs-wellcome-and-co",
+    "name": "Burroughs Wellcome & Co.",
+    "sort_name": "Burroughs Wellcome & Co.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "c6db30b5-0201-5204-84f1-7cc6fa4f9e6e",
+    "slug": "humphry-davy",
+    "name": "Humphry Davy",
+    "sort_name": "Humphry Davy",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "5d973c88-de83-582e-9129-571f6cdb1346",
+    "slug": "william-james",
+    "name": "William James",
+    "sort_name": "William James",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  }
+]

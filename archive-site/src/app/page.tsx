@@ -1,0 +1,220 @@
+import Link from "next/link";
+import { ArrowRight, BookOpen, ExternalLink } from "lucide-react";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { ButtonLink } from "@/components/ui/button";
+import { SearchBar } from "@/components/ui/search-bar";
+import { Chip } from "@/components/ui/chip";
+import { SourceImage } from "@/components/source-image";
+import { SourceThumbnail } from "@/components/source-thumbnail";
+import { BrowsePills, EraBand, MediumTiles } from "@/components/browse-controls";
+import { SectionHeading } from "@/components/section-heading";
+import { featuredCollections } from "@/lib/archive-data";
+import { getFacetCounts } from "@/lib/archive-query";
+import { getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
+import type { FacetOption } from "@/lib/types";
+
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+  const sources = await getArchiveSourcesFromSupabase();
+  const facetCounts = getFacetCounts(sources);
+  const eraFacets = facetOptions(facetCounts.eras, "/archive?era=", [
+    "Pre-1800",
+    "1800-1950",
+    "1950-1970",
+    "1970-2000",
+    "2000-Present"
+  ]);
+  const mediumFacets = facetOptions(facetCounts.mediums, "/archive?medium=", [
+    "Text",
+    "Image",
+    "Audio/Video",
+    "Personal History",
+    "Biography"
+  ]);
+  const featured = sources.find((source) => source.featured) ?? sources[0];
+  const supportingSources = sources.filter((source) => source.id !== featured.id).slice(0, 4);
+  const recentSources = [...sources].sort((a, b) => b.year - a.year).slice(0, 5);
+
+  return (
+    <>
+      <SiteHeader />
+      <main>
+        <section className="border-b border-archive-line">
+          <div className="home-hero min-h-[24rem] sm:min-h-[27rem]">
+            <img
+              alt=""
+              aria-hidden="true"
+              className="home-hero-image"
+              src="/images/abramson-fish.jpg"
+            />
+            <div className="container-page relative flex min-h-[24rem] items-center justify-center py-8 sm:min-h-[27rem]">
+              <div className="home-hero-panel w-full max-w-[50rem] rounded-lg border border-[#DED0B7] px-7 py-6 sm:px-9 sm:py-7">
+                <h1 className="home-hero-title max-w-[42rem] text-archive-ink">
+                  A scholarly archive of psychedelic history, broadly construed
+                </h1>
+                <div className="mt-4 grid gap-4 text-[0.96rem] leading-[1.58] text-archive-ink/85 md:grid-cols-2">
+                  <p>
+                    The Psychedelic History Archive is an educational platform
+                    to collect some of the most significant public domain
+                    historical sources relating to the history and culture of
+                    psychedelics from the early modern period to the present.
+                  </p>
+                  <p>
+                    Our goal is to create a free, objective, non-profit resource
+                    for students, researchers, patients, and others who want to
+                    access historical primary sources and learn about
+                    understudied aspects of psychedelic history.
+                  </p>
+                </div>
+                <div className="mt-5">
+                  <SearchBar
+                    placeholder="Search people, topics, sources, and more..."
+                    size="lg"
+                    submitLabel="Search"
+                  />
+                </div>
+                <div className="mt-4">
+                  <BrowsePills />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="container-page py-5">
+          <div className="border-b border-archive-line pb-6">
+            <SectionHeading eyebrow="Featured sources" actionHref="/archive" actionLabel="View all sources" />
+            <div className="grid gap-3 md:grid-cols-3 xl:grid-cols-4">
+              {[featured, ...supportingSources.slice(0, 3)].map((source, index) => (
+                <Link
+                  className="featured-source-card focus-ring group grid min-h-[8.5rem] grid-cols-[6.25rem_1fr] gap-4 rounded-md border border-[#DDD2C2] p-3 transition hover:border-[#B89B70] hover:bg-[#FCF7ED]"
+                  href={`/archive/${source.slug}`}
+                  key={source.id}
+                >
+                  <SourceImage
+                    className="aspect-[4/5] h-[8rem] w-full border-[#D7CCBA] opacity-[0.94] transition group-hover:opacity-100"
+                    imageClassName={source.imageTone === "portrait" ? "object-top" : undefined}
+                    source={source}
+                  />
+                  <span className="min-w-0">
+                    <span className="display-label block text-[0.8rem] text-[#716B43]">
+                      {source.type}, {source.displayDate}
+                    </span>
+                    <span className="mt-2 block font-serif text-[1.03rem] font-semibold leading-snug text-archive-ink group-hover:text-[#4F3E25]">
+                      {source.title}
+                    </span>
+                    <span className="featured-source-summary mt-1.5 text-[0.92rem] leading-5 text-archive-muted">
+                      {index === 0 ? source.summary : source.author}
+                    </span>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="container-page grid gap-9 py-2">
+          <div>
+            <SectionHeading eyebrow="Browse by era" />
+            <EraBand facets={eraFacets} />
+          </div>
+          <div>
+            <SectionHeading eyebrow="Browse by medium" />
+            <MediumTiles facets={mediumFacets} />
+          </div>
+        </section>
+
+        <section className="container-page py-8">
+          <SectionHeading eyebrow="Featured collections" actionHref="/collections" actionLabel="View all collections" />
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {featuredCollections.map((collection) => (
+              <Link
+                className="focus-ring group grid grid-cols-[7rem_1fr] gap-4 border-r border-archive-line pr-4 transition hover:text-archive-violet"
+                href={collection.href}
+                key={collection.title}
+              >
+                <SourceThumbnail className="aspect-[4/3] w-full" title={collection.title} tone={collection.imageTone} />
+                <span>
+                  <span className="block font-serif text-lg font-semibold leading-snug text-archive-ink group-hover:text-archive-violet">
+                    {collection.title}
+                  </span>
+                  <span className="mt-1 block text-sm leading-5 text-archive-muted">
+                    {collection.description}
+                  </span>
+                  <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-archive-violet">
+                    Explore collection <ArrowRight className="h-3.5 w-3.5" />
+                  </span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="container-page py-8">
+          <SectionHeading eyebrow="Recent additions" actionHref="/archive?sort=newest" actionLabel="View all recent additions" />
+          <div className="overflow-hidden border-y border-archive-line">
+            <div className="hidden grid-cols-[1.4fr_8rem_10rem_1fr_1fr_9rem_2rem] gap-4 border-b border-archive-line px-3 py-3 text-[0.7rem] font-bold uppercase tracking-[0.08em] text-archive-muted md:grid">
+              <div>Title & source</div>
+              <div>Date</div>
+              <div>Type</div>
+              <div>Tags</div>
+              <div>People</div>
+              <div>Added</div>
+              <div />
+            </div>
+            {recentSources.map((source) => (
+              <Link
+                className="grid gap-3 border-b border-archive-line px-3 py-3 text-sm transition last:border-b-0 hover:bg-archive-lavender2 md:grid-cols-[1.4fr_8rem_10rem_1fr_1fr_9rem_2rem] md:items-center"
+                href={`/archive/${source.slug}`}
+                key={source.id}
+              >
+                <span className="flex items-start gap-2">
+                  <BookOpen className="mt-0.5 h-4 w-4 shrink-0 text-archive-muted" />
+                  <span>
+                    <span className="block font-medium">{source.title}</span>
+                    <span className="block text-xs text-archive-muted">{source.author}</span>
+                  </span>
+                </span>
+                <span>{source.displayDate}</span>
+                <span>{source.type}</span>
+                <span className="flex flex-wrap gap-1">
+                  {source.tags.slice(0, 2).map((tag) => (
+                    <Chip key={tag}>{tag}</Chip>
+                  ))}
+                </span>
+                <span>{source.people[0]}</span>
+                <span>{source.addedDate}</span>
+                <ExternalLink className="hidden h-4 w-4 text-archive-muted md:block" />
+              </Link>
+            ))}
+          </div>
+          <div className="mt-6 flex justify-center">
+            <ButtonLink href="/archive" variant="outline">
+              Browse the full archive
+            </ButtonLink>
+          </div>
+        </section>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
+
+function facetOptions(
+  counts: Record<string, number>,
+  hrefPrefix: string,
+  preferredOrder: string[]
+): FacetOption[] {
+  const labels = [
+    ...preferredOrder.filter((label) => counts[label]),
+    ...Object.keys(counts).filter((label) => !preferredOrder.includes(label)).sort()
+  ];
+
+  return labels.map((label) => ({
+    label,
+    count: counts[label],
+    href: `${hrefPrefix}${encodeURIComponent(label)}`
+  }));
+}

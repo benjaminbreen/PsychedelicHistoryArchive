@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Psychedelic History Archive - refined homepage mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;600&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1b1719;
+      --muted: #6e6872;
+      --faint: #9a939d;
+      --page: #fcfaf6;
+      --paper: #fbf7ee;
+      --panel: #fbf6e8;
+      --panel-top: #fffbf0;
+      --line: #dfd3bd;
+      --line-soft: #ece4d7;
+      --violet: #7651d0;
+      --violet-soft: #eee7fb;
+      --olive: #777a48;
+      --sepia: #8b775b;
+      --shadow: 0 14px 38px rgba(44, 34, 21, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: linear-gradient(180deg, #fffdf9 0, var(--page) 18rem, #fffdf9 100%);
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      letter-spacing: -0.004em;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      padding: 0 3.75rem;
+      border-bottom: 1px solid rgba(35, 28, 24, 0.10);
+      background: linear-gradient(180deg, rgba(255, 252, 244, 0.96), rgba(250, 244, 225, 0.92));
+      backdrop-filter: blur(14px);
+    }
+
+    .brand,
+    .display-title,
+    .section-title,
+    .meta {
+      font-family: Antonio, "Arial Narrow", sans-serif;
+      text-transform: uppercase;
+    }
+
+    .brand {
+      font-size: clamp(1.3rem, 1.75vw, 1.8rem);
+      font-weight: 400;
+      letter-spacing: 0.095em;
+      transform: scaleX(0.78);
+      transform-origin: left center;
+      white-space: nowrap;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      font-size: 0.96rem;
+      font-weight: 700;
+    }
+
+    .search-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.66rem 1rem;
+      border: 1px solid rgba(27, 23, 25, 0.55);
+      border-radius: 0.45rem;
+      background: #fffdf9;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 438px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line-soft);
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(255, 250, 235, 0.42) 0, rgba(255, 250, 235, 0.56) 21rem, rgba(250, 246, 238, 0.88) 39rem, rgba(248, 244, 236, 0.96) 100%),
+        linear-gradient(90deg, rgba(252, 249, 241, 0.96), rgba(252, 249, 241, 0.56) 30%, rgba(252, 249, 241, 0.50) 70%, rgba(252, 249, 241, 0.94)),
+        url("data:image/svg+xml,%3Csvg width='1800' height='520' viewBox='0 0 1800 520' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23231e1b' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' opacity='.42'%3E%3Cpath d='M62 159c188 8 323 7 405-3 129-15 245-20 349-16 97 4 208 0 333-12 167-15 354-9 561 18'/%3E%3Cpath d='M86 360c145-5 282-6 410-2 99 3 209 0 331-10 136-11 264-14 383-9 144 6 302 4 473-7'/%3E%3Cpath d='M204 0c27 70 30 124 9 162-18 32-47 51-86 57 47 16 91 8 132-24 38-29 62-76 72-141C287 30 245 12 204 0Z'/%3E%3Cpath d='M1404 317c48-11 87 0 117 32 29 31 43 76 41 134-52-5-95-24-129-58-33-33-42-69-29-108Z'/%3E%3Cpath d='M930-14c-25 60-27 110-6 150 23 43 65 72 126 88-33-44-46-86-39-128 7-39 31-75 72-108-55 14-106 14-153-2Z'/%3E%3Cpath d='M1555 58c31 50 38 94 20 133-17 37-48 62-95 75 61 15 110 3 148-36 34-36 50-88 46-155-42 6-82 1-119-17Z'/%3E%3C/g%3E%3Cg fill='none' stroke='%23726342' stroke-width='1.7' opacity='.28'%3E%3Cpath d='M760-16c24 80 29 147 15 203-14 59-11 116 9 172 18 50 15 100-10 151'/%3E%3Cpath d='M814-24c17 72 21 132 12 180-10 53-5 107 16 160 18 47 20 96 5 148'/%3E%3Cpath d='M866-5c11 70 17 129 18 178 1 51 10 101 29 150 18 47 19 91 4 133'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 50% 47%, rgba(255, 251, 239, 0.06) 0, rgba(255, 251, 239, 0.18) 18rem, rgba(255, 251, 239, 0.68) 33rem, rgba(255, 251, 239, 0.88) 58rem),
+        linear-gradient(180deg, rgba(122, 96, 58, 0.05), rgba(122, 96, 58, 0.00) 40%, rgba(122, 96, 58, 0.05));
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .14;
+      background-image: radial-gradient(rgba(68, 51, 33, 0.18) 0.6px, transparent 0.6px);
+      background-size: 11px 11px;
+      mix-blend-mode: multiply;
+    }
+
+    .hero-card {
+      position: relative;
+      z-index: 2;
+      width: min(1040px, calc(100% - 2rem));
+      margin: 0 auto;
+      transform: translateY(38px);
+      padding: 2.35rem 2.9rem 2rem;
+      border: 1px solid var(--line);
+      border-radius: 0.58rem;
+      background:
+        linear-gradient(180deg, rgba(255, 251, 240, 0.94), rgba(249, 244, 231, 0.94)),
+        repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(120, 96, 62, 0.04) 28px);
+      box-shadow: var(--shadow);
+    }
+
+    .display-title {
+      display: block;
+      width: 112%;
+      max-width: 112%;
+      margin: 0;
+      font-size: clamp(2rem, 3vw, 2.85rem);
+      font-weight: 300;
+      line-height: 1.18;
+      letter-spacing: 0.11em;
+      transform: scaleX(0.72);
+      transform-origin: left center;
+    }
+
+    .hero-copy {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.2rem;
+      margin-top: 1rem;
+      color: #373237;
+      font-size: 1.08rem;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .hero-copy p { margin: 0; }
+
+    .search-panel {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      margin-top: 1.7rem;
+      overflow: hidden;
+      border: 1px solid #cfc4b7;
+      border-radius: 0.38rem;
+      background: #fffdfb;
+      box-shadow: 0 5px 16px rgba(54, 43, 30, 0.07);
+    }
+
+    .search-input {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      min-height: 62px;
+      padding: 0 1.25rem;
+      color: #77717b;
+      font-size: 1.08rem;
+      font-weight: 600;
+    }
+
+    .search-panel button {
+      min-width: 108px;
+      border: 0;
+      border-left: 1px solid #bfb3a6;
+      background: var(--violet-soft);
+      color: #1f1a22;
+      font: 800 1rem "Source Sans 3", system-ui, sans-serif;
+    }
+
+    .browse {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.15rem;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-height: 42px;
+      padding: 0.55rem 1rem;
+      border: 1px solid #d5c8b8;
+      border-radius: 0.36rem;
+      background: rgba(255, 253, 249, 0.82);
+      color: var(--ink);
+      box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+    }
+
+    .wrap {
+      width: min(1490px, calc(100% - 7.5rem));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1.7rem;
+    }
+
+    .section-title {
+      margin: 0;
+      color: #211c1f;
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: 0.105em;
+      transform: scaleX(0.76);
+      transform-origin: left center;
+    }
+
+    .view-all {
+      color: var(--violet);
+      font-weight: 800;
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: .85rem;
+    }
+
+    .source-card {
+      display: grid;
+      grid-template-columns: 116px 1fr;
+      gap: 1rem;
+      min-height: 174px;
+      padding: .88rem;
+      border: 1px solid #d8cdbd;
+      border-radius: .44rem;
+      background: linear-gradient(180deg, #fffdf9, #fbf8f1);
+    }
+
+    .thumb {
+      min-height: 140px;
+      border: 1px solid #d7ccba;
+      background: #ece4d7;
+      filter: sepia(.12) saturate(.88);
+    }
+
+    .thumb.portrait { background-image: radial-gradient(circle at 52% 28%, #5c554b 0 18%, transparent 19%), linear-gradient(145deg, #d7d0c5, #f9f5ed); }
+    .thumb.document { background-image: repeating-linear-gradient(0deg, #d9cebe, #d9cebe 1px, transparent 1px, transparent 8px), linear-gradient(145deg, #fbfaf5, #e8dfd2); }
+    .thumb.engrave { background-image: radial-gradient(circle at 50% 22%, #2c2926 0 14%, transparent 15%), repeating-linear-gradient(90deg, rgba(35,30,28,.18), rgba(35,30,28,.18) 1px, transparent 1px, transparent 5px), linear-gradient(145deg, #f5efe3, #d6ccbd); }
+
+    .meta {
+      color: var(--olive);
+      font-size: .84rem;
+      font-weight: 400;
+      letter-spacing: .12em;
+      line-height: 1.2;
+    }
+
+    .source-card h3 {
+      margin: .42rem 0 0;
+      font-size: 1.16rem;
+      line-height: 1.24;
+    }
+
+    .source-card p {
+      margin: .7rem 0 0;
+      color: var(--muted);
+      font-size: .98rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .rule { margin: 1.9rem 0 0; border: 0; border-top: 1px solid var(--line-soft); }
+
+    .era-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      margin-top: .85rem;
+      overflow: hidden;
+      border: 1px solid #d8cdbd;
+      border-radius: .44rem;
+      background: #fffdf9;
+    }
+
+    .era {
+      min-height: 96px;
+      padding: 1.25rem 1.45rem;
+      border-right: 1px solid #d8cdbd;
+    }
+
+    .era:last-child { border-right: 0; }
+    .era.active { box-shadow: inset 0 -3px 0 var(--violet); color: var(--violet); }
+    .era strong { display: block; font-size: 1.05rem; }
+    .era span { display: block; margin-top: .3rem; color: var(--muted); font-weight: 700; }
+
+    svg { width: 20px; height: 20px; stroke-width: 2; }
+
+    @media (max-width: 1120px) {
+      .nav { padding: 0 1.5rem; }
+      .navlinks { display: none; }
+      .wrap { width: min(100% - 2rem, 920px); }
+      .hero-card { padding: 2rem; }
+      .hero-copy { grid-template-columns: 1fr; gap: .75rem; }
+      .source-grid { grid-template-columns: repeat(2, 1fr); }
+      .era-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .hero { min-height: 560px; }
+      .hero-card { transform: translateY(24px); }
+      .search-panel { grid-template-columns: 1fr; }
+      .search-panel button { min-height: 52px; border-left: 0; border-top: 1px solid #bfb3a6; }
+      .source-grid { grid-template-columns: 1fr; }
+      .source-card { grid-template-columns: 92px 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">The Psychedelic History Archive</div>
+    <nav class="navlinks" aria-label="Primary navigation">
+      <a href="#">About</a>
+      <a href="#">Audio/video</a>
+      <a href="#">Text</a>
+      <a href="#">Bios</a>
+      <a href="#">Personal histories</a>
+      <a href="#">Collections</a>
+      <a href="#">Further reading</a>
+      <a class="search-button" href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        Search
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-card">
+        <h1 class="display-title">A scholarly archive of psychedelic history</h1>
+        <div class="hero-copy">
+          <p>The Psychedelic History Archive is an educational platform to collect some of the most significant public domain historical sources relating to the history and culture of psychedelics from the early modern period to the present.</p>
+          <p>Our goal is to create a free, objective, non-profit resource for students, researchers, patients, and others who want to access historical primary sources and learn about understudied aspects of psychedelic history.</p>
+        </div>
+        <div class="search-panel">
+          <div class="search-input">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            Search people, topics, sources, and more...
+          </div>
+          <button>Search</button>
+        </div>
+        <div class="browse">
+          Browse by:
+          <a class="chip" href="#">Eras</a>
+          <a class="chip" href="#">Topics</a>
+          <a class="chip" href="#">People</a>
+          <a class="chip" href="#">Sources</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Featured sources</h2>
+        <a class="view-all" href="#">View all sources -></a>
+      </div>
+      <div class="source-grid">
+        <article class="source-card">
+          <div class="thumb portrait"></div>
+          <div>
+            <div class="meta">Academic article, 1882</div>
+            <h3>Subjective Effects of Nitrous Oxide</h3>
+            <p>James's direct report of nitrous oxide intoxication and metaphysical illumination.</p>
+          </div>
+        </article>
+        <article class="source-card">
+          <div class="thumb portrait"></div>
+          <div>
+            <div class="meta">Academic article, 1898</div>
+            <h3>Consciousness Under Nitrous Oxide</h3>
+            <p>Anonymous English correspondent, introduced by William James.</p>
+          </div>
+        </article>
+        <article class="source-card">
+          <div class="thumb document"></div>
+          <div>
+            <div class="meta">Book, 1874</div>
+            <h3>The Anaesthetic Revelation and the Gist of Philosophy</h3>
+            <p>Benjamin Paul Blood's strange and influential philosophical pamphlet.</p>
+          </div>
+        </article>
+        <article class="source-card">
+          <div class="thumb engrave"></div>
+          <div>
+            <div class="meta">Book, 1800</div>
+            <h3>Researches, Chemical and Philosophical</h3>
+            <p>Humphry Davy's early scientific work on nitrous oxide.</p>
+          </div>
+        </article>
+      </div>
+
+      <hr class="rule" />
+
+      <div class="section-head">
+        <h2 class="section-title">Browse by era</h2>
+      </div>
+      <div class="era-grid">
+        <a class="era" href="#"><strong>Pre-1800</strong><span>841 sources</span></a>
+        <a class="era active" href="#"><strong>1800-1950</strong><span>3,305 sources</span></a>
+        <a class="era" href="#"><strong>1950-1970</strong><span>2,189 sources</span></a>
+        <a class="era" href="#"><strong>1970-2000</strong><span>1,742 sources</span></a>
+        <a class="era" href="#"><strong>2000-Present</strong><span>912 sources</span></a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

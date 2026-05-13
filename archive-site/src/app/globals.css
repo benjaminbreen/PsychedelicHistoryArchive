@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #fcfaf7;
+  --source-serif-family: var(--font-newsreader), Georgia, serif;
+  --source-transcript-size: 1.16rem;
+  --source-transcript-line-height: 1.72;
+}
+
+:root[data-source-serif="newsreader"] {
+  --source-serif-family: var(--font-newsreader), Georgia, serif;
+}
+
+:root[data-source-serif="source-serif"] {
+  --source-serif-family: var(--font-source-serif), Georgia, serif;
+}
+
+:root[data-source-serif="source-sans"] {
+  --source-serif-family: var(--font-sans), system-ui, sans-serif;
+}
+
+:root[data-source-serif="cormorant-garamond"] {
+  --source-serif-family: var(--font-cormorant-garamond), Georgia, serif;
+  --source-transcript-size: 1.26rem;
+}
+
+:root[data-source-serif="georgia"] {
+  --source-serif-family: Georgia, "Times New Roman", serif;
+}
+
+:root[data-source-text-size="compact"] {
+  --source-transcript-size: 1.08rem;
+  --source-transcript-line-height: 1.58;
+}
+
+:root[data-source-text-size="comfortable"] {
+  --source-transcript-size: 1.16rem;
+  --source-transcript-line-height: 1.68;
+}
+
+:root[data-source-text-size="large"] {
+  --source-transcript-size: 1.28rem;
+  --source-transcript-line-height: 1.78;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(123, 75, 216, 0.055), transparent 28rem),
+    linear-gradient(180deg, #fff 0%, #fcfaf7 18rem);
+  color: #171417;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: #efe6ff;
+  color: #171417;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-10;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-archive-violet;
+  }
+
+  .rule-y {
+    @apply border-y border-archive-line;
+  }
+
+  .display-narrow {
+    display: inline-block;
+    font-family: var(--font-display), "Arial Narrow", sans-serif;
+    font-weight: 100;
+    line-height: 1.2;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transform: scaleX(0.8);
+    transform-origin: left center;
+  }
+
+  .display-title {
+    display: block;
+    width: 111%;
+    max-width: 111%;
+    font-family: var(--font-display), "Arial Narrow", sans-serif;
+    font-weight: 100;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transform: scaleX(0.7);
+    transform-origin: left center;
+  }
+
+  .display-label {
+    font-family: var(--font-display), "Arial Narrow", sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .section-label {
+    font-family: var(--font-display), "Arial Narrow", sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.065em;
+    text-transform: uppercase;
+    color: #242024;
+  }
+
+  .home-hero {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 50% 49%, rgba(255, 249, 232, 0.22) 0, rgba(255, 249, 232, 0.42) 21rem, rgba(250, 246, 237, 0.82) 39rem, rgba(248, 244, 236, 0.96) 100%),
+      linear-gradient(90deg, rgba(252, 249, 241, 0.96), rgba(252, 249, 241, 0.52) 32%, rgba(252, 249, 241, 0.50) 68%, rgba(252, 249, 241, 0.94));
+  }
+
+  .home-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(255, 251, 239, 0.18) 0, rgba(255, 251, 239, 0.34) 18rem, rgba(255, 251, 239, 0.68) 33rem, rgba(255, 251, 239, 0.86) 58rem),
+      linear-gradient(180deg, rgba(122, 96, 58, 0.05), rgba(122, 96, 58, 0) 42%, rgba(122, 96, 58, 0.045));
+  }
+
+  .home-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.12;
+    background-image: radial-gradient(rgba(68, 51, 33, 0.18) 0.6px, transparent 0.9px);
+    background-size: 11px 11px;
+    mix-blend-mode: multiply;
+  }
+
+  .home-hero-image {
+    @apply absolute inset-0 h-full w-full object-cover object-center;
+    opacity: 0.28;
+    mix-blend-mode: multiply;
+    filter: sepia(0.18) saturate(0.46) contrast(0.48) brightness(1.12);
+  }
+
+  .home-hero-panel {
+    background:
+      linear-gradient(180deg, rgba(255, 252, 245, 0.96), rgba(249, 245, 236, 0.96)),
+      repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(100, 80, 50, 0.026) 28px);
+    box-shadow: 0 14px 34px rgba(50, 40, 30, 0.13);
+  }
+
+  .featured-source-card {
+    background:
+      linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(251, 248, 242, 0.98));
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+  }
+
+  .featured-source-summary {
+    display: -webkit-box;
+    max-height: 3.75rem;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  .home-hero-title {
+    display: block;
+    width: 100%;
+    max-width: 40rem;
+    font-family: var(--font-display), "Arial Narrow", sans-serif;
+    font-size: clamp(1.35rem, 2.15vw, 1.72rem);
+    font-weight: 200;
+    line-height: 1.18;
+    letter-spacing: 0.0em;
+    transform: scaleX(0.94);
+    transform-origin: left center;
+    text-wrap: balance;
+  }
+
+  .source-display-title {
+    display: block;
+    width: 113.64%;
+    max-width: 113.64%;
+    font-family: var(--font-display), "Arial Narrow", sans-serif;
+    font-size: clamp(2.05rem, 3.72vw, 3.05rem);
+    font-weight: 400;
+    line-height: 1.07;
+    letter-spacing: 0.01em;
+    transform: scaleX(0.88);
+    transform-origin: left center;
+    text-wrap: balance;
+  }
+
+  .source-serif-heading {
+    display: inline-block;
+    font-family: var(--source-serif-family);
+    font-size: 1.08rem;
+    font-weight: 650;
+    line-height: 1.12;
+    letter-spacing: 0;
+    transform: scaleX(0.9);
+    transform-origin: left center;
+  }
+
+  .source-transcript-heading {
+    display: inline-block;
+    font-family: var(--source-serif-family);
+    font-size: 1.48rem;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: 0;
+    transform: scaleX(0.88);
+    transform-origin: left center;
+  }
+
+  .source-transcript {
+    font-family: var(--source-serif-family);
+    font-size: var(--source-transcript-size);
+    line-height: var(--source-transcript-line-height);
+    letter-spacing: 0;
+  }
+}

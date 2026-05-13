@@ -1,0 +1,21 @@
+{
+  "description": "Schema for manifest.jsonl records in the anesthetic revelation corpus.",
+  "fields": {
+    "id": "Stable slug for the text.",
+    "rank": "Recommendation rank, 1-10.",
+    "title": "Bibliographic title.",
+    "author": "Author or issuing body.",
+    "year": "Original publication year.",
+    "source_url": "URL used for ingestion.",
+    "local_path": "Relative path to the ingested plaintext file.",
+    "filename": "Plaintext filename under texts/.",
+    "format": "Source format before cleanup: plain or html.",
+    "genre": "Broad genre or use category.",
+    "substances": "Relevant anesthetic/intoxicant substances mentioned or central to the text.",
+    "why": "Reason this text belongs in a corpus on the anesthetic revelation.",
+    "rights": "Rights/provenance note for reuse assessment.",
+    "char_count": "Character count of the saved text including corpus header.",
+    "word_count_approx": "Approximate token-like word count after cleanup.",
+    "extract_start": "Optional string used by the ingest script to trim non-textual source material."
+  }
+}

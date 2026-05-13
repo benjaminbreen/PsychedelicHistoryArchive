@@ -1,0 +1,142 @@
+[
+  {
+    "id": "be27bc24-a84e-5a96-9602-eb195a042187",
+    "slug": "1800-1950",
+    "name": "1800-1950",
+    "description": "",
+    "tag_type": "era"
+  },
+  {
+    "id": "8333c627-5985-50a9-b4e2-0af9373ebe66",
+    "slug": "alcohol",
+    "name": "alcohol",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "d3185858-4d23-5b53-a600-6906627f5b81",
+    "slug": "anaesthetic-revelation",
+    "name": "Anaesthetic revelation",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "559398ce-2578-5f7d-a896-8e953bd5cf05",
+    "slug": "anaesthetics",
+    "name": "anaesthetics",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "dde17d0b-10e9-5f61-b1bf-86407adc6171",
+    "slug": "chloroform",
+    "name": "chloroform",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "a4d580e4-134c-5933-9642-0c007ec5ae52",
+    "slug": "cocaine",
+    "name": "cocaine",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "f77a3a19-925a-54ee-b41c-bcb9fbd4687a",
+    "slug": "ether",
+    "name": "ether",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "779ef89a-36e4-5d6f-810f-fe606eac0ecf",
+    "slug": "experimental-science-self-experiment-report",
+    "name": "experimental science; self-experiment report",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "778799ac-11a9-5dd1-812e-92df090845f8",
+    "slug": "first-person-psychological-report",
+    "name": "first-person psychological report",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "8dfbe858-bc92-5d29-b8a9-769dc1001f20",
+    "slug": "hemp",
+    "name": "hemp",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "cdf0d955-a680-56fa-a583-77f66d3a5000",
+    "slug": "medical-history",
+    "name": "medical history",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "ab3297c4-9ff7-55c0-8e00-01f122b5d2ca",
+    "slug": "mystical-philosophy-self-experiment-reflection",
+    "name": "mystical philosophy; self-experiment reflection",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "4944675f-fa7e-5ad4-ab77-5451836e2aea",
+    "slug": "nitrous-oxide",
+    "name": "nitrous oxide",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "01f52ec4-3675-56d8-870a-7d0a0346369b",
+    "slug": "nitrous-oxide-and-ether",
+    "name": "Nitrous oxide and ether",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "db7bc7c7-1a6f-57f5-a434-ffe0beb0aaed",
+    "slug": "philosophical-essays",
+    "name": "philosophical essays",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "36eef54b-62c3-536a-bea5-6ba1379a00e8",
+    "slug": "philosophical-lectures",
+    "name": "philosophical lectures",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "3979f2dd-a263-507b-bc7c-0e861bf527f3",
+    "slug": "philosophical-treatise",
+    "name": "philosophical treatise",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "274608d9-eb43-5e6c-8f2c-6383dd0455e1",
+    "slug": "psychology-of-religion",
+    "name": "psychology of religion",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "b480ea94-66fc-5033-ba69-1288e9173e1b",
+    "slug": "review-essay",
+    "name": "review essay",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "1954f7f3-9ac8-51ed-bbe6-04d14cb31a84",
+    "slug": "review-essay-philosophical-appreciation",
+    "name": "review essay; philosophical appreciation",
+    "description": "",
+    "tag_type": "genre"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "8ee87c9d-fbe6-5e24-9940-a39ca8ddbcde",
+    "document_id": "f11b2730-ecc7-5ba6-b5d8-343a3b1ce8b6",
+    "repository_name": "Project Gutenberg",
+    "institution_name": "",
+    "url": "https://www.gutenberg.org/ebooks/66955.txt.utf-8",
+    "access_label": "Original source",
+    "stable_identifier": "https://www.gutenberg.org/ebooks/66955.txt.utf-8",
+    "rights_note": "Public domain in the United States; Project Gutenberg text.",
+    "is_primary": true,
+    "last_checked_at": null
+  },
+  {
+    "id": "ec69aea8-4d93-552b-939d-36b050760e60",
+    "document_id": "d96b9be3-01fa-5400-a92e-9c99722a5ae2",
+    "repository_name": "Internet Archive",
+    "institution_name": "",
+    "url": "https://archive.org/download/anstheticrevela00bloogoog/anstheticrevela00bloogoog_djvu.txt",
+    "access_label": "Original source",
+    "stable_identifier": "https://archive.org/download/anstheticrevela00bloogoog/anstheticrevela00bloogoog_djvu.txt",
+    "rights_note": "Public domain scan/OCR via Internet Archive.",
+    "is_primary": true,
+    "last_checked_at": null
+  },
+  {
+    "id": "6afde0e6-5882-5856-81b1-16e9c5e3dbbf",
+    "document_id": "0541a905-f47f-5812-9cb2-e1b2f9855a63",
+    "repository_name": "External source",
+    "institution_name": "",
+    "url": "https://www.cs.cmu.edu/~ehn/release/nitrous.html",
+    "access_label": "Original source",
+    "stable_identifier": "https://www.cs.cmu.edu/~ehn/release/nitrous.html",
+    "rights_note": "Pre-1930 public-domain text; web transcription.",
+    "is_primary": true,
+    "last_checked_at": null
+  },
+  {
+    "id": "7e1196d6-8e29-5898-b147-9e8e6f6cd85e",
+    "document_id": "258c6303-3d34-577d-996c-736b5bfd9aff",
+    "repository_name": "External source",
+    "institution_name": "",
+    "url": "https://selfdefinition.org/psychology/articles/james-review-anaesthetic-revelation-gist-of-philosophy.htm",
+    "access_label": "Original source",
+    "stable_identifier": "https://selfdefinition.org/psychology/articles/james-review-anaesthetic-revelation-gist-of-philosophy.htm",
+    "rights_note": "Original Atlantic Monthly text is public domain; web transcription.",
+    "is_primary": true,
+    "last_checked_at": null
+  },
+  {
+    "id": "6576db24-3a0c-52df-ad81-ed824ae4af24",
+    "document_id": "caada67a-1069-5269-9985-1436c91938fd",
+    "repository_name": "Project Gutenberg",
+    "institution_name": "",
+    "url": "https://www.gutenberg.org/ebooks/26659.txt.utf-8",
+    "access_label": "Original source",
+    "stable_identifier": "https://www.gutenberg.org/ebooks/26659.txt.utf-8",
+    "rights_note": "Public domain in the United States; Project Gutenberg text.",
+    "is_primary": true,
+    "last_checked_at": null
+  },
+  {
+    "id": "0b2766e9-8dde-5aaf-8c77-59bfd3adcb5d",
+    "document_id": "a22389f7-1ddb-5959-a02b-a53556779ff1",
+    "repository_name": "Project Gutenberg",
+    "institution_name": "",
+    "url": "https://www.gutenberg.org/ebooks/621.txt.utf-8",
+    "access_label": "Original source",
+    "stable_identifier": "https://www.gutenberg.org/ebooks/621.txt.utf-8",
+    "rights_note": "Public domain in the United States; Project Gutenberg text.",
+    "is_primary": true,
+    "last_checked_at": null
+  },
+  {
+    "id": "4d1c4eb1-ea45-5694-8e75-ddcaf05115b9",
+    "document_id": "19f93d91-be36-583b-83c1-e511fff95f41",
+    "repository_name": "Project Gutenberg",
+    "institution_name": "",
+    "url": "https://www.gutenberg.org/ebooks/11984.txt.utf-8",
+    "access_label": "Original source",
+    "stable_identifier": "https://www.gutenberg.org/ebooks/11984.txt.utf-8",
+    "rights_note": "Public domain in the United States; Project Gutenberg text.",
+    "is_primary": true,
+    "last_checked_at": null
+  },
+  {
+    "id": "05dc226b-4b12-56d8-ab92-7a2a2c0e1ee7",
+    "document_id": "73917888-e7a6-5511-a813-d101cce32096",
+    "repository_name": "External source",
+    "institution_name": "",
+    "url": "https://www.readbookonline.org/readOnLine/37982/",
+    "access_label": "Original source",
+    "stable_identifier": "https://www.readbookonline.org/readOnLine/37982/",
+    "rights_note": "Original Hibbert Journal text is public domain; web transcription.",
+    "is_primary": true,
+    "last_checked_at": null
+  },
+  {
+    "id": "fcbf9d19-3992-55c9-80a6-045d2b1cb684",
+    "document_id": "358dcaf0-53d9-5406-b4c8-1e06bb01b2f3",
+    "repository_name": "Internet Archive",
+    "institution_name": "",
+    "url": "https://archive.org/download/cu31924029019003/cu31924029019003_djvu.txt",
+    "access_label": "Original source",
+    "stable_identifier": "https://archive.org/download/cu31924029019003/cu31924029019003_djvu.txt",
+    "rights_note": "Public domain scan/OCR via Internet Archive.",
+    "is_primary": true,
+    "last_checked_at": null
+  },
+  {
+    "id": "2ba919ba-6249-5939-88d8-338c659b0cf0",
+    "document_id": "1c23d1c7-c0c0-533b-bffb-8e4852a16f10",
+    "repository_name": "Project Gutenberg",
+    "institution_name": "",
+    "url": "https://www.gutenberg.org/ebooks/75020.txt.utf-8",
+    "access_label": "Original source",
+    "stable_identifier": "https://www.gutenberg.org/ebooks/75020.txt.utf-8",
+    "rights_note": "Public domain in the United States; Project Gutenberg text.",
+    "is_primary": true,
+    "last_checked_at": null
+  }
+]
