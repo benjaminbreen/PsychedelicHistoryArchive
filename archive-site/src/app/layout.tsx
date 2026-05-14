@@ -47,13 +47,30 @@ export const metadata: Metadata = {
     "A scholarly record of primary sources, biographies, images, audio, and personal histories documenting psychedelic history and altered states."
 };
 
+const themeScript = `
+(() => {
+  try {
+    const stored = localStorage.getItem("archive-theme");
+    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const theme = stored === "light" || stored === "dark" ? stored : systemDark ? "dark" : "light";
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+  } catch {
+    document.documentElement.dataset.theme = "light";
+  }
+})();
+`;
+
 export default function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sourceSans.variable} ${sourceSerif.variable} ${newsreader.variable} ${cormorantGaramond.variable} ${antonio.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${sourceSans.variable} ${sourceSerif.variable} ${newsreader.variable} ${cormorantGaramond.variable} ${antonio.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>{children}</body>
     </html>
   );

@@ -8,11 +8,11 @@ const variants: Record<Variant, string> = {
   primary:
     "border-archive-violet bg-archive-violet text-white hover:bg-archive-violetDark hover:border-archive-violetDark",
   outline:
-    "border-archive-line bg-white text-archive-ink hover:border-archive-violet hover:text-archive-violet hover:bg-white",
+    "border-archive-line bg-archive-surface text-archive-ink hover:border-archive-violet/70 hover:bg-archive-lavender2 hover:text-archive-violetDark",
   ghost:
     "border-transparent bg-transparent text-archive-ink hover:bg-archive-paper",
   subtle:
-    "border-archive-line bg-white text-archive-ink hover:border-archive-violet hover:bg-white hover:text-archive-violet"
+    "border-archive-line bg-archive-surface text-archive-ink hover:border-archive-violet/60 hover:bg-archive-lavender2 hover:text-archive-violetDark"
 };
 
 const base =

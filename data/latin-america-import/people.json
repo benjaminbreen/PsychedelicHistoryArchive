@@ -1,5 +1,14 @@
 [
   {
+    "id": "ce0e18ae-f3b5-5809-9064-4fb204bc0664",
+    "slug": "alexander-shulgin",
+    "name": "Alexander Shulgin",
+    "sort_name": "Alexander Shulgin",
+    "birth_year": 1925,
+    "death_year": 2014,
+    "bio": "American chemist and psychopharmacologist whose work ranged from industrial chemistry to psychoactive phenethylamines, tryptamines, and ethnobotanical pharmacology."
+  },
+  {
     "id": "b1e43ba6-ac03-58d0-9249-5bca9ee24edd",
     "slug": "claudio-naranjo",
     "name": "Claudio Naranjo",
@@ -7,5 +16,41 @@
     "birth_year": 1932,
     "death_year": 2019,
     "bio": "Chilean psychiatrist, psychotherapist, and writer whose early work joined medical anthropology, psychedelic research, and experimental psychotherapy."
+  },
+  {
+    "id": "a7009571-f8b0-5756-81e0-e01db19ba3e3",
+    "slug": "garcia-de-orta",
+    "name": "Garcia de Orta",
+    "sort_name": "Garcia de Orta",
+    "birth_year": 1501,
+    "death_year": 1568,
+    "bio": "Portuguese physician and naturalist in Goa whose 1563 Colloquies recorded South Asian materia medica through direct observation and dialogue."
+  },
+  {
+    "id": "1b14188d-572a-5e07-8489-535cd2ffaaa2",
+    "slug": "gerardo-reichel-dolmatoff",
+    "name": "Gerardo Reichel-Dolmatoff",
+    "sort_name": "Gerardo Reichel-Dolmatoff",
+    "birth_year": 1912,
+    "death_year": 1994,
+    "bio": "Austrian-born Colombian anthropologist and archaeologist known for fieldwork among Indigenous peoples in Colombia, including influential writing on Tukano cosmology and yaje."
+  },
+  {
+    "id": "0bb43c14-2a61-5b06-8b19-698ea1e0d9e5",
+    "slug": "j-g-soares-maia",
+    "name": "J. G. Soares Maia",
+    "sort_name": "J. G. Soares Maia",
+    "birth_year": null,
+    "death_year": null,
+    "bio": "Brazilian natural-products chemist associated with INPA and Amazonian phytochemistry, including chemical study of Virola theiodora."
+  },
+  {
+    "id": "713d942c-df46-5ba7-b38c-e08e2a293d6c",
+    "slug": "william-antonio-rodrigues",
+    "name": "William Antônio Rodrigues",
+    "sort_name": "William Antônio Rodrigues",
+    "birth_year": 1928,
+    "death_year": null,
+    "bio": "Brazilian botanist associated with INPA, known for taxonomic work on Amazonian plants including Virola."
   }
 ]

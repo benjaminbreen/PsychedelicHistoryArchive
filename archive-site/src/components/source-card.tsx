@@ -11,7 +11,7 @@ type SourceCardProps = {
 
 export function SourceCard({ source, featured = false }: SourceCardProps) {
   return (
-    <article className="group grid h-full gap-4 rounded-lg border border-archive-line bg-white p-4 transition hover:border-archive-violet hover:bg-archive-lavender2/35">
+    <article className="group grid h-full gap-4 rounded-lg border border-archive-line bg-archive-surface p-4 transition hover:border-archive-violet hover:bg-archive-lavender2/55">
       <div className={featured ? "grid gap-4 sm:grid-cols-[8rem_1fr]" : "grid gap-4"}>
         <Link href={`/archive/${source.slug}`} aria-label={`View source: ${source.title}`}>
           <SourceImage

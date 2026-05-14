@@ -11,6 +11,7 @@ import mimetypes
 import re
 import shutil
 import textwrap
+import unicodedata
 import uuid
 from pathlib import Path
 
@@ -27,6 +28,8 @@ def stable_uuid(prefix: str, value: str) -> str:
 
 def slugify(value: str, fallback: str = "untitled") -> str:
     value = value.strip().lower()
+    value = unicodedata.normalize("NFD", value)
+    value = "".join(char for char in value if unicodedata.category(char) != "Mn")
     value = value.replace("&", " and ")
     value = re.sub(r"[^a-z0-9]+", "-", value)
     value = re.sub(r"-+", "-", value).strip("-")
@@ -155,7 +158,8 @@ def build_rows(corpus_dir: Path, manifest_path: Path) -> dict[str, list[dict]]:
     archive_sources: list[dict] = []
 
     for record in load_manifest(manifest_path):
-        text = (corpus_dir / record["local_path"]).read_text(errors="replace").strip()
+        raw_text = (corpus_dir / record["local_path"]).read_text(errors="replace")
+        text = "\n".join(line.rstrip() for line in raw_text.splitlines()).strip()
         slug = slugify(record["title"])
         document_id = stable_uuid("document", f"latin-america:{record['id']}")
         page_id = stable_uuid("page", f"latin-america:{record['id']}:1")
@@ -174,18 +178,19 @@ def build_rows(corpus_dir: Path, manifest_path: Path) -> dict[str, list[dict]]:
             storage_name=Path(record["image_path"]).name,
             kind="cover_image",
         )
-        add_asset(
-            corpus_dir=corpus_dir,
-            assets=assets,
-            files=files,
-            document_id=document_id,
-            document_slug=slug,
-            record_id=record["id"],
-            source_path=record["pdf_path"],
-            local_name=Path(record["pdf_path"]).name,
-            storage_name=Path(record["pdf_path"]).name,
-            kind="source_pdf",
-        )
+        if record.get("pdf_path"):
+            add_asset(
+                corpus_dir=corpus_dir,
+                assets=assets,
+                files=files,
+                document_id=document_id,
+                document_slug=slug,
+                record_id=record["id"],
+                source_path=record["pdf_path"],
+                local_name=Path(record["pdf_path"]).name,
+                storage_name=Path(record["pdf_path"]).name,
+                kind="source_pdf",
+            )
 
         documents.append(
             {
@@ -240,10 +245,10 @@ def build_rows(corpus_dir: Path, manifest_path: Path) -> dict[str, list[dict]]:
                 {
                     "id": stable_uuid("external_source", f"latin-america:{record['id']}:{url}"),
                     "document_id": document_id,
-                    "repository_name": record.get("repository_name", "External source") if index == 0 else "PubMed",
+                    "repository_name": record.get("repository_name", "External source") if index == 0 else record.get("external_repository_name", "External source"),
                     "institution_name": "",
                     "url": url,
-                    "access_label": "Full text PDF" if index == 0 else "Bibliographic record",
+                    "access_label": record.get("source_access_label", "Full text PDF") if index == 0 else record.get("external_access_label", "Bibliographic record"),
                     "stable_identifier": url,
                     "rights_note": record.get("rights", ""),
                     "is_primary": index == 0,
@@ -260,9 +265,9 @@ def build_rows(corpus_dir: Path, manifest_path: Path) -> dict[str, list[dict]]:
                     "slug": person_slug,
                     "name": name,
                     "sort_name": name,
-                    "birth_year": 1932 if name == "Claudio Naranjo" else None,
-                    "death_year": 2019 if name == "Claudio Naranjo" else None,
-                    "bio": "Chilean psychiatrist, psychotherapist, and writer whose early work joined medical anthropology, psychedelic research, and experimental psychotherapy.",
+                    "birth_year": birth_year_for_person(name),
+                    "death_year": death_year_for_person(name),
+                    "bio": bio_for_person(name),
                 },
             )
             document_people.append(
@@ -276,7 +281,7 @@ def build_rows(corpus_dir: Path, manifest_path: Path) -> dict[str, list[dict]]:
         tag_values = [
             ("genre", record.get("genre", "")),
             ("era", era),
-            ("region", "Latin America"),
+            ("region", record.get("region_tag", "Latin America")),
         ]
         tag_values.extend(("topic", tag) for tag in record.get("tags", []))
         tag_values.extend(("substance", substance) for substance in record.get("substances", []))
@@ -322,9 +327,9 @@ def build_rows(corpus_dir: Path, manifest_path: Path) -> dict[str, list[dict]]:
                 "wordCount": len(re.findall(r"\b\w+\b", text)),
                 "addedDate": "",
                 "featured": record.get("rank") in {1, 2, 3},
-                "imageTone": "portrait",
+                "imageTone": record.get("image_tone", "document"),
                 "imagePath": f"/imported/latin-america/{cover_image_path}",
-                "imageAlt": f"Portrait of {record['author']}",
+                "imageAlt": record.get("image_alt", f"Cover image for {record['title']}"),
                 "transcript": text,
             }
         )
@@ -346,6 +351,48 @@ def build_rows(corpus_dir: Path, manifest_path: Path) -> dict[str, list[dict]]:
     }
 
 
+def birth_year_for_person(name: str) -> int | None:
+    if name == "Alexander Shulgin":
+        return 1925
+    if name == "Claudio Naranjo":
+        return 1932
+    if name == "Garcia de Orta":
+        return 1501
+    if name == "Gerardo Reichel-Dolmatoff":
+        return 1912
+    if name == "William Antônio Rodrigues":
+        return 1928
+    return None
+
+
+def death_year_for_person(name: str) -> int | None:
+    if name == "Alexander Shulgin":
+        return 2014
+    if name == "Claudio Naranjo":
+        return 2019
+    if name == "Garcia de Orta":
+        return 1568
+    if name == "Gerardo Reichel-Dolmatoff":
+        return 1994
+    return None
+
+
+def bio_for_person(name: str) -> str:
+    if name == "Alexander Shulgin":
+        return "American chemist and psychopharmacologist whose work ranged from industrial chemistry to psychoactive phenethylamines, tryptamines, and ethnobotanical pharmacology."
+    if name == "Claudio Naranjo":
+        return "Chilean psychiatrist, psychotherapist, and writer whose early work joined medical anthropology, psychedelic research, and experimental psychotherapy."
+    if name == "Garcia de Orta":
+        return "Portuguese physician and naturalist in Goa whose 1563 Colloquies recorded South Asian materia medica through direct observation and dialogue."
+    if name == "Gerardo Reichel-Dolmatoff":
+        return "Austrian-born Colombian anthropologist and archaeologist known for fieldwork among Indigenous peoples in Colombia, including influential writing on Tukano cosmology and yaje."
+    if name == "J. G. Soares Maia":
+        return "Brazilian natural-products chemist associated with INPA and Amazonian phytochemistry, including chemical study of Virola theiodora."
+    if name == "William Antônio Rodrigues":
+        return "Brazilian botanist associated with INPA, known for taxonomic work on Amazonian plants including Virola."
+    return ""
+
+
 def write_json(path: Path, rows: object) -> None:
     path.write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n")
 
@@ -355,7 +402,7 @@ def write_csv(path: Path, rows: list[dict]) -> None:
         path.write_text("")
         return
     with path.open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -377,8 +424,9 @@ def write_readme(out_dir: Path, rows: dict[str, list[dict]], manifest_path: Path
 
 Generated from `{manifest_path}`.
 
-This folder stages Latin American psychedelic research sources as Supabase rows
-using the same schema as the Squarespace and nitrous/ether import folders.
+This folder stages Latin American and global psychoactive plant history sources
+as Supabase rows using the same schema as the Squarespace and nitrous/ether
+import folders.
 
 ## Counts
 
@@ -400,6 +448,8 @@ def main() -> None:
     args = parser.parse_args()
 
     rows = build_rows(args.corpus_dir, args.manifest)
+    if args.out.exists():
+        shutil.rmtree(args.out)
     args.out.mkdir(parents=True, exist_ok=True)
     copy_assets(args.out, rows["assets"])
 

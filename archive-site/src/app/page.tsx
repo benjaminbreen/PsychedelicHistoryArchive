@@ -50,7 +50,7 @@ export default async function HomePage() {
               src="/images/abramson-fish.jpg"
             />
             <div className="container-page relative flex min-h-[24rem] items-center justify-center py-8 sm:min-h-[27rem]">
-              <div className="home-hero-panel w-full max-w-[50rem] rounded-lg border border-[#DED0B7] px-7 py-6 sm:px-9 sm:py-7">
+              <div className="home-hero-panel w-full max-w-[50rem] rounded-lg border border-[rgb(var(--archive-warm-line))] px-7 py-6 sm:px-9 sm:py-7">
                 <h1 className="home-hero-title max-w-[42rem] text-archive-ink">
                   A scholarly archive of psychedelic history, broadly construed
                 </h1>
@@ -89,20 +89,20 @@ export default async function HomePage() {
             <div className="grid gap-3 md:grid-cols-3 xl:grid-cols-4">
               {[featured, ...supportingSources.slice(0, 3)].map((source, index) => (
                 <Link
-                  className="featured-source-card focus-ring group grid min-h-[8.5rem] grid-cols-[6.25rem_1fr] gap-4 rounded-md border border-[#DDD2C2] p-3 transition hover:border-[#B89B70] hover:bg-[#FCF7ED]"
+                  className="featured-source-card focus-ring group grid min-h-[8.5rem] grid-cols-[6.25rem_1fr] gap-4 rounded-md border border-[rgb(var(--archive-warm-line))] p-3 transition hover:border-archive-violet/45 hover:bg-[rgb(var(--archive-warm-hover))]"
                   href={`/archive/${source.slug}`}
                   key={source.id}
                 >
                   <SourceImage
-                    className="aspect-[4/5] h-[8rem] w-full border-[#D7CCBA] opacity-[0.94] transition group-hover:opacity-100"
+                    className="aspect-[4/5] h-[8rem] w-full border-[rgb(var(--archive-warm-line))] opacity-[0.94] transition group-hover:opacity-100"
                     imageClassName={source.imageTone === "portrait" ? "object-top" : undefined}
                     source={source}
                   />
                   <span className="min-w-0">
-                    <span className="display-label block text-[0.8rem] text-[#716B43]">
+                    <span className="display-label block text-[0.8rem] text-archive-olive">
                       {source.type}, {source.displayDate}
                     </span>
-                    <span className="mt-2 block font-serif text-[1.03rem] font-semibold leading-snug text-archive-ink group-hover:text-[#4F3E25]">
+                    <span className="mt-2 block font-serif text-[1.03rem] font-semibold leading-snug text-archive-ink group-hover:text-archive-violetDark">
                       {source.title}
                     </span>
                     <span className="featured-source-summary mt-1.5 text-[0.92rem] leading-5 text-archive-muted">
@@ -131,20 +131,20 @@ export default async function HomePage() {
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {featuredCollections.map((collection) => (
               <Link
-                className="focus-ring group grid grid-cols-[7rem_1fr] gap-4 border-r border-archive-line pr-4 transition hover:text-archive-violet"
+                className="focus-ring group grid grid-cols-[7rem_1fr] gap-4 border-r border-archive-line py-2 pr-4 transition duration-200 hover:border-archive-violet/45 hover:bg-archive-lavender2/55"
                 href={collection.href}
                 key={collection.title}
               >
-                <SourceThumbnail className="aspect-[4/3] w-full" title={collection.title} tone={collection.imageTone} />
+                <SourceThumbnail className="aspect-[4/3] w-full transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-[0_8px_18px_rgba(57,45,31,0.12)]" title={collection.title} tone={collection.imageTone} />
                 <span>
-                  <span className="block font-serif text-lg font-semibold leading-snug text-archive-ink group-hover:text-archive-violet">
+                  <span className="block font-serif text-lg font-semibold leading-snug text-archive-ink transition group-hover:text-archive-violetDark">
                     {collection.title}
                   </span>
                   <span className="mt-1 block text-sm leading-5 text-archive-muted">
                     {collection.description}
                   </span>
-                  <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-archive-violet">
-                    Explore collection <ArrowRight className="h-3.5 w-3.5" />
+                  <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-archive-violet transition group-hover:text-archive-violetDark">
+                    Explore collection <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
                   </span>
                 </span>
               </Link>
@@ -166,7 +166,7 @@ export default async function HomePage() {
             </div>
             {recentSources.map((source) => (
               <Link
-                className="grid gap-3 border-b border-archive-line px-3 py-3 text-sm transition last:border-b-0 hover:bg-archive-lavender2 md:grid-cols-[1.4fr_8rem_10rem_1fr_1fr_9rem_2rem] md:items-center"
+                className="grid gap-3 border-b border-archive-line px-3 py-3 text-sm transition last:border-b-0 hover:bg-archive-lavender2/55 md:grid-cols-[1.4fr_8rem_10rem_1fr_1fr_9rem_2rem] md:items-center"
                 href={`/archive/${source.slug}`}
                 key={source.id}
               >

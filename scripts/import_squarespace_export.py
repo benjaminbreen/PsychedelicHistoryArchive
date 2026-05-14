@@ -69,6 +69,65 @@ SUBSTANCE_TAGS = {
     "peyote",
 }
 
+CORE_TOPIC_TAGS = {
+    "Anesthesia",
+    "Clinical",
+    "Therapy",
+    "Psychiatry",
+    "Psychosis",
+    "Consciousness",
+    "Mysticism",
+    "Religion",
+    "Philosophy",
+    "Literature",
+    "Poetry",
+    "Counterculture",
+    "Law",
+    "Prohibition",
+    "Military",
+    "Intelligence",
+    "Indigenous",
+    "Ethnobotany",
+    "Pharmacology",
+    "Medicine",
+    "Self-Experiment",
+    "Trip Reports",
+    "Oral History",
+    "Visual Culture",
+    "Networks",
+}
+
+TOPIC_TAG_MAP = {
+    "altered-states": "Consciousness",
+    "anesthesia": "Anesthesia",
+    "anesthetic-revelation": "Anesthesia",
+    "anaesthetic-revelation": "Anesthesia",
+    "audio-recordings": "Oral History",
+    "clinical-research": "Clinical",
+    "counterculture": "Counterculture",
+    "ethnobotany": "Ethnobotany",
+    "esalen": "Networks",
+    "literature": "Literature",
+    "medical-film": "Medicine",
+    "medicine": "Medicine",
+    "mental-research-institute": "Networks",
+    "mysticism": "Mysticism",
+    "pharmacology": "Pharmacology",
+    "philosophy": "Philosophy",
+    "poetry": "Poetry",
+    "psychiatry": "Psychiatry",
+    "psychology": "Psychiatry",
+    "psychosis": "Psychosis",
+    "religion": "Religion",
+    "self-experimentation": "Self-Experiment",
+    "therapy": "Therapy",
+    "trip-reports": "Trip Reports",
+    "visual-culture": "Visual Culture",
+}
+
+PUBLIC_CREATOR_ROLES = {"author", "speaker", "recordist", "transcriber", "editor", "subject"}
+EMAIL_PATTERN = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
+
 
 @dataclass
 class Category:
@@ -114,6 +173,22 @@ def extract_image_urls(content: str) -> list[str]:
     return sorted(urls)
 
 
+def extract_caption_texts(content: str) -> list[str]:
+    captions: list[str] = []
+    for match in re.finditer(r"(?is)\[caption[^\]]*\](.*?)\[/caption\]", content):
+        body = re.sub(r"(?is)<img\b[^>]*>", " ", match.group(1))
+        body = re.sub(r"(?is)<[^>]+>", " ", body)
+        body = html.unescape(body).replace("\xa0", " ")
+        body = re.sub(r"\s+", " ", body).strip()
+        if body:
+            captions.append(body)
+    return captions
+
+
+def remove_caption_shortcodes(text: str) -> str:
+    return re.sub(r"(?is)\[caption[^\]]*\].*?\[/caption\]", "\n\n", text)
+
+
 def html_to_text(content: str) -> str:
     content = html.unescape(content)
     content = re.sub(r"(?is)<(script|style).*?</\1>", " ", content)
@@ -133,6 +208,7 @@ def html_to_text(content: str) -> str:
 
 
 def extract_transcript_text(text: str) -> str:
+    text = remove_caption_shortcodes(text)
     lines = text.splitlines()
     marker_pattern = re.compile(r"^\s*(transcription|complete transcription|partial transcript|partial translation)\s*$", re.I)
 
@@ -163,6 +239,116 @@ def extract_labeled_value(text: str, label: str) -> str:
     pattern = rf"(?im)^\s*{re.escape(label)}\s*:\s*(.+)$"
     match = re.search(pattern, text)
     return match.group(1).strip() if match else ""
+
+
+def extract_labeled_value_any(text: str, labels: list[str]) -> str:
+    for label in labels:
+        value = extract_labeled_value(text, label)
+        if value:
+            return value
+    return ""
+
+
+def split_public_names(value: str) -> list[str]:
+    value = value.replace(" and ", ", ")
+    names = []
+    for raw_name in value.split(","):
+        name = re.sub(r"\s+", " ", raw_name).strip()
+        if name and not EMAIL_PATTERN.match(name):
+            names.append(name)
+    return names
+
+
+def role_for_author_name(name: str, medium: str) -> str:
+    if medium == "Audio/Video":
+        return "speaker"
+    return "author"
+
+
+def controlled_topic_tags(categories: list[Category]) -> list[str]:
+    topics = []
+    for category in categories:
+        mapped = TOPIC_TAG_MAP.get(category.nicename)
+        if mapped:
+            topics.append(mapped)
+        elif category.name in CORE_TOPIC_TAGS:
+            topics.append(category.name)
+    return sorted(set(topics))
+
+
+def substance_tags(categories: list[Category]) -> list[str]:
+    names = []
+    for category in categories:
+        if category.nicename in SUBSTANCE_TAGS:
+            names.append(category.name)
+    return sorted(set(names))
+
+
+def normalize_section_heading(value: str) -> str:
+    normalized = re.sub(r"\s+", " ", value).strip().lower()
+    if normalized == "historical overview":
+        return "Historical Overview"
+    if re.match(r"^(partial\s+)?(full\s+)?transcript(ion)?(\s+of\s+the\s+tape)?$", normalized):
+        return "Transcript"
+    if re.match(r"^(complete\s+)?transcription$", normalized):
+        return "Transcript"
+    if normalized in {"notes", "editorial notes"}:
+        return "Notes"
+    return ""
+
+
+def transcript_sections_from_text(document_id: str, text: str) -> list[dict]:
+    sections: list[dict] = []
+    current: dict | None = None
+    buffer: list[str] = []
+
+    def flush() -> None:
+        nonlocal buffer
+        if current is None or not buffer:
+            buffer = []
+            return
+        body = "\n\n".join(paragraph for paragraph in buffer if paragraph.strip()).strip()
+        if body:
+            current["body"] = body
+        buffer = []
+
+    for raw_line in text.splitlines():
+        line = raw_line.strip()
+        if not line:
+            if buffer and buffer[-1] != "":
+                buffer.append("")
+            continue
+        heading = normalize_section_heading(line)
+        if heading:
+            flush()
+            section_id = stable_uuid("document_section", f"{document_id}:{len(sections) + 1}:{heading}")
+            current = {
+                "id": section_id,
+                "document_id": document_id,
+                "position": len(sections) + 1,
+                "heading": heading,
+                "section_type": "overview" if heading == "Historical Overview" else "transcript" if heading == "Transcript" else "note",
+                "body": "",
+            }
+            sections.append(current)
+            continue
+        if current is None:
+            current = {
+                "id": stable_uuid("document_section", f"{document_id}:1:Transcript"),
+                "document_id": document_id,
+                "position": 1,
+                "heading": "Transcript",
+                "section_type": "transcript",
+                "body": "",
+            }
+            sections.append(current)
+        if buffer and buffer[-1] == "":
+            buffer[-1] = line
+        else:
+            buffer.append(line)
+
+    flush()
+    return [section for section in sections if section["body"]]
 
 
 def extract_year(title: str, display_date: str, tags: list[Category]) -> int | None:
@@ -261,6 +447,8 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
     people_by_slug: dict[str, dict] = {}
     document_tags: list[dict] = []
     document_people: list[dict] = []
+    document_sections: list[dict] = []
+    document_figures: list[dict] = []
     assets: list[dict] = []
     archive_sources: list[dict] = []
 
@@ -282,7 +470,7 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
         summary = extract_summary(content, body_text)
         display_date = extract_labeled_value(body_text, "Date")
         source_note = extract_labeled_value(body_text, "Source")
-        author = extract_labeled_value(body_text, "Author") or text_of(item, "dc:creator")
+        author_label = extract_labeled_value_any(body_text, ["Authors", "Author"])
         categories = [
             Category(
                 domain=cat.attrib.get("domain", ""),
@@ -303,11 +491,15 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
         ]
         document_type = infer_document_type(categories)
         medium = infer_medium(categories)
+        author_names = split_public_names(author_label)
+        topic_names = controlled_topic_tags(categories)
+        substance_names = substance_tags(categories)
         cover_path = (
             f"documents/{document_id}/{local_asset_path(post_name, image_urls[0], 1)}"
             if image_urls
             else ""
         )
+        captions = extract_caption_texts(content)
 
         document = {
             "id": document_id,
@@ -369,7 +561,7 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
             }
         )
 
-        if author:
+        for author in author_names:
             person_slug = slugify(author)
             people_by_slug.setdefault(
                 person_slug,
@@ -387,9 +579,12 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
                 {
                     "document_id": document_id,
                     "person_id": people_by_slug[person_slug]["id"],
-                    "role": "author",
+                    "role": role_for_author_name(author, medium),
                 }
             )
+
+        for section in transcript_sections_from_text(document_id, transcript_text):
+            document_sections.append(section)
 
         for category in categories:
             if not category.name:
@@ -408,6 +603,21 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
                     "name": category.name,
                     "description": "",
                     "tag_type": tag_type,
+                },
+            )
+            if category.name in topic_names or category.name in substance_names:
+                document_tags.append({"document_id": document_id, "tag_id": tags_by_slug[tag_slug]["id"]})
+
+        for topic_name in topic_names:
+            tag_slug = slugify(topic_name)
+            tags_by_slug.setdefault(
+                tag_slug,
+                {
+                    "id": stable_uuid("tag", tag_slug),
+                    "slug": tag_slug,
+                    "name": topic_name,
+                    "description": "",
+                    "tag_type": "topic",
                 },
             )
             document_tags.append({"document_id": document_id, "tag_id": tags_by_slug[tag_slug]["id"]})
@@ -446,12 +656,30 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
                 }
             )
 
+        for index, caption in enumerate(captions, start=1):
+            image_path = (
+                f"documents/{document_id}/{local_asset_path(post_name, image_urls[index - 1], index)}"
+                if index - 1 < len(image_urls)
+                else cover_path
+            )
+            document_figures.append(
+                {
+                    "id": stable_uuid("document_figure", f"{document_id}:{index}:{caption[:48]}"),
+                    "document_id": document_id,
+                    "position": index,
+                    "image_path": image_path,
+                    "alt_text": title,
+                    "caption": caption,
+                    "placement": "before_overview",
+                }
+            )
+
         archive_sources.append(
             {
                 "id": post_name,
                 "slug": post_name,
                 "title": title_without_year(title),
-                "author": author or "Ben Breen",
+                "author": ", ".join(author_names) or "The Psychedelic History Archive",
                 "year": year or 0,
                 "displayDate": display_date or (str(year) if year else ""),
                 "type": document_type,
@@ -459,8 +687,9 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
                 "era": era_for_year(year),
                 "region": infer_region(categories) or "Unknown",
                 "language": "English",
-                "tags": tag_names,
-                "people": [author] if author else [],
+                "tags": topic_names,
+                "legacyTags": tag_names,
+                "people": author_names,
                 "substances": substance_names,
                 "summary": summary,
                 "excerpt": summary,
@@ -488,6 +717,8 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
         "external_sources": external_sources,
         "people": sorted(people_by_slug.values(), key=lambda row: row["slug"]),
         "document_people": document_people,
+        "document_sections": document_sections,
+        "document_figures": document_figures,
         "tags": sorted(tags_by_slug.values(), key=lambda row: row["slug"]),
         "document_tags": document_tags,
         "assets": assets,
@@ -581,6 +812,8 @@ site into the Supabase content model described in
 - `files.json` / `files.csv`: image/file records for the Supabase `files` table.
 - `external_sources.json` / `external_sources.csv`: original Squarespace URLs for provenance.
 - `people.json` / `people.csv` and `document_people.json` / `document_people.csv`: author relationships detected in page text.
+- `document_sections.json` / `document_sections.csv`: curated reading sections such as Historical Overview and Transcript.
+- `document_figures.json` / `document_figures.csv`: extracted imported figures and captions.
 - `tags.json` / `tags.csv` and `document_tags.json` / `document_tags.csv`: Squarespace categories and tags normalized as tag rows.
 - `assets.json` / `assets.csv`: image download and future Supabase Storage upload manifest.
 - `archive_sources.json`: compatibility export shaped like the current Next.js `ArchiveSource` type.
@@ -637,6 +870,8 @@ def main() -> None:
         "external_sources",
         "people",
         "document_people",
+        "document_sections",
+        "document_figures",
         "tags",
         "document_tags",
         "assets",
@@ -651,6 +886,8 @@ def main() -> None:
         "external_sources",
         "people",
         "document_people",
+        "document_sections",
+        "document_figures",
         "tags",
         "document_tags",
         "assets",

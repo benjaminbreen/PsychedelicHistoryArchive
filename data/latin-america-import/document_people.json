@@ -1,7 +1,32 @@
 [
   {
+    "document_id": "6c385f7f-a8d5-5b66-bdff-8bef2e4bd92e",
+    "person_id": "a7009571-f8b0-5756-81e0-e01db19ba3e3",
+    "role": "author"
+  },
+  {
+    "document_id": "089978db-d526-5bc1-8382-6e9fe7102f49",
+    "person_id": "713d942c-df46-5ba7-b38c-e08e2a293d6c",
+    "role": "author"
+  },
+  {
+    "document_id": "dc72c41b-e1e8-5f31-99cb-9dc1e3986d67",
+    "person_id": "ce0e18ae-f3b5-5809-9064-4fb204bc0664",
+    "role": "author"
+  },
+  {
     "document_id": "aba80607-e798-5387-bc7d-fa61e41b7fc6",
     "person_id": "b1e43ba6-ac03-58d0-9249-5bca9ee24edd",
+    "role": "author"
+  },
+  {
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "person_id": "1b14188d-572a-5e07-8489-535cd2ffaaa2",
+    "role": "author"
+  },
+  {
+    "document_id": "089978db-d526-5bc1-8382-6e9fe7102f49",
+    "person_id": "0bb43c14-2a61-5b06-8b19-698ea1e0d9e5",
     "role": "author"
   }
 ]

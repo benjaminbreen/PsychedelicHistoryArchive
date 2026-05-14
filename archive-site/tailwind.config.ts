@@ -10,21 +10,21 @@ const config: Config = {
     extend: {
       colors: {
         archive: {
-          ink: "#171417",
-          muted: "#6E6872",
-          faint: "#9B94A3",
-          paper: "#FCFAF7",
-          surface: "#FFFFFF",
-          line: "#E7E1EA",
-          lavender: "#EFE6FF",
-          lavender2: "#F7F1FF",
-          violet: "#7B4BD8",
-          violetDark: "#5D31B5",
-          olive: "#8B8F55",
-          sand: "#F3EBDD",
-          success: "#DDF4E4",
-          warning: "#FFF0C2",
-          draft: "#FFE3C7"
+          ink: "rgb(var(--archive-ink) / <alpha-value>)",
+          muted: "rgb(var(--archive-muted) / <alpha-value>)",
+          faint: "rgb(var(--archive-faint) / <alpha-value>)",
+          paper: "rgb(var(--archive-paper) / <alpha-value>)",
+          surface: "rgb(var(--archive-surface) / <alpha-value>)",
+          line: "rgb(var(--archive-line) / <alpha-value>)",
+          lavender: "rgb(var(--archive-lavender) / <alpha-value>)",
+          lavender2: "rgb(var(--archive-lavender2) / <alpha-value>)",
+          violet: "rgb(var(--archive-violet) / <alpha-value>)",
+          violetDark: "rgb(var(--archive-violet-dark) / <alpha-value>)",
+          olive: "rgb(var(--archive-olive) / <alpha-value>)",
+          sand: "rgb(var(--archive-sand) / <alpha-value>)",
+          success: "rgb(var(--archive-success) / <alpha-value>)",
+          warning: "rgb(var(--archive-warning) / <alpha-value>)",
+          draft: "rgb(var(--archive-draft) / <alpha-value>)"
         }
       },
       fontFamily: {

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SourceImage } from "@/components/source-image";
+import { SourceReaderTabs } from "@/components/source-reader-tabs";
 import { ButtonLink } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
 import { getArchiveSourceFromSupabase } from "@/lib/supabase-archive";
@@ -90,7 +91,7 @@ export default async function SourcePage({ params }: SourcePageProps) {
               </div>
             </div>
 
-            <section className="mt-6 rounded-md border border-archive-line bg-white p-5 text-sm leading-6 shadow-[0_8px_24px_rgba(23,20,23,0.035)]">
+            <section className="mt-6 rounded-md border border-archive-line bg-archive-surface p-5 text-sm leading-6 shadow-[0_8px_24px_rgb(var(--archive-shadow)/0.05)]">
               <strong>{isExternal ? "Externally hosted source." : "You are in transcript reading mode."}</strong>{" "}
               {isExternal
                 ? "The archive records this source and links to the holding repository for access."
@@ -116,11 +117,11 @@ export default async function SourcePage({ params }: SourcePageProps) {
           </div>
 
           <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
-            <div className="rounded-lg border border-[#E6DFD4] bg-[#FBF8F1] p-5 shadow-[0_10px_28px_rgba(57,45,31,0.035)]">
+            <div className="rounded-lg border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] p-5 shadow-[0_10px_28px_rgb(var(--archive-shadow)/0.05)]">
               <div className="grid grid-cols-[6rem_1fr] gap-4">
                 <SourceImage className="aspect-[4/5] w-full" source={source} />
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-[0.1em] text-[#756D5F]">
+                  <div className="text-xs font-bold uppercase tracking-[0.1em] text-archive-olive">
                     {source.type}
                   </div>
                   <p className="mt-2 font-semibold">Published in</p>
@@ -130,7 +131,7 @@ export default async function SourcePage({ params }: SourcePageProps) {
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-lg border border-archive-line bg-white shadow-[0_10px_28px_rgba(23,20,23,0.025)]">
+            <div className="overflow-hidden rounded-lg border border-archive-line bg-archive-surface shadow-[0_10px_28px_rgb(var(--archive-shadow)/0.04)]">
               <div className="p-5">
                 <h2 className="source-serif-heading">Source details</h2>
                 <dl className="mt-5 space-y-3 text-sm">
@@ -178,8 +179,10 @@ function HostedSourcePage({ source }: { source: ArchiveSource }) {
                     {source.displayDate}: {source.title}
                   </span>
                 </h1>
-                <p className="mt-2 max-w-2xl text-[15px] leading-6 text-[#6B6470]">
-                  A transcript of {source.author}&rsquo;s published reflections on {source.substances[0] ?? "altered states"} and consciousness.
+                <p className="mt-2 max-w-2xl text-[15px] leading-6 text-archive-muted">
+                  {source.medium === "Audio/Video"
+                    ? `A transcript of a recorded source featuring ${source.author}.`
+                    : `A transcript of ${source.author}'s published reflections on ${source.substances[0] ?? "altered states"} and consciousness.`}
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 xl:flex-col xl:items-stretch xl:pt-7">
@@ -197,7 +200,7 @@ function HostedSourcePage({ source }: { source: ArchiveSource }) {
             <div className="mt-4 flex flex-wrap items-start text-sm">
               <MetaCell label="Date" value={source.displayDate} />
               <MetaCell label="Type" value={source.type} />
-              <MetaCell label="Person" value={source.people[0] ?? source.author} />
+              <MetaCell label="People" value={formatPeople(source)} />
               <div className="border-l border-archive-line pl-5">
                 <div className="text-[0.62rem] font-bold uppercase tracking-[0.09em] text-archive-muted">Tags</div>
                 <div className="mt-2 flex flex-wrap gap-2">
@@ -210,50 +213,15 @@ function HostedSourcePage({ source }: { source: ArchiveSource }) {
               </div>
             </div>
 
-            <div className="mt-5 border-b border-archive-line">
-              <div className="flex gap-8">
-                <span className="border-b-2 border-archive-violet px-1 py-2.5 text-sm font-semibold text-archive-violet">
-                  Transcript
-                </span>
-                <span className="px-1 py-2.5 text-sm font-medium text-archive-muted">
-                  Original source
-                </span>
-              </div>
-            </div>
-
-            <section className="mt-5 flex gap-4 rounded-md border border-archive-line bg-white px-5 py-3.5 text-sm leading-6 shadow-[0_8px_24px_rgba(23,20,23,0.035)]">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-purple-200 bg-white text-archive-violet">
-                <BookOpen className="h-4 w-4" />
-              </span>
-              <div>
-                <p>
-                  <strong>You are in transcript reading mode.</strong> This is a text-only version of the source for easier reading and search.
-                </p>
-                <p className="mt-1">
-                  Looking for the scanned original?{" "}
-                  <Link className="font-semibold text-archive-violet" href={source.sourceUrl}>
-                    View original source <ExternalLink className="inline h-3.5 w-3.5" />
-                  </Link>
-                </p>
-              </div>
-            </section>
-
-            <section className="mt-6 max-w-[49rem]">
-              <h2 className="source-transcript-heading">Transcript</h2>
-              <div className="source-transcript mt-5 space-y-6 text-archive-ink">
-                {transcript.map((paragraph, index) => (
-                  <p key={`${index}-${paragraph.slice(0, 24)}`}>{paragraph}</p>
-                ))}
-              </div>
-            </section>
+            <SourceReaderTabs source={source} transcript={transcript} />
           </div>
 
           <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
-            <div className="rounded-lg border border-[#E6DFD4] bg-[#FBF8F1] p-4 shadow-[0_10px_28px_rgba(57,45,31,0.035)]">
+            <div className="rounded-lg border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] p-4 shadow-[0_10px_28px_rgb(var(--archive-shadow)/0.05)]">
               <div className="grid grid-cols-[5rem_1fr] gap-4">
                 <SourceImage className="aspect-[4/5] w-full" source={source} />
                 <div>
-                  <div className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#756D5F]">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.1em] text-archive-olive">
                     {source.type}
                   </div>
                   <p className="mt-2 font-semibold">Published in</p>
@@ -263,10 +231,11 @@ function HostedSourcePage({ source }: { source: ArchiveSource }) {
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-lg border border-archive-line bg-white shadow-[0_10px_28px_rgba(23,20,23,0.025)]">
+            <div className="overflow-hidden rounded-lg border border-archive-line bg-archive-surface shadow-[0_10px_28px_rgb(var(--archive-shadow)/0.04)]">
               <div className="p-4">
                 <h2 className="source-serif-heading">Source details</h2>
                 <dl className="mt-5 space-y-3 text-sm">
+                  <Detail label="Creators" value={formatCreators(source)} />
                   <Detail label="Citation" value={source.citation} />
                   <Detail label="Archive ID" value={`T-1800-1950-${source.id.slice(0, 3).toUpperCase()}`} />
                   <Detail label="Language" value={source.language} />
@@ -321,7 +290,7 @@ function Detail({ label, value }: { label: string; value: string }) {
   return (
     <div className="grid grid-cols-[5.4rem_1fr] gap-3 border-b border-archive-line/80 pb-3 last:border-b-0">
       <dt className="text-[13px] font-semibold text-archive-ink">{label}</dt>
-      <dd className="text-[13px] leading-5 text-[#6B6470]">{value}</dd>
+      <dd className="text-[13px] leading-5 text-archive-muted">{value}</dd>
     </div>
   );
 }
@@ -348,6 +317,17 @@ function publicationLabel(source: ArchiveSource) {
   }
 
   return source.author;
+}
+
+function formatPeople(source: ArchiveSource) {
+  return source.people.length ? source.people.join(", ") : source.author;
+}
+
+function formatCreators(source: ArchiveSource) {
+  if (!source.creators?.length) return source.author;
+  return source.creators
+    .map((creator) => `${creator.name} (${creator.role})`)
+    .join("; ");
 }
 
 function getTranscriptPreview(source: ArchiveSource) {

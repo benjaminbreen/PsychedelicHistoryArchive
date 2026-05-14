@@ -20,19 +20,40 @@ const SIZE_OPTIONS = [
 
 type SerifValue = (typeof SERIF_OPTIONS)[number]["value"];
 type SizeValue = (typeof SIZE_OPTIONS)[number]["value"];
+type ThemeValue = "light" | "dark" | "system";
 
 const SERIF_KEY = "archive-source-serif";
 const SIZE_KEY = "archive-source-text-size";
+const THEME_KEY = "archive-theme";
 
-export function SourceTextSettings() {
+const THEME_OPTIONS: Array<{ label: string; value: ThemeValue; meta: string }> = [
+  { label: "System", value: "system", meta: "Match this device" },
+  { label: "Dark", value: "dark", meta: "Low-light archive view" },
+  { label: "Light", value: "light", meta: "Classic paper view" }
+];
+
+function applyTheme(value: ThemeValue) {
+  const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const resolved = value === "system" ? (systemDark ? "dark" : "light") : value;
+  document.documentElement.dataset.theme = resolved;
+  document.documentElement.style.colorScheme = resolved;
+}
+
+type SourceTextSettingsProps = {
+  showSourceControls?: boolean;
+};
+
+export function SourceTextSettings({ showSourceControls = true }: SourceTextSettingsProps) {
   const [open, setOpen] = useState(false);
   const [serif, setSerif] = useState<SerifValue>("newsreader");
   const [size, setSize] = useState<SizeValue>("comfortable");
+  const [theme, setTheme] = useState<ThemeValue>("system");
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const storedSerif = localStorage.getItem(SERIF_KEY) as SerifValue | null;
     const storedSize = localStorage.getItem(SIZE_KEY) as SizeValue | null;
+    const storedTheme = localStorage.getItem(THEME_KEY) as ThemeValue | null;
 
     if (storedSerif && SERIF_OPTIONS.some((option) => option.value === storedSerif)) {
       setSerif(storedSerif);
@@ -47,6 +68,23 @@ export function SourceTextSettings() {
     } else {
       document.documentElement.dataset.sourceTextSize = "comfortable";
     }
+
+    const initialTheme = storedTheme && THEME_OPTIONS.some((option) => option.value === storedTheme)
+      ? storedTheme
+      : "system";
+    setTheme(initialTheme);
+    applyTheme(initialTheme);
+
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleThemeChange = () => {
+      const current = localStorage.getItem(THEME_KEY) as ThemeValue | null;
+      if (!current || current === "system") {
+        applyTheme("system");
+      }
+    };
+
+    media.addEventListener("change", handleThemeChange);
+    return () => media.removeEventListener("change", handleThemeChange);
   }, []);
 
   useEffect(() => {
@@ -83,13 +121,19 @@ export function SourceTextSettings() {
     localStorage.setItem(SIZE_KEY, value);
   }
 
+  function updateTheme(value: ThemeValue) {
+    setTheme(value);
+    localStorage.setItem(THEME_KEY, value);
+    applyTheme(value);
+  }
+
   return (
     <div className="relative" ref={wrapperRef}>
       <button
         aria-expanded={open}
-        aria-label="Source text settings"
-        className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-md border border-archive-line bg-white text-archive-ink shadow-sm transition hover:bg-archive-lavender2"
-        data-testid="source-text-settings-trigger"
+        aria-label="Display settings"
+        className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-md border border-archive-line bg-archive-surface text-archive-ink shadow-sm transition hover:bg-archive-lavender2 xl:h-11 xl:w-11"
+        data-testid="display-settings-trigger"
         onClick={(event) => {
           event.stopPropagation();
           setOpen((current) => !current);
@@ -100,51 +144,78 @@ export function SourceTextSettings() {
       </button>
 
       {open && (
-        <div className="fixed right-6 top-[4.35rem] z-50 w-[20rem] rounded-lg border border-archive-line bg-white p-4 text-sm shadow-soft xl:right-12" data-testid="source-text-settings-panel">
+        <div className="fixed right-4 top-[4.35rem] z-50 w-[20rem] max-w-[calc(100vw-2rem)] rounded-lg border border-archive-line bg-archive-surface p-4 text-sm shadow-soft sm:right-6 xl:right-12" data-testid="display-settings-panel">
           <div>
-            <div className="text-[0.68rem] font-bold uppercase tracking-[0.12em] text-archive-muted">Source serif</div>
+            <div className="text-[0.68rem] font-bold uppercase tracking-[0.12em] text-archive-muted">Theme</div>
             <div className="mt-2 grid gap-1">
-              {SERIF_OPTIONS.map((option) => (
+              {THEME_OPTIONS.map((option) => (
                 <button
                   className={clsx(
                     "focus-ring flex w-full items-center justify-between rounded-md px-3 py-2 text-left transition hover:bg-archive-lavender2",
-                    serif === option.value && "bg-archive-lavender2 text-archive-violet"
+                    theme === option.value && "bg-archive-lavender2 text-archive-violet"
                   )}
                   key={option.value}
-                  onClick={() => updateSerif(option.value)}
-                  type="button"
-                >
-                  <span className={option.className}>
-                    {option.label}
-                  </span>
-                  {serif === option.value && <Check className="h-4 w-4" />}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-4 border-t border-archive-line pt-4">
-            <div className="text-[0.68rem] font-bold uppercase tracking-[0.12em] text-archive-muted">Text size</div>
-            <div className="mt-2 grid gap-1">
-              {SIZE_OPTIONS.map((option) => (
-                <button
-                  className={clsx(
-                    "focus-ring flex w-full items-center justify-between rounded-md px-3 py-2 text-left transition hover:bg-archive-lavender2",
-                    size === option.value && "bg-archive-lavender2 text-archive-violet"
-                  )}
-                  key={option.value}
-                  onClick={() => updateSize(option.value)}
+                  onClick={() => updateTheme(option.value)}
                   type="button"
                 >
                   <span>
                     <span className="block font-medium">{option.label}</span>
                     <span className="block text-xs text-archive-muted">{option.meta}</span>
                   </span>
-                  {size === option.value && <Check className="h-4 w-4" />}
+                  {theme === option.value && <Check className="h-4 w-4" />}
                 </button>
               ))}
             </div>
           </div>
+
+          {showSourceControls && (
+            <>
+              <div className="mt-4 border-t border-archive-line pt-4">
+                <div className="text-[0.68rem] font-bold uppercase tracking-[0.12em] text-archive-muted">Source serif</div>
+                <div className="mt-2 grid gap-1">
+                  {SERIF_OPTIONS.map((option) => (
+                    <button
+                      className={clsx(
+                        "focus-ring flex w-full items-center justify-between rounded-md px-3 py-2 text-left transition hover:bg-archive-lavender2",
+                        serif === option.value && "bg-archive-lavender2 text-archive-violet"
+                      )}
+                      key={option.value}
+                      onClick={() => updateSerif(option.value)}
+                      type="button"
+                    >
+                      <span className={option.className}>
+                        {option.label}
+                      </span>
+                      {serif === option.value && <Check className="h-4 w-4" />}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-4 border-t border-archive-line pt-4">
+                <div className="text-[0.68rem] font-bold uppercase tracking-[0.12em] text-archive-muted">Text size</div>
+                <div className="mt-2 grid gap-1">
+                  {SIZE_OPTIONS.map((option) => (
+                    <button
+                      className={clsx(
+                        "focus-ring flex w-full items-center justify-between rounded-md px-3 py-2 text-left transition hover:bg-archive-lavender2",
+                        size === option.value && "bg-archive-lavender2 text-archive-violet"
+                      )}
+                      key={option.value}
+                      onClick={() => updateSize(option.value)}
+                      type="button"
+                    >
+                      <span>
+                        <span className="block font-medium">{option.label}</span>
+                        <span className="block text-xs text-archive-muted">{option.meta}</span>
+                      </span>
+                      {size === option.value && <Check className="h-4 w-4" />}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
         </div>
       )}
     </div>

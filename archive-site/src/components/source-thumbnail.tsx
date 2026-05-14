@@ -28,15 +28,15 @@ export function SourceThumbnail({ tone, title, className }: SourceThumbnailProps
     <div
       aria-label={`Thumbnail for ${title}`}
       className={clsx(
-        "relative overflow-hidden rounded-sm border border-black/10 bg-gradient-to-br shadow-sm",
+        "relative overflow-hidden rounded-sm border border-archive-line bg-gradient-to-br shadow-sm",
         toneClasses[tone],
         className
       )}
       role="img"
     >
       <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(0deg,rgba(23,20,23,.14)_1px,transparent_1px)] [background-size:100%_13px]" />
-      <div className="absolute left-[18%] top-[14%] h-[72%] w-[64%] rounded-[2px] border border-black/15 bg-white/45" />
-      <div className="absolute inset-x-0 top-[34%] text-center font-display text-[clamp(1.1rem,4vw,2.8rem)] font-semibold tracking-normal text-black/55">
+      <div className="absolute left-[18%] top-[14%] h-[72%] w-[64%] rounded-[2px] border border-archive-ink/15 bg-archive-surface/45" />
+      <div className="absolute inset-x-0 top-[34%] text-center font-display text-[clamp(1.1rem,4vw,2.8rem)] font-semibold tracking-normal text-archive-ink/55">
         {initials}
       </div>
     </div>

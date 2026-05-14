@@ -1,0 +1,9 @@
+{
+  "name": "psychedelic-history-archive-workspace",
+  "private": true,
+  "scripts": {
+    "upload:squarespace": "node scripts/upload_squarespace_to_supabase.mjs --import-dir data/squarespace-import",
+    "upload:nitrous-ether": "node scripts/upload_squarespace_to_supabase.mjs --import-dir data/nitrous-ether-import",
+    "upload:latin-america": "node scripts/upload_squarespace_to_supabase.mjs --import-dir data/latin-america-import"
+  }
+}

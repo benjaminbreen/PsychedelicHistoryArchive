@@ -56,7 +56,7 @@ export function ArchiveFilterSidebar({ active = {}, sources }: ArchiveFilterSide
         <FacetGroup icon={<UserRound className="h-4 w-4" />} title="People">
           <form action="/archive">
             <input
-              className="focus-ring h-8 w-full rounded border border-archive-line bg-white px-3 text-sm text-archive-ink placeholder:text-archive-muted/75"
+              className="focus-ring h-8 w-full rounded border border-archive-line bg-archive-surface px-3 text-sm text-archive-ink placeholder:text-archive-muted/75"
               defaultValue={active.people}
               name="people"
               placeholder="Search people..."
@@ -67,7 +67,7 @@ export function ArchiveFilterSidebar({ active = {}, sources }: ArchiveFilterSide
         <FacetGroup icon={<Globe2 className="h-4 w-4" />} title="Region">
           <form action="/archive">
             <select
-              className="focus-ring h-8 w-full rounded border border-archive-line bg-white px-3 text-sm text-archive-muted"
+              className="focus-ring h-8 w-full rounded border border-archive-line bg-archive-surface px-3 text-sm text-archive-muted"
               defaultValue={active.region ?? ""}
               name="region"
             >
@@ -125,7 +125,7 @@ function FacetCheckbox({
       className="flex min-h-6 items-center gap-2 rounded px-2 py-1 text-[0.78rem] text-archive-ink transition hover:bg-archive-lavender2"
       href={href}
     >
-      <span className={clsx("h-3 w-3 rounded-[3px] border border-archive-line bg-white", active && "border-archive-violet bg-archive-lavender shadow-[inset_0_0_0_2px_white]")} />
+      <span className={clsx("h-3 w-3 rounded-[3px] border border-archive-line bg-archive-surface", active && "border-archive-violet bg-archive-lavender shadow-[inset_0_0_0_2px_rgb(var(--archive-surface))]")} />
       <span>{label}</span>
       <span className="ml-auto text-archive-muted">({count.toLocaleString()})</span>
     </Link>
@@ -143,7 +143,7 @@ function ActivePill({ href, label }: { href: string; label: string }) {
 
 function SelectLike({ label }: { label: string }) {
   return (
-    <button className="focus-ring flex h-8 w-full items-center justify-between rounded border border-archive-line bg-white px-3 text-left text-sm text-archive-muted" type="button">
+    <button className="focus-ring flex h-8 w-full items-center justify-between rounded border border-archive-line bg-archive-surface px-3 text-left text-sm text-archive-muted" type="button">
       {label}
       <ChevronDown className="h-3.5 w-3.5" />
     </button>
@@ -153,7 +153,7 @@ function SelectLike({ label }: { label: string }) {
 function SearchLike({ placeholder }: { placeholder: string }) {
   return (
     <input
-      className="focus-ring h-8 w-full rounded border border-archive-line bg-white px-3 text-sm text-archive-ink placeholder:text-archive-muted/75"
+      className="focus-ring h-8 w-full rounded border border-archive-line bg-archive-surface px-3 text-sm text-archive-ink placeholder:text-archive-muted/75"
       placeholder={placeholder}
       type="search"
     />

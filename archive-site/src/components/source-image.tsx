@@ -22,7 +22,7 @@ export function SourceImage({ source, className, imageClassName }: SourceImagePr
   return (
     <div
       className={clsx(
-        "overflow-hidden rounded-sm border border-black/10 bg-archive-sand",
+        "overflow-hidden rounded-sm border border-archive-line bg-archive-sand",
         className
       )}
     >

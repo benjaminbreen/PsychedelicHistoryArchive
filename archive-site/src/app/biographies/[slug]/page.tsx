@@ -109,7 +109,7 @@ export default async function BiographyPage({ params }: BiographyPageProps) {
             </div>
             <div className="grid gap-3 md:grid-cols-2">
               {(profile.sourceNotes?.length ? profile.sourceNotes : [`Further reading for ${profile.name} is being prepared.`]).slice(0, 4).map((item) => (
-                <div className="rounded-sm border border-archive-line bg-white p-4 text-sm leading-6 text-archive-muted transition hover:border-archive-violet/40 hover:bg-archive-lavender2/35" key={item}>
+                <div className="rounded-sm border border-archive-line bg-archive-surface p-4 text-sm leading-6 text-archive-muted transition hover:border-archive-violet/40 hover:bg-archive-lavender2/55" key={item}>
                   {item}
                 </div>
               ))}
@@ -129,14 +129,14 @@ export default async function BiographyPage({ params }: BiographyPageProps) {
         <aside className="space-y-4 lg:sticky lg:top-28 lg:self-start">
           {profile.imagePath && (
             <figure>
-              <div className="overflow-hidden rounded-sm border border-archive-line bg-white">
-                <img className="aspect-[4/3] w-full bg-[#F4F1EC] object-contain grayscale" src={profile.imagePath} alt={profile.imageAlt ?? profile.name} />
+              <div className="overflow-hidden rounded-sm border border-archive-line bg-archive-surface">
+                <img className="aspect-[4/3] w-full bg-archive-lavender2 object-contain grayscale" src={profile.imagePath} alt={profile.imageAlt ?? profile.name} />
               </div>
               {profile.imageCaption && <figcaption className="mt-2 text-xs italic leading-5 text-archive-muted">{profile.imageCaption}</figcaption>}
             </figure>
           )}
 
-          <dl className="rounded-sm border border-archive-line bg-white px-4">
+          <dl className="rounded-sm border border-archive-line bg-archive-surface px-4">
             {profile.facts.map((fact) => (
               <div className="grid grid-cols-[5.25rem_1fr] gap-5 border-b border-archive-line py-3.5 last:border-b-0" key={fact.label}>
                 <dt className="text-[0.68rem] font-semibold uppercase leading-4 tracking-[0.065em] text-archive-ink/80">{fact.label}</dt>
@@ -145,7 +145,7 @@ export default async function BiographyPage({ params }: BiographyPageProps) {
             ))}
           </dl>
 
-          <div className="overflow-hidden rounded-sm border border-archive-line bg-white">
+          <div className="overflow-hidden rounded-sm border border-archive-line bg-archive-surface">
             <AsideDisclosure
               defaultOpen
               icon={<BookOpen className="h-5 w-5" />}
@@ -210,7 +210,7 @@ function AsideDisclosure({
         </span>
         <Plus className="h-4 w-4 text-archive-ink transition group-open:rotate-45 group-hover:text-archive-violet" />
       </summary>
-      <ul className="space-y-2 border-t border-archive-line bg-[#FFFDF8] px-4 py-4 text-[0.82rem] leading-5 text-archive-muted">
+      <ul className="space-y-2 border-t border-archive-line bg-[rgb(var(--archive-warm-surface))] px-4 py-4 text-[0.82rem] leading-5 text-archive-muted">
         {displayItems.map((item) => (
           <li className="border-l border-archive-line pl-3" key={item}>
             {item}

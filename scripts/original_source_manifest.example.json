@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "document_id": "00000000-0000-0000-0000-000000000000",
+      "slug": "veigl-ayahuasca",
+      "language": "Latin",
+      "pages": [
+        {
+          "page_number": 55,
+          "label": "55",
+          "image_url": "https://example.org/public-domain-scan-page-0055.jpg",
+          "mime_type": "image/jpeg",
+          "width": 1200,
+          "height": 1800
+        }
+      ]
+    }
+  ]
+}

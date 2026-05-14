@@ -1,0 +1,684 @@
+The narcotic pepper - The chemistry and pharmacology of Piper methysticum and related
+species
+
+Details
+
+Author: Alexander T SHULGIN
+Pages: 59 to 74
+
+Alexander T SHULGIN Scientific Consultant
+
+
+       Kava-kava is the name given to a drink prepared from the rhizomes of the plant,
+Piper methysticum. The generic name Piper comes from the Latin for pepper, and the
+species methysticum from the Greek μ θ ν σ τ ι κ ο ζ meaning intoxicant. It has thus become
+widely known as the intoxicating or narcotic pepper, or Rauschpfeffer.
+
+       The drink is made by soaking the pulverized roots of the plant in water to produce a
+cloudy, amber liquid. It has apparently been used for centuries throughout Western
+Polynesia, including Tonga, Samoa, and as far west as Tahiti where it is known as ava, or
+angooner. In the Marquesas Island group the plant has been identified as Piper latifolium,
+but this is probably synonymous with P. methysticum; there, the native name is avavahai. It
+is found in the Caroline Islands of Micronesia, and in many scattered locations throughout
+eastern Melanesia, including New Britain, New Ireland, New Hebrides, and Fiji (where it is
+referred to as yagona). The groups that migrated south from Melanesia to New Zealand
+(the Maori) found a closely related and superficially similar plant Piper excelsum, but from
+this no satisfactory drink could be made. The related species, P. betle, is only found much
+further west in Indonesia, and is discussed below in conjunction with several additional
+Piper species. The use of Kava-kava was first described by James Cook and the first
+descriptions of the chemistry and pharmacology were reported by Lewin in 1886 . An
+excellent bibliography that lists nearly a hundred references of early historical and
+ethnographic accounts of Kava-kava usage has appeared, and a recent review of its
+chemistry is also available.
+
+       There is no agreement whatsoever on the pharmacological classification of the
+drink, Kava-kava. These uncertainties are evident from references such as Cutting's
+Handbook of Pharmacology which lists Kava-kava under the general heading of
+psychotomimetics, but then states that it" produces gentle stimulation, then depression ".
+The equally authoritative text, Goodman and Gilman's "The Pharmacological Basis of
+Therapeutics" avoids any classification by listing the plant as a material that is "used for
+subjective effects". Lewin has Classified it as a hypnotic.
+
+       It is classified here as an excitant, as it has found its primary use as an adjunct to
+social meetings, and serves the same role as coffee in the Kaffeeklatsch, or the alcohol in
+the cocktail party. Pharmacologically it can lead to a seemingly natural sleep, and indeed
+the animal studies that have been conducted on the several compounds that have been
+isolated from it, show muscular relaxation and a protection from induced convulsion more
+characteristic of a sedative. The use is, however, social rather than individual, and leads to
+conviviality rather than to escape. Kava-kava contains no alcohol, although the use of
+alcoholic beverages has to some extent displaced it in modern usage.
+
+       Early missionary reports strongly suggest that it was a narcotic substance (and so
+appropiately condemned) as they describe physical impairment related to its use. This
+apparent paralysis seems to be adequately accounted for by the associated habit of sitting
+cross-legged during the lengthy Kava-kava ceremonies. More recent reports describe it as"
+a refreshing, astringent drink which produces nothing more than a tingling sensation in the
+mucous membrane of the mouth and a short-lived numbness of the tongue ". Two distinctly
+different methods of preparing the Piper methysticum rhizome for the final drink
+concoction have been well documented.
+
+        One, often called the "Tonga method" although it was the principal method used in
+Samoa as well, consists in having young men or women chew the root until it was fine and
+fibrous. Efforts were made to keep the material as free of saliva as possible, and none of the
+juices were swallowed. The chewed cud was then soaked in water, and after a period of
+time decanted and drunk. The chewer experiences anaesthesia of the tongue and of the
+inner lining of the mouth, a loss of taste for an extended period, stiffness of various mouth
+muscles contributing to difficulties in articulation, but apparently there were no central
+effects. With preparation of the drug in this manner, there is claim of narcotic effects, with
+reports of visual and auditory changes, and a generalized euphoriant effect involving
+improved appetite, loss of fatigue, and a benign social attitude. Larger doses appeared to
+lead to muscular inco-ordination, and a drunkenness that leads to a stuporous sleep.
+A second method of preparation, sometimes called the "Fiji method" and the procedure
+most widely practised today, involves the use of a mechanical pounding and pulverizing of
+the root, and the extraction of the residue with water. The effects produced by this
+procedure are claimed to be more of a stimulant and socially relaxing nature, hardly
+suggesting the narcotic-like consequences mentioned above. It is possible that the action of
+the saliva may well induce some chemical transformation in the plant material, but this is
+unexplored, and the entirety of present pharmacological knowledge is based on material
+produced solely by this latter process.
+
+       A complete description of contemporary preparation ceremonies and the associated
+protocols of use are given by Holmes. An ethnographic description of its uses in Fiji has
+recently appeared in an excellent review, and a complete review of both plant description
+and general social use has been prepared by Steinmetz.
+
+       The structures of the isolates from Kava-kava can be organized about a general
+skeleton of an arylethylene-α-pyrone of the generalized structure shown in (I), wherein "A"
+can represent some degree of substitution (hydrogen, hydroxyl, methoxyl, or
+methylenedioxy), "B" is either a vinyl unsaturation or the dihydro-counterpart, and "C" can
+represent the inclusion of a second double bond in the pyrone ring. The numbering system
+shown in (Ia) is widely accepted.
+       The first substance isolated from Piper methysticum was methysticin (II), also
+known as kavatin, kavahin, and kanakin. The chemical name for methysticin can follow
+emphasis either upon the heterocyclic nature of the pyrone ring or upon the aliphatic acid
+nature of the lactone system. In the former aspect, the IUPAC has recommended the name
+5,6-dihydro-4-methoxy-6-[3',4'-(methylenedioxy)styryl]-2H-pyran-2-one. The Chemical
+Abstracts indexing has followed the latter path, using 5-hydroxy-3-methoxy-7-[3,4-
+methylenedioxyphenyl]-2,6-hepta- dienoic acid - lactone. This open-chain structure name
+(IIa) emphasizes the biosynthetic origins of this class of compounds.
+
+
+
+
+       The ethylenic dihydroanalog dihydromethysticin (III) was isolated almost 50 years
+later by Winzheimer. The completely conjugated analogue, 5,6-dehydromethysticin (IV)
+has recently been observed as a component of Kava-kava.
+
+       The corresponding unsubstituted phenyl analogues of this series were uncovered by
+Borsch and co-workers who reported the unsubstituted counterparts of methysticiu as
+components of Kava-kava. The precise analogue to methysticin is kawain (V) also known as
+kavain and gonosan. The dihydroderivative (dihydrokawain, VI) and the dehydro-analogue
+(desmethoxyyangonin, VII) are both exactly comparable to the methysticin hydrogenation
+family above. This last name is classically more acceptable than the more obvious term
+dehydrokawain, as the monomethoxy-pyrone yangonin was one of the first compounds
+isolated from Kava-kava and along with methysticin is one of the major components. It was
+originally assigned the γ-pyrone structure VIII but this was successfully challenged some
+10 years ago on theoretical grounds, and the correct structure IX, in complete harmony
+with the other γ-pyrones of this group, was confirmed by synthesis.
+
+
+
+
+         Yangonin serves as the basis for two additional substances isolated from Kava-kava,
+both of which have been established synthetically as possessing the α-pyrone ring. These
+are the meta-methoxy analogue 11-methoxyyangonin (X) and the phenolic counterpart 11-
+methoxy-nor-yangonin (XI). These substances show a structural resemblance to the parent
+methylenedioxy compound methysticin in a manner completely analogous to examples
+within the essential oil family. Anethole (XII, 4-OCH <sub>3</sub>), methyl-isoeugenol
+(XII, 3,4-(OCH <sub>3</sub>) <sub>2</sub>), isoeugenol (XII, 3-OCH <sub>3</sub>-4-
+OH), and isosafrole (XII, 3,4-OCH <sub>2</sub>O) are exact analogues of yangonin, 11-
+methoxyyangonin, 11-methoxynoryangonin, and methysticin, resp. It is certainly possible
+that their origins employ common biosynthetic pathways.
+
+        Two pigment materials have been isolated from the rhizomes of Piper methysticum
+by chromatographic techniques. One, called Flavokawin A was initially obtained in 0.04%
+yield; the other, Flavokawin B, in one tenth this amount. The structures of these have been
+established by synthesis to be substituted chalcones that bear an obvious biogenetic
+relationship to the styrylpyrones. Flavokawin A has proved to be 2'hydroxy-4-4'-6'-
+trimethoxychalcone (XIII) and Flavokawin B is 2'-hydroxy-4'-6' dimethoxychalcone (XIV).
+These yellow pigments provide an explanation for the skin discoloration observed with
+chronic exposure to Piper methysticum extracts, but they appear to be without biological
+activity.
+
+
+
+
+       Two additional chalcones have been reported as components of a New Guinea Piper
+species, both closely related to Flavokawin B. These are the respective demethylated
+resorcinols pinostrobinchalcone (XV) and alpinetinchalcone (XVI). These latter two
+compounds are present in the plant in amounts comparable to the major chalcone,
+Flavokawin A.
+
+
+
+
+      A number of other related flavanones have also been observed in this same New
+Guinea species, and it is entirely possible that at least two of them might have arisen
+through a chemical modification of these above-mentioned chalcones as a consequence of
+isolation. Dihydrotectochrysin (XVII) is the cyclization product of pinostrobinchalcone
+(XV), and alpinetin (XVIII) is related similarly to alpinetinchalcone (XVI). Both of these
+compounds, regardless of their origins within the isolation procedures employed,
+represent several tenths of a per cent of the total plant extract.
+
+       A third flavanone has been observed, dihydrooroxylin A (XIX) but no corresponding
+chalcone has as yet been reported.
+
+       Yet another style of component of Piper methysticum is illustrated by the structures
+of two conjugated diene ketones, cinnamylidineacetone (XX) and 3,4-methylenedioxy-
+cinnamylidineacetone (XXI). These two compounds ouldc theoretically arise as artifacts,
+through hydrolysis and decarboxylation, from kawain and methysticin, respectively, but
+this source has been excluded through appropiate experiments. The general structure of a
+carbonyl group conjugated through olefins to an aromatic ring is suggestive of piperine, the
+major alkaloid of most peppers of food use (v.i.).
+
+
+
+
+       A novel alcohol has been reported present in unspecified amounts, and a structure
+has been proposed (XXII). This is the hydroxyl analogue of dihydrokawain (VI) and is
+probably related through reduction and hydration to desmethoxyyangonin (VII). As it is
+optically active, it is presumably natural, and not an artifact of isolation. The presence of
+alkaloid components in Kava-kava are suggested but no details are as yet available. A
+recent report has compiled the various physical properties of many of these chemicals,
+both singly and in combination.
+
+
+
+
+       The determination of the relative amounts of these various components present in
+the intact plant is difficult, as different separation procedures lead to different analyses.
+Klohs has assayed the actual isolates from the column chromatography separations of
+various fractions; Young has used spectrophotometric techniques for the analysis of these
+fractions. A clear separation into major, minor, and trace contributions may be made as
+follows:
+
+Present to 1% or more Ref: 26,27
+Dihydrokawain (VI)
+Kawain (V)
+Methysticin (II)
+Present 0,1% to 1% Ref: 21,22,26,27
+Yangonin (VIII)
+Dihydromethysticin (III)
+Desmethoxyyangonin (VII)
+Flavokawin A (XIII)
+Pinostrobinchalcone (XV)
+Dihydrotectochrysin (XVII)
+Alpinetinchalcone (XVI)
+Alpinetin (XVIII)
+Dihydrooroxylin A (XIX)
+Present 0,01% to 0,1% Ref: 15,19,21
+1l-Methoxy-nor-yangonin (XI)
+11-Methoxyyangonin (X)
+Flavokawin B (XIV)
+
+        A number of structural modifications of the basic mythysticin molecule have been
+synthesized in an effort to assign biological activity to one or another portion of the
+molecule. These analogues have been assayed pharmacologically in micro-organism
+systems as well as in test animals, and certain structure-activity relationships are apparent.
+Shortening or lengthening of the two-carbon bridge between the rings of the molecule
+dihydrokawain (VI) decreased the effectiveness of this chemical as a fungistatic agent.
+Elimination of the 2-carbon bridge (B, in I) generally leads to a decrease in biological
+activity, as measured by the capability of the compound to protect a test animal against the
+convulsive effects of strychnine. This was found to be true through extensive modifications
+of the substitution pattern on the aromatic ring (A, in I). Included in these studies was the
+trimethoxy- structure found in the oil isoelemicin (XII, R = 3,4,5-OCH3) and the alkaloid
+mescaline. Maintaining the methylenedioxy ring of methysticin but instituting extensive
+changes in the chemical nature of the ethylene bridge between the two rings has led to no
+increase in potency.
+
+       The unnatural dihydro-analogue of kawain (dihydropyrone, with the styrene double
+bond intact), and the tetrahydro-counterpart have been synthesized but no measure has
+been made of their comparitive activities. A similar hydrogenation study has been
+conducted with yangonin (IX) and it appears that some narcotic effects appear with the
+introduction of hydrogen in the pyran 5,6-position.
+       Homologues of mythysticin have been studied as well. The substitution of a variety
+of groups on the tertiary carbon connecting the ethylene link with the dihydropyrone ring,
+yielded compounds without pharmacological interest. On the other hand, the replacement
+of the methoxy- group of methysticin with an ethoxy group (ethysticin) seems to provide
+an active material that has been studied in man (v.i.).
+
+       Extensive animal studies have been conducted, not only on the many isolated
+chemicals but on the total extract of P. methysticum itself. One of the most common
+pharmacological measurements has been the inhibition of the convulsions induced by
+strychnine or by electroshock. The skeletal relaxant, mephenesin, has usually been used as
+a comparative measure of activity.
+
+       This central activity of the Kava-kava family of compounds has recently been
+extensively studied . Increased dosages of several of the pyrones led to ataxia and paralysis,
+but without a loss of consciousness, in a manner more reminicent of mephenisin than of
+curare. In most animal species muscular ataxia is noted at drug levels of about 10 mg/Kg
+with the intravenous route, and at perhaps 100 mg/Kg by the oral route.
+
+        With oral administration, absorption from the gut is extremely rapid for kawain (V)
+and dihydrokawain (VI) as the biological effects (protection against maximal electroshock
+seizure) were maximum in about 10 minutes. Methysticin (II) and its dihydro- derivative
+(III) were quite a bit more potent, but were more slowly absorbed (about 45 minutes being
+required for maximum effectiveness). The effective levels of dihydromethysticin and
+dihydrokawain (VI) via an intraperitoneal route (in protection against electroshock
+seizure) are 25 mg/Kg and 60 mg/Kg resp. This is some 2 1/2 times more effective than the
+oral route. The dihydro- derivatives of both kawain and methysticin have also showed
+effects in the inhibition of frog heart contraction. These actions have been compared with
+those of cocaine which shows a similar protection against ventricular fibrillation through
+its local anaesthetic effectiveness. Anaesthetic action as measured by protection of the
+rabbit cornea has again been shown to be characteristic of these dihydroderivatives as well
+as of their unsaturated parents.
+
+        Yangonin (IX) and desmethoxyyangonin (VII) are relatively ineffective orally as
+anticonvulsive agents (employing strychnine as a challenge drug ) but they appear to
+possess biological activity comparable to the other related alpha-pyrones when
+administered parenterally. Further, it has been observed that the oral administration of
+yangonin and dehydroyangonin in combination with other pyrones, led to a marked
+increase in over-all potency. This possible potentiation might explain the unsatisfactory
+comparisons between the pharmacology of the total root of Piper methysticum and of the
+several isolated components. It has been reported that a recombination of isolated
+chemicals does indeed reconstitute the observed biological response found with the extract
+of the entire root, whereas none of the individual compounds appeared to be similarly
+active. Recent studies in the mouse have shown that the several pyrones found in Piper
+methysticum and especially methysticin itself are effective in protection against
+strychnine-induced convulsion. This component, as well as kawain appear to be effective
+antispasmatics in studies with guinea pig ilium preparations , and these two chemicals can
+account for the entire plant extract potency in this test.
+        A report has appeared indicating that a water-soluble fraction of kava-kava
+(obtained by steam distillation) contains biologically active materials, and that this fraction
+was shown to be relatively free of any pyrone material. It suppresses spontaneous activity
+in test animals, and at higher doses leads to a muscular relaxation similar to that seen from
+the earlier-mentioned pyrones. Chemically this fraction is unexplored, but its separation
+into various distinct fractions has been described . Extracts of the complete root of P.
+methysticum have been reported to be fungistatic. The active components are the
+dihydropyrones, and dihydrokawain appears to be especially active against a test
+Aspergillus species.
+
+        Many reports have appeared that describe the action of the total extracts of the
+plant in man. A thorough bibliography of historic usage has been mentioned earlier , and
+the Kava-kava ceremony as it is observed at the present time has been recently described
+within the cultures both of Samoa and of Fiji .
+
+        On the contrary, clinical reports that might suggest potential medical virtue of either
+the plant extracts themselves or of the isolated individual components as chemical entities,
+are almost unknown. The main effort in this latter direction has been the exploration of the
+Kava-kava principles as possible anti-epileptics. The administration of the crude root-
+substance, at levels of 6 grammes/day gave some degree of protection against seizure, as
+did the employment of 1 gramme/day of an alcoholic extract. However, after a period of
+several weeks of chronic usage, there was a distinct discoloration of the skin of the
+subjects, and efforts were directed to the study of the component chemicals .
+Studies of dl-dihydromethysticin were similarly conducted as possible anti-epileptics. At
+chronic levels of 1200 mg/day there was some control of grand mal seizures, but no sign of
+improvement in the incidence of Petit Mal epilepsy. Again, as with the total root extract,
+after a period of a month of chronic usage there were signs of accumulation (conjunctival
+erythema) and indications of gastric and intestinal distress.
+
+          Acute studies of dl-methysticin (II) and the pharmacologically promising homologue
+dl-ethysticin (532-Riker, XXIII) have been reported. At single dosages of 800 mg there was
+little if any activity noted. "No significant changes of blood-pressure, pulse rate, grip-
+strength, hand steadiness, or pupil size occurred. The subjective responses were equally
+divided between stimulant, placebo, and sedative reports."
+
+
+
+
+       The only report that compares directly the human responses of the natural (d)
+isomer of compounds found in plant sources to their synthetic counterparts, is a paper
+describing electro-encephalographic activity modifications. DL-dihydromethysticin, d-
+dihydromethysticin (III) and dihydrokawain (VI, of unspecified optical activity) have been
+compared at acute oral levels of 160 mg. (200, for dihydrokawain). There were minimal
+changes in the EEG tracings but subjects reported a "mild sedation" with all three
+compounds. These authors have concluded that no further studies with this plant material
+are justified.
+
+
+
+
+       A number of interesting and closely related compounds have been described in
+plants that are also widely known as peppers. The table spice commonly employed as a
+condiment is derived primarily from the plant Piper nigrum, black pepper. A distinct form
+known as " long pepper " was employed by preference through the classical times and
+during the Middle Ages. This latter is today essentially nonexistent, but is known to be
+closely related to two allied plants, Piper longum found in the Philippines west to Ceylon
+and Southern India, and Piper officinarum, a climbing shrub found primarily in Java.
+The racemic mixture of dihydromethysticin is synthetic. The natural forms of both
+dihydromythesticin and methysticin itself are the dextrorotatory isomers.
+
+       The principal substance responsible for the sharp taste of pepper is the alkaloid
+piperine (XXIV) which has been known through isolation and synthesis for nearly a
+hundred years. Points of similarity between piperine and methysticin (II) are evident: the
+presence of the 3,4-methylenedioxyring, and the presence of the styrene nature of
+conjugated unsaturation.
+
+        A number of Piper spp., although not of known central activity, have nonetheless
+been found to contain substances that possess structures that resemble both of these
+compounds. Many of these plants have been studied due to their involvement and
+reputation in the Ayurvedic system of Indian medicine. Piper longum, mentioned above as
+Indian long pepper, is a plant material that has been used for the treatment of asthma and
+chronic bronchitis. A major alkaloid, piplartine, was isolated and described by Atal. Initially
+its structure was thought to be a piperidide of trimethoxycinnamic acid (XXV) but the same
+chemical appears to have been reisolated subsequently, given the name piperlongumine
+(piperlangumine), reanalysed to show a fifth oxygen atom, and assigned the structure of a
+piperidone amide (XXVI) [47,48]. A recent report supports a structure with an isomeric
+double-bond position (XXVII) but encourages a return to the original (and simpler) naming
+of piplartine. The Chattergee group has also reported the isolation of a minor component,
+piperlunguminine (XXVIII). which appears to be an open chain amide of piperic acid, in
+which isobutylamine replaces piperidine.
+
+
+
+
+ Piper peepuloides is yet another pepper plant employed in the Ayurvedic system of
+medicine, and has been found to contain the closely related cinnaminamide, peepuloidin
+(XXIX) . As with all the styryl compounds in the Piper species, the aromatic ring
+substitution pattern is the same as that found in the propenyl essential oils. Just as the
+afore-mentioned amides from Piper longum are related to isoelemicin (XII, 3,4,5-(OCH3)3)
+so peepuloidin is assigned the substitution pattern of isodillapiole (XII, 2,3-(OCH3)2-4,5-
+(OCH2O)). A homologue of isosafrole, pipataline (XXX) is yet another styrenelike
+component of P. peepuloides.
+       Another pyrrolidine amide alkaloid closely related to peepuloidin has been
+discovered in the pepper species, Piper trichostachyon . This is trichostachyon (XXXI) the
+transvinylog of the styrene ethers. None of these styrene amides have been explored
+pharmacologically.
+
+
+
+
+       Piper excelsum has been mentioned earlier as a New Zealand pepper, which in no
+manner could serve as a substitute for Piper methysticum in the preparation of an
+intoxicating drink. The Maori are reported to employ the plant for the preparation of a
+treatment of headache, but its chemistry and pharmacology remain unexplored. Piper
+plantagiveum has been mentioned as being found in the West Indies and Mexico, and as
+serving as a course of a Kava-kava-like narcotic.
+
+        Piper betle is the source of Betel, a dried leaf preparation that has been extensively
+used in Southeast Asia both topically as well as internally. The term Betel (leaf of the
+pepper Piper betle) must not be confused with Betel Nut (seed of the palm, Areca catechu)
+which is an entirely separate and unrelated abuse drug. Betel (the leaf) has often served as
+a wrapping for the Betel Nut, which is usually encountered thinly sliced and mixed with
+some slaked lime. The internal use of Betel is as a source of sharpness in the flavouring of
+Betel Nut. The leaves, known as Sirih in Malayan, provide an oil that contains a number of
+phenolic substances, many of which are allylphenols . Chavicol (4-hydroxyallyl-benzene) is
+a major component and is strongly antiseptic. Hydroxychavicol (allylpyrocatechol, 3-4-
+dihydroxyallylbenzene) is present (and contains the carbon skeleton of safrole) as is its 4-
+methyl ether, chavibetol, which is classically known as " betel phenol ". Although the use of
+Betel is almost incidental to the use of Betel Nut, there have been some preliminary studies
+made into its pharmacological properties.
+
+       A second large Genus of peppers are those associated with the chili pepper, the
+Capsicum spp. Most of these have found use as foods and flavourings, but one report
+suggests that the addition of pepper pods of Capsicum annuum to Kava-kava has been
+intentional, to strengthen its effects and suggesting a relationship to the Betel of Indonesia.
+Another report describes the use of peppers as a "stimulant and excitant" by the Kakusi
+Indians of British Guiana . Since these New World peppers have been clearly identified as a
+species of Capsicum a careful search in this Genus for alkaloids or pyrones would certainly
+be warrented.
+
+        A number of the compounds that have been described as comprising the Piper
+methysticum plant are known from other areas of the botanical world. 11-Methoxy-
+yangonine (X), mentioned above as a minor component of the Kava-kava root, had
+previously been observed as a component of the Brazilian Rosewood Aniba firmula . One of
+the earliest compounds isolated from Aniba firmula was desmethoxy-yangonin (VII) and
+was originally called 5,6-dehydrokavain due to its clear relationship to kawain. This
+isolation was the first description of this chemical from natural sources and predates its
+observation in the Piper group. The chemical itself had first been synthesized fully two
+decades before either of the observations of its natural occurrence.
+
+       An interesting family of chemicals, the phenylcoumalins, also occurs in the
+rosewood. These are the analogues of desmethoxy-yangonin and dehydromethysticin,
+lacking only the vinyl group that connects the two ring systems. 4-Methoxy-
+phenylcoumalin (XXXII) can be related directly to desmethoxy-yangonin (5,6-
+dehydrokawain, VII) and this has been isolated as a major component of Aniba duckei.
+
+
+
+
+The 4-methoxyparacotoin analogue (XXXIII) has been described in conjunction with the
+isolation of desmethoxyyangonin from this species. This methylenedioxy counterpart of
+methoxyphenylconmalin (XXXII) appears to be biogenetically related to the methysticin
+group. A complete review of all these interrelated pyrones has recently appeared. The
+rosewood (Aniba firmula) which has no reputation for central activity, must not be
+confused with the woodrose (Argyreia nervosa) which is an exceptionally active
+psychotomimetic.
+
+References
+001
+
+J. Cook, A Voyage to the Pacific Ocean , London, 2 145, 155 (1785).
+002
+
+L. Lewin, über Piper methysticum (Kawa) , A. Hirschwasd, Berlin (1886).
+003
+
+D. Carleton, Gajdusek, " Recent observations on the use of Kava in the New Hebrides ",
+Ethnopharmacologic Search for Psychoactive Drugs , Ed. D. Efron, USGPO (1967), p. 119.
+004
+
+F. Keller, and M. W. Klohs, "A review of the chemistry and pharmacology of the constituents
+of Piper methysticum ", Lloydia, 26 , 1 (1963).
+005
+W. C. Cutting, Handbook of Pharmacology , 4th Edition (1969), Appleton-Century Crofts, p.
+743
+006
+
+L. S. Goodman, and A. Gilman, The Pharmacological Basis of Therapeutics , 4th Edition
+(1970), Macmillan, p. 301.
+007
+
+L. Lewin, Phantastica; Narcotic and Stimulating Drugs , Routledge and Kegan Paul (1964), p.
+215.
+008
+
+Hans J. Meyer, " Pharmacology of Kava ", Ethnopharmacologic Search for Psychoactive
+Drugs , Ed. D. Efron, USGPO (1967), p. 133.
+009
+
+Lowell D. Holmes, " The function of Kava in modern Samoan culture", ibid, p. 107.
+010
+
+A. Hoffer and H. Osmond, The Hallucinogens , Academic Press (1967), p. 57.
+011
+
+Clellan S. Ford, " Ethnographic aspects of Kava ", Ethnopharmacologic Search for
+Psychoactive Drugs , Ed. D. Efron, USGPO (1967), p. 162.
+012
+
+E. F. Steinmetz, Piper methysticum , publ. by Dr E. F. Steinmetz, 347 Keizersgracht-
+Amsterdam (Netherlands) (1960).
+013
+
+G. Cuzent, " Composition chimique de la Kavahine ", Compt. rend., 52 205 (1861).
+014
+
+E. Winzheimer, " Beitrage zur Kenntnis der Kawawurzel ", Arch. Pharm., 246 338 (1908).
+015
+
+R. Hansel, H. Sauer and H. Rimpler, ibid, 299 507 (1966).
+016
+
+W. Borsch and W. Peitzsch, Ber. 63 2414 (1930).
+017
+
+I. Chmielewska, J. Cieslak, K. Gorzcynska, B. Kontnik and K. Pitakowska, " Structure de la
+yangonine. Etude spectrographique dans l'ultraviolet et l'infrarouge ". Tetrahedron, 4 36
+(1958).
+018
+J. D. Bu'Lock and H. G. Smith, J. Chem. Soc ., (1960) 502.
+019
+
+R. Hansel and L. Klaproth, " Isolierung von 11-methoxy-yangonine aus der Kawawurzel ".
+Arch. Pharm., 299 503 (1966).
+020
+
+R. Hansel, P. Baehr and J. Elich, " Isolierung und Charakterisierung von zwei bisher
+unbekannten Farbstoffen des Kawa-Rhizoms ". Ibid, 294 739 (1961).
+021
+
+R. Hansel, G. Ranft and P. Bahr, " Zwei Chalkonpigmente aus Piper methysticum Forst. ", Z.
+Naturforsch., 18 370 (1963).
+022
+
+H. Von Sauer and R. Hansel, " Kawalaktone und Flavonoide aus einer endemischen Piper-
+art Neu Guineas ". Planta med. 15 443 (1967).
+023
+
+P. Jossang and D. Holho, " Chromatographie sur couches épaisses non liées des constituants
+du rhizome de Piper methysticum : Isolement de deux nouvelles cétones, cinnamalacétone
+et methylénedioxy-3,4-cinnamalacétone ", J. Chromatog., .l 375 (1967).
+024
+
+H. Achenbach and G. Wittmann, " Dihydrokawain-5-ol, ein neuer Alkohol aus Rauschpfeffer
+( Piper methysticum Forst .) ", Tetrahedron Letters (1970), 3259.
+025
+
+L. Langhammer, " Inhaltsstoffe von Piper methysticum Forster; eine
+thermomikroskopische Studie ". Arch. Pharm., (1971) 304 126.
+026
+
+M. W. Klohs, F. Keller, R. E. Williams, M. I. Toekes and G. E. Cronheim, " A Chemical and
+pharmacological investigation of Piper methysticum Forst.", J. Med. Pharm. Chem ., 1 95
+(1959).
+027
+
+R. L. Young, J. W. Hylin, D. L. Plunknett, Y. Kawano and R. T. Nakayama, " Analysis for Kawa
+pyrones in extracts of Piper methysticum ", Phytochemistry, 5 795 (1966).
+028
+
+M. W. Klohs, " Chemistry of Kava ", Ethnopharmacologic Search for Psychoactive Drugs , Ed.
+D. Efron, USGPO (1967), p. 126.
+029
+R. Hansel, D. Weiss and V. Schmidt, " Kawalaktone: Ketten-lange und fungistatische
+Wirkung ", Arch. Pharm., 301 369 (1968).
+030
+
+R. Hansel, " Analytical behaviour of C 6 aryl-substituted alpha-pyrones of the Kawalactone
+type ". Kongr. Pharm. Wiss. Vortr. Originalmitt., 23 , Muenster, Germany (1963), CA
+62:5750f.
+031
+
+F. Werny and R. Hansel, " Hydrogenation of 6-styryl-alpha-pyrones to active materials of
+the Kawa-lactone type (from Piper methysticum ) ", Naturwissenschaften, 50 355 (1963).
+032
+
+H. J. Meyer and R. Kretzschmar, " Kawa-Pyrone eine neuartige Substanzgruppe zentraler
+Muskelrelaxantien vom Typ des Mephenesins," Klin. Woch ., 44 902 (1966).
+033
+
+H. J. Meyer and J. Meyer-Burg, " Reduction of electroseizures by the Kava-pyrones
+Dihydromethysticin and Dihydrokawain ", Arch. Inter. Pharmacodyn., 148 97 (1964).
+034
+
+H. J. Meyer and H. V. May, " Local anaesthetic properties of natural Kava Pyrones ", Klin.
+Woch ., 42 407 (1964).
+035
+
+R. Kretzschmar and H. J. Meyer, " Vergleichende Untersuchungen über die Antikonvulsive
+Wirksamkeit der Pyronverbindungen aus Piper methysticum Forst.", Arch. int.
+Pharmacodyn., 177 261 (1969).
+036
+
+R. Kretzschmar, H. J. Meyer and H. J. Teschendorf, " Strychnine antagonistic potency of
+pyrone compounds of the Kavaroot ( Piper methysticum Forst.) ", Experientia, 15 283
+(1970).
+037
+
+R. Kretzschmar, H. J. Meyer, H. J. Teschendorf and B. Zöllner, " Spasmolytische Wirksamkeit
+von Aryl-Substituierten alpha-Pyronen und wassrigen Extrakten aus Piper methysticum
+Forst. ", Arch. int. Pharmacodyn ., 180 475 (1969).
+038
+
+J. P. Buckley, A. R. Furgiuele and M. J. O'Hara, " Pharmacology of Kava ",
+Ethnopharmacologic Search for Psychoactive Drugs , Ed. D. Efron, USGPO (1967), p. 141.
+039
+
+M. J. O'Hara, W. J. Kinnard and J. P. Buckley, " Preliminary characterization of aqueous
+extracts of Piper methysticum ", J. Pharm. Sci., 54 1021 (1965).
+040
+
+R. Hansel, D. Weiss and B. Schmidt, " Fungistatische Wirkung der Kawadroge und ihrer
+Inhaltsstoffe ", Planta medica, 14 1 (1966).
+041
+
+C.C. Pfeiffer, H. B. Murphree and L. Goldstein, " Effect of Kava in normal subjects and
+patients ", Ethnopharmacologic Search for Psychoactive Drugs , Ed., D. Efron, USGPO
+(1967), p. 155.
+042
+
+C. C. Pfeiffer, H. B. Murphree and L. Goldstein, U.S. Public Health Service Publication 1645, p.
+155 (1967).
+043
+
+P. Caseneuve and O. Caillol, " The extraction and description of the piperines in pepper ",
+Bull. Soc. Chim ., (2) 27 290 (1877).
+044
+
+L. Rügheimer, " Künstliches Piperin ", Ber. 15 1390 (1882).
+045
+
+Kirtikar and Basu, Indian Medicinal Plants, 3 2128 (1933) Basu, Allahabad, India.
+046
+
+C. K. Atal and S. S. Banga, " Structure of Piplartine, a new alkaloid from Piper longum ", Ind.
+J. Pharm., 24 105 (1962); Current Sci . (India) 32 354 (1963).
+047
+
+A. Chattergee and C. P. Dutta, " The Structure of Piperlongumine, a new alkaloid from the
+roots of Piper longum ", Sci. Cult ., 29 568 (1963).
+048
+
+A. Chattergee and C. P. Dutta, " Alkaloids of Piper longum Linn; I. Structure and synthesis of
+Piperlongumine and Piperlonguminine ", Tetrahedron, 23 1769 (1967).
+049
+
+B. S. Joshi, V. N. Kamat and A. K. Saksena, " The structure of Piplartine and a synthesis of
+Dihydropiplartine ", Tetrahedron Lett ., (1968) 2395.
+050
+
+B. S. Joshi, Personal communication.
+051
+
+C. K. Atal, P. N. Moza and A. Pelter, " The structure of Peepuloidin, an alkaloid from P.
+peepuloides ", Tetrahedron Lett . (1968) 1377.
+052
+
+C. K. Atal, K. I. Dhar and A. Pelter, " Structure of Pipataline, an extractive from Piper
+peepuloides ", Chem. Ind . (1967) 2173.
+053
+
+J. Singh, K. L. Dhar and C. K. Atal, " Studies on the genus Piper. IX. Structure of
+Trichostachine. An alkaloid from Piper Trichostachyon ". Tetrahedron Lett ., (1969) 4975.
+054
+
+E. Ueda and T. Sasaki, " Formosan plants. I. Chemical constituents of the leaves of Piper
+bette ". J. Pharm. Soc., Japan, 71 559 (1951).
+055
+
+M. M. Ally, " Preliminary observations on the pharmacology of Betel leaf ". Proc. Pan Indian
+Ocean Sci. Congr., 4th , Karachi, Pakistan Sect. G., 1960, p. 31. CA 61:7363e.
+056
+
+A. Kramer, Die Samoa-Inseln , Stuttgart, 1902.
+057
+
+E. E. Roth, " An introductory study of the arts, crafts, and customs of the Guiana Indians ",
+38th Ann. Rept. Bur. Am. Ethnol ., 1916-17 (1924) p. 25.
+058
+
+R. E. Schultes, " The place of ethnobotany in the ethnopharmacological search for
+psychoactive drugs ", Ethnopharmacologic Search for Psychoactive Drugs , Ed. D. Efron
+USGPO (1967), p. 33.
+059
+
+W. B. Mors, M. T. Magelhaes, O. A. Lima, A. M. Bittencourt and O. R. Gottlieb, Ana. Assoc.
+Brasil Quim ., 21 7, (1962).
+060
+
+O. R. Gottlieb and W. B. Mors, " The chemistry of rosewood. III. Isolation of 5,6-
+Dehydrokavain and 4-Methoxyparacotoin from Aniba firmula Mez.", J. Org. Chem., 24 17
+(1959).
+061
+
+Z. Macierewicz, " Sprawozdania Posiedzen Towarz. Nauk.", Warszaw III. Nauk. Mat. Fiz., 32
+37 (1939); Roczniki Chem. 24 144 (1950).
+062
+
+O. R. Gottlieb, M. T. Magalhaes and W. B. Mors, " The Chemistry of rosewood. V. 4-
+Methoxyphenylcoumalin ", Anais. assoc. brasil. quim., 18 37 (1959).
+063
+W. B. Mors, M. T. Magalhaes and O. R. Gottlieb, " Naturally occurring aromatic derivatives of
+monocyclic alpha-Pyrones ", Fortsch. Chem. Org. Natur., 20 131 (1962).
+

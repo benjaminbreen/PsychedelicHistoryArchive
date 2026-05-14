@@ -1,6 +1,6 @@
 import { sources as fallbackSources } from "@/lib/archive-data";
 import { getStoragePublicUrl, getSupabaseClient } from "@/lib/supabase";
-import type { AccessType, ArchiveSource, HostingStatus, SourceType } from "@/lib/types";
+import type { AccessType, ArchiveSource, HostingStatus, SourceCreator, SourceFigure, SourceFile, SourceLineBox, SourcePage, SourcePageLine, SourceType, TranscriptSection } from "@/lib/types";
 
 type DocumentRow = {
   id: string;
@@ -23,14 +23,129 @@ type DocumentRow = {
   thumbnail_path: string | null;
   is_featured: boolean | null;
   published_at: string | null;
-  pages?: Array<{ ocr_text: string | null }>;
-  files?: Array<{ storage_path: string | null; kind: string | null }>;
+  pages?: PageRow[];
+  files?: FileRow[];
   document_tags?: Array<{ tags: RelatedTag | RelatedTag[] | null }>;
   document_people?: Array<{ role: string | null; people: RelatedPerson | RelatedPerson[] | null }>;
 };
 
 type RelatedTag = { name: string | null; tag_type: string | null };
 type RelatedPerson = { name: string | null };
+const CORE_TOPIC_TAGS = [
+  "Anesthesia",
+  "Clinical",
+  "Therapy",
+  "Psychiatry",
+  "Psychosis",
+  "Consciousness",
+  "Mysticism",
+  "Religion",
+  "Philosophy",
+  "Literature",
+  "Poetry",
+  "Counterculture",
+  "Law",
+  "Prohibition",
+  "Military",
+  "Intelligence",
+  "Indigenous",
+  "Ethnobotany",
+  "Pharmacology",
+  "Medicine",
+  "Self-Experiment",
+  "Trip Reports",
+  "Oral History",
+  "Visual Culture",
+  "Networks"
+] as const;
+
+const CORE_TAG_SET = new Set<string>(CORE_TOPIC_TAGS);
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const TOPIC_TAG_MAP: Record<string, string> = {
+  "altered states": "Consciousness",
+  "altered states of consciousness": "Consciousness",
+  "anaesthesia": "Anesthesia",
+  "anesthesia": "Anesthesia",
+  "anaesthetic revelation": "Anesthesia",
+  "anesthetic revelation": "Anesthesia",
+  "clinical research": "Clinical",
+  "counterculture": "Counterculture",
+  "esalen": "Networks",
+  "ethnobotany": "Ethnobotany",
+  "experimental science; self-experiment report": "Self-Experiment",
+  "experimental science": "Clinical",
+  "first person accounts": "Trip Reports",
+  "literature": "Literature",
+  "medical history": "Medicine",
+  "medicine": "Medicine",
+  "mental research institute": "Networks",
+  "mysticism": "Mysticism",
+  "oral history": "Oral History",
+  "pharmacology": "Pharmacology",
+  "philosophy": "Philosophy",
+  "poetry": "Poetry",
+  "psychiatry": "Psychiatry",
+  "psychology": "Psychiatry",
+  "psychosis": "Psychosis",
+  "religion": "Religion",
+  "self-experimentation": "Self-Experiment",
+  "therapy": "Therapy",
+  "trip reports": "Trip Reports",
+  "visual culture": "Visual Culture"
+};
+
+const SUBSTANCE_TAG_MAP: Record<string, string> = {
+  ayahuasca: "Ayahuasca",
+  cannabis: "Cannabis",
+  chloroform: "Chloroform",
+  cocaine: "Cocaine",
+  dmt: "DMT",
+  ether: "Ether",
+  ibogaine: "Ibogaine",
+  ketamine: "Ketamine",
+  lsd: "LSD",
+  mdma: "MDMA",
+  mescal: "Mescaline",
+  mescaline: "Mescaline",
+  "nitrous oxide": "Nitrous Oxide",
+  "nitrous oxide and ether": "Nitrous Oxide",
+  peyote: "Peyote",
+  psilocybin: "Psilocybin",
+  yage: "Ayahuasca",
+  yagé: "Ayahuasca"
+};
+type PageLineRow = {
+  id: string;
+  line_index: number | null;
+  text: string | null;
+  normalized_text: string | null;
+  bbox: unknown;
+  confidence: number | null;
+  language: string | null;
+  paragraph_index: number | null;
+};
+type PageRow = {
+  id: string;
+  page_number: number | null;
+  label: string | null;
+  readable_image_path: string | null;
+  thumbnail_image_path: string | null;
+  image_width: number | null;
+  image_height: number | null;
+  language: string | null;
+  ocr_text: string | null;
+  ocr_confidence: number | null;
+  transcription_status: string | null;
+  page_lines?: PageLineRow[];
+};
+type FileRow = {
+  id: string;
+  kind: string | null;
+  storage_path: string | null;
+  mime_type: string | null;
+  byte_size: number | null;
+};
 
 const DOCUMENT_SELECT = `
   id,
@@ -53,8 +168,30 @@ const DOCUMENT_SELECT = `
   thumbnail_path,
   is_featured,
   published_at,
-  pages(ocr_text),
-  files(storage_path, kind),
+  pages(
+    id,
+    page_number,
+    label,
+    readable_image_path,
+    thumbnail_image_path,
+    image_width,
+    image_height,
+    language,
+    ocr_text,
+    ocr_confidence,
+    transcription_status,
+    page_lines(
+      id,
+      line_index,
+      text,
+      normalized_text,
+      bbox,
+      confidence,
+      language,
+      paragraph_index
+    )
+  ),
+  files(id, storage_path, kind, mime_type, byte_size),
   document_tags(tags(name, tag_type)),
   document_people(role, people(name))
 `;
@@ -107,22 +244,38 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
       ?.map((item) => firstRelated(item.people)?.name)
       .filter(Boolean) as string[] | undefined
   );
+  const publicPeople = people.filter(isPublicPersonName);
   const substances = unique(
-    document.document_tags
-      ?.filter((item) => firstRelated(item.tags)?.tag_type === "substance")
-      .map((item) => firstRelated(item.tags)?.name)
-      .filter(Boolean) as string[] | undefined
+    [
+      ...(document.document_tags
+        ?.filter((item) => firstRelated(item.tags)?.tag_type === "substance")
+        .map((item) => firstRelated(item.tags)?.name)
+        .filter(Boolean) as string[] | undefined) ?? [],
+      ...tags.map(toSubstanceTag).filter(Boolean)
+    ] as string[]
   );
-  const transcript = document.pages?.map((page) => page.ocr_text).filter(Boolean).join("\n\n") ?? "";
+  const pages = mapPages(document.pages);
+  const files = mapFiles(document.files);
+  const rawTranscript = pages.map((page) => page.ocrText).filter(Boolean).join("\n\n");
   const imagePath = document.thumbnail_path || document.cover_image_path || firstImagePath(document.files);
   const title = document.title;
   const year = document.date_start ?? yearFromDisplayDate(document.display_date) ?? 0;
+  const parsedCreators = parseCreatorsFromTranscript(rawTranscript);
+  const relationCreators = creatorsFromRelations(document.document_people);
+  const creators = uniqueCreators([...parsedCreators, ...relationCreators]).filter((creator) => isPublicPersonName(creator.name));
+  const authorNames = creators
+    .filter((creator) => ["author", "speaker", "recordist"].includes(creator.role))
+    .map((creator) => creator.name);
+  const figures = extractTranscriptFigures(rawTranscript, getStoragePublicUrl(imagePath), title);
+  const transcript = cleanTranscriptText(rawTranscript);
+  const transcriptSections = buildTranscriptSections(transcript);
+  const topicTags = unique(tags.map(toCoreTopicTag).filter(Boolean) as string[]);
 
   return {
     id: document.id,
     slug: document.slug,
     title,
-    author: people[0] ?? "The Psychedelic History Archive",
+    author: formatNames(authorNames) || formatNames(publicPeople) || "The Psychedelic History Archive",
     year,
     displayDate: document.display_date || (year ? String(year) : "Undated"),
     type: normalizeType(document.document_type),
@@ -130,8 +283,10 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
     era: eraForYear(year),
     region: document.region || "Unknown",
     language: document.language || "English",
-    tags,
-    people,
+    tags: topicTags,
+    legacyTags: tags,
+    people: publicPeople,
+    creators,
     substances,
     summary: document.summary || document.abstract || "",
     excerpt: excerptFromTranscript(transcript, document.summary || ""),
@@ -146,7 +301,11 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
     imageTone: imageToneForType(document.document_type),
     imagePath: getStoragePublicUrl(imagePath),
     imageAlt: title,
-    transcript
+    transcript,
+    transcriptSections,
+    figures,
+    pages,
+    files
   };
 }
 
@@ -156,6 +315,171 @@ function firstImagePath(files?: DocumentRow["files"]) {
 
 function unique(values: string[] = []) {
   return [...new Set(values.filter(Boolean))];
+}
+
+function isPublicPersonName(value: string) {
+  const trimmed = value.trim();
+  return Boolean(trimmed) && !EMAIL_PATTERN.test(trimmed);
+}
+
+function creatorsFromRelations(relations: DocumentRow["document_people"] = []): SourceCreator[] {
+  return relations
+    .map((item) => {
+      const name = firstRelated(item.people)?.name?.trim();
+      const role = normalizeCreatorRole(item.role || "person");
+      return name ? { name, role } : undefined;
+    })
+    .filter(Boolean) as SourceCreator[];
+}
+
+function parseCreatorsFromTranscript(transcript: string): SourceCreator[] {
+  const match = transcript.match(/^\s*authors?\s*:\s*(.+)$/im);
+  if (!match) return [];
+
+  return splitNames(match[1]).map((name) => ({
+    name,
+    role: "author"
+  }));
+}
+
+function splitNames(value: string) {
+  return value
+    .replace(/\s+and\s+/gi, ", ")
+    .split(/\s*,\s*/)
+    .map((name) => name.trim().replace(/\s+/g, " "))
+    .filter(isPublicPersonName);
+}
+
+function normalizeCreatorRole(role: string) {
+  const normalized = role.toLowerCase().trim();
+  if (["author", "speaker", "recordist", "transcriber", "editor", "subject"].includes(normalized)) return normalized;
+  return normalized || "person";
+}
+
+function uniqueCreators(creators: SourceCreator[]) {
+  const seen = new Set<string>();
+  return creators.filter((creator) => {
+    const key = `${creator.name.toLowerCase()}::${creator.role.toLowerCase()}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function formatNames(names: string[]) {
+  const uniqueNames = unique(names);
+  if (uniqueNames.length <= 2) return uniqueNames.join(" and ");
+  return `${uniqueNames.slice(0, -1).join(", ")}, and ${uniqueNames.at(-1)}`;
+}
+
+function toCoreTopicTag(value: string) {
+  const trimmed = value.trim();
+  if (CORE_TAG_SET.has(trimmed)) return trimmed;
+  return TOPIC_TAG_MAP[trimmed.toLowerCase()];
+}
+
+function toSubstanceTag(value: string) {
+  return SUBSTANCE_TAG_MAP[value.trim().toLowerCase()] ?? "";
+}
+
+function extractTranscriptFigures(transcript: string, imagePath: string | undefined, title: string): SourceFigure[] {
+  const figures: SourceFigure[] = [];
+  const captionPattern = /\[caption[^\]]*\]([\s\S]*?)\[\/caption\]/gi;
+  let match: RegExpExecArray | null;
+  let index = 0;
+
+  while ((match = captionPattern.exec(transcript))) {
+    const caption = cleanCaption(match[1]);
+    if (!caption) continue;
+    figures.push({
+      id: `figure-${index + 1}`,
+      imagePath,
+      alt: title,
+      caption,
+      position: "before_overview"
+    });
+    index += 1;
+  }
+
+  return figures;
+}
+
+function cleanCaption(value: string) {
+  return value
+    .replace(/<img\b[^>]*>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function cleanTranscriptText(transcript: string) {
+  const withoutCaptions = transcript.replace(/\[caption[^\]]*\][\s\S]*?\[\/caption\]/gi, "\n\n");
+  const lines = withoutCaptions.split(/\r?\n/);
+
+  while (lines.length && (!lines[0].trim() || /^(authors?|date|source)\s*:/i.test(lines[0].trim()))) {
+    lines.shift();
+  }
+
+  return lines.join("\n").replace(/\n{3,}/g, "\n\n").trim();
+}
+
+function buildTranscriptSections(transcript: string): TranscriptSection[] {
+  const lines = transcript.split(/\r?\n/);
+  const sections: TranscriptSection[] = [];
+  let current: TranscriptSection | undefined;
+  let paragraphBuffer: string[] = [];
+
+  function flushParagraph() {
+    if (!current || !paragraphBuffer.length) return;
+    const paragraph = paragraphBuffer.join(" ").replace(/\s+/g, " ").trim();
+    if (paragraph) current.paragraphs.push(paragraph);
+    paragraphBuffer = [];
+  }
+
+  function startSection(heading: string) {
+    flushParagraph();
+    current = {
+      heading,
+      kind: sectionKind(heading),
+      paragraphs: []
+    };
+    sections.push(current);
+  }
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      flushParagraph();
+      continue;
+    }
+
+    const heading = normalizeTranscriptHeading(trimmed);
+    if (heading) {
+      startSection(heading);
+      continue;
+    }
+
+    if (!current) startSection("Transcript");
+    paragraphBuffer.push(trimmed);
+  }
+
+  flushParagraph();
+  return sections.filter((section) => section.paragraphs.length);
+}
+
+function normalizeTranscriptHeading(value: string) {
+  const normalized = value.replace(/\s+/g, " ").trim().toLowerCase();
+  if (normalized === "historical overview") return "Historical Overview";
+  if (/^(partial\s+)?(full\s+)?transcript(ion)?(\s+of\s+the\s+tape)?$/.test(normalized)) return "Transcript";
+  if (/^(complete\s+)?transcription$/.test(normalized)) return "Transcript";
+  if (normalized === "notes" || normalized === "editorial notes") return "Notes";
+  return "";
+}
+
+function sectionKind(heading: string): TranscriptSection["kind"] {
+  if (heading === "Historical Overview") return "overview";
+  if (heading === "Transcript") return "transcript";
+  return "note";
 }
 
 function firstRelated<T>(value: T | T[] | null | undefined) {
@@ -210,4 +534,71 @@ function imageToneForType(type: string | null): ArchiveSource["imageTone"] {
   if (type === "Manuscript" || type === "Field Notes") return "letter";
   if (type === "Book" || type === "Newspaper Article") return "paper";
   return "paper";
+}
+
+function mapPages(pages: PageRow[] = []): SourcePage[] {
+  return [...pages]
+    .sort((a, b) => (a.page_number ?? 0) - (b.page_number ?? 0))
+    .map((page) => {
+      const lines = mapPageLines(page.page_lines);
+
+      return {
+        id: page.id,
+        pageNumber: page.page_number ?? 0,
+        label: page.label || String(page.page_number ?? ""),
+        imagePath: getStoragePublicUrl(page.readable_image_path),
+        thumbnailPath: getStoragePublicUrl(page.thumbnail_image_path),
+        imageWidth: page.image_width ?? undefined,
+        imageHeight: page.image_height ?? undefined,
+        language: page.language ?? undefined,
+        ocrText: page.ocr_text ?? lines.map((line) => line.text).join("\n"),
+        ocrConfidence: page.ocr_confidence ?? undefined,
+        transcriptionStatus: page.transcription_status ?? undefined,
+        lines
+      };
+    });
+}
+
+function mapPageLines(lines: PageLineRow[] = []): SourcePageLine[] {
+  return [...lines]
+    .sort((a, b) => (a.line_index ?? 0) - (b.line_index ?? 0))
+    .filter((line) => line.text)
+    .map((line, index) => ({
+      id: line.id,
+      index: line.line_index ?? index + 1,
+      text: line.text ?? "",
+      normalizedText: line.normalized_text ?? undefined,
+      confidence: line.confidence ?? undefined,
+      language: line.language ?? undefined,
+      paragraphIndex: line.paragraph_index ?? undefined,
+      box: normalizeBox(line.bbox)
+    }));
+}
+
+function normalizeBox(value: unknown): SourceLineBox | undefined {
+  if (!value || typeof value !== "object") return undefined;
+  const box = value as Partial<Record<keyof SourceLineBox, unknown>>;
+  const x = numberFromBox(box.x);
+  const y = numberFromBox(box.y);
+  const width = numberFromBox(box.width);
+  const height = numberFromBox(box.height);
+
+  if (x === undefined || y === undefined || width === undefined || height === undefined) return undefined;
+  return { x, y, width, height };
+}
+
+function numberFromBox(value: unknown) {
+  return typeof value === "number" && Number.isFinite(value) ? value : undefined;
+}
+
+function mapFiles(files: FileRow[] = []): SourceFile[] {
+  return files
+    .filter((file) => file.id && file.kind && file.storage_path)
+    .map((file) => ({
+      id: file.id,
+      kind: file.kind ?? "",
+      url: getStoragePublicUrl(file.storage_path),
+      mimeType: file.mime_type ?? undefined,
+      byteSize: file.byte_size ?? undefined
+    }));
 }

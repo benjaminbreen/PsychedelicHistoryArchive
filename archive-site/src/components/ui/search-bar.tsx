@@ -29,7 +29,7 @@ export function SearchBar({
       />
       <input
         className={clsx(
-          "focus-ring w-full rounded-md border border-archive-line bg-white text-archive-ink shadow-sm transition placeholder:text-archive-muted",
+          "focus-ring w-full rounded-md border border-archive-line bg-archive-surface text-archive-ink shadow-sm transition placeholder:text-archive-muted",
           submitLabel && "rounded-r-none",
           size === "lg"
             ? submitLabel
@@ -44,7 +44,7 @@ export function SearchBar({
       />
       {submitLabel && (
         <button
-          className="focus-ring absolute right-0 top-0 h-full rounded-r-md border border-archive-ink/60 bg-[#F4EDF8] px-5 text-sm font-semibold transition hover:bg-[#EEE0F8]"
+          className="focus-ring absolute right-0 top-0 h-full rounded-r-md border border-archive-line bg-archive-lavender px-5 text-sm font-semibold text-archive-ink transition hover:bg-archive-violet hover:text-white"
           type="submit"
         >
           {submitLabel}

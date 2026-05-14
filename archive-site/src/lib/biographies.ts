@@ -42,6 +42,11 @@ const canonicalPersonNames: Record<string, string> = {
 };
 
 const biographyDirectoryMetadata: Record<string, BiographyDirectoryMetadata> = {
+  "alexander-shulgin": {
+    years: "1925-2014",
+    role: "Chemist, Psychopharmacologist",
+    tags: ["Chemistry", "Psychopharmacology"]
+  },
   "benjamin-paul-blood": {
     years: "1832-1919",
     role: "Philosopher, Mystic",
@@ -72,6 +77,16 @@ const biographyDirectoryMetadata: Record<string, BiographyDirectoryMetadata> = {
     role: "Jesuit, Missionary",
     tags: ["Amazonia", "Ethnobotany"]
   },
+  "garcia-de-orta": {
+    years: "1501-1568",
+    role: "Physician, Naturalist",
+    tags: ["Goa", "Materia Medica", "Cannabis"]
+  },
+  "gerardo-reichel-dolmatoff": {
+    years: "1912-1994",
+    role: "Anthropologist, Archaeologist",
+    tags: ["Colombia", "Amazonia", "Ethnography"]
+  },
   "george-draper": {
     years: "1915-1992",
     role: "Journalist",
@@ -86,6 +101,11 @@ const biographyDirectoryMetadata: Record<string, BiographyDirectoryMetadata> = {
     years: "1915-2001",
     role: "Neuroscientist, Writer",
     tags: ["Neuroscience", "Consciousness"]
+  },
+  "j-g-soares-maia": {
+    years: "20th-21st c.",
+    role: "Natural-Products Chemist",
+    tags: ["Brazil", "Amazonia", "Phytochemistry"]
   },
   "luisa-de-alvarez-de-toledo": {
     years: "1915-1990",
@@ -116,6 +136,11 @@ const biographyDirectoryMetadata: Record<string, BiographyDirectoryMetadata> = {
     years: "1842-1910",
     role: "Philosopher, Psychologist",
     tags: ["Psychology", "Philosophy"]
+  },
+  "william-antonio-rodrigues": {
+    years: "1928-",
+    role: "Botanist",
+    tags: ["Brazil", "Amazonia", "Virola"]
   }
 };
 
@@ -176,6 +201,31 @@ const biographyPortraits: Record<string, BiographyPortrait> = {
 
 export const biographyProfiles: BiographyProfile[] = [
   {
+    name: "Alexander Shulgin",
+    slug: "alexander-shulgin",
+    years: "1925-2014",
+    dek: "American chemist and psychopharmacologist whose work moved between industrial chemistry, psychedelic synthesis, self-experimentation, and the ethnobotanical pharmacology of psychoactive plants.",
+    tags: ["Chemistry", "Psychopharmacology", "Kava", "MDMA", "Phenethylamines", "Tryptamines"],
+    facts: [
+      { label: "Born", value: "June 17, 1925\nBerkeley, California" },
+      { label: "Died", value: "June 2, 2014\nLafayette, California" },
+      { label: "Occupation", value: "Chemist, psychopharmacologist, author" },
+      { label: "Region", value: "United States; Oceania as research subject" },
+      { label: "Known for", value: "MDMA research; PiHKAL and TiHKAL; psychoactive phenethylamines and tryptamines" }
+    ],
+    paragraphs: [
+      "Alexander Theodore Shulgin was born in Berkeley, California in 1925 and trained in chemistry after service in the U.S. Navy. He worked at Dow Chemical, where he developed the first biodegradable pesticide, then built an independent career around the synthesis, classification, and phenomenological study of psychoactive compounds.",
+      "Shulgin is best known for his later work with MDMA and for the books PiHKAL and TiHKAL, co-authored with Ann Shulgin. Those works made him a central figure in late twentieth-century psychedelic chemistry, but his published record also included more conventional reviews of plant chemistry and pharmacology.",
+      "The 1973 article on Piper methysticum belongs to that broader side of Shulgin's work. Written for the Bulletin on Narcotics, it places kava in a comparative frame that includes Pacific preparation practices, uncertain pharmacological classification, and the chemistry of kavalactones and related Piper species.",
+      "For the archive, Shulgin's kava article is useful because it moves away from LSD and psilocybin while showing how a chemist associated with synthetic psychedelics also engaged global plant intoxicants and the technical vocabulary of international drug-control science."
+    ],
+    sourceNotes: [
+      "Shulgin, Alexander T. \"The Narcotic Pepper: The Chemistry and Pharmacology of Piper methysticum and Related Species.\" Bulletin on Narcotics 25, no. 2 (1973): 59-74.",
+      "Shulgin, Alexander, and Ann Shulgin. PiHKAL: A Chemical Love Story, 1991.",
+      "Washington Post and Los Angeles Times obituaries of Alexander Shulgin, June 2014."
+    ]
+  },
+  {
     name: "Claudio Naranjo",
     slug: "claudio-naranjo",
     years: "1932-2019",
@@ -201,6 +251,80 @@ export const biographyProfiles: BiographyProfile[] = [
       "Naranjo, Claudio. \"Psychotropic Properties of the Harmala Alkaloids,\" in Ethnopharmacologic Search for Psychoactive Drugs, 1967.",
       "PubMed record for \"Ayahuasca, caapi, yage. Psychotropic properties of the harmala alkaloids,\" Psychopharmacology Bulletin 4, no. 3 (December 1967): 16-17.",
       "Wikimedia Commons, \"Claudio Naranjo close-up (cropped).JPG,\" photograph by Alessandra Callegari, CC0."
+    ]
+  },
+  {
+    name: "Gerardo Reichel-Dolmatoff",
+    slug: "gerardo-reichel-dolmatoff",
+    years: "1912-1994",
+    dek: "Austrian-born Colombian anthropologist and archaeologist whose work on Tukano cosmology, yaje, and Indigenous knowledge shaped the anthropology of Amazonian altered states.",
+    tags: ["Colombia", "Amazonia", "Tukano", "Yaje", "Ethnography", "Archaeology"],
+    facts: [
+      { label: "Born", value: "March 6, 1912\nSalzburg, Austria-Hungary" },
+      { label: "Died", value: "May 17, 1994\nBogota, Colombia" },
+      { label: "Occupation", value: "Anthropologist, archaeologist, ethnographer" },
+      { label: "Region", value: "Colombia; Northwest Amazon" },
+      { label: "Known for", value: "Colombian anthropology and archaeology; Tukano ethnography; writing on yaje and Amazonian cosmology" }
+    ],
+    paragraphs: [
+      "Gerardo Reichel-Dolmatoff was born in Salzburg in 1912 and moved to Colombia in 1939, becoming a Colombian citizen in the early 1940s. Over the next decades he became one of the most visible figures in Colombian anthropology and archaeology, carrying out fieldwork among Indigenous and rural communities across the Caribbean coast, the Sierra Nevada de Santa Marta, the Pacific coast, the Llanos Orientales, and the Amazon.",
+      "His psychedelic-historical importance lies especially in his writing on Tukano-speaking peoples of the Vaupes and the cultural place of yaje, or caapi. In the 1969 article staged here, Reichel-Dolmatoff argued that Banisteriopsis caapi could not be understood only through botany, chemistry, or psychology. Its effects, he suggested, had to be read within a wider system of mythology, ritual performance, visual symbolism, social memory, and techniques for managing perception.",
+      "That argument made the article a useful counterpoint to laboratory accounts of harmaline and ayahuasca chemistry. Reichel-Dolmatoff treated the visionary experience as a culturally organized event rather than a simple pharmacological episode, and his account helped place Indigenous Amazonian knowledge at the center of debates about psychedelic experience.",
+      "Reichel-Dolmatoff's legacy is also contested. Later scholarship and journalism have examined evidence concerning his political activities in Austria before his migration to Colombia, including allegations of involvement with Nazi organizations. That history complicates any simple celebration of his career, while not eliminating the importance of reading his ethnographic work critically within the history of Colombian anthropology.",
+      "For the archive, his caapi article is valuable because it widens the collection from clinical psychedelic research toward the Indigenous, Colombian, and Amazonian contexts that made substances such as ayahuasca historically intelligible."
+    ],
+    sourceNotes: [
+      "Reichel-Dolmatoff, Gerardo. \"El contexto cultural de un alucinogeno aborigen: Banisteriopsis caapi.\" Revista de la Academia Colombiana de Ciencias Exactas, Fisicas y Naturales 13, no. 51 (1969): 327-345.",
+      "Banco de la Republica, Enciclopedia Banrepcultural, \"Gerardo Reichel-Dolmatoff.\"",
+      "Malcolm Deas, \"Obituary: Gerardo Reichel-Dolmatoff,\" The Independent, May 23, 1994.",
+      "Augusto Oyuela-Caycedo, later biographical research on Reichel-Dolmatoff's early life in Austria."
+    ]
+  },
+  {
+    name: "Garcia de Orta",
+    slug: "garcia-de-orta",
+    years: "1501-1568",
+    dek: "Portuguese physician and naturalist in Goa whose Colloquies recorded South Asian materia medica through direct observation, dialogue, commerce, and medical practice.",
+    tags: ["Goa", "India", "Cannabis", "Materia Medica", "Portuguese Empire", "Early Modern Medicine"],
+    facts: [
+      { label: "Born", value: "1501\nCastelo de Vide, Portugal" },
+      { label: "Died", value: "1568\nGoa, Portuguese India" },
+      { label: "Occupation", value: "Physician, naturalist, herbalist" },
+      { label: "Region", value: "Portugal; Goa; Indian Ocean" },
+      { label: "Known for", value: "Colóquios dos simples e drogas da India; early European descriptions of South Asian drugs and medicinal plants" }
+    ],
+    paragraphs: [
+      "Garcia de Orta was born in Portugal in 1501 into a converso family and trained as a physician before moving to Portuguese India in the 1530s. He lived and worked chiefly in Goa, where he practiced medicine, traded, and gathered information from physicians, merchants, patients, servants, and local specialists.",
+      "His Colóquios dos simples e drogas da India, printed in Goa in 1563, is one of the earliest European books based substantially on direct observation of South Asian medicinal plants, spices, and drugs. Its dialogue form stages medical knowledge as a conversation rather than as a simple compilation from classical authorities.",
+      "The short colloquy on bangue is important for the history of cannabis because it records bhang as a South Asian preparation with bodily, social, and imaginative effects. Orta connects it with appetite, laughter, sleep, pleasure, opium, nutmeg, mace, and stories of elite use, while also marking his own distance from the practice.",
+      "For the archive, Orta helps anchor psychoactive plant history in the Indian Ocean and early modern Portuguese empire rather than in the familiar twentieth-century psychedelic canon."
+    ],
+    sourceNotes: [
+      "Garcia de Orta, Colóquios dos simples e drogas da India, Goa, 1563.",
+      "Garcia de Orta, Colloquies on the Simples and Drugs of India, translated by Clements Markham, London, 1913.",
+      "Rice University Galileo Project entry on Garcia de Orta."
+    ]
+  },
+  {
+    name: "J. G. Soares Maia",
+    slug: "j-g-soares-maia",
+    years: "20th-21st century",
+    dek: "Brazilian natural-products chemist associated with Amazonian phytochemistry, including early chemical work on Virola theiodora at the Instituto Nacional de Pesquisas da Amazônia.",
+    tags: ["Brazil", "Amazonia", "Phytochemistry", "Virola", "INPA"],
+    facts: [
+      { label: "Occupation", value: "Natural-products chemist" },
+      { label: "Region", value: "Brazil; Amazonia" },
+      { label: "Institution", value: "Instituto Nacional de Pesquisas da Amazônia; Universidade Federal do Pará" },
+      { label: "Known for", value: "Amazonian plant chemistry; aromatic and medicinal plants; Virola theiodora" }
+    ],
+    paragraphs: [
+      "J. G. Soares Maia, also cited as José Guilherme Soares Maia, is a Brazilian chemist whose work belongs to the development of natural-products chemistry in Amazonian research institutions. In the 1970s he was affiliated with the Instituto Nacional de Pesquisas da Amazônia, where chemistry, botany, and ethnobotanical collection increasingly overlapped.",
+      "The 1974 article co-authored with William Antônio Rodrigues is short but useful: it connects herbarium comparison, chromatography, infrared spectroscopy, and ultraviolet spectroscopy to Indigenous Yomanê preparations from the Tototobi River region. Its focus is not visionary narrative but the chemical confirmation of Virola theiodora as both hallucinogenic snuff and arrow poison.",
+      "For the archive, Maia's work helps represent a Brazilian scientific literature on Amazonian psychoactive plants, distinct from the better-known North American and European ethnobotanical writings that often cite the same materials from afar."
+    ],
+    sourceNotes: [
+      "Maia, J. G. Soares, and William Antônio Rodrigues. \"Virola theiodora como alucinógena e tóxica.\" Acta Amazonica 4, no. 1 (1974): 21-23.",
+      "Maia, J. G. Soares. \"A pesquisa em Química no INPA.\" Acta Amazonica 11, no. 1, suplemento (1981)."
     ]
   },
   {
@@ -247,6 +371,29 @@ export const biographyProfiles: BiographyProfile[] = [
       "Nabor Carrillo",
       "National Autonomous University of Mexico (UNAM)",
       "National Polytechnic Institute (IPN)"
+    ]
+  },
+  {
+    name: "William Antônio Rodrigues",
+    slug: "william-antonio-rodrigues",
+    years: "1928-",
+    dek: "Brazilian botanist associated with INPA whose taxonomic work on Amazonian plants included the genus Virola, a major source of Indigenous psychoactive snuffs.",
+    tags: ["Brazil", "Amazonia", "Botany", "Virola", "Myristicaceae"],
+    facts: [
+      { label: "Born", value: "1928\nSão João del Rei, Brazil" },
+      { label: "Occupation", value: "Botanist" },
+      { label: "Region", value: "Brazil; Amazonia" },
+      { label: "Institution", value: "Instituto Nacional de Pesquisas da Amazônia" },
+      { label: "Known for", value: "Taxonomic work on Amazonian plants, including Virola" }
+    ],
+    paragraphs: [
+      "William Antônio Rodrigues is a Brazilian botanist born in São João del Rei in 1928. His work is closely associated with Amazonian botany and the Instituto Nacional de Pesquisas da Amazônia, where botanical taxonomy, herbarium collections, and natural-products chemistry supplied a shared infrastructure for studying tropical plants.",
+      "Rodrigues's contribution to the 1974 Virola theiodora article reflects that botanical context. The paper depends on comparing Yomanê snuff and arrow-poison materials with herbarium specimens of Virola, including V. theiodora and related species.",
+      "For psychedelic history, Rodrigues matters less as a public psychedelic figure than as part of the scientific apparatus that made Amazonian psychoactive plants legible to chemistry, taxonomy, and pharmacology in Brazil."
+    ],
+    sourceNotes: [
+      "Maia, J. G. Soares, and William Antônio Rodrigues. \"Virola theiodora como alucinógena e tóxica.\" Acta Amazonica 4, no. 1 (1974): 21-23.",
+      "Rodrigues, William Antônio. \"Revisão taxonômica das espécies de Virola Aublet (Myristicaceae) do Brasil.\" Acta Amazonica 10, no. 1, suplemento (1980)."
     ]
   },
   {

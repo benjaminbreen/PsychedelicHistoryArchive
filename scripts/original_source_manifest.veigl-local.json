@@ -1,0 +1,27 @@
+{
+  "sources": [
+    {
+      "document_id": "2e05bf1b-3ea1-5d99-bbfb-2b610809ad4c",
+      "slug": "veigl-ayahuasca",
+      "language": "Latin",
+      "pages": [
+        {
+          "page_number": 137,
+          "label": "137",
+          "local_path": "data/squarespace-import/images/veigl-ayahuasca/02-content.jpeg",
+          "mime_type": "image/jpeg",
+          "width": 500,
+          "height": 865
+        },
+        {
+          "page_number": 138,
+          "label": "138",
+          "local_path": "data/squarespace-import/images/veigl-ayahuasca/01-content-2.jpeg",
+          "mime_type": "image/jpeg",
+          "width": 512,
+          "height": 786
+        }
+      ]
+    }
+  ]
+}

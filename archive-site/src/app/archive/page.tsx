@@ -24,7 +24,7 @@ export default async function ArchivePage({ searchParams }: ArchivePageProps) {
   const results = filterArchiveSources(sources, params);
   const view = params.view === "grid" ? "grid" : "list";
   const queryString = toQueryString(params, ["view"]);
-  const featured = sources.find((source) => source.featured) ?? sources[0];
+  const featured = shouldShowFeaturedSource(params) ? getContextualFeaturedSource(results) : undefined;
   const pageEra = params.era ?? "All eras";
   const pageIntro = params.era
     ? "Browse sources for this era using the filters, search controls, and sort options below."
@@ -47,7 +47,7 @@ export default async function ArchivePage({ searchParams }: ArchivePageProps) {
             sources={sources}
           />
           <div>
-            <section className="grid gap-6 border-b border-archive-line pb-6 xl:grid-cols-[1fr_30rem]">
+            <section className={`grid gap-6 border-b border-archive-line pb-6 ${featured ? "xl:grid-cols-[1fr_30rem]" : ""}`}>
               <div className="pt-2">
                 <h1 className="font-display text-4xl font-semibold uppercase leading-none tracking-[0.01em] sm:text-5xl">
                   {pageEra}
@@ -59,7 +59,7 @@ export default async function ArchivePage({ searchParams }: ArchivePageProps) {
                   </Link>
                 </p>
               </div>
-              <FeaturedArchiveSource source={featured} />
+              {featured && <FeaturedArchiveSource source={featured} />}
             </section>
 
             <section className="pt-5">
@@ -93,7 +93,7 @@ export default async function ArchivePage({ searchParams }: ArchivePageProps) {
               )}
 
               {results.length === 0 && (
-                <div className="rounded-lg border border-archive-line bg-white p-8 text-center">
+                <div className="rounded-lg border border-archive-line bg-archive-surface p-8 text-center">
                   <SectionHeading title="No sources found" />
                   <p className="text-archive-muted">Try clearing filters or searching a broader term.</p>
                   <ButtonLink className="mt-5" href="/archive" variant="outline">
@@ -110,9 +110,20 @@ export default async function ArchivePage({ searchParams }: ArchivePageProps) {
   );
 }
 
+function shouldShowFeaturedSource(params: ArchiveSearchParams) {
+  return Boolean(params.era && params.medium);
+}
+
+function getContextualFeaturedSource(results: ArchiveSource[]) {
+  const featured = results.find((source) => source.featured);
+  if (featured) return featured;
+
+  return [...results].sort((a, b) => a.year - b.year || a.title.localeCompare(b.title))[0];
+}
+
 function FeaturedArchiveSource({ source }: { source: ArchiveSource }) {
   return (
-    <aside className="rounded-md bg-[#F5EEFF] p-5 shadow-[0_10px_28px_rgba(123,75,216,0.06)]">
+    <aside className="rounded-md border border-archive-line bg-archive-lavender2 p-5 shadow-[0_10px_28px_rgb(var(--archive-shadow)/0.08)]">
       <article className="grid min-h-[9.5rem] items-start gap-5 sm:grid-cols-[1fr_12.25rem]">
         <div className="min-w-0">
           <div className="mb-4 font-display text-[0.83rem] font-semibold uppercase leading-none tracking-[0.18em] text-archive-violet">

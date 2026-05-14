@@ -72,9 +72,9 @@ export default async function PeoplePage() {
           }
         />
 
-        <section className="mt-5 rounded-md border border-[#E1DCE7] bg-white/60 p-3">
+        <section className="mt-5 rounded-md border border-archive-line bg-archive-surface/60 p-3">
           <div className="grid gap-3 xl:grid-cols-[minmax(18rem,1fr)_10.25rem_10.25rem_10.25rem_10.25rem]">
-            <div className="flex min-h-10 items-center gap-3 rounded-md border border-[#E1DCE7] bg-white px-3.5 text-[0.82rem] text-archive-muted">
+            <div className="flex min-h-10 items-center gap-3 rounded-md border border-archive-line bg-archive-surface px-3.5 text-[0.82rem] text-archive-muted">
               <Search className="h-3.5 w-3.5" />
               <span>Search people by name, field, or keyword...</span>
               <button className="ml-auto hidden rounded bg-archive-violet px-4 py-1.5 text-[0.78rem] font-semibold text-white sm:block" type="button">
@@ -109,7 +109,7 @@ export default async function PeoplePage() {
 
 function FilterButton({ icon, label }: { icon?: React.ReactNode; label: string }) {
   return (
-    <button className="focus-ring inline-flex min-h-10 items-center justify-center gap-2 rounded-md border border-[#E1DCE7] bg-white px-3 text-[0.8rem] font-semibold text-archive-ink transition hover:border-archive-violet/40 hover:bg-[#FDFBFF]" type="button">
+    <button className="focus-ring inline-flex min-h-10 items-center justify-center gap-2 rounded-md border border-archive-line bg-archive-surface px-3 text-[0.8rem] font-semibold text-archive-ink transition hover:border-archive-violet/40 hover:bg-archive-lavender2" type="button">
       {icon && <span className="text-archive-violet">{icon}</span>}
       {label}
     </button>

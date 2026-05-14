@@ -28,8 +28,8 @@ export function BrowsePills() {
       ].map(([label, href]) => {
         const Icon = icons[label as keyof typeof icons];
         return (
-          <Link className="focus-ring group inline-flex items-center gap-2 rounded-md border border-[#D8C8A9] bg-[#FFFDF8] px-3.5 py-2 font-semibold transition hover:border-[#A88D62] hover:bg-[#FCF6EA] hover:text-archive-violet" href={href} key={label}>
-            <Icon className="h-4 w-4 text-[#7B7351] transition group-hover:text-archive-violet" />
+          <Link className="focus-ring group inline-flex items-center gap-2 rounded-md border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] px-3.5 py-2 font-semibold transition hover:border-archive-violet/50 hover:bg-[rgb(var(--archive-warm-hover))] hover:text-archive-violet" href={href} key={label}>
+            <Icon className="h-4 w-4 text-archive-olive transition group-hover:text-archive-violet" />
             {label}
           </Link>
         );
@@ -40,10 +40,10 @@ export function BrowsePills() {
 
 export function EraBand({ facets }: { facets: FacetOption[] }) {
   return (
-    <div className="grid gap-0 divide-y divide-[#DED2BD] rounded-md border border-[#DED2BD] bg-[#FFFDF8] md:grid-cols-5 md:divide-x md:divide-y-0">
+    <div className="grid gap-0 divide-y divide-[rgb(var(--archive-warm-line))] rounded-md border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] md:grid-cols-5 md:divide-x md:divide-y-0">
       {facets.map((facet, index) => (
         <Link
-          className="focus-ring group relative flex items-center gap-3 px-4 py-4 transition hover:bg-[#FCF6EA]"
+          className="focus-ring group relative flex items-center gap-3 px-4 py-4 transition hover:bg-[rgb(var(--archive-warm-hover))]"
           href={facet.href}
           key={facet.label}
         >
@@ -54,7 +54,7 @@ export function EraBand({ facets }: { facets: FacetOption[] }) {
             </span>
             <span className="text-xs text-archive-muted">{facet.count.toLocaleString()} sources</span>
           </span>
-          {index === 1 && <span className="absolute inset-x-4 bottom-0 h-0.5 bg-[#6F4BC2]" />}
+          {index === 1 && <span className="absolute inset-x-4 bottom-0 h-0.5 bg-archive-violet" />}
         </Link>
       ))}
     </div>
@@ -68,11 +68,11 @@ export function MediumTiles({ facets }: { facets: FacetOption[] }) {
         const Icon = icons[facet.label as keyof typeof icons] ?? BookOpen;
         return (
           <Link
-            className="focus-ring group flex min-h-20 items-center gap-3 rounded-md border border-[#DED2BD] bg-[#FFFDF8] px-4 py-3 transition hover:border-[#A88D62] hover:bg-[#FCF6EA]"
+            className="focus-ring group flex min-h-20 items-center gap-3 rounded-md border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] px-4 py-3 transition hover:border-archive-violet/50 hover:bg-[rgb(var(--archive-warm-hover))]"
             href={facet.href}
             key={facet.label}
           >
-            <Icon className="h-6 w-6 shrink-0 text-[#7B7351] transition group-hover:text-archive-violet" />
+            <Icon className="h-6 w-6 shrink-0 text-archive-olive transition group-hover:text-archive-violet" />
             <span>
               <span className="block text-sm font-semibold">{facet.label}</span>
               <span className="text-xs text-archive-muted">{facet.count.toLocaleString()}</span>

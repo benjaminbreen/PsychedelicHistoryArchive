@@ -27,7 +27,7 @@ export function ArchiveToolbar({ count, currentView, queryString, sort }: Archiv
           Sort by
         </label>
         <select
-          className="focus-ring h-9 min-w-[9.25rem] rounded border border-archive-line bg-white px-3 text-sm"
+          className="focus-ring h-9 min-w-[9.25rem] rounded border border-archive-line bg-archive-surface px-3 text-sm text-archive-ink"
           defaultValue={sort ?? "oldest"}
           id="sort"
           name="sort"
@@ -36,7 +36,7 @@ export function ArchiveToolbar({ count, currentView, queryString, sort }: Archiv
           <option value="newest">Newest first</option>
           <option value="title">Title</option>
         </select>
-        <div className="inline-flex overflow-hidden rounded border border-archive-line bg-white">
+        <div className="inline-flex overflow-hidden rounded border border-archive-line bg-archive-surface">
           <Link
             className={currentView === "grid" ? "inline-flex h-9 items-center gap-2 bg-archive-lavender px-4 text-sm font-semibold text-archive-ink" : "inline-flex h-9 items-center gap-2 px-4 text-sm font-semibold text-archive-muted hover:bg-archive-lavender2"}
             href={`/archive?${join}view=grid`}
@@ -63,7 +63,7 @@ export function ArchiveToolbar({ count, currentView, queryString, sort }: Archiv
           Density
         </label>
         <select
-          className="focus-ring h-9 min-w-[9rem] rounded border border-archive-line bg-white px-3 text-sm"
+          className="focus-ring h-9 min-w-[9rem] rounded border border-archive-line bg-archive-surface px-3 text-sm text-archive-ink"
           defaultValue="comfortable"
           id="density"
           name="density"
@@ -75,7 +75,7 @@ export function ArchiveToolbar({ count, currentView, queryString, sort }: Archiv
         <span className="hidden h-8 w-px bg-archive-line xl:block" />
         <label className="inline-flex items-center gap-2 text-sm text-archive-ink">
           <span className="relative inline-flex h-5 w-9 items-center rounded-full bg-archive-violet/70 p-0.5">
-            <span className="h-4 w-4 rounded-full bg-white shadow-sm" />
+            <span className="h-4 w-4 rounded-full bg-archive-surface shadow-sm" />
           </span>
           With images only
         </label>

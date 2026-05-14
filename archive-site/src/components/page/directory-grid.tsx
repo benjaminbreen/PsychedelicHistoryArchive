@@ -20,7 +20,7 @@ type DirectoryGridProps = {
 
 export function DirectoryGrid({ items, emptyLabel = "No entries found.", variant = "grouped" }: DirectoryGridProps) {
   if (items.length === 0) {
-    return <p className="rounded-md border border-archive-line bg-white p-6 text-archive-muted">{emptyLabel}</p>;
+    return <p className="rounded-md border border-archive-line bg-archive-surface p-6 text-archive-muted">{emptyLabel}</p>;
   }
 
   if (variant === "cards") {
@@ -28,7 +28,7 @@ export function DirectoryGrid({ items, emptyLabel = "No entries found.", variant
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {items.map((item) => (
           <Link
-            className="focus-ring group grid min-h-[6.75rem] grid-cols-[5.25rem_1fr] gap-3 rounded-md border border-[#E1DCE7] bg-white p-3 transition hover:border-archive-violet/40 hover:bg-[#FDFBFF]"
+            className="focus-ring group grid min-h-[6.75rem] grid-cols-[5.25rem_1fr] gap-3 rounded-md border border-archive-line bg-archive-surface p-3 transition hover:border-archive-violet/40 hover:bg-archive-lavender2"
             href={item.href}
             key={item.href}
           >
@@ -44,7 +44,7 @@ export function DirectoryGrid({ items, emptyLabel = "No entries found.", variant
               {item.chips && item.chips.length > 0 && (
                 <span className="mt-1.5 flex flex-wrap gap-1.5">
                   {item.chips.slice(0, 2).map((chip) => (
-                    <span className="rounded border border-[#E5E0EA] bg-[#F7F5F9] px-1.5 py-0.5 text-[0.68rem] font-medium leading-4 text-[#625E6B]" key={chip}>
+                    <span className="rounded border border-archive-line bg-archive-lavender2 px-1.5 py-0.5 text-[0.68rem] font-medium leading-4 text-archive-muted" key={chip}>
                       {chip}
                     </span>
                   ))}
@@ -74,12 +74,12 @@ export function DirectoryGrid({ items, emptyLabel = "No entries found.", variant
           <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
             {groupItems.map((item) => (
               <Link
-                className="focus-ring group flex min-h-[8.25rem] flex-col justify-between rounded-md border border-[#DED2BD] bg-[#FFFDF8] p-4 transition hover:border-[#A88D62] hover:bg-[#FCF6EA]"
+                className="focus-ring group flex min-h-[8.25rem] flex-col justify-between rounded-md border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] p-4 transition hover:border-archive-violet/45 hover:bg-[rgb(var(--archive-warm-hover))]"
                 href={item.href}
                 key={item.href}
               >
                 <span>
-                  <span className="block font-serif text-[1.1rem] font-semibold leading-snug text-archive-ink group-hover:text-[#4F3E25]">
+                  <span className="block font-serif text-[1.1rem] font-semibold leading-snug text-archive-ink group-hover:text-archive-violetDark">
                     {item.label}
                   </span>
                   {item.description && (

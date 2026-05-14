@@ -31,7 +31,13 @@ const supabase = createClient(supabaseUrl, serviceRoleKey, {
 
 async function readJson(name) {
   const filePath = path.join(importDir, `${name}.json`);
-  const raw = await fs.readFile(filePath, "utf8");
+  let raw;
+  try {
+    raw = await fs.readFile(filePath, "utf8");
+  } catch (error) {
+    if (error?.code === "ENOENT") return [];
+    throw error;
+  }
   return JSON.parse(raw);
 }
 
@@ -83,23 +89,29 @@ async function main() {
   console.log(`Using import directory: ${importDir}`);
   const documents = await readJson("documents");
   const pages = await readJson("pages");
+  const pageLines = await readJson("page_lines");
   const files = await readJson("files");
   const externalSources = await readJson("external_sources");
   const people = await readJson("people");
   const documentPeople = await readJson("document_people");
+  const documentSections = await readJson("document_sections");
+  const documentFigures = await readJson("document_figures");
   const tags = await readJson("tags");
   const documentTags = await readJson("document_tags");
   const assets = await readJson("assets");
 
-  console.log(`Loaded ${documents.length} documents, ${pages.length} pages, ${files.length} files, ${assets.length} assets`);
+  console.log(`Loaded ${documents.length} documents, ${pages.length} pages, ${pageLines.length} page lines, ${files.length} files, ${documentSections.length} sections, ${documentFigures.length} figures, ${assets.length} assets`);
 
   await uploadAssets(assets);
 
   await upsertTable("documents", documents, "id");
   await upsertTable("pages", pages, "id");
+  await upsertTable("page_lines", pageLines, "id");
   await upsertTable("files", files, "id");
   await upsertTable("external_sources", externalSources, "id");
   await upsertTable("people", people, "id");
+  await upsertTable("document_sections", documentSections, "id");
+  await upsertTable("document_figures", documentFigures, "id");
   await upsertTable("tags", tags, "id");
   await upsertTable("document_people", documentPeople, "document_id,person_id,role");
   await upsertTable("document_tags", documentTags, "document_id,tag_id");

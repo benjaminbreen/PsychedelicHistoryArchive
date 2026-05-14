@@ -39,12 +39,34 @@ create table if not exists pages (
   label text,
   readable_image_path text,
   thumbnail_image_path text,
+  image_width int,
+  image_height int,
+  language text,
   ocr_text text,
   ocr_confidence numeric,
   transcription_status text,
   created_at timestamptz default now(),
   updated_at timestamptz default now(),
   unique(document_id, page_number)
+);
+
+alter table pages add column if not exists image_width int;
+alter table pages add column if not exists image_height int;
+alter table pages add column if not exists language text;
+
+create table if not exists page_lines (
+  id uuid primary key default gen_random_uuid(),
+  page_id uuid references pages(id) on delete cascade,
+  line_index int not null,
+  text text not null,
+  normalized_text text,
+  bbox jsonb,
+  confidence numeric,
+  language text,
+  paragraph_index int,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now(),
+  unique(page_id, line_index)
 );
 
 create table if not exists files (
@@ -95,6 +117,31 @@ create table if not exists document_people (
   primary key (document_id, person_id, role)
 );
 
+create table if not exists document_sections (
+  id uuid primary key default gen_random_uuid(),
+  document_id uuid references documents(id) on delete cascade,
+  position int not null,
+  heading text not null,
+  section_type text,
+  body text,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now(),
+  unique(document_id, position)
+);
+
+create table if not exists document_figures (
+  id uuid primary key default gen_random_uuid(),
+  document_id uuid references documents(id) on delete cascade,
+  position int not null,
+  image_path text,
+  alt_text text,
+  caption text,
+  placement text,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now(),
+  unique(document_id, position)
+);
+
 create table if not exists tags (
   id uuid primary key default gen_random_uuid(),
   slug text unique not null,
@@ -137,18 +184,24 @@ create index if not exists documents_date_start_idx on documents(date_start);
 create index if not exists documents_type_idx on documents(document_type);
 create index if not exists documents_medium_idx on documents(medium);
 create index if not exists pages_document_id_idx on pages(document_id);
+create index if not exists page_lines_page_id_idx on page_lines(page_id);
 create index if not exists files_document_id_idx on files(document_id);
 create index if not exists external_sources_document_id_idx on external_sources(document_id);
+create index if not exists document_sections_document_id_idx on document_sections(document_id);
+create index if not exists document_figures_document_id_idx on document_figures(document_id);
 create index if not exists tags_slug_idx on tags(slug);
 
 grant usage on schema public to anon, authenticated, service_role;
 
 grant select on documents to anon, authenticated;
 grant select on pages to anon, authenticated;
+grant select on page_lines to anon, authenticated;
 grant select on files to anon, authenticated;
 grant select on external_sources to anon, authenticated;
 grant select on people to anon, authenticated;
 grant select on document_people to anon, authenticated;
+grant select on document_sections to anon, authenticated;
+grant select on document_figures to anon, authenticated;
 grant select on tags to anon, authenticated;
 grant select on document_tags to anon, authenticated;
 grant select on collections to anon, authenticated;
@@ -156,10 +209,13 @@ grant select on collection_documents to anon, authenticated;
 
 grant all privileges on documents to service_role;
 grant all privileges on pages to service_role;
+grant all privileges on page_lines to service_role;
 grant all privileges on files to service_role;
 grant all privileges on external_sources to service_role;
 grant all privileges on people to service_role;
 grant all privileges on document_people to service_role;
+grant all privileges on document_sections to service_role;
+grant all privileges on document_figures to service_role;
 grant all privileges on tags to service_role;
 grant all privileges on document_tags to service_role;
 grant all privileges on collections to service_role;
@@ -167,10 +223,13 @@ grant all privileges on collection_documents to service_role;
 
 alter table documents enable row level security;
 alter table pages enable row level security;
+alter table page_lines enable row level security;
 alter table files enable row level security;
 alter table external_sources enable row level security;
 alter table people enable row level security;
 alter table document_people enable row level security;
+alter table document_sections enable row level security;
+alter table document_figures enable row level security;
 alter table tags enable row level security;
 alter table document_tags enable row level security;
 alter table collections enable row level security;
@@ -187,6 +246,16 @@ create policy "Public can read pages for published documents"
   using (exists (
     select 1 from documents
     where documents.id = pages.document_id
+      and documents.status = 'published'
+  ));
+
+drop policy if exists "Public can read page lines for published documents" on page_lines;
+create policy "Public can read page lines for published documents"
+  on page_lines for select
+  using (exists (
+    select 1 from pages
+    join documents on documents.id = pages.document_id
+    where pages.id = page_lines.page_id
       and documents.status = 'published'
   ));
 
@@ -219,6 +288,24 @@ create policy "Public can read document people"
   using (exists (
     select 1 from documents
     where documents.id = document_people.document_id
+      and documents.status = 'published'
+  ));
+
+drop policy if exists "Public can read document sections" on document_sections;
+create policy "Public can read document sections"
+  on document_sections for select
+  using (exists (
+    select 1 from documents
+    where documents.id = document_sections.document_id
+      and documents.status = 'published'
+  ));
+
+drop policy if exists "Public can read document figures" on document_figures;
+create policy "Public can read document figures"
+  on document_figures for select
+  using (exists (
+    select 1 from documents
+    where documents.id = document_figures.document_id
       and documents.status = 'published'
   ));
 

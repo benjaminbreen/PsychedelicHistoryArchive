@@ -35,7 +35,9 @@ export type ArchiveSource = {
   region: string;
   language: string;
   tags: string[];
+  legacyTags?: string[];
   people: string[];
+  creators?: SourceCreator[];
   substances: string[];
   summary: string;
   excerpt: string;
@@ -51,10 +53,76 @@ export type ArchiveSource = {
   imagePath?: string;
   imageAlt?: string;
   transcript?: string;
+  transcriptSections?: TranscriptSection[];
+  figures?: SourceFigure[];
+  pages?: SourcePage[];
+  files?: SourceFile[];
 };
 
 export type FacetOption = {
   label: string;
   count: number;
   href: string;
+};
+
+export type SourceLineBox = {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+};
+
+export type SourcePageLine = {
+  id: string;
+  index: number;
+  text: string;
+  normalizedText?: string;
+  confidence?: number;
+  language?: string;
+  paragraphIndex?: number;
+  box?: SourceLineBox;
+};
+
+export type SourcePage = {
+  id: string;
+  pageNumber: number;
+  label: string;
+  imagePath?: string;
+  thumbnailPath?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  ocrText?: string;
+  ocrConfidence?: number;
+  language?: string;
+  transcriptionStatus?: string;
+  lines: SourcePageLine[];
+};
+
+export type SourceFile = {
+  id: string;
+  kind: string;
+  url: string;
+  mimeType?: string;
+  byteSize?: number;
+};
+
+export type SourceCreator = {
+  name: string;
+  role: string;
+};
+
+export type TranscriptSectionKind = "overview" | "transcript" | "note";
+
+export type TranscriptSection = {
+  heading: string;
+  kind: TranscriptSectionKind;
+  paragraphs: string[];
+};
+
+export type SourceFigure = {
+  id: string;
+  imagePath?: string;
+  alt?: string;
+  caption: string;
+  position?: "before_overview" | "inline";
 };
