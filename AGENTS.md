@@ -18,3 +18,37 @@ This repo includes `archive-site`, a Next.js app. Treat `.next` as a live dev-se
 ## Verification
 
 After UI changes in `archive-site`, run `npm run build` for type/build verification. If a dev server is needed for screenshots or manual review, keep track of the port Next selects and report the current URL.
+
+## Stubbed / Missing Pages Inventory
+
+Current implemented app routes in `archive-site/src/app`:
+
+- `/` via `src/app/page.tsx`
+- `/about` via `src/app/about/page.tsx`
+- `/archive` via `src/app/archive/page.tsx`
+- `/archive/[slug]` via `src/app/archive/[slug]/page.tsx`
+
+Routes linked from navigation or page content that still need real pages:
+
+- `/people` - top-level Bios destination from the main nav and Browse by People.
+- `/topics` - Browse by Topics destination from the homepage.
+- `/collections` - main nav destination, archive intro "Read more" link, and featured collections links target this area.
+- `/further-reading` - main nav destination and About page contextual link.
+- `/submit-a-source` - About page project action.
+- `/faq` - About page project action.
+
+Routes handled as archive filters rather than standalone pages:
+
+- `/archive?medium=Audio%2FVideo` - Audio/video nav item.
+- `/archive?medium=Text` and Text dropdown era filters.
+- `/archive?medium=Personal%20History` - Personal histories nav item.
+- `/archive?people=...` - Bios dropdown person filters.
+- `/archive?tag=...`, `/archive?era=...`, `/archive?type=...`, `/archive?medium=...` - chip, card, and filter links.
+
+Suggested page-build priority:
+
+1. `/people` because it is a primary nav destination and the Bios dropdown currently falls back to archive filters only.
+2. `/topics` because the homepage Browse by Topics button currently points to a missing route.
+3. `/collections` because it is linked from nav, archive intro, and the homepage collection section.
+4. `/further-reading` because it is linked from nav and About copy.
+5. `/submit-a-source` and `/faq` because they are secondary About-page actions.
