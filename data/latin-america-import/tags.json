@@ -1,0 +1,86 @@
+[
+  {
+    "id": "ebf523b3-0542-5ca7-ae9a-5a9167fb4710",
+    "slug": "1950-1970",
+    "name": "1950-1970",
+    "description": "",
+    "tag_type": "era"
+  },
+  {
+    "id": "ffc687e3-50af-5cdd-93cc-00bd6ea553e6",
+    "slug": "ayahuasca",
+    "name": "Ayahuasca",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "b7c983a4-1584-5792-8e73-fd443d632e0b",
+    "slug": "chile",
+    "name": "Chile",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8cda3b9d-2a2c-5295-8c26-562d7f906c53",
+    "slug": "conference-paper",
+    "name": "Conference paper",
+    "description": "",
+    "tag_type": "genre"
+  },
+  {
+    "id": "1de25bbd-d9f6-5ba8-b545-34f71c7eabb1",
+    "slug": "ethnopharmacology",
+    "name": "Ethnopharmacology",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "a1a411fe-5f11-54da-bfc8-f988ab0d78c6",
+    "slug": "harmala-alkaloids",
+    "name": "Harmala alkaloids",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "c4344995-4e86-5143-af45-62c43c4357b1",
+    "slug": "harmaline",
+    "name": "Harmaline",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "c3106b82-f8ec-5618-81c4-a72278d569f6",
+    "slug": "harmine",
+    "name": "Harmine",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "fbe38f2c-8902-500f-bcb3-739e16bd16f5",
+    "slug": "human-experiments",
+    "name": "Human experiments",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "34b1ce28-8f9b-5118-a2ff-6c0ccfae4f29",
+    "slug": "latin-america",
+    "name": "Latin America",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "753e2b23-dd35-52d9-b747-a4e253a891c4",
+    "slug": "mescaline",
+    "name": "Mescaline",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "1ada7008-34a2-5ad8-a51d-d8c31bf9d753",
+    "slug": "south-america",
+    "name": "South America",
+    "description": "",
+    "tag_type": "topic"
+  }
+]

@@ -1,121 +1,223 @@
-Let There Be Light , a groundbreaking 1946 documentary directed by John Huston, features important early footage of the use of “ narcosynthesis ” to treat post-traumatic stress disorder (PTSD) in World War II veterans.
-The film, commissioned by the U.S. Army Signal Corps, follows 75 soldiers suffering from various war-induced mental conditions as they arrive at Mason General Hospital in Long Island, New York for treatment. Huston’s innovative use of unscripted interviews and hidden cameras captured raw, authentic footage of the soldiers’ emotional states and their interactions with doctors.
-Central to the documentary is the depiction of narcosynthesis, a technique involving the intravenous injection of sodium amytal to induce a hypnotic state. This process was believed to help patients access and process repressed traumatic memories. In one powerful scene, a soldier unable to walk due to psychological factors receives a sodium amytal injection and is subsequently cured of his affliction.
-The emerging consensus in the mid-1940s that narcosynthesis was an effective treatment for trauma helped establish a foundation for the popularization of psychedelic-assisted therapy. By demonstrating the potential for psychoactive substances to facilitate access to the unconscious mind and promote healing, Let There Be Light anticipated subsequent documentaries which would explore the therapeutic applications of psychedelics such as LSD and mescaline.
-However, the U.S. government banned Let There Be Light shortly after its production, citing concerns over privacy violations and the potentially demoralizing effect the film's raw depiction of psychological trauma might have on military recruitment efforts. 
-Further reading: 
-The film’s Wikipedia page 
-Benjamin Breen, “Before psychedelic therapy for wartime trauma, there was narcosynthesis,” Res Obscura, October 10, 2023. 
-Partial transcript
-(starting at 17:00) 
-Narrator: Modern psychiatry makes no sharp division between the mind and the body. Physical ills often have psychic causes, just as emotional ills may have a physical basis. Possibilities of organic disturbance in the brain are investigated by means of the electroencephalograph. 
+(starting at 17:00)
+
+Narrator: Modern psychiatry makes no sharp division between the mind and the body. Physical ills often have psychic causes, just as emotional ills may have a physical basis. Possibilities of organic disturbance in the brain are investigated by means of the electroencephalograph.
+
 [film cuts to a Rorschach card] The Rorschach Test. The things that the patient's imagination sees in these cards gives significant clues to his personality makeup.
-Soldier : This looks sort of like a drawing of two women… standing on a rock… and waving their hands.
-[film cuts to a young man, shirtless] 
-Narrator : This man suffering from a conversion hysteria requires immediate treatment. Organically sound, his paralysis is as real as if it were caused by a spinal lesion — but it is purely psychological.
-Doctor : Well, just sit up top the middle of the bed there. That's fine. Now sit yourself over there. Well, now, can you move over just a little so I can talk to you? 
-Soldier : Yes, sir.
-Doctor : Now, what is the trouble? You seem to be upset.
-Soldier : Just nervous. 
-Doctor : Nervous? 
-Soldier : Yes. It makes me flinch like that. 
-Doctor : I see. How long has that been going on?
-Soldier : Since Friday. Friday. Friday night. 
-Doctor : Come on suddenly or gradually? 
-Soldier : Suddenly, sir.
-Doctor : How? 
-Soldier : Well it started in the afternoon with crying spells. And felt something funny in my shoulders here. Back bothered me. Just started crying, lost control of my arms and legs.
-Doctor : Was there any reason for crying spells?
-Soldier : I don't know sir. 
-Doctor : Hmm. Anything happen at home to bother you? 
-Soldier : Well, my mother's been ill.
-Doctor : She has been ill? That worry you a lot?
-Soldier : Quite a bit. 
-Doctor : Well, now, has this got anything to do with your mother's illness? Any reason why you should have that kind of reaction? 
-Soldier : No, sir, not that I know of. Unless my mother's illness might have brought this on. I try to hold it in, but it hurts.
-Doctor : I see. You've just been holding these things in. 
-Soldier : That's right, sir.
-Doctor : No way you can control this at all?
-Soldier : No, sir.
-Doctor : Well, now, we're going to have to help you do that, of course. Let's take off this jacket here. Just slip that off. Alright, now lie down on the bed. 
-Soldier : Shoes? 
-Doctor : Now, we're leaving the shoes on so you can walk in them. I think we're going to get you walking. Let's come over here. That's a boy. That's fine. That's good. Now you lie steady. Lie steady, that's a boy. This is all going to go away as I give you this medicine. No bother at all.
-Narrator : The method employed is effective in certain types of acute cases. An intravenous injection of sodium amytal induces a state similar to hypnosis. 
-Soldier : You mind if I look this way? 
+
+Soldier: This looks sort of like a drawing of two women… standing on a rock… and waving their hands.
+
+[film cuts to a young man, shirtless]
+
+Narrator: This man suffering from a conversion hysteria requires immediate treatment. Organically sound, his paralysis is as real as if it were caused by a spinal lesion — but it is purely psychological.
+
+Doctor: Well, just sit up top the middle of the bed there. That's fine. Now sit yourself over there. Well, now, can you move over just a little so I can talk to you?
+
+Soldier: Yes, sir.
+
+Doctor: Now, what is the trouble? You seem to be upset.
+
+Soldier: Just nervous.
+
+Doctor: Nervous?
+
+Soldier: Yes. It makes me flinch like that.
+
+Doctor: I see. How long has that been going on?
+
+Soldier: Since Friday. Friday. Friday night.
+
+Doctor: Come on suddenly or gradually?
+
+Soldier: Suddenly, sir.
+
+Doctor: How?
+
+Soldier: Well it started in the afternoon with crying spells. And felt something funny in my shoulders here. Back bothered me. Just started crying, lost control of my arms and legs.
+
+Doctor: Was there any reason for crying spells?
+
+Soldier: I don't know sir.
+
+Doctor: Hmm. Anything happen at home to bother you?
+
+Soldier: Well, my mother's been ill.
+
+Doctor: She has been ill? That worry you a lot?
+
+Soldier: Quite a bit.
+
+Doctor: Well, now, has this got anything to do with your mother's illness? Any reason why you should have that kind of reaction?
+
+Soldier: No, sir, not that I know of. Unless my mother's illness might have brought this on. I try to hold it in, but it hurts.
+
+Doctor: I see. You've just been holding these things in.
+
+Soldier: That's right, sir.
+
+Doctor: No way you can control this at all?
+
+Soldier: No, sir.
+
+Doctor: Well, now, we're going to have to help you do that, of course. Let's take off this jacket here. Just slip that off. Alright, now lie down on the bed.
+
+Soldier: Shoes?
+
+Doctor: Now, we're leaving the shoes on so you can walk in them. I think we're going to get you walking. Let's come over here. That's a boy. That's fine. That's good. Now you lie steady. Lie steady, that's a boy. This is all going to go away as I give you this medicine. No bother at all.
+
+Narrator: The method employed is effective in certain types of acute cases. An intravenous injection of sodium amytal induces a state similar to hypnosis.
+
+Soldier: You mind if I look this way?
+
 Doctor: You look that way. Nothing for you to watch here, but you're going to talk to me as we go along.
-[IV sodium amytal is administered] 
-Soldier : Yes, sir.
-Doctor : That's all. Now, you're not going to feel much of anything else. You're going to feel a little bit woozy.
-Narrator : The use of this drug serves a twofold purpose. Like hypnosis, it is a shortcut to the unconscious mind. As a surgeon probes for a bullet, the psychiatrist explores a submerging regions of the mind, attempting to locate and bring to the surface the emotional conflict which is the cause of the patient's emotional distress. The second purpose of this drug is to remove through suggestion those symptoms which impede the patient's recovery.
-Doctor : Now tell me a little bit about what you're thinking of. The thoughts are coming to your mind now.
-Soldier : Nothing in particular.
-Doctor : Well, now, let's go back. Let's go back to Friday. 
-Soldier : Friday? 
-Doctor : Yeah, think about that. Friday.
-Soldier : My mother argues with me.
-Doctor : Your mother argues with you. 
-Soldier : Yeah. Mm-hmm. 
-Doctor : What does she argue about?
-Soldier : Oh, every little thing. If you sit down in the wrong chair or something like that. Doesn't like the stuff we get in the store. Then she comes down.
-Doctor : Well, see, have you always tried to please her? 
-Soldier : Yes. Mm-hmm. Always tried to please her. I used to clean the house with her when I was smaller.
-Doctor : Well, now, why do you think she argues like that? Because she's sick?
-Soldier : Well, she doesn't try to control her temper.
-Doctor : I see. Mm-hmm. How about your father? 
-Soldier : He's a swell guy. 
-Doctor: He's a swell fellow, is he? 
-Soldier: Gets kind of hot tempered. Since my mother's been sick it's been costing a lot of money. 
-Doctor : Mm-hmm. 
-Soldier : And he's lost a lot of weight from worrying.
-Doctor : I see. 
-Soldier : My mother argues with him, she wants to know where the money is.
-Doctor : Mm-hmm.
-Soldier : But I don't care about that, long as everything turns out alright. 
-Doctor : Yeah. Well, now this jumping, what does that make you think of? Think about it a minute.
-Soldier : I can't help it. It just jumps. 
-Doctor : Uh-huh. How about the legs? Do you know anybody that had any trouble with their legs like that? 
-Soldier : No, sir. Except... 
-Doctor : What did it make you think of? Go on.
-Soldier : No, sir. Except several...several years ago there was one fellow, he had something wrong with his right leg.
-Doctor : Mm-hmm. 
-Soldier : Wound in the knee, but he's walking today. 
-Doctor : Was that anything like your leg?
-Soldier : No, he couldn't walk at all.
-Doctor : He couldn't walk at all? What do you think of when you can walk like that?
-Soldier : I wish I could walk. 
-Doctor: But what do you think of? What comes to your mind when you find that you can't walk? 
+
+[IV sodium amytal is administered]
+
+Soldier: Yes, sir.
+
+Doctor: That's all. Now, you're not going to feel much of anything else. You're going to feel a little bit woozy.
+
+Narrator: The use of this drug serves a twofold purpose. Like hypnosis, it is a shortcut to the unconscious mind. As a surgeon probes for a bullet, the psychiatrist explores a submerging regions of the mind, attempting to locate and bring to the surface the emotional conflict which is the cause of the patient's emotional distress. The second purpose of this drug is to remove through suggestion those symptoms which impede the patient's recovery.
+
+Doctor: Now tell me a little bit about what you're thinking of. The thoughts are coming to your mind now.
+
+Soldier: Nothing in particular.
+
+Doctor: Well, now, let's go back. Let's go back to Friday.
+
+Soldier: Friday?
+
+Doctor: Yeah, think about that. Friday.
+
+Soldier: My mother argues with me.
+
+Doctor: Your mother argues with you.
+
+Soldier: Yeah. Mm-hmm.
+
+Doctor: What does she argue about?
+
+Soldier: Oh, every little thing. If you sit down in the wrong chair or something like that. Doesn't like the stuff we get in the store. Then she comes down.
+
+Doctor: Well, see, have you always tried to please her?
+
+Soldier: Yes. Mm-hmm. Always tried to please her. I used to clean the house with her when I was smaller.
+
+Doctor: Well, now, why do you think she argues like that? Because she's sick?
+
+Soldier: Well, she doesn't try to control her temper.
+
+Doctor: I see. Mm-hmm. How about your father?
+
+Soldier: He's a swell guy.
+
+Doctor: He's a swell fellow, is he?
+
+Soldier: Gets kind of hot tempered. Since my mother's been sick it's been costing a lot of money.
+
+Doctor: Mm-hmm.
+
+Soldier: And he's lost a lot of weight from worrying.
+
+Doctor: I see.
+
+Soldier: My mother argues with him, she wants to know where the money is.
+
+Doctor: Mm-hmm.
+
+Soldier: But I don't care about that, long as everything turns out alright.
+
+Doctor: Yeah. Well, now this jumping, what does that make you think of? Think about it a minute.
+
+Soldier: I can't help it. It just jumps.
+
+Doctor: Uh-huh. How about the legs? Do you know anybody that had any trouble with their legs like that?
+
+Soldier: No, sir. Except...
+
+Doctor: What did it make you think of? Go on.
+
+Soldier: No, sir. Except several...several years ago there was one fellow, he had something wrong with his right leg.
+
+Doctor: Mm-hmm.
+
+Soldier: Wound in the knee, but he's walking today.
+
+Doctor: Was that anything like your leg?
+
+Soldier: No, he couldn't walk at all.
+
+Doctor: He couldn't walk at all? What do you think of when you can walk like that?
+
+Soldier: I wish I could walk.
+
+Doctor: But what do you think of? What comes to your mind when you find that you can't walk?
+
 Soldier: Just maybe I think my mother and father should be okay. Sometimes I wonder… hope the war ends soon, and things like that.
-Doctor : I see. Nothing in particular. 
-Doctor: And now the shakes are gone now, haven't they? 
-Soldier : Yeah.
-Doctor : How about your legs? They're good and strong.
-Doctor : They feel alright. 
-Doctor: Move them. Let's raise them. 
-Soldier : I was able to raise them before but I can't walk.
-Doctor : How about now?
-Soldier : They feel alright. 
+
+Doctor: I see. Nothing in particular.
+
+Doctor: And now the shakes are gone now, haven't they?
+
+Soldier: Yeah.
+
+Doctor: How about your legs? They're good and strong.
+
+Doctor: They feel alright.
+
+Doctor: Move them. Let's raise them.
+
+Soldier: I was able to raise them before but I can't walk.
+
+Doctor: How about now?
+
+Soldier: They feel alright.
+
 Doctor: They feel good now, as if you can walk on them, don't they? Toes feel numb.
-Doctor : Toes feel numb, but that's going away, isn't it?
-Soldier : Yeah.
-Doctor : Raising them fine, isn't it? 
-Soldier : Yeah. 
-Doctor : Now you're going to be able to walk, aren't you? 
-Soldier : I don't know.
-Doctor : Well, you're going to, aren't you? 
-Soldier : Yes, sir. I'll walk. I like walking.
-Doctor : You love walking. Always been very fond of walking. Now you've found yourself unable to walk. Now you're going to get right up and walk, right now. Alright, now let's sit up. Sit up on the side of the bed. Here you go. That's fine.
-[Soldier stands] 
+
+Doctor: Toes feel numb, but that's going away, isn't it?
+
+Soldier: Yeah.
+
+Doctor: Raising them fine, isn't it?
+
+Soldier: Yeah.
+
+Doctor: Now you're going to be able to walk, aren't you?
+
+Soldier: I don't know.
+
+Doctor: Well, you're going to, aren't you?
+
+Soldier: Yes, sir. I'll walk. I like walking.
+
+Doctor: You love walking. Always been very fond of walking. Now you've found yourself unable to walk. Now you're going to get right up and walk, right now. Alright, now let's sit up. Sit up on the side of the bed. Here you go. That's fine.
+
+[Soldier stands]
+
 Alright, now stand up. And look at that.
-[Soldier begins to walk] 
-That good? Alright, now walk out here. Walk over to the nurse all by yourself. That's a boy. Walk over to the nurse. You're just a little woozy. That's the medicine. Now come back to me. Come back to me. Open your eyes. That's a boy. Isn't that fine, isn't that wonderful? 
-Soldier : Sure.
-Doctor : Alright, now again, once more. 
-Soldier : I don't know how long I'm going to be this way. 
-Doctor : Oh, it's going to stay this way. It's going to stay because you've taken care of your worry now. Alright, now come on back to me, and I'm going to let you go to sleep. When you wake up, you'll keep on walking perfectly well. How about it? 
-Soldier : Thanks, sir. 
-Doctor : Righto. Alright, now let's get up on here, and we'll go to sleep. Now there you go. Now, I'm going to have you go right to sleep. When you wake up, it'll be alright. 
+
+[Soldier begins to walk]
+
+That good? Alright, now walk out here. Walk over to the nurse all by yourself. That's a boy. Walk over to the nurse. You're just a little woozy. That's the medicine. Now come back to me. Come back to me. Open your eyes. That's a boy. Isn't that fine, isn't that wonderful?
+
+Soldier: Sure.
+
+Doctor: Alright, now again, once more.
+
+Soldier: I don't know how long I'm going to be this way.
+
+Doctor: Oh, it's going to stay this way. It's going to stay because you've taken care of your worry now. Alright, now come on back to me, and I'm going to let you go to sleep. When you wake up, you'll keep on walking perfectly well. How about it?
+
+Soldier: Thanks, sir.
+
+Doctor: Righto. Alright, now let's get up on here, and we'll go to sleep. Now there you go. Now, I'm going to have you go right to sleep. When you wake up, it'll be alright.
+
 [soldier lies back down]
-Soldier : Thanks. 
-Doctor : Alright, sleep, Girardi.
-Narrator : The fact that he can walk now does not mean that his neurosis has been cured. That will require time. But the way has been opened for the therapy to follow.
+
+Soldier: Thanks.
+
+Doctor: Alright, sleep, Girardi.
+
+Narrator: The fact that he can walk now does not mean that his neurosis has been cured. That will require time. But the way has been opened for the therapy to follow.
+
 Quote from the director

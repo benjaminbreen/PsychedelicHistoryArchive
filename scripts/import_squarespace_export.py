@@ -118,13 +118,32 @@ def html_to_text(content: str) -> str:
     content = html.unescape(content)
     content = re.sub(r"(?is)<(script|style).*?</\1>", " ", content)
     content = re.sub(r"(?i)<br\s*/?>", "\n", content)
-    content = re.sub(r"(?i)</(p|div|h[1-6]|blockquote|li|section|article)>", "\n", content)
-    content = re.sub(r"(?is)<[^>]+>", " ", content)
+    content = re.sub(
+        r"(?is)<blockquote[^>]*>(.*?)</blockquote>",
+        lambda match: "\n\n" + re.sub(r"(?i)</p>", "\n", match.group(1)) + "\n\n",
+        content,
+    )
+    content = re.sub(r"(?i)</(p|div|h[1-6]|blockquote|li|section|article)>", "\n\n", content)
+    content = re.sub(r"(?is)<[^>]+>", "", content)
     content = html.unescape(content)
-    content = re.sub(r"[ \t\r\f\v]+", " ", content)
-    content = re.sub(r"\n\s+", "\n", content)
+    content = content.replace("\xa0", " ")
+    content = "\n".join(re.sub(r"[ \t\r\f\v]+", " ", line).strip() for line in content.splitlines())
     content = re.sub(r"\n{3,}", "\n\n", content)
     return content.strip()
+
+
+def extract_transcript_text(text: str) -> str:
+    lines = text.splitlines()
+    marker_pattern = re.compile(r"^\s*(transcription|complete transcription|partial transcript|partial translation)\s*$", re.I)
+
+    for index, line in enumerate(lines):
+        if marker_pattern.match(line):
+            return "\n".join(lines[index + 1 :]).strip()
+
+    metadata_pattern = re.compile(r"^\s*(authors?|date|source)\s*:", re.I)
+    while lines and (not lines[0].strip() or metadata_pattern.match(lines[0])):
+        lines.pop(0)
+    return "\n".join(lines).strip()
 
 
 def extract_summary(content: str, text: str) -> str:
@@ -259,6 +278,7 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
         link = text_of(item, "link")
         content = text_of(item, "content:encoded")
         body_text = html_to_text(content)
+        transcript_text = extract_transcript_text(body_text)
         summary = extract_summary(content, body_text)
         display_date = extract_labeled_value(body_text, "Date")
         source_note = extract_labeled_value(body_text, "Source")
@@ -310,8 +330,8 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
             "rights_statement": "Needs rights review before republication.",
             "source_url": full_url,
             "external_access_url": full_url,
-            "access_type": "hosted" if body_text else "external",
-            "hosting_status": "transcript_only" if body_text else "external_link",
+            "access_type": "hosted" if transcript_text else "external",
+            "hosting_status": "transcript_only" if transcript_text else "external_link",
             "cover_image_path": cover_path,
             "thumbnail_path": cover_path,
             "is_featured": False,
@@ -328,9 +348,9 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
                 "label": "Imported page body",
                 "readable_image_path": "",
                 "thumbnail_image_path": "",
-                "ocr_text": body_text,
+                "ocr_text": transcript_text,
                 "ocr_confidence": None,
-                "transcription_status": "reviewed" if body_text else "none",
+                "transcription_status": "reviewed" if transcript_text else "none",
             }
         )
 
@@ -447,9 +467,9 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
                 "citation": source_note,
                 "rights": "Needs rights review before republication.",
                 "sourceUrl": full_url,
-                "accessType": "hosted" if body_text else "external",
-                "hostingStatus": "transcript_only" if body_text else "external_link",
-                "wordCount": len(re.findall(r"\b\w+\b", body_text)),
+                "accessType": "hosted" if transcript_text else "external",
+                "hostingStatus": "transcript_only" if transcript_text else "external_link",
+                "wordCount": len(re.findall(r"\b\w+\b", transcript_text)),
                 "addedDate": text_of(item, "wp:post_date")[:10],
                 "featured": False,
                 "imageTone": "paper",
@@ -510,7 +530,7 @@ def write_text_artifacts(out_dir: Path, export_path: Path) -> None:
         post_name = text_of(item, "wp:post_name") or slugify(title)
         content = text_of(item, "content:encoded")
         body_html_dir.joinpath(f"{post_name}.html").write_text(content)
-        body_text_dir.joinpath(f"{post_name}.txt").write_text(html_to_text(content) + "\n")
+        body_text_dir.joinpath(f"{post_name}.txt").write_text(extract_transcript_text(html_to_text(content)) + "\n")
 
 
 def download_assets(out_dir: Path, assets: list[dict]) -> list[dict]:

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "b1fb3fb9-037d-54c8-8f3a-e5a06208f9e5",
+    "document_id": "aba80607-e798-5387-bc7d-fa61e41b7fc6",
+    "document_slug": "psychotropic-properties-of-the-harmala-alkaloids",
+    "source_url": "latin-american-psychedelic-research/assets/claudio-naranjo.jpg",
+    "local_path": "images/psychotropic-properties-of-the-harmala-alkaloids/01-claudio-naranjo.jpg",
+    "storage_path": "documents/aba80607-e798-5387-bc7d-fa61e41b7fc6/images/psychotropic-properties-of-the-harmala-alkaloids/01-claudio-naranjo.jpg",
+    "kind": "cover_image",
+    "mime_type": "image/jpeg",
+    "downloaded": true,
+    "sha256": "9d0fb261d7ab978f702098cd772694bad34b142941cbe9fc5361562c887aaefb",
+    "byte_size": 91460,
+    "width": 393,
+    "height": 601
+  },
+  {
+    "id": "fe5e1c2a-7610-5c96-b936-45b05a86e1fc",
+    "document_id": "aba80607-e798-5387-bc7d-fa61e41b7fc6",
+    "document_slug": "psychotropic-properties-of-the-harmala-alkaloids",
+    "source_url": "latin-american-psychedelic-research/assets/naranjo-1967-harmala-alkaloids.pdf",
+    "local_path": "pdfs/psychotropic-properties-of-the-harmala-alkaloids/naranjo-1967-harmala-alkaloids.pdf",
+    "storage_path": "documents/aba80607-e798-5387-bc7d-fa61e41b7fc6/pdfs/psychotropic-properties-of-the-harmala-alkaloids/naranjo-1967-harmala-alkaloids.pdf",
+    "kind": "source_pdf",
+    "mime_type": "application/pdf",
+    "downloaded": true,
+    "sha256": "7faa17112ebc3a3d6ad94408d564e05235eeee07312cbab46e1a4e5c4f911dd3",
+    "byte_size": 235464,
+    "width": null,
+    "height": null
+  }
+]

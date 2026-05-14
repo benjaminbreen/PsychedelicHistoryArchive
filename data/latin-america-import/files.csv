@@ -1,0 +1,3 @@
+id,document_id,page_id,kind,storage_path,mime_type,byte_size,width,height,checksum
+b1fb3fb9-037d-54c8-8f3a-e5a06208f9e5,aba80607-e798-5387-bc7d-fa61e41b7fc6,,cover_image,documents/aba80607-e798-5387-bc7d-fa61e41b7fc6/images/psychotropic-properties-of-the-harmala-alkaloids/01-claudio-naranjo.jpg,image/jpeg,91460,393,601,9d0fb261d7ab978f702098cd772694bad34b142941cbe9fc5361562c887aaefb
+fe5e1c2a-7610-5c96-b936-45b05a86e1fc,aba80607-e798-5387-bc7d-fa61e41b7fc6,,source_pdf,documents/aba80607-e798-5387-bc7d-fa61e41b7fc6/pdfs/psychotropic-properties-of-the-harmala-alkaloids/naranjo-1967-harmala-alkaloids.pdf,application/pdf,235464,,,7faa17112ebc3a3d6ad94408d564e05235eeee07312cbab46e1a4e5c4f911dd3

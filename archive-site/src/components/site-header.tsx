@@ -32,18 +32,19 @@ const navItems = [
 ];
 
 type SiteHeaderProps = {
-  variant?: "home" | "source";
+  variant?: "home" | "source" | "bio";
   showSourceSettings?: boolean;
+  activeLabel?: string;
 };
 
-export function SiteHeader({ variant = "home", showSourceSettings = true }: SiteHeaderProps) {
+export function SiteHeader({ variant = "home", showSourceSettings = true, activeLabel }: SiteHeaderProps) {
   const gradient =
     variant === "source"
       ? "from-[#F1E8F7] via-[#F8F5F4] to-[#FFFFFF]"
-      : "from-[#F2EAF5] via-[#F7F0E2] to-[#F7EDCF]";
+      : "from-[#F7F2FF] via-[#FCFAF8] to-[#FCFAF7]";
 
   return (
-    <header className={`sticky top-0 z-40 border-b border-[#E9DDC6] bg-gradient-to-b ${gradient}`}>
+    <header className={`sticky top-0 z-40 border-b ${variant === "source" ? "border-[#E9DDC6]" : "border-[#E5DDF2]"} bg-gradient-to-b ${gradient}`}>
       <div className="flex min-h-[4.9rem] w-full items-center gap-5 px-6 sm:px-8 lg:px-12">
         <Link
           href="/"
@@ -55,7 +56,7 @@ export function SiteHeader({ variant = "home", showSourceSettings = true }: Site
         </Link>
         <nav aria-label="Primary" className="ml-auto hidden items-center gap-5 text-[1rem] font-semibold leading-none xl:gap-6 lg:flex">
           {navItems.map((item) => {
-            const isActive = variant === "source" && item.label === "Text";
+            const isActive = activeLabel ? item.label === activeLabel : variant === "source" && item.label === "Text";
             const triggerClasses = `focus-ring relative inline-flex h-14 items-center gap-1.5 whitespace-nowrap rounded-sm transition hover:text-archive-violet ${
               isActive
                 ? "text-archive-ink after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-archive-violet"

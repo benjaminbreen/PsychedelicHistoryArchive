@@ -256,6 +256,50 @@ a {
     padding: clamp(2.5rem, 5vw, 5.4rem) clamp(1rem, 3vw, 3rem);
   }
 
+  .footer-fish-mark {
+    opacity: 0.94;
+    transform-origin: 50% 58%;
+    filter: drop-shadow(0 0 7px rgba(239, 230, 255, 0.36));
+    transition:
+      filter 260ms ease,
+      opacity 260ms ease,
+      transform 260ms ease;
+  }
+
+  .footer-fish-mark:hover {
+    animation: footer-fish-drift 2.8s ease-in-out infinite;
+    filter:
+      drop-shadow(0 0 9px rgba(239, 230, 255, 0.55))
+      drop-shadow(0 0 18px rgba(123, 75, 216, 0.34));
+    opacity: 1;
+    transform: scale(1.11) rotate(-1deg);
+  }
+
+  @keyframes footer-fish-drift {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1.09) rotate(-1deg);
+    }
+
+    34% {
+      transform: translate3d(0.12rem, -0.18rem, 0) scale(1.13) rotate(1.6deg);
+    }
+
+    68% {
+      transform: translate3d(-0.1rem, 0.14rem, 0) scale(1.1) rotate(-2.1deg);
+    }
+
+    100% {
+      transform: translate3d(0, 0, 0) scale(1.09) rotate(-1deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .footer-fish-mark:hover {
+      animation: none;
+      transform: scale(1.06);
+    }
+  }
+
   .about-title-wrap {
     align-self: start;
     padding-top: clamp(1.5rem, 9vh, 7.5rem);

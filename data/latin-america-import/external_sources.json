@@ -1,0 +1,26 @@
+[
+  {
+    "id": "e438bb79-bb09-5d25-b262-ce265fdfe097",
+    "document_id": "aba80607-e798-5387-bc7d-fa61e41b7fc6",
+    "repository_name": "Claudio Naranjo Archive",
+    "institution_name": "",
+    "url": "https://www.claudionaranjo.net/pdf_files/psychedelics/psychotropic_properties_of_the_harmala_alkaloids_english.pdf",
+    "access_label": "Full text PDF",
+    "stable_identifier": "https://www.claudionaranjo.net/pdf_files/psychedelics/psychotropic_properties_of_the_harmala_alkaloids_english.pdf",
+    "rights_note": "Source PDF describes the 1967 U.S. government publication as copyright-free; review before republication.",
+    "is_primary": true,
+    "last_checked_at": null
+  },
+  {
+    "id": "ac12e12b-887a-5910-9604-05aafde3ec68",
+    "document_id": "aba80607-e798-5387-bc7d-fa61e41b7fc6",
+    "repository_name": "PubMed",
+    "institution_name": "",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/5615550/",
+    "access_label": "Bibliographic record",
+    "stable_identifier": "https://pubmed.ncbi.nlm.nih.gov/5615550/",
+    "rights_note": "Source PDF describes the 1967 U.S. government publication as copyright-free; review before republication.",
+    "is_primary": false,
+    "last_checked_at": null
+  }
+]

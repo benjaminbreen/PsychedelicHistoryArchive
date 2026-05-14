@@ -1,17 +1,19 @@
 #!/usr/bin/env node
 import fs from "node:fs/promises";
 import { createRequire } from "node:module";
+import { fileURLToPath } from "node:url";
 import path from "node:path";
 import process from "node:process";
 
 const require = createRequire(new URL("../archive-site/package.json", import.meta.url));
 const { createClient } = require("@supabase/supabase-js");
 
-const root = process.cwd();
+const scriptDir = path.dirname(fileURLToPath(import.meta.url));
+const root = path.resolve(scriptDir, "..");
 const importDirArgIndex = process.argv.indexOf("--import-dir");
 const importDir = importDirArgIndex === -1
   ? path.join(root, "data", "squarespace-import")
-  : path.resolve(root, process.argv[importDirArgIndex + 1]);
+  : path.resolve(process.cwd(), process.argv[importDirArgIndex + 1]);
 const bucket = process.env.SUPABASE_STORAGE_BUCKET || "archive-assets";
 const supabaseUrl = process.env.SUPABASE_URL;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -28,7 +30,8 @@ const supabase = createClient(supabaseUrl, serviceRoleKey, {
 });
 
 async function readJson(name) {
-  const raw = await fs.readFile(path.join(importDir, `${name}.json`), "utf8");
+  const filePath = path.join(importDir, `${name}.json`);
+  const raw = await fs.readFile(filePath, "utf8");
   return JSON.parse(raw);
 }
 
@@ -77,6 +80,7 @@ async function uploadAssets(assets) {
 }
 
 async function main() {
+  console.log(`Using import directory: ${importDir}`);
   const documents = await readJson("documents");
   const pages = await readJson("pages");
   const files = await readJson("files");
@@ -86,6 +90,8 @@ async function main() {
   const tags = await readJson("tags");
   const documentTags = await readJson("document_tags");
   const assets = await readJson("assets");
+
+  console.log(`Loaded ${documents.length} documents, ${pages.length} pages, ${files.length} files, ${assets.length} assets`);
 
   await uploadAssets(assets);
 

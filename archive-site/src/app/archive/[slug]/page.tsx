@@ -241,8 +241,8 @@ function HostedSourcePage({ source }: { source: ArchiveSource }) {
             <section className="mt-6 max-w-[49rem]">
               <h2 className="source-transcript-heading">Transcript</h2>
               <div className="source-transcript mt-5 space-y-6 text-archive-ink">
-                {transcript.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                {transcript.map((paragraph, index) => (
+                  <p key={`${index}-${paragraph.slice(0, 24)}`}>{paragraph}</p>
                 ))}
               </div>
             </section>
@@ -352,11 +352,13 @@ function publicationLabel(source: ArchiveSource) {
 
 function getTranscriptPreview(source: ArchiveSource) {
   if (source.transcript) {
-    return source.transcript
-      .split(/\n{2,}/)
+    const cleaned = stripImportedTranscriptMetadata(source.transcript);
+    const paragraphs = cleaned.split(/\n{2,}/).map((paragraph) => paragraph.trim()).filter(Boolean);
+    const hasOnlyLegacySingleBreaks = paragraphs.length <= 1 && /\n/.test(cleaned);
+
+    return (hasOnlyLegacySingleBreaks ? cleaned.split(/\n+/) : paragraphs)
       .map((paragraph) => paragraph.trim())
-      .filter(Boolean)
-      .slice(0, 24);
+      .filter(Boolean);
   }
 
   const sourceId = source.id;
@@ -389,4 +391,21 @@ function getTranscriptPreview(source: ArchiveSource) {
     sourceId,
     "This hosted source has a local transcript in the project corpus. The production reader will load the complete text with page anchors, OCR snippets, and links to scanned source images where available."
   ];
+}
+
+function stripImportedTranscriptMetadata(transcript: string) {
+  const lines = transcript.split(/\r?\n/);
+  const markerIndex = lines.findIndex((line) =>
+    /^(transcription|complete transcription|partial transcript|partial translation)$/i.test(line.trim())
+  );
+
+  if (markerIndex !== -1) {
+    return lines.slice(markerIndex + 1).join("\n").trim();
+  }
+
+  while (lines.length && (!lines[0].trim() || /^(authors?|date|source)\s*:/i.test(lines[0].trim()))) {
+    lines.shift();
+  }
+
+  return lines.join("\n").trim();
 }
