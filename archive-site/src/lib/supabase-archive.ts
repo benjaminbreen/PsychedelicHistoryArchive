@@ -1,19 +1,24 @@
 import { sources as fallbackSources } from "@/lib/archive-data";
 import { getStoragePublicUrl, getSupabaseClient } from "@/lib/supabase";
+import { getSourceTitleParts } from "@/lib/source-title";
 import type { AccessType, ArchiveSource, HostingStatus, SourceCreator, SourceFigure, SourceFile, SourceLineBox, SourcePage, SourcePageLine, SourceType, TranscriptSection } from "@/lib/types";
 
 type DocumentRow = {
   id: string;
   slug: string;
   title: string;
+  short_title: string | null;
+  subtitle: string | null;
   display_date: string | null;
   date_start: number | null;
   document_type: string | null;
   medium: ArchiveSource["medium"] | null;
   language: string | null;
   region: string | null;
+  publisher: string | null;
   summary: string | null;
   abstract: string | null;
+  publication_title: string | null;
   citation: string | null;
   rights_statement: string | null;
   source_url: string | null;
@@ -32,23 +37,40 @@ type DocumentRow = {
 type RelatedTag = { name: string | null; tag_type: string | null };
 type RelatedPerson = { name: string | null };
 const CORE_TOPIC_TAGS = [
+  "Ayahuasca",
+  "Cannabis",
+  "DMT",
+  "Kava",
+  "LSD",
+  "Nitrous Oxide",
+  "Psilocybin",
   "Anesthesia",
+  "Animal Research",
+  "Anthropology",
+  "Chemistry",
   "Clinical",
   "Therapy",
   "Psychiatry",
+  "Psychology",
   "Psychosis",
+  "Psychoanalysis",
+  "PTSD",
   "Consciousness",
+  "ESP",
   "Mysticism",
   "Religion",
   "Philosophy",
   "Literature",
   "Poetry",
   "Counterculture",
+  "Government Research",
   "Law",
   "Prohibition",
+  "MKULTRA",
   "Military",
   "Intelligence",
-  "Indigenous",
+  "Human Potential",
+  "Indigenous Knowledge",
   "Ethnobotany",
   "Pharmacology",
   "Medicine",
@@ -63,35 +85,87 @@ const CORE_TAG_SET = new Set<string>(CORE_TOPIC_TAGS);
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const TOPIC_TAG_MAP: Record<string, string> = {
+  "5-meo-dmt": "DMT",
+  "alcohol": "Pharmacology",
   "altered states": "Consciousness",
   "altered states of consciousness": "Consciousness",
   "anaesthesia": "Anesthesia",
   "anesthesia": "Anesthesia",
   "anaesthetic revelation": "Anesthesia",
+  "anaesthetics": "Anesthesia",
+  "anesthetics": "Anesthesia",
   "anesthetic revelation": "Anesthesia",
+  "animal research": "Animal Research",
+  "anthropology": "Anthropology",
+  "ayahuasca": "Ayahuasca",
+  "banisteriopsis caapi": "Ayahuasca",
+  "bangue": "Cannabis",
+  "bhang": "Cannabis",
+  "cannabis": "Cannabis",
+  "caapi": "Ayahuasca",
+  "chemical research": "Chemistry",
+  "chemistry": "Chemistry",
+  "chloroform": "Anesthesia",
   "clinical research": "Clinical",
+  "cocaine": "Pharmacology",
   "counterculture": "Counterculture",
+  "dmt": "DMT",
+  "dreams": "Consciousness",
+  "early modern medicine": "Medicine",
+  "epena": "DMT",
+  "epená": "DMT",
   "esalen": "Networks",
+  "esp": "ESP",
+  "ether": "Anesthesia",
   "ethnobotany": "Ethnobotany",
+  "ethnography": "Anthropology",
+  "ethnopharmacology": "Pharmacology",
   "experimental science; self-experiment report": "Self-Experiment",
   "experimental science": "Clinical",
   "first person accounts": "Trip Reports",
+  "government research": "Government Research",
+  "harmala alkaloids": "Pharmacology",
+  "harmaline": "Pharmacology",
+  "harmine": "Pharmacology",
+  "hemp": "Cannabis",
+  "human experiments": "Clinical",
+  "human potential": "Human Potential",
+  "indigenous knowledge": "Indigenous Knowledge",
+  "john c. lilly": "Networks",
+  "kava": "Kava",
+  "kavalactones": "Kava",
   "literature": "Literature",
+  "lsd": "LSD",
+  "materia medica": "Medicine",
   "medical history": "Medicine",
   "medicine": "Medicine",
   "mental research institute": "Networks",
+  "mkultra": "MKULTRA",
+  "narcosynthesis": "Therapy",
+  "nitrous oxide": "Nitrous Oxide",
+  "nitrous oxide and ether": "Nitrous Oxide",
   "mysticism": "Mysticism",
   "oral history": "Oral History",
+  "phytochemistry": "Chemistry",
   "pharmacology": "Pharmacology",
   "philosophy": "Philosophy",
+  "piper methysticum": "Kava",
   "poetry": "Poetry",
+  "ptsd": "PTSD",
+  "psychedelic therapy": "Therapy",
+  "psychoanalysis": "Psychoanalysis",
   "psychiatry": "Psychiatry",
-  "psychology": "Psychiatry",
+  "psychology": "Psychology",
+  "psychology of religion": "Religion",
   "psychosis": "Psychosis",
+  "psychotomimetic": "Psychosis",
   "religion": "Religion",
   "self-experimentation": "Self-Experiment",
   "therapy": "Therapy",
+  "trial records": "Law",
   "trip reports": "Trip Reports",
+  "virola": "DMT",
+  "virola theiodora": "DMT",
   "visual culture": "Visual Culture"
 };
 
@@ -151,12 +225,95 @@ const DOCUMENT_SELECT = `
   id,
   slug,
   title,
+  short_title,
+  subtitle,
   display_date,
   date_start,
   document_type,
   medium,
   language,
   region,
+  publisher,
+  summary,
+  abstract,
+  publication_title,
+  citation,
+  rights_statement,
+  source_url,
+  access_type,
+  hosting_status,
+  cover_image_path,
+  thumbnail_path,
+  is_featured,
+  published_at,
+  pages(
+    id,
+    page_number,
+    label,
+    readable_image_path,
+    thumbnail_image_path,
+    image_width,
+    image_height,
+    language,
+    ocr_text,
+    ocr_confidence,
+    transcription_status,
+    page_lines(
+      id,
+      line_index,
+      text,
+      normalized_text,
+      bbox,
+      confidence,
+      language,
+      paragraph_index
+    )
+  ),
+  files(id, storage_path, kind, mime_type, byte_size),
+  document_tags(tags(name, tag_type)),
+  document_people(role, people(name))
+`;
+
+const DOCUMENT_LIST_SELECT = `
+  id,
+  slug,
+  title,
+  subtitle,
+  display_date,
+  date_start,
+  document_type,
+  medium,
+  language,
+  region,
+  publisher,
+  summary,
+  abstract,
+  citation,
+  rights_statement,
+  source_url,
+  access_type,
+  hosting_status,
+  cover_image_path,
+  thumbnail_path,
+  is_featured,
+  published_at,
+  files(id, storage_path, kind, mime_type, byte_size),
+  document_tags(tags(name, tag_type)),
+  document_people(role, people(name))
+`;
+
+const LEGACY_DOCUMENT_SELECT = `
+  id,
+  slug,
+  title,
+  subtitle,
+  display_date,
+  date_start,
+  document_type,
+  medium,
+  language,
+  region,
+  publisher,
   summary,
   abstract,
   citation,
@@ -196,19 +353,58 @@ const DOCUMENT_SELECT = `
   document_people(role, people(name))
 `;
 
+const LEGACY_DOCUMENT_LIST_SELECT = `
+  id,
+  slug,
+  title,
+  subtitle,
+  display_date,
+  date_start,
+  document_type,
+  medium,
+  language,
+  region,
+  publisher,
+  summary,
+  abstract,
+  citation,
+  rights_statement,
+  source_url,
+  access_type,
+  hosting_status,
+  cover_image_path,
+  thumbnail_path,
+  is_featured,
+  published_at,
+  files(id, storage_path, kind, mime_type, byte_size),
+  document_tags(tags(name, tag_type)),
+  document_people(role, people(name))
+`;
+
 export async function getArchiveSourcesFromSupabase() {
   const supabase = getSupabaseClient();
-  if (!supabase) return fallbackSources;
+  if (!supabase) return normalizedFallbackSources();
 
-  const { data, error } = await supabase
+  let { data, error } = await supabase
     .from("documents")
-    .select(DOCUMENT_SELECT)
+    .select(DOCUMENT_LIST_SELECT)
     .eq("status", "published")
     .order("date_start", { ascending: true });
 
+  if (error && isSchemaShapeError(error.message)) {
+    console.warn("Supabase archive list query used legacy select shape.", error.message);
+    const legacyResult = await supabase
+      .from("documents")
+      .select(LEGACY_DOCUMENT_LIST_SELECT)
+      .eq("status", "published")
+      .order("date_start", { ascending: true });
+    data = legacyResult.data as typeof data;
+    error = legacyResult.error;
+  }
+
   if (error || !data) {
     console.warn("Supabase archive query failed; using fallback data.", error?.message);
-    return fallbackSources;
+    return normalizedFallbackSources();
   }
 
   return (data as unknown as DocumentRow[]).map(documentToArchiveSource);
@@ -218,12 +414,24 @@ export async function getArchiveSourceFromSupabase(slug: string) {
   const supabase = getSupabaseClient();
   if (!supabase) return fallbackSources.find((source) => source.slug === slug);
 
-  const { data, error } = await supabase
+  let { data, error } = await supabase
     .from("documents")
     .select(DOCUMENT_SELECT)
     .eq("slug", slug)
     .eq("status", "published")
     .maybeSingle();
+
+  if (error && isSchemaShapeError(error.message)) {
+    console.warn("Supabase source query used legacy select shape.", error.message);
+    const legacyResult = await supabase
+      .from("documents")
+      .select(LEGACY_DOCUMENT_SELECT)
+      .eq("slug", slug)
+      .eq("status", "published")
+      .maybeSingle();
+    data = legacyResult.data as typeof data;
+    error = legacyResult.error;
+  }
 
   if (error) {
     console.warn("Supabase source query failed; using fallback data.", error.message);
@@ -231,6 +439,14 @@ export async function getArchiveSourceFromSupabase(slug: string) {
   }
 
   return data ? documentToArchiveSource(data as unknown as DocumentRow) : undefined;
+}
+
+function isSchemaShapeError(message = "") {
+  return (
+    message.includes("Could not find a relationship") ||
+    message.includes("does not exist") ||
+    message.includes("schema cache")
+  );
 }
 
 function documentToArchiveSource(document: DocumentRow): ArchiveSource {
@@ -267,7 +483,10 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
     .filter((creator) => ["author", "speaker", "recordist"].includes(creator.role))
     .map((creator) => creator.name);
   const figures = extractTranscriptFigures(rawTranscript, getStoragePublicUrl(imagePath), title);
-  const transcript = cleanTranscriptText(rawTranscript);
+  const transcript = cleanTranscriptText(rawTranscript, {
+    title,
+    displayDate: document.display_date || (year ? String(year) : "Undated")
+  });
   const transcriptSections = buildTranscriptSections(transcript);
   const topicTags = unique(tags.map(toCoreTopicTag).filter(Boolean) as string[]);
 
@@ -275,6 +494,8 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
     id: document.id,
     slug: document.slug,
     title,
+    shortTitle: document.short_title || undefined,
+    subtitle: document.subtitle || undefined,
     author: formatNames(authorNames) || formatNames(publicPeople) || "The Psychedelic History Archive",
     year,
     displayDate: document.display_date || (year ? String(year) : "Undated"),
@@ -291,6 +512,7 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
     summary: document.summary || document.abstract || "",
     excerpt: excerptFromTranscript(transcript, document.summary || ""),
     citation: document.citation || "",
+    publicationTitle: document.publication_title || document.publisher || undefined,
     rights: document.rights_statement || "Needs rights review before republication.",
     sourceUrl: document.source_url || "#",
     accessType: document.access_type || "hosted",
@@ -382,6 +604,13 @@ function toSubstanceTag(value: string) {
   return SUBSTANCE_TAG_MAP[value.trim().toLowerCase()] ?? "";
 }
 
+function normalizedFallbackSources() {
+  return fallbackSources.map((source) => ({
+    ...source,
+    tags: unique(source.tags.map(toCoreTopicTag).filter(Boolean) as string[])
+  }));
+}
+
 function extractTranscriptFigures(transcript: string, imagePath: string | undefined, title: string): SourceFigure[] {
   const figures: SourceFigure[] = [];
   const captionPattern = /\[caption[^\]]*\]([\s\S]*?)\[\/caption\]/gi;
@@ -412,15 +641,51 @@ function cleanCaption(value: string) {
     .trim();
 }
 
-function cleanTranscriptText(transcript: string) {
+function cleanTranscriptText(transcript: string, sourceTitle: Pick<ArchiveSource, "title" | "displayDate">) {
   const withoutCaptions = transcript.replace(/\[caption[^\]]*\][\s\S]*?\[\/caption\]/gi, "\n\n");
   const lines = withoutCaptions.split(/\r?\n/);
+  const titleParts = getSourceTitleParts(sourceTitle);
 
   while (lines.length && (!lines[0].trim() || /^(authors?|date|source)\s*:/i.test(lines[0].trim()))) {
     lines.shift();
   }
 
+  if (lines.length && isImportedTitleLine(lines[0], titleParts.fullTitle)) {
+    lines.shift();
+  }
+
+  while (lines.length && !lines[0].trim()) lines.shift();
+
+  if (/^details$/i.test(lines[0]?.trim() ?? "")) {
+    lines.shift();
+  }
+
+  while (lines.length && (!lines[0].trim() || /^(author|authors|pages?|date|source|title)\s*:/i.test(lines[0].trim()))) {
+    lines.shift();
+  }
+
   return lines.join("\n").replace(/\n{3,}/g, "\n\n").trim();
+}
+
+function isImportedTitleLine(line: string, title: string) {
+  const normalizedLine = normalizeComparableTitle(line);
+  const normalizedTitle = normalizeComparableTitle(title);
+
+  return Boolean(normalizedLine && normalizedTitle) && (
+    normalizedLine === normalizedTitle ||
+    normalizedTitle.includes(normalizedLine) ||
+    normalizedLine.includes(normalizedTitle.slice(0, Math.min(normalizedTitle.length, 90)))
+  );
+}
+
+function normalizeComparableTitle(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/^\s*(?:1[5-9]\d{2}|20\d{2})\s*[:\-–—]\s*/, "")
+    .replace(/[:\-–—]+/g, " ")
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function buildTranscriptSections(transcript: string): TranscriptSection[] {

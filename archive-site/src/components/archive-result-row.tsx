@@ -2,9 +2,12 @@ import Link from "next/link";
 import { Bookmark, ExternalLink } from "lucide-react";
 import { Chip } from "@/components/ui/chip";
 import { SourceImage } from "@/components/source-image";
+import { getSourceTitleParts } from "@/lib/source-title";
 import type { ArchiveSource } from "@/lib/types";
 
 export function ArchiveResultRow({ source }: { source: ArchiveSource }) {
+  const titleParts = getSourceTitleParts(source);
+
   return (
     <article className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-archive-line py-3 md:grid-cols-[minmax(24rem,1.45fr)_6rem_8rem_minmax(12rem,1fr)_minmax(10rem,0.8fr)_2rem] md:items-center">
       <Link className="contents" href={`/archive/${source.slug}`}>
@@ -12,8 +15,13 @@ export function ArchiveResultRow({ source }: { source: ArchiveSource }) {
           <SourceImage className="aspect-[3/2] w-[4.5rem] shrink-0 md:w-[5.25rem]" source={source} />
           <div className="min-w-0">
             <h3 className="font-serif text-[1.02rem] font-semibold leading-tight transition hover:text-archive-violet">
-              {source.displayDate}: {source.title}
+              {titleParts.title}
             </h3>
+            {titleParts.subtitle && (
+              <p className="mt-0.5 line-clamp-1 max-w-[32rem] text-[0.8rem] font-medium leading-5 text-archive-ink/80">
+                {titleParts.subtitle}
+              </p>
+            )}
             <p className="mt-1 line-clamp-2 max-w-[32rem] text-[0.82rem] leading-5 text-archive-ink">
               {source.summary}
             </p>

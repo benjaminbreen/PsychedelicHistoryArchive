@@ -63,7 +63,14 @@ async function main() {
 
       let ocr = emptyOcr(label, source.language);
       if (!args["--skip-ocr"]) {
-        ocr = await transcribeWithGemini({ bytes: imageBytes, mimeType, pageLabel: label, language: source.language });
+        ocr = await transcribeWithGemini({
+          bytes: imageBytes,
+          mimeType,
+          pageLabel: label,
+          language: source.language,
+          imageWidth: page.width,
+          imageHeight: page.height
+        });
       }
 
       pages.push({
@@ -136,7 +143,7 @@ async function readPageImage(page, localPath) {
   return bytes;
 }
 
-async function transcribeWithGemini({ bytes, mimeType, pageLabel, language }) {
+async function transcribeWithGemini({ bytes, mimeType, pageLabel, language, imageWidth, imageHeight }) {
   const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(geminiModel)}:generateContent?key=${geminiApiKey}`;
   const response = await fetch(endpoint, {
     method: "POST",
@@ -171,10 +178,10 @@ async function transcribeWithGemini({ bytes, mimeType, pageLabel, language }) {
   const payload = await response.json();
   const text = payload.candidates?.[0]?.content?.parts?.map((part) => part.text).filter(Boolean).join("\n");
   if (!text) throw new Error(`Gemini OCR returned no text for page ${pageLabel}.`);
-  return normalizeOcr(JSON.parse(text), pageLabel, language);
+  return normalizeOcr(JSON.parse(text), pageLabel, language, { imageWidth, imageHeight });
 }
 
-function normalizeOcr(ocr, pageLabel, language) {
+function normalizeOcr(ocr, pageLabel, language, pageDimensions = {}) {
   const lines = Array.isArray(ocr.lines) ? ocr.lines : [];
   return {
     page_label: ocr.page_label || pageLabel,
@@ -186,7 +193,7 @@ function normalizeOcr(ocr, pageLabel, language) {
         line_index: Number(line.line_index) || index + 1,
         text: String(line.text),
         normalized_text: line.normalized_text ? String(line.normalized_text) : normalizeText(String(line.text)),
-        bbox: validBox(line.bbox) ? line.bbox : null,
+        bbox: normalizeBox(line.bbox, pageDimensions),
         confidence: Number.isFinite(Number(line.confidence)) ? Number(line.confidence) : null,
         paragraph_index: Number.isFinite(Number(line.paragraph_index)) ? Number(line.paragraph_index) : null
       }))
@@ -200,6 +207,51 @@ function emptyOcr(pageLabel, language) {
 function validBox(box) {
   return box &&
     ["x", "y", "width", "height"].every((key) => Number.isFinite(Number(box[key])));
+}
+
+function normalizeBox(box, { imageWidth, imageHeight } = {}) {
+  if (!validBox(box)) return null;
+
+  const normalized = {
+    x: Number(box.x),
+    y: Number(box.y),
+    width: Number(box.width),
+    height: Number(box.height)
+  };
+
+  if (Object.values(normalized).every((value) => value >= 0 && value <= 1)) {
+    return normalized;
+  }
+
+  const usesThousandGrid =
+    normalized.x >= 0 &&
+    normalized.y >= 0 &&
+    normalized.x + normalized.width <= 1000 &&
+    normalized.y + normalized.height <= 1000;
+
+  if (usesThousandGrid) {
+    return {
+      x: clampUnit(normalized.x / 1000),
+      y: clampUnit(normalized.y / 1000),
+      width: clampUnit(normalized.width / 1000),
+      height: clampUnit(normalized.height / 1000)
+    };
+  }
+
+  if (imageWidth > 0 && imageHeight > 0) {
+    return {
+      x: clampUnit(normalized.x / imageWidth),
+      y: clampUnit(normalized.y / imageHeight),
+      width: clampUnit(normalized.width / imageWidth),
+      height: clampUnit(normalized.height / imageHeight)
+    };
+  }
+
+  return null;
+}
+
+function clampUnit(value) {
+  return Math.min(Math.max(value, 0), 1);
 }
 
 function linesToText(lines = []) {

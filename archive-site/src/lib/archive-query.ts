@@ -11,10 +11,13 @@ export type ArchiveSearchParams = {
   access?: string;
   sort?: string;
   view?: string;
+  page?: string;
+  yearStart?: string;
+  yearEnd?: string;
 };
 
 export function filterArchiveSources(items: ArchiveSource[], params: ArchiveSearchParams): ArchiveSource[] {
-  const query = normalize(params.q);
+  const queryTerms = getQueryTerms(params.q);
   const era = normalize(params.era);
   const medium = normalize(params.medium);
   const tag = normalize(params.tag);
@@ -22,31 +25,51 @@ export function filterArchiveSources(items: ArchiveSource[], params: ArchiveSear
   const region = normalize(params.region);
   const people = normalize(params.people);
   const access = normalize(params.access);
+  const yearStart = parseYearParam(params.yearStart);
+  const yearEnd = parseYearParam(params.yearEnd);
 
   const filtered = items.filter((source) => {
     const haystack = normalize([
       source.title,
+      source.shortTitle,
+      source.subtitle,
       source.author,
       source.summary,
       source.excerpt,
+      source.citation,
+      source.publicationTitle,
       source.type,
       source.medium,
       source.region,
       source.language,
       ...source.tags,
+      ...(source.legacyTags ?? []),
       ...source.people,
-      ...source.substances
+      ...(source.creators?.map((creator) => `${creator.name} ${creator.role}`) ?? []),
+      ...source.substances,
+      source.transcript,
+      ...(source.transcriptSections ?? []).flatMap((section) => [
+        section.heading,
+        ...section.paragraphs
+      ]),
+      ...(source.pages ?? []).flatMap((page) => [
+        page.label,
+        page.ocrText,
+        ...page.lines.map((line) => line.text)
+      ])
     ].join(" "));
 
     return (
-      (!query || haystack.includes(query)) &&
+      (queryTerms.length === 0 || queryTerms.every((term) => haystack.includes(term))) &&
       (!era || normalize(source.era) === era) &&
       (!medium || normalize(source.medium) === medium) &&
       (!tag || source.tags.some((value) => normalize(value) === tag)) &&
       (!type || normalize(source.type) === type) &&
       (!region || normalize(source.region) === region) &&
       (!people || source.people.some((value) => normalize(value).includes(people))) &&
-      (!access || normalize(source.accessType) === access)
+      (!access || normalize(source.accessType) === access) &&
+      (yearStart === undefined || source.year >= yearStart) &&
+      (yearEnd === undefined || source.year <= yearEnd)
     );
   });
 
@@ -55,6 +78,12 @@ export function filterArchiveSources(items: ArchiveSource[], params: ArchiveSear
     if (params.sort === "title") return a.title.localeCompare(b.title);
     return a.year - b.year;
   });
+}
+
+function parseYearParam(value?: string) {
+  if (!value) return undefined;
+  const year = Number.parseInt(value, 10);
+  return Number.isFinite(year) ? year : undefined;
 }
 
 export function getFacetCounts(items: ArchiveSource[]) {
@@ -88,6 +117,14 @@ function countByMany<T extends string>(items: ArchiveSource[], fn: (item: Archiv
 
 function normalize(value?: string) {
   return decodeURIComponent(value ?? "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .trim();
+}
+
+function getQueryTerms(value?: string) {
+  return normalize(value)
+    .split(/\s+/)
+    .filter(Boolean);
 }

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
   description: "Browse people represented in The Psychedelic History Archive."
 };
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
+const PEOPLE_PAGE_SIZE = 40;
 
 type PersonEntry = {
   name: string;
@@ -23,7 +24,12 @@ type PersonEntry = {
   tags: string[];
 };
 
-export default async function PeoplePage() {
+type PeoplePageProps = {
+  searchParams: Promise<{ domain?: string }>;
+};
+
+export default async function PeoplePage({ searchParams }: PeoplePageProps) {
+  const params = await searchParams;
   const sources = await getArchiveSourcesFromSupabase();
   const people = buildPeopleDirectory(sources);
   const profileOnlyPeople = biographyProfiles
@@ -35,7 +41,10 @@ export default async function PeoplePage() {
       tags: profile.tags
     }));
   const allPeople = [...people, ...profileOnlyPeople].sort((a, b) => a.name.localeCompare(b.name));
-  const directoryItems: DirectoryItem[] = allPeople.map((person) => {
+  const visiblePeople = params.domain
+    ? allPeople.filter((person) => getPersonDomain(person) === params.domain)
+    : allPeople;
+  const directoryItems: DirectoryItem[] = visiblePeople.map((person) => {
     const slug = slugifyPersonName(person.name);
     const profile = biographyProfiles.find((item) => item.slug === slug);
     const portrait = getBiographyPortrait(person.name);
@@ -60,7 +69,7 @@ export default async function PeoplePage() {
 
   return (
     <>
-      <SiteHeader activeLabel="Bios" />
+      <SiteHeader activeLabel="People" />
       <PageShell width="wide" className="py-7">
         <PageHeader
           title="Biographies"
@@ -89,16 +98,12 @@ export default async function PeoplePage() {
         </section>
 
         <section className="mt-4">
-          <DirectoryGrid items={directoryItems.slice(0, 16)} variant="cards" />
+          <DirectoryGrid items={directoryItems.slice(0, PEOPLE_PAGE_SIZE)} variant="cards" />
           <div className="mt-5 flex items-center justify-between border-t border-archive-line pt-5 text-sm text-archive-muted">
-            <span>Showing 1-{Math.min(16, directoryItems.length)} of {directoryItems.length} figures</span>
-            <div className="flex items-center gap-2">
-              {[1, 2, 3, 4, 5].map((page) => (
-                <span className={page === 1 ? "grid h-9 w-9 place-items-center rounded border border-archive-violet text-archive-violet" : "grid h-9 w-9 place-items-center rounded border border-archive-line text-archive-ink"} key={page}>
-                  {page}
-                </span>
-              ))}
-            </div>
+            <span>Showing 1-{Math.min(PEOPLE_PAGE_SIZE, directoryItems.length)} of {directoryItems.length} figures</span>
+            {directoryItems.length > PEOPLE_PAGE_SIZE && (
+              <span>{directoryItems.length - PEOPLE_PAGE_SIZE} more figures available through search and filters</span>
+            )}
           </div>
         </section>
       </PageShell>
@@ -138,6 +143,32 @@ function buildPeopleDirectory(sources: ArchiveSource[]) {
 function getPersonGroup(name: string) {
   const lastToken = name.trim().split(/\s+/).at(-1) ?? name;
   return lastToken.charAt(0).toUpperCase();
+}
+
+function getPersonDomain(person: PersonEntry) {
+  const text = normalizeDomainText([person.name, ...person.tags].join(" "));
+
+  if (/(indigenous|amazonian|tukano|yoman|aztec|maya|nahua|native|shaman)/.test(text)) {
+    return "indigenous-traditions";
+  }
+
+  if (/(artist|writer|literature|poetry|poet|novelist|visual|film|music|composer)/.test(text)) {
+    return "arts-literature";
+  }
+
+  if (/(spiritual|mysticism|religion|teacher|guide|ceremon|practice)/.test(text)) {
+    return "spiritual-practice";
+  }
+
+  if (/(counterculture|activist|organizer|politic|law|prohibition|publisher|editor)/.test(text)) {
+    return "politics-counterculture";
+  }
+
+  return "science-medicine";
+}
+
+function normalizeDomainText(value: string) {
+  return value.toLowerCase().replace(/&/g, "and");
 }
 
 function describePersonDate(person: PersonEntry) {

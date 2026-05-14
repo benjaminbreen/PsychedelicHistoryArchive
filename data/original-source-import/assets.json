@@ -1,0 +1,32 @@
+[
+  {
+    "id": "e46efb78-625a-52ec-91ed-cf9a06949b0a",
+    "document_id": "2e05bf1b-3ea1-5d99-bbfb-2b610809ad4c",
+    "slug": "veigl-ayahuasca",
+    "original_url": null,
+    "local_path": "original-sources/veigl-ayahuasca/page-0137.jpeg",
+    "storage_path": "documents/2e05bf1b-3ea1-5d99-bbfb-2b610809ad4c/original-sources/veigl-ayahuasca/page-0137.jpeg",
+    "kind": "page_image",
+    "mime_type": "image/jpeg",
+    "needs_upload": true,
+    "checksum": "a6c976ce4edcf3e968e6322c316e2bfcbeae370c96e5ad7f2124764cf8ab4689",
+    "byte_size": 119443,
+    "width": 500,
+    "height": 865
+  },
+  {
+    "id": "5536fd86-be56-5195-8207-d5c5f40945bf",
+    "document_id": "2e05bf1b-3ea1-5d99-bbfb-2b610809ad4c",
+    "slug": "veigl-ayahuasca",
+    "original_url": null,
+    "local_path": "original-sources/veigl-ayahuasca/page-0138.jpeg",
+    "storage_path": "documents/2e05bf1b-3ea1-5d99-bbfb-2b610809ad4c/original-sources/veigl-ayahuasca/page-0138.jpeg",
+    "kind": "page_image",
+    "mime_type": "image/jpeg",
+    "needs_upload": true,
+    "checksum": "71cf977a8f2981b36e278a4b33564b5ddcced178a508798a5cddd8e85c33e1a8",
+    "byte_size": 109389,
+    "width": 512,
+    "height": 786
+  }
+]

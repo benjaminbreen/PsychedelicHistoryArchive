@@ -10,7 +10,7 @@ const { createClient } = require("@supabase/supabase-js");
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(scriptDir, "..");
-const importDirArgIndex = process.argv.indexOf("--import-dir");
+const importDirArgIndex = process.argv.lastIndexOf("--import-dir");
 const importDir = importDirArgIndex === -1
   ? path.join(root, "data", "squarespace-import")
   : path.resolve(process.cwd(), process.argv[importDirArgIndex + 1]);

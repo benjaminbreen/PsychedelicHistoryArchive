@@ -9,10 +9,14 @@ import { ButtonLink } from "@/components/ui/button";
 import { SourceImage } from "@/components/source-image";
 import { filterArchiveSources, type ArchiveSearchParams } from "@/lib/archive-query";
 import { getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
+import { getSourceTitleParts } from "@/lib/source-title";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import type { ArchiveSource } from "@/lib/types";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
+
+const pageSize = 50;
 
 type ArchivePageProps = {
   searchParams: Promise<ArchiveSearchParams>;
@@ -22,8 +26,12 @@ export default async function ArchivePage({ searchParams }: ArchivePageProps) {
   const params = await searchParams;
   const sources = await getArchiveSourcesFromSupabase();
   const results = filterArchiveSources(sources, params);
+  const currentPage = parsePage(params.page);
+  const pageCount = Math.max(1, Math.ceil(results.length / pageSize));
+  const safePage = Math.min(currentPage, pageCount);
+  const pagedResults = results.slice((safePage - 1) * pageSize, safePage * pageSize);
   const view = params.view === "grid" ? "grid" : "list";
-  const queryString = toQueryString(params, ["view"]);
+  const queryString = toQueryString(params, ["view", "page"]);
   const featured = shouldShowFeaturedSource(params) ? getContextualFeaturedSource(results) : undefined;
   const pageEra = params.era ?? "All eras";
   const pageIntro = params.era
@@ -66,13 +74,14 @@ export default async function ArchivePage({ searchParams }: ArchivePageProps) {
               <ArchiveToolbar
                 count={results.length}
                 currentView={view}
+                params={params}
                 queryString={queryString}
                 sort={params.sort}
               />
 
               {view === "grid" ? (
                 <div className="grid gap-5 py-6 md:grid-cols-2 xl:grid-cols-3">
-                  {results.map((source) => (
+                  {pagedResults.map((source) => (
                     <ArchiveGridCard key={source.id} source={source} />
                   ))}
                 </div>
@@ -86,10 +95,19 @@ export default async function ArchivePage({ searchParams }: ArchivePageProps) {
                     <div>People</div>
                     <div />
                   </div>
-                  {results.map((source) => (
+                  {pagedResults.map((source) => (
                     <ArchiveResultRow key={source.id} source={source} />
                   ))}
                 </div>
+              )}
+
+              {results.length > pageSize && (
+                <ArchivePagination
+                  currentPage={safePage}
+                  pageCount={pageCount}
+                  params={params}
+                  resultCount={results.length}
+                />
               )}
 
               {results.length === 0 && (
@@ -110,6 +128,66 @@ export default async function ArchivePage({ searchParams }: ArchivePageProps) {
   );
 }
 
+function ArchivePagination({
+  currentPage,
+  pageCount,
+  params,
+  resultCount
+}: {
+  currentPage: number;
+  pageCount: number;
+  params: ArchiveSearchParams;
+  resultCount: number;
+}) {
+  const firstResult = (currentPage - 1) * pageSize + 1;
+  const lastResult = Math.min(currentPage * pageSize, resultCount);
+
+  return (
+    <nav className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-archive-line pt-5 text-sm" aria-label="Archive pagination">
+      <span className="text-archive-muted">
+        Showing {firstResult}-{lastResult} of {resultCount}
+      </span>
+      <div className="flex items-center gap-2">
+        <PaginationLink disabled={currentPage <= 1} href={archivePageHref(params, currentPage - 1)}>
+          Previous
+        </PaginationLink>
+        <span className="px-2 font-medium text-archive-ink">
+          Page {currentPage} of {pageCount}
+        </span>
+        <PaginationLink disabled={currentPage >= pageCount} href={archivePageHref(params, currentPage + 1)}>
+          Next
+        </PaginationLink>
+      </div>
+    </nav>
+  );
+}
+
+function PaginationLink({ children, disabled, href }: { children: ReactNode; disabled?: boolean; href: string }) {
+  if (disabled) {
+    return (
+      <span className="inline-flex h-9 items-center rounded-md border border-archive-line px-3 font-semibold text-archive-muted/60">
+        {children}
+      </span>
+    );
+  }
+
+  return (
+    <Link className="focus-ring inline-flex h-9 items-center rounded-md border border-archive-line px-3 font-semibold text-archive-ink transition hover:border-archive-violet/40 hover:bg-archive-lavender2" href={href}>
+      {children}
+    </Link>
+  );
+}
+
+function archivePageHref(params: ArchiveSearchParams, page: number) {
+  const query = toQueryString({ ...params, page: page > 1 ? String(page) : undefined });
+  return query ? `/archive?${query}` : "/archive";
+}
+
+function parsePage(value?: string) {
+  const page = Number.parseInt(value ?? "1", 10);
+  return Number.isFinite(page) && page > 0 ? page : 1;
+}
+
 function shouldShowFeaturedSource(params: ArchiveSearchParams) {
   return Boolean(params.era && params.medium);
 }
@@ -122,6 +200,8 @@ function getContextualFeaturedSource(results: ArchiveSource[]) {
 }
 
 function FeaturedArchiveSource({ source }: { source: ArchiveSource }) {
+  const titleParts = getSourceTitleParts(source);
+
   return (
     <aside className="rounded-md border border-archive-line bg-archive-lavender2 p-5 shadow-[0_10px_28px_rgb(var(--archive-shadow)/0.08)]">
       <article className="grid min-h-[9.5rem] items-start gap-5 sm:grid-cols-[1fr_12.25rem]">
@@ -131,9 +211,14 @@ function FeaturedArchiveSource({ source }: { source: ArchiveSource }) {
           </div>
           <Link href={`/archive/${source.slug}`} className="block focus-ring rounded-sm">
             <h2 className="[font-family:var(--font-source-serif),Georgia,serif] text-[1.22rem] font-semibold leading-[1.08] text-archive-ink transition hover:text-archive-violet">
-              {source.title}
+              {titleParts.title}
             </h2>
           </Link>
+          {titleParts.subtitle && (
+            <p className="mt-1 line-clamp-2 font-serif text-[0.9rem] italic leading-5 text-archive-ink/80">
+              {titleParts.subtitle}
+            </p>
+          )}
           <div className="mt-2 text-[0.84rem] font-medium text-archive-ink">
             {source.displayDate} <span className="px-1 text-archive-muted">•</span> {formatFeaturedType(source.type)}
           </div>

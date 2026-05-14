@@ -12,9 +12,10 @@ import { SectionHeading } from "@/components/section-heading";
 import { featuredCollections } from "@/lib/archive-data";
 import { getFacetCounts } from "@/lib/archive-query";
 import { getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
+import { getSourceTitleParts } from "@/lib/source-title";
 import type { FacetOption } from "@/lib/types";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export default async function HomePage() {
   const sources = await getArchiveSourcesFromSupabase();
@@ -103,7 +104,7 @@ export default async function HomePage() {
                       {source.type}, {source.displayDate}
                     </span>
                     <span className="mt-2 block font-serif text-[1.03rem] font-semibold leading-snug text-archive-ink group-hover:text-archive-violetDark">
-                      {source.title}
+                      {getSourceTitleParts(source).title}
                     </span>
                     <span className="featured-source-summary mt-1.5 text-[0.92rem] leading-5 text-archive-muted">
                       {index === 0 ? source.summary : source.author}
@@ -173,7 +174,7 @@ export default async function HomePage() {
                 <span className="flex items-start gap-2">
                   <BookOpen className="mt-0.5 h-4 w-4 shrink-0 text-archive-muted" />
                   <span>
-                    <span className="block font-medium">{source.title}</span>
+                    <span className="block font-medium">{getSourceTitleParts(source).title}</span>
                     <span className="block text-xs text-archive-muted">{source.author}</span>
                   </span>
                 </span>

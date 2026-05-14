@@ -1,0 +1,898 @@
+[
+  {
+    "id": "c49618a4-199e-5620-93d2-73185bcc344e",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 1,
+    "text": "Provinciae Maynensis, Lib. II. 137",
+    "normalized_text": "Provinciae Maynensis, Lib. II. 137",
+    "bbox": {
+      "x": 0.188,
+      "y": 0.033,
+      "width": 0.746,
+      "height": 0.028
+    },
+    "confidence": 0.98,
+    "language": "Latin",
+    "paragraph_index": 0
+  },
+  {
+    "id": "dcfbb790-eeca-5226-9768-5f4e75aa33e4",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 2,
+    "text": "etiam peregre inter Christianos adductis, multos",
+    "normalized_text": "etiam peregre inter Christianos adductis, multos",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.087,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "7197b409-e26a-5a54-b0ff-3826a892e248",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 3,
+    "text": "in annos insidet, pluribusque post suscepta etiam",
+    "normalized_text": "in annos insidet, pluribusque post suscepta etiam",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.116,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "b772b93f-7e28-5509-b356-854f7478166c",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 4,
+    "text": "fidei mysteria, maximaque omnimodae charitatis",
+    "normalized_text": "fidei mysteria, maximaque omnimodae charitatis",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.146,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "148c4712-25f7-54ea-9775-2f2aa549aff1",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 5,
+    "text": "officia non satis abstergitur, gravi sane cum re-",
+    "normalized_text": "officia non satis abstergitur, gravi sane cum re-",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.176,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "45c755d6-1bba-5883-abf2-794161450052",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 6,
+    "text": "mora educationis christianae.",
+    "normalized_text": "mora educationis christianae.",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.206,
+      "width": 0.438,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "be598542-a891-56c8-af19-91b646af1c37",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 7,
+    "text": "Affumere solent in Curacam, quem valor ani-",
+    "normalized_text": "Affumere solent in Curacam, quem valor ani-",
+    "bbox": {
+      "x": 0.148,
+      "y": 0.256,
+      "width": 0.786,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "9b5be7ae-fcfa-50a2-80eb-c513588debdb",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 8,
+    "text": "mi, vel potius magicae artis existimatio praeci-",
+    "normalized_text": "mi, vel potius magicae artis existimatio praeci-",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.286,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "6b837a1f-4ff2-5f14-9fd4-1229ae51ac13",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 9,
+    "text": "pue commendat. Cum enim quoslibet rerum even-",
+    "normalized_text": "pue commendat. Cum enim quoslibet rerum even-",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.316,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "34f68b48-a96d-549f-8544-473f576c6bde",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 10,
+    "text": "tus, ut morbos, mortem, fatorum utramvis for-",
+    "normalized_text": "tus, ut morbos, mortem, fatorum utramvis for-",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.346,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "0251181c-29b7-51aa-9bf7-0e22f96159d0",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 11,
+    "text": "tunam, venationis et piscationis ubertatem, illu-",
+    "normalized_text": "tunam, venationis et piscationis ubertatem, illu-",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.376,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "e2db9c38-5760-551b-a035-1fa719603e6e",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 12,
+    "text": "vionem infectorum etc. vix alteri causae tribuere",
+    "normalized_text": "vionem infectorum etc. vix alteri causae tribuere",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.406,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "87993409-dcdb-5f13-9d70-1b80ca97c2c5",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 13,
+    "text": "norint, quam aliorum artibus magicis; his qui",
+    "normalized_text": "norint, quam aliorum artibus magicis; his qui",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.436,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "627fa70e-edc1-5b84-adf1-024ff74911ab",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 14,
+    "text": "maxime instructus videatur, optimus enimvero",
+    "normalized_text": "maxime instructus videatur, optimus enimvero",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.466,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "950b0119-06f0-500f-9129-6c14868a70ba",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 15,
+    "text": "creditur, ad familiam a malis externis defenden-",
+    "normalized_text": "creditur, ad familiam a malis externis defenden-",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.496,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "e8af9ef1-d4fc-581f-8f5a-006493324c00",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 16,
+    "text": "dam. Hanc magicae peritiae opinionem affectare",
+    "normalized_text": "dam. Hanc magicae peritiae opinionem affectare",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.526,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "a9128adc-3ec8-5270-96f6-23a6f3a37d90",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 17,
+    "text": "solent, munerum et obsequiorum a caeteris im-",
+    "normalized_text": "solent, munerum et obsequiorum a caeteris im-",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.556,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "294c086c-4bff-5ded-9e50-620468ee0d95",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 18,
+    "text": "petrandorum gratia, tum ad aliorum etiam terro-",
+    "normalized_text": "petrandorum gratia, tum ad aliorum etiam terro-",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.586,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "ae86c2e7-3da1-5e6e-834b-fea6197130de",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 19,
+    "text": "rem: serpentes, tigrides, procellas, morbos e nu-",
+    "normalized_text": "rem: serpentes, tigrides, procellas, morbos e nu-",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.616,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "949ab2b5-0007-5c16-a245-936ab87c0428",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 20,
+    "text": "tu suo pendere jactitantes; et quamvis plurimum",
+    "normalized_text": "tu suo pendere jactitantes; et quamvis plurimum",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.646,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "d6603ffc-8d27-5b5a-852a-5f019278c2a1",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 21,
+    "text": "dolis et inani solum jactantia caeterorum illu-",
+    "normalized_text": "dolis et inani solum jactantia caeterorum illu-",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.676,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "df2b99d7-423c-5307-8299-0b456f3ef215",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 22,
+    "text": "dant credulitati, obstrepentibus tamen, per me",
+    "normalized_text": "dant credulitati, obstrepentibus tamen, per me",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.706,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "39367835-5828-5868-9056-0562b35f2662",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 23,
+    "text": "licet, aevi nostri sciolis, nimis exploratum est",
+    "normalized_text": "licet, aevi nostri sciolis, nimis exploratum est",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.736,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "9da08e04-b4db-546d-a364-14fcc96bc90d",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 24,
+    "text": "commercium, quod saepe re vera barbaris cum",
+    "normalized_text": "commercium, quod saepe re vera barbaris cum",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.766,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "285631aa-b00c-53d2-ab17-96cc58cf2d1f",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 25,
+    "text": "daemone intercedere putatur. Nulla natio",
+    "normalized_text": "daemone intercedere putatur. Nulla natio",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.796,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "3fe09b8c-8649-55aa-9ed2-1235e4f87b83",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 26,
+    "text": "tam rudis est, quae daemonem ignoret,",
+    "normalized_text": "tam rudis est, quae daemonem ignoret,",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.826,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "adab4657-1fbc-50a5-b4ba-c612b410101f",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 27,
+    "text": "immo non etiam vocabulo linguae suae",
+    "normalized_text": "immo non etiam vocabulo linguae suae",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.856,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "ccf345f6-745e-5dce-9d66-2cde82f88754",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 28,
+    "text": "proprio compellet, quamvis varia fit",
+    "normalized_text": "proprio compellet, quamvis varia fit",
+    "bbox": {
+      "x": 0.058,
+      "y": 0.886,
+      "width": 0.876,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "9953705d-0b78-5f1a-bccf-c2ddfdacb3b3",
+    "page_id": "586ce246-4ff2-5baf-aa53-8a4a5ef40908",
+    "line_index": 29,
+    "text": "5 variis",
+    "normalized_text": "5 variis",
+    "bbox": {
+      "x": 0.515,
+      "y": 0.916,
+      "width": 0.419,
+      "height": 0.026
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 2
+  },
+  {
+    "id": "4df8b3e8-461a-55c1-b4a9-7e6c0809cc0c",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 1,
+    "text": "138",
+    "normalized_text": "138",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.055,
+      "width": 0.048,
+      "height": 0.028
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 0
+  },
+  {
+    "id": "6949e1f1-8dc9-5a49-91bb-b2889483ead7",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 2,
+    "text": "Status",
+    "normalized_text": "Status",
+    "bbox": {
+      "x": 0.453,
+      "y": 0.048,
+      "width": 0.094,
+      "height": 0.028
+    },
+    "confidence": 0.99,
+    "language": "Latin",
+    "paragraph_index": 0
+  },
+  {
+    "id": "377cac29-1df2-5ded-a75a-cbb130078ac2",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 3,
+    "text": "variis notio ejus vocabuli. Spectrum in eo ali-",
+    "normalized_text": "variis notio ejus vocabuli. Spectrum in eo ali-",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.108,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.95,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "4ddb1cad-3c8f-5b21-ac1c-179f9f999ed6",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 4,
+    "text": "quod fuapte incorporeum, pro fuo tamen libitu",
+    "normalized_text": "quod fuapte incorporeum, pro fuo tamen libitu",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.144,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "9f1fa4b3-9874-5ece-9ae0-89db5bea5fff",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 5,
+    "text": "fenfibilem quamlibet formam affumere gnarum,",
+    "normalized_text": "fenfibilem quamlibet formam affumere gnarum,",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.179,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "0ee3af1f-58bd-5764-820b-0750e6437c92",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 6,
+    "text": "et longe majore fupra humanam potentia praedi-",
+    "normalized_text": "et longe majore fupra humanam potentia praedi-",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.214,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "a12554eb-340d-54a6-ae2e-e32af759b9e1",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 7,
+    "text": "tum, experientia tefte omnes agnofcunt, caete-",
+    "normalized_text": "tum, experientia tefte omnes agnofcunt, caete-",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.249,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "3358ac3c-8bbf-5f45-901a-29c2d381f848",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 8,
+    "text": "rum difcordes, an fpecies quaedam divinitatis ei-",
+    "normalized_text": "rum difcordes, an fpecies quaedam divinitatis ei-",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.284,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "42807b3f-e812-553d-b79c-f8d95f243074",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 9,
+    "text": "dem ineffe credenda fit, nihil quod fciam, de cul-",
+    "normalized_text": "dem ineffe credenda fit, nihil quod fciam, de cul-",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.319,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "aa547f84-3b5c-574e-9314-e18e0681b10b",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 10,
+    "text": "tu fuperftitiofo, qui ftricte latreuticus haberi pof-",
+    "normalized_text": "tu fuperftitiofo, qui ftricte latreuticus haberi pof-",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.354,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "c67c5e36-87af-5abb-881b-9ac4d2d7d99b",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 11,
+    "text": "fit, cogitantes. Timent diabolum fervili quodam",
+    "normalized_text": "fit, cogitantes. Timent diabolum fervili quodam",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.389,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "f38d7e76-cc63-5e47-a987-a795145aa9a0",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 12,
+    "text": "timore, velut qui offenfus nocere ipfis multifa-",
+    "normalized_text": "timore, velut qui offenfus nocere ipfis multifa-",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.424,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "dd8645df-81b8-5145-8314-9b960a55311d",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 13,
+    "text": "riam poffit: et amant eundem ut beneficum fuum",
+    "normalized_text": "riam poffit: et amant eundem ut beneficum fuum",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.459,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "08d62545-e1c3-5f49-b67b-3097109f1ac3",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 14,
+    "text": "a malis protectorem, immo qui et jucunda ipfis",
+    "normalized_text": "a malis protectorem, immo qui et jucunda ipfis",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.494,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "25d12d47-8dce-527f-b338-544f5c922996",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 15,
+    "text": "quandoque gaudia faciat; nam choreas cum folem-",
+    "normalized_text": "quandoque gaudia faciat; nam choreas cum folem-",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.529,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "420a00b0-6b4f-5169-ac5a-6c3ce5867711",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 16,
+    "text": "ni compotatione, inter choros diabolicos, huma-",
+    "normalized_text": "ni compotatione, inter choros diabolicos, huma-",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.564,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "cbf37864-83ef-56c9-8494-f73ad58b13c2",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 17,
+    "text": "nam fpeciem indutos, iisdem quandoque inftrui,",
+    "normalized_text": "nam fpeciem indutos, iisdem quandoque inftrui,",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.599,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "0f155f35-74de-5b34-abd0-76f70e682446",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 18,
+    "text": "ubi nefandae quaevis libidines cum incubo fuccu-",
+    "normalized_text": "ubi nefandae quaevis libidines cum incubo fuccu-",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.634,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "f7b56b08-fb02-5b9a-b395-b8dc1d8c6aa5",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 19,
+    "text": "bove diabolo exercentur, indubiis teftibus com-",
+    "normalized_text": "bove diabolo exercentur, indubiis teftibus com-",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.669,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "e7744ab6-0192-5c91-a075-93add295aad7",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 20,
+    "text": "pertum eft, five demum vera corporum affum-",
+    "normalized_text": "pertum eft, five demum vera corporum affum-",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.704,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "a71cd0dd-c315-58e5-a3d1-a5450cf8b4be",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 21,
+    "text": "tione, five phantaftica folum fictione id fiat.",
+    "normalized_text": "tione, five phantaftica folum fictione id fiat.",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.739,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "0e607ff3-1139-54dc-8650-6301a60444f7",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 22,
+    "text": "Vulgo notiffimum eft, haufto fucco Campanae,",
+    "normalized_text": "Vulgo notiffimum eft, haufto fucco Campanae,",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.774,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "707cc34c-0004-5d46-904a-4349a0fd1762",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 23,
+    "text": "vel eo quem vocant: hayac huafca, vifiones",
+    "normalized_text": "vel eo quem vocant: hayac huafca, vifiones",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.809,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "4e07e25d-86d3-5b6b-a408-d09725cd7bdc",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 24,
+    "text": "offerri prorfus enormes, immo et vifionarios",
+    "normalized_text": "offerri prorfus enormes, immo et vifionarios",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.844,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "77277ea5-a529-583c-bc08-f5ce5d6d1ea4",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 25,
+    "text": "iftos mentis impotes, per avia deviaque celerri-",
+    "normalized_text": "iftos mentis impotes, per avia deviaque celerri-",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.879,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "2b3c225a-86b1-5082-8db1-13b13f6ca217",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 26,
+    "text": "me currere vivos, nec nifi lapfis aliquot diebus",
+    "normalized_text": "me currere vivos, nec nifi lapfis aliquot diebus",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.914,
+      "width": 0.922,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  },
+  {
+    "id": "47e6addb-dddd-5022-af7c-714da96fa20d",
+    "page_id": "f37eb6c1-a30e-5154-afad-189a7dacb124",
+    "line_index": 27,
+    "text": "fibi fuisque redditos.",
+    "normalized_text": "fibi fuisque redditos.",
+    "bbox": {
+      "x": 0.078,
+      "y": 0.949,
+      "width": 0.35,
+      "height": 0.032
+    },
+    "confidence": 0.96,
+    "language": "Latin",
+    "paragraph_index": 1
+  }
+]

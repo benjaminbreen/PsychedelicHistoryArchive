@@ -14,6 +14,8 @@ type BiographyPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: BiographyPageProps): Promise<Metadata> {
   const { slug } = await params;
   const profile = findBiographyProfile(slug);
@@ -34,13 +36,13 @@ export default async function BiographyPage({ params }: BiographyPageProps) {
 
   return (
     <>
-      <SiteHeader activeLabel="Bios" variant="bio" />
+      <SiteHeader activeLabel="People" variant="bio" />
       <main className="mx-auto grid w-full max-w-[1160px] gap-12 px-4 py-7 sm:px-6 lg:grid-cols-[minmax(0,680px)_320px] lg:gap-20 lg:px-10">
         <article className="min-w-0">
           <nav className="mb-7 flex flex-wrap items-center gap-2 text-[0.86rem] text-archive-muted">
             <Link className="underline underline-offset-2 hover:text-archive-violet" href="/">Home</Link>
             <span>›</span>
-            <Link className="underline underline-offset-2 hover:text-archive-violet" href="/people">Bios</Link>
+            <Link className="underline underline-offset-2 hover:text-archive-violet" href="/people">People</Link>
             <span>›</span>
             <span className="text-archive-violet">{profile.name}</span>
           </nav>

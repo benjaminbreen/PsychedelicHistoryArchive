@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { Chip } from "@/components/ui/chip";
 import { SourceImage } from "@/components/source-image";
+import { getSourceTitleParts } from "@/lib/source-title";
 import type { ArchiveSource } from "@/lib/types";
 
 type SourceCardProps = {
@@ -10,6 +11,8 @@ type SourceCardProps = {
 };
 
 export function SourceCard({ source, featured = false }: SourceCardProps) {
+  const titleParts = getSourceTitleParts(source);
+
   return (
     <article className="group grid h-full gap-4 rounded-lg border border-archive-line bg-archive-surface p-4 transition hover:border-archive-violet hover:bg-archive-lavender2/55">
       <div className={featured ? "grid gap-4 sm:grid-cols-[8rem_1fr]" : "grid gap-4"}>
@@ -26,9 +29,14 @@ export function SourceCard({ source, featured = false }: SourceCardProps) {
           </div>
           <Link href={`/archive/${source.slug}`} className="block focus-ring rounded-sm">
             <h3 className="mt-2 font-serif text-xl font-semibold leading-snug text-archive-ink transition group-hover:text-archive-violet">
-              {source.title}
+              {titleParts.title}
             </h3>
           </Link>
+          {titleParts.subtitle && (
+            <p className="mt-1 line-clamp-2 font-serif text-[0.98rem] italic leading-5 text-archive-ink/80">
+              {titleParts.subtitle}
+            </p>
+          )}
           <p className="mt-2 line-clamp-3 text-sm leading-6 text-archive-muted">
             {source.summary}
           </p>

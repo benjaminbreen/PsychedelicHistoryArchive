@@ -4,6 +4,7 @@ create table if not exists documents (
   id uuid primary key default gen_random_uuid(),
   slug text unique not null,
   title text not null,
+  short_title text,
   subtitle text,
   display_date text,
   date_start int,
@@ -16,6 +17,7 @@ create table if not exists documents (
   publisher text,
   summary text,
   abstract text,
+  publication_title text,
   editorial_note text,
   citation text,
   rights_statement text,
@@ -31,6 +33,10 @@ create table if not exists documents (
   created_at timestamptz default now(),
   updated_at timestamptz default now()
 );
+
+alter table documents add column if not exists short_title text;
+alter table documents add column if not exists subtitle text;
+alter table documents add column if not exists publication_title text;
 
 create table if not exists pages (
   id uuid primary key default gen_random_uuid(),

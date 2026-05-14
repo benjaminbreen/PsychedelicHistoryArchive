@@ -8,6 +8,7 @@ import { SourceReaderTabs } from "@/components/source-reader-tabs";
 import { ButtonLink } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
 import { getArchiveSourceFromSupabase } from "@/lib/supabase-archive";
+import { getSourceTitleParts } from "@/lib/source-title";
 import type { ArchiveSource } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -23,6 +24,7 @@ export default async function SourcePage({ params }: SourcePageProps) {
   if (!source) notFound();
 
   const isExternal = source.accessType === "external";
+  const titleParts = getSourceTitleParts(source);
 
   if (!isExternal) {
     return <HostedSourcePage source={source} />;
@@ -44,9 +46,14 @@ export default async function SourcePage({ params }: SourcePageProps) {
             </div>
             <h1 className="mt-8 max-w-4xl text-archive-ink">
               <span className="display-title text-[2.4rem] sm:text-[2.7rem]">
-                {source.displayDate}: {source.title}
+                {titleParts.title}
               </span>
             </h1>
+            {titleParts.subtitle && (
+              <p className="mt-3 max-w-3xl font-serif text-[1.35rem] italic leading-7 text-archive-ink/80">
+                {titleParts.subtitle}
+              </p>
+            )}
             <p className="mt-4 max-w-3xl text-lg leading-8 text-archive-muted">
               {source.summary}
             </p>
@@ -155,6 +162,9 @@ export default async function SourcePage({ params }: SourcePageProps) {
 
 function HostedSourcePage({ source }: { source: ArchiveSource }) {
   const transcript = getTranscriptPreview(source);
+  const titleParts = getSourceTitleParts(source);
+  const description = source.summary || source.excerpt;
+  const pdfFile = getPdfFile(source);
 
   return (
     <>
@@ -170,19 +180,22 @@ function HostedSourcePage({ source }: { source: ArchiveSource }) {
           <Link href={`/archive?type=${encodeURIComponent(source.type)}`}>{source.type}s</Link>
         </div>
 
-        <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_21rem] xl:grid-cols-[minmax(0,1fr)_24rem]">
+        <div className="source-page-grid grid gap-7 lg:grid-cols-[minmax(0,1fr)_21rem] xl:grid-cols-[minmax(0,1fr)_24rem]">
           <div>
             <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_13.5rem] xl:items-start">
               <div>
                 <h1 className="text-archive-ink">
                   <span className="source-display-title">
-                    {source.displayDate}: {source.title}
+                    {titleParts.title}
                   </span>
                 </h1>
+                {titleParts.subtitle && (
+                  <p className="mt-2 max-w-3xl font-serif text-[1.28rem] italic leading-7 text-archive-ink/80">
+                    {titleParts.subtitle}
+                  </p>
+                )}
                 <p className="mt-2 max-w-2xl text-[15px] leading-6 text-archive-muted">
-                  {source.medium === "Audio/Video"
-                    ? `A transcript of a recorded source featuring ${source.author}.`
-                    : `A transcript of ${source.author}'s published reflections on ${source.substances[0] ?? "altered states"} and consciousness.`}
+                  {description}
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 xl:flex-col xl:items-stretch xl:pt-7">
@@ -190,10 +203,12 @@ function HostedSourcePage({ source }: { source: ArchiveSource }) {
                   <ExternalLink className="h-4 w-4" />
                   View original source
                 </ButtonLink>
-                <ButtonLink className="xl:w-full" href="#" variant="primary">
-                  <Download className="h-4 w-4" />
-                  Download PDF
-                </ButtonLink>
+                {pdfFile && (
+                  <ButtonLink className="xl:w-full" href={pdfFile.url} variant="primary">
+                    <Download className="h-4 w-4" />
+                    Download PDF
+                  </ButtonLink>
+                )}
               </div>
             </div>
 
@@ -243,7 +258,7 @@ function HostedSourcePage({ source }: { source: ArchiveSource }) {
                   <Detail label="Abstract" value={source.summary} />
                 </dl>
               </div>
-              <ActionRow icon={<Download className="h-5 w-5" />} label="Download PDF" meta="PDF" />
+              {pdfFile && <ActionRow icon={<Download className="h-5 w-5" />} label="Download PDF" meta="PDF" />}
               <ActionRow icon={<Share2 className="h-5 w-5" />} label="Share" />
               <ActionRow icon={<BookOpen className="h-5 w-5" />} label="Related sources" />
             </div>
@@ -253,6 +268,10 @@ function HostedSourcePage({ source }: { source: ArchiveSource }) {
       <SiteFooter />
     </>
   );
+}
+
+function getPdfFile(source: ArchiveSource) {
+  return source.files?.find((file) => file.kind === "original_pdf" || file.mimeType === "application/pdf");
 }
 
 function Metadata({ label, value }: { label: string; value: string }) {
@@ -308,13 +327,18 @@ function ActionRow({ icon, label, meta }: { icon: React.ReactNode; label: string
 }
 
 function publicationLabel(source: ArchiveSource) {
-  if (source.id === "james_1882_subjective_effects_nitrous_oxide") {
-    return "The Popular Science Monthly";
+  if (source.publicationTitle) {
+    return source.publicationTitle;
   }
 
-  if (source.id === "james_1898_consciousness_under_nitrous_oxide") {
-    return "Psychological Review";
-  }
+  const quotedTitleParts = source.citation.split("\"");
+  const citationAfterTitle = quotedTitleParts.length > 2 ? quotedTitleParts.at(-1) ?? "" : "";
+  const publication = citationAfterTitle
+    .replace(/^[\s.,:]+/, "")
+    .match(/^(.+?)(?:\s+\d|,\s*\d|\s*\()/)?.[1]
+    ?.trim();
+
+  if (publication) return publication;
 
   return source.author;
 }

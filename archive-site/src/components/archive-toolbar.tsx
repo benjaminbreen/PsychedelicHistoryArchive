@@ -1,28 +1,60 @@
 import Link from "next/link";
-import { Grid2X2, List, SlidersHorizontal } from "lucide-react";
+import { Grid2X2, List, Search, SlidersHorizontal } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
+import type { ArchiveSearchParams } from "@/lib/archive-query";
 
 type ArchiveToolbarProps = {
   count: number;
   currentView: string;
+  params: ArchiveSearchParams;
   sort?: string;
   queryString: string;
 };
 
-export function ArchiveToolbar({ count, currentView, queryString, sort }: ArchiveToolbarProps) {
+export function ArchiveToolbar({ count, currentView, params, queryString, sort }: ArchiveToolbarProps) {
   const join = queryString ? `${queryString}&` : "";
+  const hiddenSearchParams = getHiddenSearchParams(params, ["q", "page"]);
 
   return (
-    <div className="flex flex-col gap-4 border-b border-archive-line pb-4 md:flex-row md:items-center md:justify-between">
-      <div className="flex items-center gap-4">
-        <div className="font-medium">{count.toLocaleString()} results</div>
-        <span className="hidden h-8 w-px bg-archive-line md:block" />
-        <ButtonLink className="lg:hidden" href="#filters" variant="subtle">
-          <SlidersHorizontal className="h-4 w-4" />
-          Filters
-        </ButtonLink>
+    <div className="border-b border-archive-line pb-4">
+      <div className="grid gap-4 xl:grid-cols-[minmax(18rem,1fr)_auto] xl:items-center">
+        <form action="/archive" className="flex min-w-0 flex-col gap-3 sm:flex-row">
+          {hiddenSearchParams.map(([key, value]) => (
+            <input key={key} name={key} type="hidden" value={value} />
+          ))}
+          <label className="relative min-w-0 flex-1" htmlFor="archive-search">
+            <Search
+              aria-hidden="true"
+              className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-archive-muted"
+            />
+            <input
+              className="focus-ring h-10 w-full rounded-md border border-archive-line bg-archive-surface pl-10 pr-3 text-sm text-archive-ink shadow-sm transition placeholder:text-archive-muted"
+              defaultValue={params.q ?? ""}
+              id="archive-search"
+              name="q"
+              placeholder="Search titles, people, topics, sources..."
+              type="search"
+            />
+          </label>
+          <button
+            className="focus-ring inline-flex h-10 items-center justify-center rounded-md border border-archive-line bg-archive-lavender px-4 text-sm font-semibold text-archive-ink transition hover:bg-archive-violet hover:text-white"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+
+        <div className="flex flex-wrap items-center gap-4">
+          <div className="font-medium">{count.toLocaleString()} results</div>
+          <span className="hidden h-8 w-px bg-archive-line md:block" />
+          <ButtonLink className="lg:hidden" href="#filters" variant="subtle">
+            <SlidersHorizontal className="h-4 w-4" />
+            Filters
+          </ButtonLink>
+        </div>
       </div>
-      <div className="flex flex-wrap items-center gap-4">
+
+      <div className="mt-4 flex flex-wrap items-center gap-4">
         <label className="-mr-2 text-sm text-archive-muted" htmlFor="sort">
           Sort by
         </label>
@@ -82,4 +114,11 @@ export function ArchiveToolbar({ count, currentView, queryString, sort }: Archiv
       </div>
     </div>
   );
+}
+
+function getHiddenSearchParams(params: ArchiveSearchParams, omit: string[] = []) {
+  return Object.entries(params).filter((entry): entry is [string, string] => {
+    const [key, value] = entry;
+    return Boolean(value) && !omit.includes(key);
+  });
 }

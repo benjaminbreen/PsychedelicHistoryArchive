@@ -26,6 +26,8 @@ export type ArchiveSource = {
   id: string;
   slug: string;
   title: string;
+  shortTitle?: string;
+  subtitle?: string;
   author: string;
   year: number;
   displayDate: string;
@@ -42,6 +44,7 @@ export type ArchiveSource = {
   summary: string;
   excerpt: string;
   citation: string;
+  publicationTitle?: string;
   rights: string;
   sourceUrl: string;
   accessType: AccessType;

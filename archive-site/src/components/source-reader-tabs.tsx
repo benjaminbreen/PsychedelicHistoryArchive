@@ -32,7 +32,7 @@ export function SourceReaderTabs({ source, transcript }: SourceReaderTabsProps) 
   const pages = useMemo(() => buildDisplayPages(source, transcript), [source, transcript]);
 
   return (
-    <>
+    <div data-source-reader-tab={activeTab}>
       <div className="mt-5 border-b border-archive-line">
         <div className="flex gap-8">
           <TabButton active={activeTab === "transcript"} onClick={() => setActiveTab("transcript")}>
@@ -49,20 +49,17 @@ export function SourceReaderTabs({ source, transcript }: SourceReaderTabsProps) 
 
       {activeTab === "transcript" && (
         <>
-          <section className="mt-5 flex gap-4 rounded-md border border-archive-line bg-archive-surface px-5 py-3.5 text-sm leading-6 shadow-[0_8px_24px_rgb(var(--archive-shadow)/0.05)]">
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-archive-violet/25 bg-archive-lavender2 text-archive-violet">
+          <section className="mt-5 flex gap-3 rounded-md border border-archive-line bg-archive-surface/10 px-5 py-3 text-sm leading-6 shadow-[0_8px_24px_rgb(var(--archive-shadow)/0.05)] w-max">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-archive-violet/25 bg-archive-lavender2 text-archive-violet">
               <BookOpen className="h-4 w-4" />
             </span>
             <div>
               <p>
-                <strong>You are in transcript reading mode.</strong> This is a text-only version of the source for easier reading and search.
-              </p>
-              <p className="mt-1">
-                Looking for the scanned original?{" "}
-                <button className="font-semibold text-archive-violet" type="button" onClick={() => setActiveTab("original")}>
+                <strong>You are in transcript reading mode.</strong> Looking for the primary source images? <button className="font-semibold text-archive-violet" type="button" onClick={() => setActiveTab("original")}> 
                   View original source <ExternalLink className="inline h-3.5 w-3.5" />
-                </button>
+                </button> 
               </p>
+              
             </div>
           </section>
 
@@ -92,7 +89,7 @@ export function SourceReaderTabs({ source, transcript }: SourceReaderTabsProps) 
           </DetailPanel>
         </section>
       )}
-    </>
+    </div>
   );
 }
 
@@ -139,6 +136,7 @@ function SourceFigureBlock({ figure }: { figure: SourceFigure }) {
 function OriginalSourceViewer({ pages, source }: { pages: SourcePage[]; source: ArchiveSource }) {
   const [pageIndex, setPageIndex] = useState(0);
   const [zoom, setZoom] = useState(1);
+  const [isPaulView, setIsPaulView] = useState(false);
   const [selectedLineId, setSelectedLineId] = useState<string | undefined>(pages[0]?.lines[0]?.id);
   const currentPage = pages[pageIndex] ?? pages[0];
   const selectedLine = currentPage?.lines.find((line) => line.id === selectedLineId);
@@ -157,6 +155,78 @@ function OriginalSourceViewer({ pages, source }: { pages: SourcePage[]; source: 
     setPageIndex(nextIndex);
     setSelectedLineId(pages[nextIndex]?.lines[0]?.id);
   }
+
+  const imagePane = (
+    <div className={clsx("relative overflow-auto bg-[#1f2024] p-5", isPaulView && "lg:order-2")}>
+      <div className="absolute left-4 top-4 z-10 hidden overflow-hidden rounded-md border border-white/15 bg-white shadow md:block">
+        {[FileText, Search, ZoomIn].map((Icon, index) => (
+          <button className="block border-b border-archive-line p-2.5 last:border-b-0 hover:bg-archive-lavender2" type="button" key={index}>
+            <Icon className="h-4 w-4" />
+          </button>
+        ))}
+      </div>
+      <div className="mx-auto flex min-h-[34rem] items-center justify-center">
+        <div className="relative origin-top transition-transform" style={{ transform: `scale(${zoom})` }}>
+          {currentPage.imagePath ? (
+            <img
+              alt={`${source.title}, page ${currentPage.label}`}
+              className="max-h-[58rem] w-auto max-w-full border border-black/20 bg-archive-paper shadow-2xl"
+              src={currentPage.imagePath}
+            />
+          ) : (
+            <div className="flex aspect-[3/4] w-[26rem] max-w-full items-center justify-center border border-archive-line bg-archive-paper p-8 text-center text-sm text-archive-muted shadow-2xl">
+              Page image pending for page {currentPage.label}
+            </div>
+          )}
+          {selectedLine?.box && <LineOverlay box={selectedLine.box} page={currentPage} />}
+        </div>
+      </div>
+    </div>
+  );
+
+  const transcriptPane = (
+    <div className={clsx("flex min-h-[38rem] flex-col border-t border-archive-line bg-white lg:border-t-0", isPaulView ? "lg:order-1 lg:border-r" : "lg:border-l")}>
+      <div className="flex flex-wrap items-center gap-3 border-b border-archive-line px-5 py-4">
+        <div>
+          <h2 className="text-base font-semibold text-archive-ink">Line-by-line transcript</h2>
+          <p className="mt-1 flex items-center gap-1 text-xs text-archive-muted">
+            <Link2 className="h-3.5 w-3.5" />
+            Linked to page {currentPage.label}
+          </p>
+        </div>
+        <div className="ml-auto flex items-center gap-3 text-xs text-archive-muted">
+          <span>Transcript language: {currentPage.language || source.language}</span>
+          <button className="focus-ring inline-flex h-8 items-center gap-1.5 rounded-md border border-archive-line px-2.5 text-archive-ink hover:bg-archive-lavender2" type="button">
+            <Info className="h-3.5 w-3.5" />
+            Details & citation
+          </button>
+        </div>
+      </div>
+
+      <div className="min-h-0 flex-1 overflow-auto px-4 py-4 font-mono text-[12.5px] leading-6">
+        {currentPage.lines.length ? (
+          currentPage.lines.map((line) => (
+            <button
+              className={clsx(
+                "grid w-full grid-cols-[2.25rem_1fr] gap-3 rounded-sm px-2 text-left transition",
+                selectedLineId === line.id ? "bg-archive-lavender2 text-archive-violetDark ring-1 ring-archive-violet/20" : "hover:bg-archive-paper"
+              )}
+              key={line.id}
+              type="button"
+              onClick={() => setSelectedLineId(line.id)}
+            >
+              <span className="select-none text-right text-archive-muted">{line.index}</span>
+              <span>{line.text}</span>
+            </button>
+          ))
+        ) : (
+          <p className="rounded-md border border-dashed border-archive-line p-4 font-sans text-sm text-archive-muted">
+            Line-level transcription is pending for this page.
+          </p>
+        )}
+      </div>
+    </div>
+  );
 
   return (
     <section className="mt-5 overflow-hidden rounded-md border border-archive-line bg-archive-surface shadow-[0_12px_32px_rgb(var(--archive-shadow)/0.06)]">
@@ -199,77 +269,23 @@ function OriginalSourceViewer({ pages, source }: { pages: SourcePage[]; source: 
             <Maximize2 className="h-4 w-4" />
             Fit width
           </button>
+          <button
+            aria-pressed={isPaulView}
+            className={clsx(
+              "focus-ring inline-flex h-9 items-center rounded-md border px-3 font-medium transition",
+              isPaulView ? "border-archive-violet bg-archive-lavender2 text-archive-violetDark" : "border-archive-line hover:bg-archive-lavender2"
+            )}
+            type="button"
+            onClick={() => setIsPaulView((value) => !value)}
+          >
+            Paul view
+          </button>
         </div>
       </div>
 
       <div className="grid min-h-[38rem] lg:grid-cols-[minmax(0,1fr)_minmax(24rem,0.95fr)]">
-        <div className="relative overflow-auto bg-[#1f2024] p-5">
-          <div className="absolute left-4 top-4 z-10 hidden overflow-hidden rounded-md border border-white/15 bg-white shadow md:block">
-            {[FileText, Search, ZoomIn].map((Icon, index) => (
-              <button className="block border-b border-archive-line p-2.5 last:border-b-0 hover:bg-archive-lavender2" type="button" key={index}>
-                <Icon className="h-4 w-4" />
-              </button>
-            ))}
-          </div>
-          <div className="mx-auto flex min-h-[34rem] items-center justify-center">
-            <div className="relative origin-top transition-transform" style={{ transform: `scale(${zoom})` }}>
-              {currentPage.imagePath ? (
-                <img
-                  alt={`${source.title}, page ${currentPage.label}`}
-                  className="max-h-[58rem] w-auto max-w-full border border-black/20 bg-archive-paper shadow-2xl"
-                  src={currentPage.imagePath}
-                />
-              ) : (
-                <div className="flex aspect-[3/4] w-[26rem] max-w-full items-center justify-center border border-archive-line bg-archive-paper p-8 text-center text-sm text-archive-muted shadow-2xl">
-                  Page image pending for page {currentPage.label}
-                </div>
-              )}
-              {selectedLine?.box && <LineOverlay box={selectedLine.box} page={currentPage} />}
-            </div>
-          </div>
-        </div>
-
-        <div className="flex min-h-[38rem] flex-col border-t border-archive-line bg-white lg:border-l lg:border-t-0">
-          <div className="flex flex-wrap items-center gap-3 border-b border-archive-line px-5 py-4">
-            <div>
-              <h2 className="text-base font-semibold text-archive-ink">Line-by-line transcript</h2>
-              <p className="mt-1 flex items-center gap-1 text-xs text-archive-muted">
-                <Link2 className="h-3.5 w-3.5" />
-                Linked to page {currentPage.label}
-              </p>
-            </div>
-            <div className="ml-auto flex items-center gap-3 text-xs text-archive-muted">
-              <span>Transcript language: {currentPage.language || source.language}</span>
-              <button className="focus-ring inline-flex h-8 items-center gap-1.5 rounded-md border border-archive-line px-2.5 text-archive-ink hover:bg-archive-lavender2" type="button">
-                <Info className="h-3.5 w-3.5" />
-                Details & citation
-              </button>
-            </div>
-          </div>
-
-          <div className="min-h-0 flex-1 overflow-auto px-4 py-4 font-mono text-[12.5px] leading-6">
-            {currentPage.lines.length ? (
-              currentPage.lines.map((line) => (
-                <button
-                  className={clsx(
-                    "grid w-full grid-cols-[2.25rem_1fr] gap-3 rounded-sm px-2 text-left transition",
-                    selectedLineId === line.id ? "bg-archive-lavender2 text-archive-violetDark ring-1 ring-archive-violet/20" : "hover:bg-archive-paper"
-                  )}
-                  key={line.id}
-                  type="button"
-                  onClick={() => setSelectedLineId(line.id)}
-                >
-                  <span className="select-none text-right text-archive-muted">{line.index}</span>
-                  <span>{line.text}</span>
-                </button>
-              ))
-            ) : (
-              <p className="rounded-md border border-dashed border-archive-line p-4 font-sans text-sm text-archive-muted">
-                Line-level transcription is pending for this page.
-              </p>
-            )}
-          </div>
-        </div>
+        {imagePane}
+        {transcriptPane}
       </div>
 
       <div className="flex flex-wrap items-center gap-3 border-t border-archive-line bg-white px-4 py-3 text-sm">
@@ -367,6 +383,8 @@ function DetailRow({ label, value }: { label: string; value: string }) {
 }
 
 function buildDisplayPages(source: ArchiveSource, transcript: string[]) {
+  const imagePages = source.pages?.filter((page) => page.imagePath);
+  if (imagePages?.length) return imagePages;
   if (source.pages?.length) return source.pages;
 
   const lines = transcript.flatMap((paragraph, paragraphIndex) =>

@@ -22,6 +22,7 @@ export const sources: ArchiveSource[] = [
       "The keynote of the experience is the tremendously exciting sense of an intense metaphysical illumination.",
     citation:
       "James, William. \"Subjective Effects of Nitrous Oxide.\" 1882.",
+    publicationTitle: "The Popular Science Monthly",
     rights: "Pre-1930 public-domain text; web transcription.",
     sourceUrl: "https://www.cs.cmu.edu/~ehn/release/nitrous.html",
     accessType: "hosted",
@@ -54,6 +55,7 @@ export const sources: ArchiveSource[] = [
       "I knew everything! A vast inrush of obvious and absolutely satisfying solutions to all possible problems overwhelmed my entire being.",
     citation:
       "James, William, ed. \"Consciousness Under Nitrous Oxide.\" Psychological Review 5, no. 2 (1898): 194-196.",
+    publicationTitle: "Psychological Review",
     rights: "Needs primary page verification before authoritative quotation.",
     sourceUrl: "Psychological Review 5(2):194-196",
     accessType: "hosted",

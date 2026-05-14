@@ -188,6 +188,16 @@ a {
     color: rgb(var(--archive-ink));
   }
 
+  .topic-icon {
+    transition: filter 160ms ease, opacity 160ms ease;
+  }
+
+  :root[data-theme="dark"] .topic-icon {
+    filter: invert(1) sepia(0.18) saturate(0.8) hue-rotate(220deg) brightness(1.08) contrast(0.92);
+    mix-blend-mode: normal;
+    opacity: 0.78;
+  }
+
   .home-hero {
     position: relative;
     overflow: hidden;
@@ -666,5 +676,13 @@ a {
     font-size: var(--source-transcript-size);
     line-height: var(--source-transcript-line-height);
     letter-spacing: 0;
+  }
+
+  .source-page-grid:has([data-source-reader-tab="original"]) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .source-page-grid:has([data-source-reader-tab="original"]) > aside {
+    display: none;
   }
 }
