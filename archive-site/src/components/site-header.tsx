@@ -53,6 +53,9 @@ const navItems = [
   { label: "About", href: "/about" }
 ];
 
+// Set to "about" to restore the old About-only gradient, or "off" for the neutral header everywhere.
+const headerGradientMode: "sitewide" | "about" | "off" = "sitewide";
+
 type SiteHeaderProps = {
   variant?: "home" | "source" | "bio" | "about";
   showSourceSettings?: boolean;
@@ -62,9 +65,10 @@ type SiteHeaderProps = {
 export function SiteHeader({ variant = "home", showSourceSettings = true, activeLabel }: SiteHeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const resolvedActiveLabel = activeLabel ?? (variant === "about" ? "About" : undefined);
+  const useGradientHeader = headerGradientMode === "sitewide" || (headerGradientMode === "about" && variant === "about");
 
   return (
-    <header className={`site-header sticky top-0 z-40 border-b border-archive-line ${variant === "about" ? "site-header-about" : ""}`}>
+    <header className={`site-header sticky top-0 z-40 border-b border-archive-line ${useGradientHeader ? "site-header-gradient" : ""}`}>
       <div className="flex min-h-[4.9rem] w-full items-center gap-2 px-4 sm:gap-5 sm:px-8 lg:px-12">
         <Link
           href="/"
@@ -79,14 +83,14 @@ export function SiteHeader({ variant = "home", showSourceSettings = true, active
             const isActive = resolvedActiveLabel ? item.label === resolvedActiveLabel : variant === "source" && item.label === "Texts";
             const triggerClasses = `focus-ring relative inline-flex h-14 items-center gap-1.5 whitespace-nowrap rounded-sm transition hover:text-archive-violetDark ${
               isActive
-                ? "text-archive-ink after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-archive-violet data-[about-active=true]:after:bg-[#d99a32]"
+                ? "text-archive-ink after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-archive-violet data-[gradient-active=true]:after:bg-[#d99a32]"
                 : ""
             }`;
 
             if (item.dropdown) {
               return (
                 <div className="group relative" key={item.href}>
-                  <Link className={triggerClasses} data-about-active={variant === "about" && isActive} href={item.href}>
+                  <Link className={triggerClasses} data-gradient-active={useGradientHeader && isActive} href={item.href}>
                     <span>{item.label}</span>
                     <ChevronDown className="h-4 w-4 stroke-[2] transition duration-150 group-hover:rotate-180 group-focus-within:rotate-180" />
                   </Link>
@@ -110,7 +114,7 @@ export function SiteHeader({ variant = "home", showSourceSettings = true, active
             return (
               <Link
                 className={triggerClasses}
-                data-about-active={variant === "about" && isActive}
+                data-gradient-active={useGradientHeader && isActive}
                 href={item.href}
                 key={item.href}
               >
@@ -128,10 +132,10 @@ export function SiteHeader({ variant = "home", showSourceSettings = true, active
           <div className="ml-2 hidden items-center gap-2 lg:flex">
             <SourceTextSettings showSourceControls={false} />
             <Link
-              className="focus-ring inline-flex h-9 items-center gap-2 whitespace-nowrap rounded-md border border-archive-line bg-archive-surface/70 px-4 text-[0.83rem] font-medium transition hover:border-archive-violet/50 hover:bg-archive-lavender2"
+              className="focus-ring inline-flex h-8 items-center gap-2 whitespace-nowrap rounded-md border border-archive-line/75 bg-archive-surface/45 px-3.5 text-[0.82rem] font-medium text-archive-ink transition hover:border-archive-violet/35 hover:bg-archive-surface/75"
               href="/archive"
             >
-              <Search className="h-4 w-4" />
+              <Search className="h-3.5 w-3.5" />
               Search
             </Link>
           </div>
@@ -150,7 +154,7 @@ export function SiteHeader({ variant = "home", showSourceSettings = true, active
         </button>
       </div>
       {mobileOpen && (
-        <nav aria-label="Mobile primary" className="border-t border-archive-line bg-archive-surface px-4 py-3 lg:hidden">
+        <nav aria-label="Mobile primary" className="site-header-mobile-nav border-t border-archive-line bg-archive-surface px-4 py-3 lg:hidden">
           <div className="grid gap-1">
             {navItems.map((item) => (
               <Link

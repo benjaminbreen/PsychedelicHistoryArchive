@@ -1,6 +1,6 @@
 import { ArchiveFilterSidebar } from "@/components/archive-filter-sidebar";
 import { ArchiveGridCard } from "@/components/archive-grid-card";
-import { ArchiveResultRow } from "@/components/archive-result-row";
+import { ArchiveCompactRow, ArchiveResultRow } from "@/components/archive-result-row";
 import { ArchiveToolbar } from "@/components/archive-toolbar";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteFooter } from "@/components/site-footer";
@@ -30,14 +30,10 @@ export default async function ArchivePage({ searchParams }: ArchivePageProps) {
   const pageCount = Math.max(1, Math.ceil(results.length / pageSize));
   const safePage = Math.min(currentPage, pageCount);
   const pagedResults = results.slice((safePage - 1) * pageSize, safePage * pageSize);
-  const view = params.view === "grid" ? "grid" : "list";
+  const view = params.view === "grid" ? "grid" : params.view === "compact" ? "compact" : "list";
   const queryString = toQueryString(params, ["view", "page"]);
   const featured = shouldShowFeaturedSource(params) ? getContextualFeaturedSource(results) : undefined;
-  const pageEra = params.era ?? "All eras";
-  const pageIntro = params.era
-    ? "Browse sources for this era using the filters, search controls, and sort options below."
-    : "Browse all imported sources from the archive database, then narrow by era, medium, category, people, tags, or region.";
-
+  const pageHeading = archivePageHeading(params);
   return (
     <>
       <SiteHeader variant="source" showSourceSettings={false} />
@@ -55,34 +51,40 @@ export default async function ArchivePage({ searchParams }: ArchivePageProps) {
             sources={sources}
           />
           <div>
-            <section className={`grid gap-6 border-b border-archive-line pb-6 ${featured ? "xl:grid-cols-[1fr_30rem]" : ""}`}>
-              <div className="pt-2">
-                <h1 className="font-display text-4xl font-semibold uppercase leading-none tracking-[0.01em] sm:text-5xl">
-                  {pageEra}
+            <section className="grid gap-6 pb-2">
+              <div className="grid gap-4 pt-2 xl:grid-cols-[minmax(0,1fr)_auto] xl:items-center">
+                <h1 className={archiveHeadingClass(pageHeading)}>
+                  {pageHeading}
                 </h1>
-                <p className="mt-4 max-w-4xl text-[0.98rem] leading-7 text-archive-ink">
-                  {pageIntro}{" "}
-                  <Link className="font-medium text-archive-violet" href="/collections">
-                    Read more
-                  </Link>
-                </p>
+                <ArchiveToolbar
+                  count={results.length}
+                  currentView={view}
+                  queryString={queryString}
+                  sort={params.sort}
+                />
               </div>
               {featured && <FeaturedArchiveSource source={featured} />}
             </section>
 
-            <section className="pt-5">
-              <ArchiveToolbar
-                count={results.length}
-                currentView={view}
-                params={params}
-                queryString={queryString}
-                sort={params.sort}
-              />
-
+            <section className="pt-6">
               {view === "grid" ? (
-                <div className="grid gap-5 py-6 md:grid-cols-2 xl:grid-cols-3">
+                <div className="grid gap-x-5 gap-y-10 py-8 md:grid-cols-2 xl:grid-cols-4">
                   {pagedResults.map((source) => (
                     <ArchiveGridCard key={source.id} source={source} />
+                  ))}
+                </div>
+              ) : view === "compact" ? (
+                <div className="overflow-hidden border-y border-archive-line">
+                  <div className="hidden grid-cols-[2.75rem_minmax(18rem,1.5fr)_6rem_8rem_minmax(10rem,0.9fr)_minmax(10rem,0.9fr)] gap-3 border-b border-archive-line bg-archive-lavender2/45 px-2 py-2 text-[0.68rem] font-bold uppercase tracking-[0.1em] text-archive-ink/70 md:grid">
+                    <div />
+                    <div>Title</div>
+                    <div>Date</div>
+                    <div>Type</div>
+                    <div>People</div>
+                    <div>Tags</div>
+                  </div>
+                  {pagedResults.map((source) => (
+                    <ArchiveCompactRow key={source.id} source={source} />
                   ))}
                 </div>
               ) : (
@@ -241,6 +243,41 @@ function FeaturedArchiveSource({ source }: { source: ArchiveSource }) {
 function formatFeaturedType(type: string) {
   if (type === "Book") return "Printed Book";
   return type;
+}
+
+function archivePageHeading(params: ArchiveSearchParams) {
+  const parts = [
+    params.medium ? formatHeadingMedium(params.medium) : undefined,
+    params.era,
+    yearRangeHeading(params),
+    params.tag,
+    params.type,
+    params.people,
+    params.region
+  ].filter(Boolean);
+
+  return parts.length > 0 ? parts.join(" / ") : "All eras";
+}
+
+function archiveHeadingClass(heading: string) {
+  const base = "min-w-0 whitespace-nowrap font-display font-semibold uppercase leading-none tracking-[0.01em] text-archive-ink";
+  if (heading.length > 48) return `${base} text-[1.65rem] sm:text-[2.1rem]`;
+  if (heading.length > 32) return `${base} text-[1.9rem] sm:text-[2.75rem]`;
+  return `${base} text-3xl sm:text-5xl`;
+}
+
+function yearRangeHeading(params: ArchiveSearchParams) {
+  if (!params.yearStart && !params.yearEnd) return undefined;
+  if (params.yearStart && params.yearEnd) return `${params.yearStart}-${params.yearEnd}`;
+  if (params.yearStart) return `${params.yearStart}-present`;
+  return `Before ${params.yearEnd}`;
+}
+
+function formatHeadingMedium(medium: string) {
+  if (medium === "Text") return "Texts";
+  if (medium === "Audio/Video") return "Sound & Video";
+  if (medium === "Personal History") return "Personal histories";
+  return medium;
 }
 
 function toQueryString(params: ArchiveSearchParams, omit: string[] = []) {

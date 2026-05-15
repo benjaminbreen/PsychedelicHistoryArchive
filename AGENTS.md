@@ -17,7 +17,14 @@ This repo includes `archive-site`, a Next.js app. Treat `.next` as a live dev-se
 
 ## Verification
 
-After UI changes in `archive-site`, run `npm run build` for type/build verification. If a dev server is needed for screenshots or manual review, keep track of the port Next selects and report the current URL.
+After UI changes in `archive-site`, do not run `npm run build` by default. A production build writes to `archive-site/.next`, the same artifact directory used by `next dev`, and can disrupt a dev server the user is already running.
+
+Prefer lighter verification unless the user explicitly asks for a full build:
+
+- For code/type confidence, use non-build checks when available, such as `npx tsc --noEmit`, lint scripts, or targeted tests.
+- For visual/manual review, use the existing dev server if it is already running and responding.
+- If a dev server is needed for screenshots or manual review, keep track of the port Next selects and report the current URL.
+- Run `npm run build` only when explicitly requested, when release-level verification is needed, or when there is no active `archive-site` dev server and the user has not asked to avoid builds.
 
 ## Stubbed / Missing Pages Inventory
 

@@ -23,10 +23,10 @@ export function ArchiveFilterSidebar({ active = {}, sources }: ArchiveFilterSide
   const regions = Object.entries(facetCounts.regions).sort((a, b) => a[0].localeCompare(b[0]));
 
   return (
-    <aside className="hidden w-[17.5rem] shrink-0 border-r border-archive-line pr-6 lg:block">
+    <aside className="hidden w-[17.5rem] shrink-0 pr-6 lg:block" id="filters">
       <div className="sticky top-24 text-[0.82rem]">
         <div className="mb-4 flex items-center justify-between">
-          <h2 className="font-semibold text-archive-ink">Filters</h2>
+          <h2 className="font-normal text-archive-ink">Filters</h2>
           <Link href="/archive" className="text-sm font-medium text-archive-violet transition hover:text-archive-violetDark">
             Clear all
           </Link>
@@ -78,9 +78,6 @@ export function ArchiveFilterSidebar({ active = {}, sources }: ArchiveFilterSide
             </select>
           </form>
         </FacetGroup>
-        <Link className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-archive-violet transition hover:text-archive-violetDark" href="/archive?access=external">
-          Browse non-hosted sources <ExternalLink className="h-3.5 w-3.5" />
-        </Link>
       </div>
     </aside>
   );
@@ -96,16 +93,16 @@ function FacetGroup({
   title: string;
 }) {
   return (
-    <section className="border-b border-archive-line py-3.5">
-      <h3 className="mb-2.5 flex items-center justify-between gap-2 text-[0.68rem] font-bold uppercase tracking-[0.1em] text-archive-ink">
+    <details className="group border-b border-archive-line py-3.5">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-2 text-[0.7rem] font-normal uppercase tracking-[0.1em] text-archive-ink [&::-webkit-details-marker]:hidden">
         <span className="flex items-center gap-2">
-        {icon}
-        {title}
+          {icon}
+          {title}
         </span>
-        <ChevronDown className="h-3.5 w-3.5" />
-      </h3>
-      <div>{children}</div>
-    </section>
+        <ChevronDown className="h-3.5 w-3.5 transition group-open:rotate-180" />
+      </summary>
+      <div className="pt-2.5">{children}</div>
+    </details>
   );
 }
 

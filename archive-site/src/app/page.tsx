@@ -20,13 +20,7 @@ export const revalidate = 3600;
 export default async function HomePage() {
   const sources = await getArchiveSourcesFromSupabase();
   const facetCounts = getFacetCounts(sources);
-  const eraFacets = facetOptions(facetCounts.eras, "/archive?era=", [
-    "Pre-1800",
-    "1800-1950",
-    "1950-1970",
-    "1970-2000",
-    "2000-Present"
-  ]);
+  const eraFacets = eraRangeFacets(sources);
   const mediumFacets = browseTypeFacets(facetCounts.types);
   const featured = sources.find((source) => source.slug === "mead-lsd-memo") ?? sources.find((source) => source.featured) ?? sources[0];
   const supportingSources = sources.filter((source) => source.id !== featured.id).slice(0, 4);
@@ -49,7 +43,7 @@ export default async function HomePage() {
                 <h1 className="home-hero-title max-w-[42rem] text-archive-ink">
                   A scholarly archive of psychedelic history, broadly construed
                 </h1>
-                <div className="mt-4 grid gap-4 text-[0.96rem] leading-[1.58] text-archive-ink/85 md:grid-cols-2">
+                <div className="mt-4 grid gap-4 text-[0.96rem] leading-[1.64] text-archive-ink/85 md:grid-cols-2 md:gap-7">
                   <p>
                     The Psychedelic History Archive is an educational platform
                     to collect some of the most significant public domain
@@ -65,6 +59,7 @@ export default async function HomePage() {
                 </div>
                 <div className="mt-5">
                   <SearchBar
+                    className="home-hero-search"
                     placeholder="Search people, topics, sources, and more..."
                     size="lg"
                     submitLabel="Search"
@@ -78,7 +73,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section className="container-page py-5">
+        <section className="container-page pb-5 pt-8">
           <div className="border-b border-archive-line pb-6">
             <SectionHeading eyebrow="Featured sources" actionHref="/archive" actionLabel="View all sources" />
             <div className="grid gap-3 md:grid-cols-3 xl:grid-cols-4">
@@ -89,7 +84,7 @@ export default async function HomePage() {
                   key={source.id}
                 >
                   <SourceImage
-                    className="aspect-[4/5] h-[8rem] w-full border-[rgb(var(--archive-warm-line))] opacity-[0.94] transition group-hover:opacity-100"
+                    className="featured-source-image aspect-[4/5] h-[8rem] w-full border-[rgb(var(--archive-warm-line))] opacity-[0.94] transition group-hover:opacity-100"
                     imageClassName={source.imageTone === "portrait" ? "object-top" : undefined}
                     source={source}
                   />
@@ -197,20 +192,18 @@ export default async function HomePage() {
   );
 }
 
-function facetOptions(
-  counts: Record<string, number>,
-  hrefPrefix: string,
-  preferredOrder: string[]
-): FacetOption[] {
-  const labels = [
-    ...preferredOrder.filter((label) => counts[label]),
-    ...Object.keys(counts).filter((label) => !preferredOrder.includes(label)).sort()
-  ];
-
-  return labels.map((label) => ({
-    label,
-    count: counts[label],
-    href: `${hrefPrefix}${encodeURIComponent(label)}`
+function eraRangeFacets(sources: Array<{ year: number }>): FacetOption[] {
+  return [
+    { label: "Before 1800", href: "/archive?medium=Text&yearEnd=1799", matches: (year: number) => year < 1800 },
+    { label: "1800-1899", href: "/archive?medium=Text&yearStart=1800&yearEnd=1899", matches: (year: number) => year >= 1800 && year <= 1899 },
+    { label: "1900-1942", href: "/archive?medium=Text&yearStart=1900&yearEnd=1942", matches: (year: number) => year >= 1900 && year <= 1942 },
+    { label: "1943-1962", href: "/archive?medium=Text&yearStart=1943&yearEnd=1962", matches: (year: number) => year >= 1943 && year <= 1962 },
+    { label: "1963-1979", href: "/archive?medium=Text&yearStart=1963&yearEnd=1979", matches: (year: number) => year >= 1963 && year <= 1979 },
+    { label: "1980-present", href: "/archive?medium=Text&yearStart=1980", matches: (year: number) => year >= 1980 }
+  ].map((range) => ({
+    label: range.label,
+    count: sources.filter((source) => range.matches(source.year)).length,
+    href: range.href
   }));
 }
 

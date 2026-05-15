@@ -49,21 +49,20 @@ export function BrowsePills() {
 
 export function EraBand({ facets }: { facets: FacetOption[] }) {
   return (
-    <div className="grid gap-0 divide-y divide-[rgb(var(--archive-warm-line))] rounded-md border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] md:grid-cols-5 md:divide-x md:divide-y-0">
-      {facets.map((facet, index) => (
+    <div className="grid gap-0 divide-y divide-[rgb(var(--archive-warm-line))] rounded-md border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] md:grid-cols-3 md:divide-x md:divide-y-0 xl:grid-cols-6">
+      {facets.map((facet) => (
         <Link
           className="focus-ring group relative flex items-center gap-3 px-4 py-4 transition hover:bg-[rgb(var(--archive-warm-hover))]"
           href={facet.href}
           key={facet.label}
         >
-          <CalendarDays className={index === 1 ? "h-5 w-5 text-archive-violet" : "h-5 w-5 text-archive-muted group-hover:text-archive-violet"} />
+          <CalendarDays className="h-5 w-5 text-archive-muted group-hover:text-archive-violet" />
           <span>
-            <span className={index === 1 ? "block font-semibold text-archive-violet" : "block font-semibold"}>
+            <span className="block font-semibold">
               {facet.label}
             </span>
             <span className="text-xs text-archive-muted">{facet.count.toLocaleString()} sources</span>
           </span>
-          {index === 1 && <span className="absolute inset-x-4 bottom-0 h-0.5 bg-archive-violet" />}
         </Link>
       ))}
     </div>

@@ -132,7 +132,7 @@ export function SourceTextSettings({ showSourceControls = true }: SourceTextSett
       <button
         aria-expanded={open}
         aria-label="Display settings"
-        className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-md border border-archive-line bg-archive-surface text-archive-ink shadow-sm transition hover:bg-archive-lavender2 xl:h-11 xl:w-11"
+        className="focus-ring inline-flex h-8 w-8 items-center justify-center rounded-md border border-archive-line/70 bg-archive-surface/45 text-archive-muted transition hover:border-archive-violet/35 hover:bg-archive-surface/75 hover:text-archive-ink"
         data-testid="display-settings-trigger"
         onClick={(event) => {
           event.stopPropagation();
@@ -140,7 +140,7 @@ export function SourceTextSettings({ showSourceControls = true }: SourceTextSett
         }}
         type="button"
       >
-        <Settings className="h-[1.125rem] w-[1.125rem]" />
+        <Settings className="h-3.5 w-3.5" />
       </button>
 
       {open && (
