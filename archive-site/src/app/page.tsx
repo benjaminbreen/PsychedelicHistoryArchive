@@ -27,14 +27,8 @@ export default async function HomePage() {
     "1970-2000",
     "2000-Present"
   ]);
-  const mediumFacets = facetOptions(facetCounts.mediums, "/archive?medium=", [
-    "Text",
-    "Image",
-    "Audio/Video",
-    "Personal History",
-    "Biography"
-  ]);
-  const featured = sources.find((source) => source.featured) ?? sources[0];
+  const mediumFacets = browseTypeFacets(facetCounts.types);
+  const featured = sources.find((source) => source.slug === "mead-lsd-memo") ?? sources.find((source) => source.featured) ?? sources[0];
   const supportingSources = sources.filter((source) => source.id !== featured.id).slice(0, 4);
   const recentSources = [...sources].sort((a, b) => b.year - a.year).slice(0, 5);
 
@@ -218,4 +212,24 @@ function facetOptions(
     count: counts[label],
     href: `${hrefPrefix}${encodeURIComponent(label)}`
   }));
+}
+
+function browseTypeFacets(counts: Record<string, number>): FacetOption[] {
+  return [
+    { label: "Newspapers", types: ["Newspaper Article"], href: "/archive?medium=Text&type=Newspaper%20Article" },
+    { label: "Books", types: ["Book"], href: "/archive?medium=Text&type=Book" },
+    { label: "Manuscripts", types: ["Manuscript"], href: "/archive?medium=Text&type=Manuscript" },
+    { label: "Academic Articles", types: ["Academic Article"], href: "/archive?medium=Text&type=Academic%20Article" },
+    { label: "Audio", types: ["Audio/Video"], href: "/archive?medium=Audio%2FVideo&type=Audio%2FVideo" },
+    { label: "Video", types: ["Film"], href: "/archive?medium=Audio%2FVideo&type=Film" },
+    { label: "Testimony", types: ["Testimony"], href: "/archive?medium=Text&type=Testimony" },
+    { label: "Field Notes", types: ["Field Notes"], href: "/archive?medium=Text&type=Field%20Notes" },
+    { label: "Websites", types: ["Source"], href: "/archive?type=Source" }
+  ]
+    .map((bucket) => ({
+      label: bucket.label,
+      count: bucket.types.reduce((total, type) => total + (counts[type] ?? 0), 0),
+      href: bucket.href
+    }))
+    .filter((facet) => facet.count > 0);
 }

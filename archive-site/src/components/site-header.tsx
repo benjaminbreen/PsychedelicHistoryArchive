@@ -54,38 +54,39 @@ const navItems = [
 ];
 
 type SiteHeaderProps = {
-  variant?: "home" | "source" | "bio";
+  variant?: "home" | "source" | "bio" | "about";
   showSourceSettings?: boolean;
   activeLabel?: string;
 };
 
 export function SiteHeader({ variant = "home", showSourceSettings = true, activeLabel }: SiteHeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const resolvedActiveLabel = activeLabel ?? (variant === "about" ? "About" : undefined);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-archive-line bg-archive-paper/92 shadow-[0_1px_0_rgb(var(--archive-surface)/0.38)_inset] backdrop-blur-md">
+    <header className={`site-header sticky top-0 z-40 border-b border-archive-line ${variant === "about" ? "site-header-about" : ""}`}>
       <div className="flex min-h-[4.9rem] w-full items-center gap-2 px-4 sm:gap-5 sm:px-8 lg:px-12">
         <Link
           href="/"
-          className="focus-ring min-w-0 shrink rounded-sm sm:shrink-0"
+          className="focus-ring group min-w-0 shrink rounded-sm sm:shrink-0"
         >
-          <span className="display-narrow text-[1.08rem] sm:text-[1.62rem]">
+          <span className="site-logotype display-narrow text-[1.08rem] sm:text-[1.62rem]">
             The Psychedelic History Archive
           </span>
         </Link>
         <nav aria-label="Primary" className="ml-auto hidden items-center gap-5 text-[1rem] font-semibold leading-none xl:gap-6 lg:flex">
           {navItems.map((item) => {
-            const isActive = activeLabel ? item.label === activeLabel : variant === "source" && item.label === "Texts";
+            const isActive = resolvedActiveLabel ? item.label === resolvedActiveLabel : variant === "source" && item.label === "Texts";
             const triggerClasses = `focus-ring relative inline-flex h-14 items-center gap-1.5 whitespace-nowrap rounded-sm transition hover:text-archive-violetDark ${
               isActive
-                ? "text-archive-ink after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-archive-violet"
+                ? "text-archive-ink after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-archive-violet data-[about-active=true]:after:bg-[#d99a32]"
                 : ""
             }`;
 
             if (item.dropdown) {
               return (
                 <div className="group relative" key={item.href}>
-                  <Link className={triggerClasses} href={item.href}>
+                  <Link className={triggerClasses} data-about-active={variant === "about" && isActive} href={item.href}>
                     <span>{item.label}</span>
                     <ChevronDown className="h-4 w-4 stroke-[2] transition duration-150 group-hover:rotate-180 group-focus-within:rotate-180" />
                   </Link>
@@ -109,6 +110,7 @@ export function SiteHeader({ variant = "home", showSourceSettings = true, active
             return (
               <Link
                 className={triggerClasses}
+                data-about-active={variant === "about" && isActive}
                 href={item.href}
                 key={item.href}
               >

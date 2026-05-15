@@ -26,7 +26,7 @@ const projectLinks = [
 export default function AboutPage() {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader variant="about" />
       <main className="about-page">
         <section className="about-hero" aria-labelledby="about-title">
           <img
@@ -58,18 +58,16 @@ export default function AboutPage() {
                 </p>
 
                 <p>
-                  The Archive is currently a work in progress, having soft
-                  launched in the summer of 2024. The project is directed by{" "}
+                  The Archive was founded by{" "}
                   <a href="https://benjaminpbreen.com" rel="noreferrer" target="_blank">
                     Benjamin Breen
                   </a>{" "}
-                  (Associate Professor of History, University of California,
-                  Santa Cruz) and was initially supported by a grant from{" "}
-                  <a href="https://thi.ucsc.edu" rel="noreferrer" target="_blank">
-                    The Humanities Institute
-                  </a>{" "}
-                  at UCSC. We are currently seeking continuing funding to
-                  greatly expand the range of resources available.
+                  at the University of California, Santa Cruz in 2024, then
+                  contributed to by a group of undergraduate students at UCSC in
+                  2025. In 2026, the project received a grant from the Mahindra
+                  Humanities Center at Harvard. The current project team is
+                  Breen (UCSC), Rebecca Lemov (Harvard), Anne Harrington
+                  (Harvard), and Paul Gillis-Smith.
                 </p>
 
                 <p>

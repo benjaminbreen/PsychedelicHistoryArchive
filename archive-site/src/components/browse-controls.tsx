@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, CalendarDays, ImageIcon, PlayCircle, Tag, UserRound } from "lucide-react";
+import { BookOpen, CalendarDays, FileText, ImageIcon, Mic, Newspaper, PlayCircle, ScrollText, Tag, UserRound } from "lucide-react";
 import type { FacetOption } from "@/lib/types";
 
 const icons = {
@@ -10,6 +10,15 @@ const icons = {
   Text: BookOpen,
   Images: ImageIcon,
   "Audio/Video": PlayCircle,
+  "Academic Articles": FileText,
+  Audio: Mic,
+  Books: BookOpen,
+  "Field Notes": ScrollText,
+  Manuscripts: ScrollText,
+  Newspapers: Newspaper,
+  Testimony: FileText,
+  Video: PlayCircle,
+  Websites: ImageIcon,
   "Personal Histories": UserRound,
   Biographies: UserRound,
   "Further Reading": BookOpen,
