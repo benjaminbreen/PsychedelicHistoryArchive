@@ -30,7 +30,7 @@ export function BrowsePills() {
     <div className="flex flex-wrap items-center gap-2.5 text-sm">
       <span className="font-semibold text-archive-muted">Browse by:</span>
       {[
-        ["Eras", "/archive"],
+        ["Eras", "/eras"],
         ["Topics", "/topics"],
         ["People", "/people"],
         ["Sources", "/archive"]
@@ -49,7 +49,7 @@ export function BrowsePills() {
 
 export function EraBand({ facets }: { facets: FacetOption[] }) {
   return (
-    <div className="grid gap-0 divide-y divide-[rgb(var(--archive-warm-line))] rounded-md border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] md:grid-cols-3 md:divide-x md:divide-y-0 xl:grid-cols-6">
+    <div className="grid gap-0 divide-y divide-[rgb(var(--archive-warm-line))] rounded-md border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] md:grid-cols-3 md:divide-x">
       {facets.map((facet) => (
         <Link
           className="focus-ring group relative flex items-center gap-3 px-4 py-4 transition hover:bg-[rgb(var(--archive-warm-hover))]"

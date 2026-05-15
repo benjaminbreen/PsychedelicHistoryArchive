@@ -352,7 +352,7 @@
     "excerpt": "Let There Be Light , a groundbreaking 1946 documentary directed by John Huston, features important early footage of the use of “ narcosynthesis ” to treat post-traumatic stress disorder (PTSD) in World War II veterans.",
     "citation": "",
     "rights": "Needs rights review before republication.",
-    "sourceUrl": "https://www.psychedelicarchive.com/archive/lettherebelight",
+    "sourceUrl": "https://www.youtube.com/watch?v=lQPoYVKeQEs",
     "accessType": "hosted",
     "hostingStatus": "transcript_only",
     "wordCount": 1484,
@@ -360,7 +360,9 @@
     "featured": false,
     "imageTone": "paper",
     "imagePath": "/imported/squarespace/documents/7da50bb7-30d3-5c0d-9e70-4d7b516e0266/images/lettherebelight/01-let-there-be-light-1945.jpg",
-    "imageAlt": "1946: “Let there be Light”"
+    "imageAlt": "1946: “Let there be Light”",
+    "readerMode": "video",
+    "mediaEmbedUrl": "https://www.youtube.com/watch?v=lQPoYVKeQEs"
   },
   {
     "id": "psychoanalysis1957",

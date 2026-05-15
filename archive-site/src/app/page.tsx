@@ -107,7 +107,7 @@ export default async function HomePage() {
 
         <section className="container-page grid gap-9 py-2">
           <div>
-            <SectionHeading eyebrow="Browse by era" />
+            <SectionHeading eyebrow="Browse by era" actionHref="/eras" actionLabel="View all eras" />
             <EraBand facets={eraFacets} />
           </div>
           <div>
@@ -194,12 +194,15 @@ export default async function HomePage() {
 
 function eraRangeFacets(sources: Array<{ year: number }>): FacetOption[] {
   return [
-    { label: "Before 1800", href: "/archive?medium=Text&yearEnd=1799", matches: (year: number) => year < 1800 },
-    { label: "1800-1899", href: "/archive?medium=Text&yearStart=1800&yearEnd=1899", matches: (year: number) => year >= 1800 && year <= 1899 },
-    { label: "1900-1942", href: "/archive?medium=Text&yearStart=1900&yearEnd=1942", matches: (year: number) => year >= 1900 && year <= 1942 },
-    { label: "1943-1962", href: "/archive?medium=Text&yearStart=1943&yearEnd=1962", matches: (year: number) => year >= 1943 && year <= 1962 },
-    { label: "1963-1979", href: "/archive?medium=Text&yearStart=1963&yearEnd=1979", matches: (year: number) => year >= 1963 && year <= 1979 },
-    { label: "1980-present", href: "/archive?medium=Text&yearStart=1980", matches: (year: number) => year >= 1980 }
+    { label: "Pre-500 CE", href: "/eras/pre-500", matches: (year: number) => year <= 500 },
+    { label: "500-1500", href: "/eras/500-1500", matches: (year: number) => year >= 501 && year <= 1500 },
+    { label: "1500-1800", href: "/eras/1500-1800", matches: (year: number) => year >= 1501 && year <= 1800 },
+    { label: "1800-1850", href: "/eras/1800-1850", matches: (year: number) => year >= 1801 && year <= 1850 },
+    { label: "1850-1900", href: "/eras/1850-1900", matches: (year: number) => year >= 1851 && year <= 1900 },
+    { label: "1900-1942", href: "/eras/1900-1942", matches: (year: number) => year >= 1901 && year <= 1942 },
+    { label: "1943-1962", href: "/eras/1943-1962", matches: (year: number) => year >= 1943 && year <= 1962 },
+    { label: "1963-1979", href: "/eras/1963-1979", matches: (year: number) => year >= 1963 && year <= 1979 },
+    { label: "1980-present", href: "/eras/1980-present", matches: (year: number) => year >= 1980 }
   ].map((range) => ({
     label: range.label,
     count: sources.filter((source) => range.matches(source.year)).length,

@@ -1,7 +1,7 @@
 import { sources as fallbackSources } from "@/lib/archive-data";
 import { getStoragePublicUrl, getSupabaseClient } from "@/lib/supabase";
 import { getSourceTitleParts } from "@/lib/source-title";
-import type { AccessType, ArchiveSource, HostingStatus, SourceCreator, SourceFigure, SourceFile, SourceLineBox, SourcePage, SourcePageLine, SourceType, TranscriptSection } from "@/lib/types";
+import type { AccessType, ArchiveSource, CollectionItemSummary, HostingStatus, ReaderMode, SourceCreator, SourceFigure, SourceFile, SourceKind, SourceLineBox, SourcePage, SourcePageLine, SourceType, TranscriptSection } from "@/lib/types";
 
 type DocumentRow = {
   id: string;
@@ -9,6 +9,11 @@ type DocumentRow = {
   title: string;
   short_title: string | null;
   subtitle: string | null;
+  source_kind: SourceKind | null;
+  parent_collection_id: string | null;
+  sequence_label: string | null;
+  sequence_number: number | null;
+  issue_date: string | null;
   display_date: string | null;
   date_start: number | null;
   document_type: string | null;
@@ -22,6 +27,13 @@ type DocumentRow = {
   citation: string | null;
   rights_statement: string | null;
   source_url: string | null;
+  content_language: string | null;
+  translation_language: string | null;
+  translation_text: string | null;
+  translation_provider: ArchiveSource["translationProvider"] | null;
+  translation_note: string | null;
+  reader_mode: ReaderMode | null;
+  media_embed_url: string | null;
   access_type: AccessType | null;
   hosting_status: HostingStatus | null;
   cover_image_path: string | null;
@@ -30,12 +42,34 @@ type DocumentRow = {
   published_at: string | null;
   pages?: PageRow[];
   files?: FileRow[];
+  document_sections?: DocumentSectionRow[];
+  document_figures?: DocumentFigureRow[];
   document_tags?: Array<{ tags: RelatedTag | RelatedTag[] | null }>;
   document_people?: Array<{ role: string | null; people: RelatedPerson | RelatedPerson[] | null }>;
 };
 
 type RelatedTag = { name: string | null; tag_type: string | null };
 type RelatedPerson = { name: string | null };
+
+type CollectionDocumentRow = {
+  position: number | null;
+  sequence_label: string | null;
+  sequence_number: number | null;
+  issue_date: string | null;
+  editorial_caption: string | null;
+  document: (Partial<DocumentRow> & { pages?: Array<{ id: string }>; files?: FileRow[] }) | Array<Partial<DocumentRow> & { pages?: Array<{ id: string }>; files?: FileRow[] }> | null;
+};
+
+type CollectionRow = {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string | null;
+  summary: string | null;
+  body: string | null;
+  cover_image_path: string | null;
+  collection_documents?: CollectionDocumentRow[];
+};
 const CORE_TOPIC_TAGS = [
   "Ayahuasca",
   "Cannabis",
@@ -220,6 +254,25 @@ type FileRow = {
   mime_type: string | null;
   byte_size: number | null;
 };
+type DocumentSectionRow = {
+  id: string;
+  position: number | null;
+  heading: string | null;
+  section_type: string | null;
+  body: string | null;
+  body_format?: string | null;
+};
+type DocumentFigureRow = {
+  id: string;
+  position: number | null;
+  image_path: string | null;
+  alt_text: string | null;
+  caption: string | null;
+  placement: string | null;
+  section_id?: string | null;
+  token?: string | null;
+  credit?: string | null;
+};
 
 const DOCUMENT_SELECT = `
   id,
@@ -227,6 +280,11 @@ const DOCUMENT_SELECT = `
   title,
   short_title,
   subtitle,
+  source_kind,
+  parent_collection_id,
+  sequence_label,
+  sequence_number,
+  issue_date,
   display_date,
   date_start,
   document_type,
@@ -240,6 +298,13 @@ const DOCUMENT_SELECT = `
   citation,
   rights_statement,
   source_url,
+  content_language,
+  translation_language,
+  translation_text,
+  translation_provider,
+  translation_note,
+  reader_mode,
+  media_embed_url,
   access_type,
   hosting_status,
   cover_image_path,
@@ -270,6 +335,8 @@ const DOCUMENT_SELECT = `
     )
   ),
   files(id, storage_path, kind, mime_type, byte_size),
+  document_sections(id, position, heading, section_type, body, body_format),
+  document_figures(id, position, image_path, alt_text, caption, placement, section_id, token, credit),
   document_tags(tags(name, tag_type)),
   document_people(role, people(name))
 `;
@@ -278,7 +345,13 @@ const DOCUMENT_LIST_SELECT = `
   id,
   slug,
   title,
+  short_title,
   subtitle,
+  source_kind,
+  parent_collection_id,
+  sequence_label,
+  sequence_number,
+  issue_date,
   display_date,
   date_start,
   document_type,
@@ -291,6 +364,13 @@ const DOCUMENT_LIST_SELECT = `
   citation,
   rights_statement,
   source_url,
+  content_language,
+  translation_language,
+  translation_text,
+  translation_provider,
+  translation_note,
+  reader_mode,
+  media_embed_url,
   access_type,
   hosting_status,
   cover_image_path,
@@ -298,6 +378,8 @@ const DOCUMENT_LIST_SELECT = `
   is_featured,
   published_at,
   files(id, storage_path, kind, mime_type, byte_size),
+  document_sections(id, position, heading, section_type, body),
+  document_figures(id, position, image_path, alt_text, caption, placement),
   document_tags(tags(name, tag_type)),
   document_people(role, people(name))
 `;
@@ -381,6 +463,95 @@ const LEGACY_DOCUMENT_LIST_SELECT = `
   document_people(role, people(name))
 `;
 
+const COLLECTION_SELECT = `
+  id,
+  slug,
+  title,
+  subtitle,
+  summary,
+  body,
+  cover_image_path,
+  collection_documents(
+    position,
+    sequence_label,
+    sequence_number,
+    issue_date,
+    editorial_caption,
+    document:documents(
+      id,
+      slug,
+      title,
+      short_title,
+      display_date,
+      date_start,
+      document_type,
+      medium,
+      language,
+      region,
+      summary,
+      abstract,
+      citation,
+      rights_statement,
+      source_url,
+      cover_image_path,
+      thumbnail_path,
+      sequence_label,
+      sequence_number,
+      issue_date,
+      access_type,
+      hosting_status,
+      published_at,
+      pages(id),
+      files(id, storage_path, kind, mime_type, byte_size),
+      document_tags(tags(name, tag_type)),
+      document_people(role, people(name))
+    )
+  )
+`;
+
+const LEGACY_COLLECTION_SELECT = `
+  id,
+  slug,
+  title,
+  subtitle,
+  summary,
+  body,
+  cover_image_path,
+  collection_documents(
+    position,
+    editorial_caption,
+    document:documents(
+      id,
+      slug,
+      title,
+      short_title,
+      display_date,
+      date_start,
+      document_type,
+      medium,
+      language,
+      region,
+      summary,
+      abstract,
+      citation,
+      rights_statement,
+      source_url,
+      cover_image_path,
+      thumbnail_path,
+      sequence_label,
+      sequence_number,
+      issue_date,
+      access_type,
+      hosting_status,
+      published_at,
+      pages(id),
+      files(id, storage_path, kind, mime_type, byte_size),
+      document_tags(tags(name, tag_type)),
+      document_people(role, people(name))
+    )
+  )
+`;
+
 export async function getArchiveSourcesFromSupabase() {
   const supabase = getSupabaseClient();
   if (!supabase) return normalizedFallbackSources();
@@ -441,6 +612,66 @@ export async function getArchiveSourceFromSupabase(slug: string) {
   return data ? documentToArchiveSource(data as unknown as DocumentRow) : undefined;
 }
 
+export async function getCollectionSourceFromSupabase(slug: string) {
+  const supabase = getSupabaseClient();
+  if (!supabase) return undefined;
+
+  let { data, error } = await supabase
+    .from("collections")
+    .select(COLLECTION_SELECT)
+    .eq("slug", slug)
+    .eq("status", "published")
+    .maybeSingle();
+
+  if (error && isSchemaShapeError(error.message)) {
+    console.warn("Supabase collection query used legacy select shape.", error.message);
+    const legacyResult = await supabase
+      .from("collections")
+      .select(LEGACY_COLLECTION_SELECT)
+      .eq("slug", slug)
+      .eq("status", "published")
+      .maybeSingle();
+    data = legacyResult.data as typeof data;
+    error = legacyResult.error;
+  }
+
+  if (error) {
+    console.warn("Supabase collection query failed.", error.message);
+    return undefined;
+  }
+
+  return data ? collectionToArchiveSource(data as unknown as CollectionRow) : undefined;
+}
+
+export async function getCollectionSourcesFromSupabase() {
+  const supabase = getSupabaseClient();
+  if (!supabase) return [];
+
+  let { data, error } = await supabase
+    .from("collections")
+    .select(COLLECTION_SELECT)
+    .eq("status", "published")
+    .order("title", { ascending: true });
+
+  if (error && isSchemaShapeError(error.message)) {
+    console.warn("Supabase collection list query used legacy select shape.", error.message);
+    const legacyResult = await supabase
+      .from("collections")
+      .select(LEGACY_COLLECTION_SELECT)
+      .eq("status", "published")
+      .order("title", { ascending: true });
+    data = legacyResult.data as typeof data;
+    error = legacyResult.error;
+  }
+
+  if (error || !data) {
+    console.warn("Supabase collection list query failed.", error?.message);
+    return [];
+  }
+
+  return (data as unknown as CollectionRow[]).map(collectionToArchiveSource);
+}
+
 function isSchemaShapeError(message = "") {
   return (
     message.includes("Could not find a relationship") ||
@@ -484,12 +715,15 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
   const authorNames = creators
     .filter((creator) => ["author", "speaker", "recordist"].includes(creator.role))
     .map((creator) => creator.name);
-  const figures = extractTranscriptFigures(rawTranscript, getStoragePublicUrl(imagePath), title);
+  const structuredFigures = mapDocumentFigures(document.document_figures);
+  const legacyFigures = extractTranscriptFigures(rawTranscript, getStoragePublicUrl(imagePath), title);
+  const figures = structuredFigures.length ? structuredFigures : legacyFigures;
   const transcript = cleanTranscriptText(rawTranscript, {
     title,
     displayDate: document.display_date || (year ? String(year) : "Undated")
   });
-  const transcriptSections = buildTranscriptSections(transcript);
+  const curatedTranscriptSections = mapDocumentSections(document.document_sections);
+  const transcriptSections = curatedTranscriptSections.length ? curatedTranscriptSections : buildTranscriptSections(transcript);
   const topicTags = unique(tags.map(toCoreTopicTag).filter(Boolean) as string[]);
 
   return {
@@ -498,6 +732,11 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
     title,
     shortTitle: document.short_title || undefined,
     subtitle: document.subtitle || undefined,
+    sourceKind: document.source_kind || "single",
+    parentCollectionId: document.parent_collection_id || undefined,
+    sequenceLabel: document.sequence_label || undefined,
+    sequenceNumber: document.sequence_number ?? undefined,
+    issueDate: document.issue_date || undefined,
     author: formatNames(authorNames) || formatNames(publicPeople) || "The Psychedelic History Archive",
     year,
     displayDate: document.display_date || (year ? String(year) : "Undated"),
@@ -517,6 +756,13 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
     publicationTitle: document.publication_title || document.publisher || undefined,
     rights: document.rights_statement || "Needs rights review before republication.",
     sourceUrl: document.source_url || "#",
+    contentLanguage: document.content_language || document.language || undefined,
+    translationLanguage: document.translation_language || undefined,
+    translationText: document.translation_text || undefined,
+    translationProvider: document.translation_provider || undefined,
+    translationNote: document.translation_note || undefined,
+    readerMode: document.reader_mode || undefined,
+    mediaEmbedUrl: document.media_embed_url || undefined,
     accessType: document.access_type || "hosted",
     hostingStatus: document.hosting_status || "metadata_only",
     wordCount: wordCount(transcript),
@@ -531,6 +777,125 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
     pages,
     files
   };
+}
+
+function collectionToArchiveSource(collection: CollectionRow): ArchiveSource {
+  const items = mapCollectionItems(collection.collection_documents);
+  const years = items
+    .map((item) => yearFromDisplayDate(item.displayDate ?? null))
+    .filter((year): year is number => Boolean(year));
+  const startYear = years.length ? Math.min(...years) : 0;
+  const endYear = years.length ? Math.max(...years) : startYear;
+  const displayDate = startYear && endYear && startYear !== endYear ? `${startYear}-${endYear}` : startYear ? String(startYear) : "Date range pending";
+  const summary = collection.summary || collection.body || "";
+
+  return {
+    id: collection.id,
+    slug: collection.slug,
+    title: collection.title,
+    shortTitle: collection.title,
+    subtitle: collection.subtitle || undefined,
+    sourceKind: "collection",
+    collectionItemCount: items.length,
+    collectionItems: items,
+    author: "The Psychedelic History Archive",
+    year: startYear,
+    displayDate,
+    type: "Source",
+    medium: "Text",
+    era: eraForYear(startYear),
+    region: "Multiple regions",
+    language: "Multiple languages",
+    tags: [],
+    people: [],
+    creators: [],
+    substances: [],
+    summary,
+    excerpt: summary,
+    citation: collection.title,
+    rights: "Collection-level rights vary by item. Review item details before republication.",
+    sourceUrl: `/collections/${collection.slug}`,
+    readerMode: "overview",
+    accessType: "hosted",
+    hostingStatus: "metadata_only",
+    wordCount: wordCount(summary),
+    addedDate: "",
+    imageTone: "paper",
+    imagePath: getStoragePublicUrl(collection.cover_image_path),
+    imageAlt: collection.title
+  };
+}
+
+function mapCollectionItems(collectionDocuments: CollectionDocumentRow[] = []): CollectionItemSummary[] {
+  return [...collectionDocuments]
+    .sort((a, b) => (a.sequence_number ?? a.position ?? 0) - (b.sequence_number ?? b.position ?? 0))
+    .map((row) => {
+      const document = firstRelated(row.document);
+      if (!document?.id || !document.slug || !document.title) return undefined;
+      const imagePath = document.thumbnail_path || document.cover_image_path || firstImagePath(document.files);
+      const tags = unique(
+        document.document_tags
+          ?.map((item) => firstRelated(item.tags)?.name)
+          .filter(Boolean) as string[] | undefined
+      );
+
+      return {
+        id: document.id,
+        slug: document.slug,
+        title: document.title,
+        shortTitle: document.short_title || undefined,
+        sequenceLabel: row.sequence_label || document.sequence_label || undefined,
+        sequenceNumber: row.sequence_number ?? document.sequence_number ?? undefined,
+        displayDate: row.issue_date || document.issue_date || document.display_date || undefined,
+        pageCount: document.pages?.length || undefined,
+        tags,
+        imagePath: getStoragePublicUrl(imagePath),
+        imageAlt: document.title,
+        href: `/archive/${document.slug}`
+      };
+    })
+    .filter(Boolean) as CollectionItemSummary[];
+}
+
+function mapDocumentSections(sections: DocumentSectionRow[] = []): TranscriptSection[] {
+  return [...sections]
+    .sort((a, b) => (a.position ?? 0) - (b.position ?? 0))
+    .map((section) => {
+      const body = section.body?.trim() ?? "";
+      if (!body) return undefined;
+      const bodyFormat = section.body_format === "markdown" ? "markdown" : "plain";
+      return {
+        id: section.id,
+        heading: section.heading || "Transcript",
+        kind: sectionKind(section.section_type || section.heading || "Transcript"),
+        body,
+        bodyFormat,
+        position: section.position ?? undefined,
+        paragraphs: bodyFormat === "markdown" ? [] : splitParagraphs(body)
+      };
+    })
+    .filter(Boolean) as TranscriptSection[];
+}
+
+function mapDocumentFigures(figures: DocumentFigureRow[] = []): SourceFigure[] {
+  return [...figures]
+    .sort((a, b) => (a.position ?? 0) - (b.position ?? 0))
+    .map((figure, index) => {
+      const caption = figure.caption?.trim() ?? "";
+      const imagePath = getStoragePublicUrl(figure.image_path);
+      if (!caption && !imagePath) return undefined;
+      return {
+        id: figure.id,
+        imagePath,
+        alt: figure.alt_text || caption || `Figure ${index + 1}`,
+        caption,
+        position: figure.placement || "inline",
+        token: figure.token || figure.id,
+        credit: figure.credit || undefined,
+        sectionId: figure.section_id || undefined
+      };
+    })
+    .filter(Boolean) as SourceFigure[];
 }
 
 const SOURCE_METADATA_CORRECTIONS: Record<string, { title?: string; people?: string[] }> = {
@@ -751,9 +1116,17 @@ function normalizeTranscriptHeading(value: string) {
 }
 
 function sectionKind(heading: string): TranscriptSection["kind"] {
-  if (heading === "Historical Overview") return "overview";
-  if (heading === "Transcript") return "transcript";
+  const normalized = heading.replace(/\s+/g, " ").trim().toLowerCase();
+  if (normalized === "overview" || normalized === "historical overview") return "overview";
+  if (normalized === "transcript" || normalized === "transcription") return "transcript";
   return "note";
+}
+
+function splitParagraphs(value: string) {
+  return value
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
 }
 
 function firstRelated<T>(value: T | T[] | null | undefined) {

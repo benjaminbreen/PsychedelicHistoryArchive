@@ -37,6 +37,17 @@ create table if not exists documents (
 alter table documents add column if not exists short_title text;
 alter table documents add column if not exists subtitle text;
 alter table documents add column if not exists publication_title text;
+alter table documents add column if not exists source_kind text default 'single';
+alter table documents add column if not exists sequence_label text;
+alter table documents add column if not exists sequence_number int;
+alter table documents add column if not exists issue_date text;
+alter table documents add column if not exists content_language text;
+alter table documents add column if not exists translation_language text;
+alter table documents add column if not exists translation_text text;
+alter table documents add column if not exists translation_provider text;
+alter table documents add column if not exists translation_note text;
+alter table documents add column if not exists reader_mode text;
+alter table documents add column if not exists media_embed_url text;
 
 create table if not exists pages (
   id uuid primary key default gen_random_uuid(),
@@ -135,6 +146,8 @@ create table if not exists document_sections (
   unique(document_id, position)
 );
 
+alter table document_sections add column if not exists body_format text default 'plain';
+
 create table if not exists document_figures (
   id uuid primary key default gen_random_uuid(),
   document_id uuid references documents(id) on delete cascade,
@@ -146,6 +159,33 @@ create table if not exists document_figures (
   created_at timestamptz default now(),
   updated_at timestamptz default now(),
   unique(document_id, position)
+);
+
+alter table document_figures add column if not exists section_id uuid references document_sections(id) on delete set null;
+alter table document_figures add column if not exists token text;
+alter table document_figures add column if not exists credit text;
+
+create table if not exists editor_profiles (
+  user_id uuid primary key references auth.users(id) on delete cascade,
+  display_name text not null,
+  role text not null default 'editor',
+  created_at timestamptz default now(),
+  updated_at timestamptz default now()
+);
+
+alter table documents add column if not exists updated_by uuid references auth.users(id);
+alter table documents add column if not exists editorial_status text default 'draft';
+
+create table if not exists content_revisions (
+  id uuid primary key default gen_random_uuid(),
+  table_name text not null,
+  row_id uuid not null,
+  document_id uuid references documents(id) on delete cascade,
+  changed_by uuid references auth.users(id),
+  change_note text,
+  before_data jsonb,
+  after_data jsonb,
+  created_at timestamptz default now()
 );
 
 create table if not exists tags (
@@ -176,10 +216,15 @@ create table if not exists collections (
   updated_at timestamptz default now()
 );
 
+alter table documents add column if not exists parent_collection_id uuid references collections(id) on delete set null;
+
 create table if not exists collection_documents (
   collection_id uuid references collections(id) on delete cascade,
   document_id uuid references documents(id) on delete cascade,
   position int,
+  sequence_label text,
+  sequence_number int,
+  issue_date text,
   editorial_caption text,
   primary key (collection_id, document_id)
 );
@@ -195,6 +240,7 @@ create index if not exists files_document_id_idx on files(document_id);
 create index if not exists external_sources_document_id_idx on external_sources(document_id);
 create index if not exists document_sections_document_id_idx on document_sections(document_id);
 create index if not exists document_figures_document_id_idx on document_figures(document_id);
+create index if not exists content_revisions_document_id_idx on content_revisions(document_id, created_at desc);
 create index if not exists tags_slug_idx on tags(slug);
 
 grant usage on schema public to anon, authenticated, service_role;
@@ -212,6 +258,8 @@ grant select on tags to anon, authenticated;
 grant select on document_tags to anon, authenticated;
 grant select on collections to anon, authenticated;
 grant select on collection_documents to anon, authenticated;
+grant select on editor_profiles to authenticated;
+grant select on content_revisions to authenticated;
 
 grant all privileges on documents to service_role;
 grant all privileges on pages to service_role;
@@ -226,6 +274,8 @@ grant all privileges on tags to service_role;
 grant all privileges on document_tags to service_role;
 grant all privileges on collections to service_role;
 grant all privileges on collection_documents to service_role;
+grant all privileges on editor_profiles to service_role;
+grant all privileges on content_revisions to service_role;
 
 alter table documents enable row level security;
 alter table pages enable row level security;
@@ -240,6 +290,8 @@ alter table tags enable row level security;
 alter table document_tags enable row level security;
 alter table collections enable row level security;
 alter table collection_documents enable row level security;
+alter table editor_profiles enable row level security;
+alter table content_revisions enable row level security;
 
 drop policy if exists "Public can read published documents" on documents;
 create policy "Public can read published documents"
@@ -341,4 +393,22 @@ create policy "Public can read published collection documents"
     select 1 from collections
     where collections.id = collection_documents.collection_id
       and collections.status = 'published'
+  ));
+
+drop policy if exists "Editors can read editor profiles" on editor_profiles;
+create policy "Editors can read editor profiles"
+  on editor_profiles for select
+  using (auth.uid() = user_id or exists (
+    select 1 from editor_profiles profile
+    where profile.user_id = auth.uid()
+      and profile.role in ('owner', 'editor', 'viewer')
+  ));
+
+drop policy if exists "Editors can read content revisions" on content_revisions;
+create policy "Editors can read content revisions"
+  on content_revisions for select
+  using (exists (
+    select 1 from editor_profiles profile
+    where profile.user_id = auth.uid()
+      and profile.role in ('owner', 'editor', 'viewer')
   ));

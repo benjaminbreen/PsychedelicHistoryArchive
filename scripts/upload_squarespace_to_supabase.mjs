@@ -63,6 +63,38 @@ async function upsertTable(name, rows, onConflict) {
   console.log(`Upserted ${rows.length} ${name}`);
 }
 
+async function upsertCollectionDocuments(rows) {
+  if (!rows.length) return;
+  const { error } = await supabase
+    .from("collection_documents")
+    .upsert(rows, { onConflict: "collection_id,document_id", ignoreDuplicates: false });
+
+  if (!error) {
+    console.log(`Upserted ${rows.length} collection_documents`);
+    return;
+  }
+
+  if (!isSchemaCacheColumnError(error.message)) {
+    throw new Error(`collection_documents: ${error.message}`);
+  }
+
+  const legacyRows = rows.map(({ collection_id, document_id, position, editorial_caption }) => ({
+    collection_id,
+    document_id,
+    position,
+    editorial_caption
+  }));
+  const { error: legacyError } = await supabase
+    .from("collection_documents")
+    .upsert(legacyRows, { onConflict: "collection_id,document_id", ignoreDuplicates: false });
+  if (legacyError) throw new Error(`collection_documents: ${legacyError.message}`);
+  console.log(`Upserted ${legacyRows.length} collection_documents using legacy join-table shape`);
+}
+
+function isSchemaCacheColumnError(message = "") {
+  return message.includes("schema cache") || message.includes("Could not find the");
+}
+
 async function uploadAssets(assets) {
   if (!assets.length) {
     console.log("No assets to upload");
@@ -88,6 +120,8 @@ async function uploadAssets(assets) {
 async function main() {
   console.log(`Using import directory: ${importDir}`);
   const documents = await readJson("documents");
+  const collections = await readJson("collections");
+  const collectionDocuments = await readJson("collection_documents");
   const pages = await readJson("pages");
   const pageLines = await readJson("page_lines");
   const files = await readJson("files");
@@ -100,10 +134,11 @@ async function main() {
   const documentTags = await readJson("document_tags");
   const assets = await readJson("assets");
 
-  console.log(`Loaded ${documents.length} documents, ${pages.length} pages, ${pageLines.length} page lines, ${files.length} files, ${documentSections.length} sections, ${documentFigures.length} figures, ${assets.length} assets`);
+  console.log(`Loaded ${documents.length} documents, ${collections.length} collections, ${collectionDocuments.length} collection links, ${pages.length} pages, ${pageLines.length} page lines, ${files.length} files, ${documentSections.length} sections, ${documentFigures.length} figures, ${assets.length} assets`);
 
   await uploadAssets(assets);
 
+  await upsertTable("collections", collections, "id");
   await upsertTable("documents", documents, "id");
   await upsertTable("pages", pages, "id");
   await upsertTable("page_lines", pageLines, "id");
@@ -115,6 +150,7 @@ async function main() {
   await upsertTable("tags", tags, "id");
   await upsertTable("document_people", documentPeople, "document_id,person_id,role");
   await upsertTable("document_tags", documentTags, "document_id,tag_id");
+  await upsertCollectionDocuments(collectionDocuments);
 }
 
 main().catch((error) => {

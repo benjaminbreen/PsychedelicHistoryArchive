@@ -1,0 +1,29 @@
+[
+  {
+    "collection_id": "56e15ba7-37d8-5d2a-bf20-1325190ef58d",
+    "document_id": "29e9fc11-09fd-53c5-af62-091f91562c26",
+    "position": 32,
+    "sequence_label": "No. 32",
+    "sequence_number": 32,
+    "issue_date": "1970",
+    "editorial_caption": "PIC Bulletin 32"
+  },
+  {
+    "collection_id": "56e15ba7-37d8-5d2a-bf20-1325190ef58d",
+    "document_id": "b315e80c-ca93-538f-8da8-9a067f135244",
+    "position": 33,
+    "sequence_label": "No. 33",
+    "sequence_number": 33,
+    "issue_date": "1970",
+    "editorial_caption": "PIC Bulletin 33"
+  },
+  {
+    "collection_id": "56e15ba7-37d8-5d2a-bf20-1325190ef58d",
+    "document_id": "f1204be7-1228-550e-8892-c72d08fd40fa",
+    "position": 34,
+    "sequence_label": "No. 34",
+    "sequence_number": 34,
+    "issue_date": "1971",
+    "editorial_caption": "PIC Bulletin 34"
+  }
+]

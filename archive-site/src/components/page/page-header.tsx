@@ -19,13 +19,13 @@ export function PageHeader({ eyebrow, title, description, aside, className, vari
           className={clsx(
             "max-w-4xl font-display leading-[0.95] text-archive-ink",
             variant === "directory"
-              ? "mt-0 text-[3.8rem] font-normal tracking-[0.01em] sm:text-[4.8rem]"
-              : "mt-3 text-[2.6rem] font-semibold uppercase tracking-[0.015em] sm:text-[3.5rem]"
+              ? "mt-0 text-[3.8rem] font-normal tracking-[0.01em] sm:text-[3.2rem]"
+              : "mt-3 text-[2.6rem] font-semibold uppercase tracking-[0.015em] sm:text-[2.5rem]"
           )}
         >
           {title}
         </h1>
-        {description && <div className="mt-4 max-w-3xl text-[1rem] leading-7 text-archive-muted">{description}</div>}
+        {description && <div className="mt-4 max-w-3xl text-[0.9rem] leading-7 text-archive-muted">{description}</div>}
       </div>
       {aside && <div className="lg:justify-self-end">{aside}</div>}
     </header>

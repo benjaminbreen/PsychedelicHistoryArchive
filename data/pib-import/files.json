@@ -1,0 +1,29 @@
+[
+  {
+    "id": "51069032-5e7f-5ab3-957e-bfedf899ab77",
+    "document_id": "29e9fc11-09fd-53c5-af62-091f91562c26",
+    "page_id": null,
+    "kind": "original_pdf",
+    "storage_path": "documents/pic-bulletin-32/original/source.pdf",
+    "mime_type": "application/pdf",
+    "byte_size": 1182554
+  },
+  {
+    "id": "08ca5ec4-1e78-5f63-b621-cbacd2ec312f",
+    "document_id": "b315e80c-ca93-538f-8da8-9a067f135244",
+    "page_id": null,
+    "kind": "original_pdf",
+    "storage_path": "documents/pic-bulletin-33/original/source.pdf",
+    "mime_type": "application/pdf",
+    "byte_size": 1095505
+  },
+  {
+    "id": "fdd3cf5f-f013-5cf8-a91d-6af05b54ba7a",
+    "document_id": "f1204be7-1228-550e-8892-c72d08fd40fa",
+    "page_id": null,
+    "kind": "original_pdf",
+    "storage_path": "documents/pic-bulletin-34/original/source.pdf",
+    "mime_type": "application/pdf",
+    "byte_size": 1173400
+  }
+]

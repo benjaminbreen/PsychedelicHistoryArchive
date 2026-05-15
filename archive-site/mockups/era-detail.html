@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1950–1970 · The Psychedelic Era | The Psychedelic History Archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;600&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+    />
+    <style>
+      :root {
+        --archive-ink: 23 20 23;
+        --archive-muted: 110 104 114;
+        --archive-faint: 155 148 163;
+        --archive-paper: 252 250 247;
+        --archive-surface: 255 255 255;
+        --archive-line: 228 223 231;
+        --archive-lavender: 237 232 243;
+        --archive-lavender2: 248 246 250;
+        --archive-violet: 102 81 142;
+        --archive-violet-dark: 78 61 115;
+        --archive-olive: 117 123 67;
+        --archive-sand: 243 235 221;
+        --archive-warm-line: 222 210 189;
+        --font-display: "Antonio", "Arial Narrow", sans-serif;
+        --font-sans: "Source Sans 3", system-ui, sans-serif;
+        --font-serif: "Newsreader", Georgia, serif;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        background:
+          radial-gradient(circle at 8% 8%, rgb(var(--archive-violet) / 0.035), transparent 28rem),
+          linear-gradient(180deg, rgb(var(--archive-surface)) 0%, rgb(var(--archive-paper)) 18rem);
+        color: rgb(var(--archive-ink));
+        font-family: var(--font-sans);
+        font-size: 16px;
+        min-height: 100vh;
+      }
+      a { color: inherit; text-decoration: none; }
+      ::selection { background: rgb(var(--archive-lavender)); color: rgb(var(--archive-ink)); }
+
+      /* ---------- Header (simplified site header) ---------- */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        border-bottom: 1px solid rgba(201, 167, 101, 0.18);
+        background:
+          linear-gradient(180deg, rgb(243 239 249 / 0.72) 0%, rgb(255 255 255 / 0) 48%),
+          linear-gradient(100deg, rgb(249 247 252) 0%, rgb(255 253 250) 50%, rgb(251 245 229) 100%);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 1px 10px rgba(102, 81, 142, 0.045);
+        backdrop-filter: saturate(1.05);
+      }
+      .header-inner {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0.85rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+      .logotype {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: 1.18rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        transform: scaleX(0.85);
+        transform-origin: left center;
+        color: rgb(var(--archive-ink));
+      }
+      .header-nav {
+        display: flex;
+        gap: 1.4rem;
+        font-size: 0.9rem;
+        color: rgb(var(--archive-muted));
+      }
+      .header-nav a { transition: color 150ms ease; }
+      .header-nav a:hover { color: rgb(var(--archive-violet-dark)); }
+      .header-nav .active { color: rgb(var(--archive-ink)); font-weight: 600; }
+
+      /* ---------- Era banner ---------- */
+      .era-banner {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        border-bottom: 1px solid rgb(var(--archive-warm-line));
+        background: rgb(var(--archive-paper));
+        min-height: 22rem;
+      }
+      .era-banner-image {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        background-image:
+          radial-gradient(ellipse at 28% 38%, rgba(110, 84, 168, 0.34) 0, transparent 26rem),
+          radial-gradient(ellipse at 72% 62%, rgba(199, 140, 60, 0.28) 0, transparent 30rem),
+          linear-gradient(115deg, #2a223a 0%, #574272 28%, #8b6a4a 62%, #d9c08a 100%);
+        filter: saturate(0.78) contrast(0.94) brightness(1.02);
+        opacity: 0.62;
+      }
+      .era-banner::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(180deg, rgba(252, 250, 247, 0.05), rgba(252, 250, 247, 0.78) 78%, rgb(var(--archive-paper))),
+          linear-gradient(90deg, rgba(252, 250, 247, 0.42), rgba(252, 250, 247, 0.04) 38%, rgba(252, 250, 247, 0.04) 62%, rgba(252, 250, 247, 0.42));
+      }
+      .era-banner::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.12;
+        background-image: radial-gradient(rgba(32, 28, 24, 0.28) 0.6px, transparent 0.9px);
+        background-size: 10px 10px;
+        mix-blend-mode: multiply;
+        pointer-events: none;
+      }
+      .era-banner-inner {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 3.4rem 2rem 2.2rem;
+        position: relative;
+      }
+      .breadcrumb {
+        display: inline-flex;
+        gap: 0.55rem;
+        align-items: center;
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: 0.82rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgb(var(--archive-muted));
+      }
+      .breadcrumb a { transition: color 150ms ease; }
+      .breadcrumb a:hover { color: rgb(var(--archive-violet-dark)); }
+      .breadcrumb .sep { opacity: 0.5; }
+      .era-eyebrow {
+        margin-top: 1.2rem;
+        font-family: var(--font-display);
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-size: 0.88rem;
+        color: rgb(var(--archive-violet-dark));
+      }
+      .era-title {
+        display: block;
+        margin: 0.35rem 0 0;
+        font-family: var(--font-display);
+        font-weight: 300;
+        font-size: clamp(3.4rem, 7.4vw, 6.4rem);
+        line-height: 0.92;
+        letter-spacing: 0.005em;
+        text-transform: uppercase;
+        color: rgb(var(--archive-ink));
+        transform: scaleX(0.78);
+        transform-origin: left center;
+        width: 128%;
+        max-width: 128%;
+      }
+      .era-tagline {
+        max-width: 44rem;
+        margin: 1.3rem 0 0;
+        font-family: var(--font-serif);
+        font-size: 1.18rem;
+        line-height: 1.55;
+        color: rgb(var(--archive-ink));
+        font-style: italic;
+      }
+      .era-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+        margin-top: 1.8rem;
+        border-top: 1px solid rgb(var(--archive-warm-line));
+        border-bottom: 1px solid rgb(var(--archive-warm-line));
+      }
+      .era-stat {
+        padding: 0.85rem 1.5rem 0.85rem 0;
+        margin-right: 1.5rem;
+        border-right: 1px solid rgb(var(--archive-warm-line));
+      }
+      .era-stat:last-child { border-right: 0; margin-right: 0; }
+      .era-stat-num {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 1;
+        color: rgb(var(--archive-ink));
+      }
+      .era-stat-label {
+        margin-top: 0.3rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgb(var(--archive-muted));
+      }
+
+      /* ---------- Main grid ---------- */
+      .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 2.5rem 2rem 4rem;
+      }
+      .era-grid {
+        display: grid;
+        gap: 2.2rem;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      }
+      @media (max-width: 1024px) {
+        .era-grid { grid-template-columns: minmax(0, 1fr); }
+      }
+
+      .panel {
+        border: 1px solid rgb(var(--archive-line));
+        background: rgb(var(--archive-surface));
+        border-radius: 6px;
+        box-shadow: 0 10px 24px rgb(0 0 0 / 0.035);
+      }
+      .panel-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1.1rem 1.4rem 0.85rem;
+        border-bottom: 1px solid rgb(var(--archive-line));
+      }
+      .panel-title {
+        font-family: var(--font-display);
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.95rem;
+        color: rgb(var(--archive-ink));
+      }
+      .panel-meta {
+        font-size: 0.82rem;
+        color: rgb(var(--archive-muted));
+      }
+      .panel-body { padding: 1rem 1.4rem 1.3rem; }
+
+      /* ---------- Left: sources list ---------- */
+      .source-controls {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+        padding: 0.85rem 1.4rem;
+        border-bottom: 1px solid rgb(var(--archive-line));
+        background: rgb(var(--archive-lavender2) / 0.4);
+      }
+      .source-controls input {
+        flex: 1 1 16rem;
+        min-width: 12rem;
+        padding: 0.5rem 0.8rem;
+        border: 1px solid rgb(var(--archive-line));
+        border-radius: 4px;
+        background: rgb(var(--archive-surface));
+        font: inherit;
+        font-size: 0.9rem;
+        color: rgb(var(--archive-ink));
+        outline: none;
+      }
+      .source-controls input:focus { border-color: rgb(var(--archive-violet) / 0.6); box-shadow: 0 0 0 3px rgb(var(--archive-violet) / 0.12); }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.4rem 0.7rem;
+        border: 1px solid rgb(var(--archive-line));
+        border-radius: 999px;
+        background: rgb(var(--archive-surface));
+        font-size: 0.78rem;
+        color: rgb(var(--archive-ink));
+        cursor: pointer;
+        transition: border-color 150ms, background 150ms;
+      }
+      .chip:hover { border-color: rgb(var(--archive-violet) / 0.5); background: rgb(var(--archive-lavender) / 0.4); }
+      .chip.active { background: rgb(var(--archive-violet)); color: rgb(255 255 255); border-color: rgb(var(--archive-violet)); }
+
+      .source-row {
+        display: grid;
+        grid-template-columns: 3.4rem minmax(0, 1fr) auto;
+        gap: 1rem;
+        align-items: start;
+        padding: 0.9rem 1.4rem;
+        border-bottom: 1px solid rgb(var(--archive-line));
+        transition: background 150ms ease;
+      }
+      .source-row:last-child { border-bottom: 0; }
+      .source-row:hover { background: rgb(var(--archive-lavender2) / 0.55); }
+      .source-thumb {
+        width: 3.4rem;
+        height: 4.4rem;
+        background: linear-gradient(135deg, rgb(var(--archive-sand)) 0%, rgb(var(--archive-lavender)) 100%);
+        border: 1px solid rgb(var(--archive-warm-line));
+        border-radius: 2px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.4), 0 1px 2px rgb(0 0 0 / 0.04);
+      }
+      .source-thumb.text::before {
+        content: "";
+        position: absolute;
+        inset: 0.5rem 0.4rem;
+        background:
+          linear-gradient(to bottom,
+            transparent 0, transparent 0.18rem,
+            rgb(var(--archive-muted) / 0.32) 0.18rem, rgb(var(--archive-muted) / 0.32) 0.26rem,
+            transparent 0.26rem, transparent 0.5rem,
+            rgb(var(--archive-muted) / 0.32) 0.5rem, rgb(var(--archive-muted) / 0.32) 0.58rem,
+            transparent 0.58rem, transparent 0.82rem,
+            rgb(var(--archive-muted) / 0.32) 0.82rem, rgb(var(--archive-muted) / 0.32) 0.9rem,
+            transparent 0.9rem);
+        background-size: 100% 1.1rem;
+        opacity: 0.55;
+      }
+      .source-thumb.image { background: linear-gradient(135deg, #b8a878, #6c4d8a); }
+      .source-thumb.audio { background: linear-gradient(135deg, #5f6e3e, #8a7b5b); }
+      .source-thumb.audio::after {
+        content: "▶";
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        color: rgba(255,255,255,0.78);
+        font-size: 0.92rem;
+      }
+      .source-meta {
+        min-width: 0;
+      }
+      .source-title {
+        font-family: var(--font-serif);
+        font-size: 1.04rem;
+        font-weight: 600;
+        line-height: 1.25;
+        color: rgb(var(--archive-ink));
+        margin: 0 0 0.15rem;
+      }
+      .source-title a { transition: color 150ms ease; }
+      .source-title a:hover { color: rgb(var(--archive-violet-dark)); }
+      .source-byline {
+        font-size: 0.84rem;
+        color: rgb(var(--archive-muted));
+        line-height: 1.4;
+      }
+      .source-snippet {
+        margin-top: 0.4rem;
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-size: 0.88rem;
+        line-height: 1.45;
+        color: rgb(var(--archive-ink));
+        opacity: 0.78;
+      }
+      .source-tags {
+        margin-top: 0.45rem;
+        display: flex;
+        gap: 0.3rem;
+        flex-wrap: wrap;
+      }
+      .tag {
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        padding: 0.12rem 0.45rem;
+        background: rgb(var(--archive-lavender2));
+        border: 1px solid rgb(var(--archive-line));
+        border-radius: 3px;
+        color: rgb(var(--archive-muted));
+      }
+      .source-date {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: 0.84rem;
+        letter-spacing: 0.04em;
+        color: rgb(var(--archive-muted));
+        white-space: nowrap;
+        padding-top: 0.18rem;
+      }
+
+      .panel-footer {
+        padding: 1rem 1.4rem;
+        border-top: 1px solid rgb(var(--archive-line));
+        text-align: center;
+      }
+      .button-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.55rem 1.1rem;
+        font-size: 0.86rem;
+        font-weight: 600;
+        color: rgb(var(--archive-violet));
+        border: 1px solid rgb(var(--archive-violet) / 0.35);
+        border-radius: 4px;
+        background: rgb(var(--archive-lavender2) / 0.5);
+        transition: background 150ms, border-color 150ms;
+      }
+      .button-link:hover {
+        background: rgb(var(--archive-lavender));
+        border-color: rgb(var(--archive-violet) / 0.6);
+      }
+
+      /* ---------- Right column ---------- */
+      .right-stack { display: grid; gap: 2.2rem; align-content: start; }
+
+      /* Essay panel */
+      .essay-body {
+        font-family: var(--font-serif);
+        font-size: 1.05rem;
+        line-height: 1.62;
+        color: rgb(var(--archive-ink));
+      }
+      .essay-body p { margin: 0 0 0.95rem; }
+      .essay-body p:last-child { margin-bottom: 0; }
+      .essay-body p:first-of-type::first-letter {
+        font-family: var(--font-display);
+        font-weight: 400;
+        float: left;
+        font-size: 3.4rem;
+        line-height: 0.92;
+        padding: 0.32rem 0.55rem 0 0;
+        color: rgb(var(--archive-violet-dark));
+      }
+      .essay-pullquote {
+        margin: 1.3rem 0;
+        padding: 0.6rem 0 0.6rem 1.1rem;
+        border-left: 3px solid rgb(var(--archive-violet) / 0.65);
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-size: 1.08rem;
+        line-height: 1.5;
+        color: rgb(var(--archive-violet-dark));
+      }
+      .essay-pullquote cite {
+        display: block;
+        margin-top: 0.4rem;
+        font-style: normal;
+        font-size: 0.82rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: rgb(var(--archive-muted));
+        font-family: var(--font-display);
+      }
+      .key-figures {
+        margin-top: 1.4rem;
+        padding-top: 1.2rem;
+        border-top: 1px dashed rgb(var(--archive-line));
+      }
+      .key-figures-label {
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.78rem;
+        color: rgb(var(--archive-muted));
+        margin-bottom: 0.6rem;
+      }
+      .figure-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+      .figure-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.35rem 0.7rem 0.35rem 0.35rem;
+        border: 1px solid rgb(var(--archive-line));
+        border-radius: 999px;
+        background: rgb(var(--archive-surface));
+        font-size: 0.84rem;
+        color: rgb(var(--archive-ink));
+        transition: border-color 150ms, background 150ms;
+      }
+      .figure-chip:hover { border-color: rgb(var(--archive-violet) / 0.5); background: rgb(var(--archive-lavender) / 0.4); }
+      .figure-chip .avatar {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgb(var(--archive-sand)), rgb(var(--archive-lavender)));
+        border: 1px solid rgb(var(--archive-warm-line));
+        font-size: 0.68rem;
+        font-family: var(--font-display);
+        display: grid;
+        place-items: center;
+        color: rgb(var(--archive-muted));
+      }
+
+      /* Further reading */
+      .reading-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 0.8rem;
+        padding: 0.85rem 0;
+        border-bottom: 1px solid rgb(var(--archive-line));
+        align-items: start;
+      }
+      .reading-row:last-child { border-bottom: 0; }
+      .reading-title {
+        font-family: var(--font-serif);
+        font-size: 0.98rem;
+        font-weight: 600;
+        line-height: 1.3;
+        color: rgb(var(--archive-ink));
+        margin: 0;
+      }
+      .reading-byline {
+        font-size: 0.82rem;
+        color: rgb(var(--archive-muted));
+        margin-top: 0.15rem;
+        line-height: 1.4;
+      }
+      .reading-note {
+        margin-top: 0.4rem;
+        font-size: 0.86rem;
+        line-height: 1.45;
+        color: rgb(var(--archive-ink));
+        opacity: 0.84;
+      }
+      .reading-kind {
+        font-family: var(--font-display);
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgb(var(--archive-muted));
+        padding: 0.18rem 0.55rem;
+        border: 1px solid rgb(var(--archive-line));
+        border-radius: 3px;
+        background: rgb(var(--archive-lavender2));
+        white-space: nowrap;
+      }
+
+      /* Adjacent eras nav */
+      .era-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgb(var(--archive-line));
+      }
+      .era-nav a {
+        display: block;
+        padding: 1rem 1.2rem;
+        border: 1px solid rgb(var(--archive-line));
+        background: rgb(var(--archive-surface));
+        border-radius: 6px;
+        transition: border-color 150ms, background 150ms, transform 150ms;
+      }
+      .era-nav a:hover { border-color: rgb(var(--archive-violet) / 0.45); background: rgb(var(--archive-lavender2) / 0.6); transform: translateY(-1px); }
+      .era-nav-eyebrow {
+        font-family: var(--font-display);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgb(var(--archive-muted));
+      }
+      .era-nav-label {
+        margin-top: 0.25rem;
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        color: rgb(var(--archive-ink));
+      }
+      .era-nav .next { text-align: right; }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logotype" href="/">The Psychedelic History Archive</a>
+        <nav class="header-nav">
+          <a href="/archive">Archive</a>
+          <a class="active" href="/eras">Eras</a>
+          <a href="/topics">Topics</a>
+          <a href="/people">People</a>
+          <a href="/about">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- BANNER -->
+    <section class="era-banner">
+      <div class="era-banner-image" aria-hidden="true"></div>
+      <div class="era-banner-inner">
+        <div class="breadcrumb">
+          <a href="/eras">Eras</a>
+          <span class="sep">/</span>
+          <span>1950–1970</span>
+        </div>
+        <div class="era-eyebrow">The Psychedelic Era</div>
+        <h1 class="era-title">1950&ndash;1970</h1>
+        <p class="era-tagline">
+          From the first synthesis of LSD&rsquo;s clinical applications to the Controlled Substances Act &mdash; the two decades in which psychedelics moved from laboratory curiosity to cultural rupture.
+        </p>
+        <dl class="era-stats">
+          <div class="era-stat">
+            <div class="era-stat-num">2,189</div>
+            <div class="era-stat-label">Primary sources</div>
+          </div>
+          <div class="era-stat">
+            <div class="era-stat-num">412</div>
+            <div class="era-stat-label">People</div>
+          </div>
+          <div class="era-stat">
+            <div class="era-stat-num">38</div>
+            <div class="era-stat-label">Collections</div>
+          </div>
+          <div class="era-stat">
+            <div class="era-stat-num">17</div>
+            <div class="era-stat-label">Further-reading titles</div>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- MAIN GRID -->
+    <main class="container">
+      <div class="era-grid">
+        <!-- LEFT: SOURCES -->
+        <section class="panel" aria-labelledby="sources-heading">
+          <div class="panel-header">
+            <h2 class="panel-title" id="sources-heading">Sources in this era</h2>
+            <span class="panel-meta">2,189 results</span>
+          </div>
+
+          <div class="source-controls">
+            <input type="search" placeholder="Filter sources within 1950–1970…" />
+            <button class="chip active" type="button">All</button>
+            <button class="chip" type="button">Texts</button>
+            <button class="chip" type="button">Images</button>
+            <button class="chip" type="button">Audio/Video</button>
+            <button class="chip" type="button">Personal Histories</button>
+          </div>
+
+          <div>
+            <article class="source-row">
+              <div class="source-thumb text" aria-hidden="true"></div>
+              <div class="source-meta">
+                <h3 class="source-title"><a href="#">LSD &mdash; My Problem Child</a></h3>
+                <div class="source-byline">Albert Hofmann &middot; manuscript draft &middot; Sandoz Laboratories</div>
+                <p class="source-snippet">&ldquo;In a dreamlike state, with eyes closed, I perceived an uninterrupted stream of fantastic pictures, extraordinary shapes&hellip;&rdquo;</p>
+                <div class="source-tags">
+                  <span class="tag">LSD</span><span class="tag">Pharmacology</span><span class="tag">Self-Experiment</span>
+                </div>
+              </div>
+              <div class="source-date">1955</div>
+            </article>
+
+            <article class="source-row">
+              <div class="source-thumb text" aria-hidden="true"></div>
+              <div class="source-meta">
+                <h3 class="source-title"><a href="#">Seeking the Magic Mushroom</a></h3>
+                <div class="source-byline">R. Gordon Wasson &middot; <em>Life Magazine</em>, May 13</div>
+                <p class="source-snippet">&ldquo;We chewed and swallowed these acrid mushrooms, saw visions, and emerged from the experience awestruck.&rdquo;</p>
+                <div class="source-tags">
+                  <span class="tag">Psilocybin</span><span class="tag">Mazatec</span><span class="tag">Popular Press</span>
+                </div>
+              </div>
+              <div class="source-date">1957</div>
+            </article>
+
+            <article class="source-row">
+              <div class="source-thumb image" aria-hidden="true"></div>
+              <div class="source-meta">
+                <h3 class="source-title"><a href="#">Photograph: María Sabina&rsquo;s velada</a></h3>
+                <div class="source-byline">Allan Richardson &middot; gelatin silver print &middot; Huautla de Jiménez</div>
+                <p class="source-snippet">Sabina seated with candles before an altar; one of the first published photographs of a mushroom ceremony.</p>
+                <div class="source-tags">
+                  <span class="tag">Photograph</span><span class="tag">Ritual</span><span class="tag">Mexico</span>
+                </div>
+              </div>
+              <div class="source-date">1955</div>
+            </article>
+
+            <article class="source-row">
+              <div class="source-thumb text" aria-hidden="true"></div>
+              <div class="source-meta">
+                <h3 class="source-title"><a href="#">CIA Memorandum: Project MKULTRA Subproject 8</a></h3>
+                <div class="source-byline">Sidney Gottlieb &middot; declassified internal memo &middot; CIA</div>
+                <p class="source-snippet">&ldquo;Funds in the amount of $40,000 are hereby requested for continued behavioral research at Harvard&hellip;&rdquo;</p>
+                <div class="source-tags">
+                  <span class="tag">MKULTRA</span><span class="tag">Intelligence</span><span class="tag">Government</span>
+                </div>
+              </div>
+              <div class="source-date">1953</div>
+            </article>
+
+            <article class="source-row">
+              <div class="source-thumb audio" aria-hidden="true"></div>
+              <div class="source-meta">
+                <h3 class="source-title"><a href="#">Aldous Huxley reads <em>The Doors of Perception</em></a></h3>
+                <div class="source-byline">BBC recording &middot; 47 minutes</div>
+                <p class="source-snippet">&ldquo;To be shaken out of the ruts of ordinary perception, to be shown for a few timeless hours&hellip;&rdquo;</p>
+                <div class="source-tags">
+                  <span class="tag">Mescaline</span><span class="tag">Literature</span><span class="tag">Audio</span>
+                </div>
+              </div>
+              <div class="source-date">1958</div>
+            </article>
+
+            <article class="source-row">
+              <div class="source-thumb text" aria-hidden="true"></div>
+              <div class="source-meta">
+                <h3 class="source-title"><a href="#">Letter: Timothy Leary to Aldous Huxley</a></h3>
+                <div class="source-byline">Harvard Psilocybin Project correspondence</div>
+                <p class="source-snippet">&ldquo;We have, I think, an obligation to share what we are finding, even at the risk of academic discomfort.&rdquo;</p>
+                <div class="source-tags">
+                  <span class="tag">Leary</span><span class="tag">Harvard</span><span class="tag">Correspondence</span>
+                </div>
+              </div>
+              <div class="source-date">1961</div>
+            </article>
+
+            <article class="source-row">
+              <div class="source-thumb text" aria-hidden="true"></div>
+              <div class="source-meta">
+                <h3 class="source-title"><a href="#">The Psychedelic Experience</a></h3>
+                <div class="source-byline">Leary, Metzner &amp; Alpert &middot; University Books</div>
+                <p class="source-snippet">A manual based on the Tibetan Book of the Dead, prescribing &ldquo;set and setting&rdquo; for guided sessions.</p>
+                <div class="source-tags">
+                  <span class="tag">LSD</span><span class="tag">Therapy</span><span class="tag">Set &amp; Setting</span>
+                </div>
+              </div>
+              <div class="source-date">1964</div>
+            </article>
+
+            <article class="source-row">
+              <div class="source-thumb text" aria-hidden="true"></div>
+              <div class="source-meta">
+                <h3 class="source-title"><a href="#">Senate testimony: drugs and the campus</a></h3>
+                <div class="source-byline">Subcommittee on Juvenile Delinquency &middot; transcript</div>
+                <p class="source-snippet">Leary defends LSD before Edward Kennedy; the exchange foreshadows the coming legal regime.</p>
+                <div class="source-tags">
+                  <span class="tag">Law</span><span class="tag">Prohibition</span><span class="tag">Testimony</span>
+                </div>
+              </div>
+              <div class="source-date">1966</div>
+            </article>
+          </div>
+
+          <div class="panel-footer">
+            <a class="button-link" href="/archive?era=1950-1970">Browse all 2,189 sources &rarr;</a>
+          </div>
+        </section>
+
+        <!-- RIGHT: ESSAY + FURTHER READING -->
+        <div class="right-stack">
+          <!-- Contextual essay -->
+          <section class="panel" aria-labelledby="essay-heading">
+            <div class="panel-header">
+              <h2 class="panel-title" id="essay-heading">A historian&rsquo;s overview</h2>
+              <span class="panel-meta">12 min read</span>
+            </div>
+            <div class="panel-body essay-body">
+              <p>
+                The two decades between 1950 and 1970 compressed centuries of psychoactive encounter into a single generation. What began as a quiet pharmacological curiosity &mdash; Albert Hofmann&rsquo;s LSD-25, synthesized in 1938 but only re-discovered in 1943 &mdash; arrived in postwar America as a research tool with no settled meaning. Was it a model psychosis? An adjunct to psychotherapy? A weapon? By 1970 the U.S. Congress would answer by classifying it, alongside psilocybin, mescaline, and DMT, as a Schedule I substance with &ldquo;no currently accepted medical use.&rdquo;
+              </p>
+
+              <blockquote class="essay-pullquote">
+                &ldquo;The psychedelic era did not arrive; it was assembled, piece by piece, out of pharmacology, anthropology, Cold War paranoia, and a generation looking for the doors of perception to open.&rdquo;
+                <cite>&mdash; from the editor&rsquo;s introduction</cite>
+              </blockquote>
+
+              <p>
+                The archive&rsquo;s holdings for this period reflect that assembly. Sandoz Laboratories distributed thousands of LSD ampules to psychiatrists worldwide, generating a vast clinical literature now scattered across journals, hospital archives, and personal correspondence. R. Gordon Wasson&rsquo;s 1957 <em>Life</em> photograph of a Mazatec ceremony opened the floodgates of ethnographic interest. The CIA&rsquo;s MKULTRA program &mdash; documented here through declassified memoranda &mdash; ran in parallel, funding much of the same research under cover names.
+              </p>
+
+              <p>
+                By the mid-1960s the laboratory had spilled into the street. Underground chemists, countercultural presses, and a thriving black market produced the cultural rupture that would, in turn, produce prohibition. The sources collected here trace that arc not as inevitability but as contingency &mdash; a sequence of choices, encounters, and accidents.
+              </p>
+
+              <div class="key-figures">
+                <div class="key-figures-label">Key figures in this era</div>
+                <div class="figure-chips">
+                  <a class="figure-chip" href="/people/albert-hofmann"><span class="avatar">AH</span>Albert Hofmann</a>
+                  <a class="figure-chip" href="/people/r-gordon-wasson"><span class="avatar">GW</span>R. Gordon Wasson</a>
+                  <a class="figure-chip" href="/people/maria-sabina"><span class="avatar">MS</span>María Sabina</a>
+                  <a class="figure-chip" href="/people/timothy-leary"><span class="avatar">TL</span>Timothy Leary</a>
+                  <a class="figure-chip" href="/people/aldous-huxley"><span class="avatar">AH</span>Aldous Huxley</a>
+                  <a class="figure-chip" href="/people/humphry-osmond"><span class="avatar">HO</span>Humphry Osmond</a>
+                  <a class="figure-chip" href="/people/sidney-gottlieb"><span class="avatar">SG</span>Sidney Gottlieb</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Further reading -->
+          <section class="panel" aria-labelledby="reading-heading">
+            <div class="panel-header">
+              <h2 class="panel-title" id="reading-heading">Further reading</h2>
+              <span class="panel-meta">Secondary sources</span>
+            </div>
+            <div class="panel-body" style="padding-top: 0.4rem;">
+              <article class="reading-row">
+                <div>
+                  <h3 class="reading-title">Acid Dreams: The Complete Social History of LSD</h3>
+                  <div class="reading-byline">Martin A. Lee &amp; Bruce Shlain &middot; Grove Press, 1985</div>
+                  <p class="reading-note">Still the most comprehensive narrative history of LSD from Hofmann through MKULTRA into the counterculture.</p>
+                </div>
+                <span class="reading-kind">Book</span>
+              </article>
+              <article class="reading-row">
+                <div>
+                  <h3 class="reading-title">Storming Heaven: LSD and the American Dream</h3>
+                  <div class="reading-byline">Jay Stevens &middot; Atlantic Monthly Press, 1987</div>
+                  <p class="reading-note">A literary cultural history that pairs well with Lee &amp; Shlain&rsquo;s more investigative approach.</p>
+                </div>
+                <span class="reading-kind">Book</span>
+              </article>
+              <article class="reading-row">
+                <div>
+                  <h3 class="reading-title">The Harvard Psilocybin Project Reconsidered</h3>
+                  <div class="reading-byline">Don Lattin &middot; <em>Journal of Psychedelic Studies</em>, 2017</div>
+                  <p class="reading-note">Revisits the 1960&ndash;63 Harvard work with newly available correspondence.</p>
+                </div>
+                <span class="reading-kind">Article</span>
+              </article>
+              <article class="reading-row">
+                <div>
+                  <h3 class="reading-title">The Search for the Manchurian Candidate</h3>
+                  <div class="reading-byline">John Marks &middot; Times Books, 1979</div>
+                  <p class="reading-note">The foundational reconstruction of MKULTRA, written from declassified files.</p>
+                </div>
+                <span class="reading-kind">Book</span>
+              </article>
+              <article class="reading-row">
+                <div>
+                  <h3 class="reading-title">The Long Trip: A Prehistory of Psychedelia</h3>
+                  <div class="reading-byline">Paul Devereux &middot; Penguin/Arkana, 1997</div>
+                  <p class="reading-note">Provides the deep background that makes the mid-century turn legible.</p>
+                </div>
+                <span class="reading-kind">Book</span>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Adjacent era navigation -->
+      <nav class="era-nav" aria-label="Adjacent eras">
+        <a class="prev" href="/eras/1800-1950">
+          <div class="era-nav-eyebrow">&larr; Previous era</div>
+          <div class="era-nav-label">1800&ndash;1950</div>
+        </a>
+        <a class="next" href="/eras/1970-2000">
+          <div class="era-nav-eyebrow">Next era &rarr;</div>
+          <div class="era-nav-label">1970&ndash;2000</div>
+        </a>
+      </nav>
+    </main>
+  </body>
+</html>

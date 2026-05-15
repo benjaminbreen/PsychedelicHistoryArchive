@@ -6,6 +6,7 @@ import {
   Source_Sans_3,
   Source_Serif_4
 } from "next/font/google";
+import { DEFAULT_SITE_DESCRIPTION, SITE_NAME, getSiteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const sourceSans = Source_Sans_3({
@@ -42,9 +43,17 @@ const antonio = Antonio({
 });
 
 export const metadata: Metadata = {
-  title: "The Psychedelic History Archive",
-  description:
-    "A scholarly record of primary sources, biographies, images, audio, and personal histories documenting psychedelic history and altered states."
+  metadataBase: new URL(getSiteUrl()),
+  title: SITE_NAME,
+  description: DEFAULT_SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  openGraph: {
+    title: SITE_NAME,
+    description: DEFAULT_SITE_DESCRIPTION,
+    siteName: SITE_NAME,
+    locale: "en_US",
+    type: "website"
+  }
 };
 
 const themeScript = `

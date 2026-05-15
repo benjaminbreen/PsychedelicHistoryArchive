@@ -22,12 +22,22 @@ export type SourceType =
   | "Source"
   | "Testimony";
 
+export type SourceKind = "single" | "collection" | "collection_item";
+export type ReaderMode = "transcript" | "translation" | "overview" | "pdf" | "audio" | "video" | "images";
+
 export type ArchiveSource = {
   id: string;
   slug: string;
   title: string;
   shortTitle?: string;
   subtitle?: string;
+  sourceKind?: SourceKind;
+  parentCollectionId?: string;
+  sequenceLabel?: string;
+  sequenceNumber?: number;
+  issueDate?: string;
+  collectionItemCount?: number;
+  collectionItems?: CollectionItemSummary[];
   author: string;
   year: number;
   displayDate: string;
@@ -47,6 +57,13 @@ export type ArchiveSource = {
   publicationTitle?: string;
   rights: string;
   sourceUrl: string;
+  contentLanguage?: string;
+  translationLanguage?: string;
+  translationText?: string;
+  translationProvider?: "llm" | "human" | "published";
+  translationNote?: string;
+  readerMode?: ReaderMode;
+  mediaEmbedUrl?: string;
   accessType: AccessType;
   hostingStatus: HostingStatus;
   wordCount: number;
@@ -60,6 +77,21 @@ export type ArchiveSource = {
   figures?: SourceFigure[];
   pages?: SourcePage[];
   files?: SourceFile[];
+};
+
+export type CollectionItemSummary = {
+  id: string;
+  slug: string;
+  title: string;
+  shortTitle?: string;
+  sequenceLabel?: string;
+  sequenceNumber?: number;
+  displayDate?: string;
+  pageCount?: number;
+  tags?: string[];
+  imagePath?: string;
+  imageAlt?: string;
+  href?: string;
 };
 
 export type FacetOption = {
@@ -117,8 +149,12 @@ export type SourceCreator = {
 export type TranscriptSectionKind = "overview" | "transcript" | "note";
 
 export type TranscriptSection = {
+  id?: string;
   heading: string;
   kind: TranscriptSectionKind;
+  body?: string;
+  bodyFormat?: "plain" | "markdown";
+  position?: number;
   paragraphs: string[];
 };
 
@@ -127,5 +163,8 @@ export type SourceFigure = {
   imagePath?: string;
   alt?: string;
   caption: string;
-  position?: "before_overview" | "inline";
+  position?: "before_overview" | "inline" | string;
+  token?: string;
+  credit?: string;
+  sectionId?: string;
 };

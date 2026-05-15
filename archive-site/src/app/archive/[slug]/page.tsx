@@ -1,3 +1,4 @@
+import type { Metadata as NextMetadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft, BookOpen, Copy, Download, ExternalLink, Share2 } from "lucide-react";
 import Link from "next/link";
@@ -7,6 +8,7 @@ import { SourceImage } from "@/components/source-image";
 import { SourceReaderTabs } from "@/components/source-reader-tabs";
 import { ButtonLink } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
+import { SITE_NAME, canonicalPath, seoDescription, sourceImageMetadata } from "@/lib/seo";
 import { getArchiveSourceFromSupabase } from "@/lib/supabase-archive";
 import { getSourceTitleParts } from "@/lib/source-title";
 import type { ArchiveSource } from "@/lib/types";
@@ -16,6 +18,53 @@ export const dynamic = "force-dynamic";
 type SourcePageProps = {
   params: Promise<{ slug: string }>;
 };
+
+export async function generateMetadata({ params }: SourcePageProps): Promise<NextMetadata> {
+  const { slug } = await params;
+  const source = await getArchiveSourceFromSupabase(slug);
+
+  if (!source) {
+    return {
+      title: `Source not found | ${SITE_NAME}`,
+      robots: {
+        index: false,
+        follow: false
+      }
+    };
+  }
+
+  const titleParts = getSourceTitleParts(source);
+  const title = titleParts.subtitle ? `${titleParts.title}: ${titleParts.subtitle}` : titleParts.title;
+  const description = seoDescription(source.summary || source.excerpt);
+  const canonical = canonicalPath(`/archive/${source.slug}`);
+  const images = sourceImageMetadata(source);
+
+  return {
+    title: `${title} | ${SITE_NAME}`,
+    description,
+    alternates: {
+      canonical
+    },
+    keywords: [...source.tags, ...source.people, source.type, source.medium].filter(Boolean),
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      siteName: SITE_NAME,
+      images,
+      locale: "en_US",
+      type: "article",
+      publishedTime: source.addedDate || undefined,
+      authors: source.creators?.length ? source.creators.map((creator) => creator.name) : [source.author]
+    },
+    twitter: {
+      card: images ? "summary_large_image" : "summary",
+      title,
+      description,
+      images
+    }
+  };
+}
 
 export default async function SourcePage({ params }: SourcePageProps) {
   const { slug } = await params;
@@ -169,7 +218,8 @@ function HostedSourcePage({ source }: { source: ArchiveSource }) {
   return (
     <>
       <SiteHeader variant="source" />
-      <main className="container-page py-6">
+      <main className="source-page-fade">
+        <div className="container-page py-6">
         <div className="mb-5 flex items-center gap-3 text-sm text-archive-muted">
           <Link className="font-semibold text-archive-violet" href="/archive?medium=Text">
             Text
@@ -263,6 +313,7 @@ function HostedSourcePage({ source }: { source: ArchiveSource }) {
               <ActionRow icon={<BookOpen className="h-5 w-5" />} label="Related sources" />
             </div>
           </aside>
+        </div>
         </div>
       </main>
       <SiteFooter />

@@ -1,0 +1,11 @@
+[
+  {
+    "id": "56e15ba7-37d8-5d2a-bf20-1325190ef58d",
+    "slug": "psychedelic-information-bulletin",
+    "title": "Psychedelic Information Bulletin",
+    "subtitle": "Trial issue-level import",
+    "summary": "A pilot compound-source import for the Psychedelic Information Bulletin / PIC Bulletin, organized as issue-level PDF records.",
+    "body": "This trial collection keeps the periodical run at collection level while preserving each issue as its own archive source with an original PDF.",
+    "status": "published"
+  }
+]

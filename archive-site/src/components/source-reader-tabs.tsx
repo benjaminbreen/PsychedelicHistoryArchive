@@ -9,87 +9,113 @@ import {
   Download,
   ExternalLink,
   FileText,
+  Grid3X3,
+  Headphones,
   Info,
   Link2,
   Maximize2,
   Minus,
+  Play,
   Plus,
   Search,
   ZoomIn
 } from "lucide-react";
 import Link from "next/link";
-import type { ArchiveSource, SourceFigure, SourceLineBox, SourcePage, TranscriptSection } from "@/lib/types";
+import { MarkdownContent, SourceFigureBlock } from "@/components/markdown-content";
+import type { ArchiveSource, CollectionItemSummary, SourceFile, SourceLineBox, SourcePage } from "@/lib/types";
 
 type SourceReaderTabsProps = {
   source: ArchiveSource;
   transcript: string[];
 };
 
-type Tab = "transcript" | "original" | "details";
+type Tab = "overview" | "transcript" | "translation" | "original" | "details";
+
+type ReaderTab = {
+  id: Tab;
+  label: string;
+};
 
 export function SourceReaderTabs({ source, transcript }: SourceReaderTabsProps) {
-  const [activeTab, setActiveTab] = useState<Tab>("transcript");
+  const tabs = useMemo(() => buildReaderTabs(source, transcript), [source, transcript]);
+  const [activeTab, setActiveTab] = useState<Tab>(tabs[0]?.id ?? "details");
   const pages = useMemo(() => buildDisplayPages(source, transcript), [source, transcript]);
+  const translation = useMemo(() => getTranslationParagraphs(source), [source]);
+  const activeTabIsVisible = tabs.some((tab) => tab.id === activeTab);
+  const visibleActiveTab = activeTabIsVisible ? activeTab : tabs[0]?.id ?? "details";
 
   return (
-    <div data-source-reader-tab={activeTab}>
+    <div data-source-reader-tab={visibleActiveTab}>
       <div className="mt-5 border-b border-archive-line">
         <div className="flex gap-8">
-          <TabButton active={activeTab === "transcript"} onClick={() => setActiveTab("transcript")}>
-            Transcript
-          </TabButton>
-          <TabButton active={activeTab === "original"} onClick={() => setActiveTab("original")}>
-            Original source
-          </TabButton>
-          <TabButton active={activeTab === "details"} onClick={() => setActiveTab("details")}>
-            Details
-          </TabButton>
+          {tabs.map((tab) => (
+            <TabButton active={visibleActiveTab === tab.id} key={tab.id} onClick={() => setActiveTab(tab.id)}>
+              {tab.label}
+            </TabButton>
+          ))}
         </div>
       </div>
 
-      {activeTab === "transcript" && (
+      {visibleActiveTab === "overview" && (
+        <CollectionOverview source={source} />
+      )}
+
+      {visibleActiveTab === "translation" && (
         <>
-          <section className="mt-5 flex gap-3 rounded-md border border-archive-line bg-archive-surface/10 px-5 py-3 text-sm leading-6 shadow-[0_8px_24px_rgb(var(--archive-shadow)/0.05)] w-max">
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-archive-violet/25 bg-archive-lavender2 text-archive-violet">
-              <BookOpen className="h-4 w-4" />
-            </span>
-            <div>
-              <p>
-                <strong>You are in transcript reading mode.</strong> Looking for the primary source images? <button className="font-semibold text-archive-violet" type="button" onClick={() => setActiveTab("original")}> 
-                  View original source <ExternalLink className="inline h-3.5 w-3.5" />
-                </button> 
-              </p>
-              
-            </div>
+          <section className="mt-6 max-w-[49rem]">
+            <TranslationReader source={source} paragraphs={translation} />
           </section>
 
-          <section className="mt-6 max-w-[49rem]">
-            <TranscriptReader source={source} transcript={transcript} />
-          </section>
+          <div className="mt-8 max-w-[49rem]">
+            <ReaderNotice
+              icon={<BookOpen className="h-4 w-4" />}
+              actionLabel={source.files?.some(isPdfFile) || source.sourceUrl !== "#" ? "View original source" : undefined}
+              onAction={source.files?.some(isPdfFile) || source.sourceUrl !== "#" ? () => setActiveTab("original") : undefined}
+            >
+              <strong>You are reading an English translation.</strong> {source.translationNote || translationNote(source)}
+            </ReaderNotice>
+          </div>
         </>
       )}
 
-      {activeTab === "original" && <OriginalSourceViewer pages={pages} source={source} />}
+      {visibleActiveTab === "transcript" && (
+        <>
+          <section className="mt-6 max-w-[49rem]">
+            <TranscriptReader source={source} transcript={transcript} />
+          </section>
 
-      {activeTab === "details" && (
-        <section className="mt-6 grid gap-4 md:grid-cols-2">
-          <DetailPanel title="Citation">
-            <DetailRow label="Citation" value={source.citation} />
-            <DetailRow label="Archive ID" value={source.id} />
-            <DetailRow label="Rights" value={source.rights} />
-            <DetailRow label="Language" value={source.language} />
-          </DetailPanel>
-          <DetailPanel title="Original Files">
-            <DetailRow label="Hosting" value={source.hostingStatus.replaceAll("_", " ")} />
-            <DetailRow label="Pages" value={pages.length ? `${pages.length} page${pages.length === 1 ? "" : "s"}` : "Not ingested"} />
-            <DetailRow label="Line OCR" value={pages.some((page) => page.lines.length) ? "Available" : "Pending"} />
-            <Link className="focus-ring mt-4 inline-flex items-center gap-2 rounded-sm text-sm font-semibold text-archive-violet" href={source.sourceUrl}>
-              Source link <ExternalLink className="h-3.5 w-3.5" />
-            </Link>
-          </DetailPanel>
-        </section>
+          <div className="mt-8 max-w-[49rem]">
+            <ReaderNotice icon={<BookOpen className="h-4 w-4" />} actionLabel="View original source" onAction={() => setActiveTab("original")}>
+              <strong>You are in transcript reading mode.</strong> Looking for the source object?
+            </ReaderNotice>
+          </div>
+        </>
+      )}
+
+      {visibleActiveTab === "original" && <OriginalSourceViewer pages={pages} source={source} transcript={transcript} />}
+
+      {visibleActiveTab === "details" && (
+        <SourceDetails source={source} pages={pages} />
       )}
     </div>
+  );
+}
+
+function ReaderNotice({ actionLabel, children, icon, onAction }: { actionLabel?: string; children: React.ReactNode; icon: React.ReactNode; onAction?: () => void }) {
+  return (
+    <section className="mt-5 flex w-max max-w-full gap-3 rounded-md border border-archive-line bg-archive-surface/10 px-5 py-3 text-sm leading-6 shadow-[0_8px_24px_rgb(var(--archive-shadow)/0.05)]">
+      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-archive-violet/25 bg-archive-lavender2 text-archive-violet">
+        {icon}
+      </span>
+      <p>
+        {children}{" "}
+        {actionLabel && onAction && (
+          <button className="font-semibold text-archive-violet" type="button" onClick={onAction}>
+            {actionLabel} <ExternalLink className="inline h-3.5 w-3.5" />
+          </button>
+        )}
+      </p>
+    </section>
   );
 }
 
@@ -103,44 +129,226 @@ function TranscriptReader({ source, transcript }: { source: ArchiveSource; trans
     <div className="space-y-9">
       {sections.map((section, index) => (
         <section key={`${section.heading}-${index}`}>
-          {index === 0 && overviewFigure && <SourceFigureBlock figure={overviewFigure} />}
+          {index === 0 && overviewFigure && (
+            <div className="mb-7">
+              <SourceFigureBlock figure={overviewFigure} />
+            </div>
+          )}
           <h2 className="source-transcript-heading">{section.heading}</h2>
-          <div className="source-transcript mt-5 space-y-6 text-archive-ink">
-            {section.paragraphs.map((paragraph, paragraphIndex) => (
-              <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`}>{paragraph}</p>
-            ))}
-          </div>
+          {section.body && section.bodyFormat === "markdown" ? (
+            <MarkdownContent className="source-transcript source-markdown mt-5 space-y-6 text-archive-ink" figures={source.figures} markdown={section.body} />
+          ) : (
+            <div className="source-transcript mt-5 space-y-6 text-archive-ink">
+              {(section.paragraphs.length ? section.paragraphs : section.body ? [section.body] : []).map((paragraph, paragraphIndex) => (
+                <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`}>{paragraph}</p>
+              ))}
+            </div>
+          )}
         </section>
       ))}
     </div>
   );
 }
 
-function SourceFigureBlock({ figure }: { figure: SourceFigure }) {
+function TranslationReader({ paragraphs, source }: { paragraphs: string[]; source: ArchiveSource }) {
   return (
-    <figure className="mb-7 overflow-hidden rounded-md border border-archive-line bg-archive-surface shadow-[0_10px_28px_rgb(var(--archive-shadow)/0.05)]">
-      {figure.imagePath && (
-        <img
-          alt={figure.alt || figure.caption}
-          className="max-h-[32rem] w-full object-cover"
-          src={figure.imagePath}
-        />
+    <div>
+      <h2 className="source-transcript-heading">Translation</h2>
+      {source.translationProvider && (
+        <p className="mt-3 text-sm leading-6 text-archive-muted">
+          Translation source: {translationProviderLabel(source.translationProvider)}
+        </p>
       )}
-      <figcaption className="border-t border-archive-line px-4 py-3 text-sm italic leading-6 text-archive-muted">
-        {figure.caption}
-      </figcaption>
-    </figure>
+      <div className="source-transcript mt-5 space-y-6 text-archive-ink">
+        {paragraphs.map((paragraph, paragraphIndex) => (
+          <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`}>{paragraph}</p>
+        ))}
+      </div>
+    </div>
   );
 }
 
-function OriginalSourceViewer({ pages, source }: { pages: SourcePage[]; source: ArchiveSource }) {
+function CollectionOverview({ source }: { source: ArchiveSource }) {
+  const items = source.collectionItems ?? [];
+  const visibleItems = items.slice(0, 100);
+
+  return (
+    <section className="mt-6">
+      <div className="rounded-md border border-archive-line bg-archive-surface p-5 shadow-[0_8px_24px_rgb(var(--archive-shadow)/0.04)]">
+        <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_12rem] md:items-start">
+          <div>
+            <h2 className="source-serif-heading">Collection Overview</h2>
+            <p className="mt-3 max-w-3xl text-sm leading-6 text-archive-muted">
+              {source.summary || "This compound source is organized as individual volumes, issues, or parts. Open an item below to read its transcript and inspect its source files."}
+            </p>
+          </div>
+          <dl className="grid grid-cols-2 gap-3 text-sm md:grid-cols-1">
+            <OverviewStat label="Items" value={`${source.collectionItemCount ?? items.length}`} />
+            <OverviewStat label="Date range" value={source.displayDate} />
+          </dl>
+        </div>
+      </div>
+
+      {visibleItems.length ? (
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+          {visibleItems.map((item) => (
+            <CollectionItemCard item={item} key={item.id} />
+          ))}
+        </div>
+      ) : (
+        <div className="mt-5 rounded-md border border-dashed border-archive-line bg-archive-surface p-6 text-sm leading-6 text-archive-muted">
+          Item-level records have not been attached to this collection yet.
+        </div>
+      )}
+
+      {items.length > visibleItems.length && (
+        <p className="mt-4 text-sm text-archive-muted">
+          Showing the first {visibleItems.length} items. Split this collection by year, volume, or series before exposing more than 100 parts on one page.
+        </p>
+      )}
+    </section>
+  );
+}
+
+function OverviewStat({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-md border border-archive-line bg-archive-paper px-3 py-2">
+      <dt className="text-[0.62rem] font-bold uppercase tracking-[0.09em] text-archive-muted">{label}</dt>
+      <dd className="mt-1 font-semibold text-archive-ink">{value || "Not recorded"}</dd>
+    </div>
+  );
+}
+
+function CollectionItemCard({ item }: { item: CollectionItemSummary }) {
+  return (
+    <Link
+      className="focus-ring group overflow-hidden rounded-md border border-archive-line bg-archive-surface shadow-sm transition hover:border-archive-violet/35 hover:bg-archive-warm-hover"
+      href={item.href || `/archive/${item.slug}`}
+    >
+      <span className="flex aspect-[4/5] items-center justify-center overflow-hidden border-b border-archive-line bg-archive-paper">
+        {item.imagePath ? (
+          <img alt={item.imageAlt || item.title} className="h-full w-full object-cover transition duration-200 group-hover:scale-[1.02]" src={item.imagePath} />
+        ) : (
+          <Grid3X3 className="h-8 w-8 text-archive-violet/50" />
+        )}
+      </span>
+      <span className="block p-3">
+        {item.sequenceLabel && (
+          <span className="text-[0.64rem] font-bold uppercase tracking-[0.08em] text-archive-violet">
+            {item.sequenceLabel}
+          </span>
+        )}
+        <span className="mt-1 line-clamp-2 block text-sm font-semibold leading-5 text-archive-ink">
+          {item.shortTitle || item.title}
+        </span>
+        <span className="mt-2 block text-xs text-archive-muted">
+          {[item.displayDate, item.pageCount ? `${item.pageCount} pages` : ""].filter(Boolean).join(" · ")}
+        </span>
+      </span>
+    </Link>
+  );
+}
+
+function OriginalSourceViewer({ pages, source, transcript }: { pages: SourcePage[]; source: ArchiveSource; transcript: string[] }) {
+  const originalMode = getOriginalMode(source, pages);
+  const pdfFile = source.files?.find(isPdfFile);
+  const mediaFile = source.files?.find((file) => isAudioFile(file) || isVideoFile(file));
+
+  if (originalMode === "pdf" && pdfFile) {
+    return <PdfSourceViewer file={pdfFile} source={source} />;
+  }
+
+  if (originalMode === "audio") {
+    return <MediaSourceViewer file={mediaFile} source={source} type="audio" />;
+  }
+
+  if (originalMode === "video") {
+    return <MediaSourceViewer file={mediaFile} source={source} type="video" />;
+  }
+
+  return <PageImageSourceViewer pages={pages} source={source} transcript={transcript} />;
+}
+
+function PdfSourceViewer({ file, source }: { file: SourceFile; source: ArchiveSource }) {
+  return (
+    <section className="mt-5 overflow-hidden rounded-md border border-archive-line bg-archive-surface shadow-[0_12px_32px_rgb(var(--archive-shadow)/0.06)]">
+      <div className="flex flex-wrap items-center gap-3 border-b border-archive-line bg-white px-4 py-3 text-sm">
+        <div>
+          <h2 className="text-base font-semibold text-archive-ink">Original PDF</h2>
+          <p className="mt-1 text-xs text-archive-muted">Source-language file for {source.title}</p>
+        </div>
+        <div className="ml-auto flex gap-2">
+          <Link className="focus-ring inline-flex items-center gap-2 rounded-md border border-archive-line px-3 py-2 font-medium hover:bg-archive-lavender2" href={file.url}>
+            <Download className="h-4 w-4" />
+            Download PDF
+          </Link>
+          {source.sourceUrl !== "#" && (
+            <Link className="focus-ring inline-flex items-center gap-2 rounded-md border border-archive-line px-3 py-2 font-medium hover:bg-archive-lavender2" href={source.sourceUrl}>
+              <ExternalLink className="h-4 w-4" />
+              Source site
+            </Link>
+          )}
+        </div>
+      </div>
+      <iframe className="h-[72vh] min-h-[42rem] w-full bg-archive-paper" src={file.url} title={`${source.title} PDF`} />
+    </section>
+  );
+}
+
+function MediaSourceViewer({ file, source, type }: { file?: SourceFile; source: ArchiveSource; type: "audio" | "video" }) {
+  const embedUrl = toEmbedUrl(source.mediaEmbedUrl || (!file && source.sourceUrl !== "#" ? source.sourceUrl : undefined));
+  const isVideo = type === "video";
+
+  return (
+    <section className="mt-5 rounded-md border border-archive-line bg-archive-surface p-5 shadow-[0_12px_32px_rgb(var(--archive-shadow)/0.06)]">
+      <div className="flex items-start gap-3">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-archive-lavender2 text-archive-violet">
+          {isVideo ? <Play className="h-5 w-5" /> : <Headphones className="h-5 w-5" />}
+        </span>
+        <div>
+          <h2 className="source-serif-heading">{isVideo ? "Original Video" : "Original Audio"}</h2>
+        </div>
+      </div>
+
+      <div className="mt-5">
+        {file && isVideo && <video className="aspect-video w-full rounded-md border border-archive-line bg-black" controls src={file.url} />}
+        {file && !isVideo && <audio className="w-full" controls src={file.url} />}
+        {!file && embedUrl && isEmbeddableUrl(embedUrl) && (
+          <iframe className="aspect-video w-full rounded-md border border-archive-line bg-black" src={embedUrl} title={`${source.title} media`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+        )}
+        {!file && (!embedUrl || !isEmbeddableUrl(embedUrl)) && (
+          <div className="rounded-md border border-dashed border-archive-line p-5 text-sm leading-6 text-archive-muted">
+            Hosted media is not embedded for this source yet.
+          </div>
+        )}
+      </div>
+
+      <div className="mt-5 flex flex-wrap gap-2 text-sm">
+        {file && (
+          <Link className="focus-ring inline-flex items-center gap-2 rounded-md border border-archive-line px-3 py-2 font-medium hover:bg-archive-lavender2" href={file.url}>
+            <Download className="h-4 w-4" />
+            Download source file
+          </Link>
+        )}
+        {source.sourceUrl !== "#" && (
+          <Link className="focus-ring inline-flex items-center gap-2 rounded-md border border-archive-line px-3 py-2 font-medium hover:bg-archive-lavender2" href={source.sourceUrl}>
+            <ExternalLink className="h-4 w-4" />
+            Source site
+          </Link>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function PageImageSourceViewer({ pages, source }: { pages: SourcePage[]; source: ArchiveSource; transcript: string[] }) {
   const [pageIndex, setPageIndex] = useState(0);
   const [zoom, setZoom] = useState(1);
   const [isPaulView, setIsPaulView] = useState(false);
   const [selectedLineId, setSelectedLineId] = useState<string | undefined>(pages[0]?.lines[0]?.id);
   const currentPage = pages[pageIndex] ?? pages[0];
   const selectedLine = currentPage?.lines.find((line) => line.id === selectedLineId);
-  const pdfFile = source.files?.find((file) => file.kind === "original_pdf" || file.mimeType === "application/pdf");
+  const pdfFile = source.files?.find(isPdfFile);
 
   if (!currentPage) {
     return (
@@ -373,6 +581,47 @@ function DetailPanel({ children, title }: { children: React.ReactNode; title: st
   );
 }
 
+function SourceDetails({ pages, source }: { pages: SourcePage[]; source: ArchiveSource }) {
+  if (source.sourceKind === "collection") {
+    return (
+      <section className="mt-6 grid gap-4 md:grid-cols-2">
+        <DetailPanel title="Collection">
+          <DetailRow label="Citation" value={source.citation} />
+          <DetailRow label="Archive ID" value={source.id} />
+          <DetailRow label="Items" value={`${source.collectionItemCount ?? source.collectionItems?.length ?? 0}`} />
+          <DetailRow label="Date range" value={source.displayDate} />
+        </DetailPanel>
+        <DetailPanel title="Access">
+          <DetailRow label="Reader" value="Collection overview" />
+          <DetailRow label="Item records" value="Open each item for transcript, original source, and item-level details." />
+          <DetailRow label="Rights" value={source.rights} />
+        </DetailPanel>
+      </section>
+    );
+  }
+
+  return (
+    <section className="mt-6 grid gap-4 md:grid-cols-2">
+      <DetailPanel title="Citation">
+        <DetailRow label="Citation" value={source.citation} />
+        <DetailRow label="Archive ID" value={source.id} />
+        <DetailRow label="Rights" value={source.rights} />
+        <DetailRow label="Language" value={source.language} />
+      </DetailPanel>
+      <DetailPanel title="Original Files">
+        <DetailRow label="Hosting" value={source.hostingStatus.replaceAll("_", " ")} />
+        <DetailRow label="Pages" value={pages.length ? `${pages.length} page${pages.length === 1 ? "" : "s"}` : "Not ingested"} />
+        <DetailRow label="Line OCR" value={pages.some((page) => page.lines.length) ? "Available" : "Pending"} />
+        {source.sourceUrl !== "#" && (
+          <Link className="focus-ring mt-4 inline-flex items-center gap-2 rounded-sm text-sm font-semibold text-archive-violet" href={source.sourceUrl}>
+            Source link <ExternalLink className="h-3.5 w-3.5" />
+          </Link>
+        )}
+      </DetailPanel>
+    </section>
+  );
+}
+
 function DetailRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="grid grid-cols-[6rem_1fr] gap-3 border-b border-archive-line/80 pb-3 text-sm last:border-b-0">
@@ -383,9 +632,12 @@ function DetailRow({ label, value }: { label: string; value: string }) {
 }
 
 function buildDisplayPages(source: ArchiveSource, transcript: string[]) {
+  if (source.sourceKind === "collection") return [];
+
   const imagePages = source.pages?.filter((page) => page.imagePath);
   if (imagePages?.length) return imagePages;
   if (source.pages?.length) return source.pages;
+  if (!transcript.length && !source.imagePath) return [];
 
   const lines = transcript.flatMap((paragraph, paragraphIndex) =>
     wrapLine(paragraph, 82).map((text, index) => ({
@@ -409,6 +661,121 @@ function buildDisplayPages(source: ArchiveSource, transcript: string[]) {
       lines
     }
   ];
+}
+
+function buildReaderTabs(source: ArchiveSource, transcript: string[]): ReaderTab[] {
+  if (source.sourceKind === "collection") {
+    return [
+      { id: "overview", label: "Overview" },
+      { id: "details", label: "Details" }
+    ];
+  }
+
+  const tabs: ReaderTab[] = [];
+  const hasTranslation = Boolean(source.translationText?.trim());
+  const hasTranscript = transcript.some((paragraph) => paragraph.trim()) || Boolean(source.transcriptSections?.length);
+
+  if (hasTranslation) {
+    tabs.push({ id: "translation", label: "Translation" });
+  } else if (hasTranscript) {
+    tabs.push({ id: "transcript", label: "Transcript" });
+  } else {
+    tabs.push({ id: "details", label: "Overview" });
+  }
+
+  tabs.push({ id: "original", label: originalTabLabel(source) });
+
+  if (!tabs.some((tab) => tab.id === "details")) {
+    tabs.push({ id: "details", label: "Details" });
+  }
+
+  return tabs;
+}
+
+function originalTabLabel(source: ArchiveSource) {
+  const mode = getOriginalMode(source, source.pages ?? []);
+  if (mode === "pdf") return "Original PDF";
+  if (mode === "audio") return "Original Audio";
+  if (mode === "video") return "Original Video";
+  if (source.pages?.some((page) => page.imagePath)) return "Page Images";
+  return "Original source";
+}
+
+function getOriginalMode(source: ArchiveSource, pages: SourcePage[]) {
+  const files = source.files ?? [];
+  const hasPdf = files.some(isPdfFile);
+  const hasAudio = files.some(isAudioFile);
+  const hasVideo = files.some(isVideoFile) || Boolean(source.mediaEmbedUrl && source.medium === "Audio/Video");
+  const shouldPreferPdf =
+    hasPdf &&
+    (source.readerMode === "pdf" ||
+      source.type === "Academic Article" ||
+      source.type === "Book" ||
+      !pages.some((page) => page.imagePath));
+
+  if (hasAudio || source.readerMode === "audio") return "audio";
+  if (hasVideo || source.readerMode === "video" || source.type === "Film") return "video";
+  if (shouldPreferPdf) return "pdf";
+  return "images";
+}
+
+function getTranslationParagraphs(source: ArchiveSource) {
+  return (source.translationText || "")
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
+}
+
+function translationNote(source: ArchiveSource) {
+  const fromLanguage = source.contentLanguage || source.language || "the source language";
+  const toLanguage = source.translationLanguage || "English";
+  return `This ${toLanguage} translation is shown first for readability; cite or verify against the ${fromLanguage} original.`;
+}
+
+function translationProviderLabel(provider: NonNullable<ArchiveSource["translationProvider"]>) {
+  if (provider === "llm") return "LLM-generated draft";
+  if (provider === "human") return "Human translation";
+  return "Published translation";
+}
+
+function isPdfFile(file: SourceFile) {
+  return file.kind === "original_pdf" || file.kind === "pdf" || file.mimeType === "application/pdf";
+}
+
+function isAudioFile(file: SourceFile) {
+  return file.kind === "audio" || Boolean(file.mimeType?.startsWith("audio/"));
+}
+
+function isVideoFile(file: SourceFile) {
+  return file.kind === "video" || Boolean(file.mimeType?.startsWith("video/"));
+}
+
+function isEmbeddableUrl(url: string) {
+  return /^https?:\/\//.test(url);
+}
+
+function toEmbedUrl(url?: string) {
+  if (!url) return undefined;
+
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname === "youtu.be") {
+      const videoId = parsed.pathname.split("/").filter(Boolean)[0];
+      return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+    }
+    if (parsed.hostname.endsWith("youtube.com")) {
+      const videoId = parsed.searchParams.get("v");
+      if (videoId) return `https://www.youtube.com/embed/${videoId}`;
+    }
+    if (parsed.hostname.endsWith("vimeo.com")) {
+      const videoId = parsed.pathname.split("/").filter(Boolean)[0];
+      return videoId ? `https://player.vimeo.com/video/${videoId}` : url;
+    }
+  } catch {
+    return url;
+  }
+
+  return url;
 }
 
 function wrapLine(text: string, maxLength: number): string[] {

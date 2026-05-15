@@ -250,15 +250,17 @@
     "editorial_note": "Imported from Squarespace WordPress export; needs metadata review.",
     "citation": "",
     "rights_statement": "Needs rights review before republication.",
-    "source_url": "https://www.psychedelicarchive.com/archive/lettherebelight",
-    "external_access_url": "https://www.psychedelicarchive.com/archive/lettherebelight",
+    "source_url": "https://www.youtube.com/watch?v=lQPoYVKeQEs",
+    "external_access_url": "https://www.youtube.com/watch?v=lQPoYVKeQEs",
     "access_type": "hosted",
     "hosting_status": "transcript_only",
     "cover_image_path": "documents/7da50bb7-30d3-5c0d-9e70-4d7b516e0266/images/lettherebelight/01-let-there-be-light-1945.jpg",
     "thumbnail_path": "documents/7da50bb7-30d3-5c0d-9e70-4d7b516e0266/images/lettherebelight/01-let-there-be-light-1945.jpg",
     "is_featured": false,
     "status": "published",
-    "published_at": "2024-03-20 20:17:25"
+    "published_at": "2024-03-20 20:17:25",
+    "reader_mode": "video",
+    "media_embed_url": "https://www.youtube.com/watch?v=lQPoYVKeQEs"
   },
   {
     "id": "0435259b-5ae7-514a-857f-fa8dcf61750e",

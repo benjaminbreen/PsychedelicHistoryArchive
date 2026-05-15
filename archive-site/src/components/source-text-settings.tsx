@@ -14,8 +14,9 @@ const SERIF_OPTIONS = [
 
 const SIZE_OPTIONS = [
   { label: "Compact", value: "compact", meta: "Smaller, tighter" },
-  { label: "Comfortable", value: "comfortable", meta: "Default" },
-  { label: "Large", value: "large", meta: "Larger, airier" }
+  { label: "Comfortable", value: "comfortable", meta: "Medium reading size" },
+  { label: "Large", value: "large", meta: "Default" },
+  { label: "Extra large", value: "extra-large", meta: "Maximum reading size" }
 ] as const;
 
 type SerifValue = (typeof SERIF_OPTIONS)[number]["value"];
@@ -46,7 +47,7 @@ type SourceTextSettingsProps = {
 export function SourceTextSettings({ showSourceControls = true }: SourceTextSettingsProps) {
   const [open, setOpen] = useState(false);
   const [serif, setSerif] = useState<SerifValue>("newsreader");
-  const [size, setSize] = useState<SizeValue>("comfortable");
+  const [size, setSize] = useState<SizeValue>("large");
   const [theme, setTheme] = useState<ThemeValue>("system");
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -66,7 +67,7 @@ export function SourceTextSettings({ showSourceControls = true }: SourceTextSett
       setSize(storedSize);
       document.documentElement.dataset.sourceTextSize = storedSize;
     } else {
-      document.documentElement.dataset.sourceTextSize = "comfortable";
+      document.documentElement.dataset.sourceTextSize = "large";
     }
 
     const initialTheme = storedTheme && THEME_OPTIONS.some((option) => option.value === storedTheme)

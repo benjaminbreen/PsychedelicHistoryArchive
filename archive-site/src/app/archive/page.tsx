@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { ArchiveFilterSidebar } from "@/components/archive-filter-sidebar";
 import { ArchiveGridCard } from "@/components/archive-grid-card";
 import { ArchiveCompactRow, ArchiveResultRow } from "@/components/archive-result-row";
@@ -15,6 +16,13 @@ import type { ReactNode } from "react";
 import type { ArchiveSource } from "@/lib/types";
 
 export const revalidate = 3600;
+export const metadata: Metadata = {
+  title: "Archive | The Psychedelic History Archive",
+  description: "Search and browse primary sources in The Psychedelic History Archive.",
+  alternates: {
+    canonical: "/archive"
+  }
+};
 
 const pageSize = 50;
 

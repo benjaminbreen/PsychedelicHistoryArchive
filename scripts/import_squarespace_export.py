@@ -173,6 +173,40 @@ def extract_image_urls(content: str) -> list[str]:
     return sorted(urls)
 
 
+def extract_youtube_url(content: str) -> str:
+    decoded = html.unescape(content)
+    candidates: list[str] = []
+
+    for match in re.finditer(r"(?:url|src)=['\"]([^'\"]*(?:youtube\.com|youtu\.be)[^'\"]*)['\"]", decoded):
+        candidates.append(clean_url(match.group(1)))
+
+    candidates.extend(clean_url(match.group(0)) for match in re.finditer(r"https?://(?:www\.)?(?:youtube\.com|youtu\.be)/[^\s\"'<>]+", decoded))
+
+    for candidate in candidates:
+        parsed = urllib.parse.urlsplit(candidate)
+        query = urllib.parse.parse_qs(parsed.query)
+        embedded_src = query.get("src", [""])[0]
+        if embedded_src:
+            candidate = embedded_src
+            parsed = urllib.parse.urlsplit(candidate)
+            query = urllib.parse.parse_qs(parsed.query)
+
+        hostname = parsed.netloc.lower()
+        video_id = ""
+        if hostname.endswith("youtu.be"):
+            video_id = parsed.path.strip("/").split("/")[0]
+        elif hostname.endswith("youtube.com"):
+            if parsed.path.startswith("/embed/"):
+                video_id = parsed.path.split("/")[2]
+            else:
+                video_id = query.get("v", [""])[0]
+
+        if video_id:
+            return f"https://www.youtube.com/watch?v={video_id}"
+
+    return ""
+
+
 def extract_caption_texts(content: str) -> list[str]:
     captions: list[str] = []
     for match in re.finditer(r"(?is)\[caption[^\]]*\](.*?)\[/caption\]", content):
@@ -483,8 +517,10 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
         document_id = stable_uuid("document", post_name)
         page_id = stable_uuid("page", f"{post_name}:1")
         image_urls = extract_image_urls(content)
+        media_embed_url = extract_youtube_url(content)
         published = status == "publish"
         full_url = urllib.parse.urljoin("https://www.psychedelicarchive.com", link)
+        source_url = media_embed_url or full_url
         tag_names = [c.name for c in categories if c.name]
         substance_names = [
             c.name for c in categories if c.nicename in SUBSTANCE_TAGS or c.domain == "post_tag" and c.nicename in SUBSTANCE_TAGS
@@ -522,8 +558,10 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
             "editorial_note": "Imported from Squarespace WordPress export; needs metadata review.",
             "citation": source_note,
             "rights_statement": "Needs rights review before republication.",
-            "source_url": full_url,
-            "external_access_url": full_url,
+            "source_url": source_url,
+            "external_access_url": source_url,
+            "reader_mode": "video" if media_embed_url and medium == "Audio/Video" else "",
+            "media_embed_url": media_embed_url,
             "access_type": "hosted" if transcript_text else "external",
             "hosting_status": "transcript_only" if transcript_text else "external_link",
             "cover_image_path": cover_path,
@@ -697,7 +735,9 @@ def build_rows(root: ET.Element) -> dict[str, list[dict]]:
                 "excerpt": summary,
                 "citation": source_note,
                 "rights": "Needs rights review before republication.",
-                "sourceUrl": full_url,
+                "sourceUrl": source_url,
+                "readerMode": "video" if media_embed_url and medium == "Audio/Video" else "",
+                "mediaEmbedUrl": media_embed_url,
                 "accessType": "hosted" if transcript_text else "external",
                 "hostingStatus": "transcript_only" if transcript_text else "external_link",
                 "wordCount": len(re.findall(r"\b\w+\b", transcript_text)),

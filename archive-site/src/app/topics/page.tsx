@@ -199,8 +199,8 @@ export default async function TopicsPage() {
           <h1 className="font-display text-[2.2rem] font-normal leading-none tracking-[-0.00em] text-archive-ink sm:text-[3.5rem]">
             Topics
           </h1>
-          <p className="max-w-[32rem] text-[1rem] leading-7 text-archive-muted">
-            Themes, substances, practices, and intellectual traditions represented across the archive.
+          <p className="max-w-[32rem] text-[.9rem] leading-7 text-archive-muted">
+            Themes, substances, practices, and intellectual traditions across the archive.
           </p>
         </header>
 

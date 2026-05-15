@@ -48,6 +48,22 @@ const navItems = [
       { label: "Indigenous traditions", href: "/people?domain=indigenous-traditions" }
     ]
   },
+  {
+    label: "Eras",
+    href: "/eras",
+    dropdown: [
+      { label: "All eras", href: "/eras" },
+      { label: "Pre-500 CE", href: "/eras/pre-500" },
+      { label: "500–1500", href: "/eras/500-1500" },
+      { label: "1500–1800", href: "/eras/1500-1800" },
+      { label: "1800–1850", href: "/eras/1800-1850" },
+      { label: "1850–1900", href: "/eras/1850-1900" },
+      { label: "1900–1942", href: "/eras/1900-1942" },
+      { label: "1943–1962", href: "/eras/1943-1962" },
+      { label: "1963–1979", href: "/eras/1963-1979" },
+      { label: "1980–present", href: "/eras/1980-present" }
+    ]
+  },
   { label: "Topics", href: "/topics" },
   { label: "Collections", href: "/collections" },
   { label: "About", href: "/about" }
