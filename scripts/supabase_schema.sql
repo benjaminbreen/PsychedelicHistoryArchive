@@ -62,6 +62,9 @@ create table if not exists pages (
   ocr_text text,
   ocr_confidence numeric,
   transcription_status text,
+  transcription_reviewed_by text,
+  transcription_reviewed_at timestamptz,
+  transcription_note text,
   created_at timestamptz default now(),
   updated_at timestamptz default now(),
   unique(document_id, page_number)
@@ -70,6 +73,9 @@ create table if not exists pages (
 alter table pages add column if not exists image_width int;
 alter table pages add column if not exists image_height int;
 alter table pages add column if not exists language text;
+alter table pages add column if not exists transcription_reviewed_by text;
+alter table pages add column if not exists transcription_reviewed_at timestamptz;
+alter table pages add column if not exists transcription_note text;
 
 create table if not exists page_lines (
   id uuid primary key default gen_random_uuid(),
@@ -81,10 +87,17 @@ create table if not exists page_lines (
   confidence numeric,
   language text,
   paragraph_index int,
+  transcription_status text,
+  reviewed_by text,
+  reviewed_at timestamptz,
   created_at timestamptz default now(),
   updated_at timestamptz default now(),
   unique(page_id, line_index)
 );
+
+alter table page_lines add column if not exists transcription_status text;
+alter table page_lines add column if not exists reviewed_by text;
+alter table page_lines add column if not exists reviewed_at timestamptz;
 
 create table if not exists files (
   id uuid primary key default gen_random_uuid(),

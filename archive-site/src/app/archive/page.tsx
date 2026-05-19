@@ -98,13 +98,12 @@ export default async function ArchivePage({ searchParams }: ArchivePageProps) {
                 </div>
               ) : (
                 <div>
-                  <div className="hidden grid-cols-[minmax(24rem,1.45fr)_6rem_8rem_minmax(12rem,1fr)_minmax(10rem,0.8fr)_2rem] gap-4 border-b border-archive-line py-3 text-[0.68rem] font-bold uppercase tracking-[0.1em] text-archive-ink/70 md:grid">
+                  <div className="hidden grid-cols-[minmax(24rem,1.45fr)_6rem_8rem_minmax(12rem,1fr)_minmax(10rem,0.8fr)] gap-4 border-b border-archive-line py-3 text-[0.68rem] font-bold uppercase tracking-[0.1em] text-archive-ink/70 md:grid">
                     <div>Title & source</div>
                     <div>Date ↓</div>
                     <div>Type</div>
                     <div>Tags</div>
                     <div>People</div>
-                    <div />
                   </div>
                   {pagedResults.map((source) => (
                     <ArchiveResultRow key={source.id} source={source} />

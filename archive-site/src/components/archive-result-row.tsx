@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Bookmark, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Chip } from "@/components/ui/chip";
 import { SourceImage } from "@/components/source-image";
 import { getSourceTitleParts } from "@/lib/source-title";
@@ -9,7 +9,7 @@ export function ArchiveResultRow({ source }: { source: ArchiveSource }) {
   const titleParts = getSourceTitleParts(source);
 
   return (
-    <article className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-archive-line py-3 md:grid-cols-[minmax(24rem,1.45fr)_6rem_8rem_minmax(12rem,1fr)_minmax(10rem,0.8fr)_2rem] md:items-center">
+    <article className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-archive-line py-3 md:grid-cols-[minmax(24rem,1.45fr)_6rem_8rem_minmax(12rem,1fr)_minmax(10rem,0.8fr)] md:items-center">
       <Link className="contents" href={`/archive/${source.slug}`}>
         <div className="flex gap-4 md:min-w-0">
           <SourceImage className="aspect-[3/2] w-[4.5rem] shrink-0 md:w-[5.25rem]" source={source} />
@@ -43,9 +43,6 @@ export function ArchiveResultRow({ source }: { source: ArchiveSource }) {
         </div>
         <div className="hidden text-sm md:block">{source.people[0]}</div>
       </Link>
-      <button className="focus-ring hidden h-8 w-8 items-center justify-center rounded text-archive-ink hover:bg-archive-lavender2 md:inline-flex" type="button" aria-label={`Save ${source.title}`}>
-        <Bookmark className="h-5 w-5" />
-      </button>
     </article>
   );
 }

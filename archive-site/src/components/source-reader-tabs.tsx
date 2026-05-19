@@ -1,14 +1,15 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { clsx } from "clsx";
 import {
   BookOpen,
+  Check,
   ChevronLeft,
   ChevronRight,
+  Copy,
   Download,
   ExternalLink,
-  FileText,
   Grid3X3,
   Headphones,
   Info,
@@ -17,12 +18,10 @@ import {
   Minus,
   Play,
   Plus,
-  Search,
-  ZoomIn
 } from "lucide-react";
 import Link from "next/link";
 import { MarkdownContent, SourceFigureBlock } from "@/components/markdown-content";
-import type { ArchiveSource, CollectionItemSummary, SourceFile, SourceLineBox, SourcePage } from "@/lib/types";
+import type { ArchiveSource, CollectionItemSummary, SourceFile, SourceLineBox, SourcePage, SourcePageLine } from "@/lib/types";
 
 type SourceReaderTabsProps = {
   source: ArchiveSource;
@@ -43,6 +42,14 @@ export function SourceReaderTabs({ source, transcript }: SourceReaderTabsProps) 
   const translation = useMemo(() => getTranslationParagraphs(source), [source]);
   const activeTabIsVisible = tabs.some((tab) => tab.id === activeTab);
   const visibleActiveTab = activeTabIsVisible ? activeTab : tabs[0]?.id ?? "details";
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    if ((params.has("page") || params.has("line")) && tabs.some((tab) => tab.id === "original")) {
+      setActiveTab("original");
+    }
+  }, [tabs]);
 
   return (
     <div data-source-reader-tab={visibleActiveTab}>
@@ -84,11 +91,13 @@ export function SourceReaderTabs({ source, transcript }: SourceReaderTabsProps) 
             <TranscriptReader source={source} transcript={transcript} />
           </section>
 
-          <div className="mt-8 max-w-[49rem]">
-            <ReaderNotice icon={<BookOpen className="h-4 w-4" />} actionLabel="View original source" onAction={() => setActiveTab("original")}>
-              <strong>You are in transcript reading mode.</strong> Looking for the source object?
-            </ReaderNotice>
-          </div>
+          {!isSiteEntry(source) && (
+            <div className="mt-8 max-w-[49rem]">
+              <ReaderNotice icon={<BookOpen className="h-4 w-4" />} actionLabel="View original source" onAction={() => setActiveTab("original")}>
+                <strong>You are in transcript reading mode.</strong> Looking for the source object?
+              </ReaderNotice>
+            </div>
+          )}
         </>
       )}
 
@@ -188,6 +197,10 @@ function isLikelySpeakerLabel(label: string) {
 
 function isMediaSource(source: ArchiveSource) {
   return source.medium === "Audio/Video" || source.type === "Film" || source.readerMode === "audio" || source.readerMode === "video" || Boolean(source.mediaEmbedUrl);
+}
+
+function isSiteEntry(source: ArchiveSource) {
+  return source.type === "Archaeological Site" || source.readerMode === "site_entry";
 }
 
 function TranslationReader({ paragraphs, source }: { paragraphs: string[]; source: ArchiveSource }) {
@@ -429,9 +442,28 @@ function PageImageSourceViewer({ pages, source }: { pages: SourcePage[]; source:
   const [zoom, setZoom] = useState(1);
   const [isPaulView, setIsPaulView] = useState(false);
   const [selectedLineId, setSelectedLineId] = useState<string | undefined>(pages[0]?.lines[0]?.id);
+  const [isCitationPanelOpen, setIsCitationPanelOpen] = useState(false);
   const currentPage = pages[pageIndex] ?? pages[0];
   const selectedLine = currentPage?.lines.find((line) => line.id === selectedLineId);
   const pdfFile = source.files?.find(isPdfFile);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const params = new URLSearchParams(window.location.search);
+    const pageAnchor = params.get("page");
+    const lineAnchor = params.get("line");
+    if (!pageAnchor && !lineAnchor) return;
+
+    const nextPageIndex = resolvePageIndex(pages, pageAnchor) ?? 0;
+    const nextPage = pages[nextPageIndex];
+    if (!nextPage) return;
+
+    const nextLine = resolveLineAnchor(nextPage, lineAnchor) ?? nextPage.lines[0];
+    setPageIndex(nextPageIndex);
+    setSelectedLineId(nextLine?.id);
+    setIsCitationPanelOpen(Boolean(lineAnchor));
+  }, [pages]);
 
   if (!currentPage) {
     return (
@@ -443,19 +475,23 @@ function PageImageSourceViewer({ pages, source }: { pages: SourcePage[]; source:
 
   function movePage(direction: -1 | 1) {
     const nextIndex = Math.min(Math.max(pageIndex + direction, 0), pages.length - 1);
+    selectPage(nextIndex);
+  }
+
+  function selectPage(nextIndex: number) {
+    const nextLine = pages[nextIndex]?.lines[0];
     setPageIndex(nextIndex);
-    setSelectedLineId(pages[nextIndex]?.lines[0]?.id);
+    setSelectedLineId(nextLine?.id);
+    updateLineAnchorUrl(pages[nextIndex], nextLine);
+  }
+
+  function selectLine(line: SourcePageLine) {
+    setSelectedLineId(line.id);
+    updateLineAnchorUrl(currentPage, line);
   }
 
   const imagePane = (
     <div className={clsx("relative overflow-auto bg-[#1f2024] p-5", isPaulView && "lg:order-2")}>
-      <div className="absolute left-4 top-4 z-10 hidden overflow-hidden rounded-md border border-white/15 bg-white shadow md:block">
-        {[FileText, Search, ZoomIn].map((Icon, index) => (
-          <button className="block border-b border-archive-line p-2.5 last:border-b-0 hover:bg-archive-lavender2" type="button" key={index}>
-            <Icon className="h-4 w-4" />
-          </button>
-        ))}
-      </div>
       <div className="mx-auto flex min-h-[34rem] items-center justify-center">
         <div className="relative origin-top transition-transform" style={{ transform: `scale(${zoom})` }}>
           {currentPage.imagePath ? (
@@ -487,7 +523,14 @@ function PageImageSourceViewer({ pages, source }: { pages: SourcePage[]; source:
         </div>
         <div className="ml-auto flex items-center gap-3 text-xs text-archive-muted">
           <span>Transcript language: {currentPage.language || source.language}</span>
-          <button className="focus-ring inline-flex h-8 items-center gap-1.5 rounded-md border border-archive-line px-2.5 text-archive-ink hover:bg-archive-lavender2" type="button">
+          <button
+            aria-controls="line-citation-panel"
+            aria-expanded={isCitationPanelOpen}
+            className="focus-ring inline-flex h-8 items-center gap-1.5 rounded-md border border-archive-line px-2.5 text-archive-ink hover:bg-archive-lavender2 disabled:cursor-not-allowed disabled:opacity-50"
+            disabled={!selectedLine}
+            type="button"
+            onClick={() => setIsCitationPanelOpen((value) => !value)}
+          >
             <Info className="h-3.5 w-3.5" />
             Details & citation
           </button>
@@ -504,7 +547,7 @@ function PageImageSourceViewer({ pages, source }: { pages: SourcePage[]; source:
               )}
               key={line.id}
               type="button"
-              onClick={() => setSelectedLineId(line.id)}
+              onClick={() => selectLine(line)}
             >
               <span className="select-none text-right text-archive-muted">{line.index}</span>
               <span>{line.text}</span>
@@ -529,8 +572,7 @@ function PageImageSourceViewer({ pages, source }: { pages: SourcePage[]; source:
             value={pageIndex}
             onChange={(event) => {
               const nextIndex = Number(event.target.value);
-              setPageIndex(nextIndex);
-              setSelectedLineId(pages[nextIndex]?.lines[0]?.id);
+              selectPage(nextIndex);
             }}
           >
             {pages.map((page, index) => (
@@ -579,6 +621,15 @@ function PageImageSourceViewer({ pages, source }: { pages: SourcePage[]; source:
         {transcriptPane}
       </div>
 
+      {isCitationPanelOpen && selectedLine && (
+        <LineCitationPanel
+          line={selectedLine}
+          page={currentPage}
+          source={source}
+          onClose={() => setIsCitationPanelOpen(false)}
+        />
+      )}
+
       <div className="flex flex-wrap items-center gap-3 border-t border-archive-line bg-white px-4 py-3 text-sm">
         <span className="text-archive-muted">
           {currentPage.transcriptionStatus || "Transcription status pending"}
@@ -597,6 +648,101 @@ function PageImageSourceViewer({ pages, source }: { pages: SourcePage[]; source:
         </div>
       </div>
     </section>
+  );
+}
+
+function LineCitationPanel({
+  line,
+  onClose,
+  page,
+  source
+}: {
+  line: SourcePageLine;
+  onClose: () => void;
+  page: SourcePage;
+  source: ArchiveSource;
+}) {
+  const shareUrl = buildLineShareUrl(source, page, line);
+  const archiveCitation = buildArchiveLineCitation(source, page, line, shareUrl);
+  const chicagoCitation = buildChicagoLineCitation(source, page, line, shareUrl);
+  const mlaCitation = buildMlaLineCitation(source, page, line, shareUrl);
+  const status = line.transcriptionStatus || page.transcriptionStatus || "Not recorded";
+  const reviewer = line.reviewedBy || page.transcriptionReviewedBy || "Not recorded";
+  const reviewedAt = line.reviewedAt || page.transcriptionReviewedAt;
+
+  return (
+    <aside className="border-t border-archive-line bg-archive-lavender2/35 px-5 py-5" id="line-citation-panel">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h3 className="font-serif text-xl font-semibold leading-tight text-archive-ink">Line Details & Citation</h3>
+          <p className="mt-1 text-sm text-archive-muted">
+            Stable reference for page {page.label}, line {line.index}.
+          </p>
+        </div>
+        <button className="focus-ring rounded-md border border-archive-line bg-white px-3 py-1.5 text-xs font-semibold text-archive-ink hover:bg-archive-surface" type="button" onClick={onClose}>
+          Close
+        </button>
+      </div>
+
+      <blockquote className="mt-4 border-l-4 border-archive-violet bg-white px-4 py-3 font-mono text-[13px] leading-6 text-archive-ink">
+        {line.text}
+      </blockquote>
+
+      <div className="mt-4 grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.8fr)]">
+        <div className="rounded-md border border-archive-line bg-white p-4">
+          <h4 className="text-sm font-semibold text-archive-ink">Citation</h4>
+          <p className="mt-2 text-sm leading-6 text-archive-muted">{archiveCitation}</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <CopyValueButton label="Copy line" value={line.text} />
+            <CopyValueButton label="Copy link" value={shareUrl} />
+            <CopyValueButton label="Copy citation" value={archiveCitation} />
+            <CopyValueButton label="Copy Chicago" value={chicagoCitation} />
+            <CopyValueButton label="Copy MLA" value={mlaCitation} />
+          </div>
+        </div>
+
+        <dl className="rounded-md border border-archive-line bg-white p-4 text-sm">
+          <LineDetail label="Source" value={source.title} />
+          <LineDetail label="Page" value={page.label} />
+          <LineDetail label="Line" value={`${line.index}`} />
+          <LineDetail label="Status" value={formatStatus(status)} />
+          <LineDetail label="Reviewed by" value={reviewer} />
+          {reviewedAt && <LineDetail label="Reviewed" value={formatDateLabel(reviewedAt)} />}
+          <LineDetail label="OCR confidence" value={formatConfidence(line.confidence ?? page.ocrConfidence)} />
+          <LineDetail label="Image anchor" value={line.box ? "Bounding box recorded" : "No bounding box"} />
+          {page.transcriptionNote && <LineDetail label="Note" value={page.transcriptionNote} />}
+        </dl>
+      </div>
+    </aside>
+  );
+}
+
+function CopyValueButton({ label, value }: { label: string; value: string }) {
+  const [copied, setCopied] = useState(false);
+
+  return (
+    <button
+      className="focus-ring inline-flex h-8 items-center gap-1.5 rounded-md border border-archive-line bg-archive-surface px-2.5 text-xs font-semibold text-archive-ink hover:border-archive-violet/40 hover:bg-archive-lavender2"
+      type="button"
+      onClick={() => {
+        void navigator.clipboard.writeText(value).then(() => {
+          setCopied(true);
+          window.setTimeout(() => setCopied(false), 1600);
+        });
+      }}
+    >
+      {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+      {copied ? "Copied" : label}
+    </button>
+  );
+}
+
+function LineDetail({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="grid grid-cols-[6.5rem_1fr] gap-3 border-b border-archive-line/80 py-2 first:pt-0 last:border-b-0 last:pb-0">
+      <dt className="font-semibold text-archive-ink">{label}</dt>
+      <dd className="leading-5 text-archive-muted">{value || "Not recorded"}</dd>
+    </div>
   );
 }
 
@@ -628,6 +774,77 @@ function IconButton({ children, disabled, label, onClick }: { children: React.Re
       {children}
     </button>
   );
+}
+
+function resolvePageIndex(pages: SourcePage[], pageAnchor: string | null) {
+  if (!pageAnchor) return undefined;
+  const decoded = decodeURIComponent(pageAnchor).trim();
+  const index = pages.findIndex((page) =>
+    page.id === decoded ||
+    String(page.pageNumber) === decoded ||
+    page.label === decoded
+  );
+  return index >= 0 ? index : undefined;
+}
+
+function resolveLineAnchor(page: SourcePage, lineAnchor: string | null) {
+  if (!lineAnchor) return undefined;
+  const decoded = decodeURIComponent(lineAnchor).trim();
+  return page.lines.find((line) => line.id === decoded || String(line.index) === decoded);
+}
+
+function updateLineAnchorUrl(page?: SourcePage, line?: SourcePageLine) {
+  if (typeof window === "undefined" || !page) return;
+  const url = new URL(window.location.href);
+  url.searchParams.set("page", pageAnchorValue(page));
+  if (line) {
+    url.searchParams.set("line", lineAnchorValue(line));
+  } else {
+    url.searchParams.delete("line");
+  }
+  window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+}
+
+function buildLineShareUrl(source: ArchiveSource, page: SourcePage, line: SourcePageLine) {
+  const path = `/archive/${source.slug}?page=${encodeURIComponent(pageAnchorValue(page))}&line=${encodeURIComponent(lineAnchorValue(line))}`;
+  if (typeof window === "undefined") return path;
+  return `${window.location.origin}${path}`;
+}
+
+function pageAnchorValue(page: SourcePage) {
+  return String(page.pageNumber || page.label || page.id);
+}
+
+function lineAnchorValue(line: SourcePageLine) {
+  return String(line.index || line.id);
+}
+
+function buildArchiveLineCitation(source: ArchiveSource, page: SourcePage, line: SourcePageLine, shareUrl: string) {
+  return `${source.title}, ${source.displayDate}. ${source.citation}. Page ${page.label}, line ${line.index}. The Psychedelic History Archive. ${shareUrl}`;
+}
+
+function buildChicagoLineCitation(source: ArchiveSource, page: SourcePage, line: SourcePageLine, shareUrl: string) {
+  return `${source.author || source.title}. "${source.title}." ${source.displayDate}. The Psychedelic History Archive, page ${page.label}, line ${line.index}. ${shareUrl}.`;
+}
+
+function buildMlaLineCitation(source: ArchiveSource, page: SourcePage, line: SourcePageLine, shareUrl: string) {
+  return `${source.author || source.title}. "${source.title}." The Psychedelic History Archive, ${source.displayDate}, p. ${page.label}, line ${line.index}. ${shareUrl}.`;
+}
+
+function formatConfidence(value?: number) {
+  if (value === undefined || !Number.isFinite(value)) return "Not recorded";
+  const percentage = value <= 1 ? value * 100 : value;
+  return `${Math.round(percentage)}%`;
+}
+
+function formatStatus(value: string) {
+  return value.replaceAll("_", " ");
+}
+
+function formatDateLabel(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
 }
 
 function LineOverlay({ box, page }: { box: SourceLineBox; page: SourcePage }) {
@@ -683,6 +900,25 @@ function SourceDetails({ pages, source }: { pages: SourcePage[]; source: Archive
     );
   }
 
+  if (isSiteEntry(source)) {
+    return (
+      <section className="mt-6 grid gap-4 md:grid-cols-2">
+        <DetailPanel title="Site Entry">
+          <DetailRow label="Citation" value={source.citation} />
+          <DetailRow label="Archive ID" value={source.id} />
+          <DetailRow label="Date range" value={source.displayDate} />
+          <DetailRow label="Region" value={source.region} />
+        </DetailPanel>
+        <DetailPanel title="Evidence">
+          <DetailRow label="Entry type" value="Project-authored archaeological site writeup" />
+          <DetailRow label="Evidence" value={siteEvidenceLabel(source)} />
+          <DetailRow label="Substances" value={source.substances?.length ? source.substances.join(", ") : "See entry text"} />
+          <DetailRow label="Rights" value={source.rights} />
+        </DetailPanel>
+      </section>
+    );
+  }
+
   return (
     <section className="mt-6 grid gap-4 md:grid-cols-2">
       <DetailPanel title="Citation">
@@ -722,13 +958,17 @@ function buildDisplayPages(source: ArchiveSource, transcript: string[]) {
   if (source.pages?.length) return source.pages;
   if (!transcript.length && !source.imagePath) return [];
 
+  let lineIndex = 0;
   const lines = transcript.flatMap((paragraph, paragraphIndex) =>
-    wrapLine(paragraph, 82).map((text, index) => ({
-      id: `${source.id}-fallback-${paragraphIndex}-${index}`,
-      index: index + 1,
-      text,
-      paragraphIndex
-    }))
+    wrapLine(paragraph, 82).map((text, wrappedLineIndex) => {
+      lineIndex += 1;
+      return {
+        id: `${source.id}-fallback-${paragraphIndex}-${wrappedLineIndex}`,
+        index: lineIndex,
+        text,
+        paragraphIndex
+      };
+    })
   );
 
   return [
@@ -754,6 +994,13 @@ function buildReaderTabs(source: ArchiveSource, transcript: string[]): ReaderTab
     ];
   }
 
+  if (isSiteEntry(source)) {
+    return [
+      { id: "transcript", label: "Overview" },
+      { id: "details", label: "Details" }
+    ];
+  }
+
   const tabs: ReaderTab[] = [];
   const hasTranslation = Boolean(source.translationText?.trim());
   const hasTranscript = transcript.some((paragraph) => paragraph.trim()) || Boolean(source.transcriptSections?.length);
@@ -773,6 +1020,15 @@ function buildReaderTabs(source: ArchiveSource, transcript: string[]): ReaderTab
   }
 
   return tabs;
+}
+
+function siteEvidenceLabel(source: ArchiveSource) {
+  if (source.tags.includes("Material Culture") && source.tags.includes("Pharmacology")) {
+    return "Archaeological assemblage and chemical residue analysis";
+  }
+  if (source.tags.includes("Material Culture")) return "Archaeological assemblage";
+  if (source.tags.includes("Pharmacology")) return "Chemical or pharmacological evidence";
+  return "Archaeological and historical evidence";
 }
 
 function originalTabLabel(source: ArchiveSource) {

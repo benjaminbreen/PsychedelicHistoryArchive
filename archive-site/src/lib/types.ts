@@ -28,7 +28,7 @@ export type SourceType =
   | "Testimony";
 
 export type SourceKind = "single" | "collection" | "collection_item";
-export type ReaderMode = "transcript" | "translation" | "overview" | "pdf" | "audio" | "video" | "images";
+export type ReaderMode = "transcript" | "translation" | "overview" | "site_entry" | "pdf" | "audio" | "video" | "images";
 
 export type ArchiveSource = {
   id: string;
@@ -120,6 +120,9 @@ export type SourcePageLine = {
   confidence?: number;
   language?: string;
   paragraphIndex?: number;
+  transcriptionStatus?: string;
+  reviewedBy?: string;
+  reviewedAt?: string;
   box?: SourceLineBox;
 };
 
@@ -135,6 +138,9 @@ export type SourcePage = {
   ocrConfidence?: number;
   language?: string;
   transcriptionStatus?: string;
+  transcriptionReviewedBy?: string;
+  transcriptionReviewedAt?: string;
+  transcriptionNote?: string;
   lines: SourcePageLine[];
 };
 

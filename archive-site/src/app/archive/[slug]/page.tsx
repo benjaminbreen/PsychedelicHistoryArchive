@@ -1,13 +1,14 @@
 import type { Metadata as NextMetadata } from "next";
 import { notFound, redirect } from "next/navigation";
-import { ArrowLeft, BookOpen, Copy, Download, ExternalLink, Share2 } from "lucide-react";
+import { ArrowLeft, BookOpen, ChevronDown } from "lucide-react";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { canonicalizePersonName, isDisplayableBiographyName, slugifyPersonName } from "@/lib/biographies";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SourceActions } from "@/components/source-actions";
 import { SourceImage } from "@/components/source-image";
 import { SourceReaderTabs } from "@/components/source-reader-tabs";
-import { ButtonLink } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
 import { eraHref, getEraForYear } from "@/lib/eras";
 import { getRelatedSources, topicHref, type RelatedSource } from "@/lib/internal-links";
@@ -82,6 +83,7 @@ export default async function SourcePage({ params }: SourcePageProps) {
   const isExternal = source.accessType === "external";
   const titleParts = getSourceTitleParts(source);
   const relatedSources = getRelatedSources(source, sources);
+  const pdfFile = getPdfFile(source);
   const structuredData = [
     buildSourceJsonLd(source),
     buildBreadcrumbJsonLd([
@@ -125,9 +127,6 @@ export default async function SourcePage({ params }: SourcePageProps) {
                 {titleParts.subtitle}
               </p>
             )}
-            <p className="mt-4 max-w-3xl text-lg leading-8 text-archive-muted">
-              {source.summary}
-            </p>
 
             <div className="mt-6 grid gap-4 border-y border-archive-line py-4 text-sm sm:grid-cols-2 xl:grid-cols-4">
               <Metadata label="Date" value={source.displayDate} />
@@ -142,19 +141,6 @@ export default async function SourcePage({ params }: SourcePageProps) {
                   {tag}
                 </Chip>
               ))}
-            </div>
-
-            <div className="mt-7 flex flex-wrap gap-3">
-              <ButtonLink href={source.sourceUrl} variant={isExternal ? "primary" : "outline"}>
-                <ExternalLink className="h-4 w-4" />
-                {isExternal ? "View external source" : "View original source"}
-              </ButtonLink>
-              {!isExternal && (
-                <ButtonLink href="#" variant="primary">
-                  <Download className="h-4 w-4" />
-                  Download PDF
-                </ButtonLink>
-              )}
             </div>
 
             <div className="mt-9 border-b border-archive-line">
@@ -187,9 +173,7 @@ export default async function SourcePage({ params }: SourcePageProps) {
                 “{source.excerpt}”
               </blockquote>
               <p className="mt-6 font-serif text-xl leading-[1.8] text-archive-ink">
-                This first implementation uses structured seed data from the nitrous
-                oxide and ether source folder. Full page-level OCR, page anchors, and
-                image/PDF viewers are planned for the Supabase-backed version.
+                This record preserves the source metadata and citation context while directing readers to the holding repository for access to the original object.
               </p>
             </section>
           </div>
@@ -209,20 +193,25 @@ export default async function SourcePage({ params }: SourcePageProps) {
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-lg border border-archive-line bg-archive-surface shadow-[0_10px_28px_rgb(var(--archive-shadow)/0.04)]">
-              <div className="p-5">
-                <h2 className="source-serif-heading">Source details</h2>
-                <dl className="mt-5 space-y-3 text-sm">
-                  <Detail label="Citation" value={source.citation} />
-                  <Detail label="Archive ID" value={source.id} />
-                  <Detail label="Rights" value={source.rights} />
-                  <Detail label="Access" value={isExternal ? "Hosted externally" : "Hosted by archive"} />
-                </dl>
-              </div>
-              <ActionRow icon={<Copy className="h-5 w-5" />} label="Copy citation" />
-              {!isExternal && <ActionRow icon={<Download className="h-5 w-5" />} label="Download PDF" meta="PDF" />}
-              <ActionRow icon={<Share2 className="h-5 w-5" />} label="Share" />
-            </div>
+            <SourceDetailsCard
+              primaryDetails={[
+                { label: "Citation", value: source.citation },
+                { label: "Access", value: isExternal ? "Hosted externally" : "Hosted by archive" }
+              ]}
+              secondaryDetails={[
+                { label: "Archive ID", value: source.id },
+                { label: "Rights", value: source.rights }
+              ]}
+              title="Source details"
+            >
+              <SourceActions
+                citation={source.citation}
+                pdfUrl={pdfFile?.url}
+                shareTitle={titleParts.subtitle ? `${titleParts.title}: ${titleParts.subtitle}` : titleParts.title}
+                sourceUrl={source.sourceUrl}
+                viewLabel="View external source"
+              />
+            </SourceDetailsCard>
             <RelatedSourcesCard sources={relatedSources} />
           </aside>
         </div>
@@ -235,9 +224,9 @@ export default async function SourcePage({ params }: SourcePageProps) {
 function HostedSourcePage({ relatedSources, source }: { relatedSources: RelatedSource[]; source: ArchiveSource }) {
   const transcript = getTranscriptPreview(source);
   const titleParts = getSourceTitleParts(source);
-  const description = source.summary || source.excerpt;
   const pdfFile = getPdfFile(source);
   const era = getEraForYear(source.year);
+  const siteEntry = isSiteEntry(source);
 
   return (
     <>
@@ -245,18 +234,22 @@ function HostedSourcePage({ relatedSources, source }: { relatedSources: RelatedS
       <main className="source-page-fade">
         <div className="container-page py-6">
         <div className="mb-5 flex items-center gap-3 text-sm text-archive-muted">
-          <Link className="font-semibold text-archive-violet" href="/archive?medium=Text">
-            Text
+          <Link className="font-semibold text-archive-violet" href={siteEntry ? `/archive?type=${encodeURIComponent(source.type)}` : "/archive?medium=Text"}>
+            {siteEntry ? "Archaeological Sites" : "Text"}
           </Link>
           <span>/</span>
           {era ? <Link href={eraHref(era)}>{era.label}</Link> : <span>{source.era}</span>}
-          <span>/</span>
-          <Link href={`/archive?type=${encodeURIComponent(source.type)}`}>{source.type}s</Link>
+          {!siteEntry && (
+            <>
+              <span>/</span>
+              <Link href={`/archive?type=${encodeURIComponent(source.type)}`}>{source.type}s</Link>
+            </>
+          )}
         </div>
 
         <div className="source-page-grid grid gap-7 lg:grid-cols-[minmax(0,1fr)_21rem] xl:grid-cols-[minmax(0,1fr)_24rem]">
           <div>
-            <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_13.5rem] xl:items-start">
+            <div className="grid gap-6">
               <div>
                 <h1 className="text-archive-ink">
                   <span className="source-display-title">
@@ -268,28 +261,20 @@ function HostedSourcePage({ relatedSources, source }: { relatedSources: RelatedS
                     {titleParts.subtitle}
                   </p>
                 )}
-                <p className="mt-2 max-w-2xl text-[15px] leading-6 text-archive-muted">
-                  {description}
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-3 xl:flex-col xl:items-stretch xl:pt-7">
-                <ButtonLink className="xl:w-full" href={source.sourceUrl} variant="outline">
-                  <ExternalLink className="h-4 w-4" />
-                  View original source
-                </ButtonLink>
-                {pdfFile && (
-                  <ButtonLink className="xl:w-full" href={pdfFile.url} variant="primary">
-                    <Download className="h-4 w-4" />
-                    Download PDF
-                  </ButtonLink>
-                )}
               </div>
             </div>
 
             <div className="mt-4 flex flex-wrap items-start text-sm">
               <MetaCell label="Date" value={source.displayDate} />
               <MetaCell label="Type" value={source.type} />
-              <PeopleMetaCell source={source} />
+              {siteEntry ? (
+                <>
+                  <MetaCell label="Region" value={siteRegionLabel(source)} />
+                  <MetaCell label="Evidence" value={siteEvidenceLabel(source)} />
+                </>
+              ) : (
+                <PeopleMetaCell source={source} />
+              )}
               <div className="border-l border-archive-line pl-5">
                 <div className="text-[0.62rem] font-bold uppercase tracking-[0.09em] text-archive-muted">Tags</div>
                 <div className="mt-2 flex flex-wrap gap-2">
@@ -313,28 +298,38 @@ function HostedSourcePage({ relatedSources, source }: { relatedSources: RelatedS
                   <div className="text-[10px] font-bold uppercase tracking-[0.1em] text-archive-olive">
                     {source.type}
                   </div>
-                  <p className="mt-2 font-semibold">Published in</p>
-                  <p className="mt-2 font-serif italic text-archive-ink">{publicationLabel(source)}</p>
+                  <p className="mt-2 font-semibold">{siteEntry ? "Archive entry" : "Published in"}</p>
+                  <p className={siteEntry ? "mt-2 text-sm leading-5 text-archive-muted" : "mt-2 font-serif italic text-archive-ink"}>
+                    {siteEntry ? siteRegionLabel(source) : publicationLabel(source)}
+                  </p>
                   <p className="mt-2 text-sm text-archive-muted">{source.displayDate}</p>
                 </div>
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-lg border border-archive-line bg-archive-surface shadow-[0_10px_28px_rgb(var(--archive-shadow)/0.04)]">
-              <div className="p-4">
-                <h2 className="source-serif-heading">Source details</h2>
-                <dl className="mt-5 space-y-3 text-sm">
-                  <Detail label="Creators" value={formatCreators(source)} />
-                  <Detail label="Citation" value={source.citation} />
-                  <Detail label="Archive ID" value={`T-1800-1950-${source.id.slice(0, 3).toUpperCase()}`} />
-                  <Detail label="Language" value={source.language} />
-                  <Detail label="Rights" value={source.rights} />
-                  <Detail label="Abstract" value={source.summary} />
-                </dl>
-              </div>
-              {pdfFile && <ActionRow icon={<Download className="h-5 w-5" />} label="Download PDF" meta="PDF" />}
-              <ActionRow icon={<Share2 className="h-5 w-5" />} label="Share" />
-            </div>
+            <SourceDetailsCard
+              primaryDetails={[
+                { label: siteEntry ? "Entry author" : "Creators", value: siteEntry ? entryAuthorLabel(source) : formatCreators(source) },
+                { label: "Citation", value: source.citation }
+              ]}
+              secondaryDetails={[
+                { label: "Archive ID", value: `T-1800-1950-${source.id.slice(0, 3).toUpperCase()}` },
+                { label: "Language", value: source.language },
+                ...(siteEntry ? [{ label: "Region", value: source.region }] : []),
+                ...(siteEntry ? [{ label: "Evidence", value: siteEvidenceLabel(source) }] : []),
+                ...(siteEntry && source.substances?.length > 0 ? [{ label: "Substances", value: source.substances.join(", ") }] : []),
+                { label: "Rights", value: source.rights },
+                { label: "Abstract", value: source.summary }
+              ]}
+              title={siteEntry ? "Entry details" : "Source details"}
+            >
+              <SourceActions
+                citation={source.citation}
+                pdfUrl={pdfFile?.url}
+                shareTitle={titleParts.subtitle ? `${titleParts.title}: ${titleParts.subtitle}` : titleParts.title}
+                sourceUrl={siteEntry ? undefined : source.sourceUrl}
+              />
+            </SourceDetailsCard>
             <RelatedSourcesCard sources={relatedSources} />
           </aside>
         </div>
@@ -347,6 +342,28 @@ function HostedSourcePage({ relatedSources, source }: { relatedSources: RelatedS
 
 function getPdfFile(source: ArchiveSource) {
   return source.files?.find((file) => file.kind === "original_pdf" || file.mimeType === "application/pdf");
+}
+
+function isSiteEntry(source: ArchiveSource) {
+  return source.type === "Archaeological Site" || source.readerMode === "site_entry";
+}
+
+function siteRegionLabel(source: ArchiveSource) {
+  return source.region.split(";").map((part) => part.trim()).filter(Boolean).slice(0, 2).join(", ") || source.region;
+}
+
+function siteEvidenceLabel(source: ArchiveSource) {
+  if (source.tags.includes("Material Culture") && source.tags.includes("Pharmacology")) {
+    return "Archaeological assemblage and chemical residue analysis";
+  }
+  if (source.tags.includes("Material Culture")) return "Archaeological assemblage";
+  if (source.tags.includes("Pharmacology")) return "Chemical or pharmacological evidence";
+  return "Archaeological and historical evidence";
+}
+
+function entryAuthorLabel(source: ArchiveSource) {
+  const citationAuthor = source.citation.match(/^([^,]+),\s+The Psychedelic History Archive\./)?.[1]?.trim();
+  return citationAuthor || source.author;
 }
 
 function Metadata({ label, value }: { label: string; value: string }) {
@@ -411,6 +428,52 @@ function tagTone(tag: string) {
   return TAG_TONES[tag] ?? "neutral";
 }
 
+type DetailItem = {
+  label: string;
+  value: string;
+};
+
+function SourceDetailsCard({
+  children,
+  primaryDetails,
+  secondaryDetails,
+  title
+}: {
+  children: ReactNode;
+  primaryDetails: DetailItem[];
+  secondaryDetails: DetailItem[];
+  title: string;
+}) {
+  const visibleSecondaryDetails = secondaryDetails.filter((detail) => detail.value);
+
+  return (
+    <div className="overflow-hidden rounded-lg border border-archive-line bg-archive-surface shadow-[0_10px_28px_rgb(var(--archive-shadow)/0.04)]">
+      <div className="p-4">
+        <h2 className="source-serif-heading">{title}</h2>
+        <dl className="mt-5 space-y-3 text-sm">
+          {primaryDetails.map((detail) => (
+            <Detail label={detail.label} value={detail.value} key={detail.label} />
+          ))}
+        </dl>
+        {visibleSecondaryDetails.length > 0 && (
+          <details className="group mt-3 border-t border-archive-line pt-3">
+            <summary className="focus-ring flex cursor-pointer list-none items-center justify-between rounded-sm py-1 text-xs font-semibold uppercase tracking-[0.08em] text-archive-violet transition hover:text-archive-violetDark [&::-webkit-details-marker]:hidden">
+              <span>Full details</span>
+              <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
+            </summary>
+            <dl className="mt-3 space-y-3 text-sm">
+              {visibleSecondaryDetails.map((detail) => (
+                <Detail label={detail.label} value={detail.value} key={detail.label} />
+              ))}
+            </dl>
+          </details>
+        )}
+      </div>
+      {children}
+    </div>
+  );
+}
+
 function Detail({ label, value }: { label: string; value: string }) {
   return (
     <div className="grid grid-cols-[5.4rem_1fr] gap-3 border-b border-archive-line/80 pb-3 last:border-b-0">
@@ -449,18 +512,6 @@ function RelatedSourcesCard({ sources }: { sources: RelatedSource[] }) {
         })}
       </div>
     </section>
-  );
-}
-
-function ActionRow({ icon, label, meta }: { icon: React.ReactNode; label: string; meta?: string }) {
-  return (
-    <button className="focus-ring flex w-full items-center justify-between border-t border-archive-line px-5 py-4 text-left transition hover:bg-archive-paper" type="button">
-      <span className="flex items-center gap-3 text-archive-ink">
-        {icon}
-        <span className="font-medium">{label}</span>
-      </span>
-      {meta && <span className="text-xs text-archive-muted">{meta}</span>}
-    </button>
   );
 }
 

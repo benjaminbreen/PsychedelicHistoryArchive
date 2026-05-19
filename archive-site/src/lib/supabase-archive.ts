@@ -256,6 +256,9 @@ type PageLineRow = {
   confidence: number | null;
   language: string | null;
   paragraph_index: number | null;
+  transcription_status?: string | null;
+  reviewed_by?: string | null;
+  reviewed_at?: string | null;
 };
 type PageRow = {
   id: string;
@@ -269,6 +272,9 @@ type PageRow = {
   ocr_text: string | null;
   ocr_confidence: number | null;
   transcription_status: string | null;
+  transcription_reviewed_by?: string | null;
+  transcription_reviewed_at?: string | null;
+  transcription_note?: string | null;
   page_lines?: PageLineRow[];
 };
 type FileRow = {
@@ -335,29 +341,7 @@ const DOCUMENT_SELECT = `
   thumbnail_path,
   is_featured,
   published_at,
-  pages(
-    id,
-    page_number,
-    label,
-    readable_image_path,
-    thumbnail_image_path,
-    image_width,
-    image_height,
-    language,
-    ocr_text,
-    ocr_confidence,
-    transcription_status,
-    page_lines(
-      id,
-      line_index,
-      text,
-      normalized_text,
-      bbox,
-      confidence,
-      language,
-      paragraph_index
-    )
-  ),
+  pages(*, page_lines(*)),
   files(id, storage_path, kind, mime_type, byte_size),
   document_sections(id, position, heading, section_type, body, body_format),
   document_figures(id, position, image_path, alt_text, caption, placement, section_id, token, credit),
@@ -431,29 +415,7 @@ const LEGACY_DOCUMENT_SELECT = `
   thumbnail_path,
   is_featured,
   published_at,
-  pages(
-    id,
-    page_number,
-    label,
-    readable_image_path,
-    thumbnail_image_path,
-    image_width,
-    image_height,
-    language,
-    ocr_text,
-    ocr_confidence,
-    transcription_status,
-    page_lines(
-      id,
-      line_index,
-      text,
-      normalized_text,
-      bbox,
-      confidence,
-      language,
-      paragraph_index
-    )
-  ),
+  pages(*, page_lines(*)),
   files(id, storage_path, kind, mime_type, byte_size),
   document_tags(tags(name, tag_type)),
   document_people(role, people(name))
@@ -1245,6 +1207,9 @@ function mapPages(pages: PageRow[] = []): SourcePage[] {
         ocrText: page.ocr_text ?? lines.map((line) => line.text).join("\n"),
         ocrConfidence: page.ocr_confidence ?? undefined,
         transcriptionStatus: page.transcription_status ?? undefined,
+        transcriptionReviewedBy: page.transcription_reviewed_by ?? undefined,
+        transcriptionReviewedAt: page.transcription_reviewed_at ?? undefined,
+        transcriptionNote: page.transcription_note ?? undefined,
         lines
       };
     });
@@ -1262,6 +1227,9 @@ function mapPageLines(lines: PageLineRow[] = []): SourcePageLine[] {
       confidence: line.confidence ?? undefined,
       language: line.language ?? undefined,
       paragraphIndex: line.paragraph_index ?? undefined,
+      transcriptionStatus: line.transcription_status ?? undefined,
+      reviewedBy: line.reviewed_by ?? undefined,
+      reviewedAt: line.reviewed_at ?? undefined,
       box: normalizeBox(line.bbox)
     }));
 }

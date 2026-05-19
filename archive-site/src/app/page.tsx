@@ -95,7 +95,7 @@ export default async function HomePage() {
                       {getSourceTitleParts(source).title}
                     </span>
                     <span className="featured-source-summary mt-1.5 text-[0.92rem] leading-5 text-archive-muted">
-                      {index === 0 ? source.summary : source.author}
+                      {source.summary || source.author}
                     </span>
                   </span>
                 </Link>

@@ -104,16 +104,25 @@ const collections: CollectionCard[] = [
 
 const collectionsPerPage = 16;
 
-export default async function CollectionsPage() {
+type CollectionsPageProps = {
+  searchParams: Promise<{ page?: string }>;
+};
+
+export default async function CollectionsPage({ searchParams }: CollectionsPageProps) {
+  const params = await searchParams;
   const supabaseCollections = await getCollectionSourcesFromSupabase();
   const liveCollections = supabaseCollections.length ? supabaseCollections.map(collectionSourceToCard) : collections;
-  const showFeaturedCollection = liveCollections.length >= 3;
+  const totalPages = Math.max(1, Math.ceil(liveCollections.length / collectionsPerPage));
+  const currentPage = Math.min(parseCollectionPage(params.page), totalPages);
+  const showFeaturedCollection = liveCollections.length >= 3 && currentPage === 1;
   const featured = showFeaturedCollection ? liveCollections[0] : undefined;
+  const pageStart = (currentPage - 1) * collectionsPerPage;
+  const pageEnd = currentPage * collectionsPerPage;
   const visibleCollections = showFeaturedCollection
-    ? liveCollections.slice(1, collectionsPerPage)
-    : liveCollections.slice(0, collectionsPerPage);
-  const shownCollectionCount = visibleCollections.length + (featured ? 1 : 0);
-  const totalPages = Math.ceil(liveCollections.length / collectionsPerPage);
+    ? liveCollections.slice(1, pageEnd)
+    : liveCollections.slice(pageStart, pageEnd);
+  const shownStart = liveCollections.length ? pageStart + 1 : 0;
+  const shownEnd = Math.min(pageEnd, liveCollections.length);
 
   return (
     <>
@@ -154,8 +163,8 @@ export default async function CollectionsPage() {
           <Link className="focus-ring inline-flex w-fit items-center gap-2 rounded-sm font-semibold text-archive-violet transition hover:text-archive-violetDark" href="/archive">
             Browse all sources <ArrowRight className="h-4 w-4" />
           </Link>
-          {totalPages > 1 ? <Pagination pageCount={totalPages} /> : <span />}
-          <span className="md:justify-self-end">{showingCollectionsLabel(shownCollectionCount, liveCollections.length)}</span>
+          {totalPages > 1 ? <Pagination currentPage={currentPage} pageCount={totalPages} /> : <span />}
+          <span className="md:justify-self-end">{showingCollectionsLabel(shownStart, shownEnd, liveCollections.length)}</span>
         </footer>
       </PageShell>
       <SiteFooter />
@@ -177,23 +186,26 @@ function collectionSourceToCard(source: ArchiveSource): CollectionCard {
   };
 }
 
-function Pagination({ pageCount }: { pageCount: number }) {
+function Pagination({ currentPage, pageCount }: { currentPage: number; pageCount: number }) {
   return (
     <div className="flex items-center justify-center gap-3">
-      <PaginationButton ariaLabel="Previous page">
+      <PaginationLink ariaLabel="Previous page" disabled={currentPage <= 1} href={collectionPageHref(currentPage - 1)}>
         <ChevronLeft className="h-4 w-4" />
-      </PaginationButton>
+      </PaginationLink>
       {Array.from({ length: pageCount }, (_, index) => index + 1).map((page) => (
-        <span
-          className={page === 1 ? "grid h-10 w-10 place-items-center rounded border border-archive-violet bg-archive-lavender2 text-archive-violet" : "grid h-10 w-10 place-items-center rounded border border-archive-line bg-archive-surface text-archive-ink"}
-          key={page}
-        >
-          {page}
-        </span>
+        page === currentPage ? (
+          <span className="grid h-10 w-10 place-items-center rounded border border-archive-violet bg-archive-lavender2 text-archive-violet" key={page}>
+            {page}
+          </span>
+        ) : (
+          <Link className="focus-ring grid h-10 w-10 place-items-center rounded border border-archive-line bg-archive-surface text-archive-ink transition hover:border-archive-violet/40 hover:bg-archive-lavender2" href={collectionPageHref(page)} key={page}>
+            {page}
+          </Link>
+        )
       ))}
-      <PaginationButton ariaLabel="Next page">
+      <PaginationLink ariaLabel="Next page" disabled={currentPage >= pageCount} href={collectionPageHref(currentPage + 1)}>
         <ChevronRight className="h-4 w-4" />
-      </PaginationButton>
+      </PaginationLink>
     </div>
   );
 }
@@ -293,11 +305,19 @@ function CollectionImage({ collection, className, featured = false }: { collecti
   );
 }
 
-function PaginationButton({ ariaLabel, children }: { ariaLabel: string; children: React.ReactNode }) {
+function PaginationLink({ ariaLabel, children, disabled, href }: { ariaLabel: string; children: React.ReactNode; disabled?: boolean; href: string }) {
+  if (disabled) {
+    return (
+      <span aria-label={ariaLabel} className="grid h-10 w-10 place-items-center rounded border border-archive-line bg-archive-surface text-archive-muted/60">
+        {children}
+      </span>
+    );
+  }
+
   return (
-    <button aria-label={ariaLabel} className="focus-ring grid h-10 w-10 place-items-center rounded border border-archive-line bg-archive-surface text-archive-ink transition hover:border-archive-violet/40 hover:bg-archive-lavender2" type="button">
+    <Link aria-label={ariaLabel} className="focus-ring grid h-10 w-10 place-items-center rounded border border-archive-line bg-archive-surface text-archive-ink transition hover:border-archive-violet/40 hover:bg-archive-lavender2" href={href}>
       {children}
-    </button>
+    </Link>
   );
 }
 
@@ -313,7 +333,17 @@ function collectionCountLabel(count: number) {
   return `${count} ${count === 1 ? "collection" : "collections"}`;
 }
 
-function showingCollectionsLabel(shown: number, total: number) {
-  if (total <= shown) return `Showing ${collectionCountLabel(total)}`;
-  return `Showing 1-${shown} of ${collectionCountLabel(total)}`;
+function collectionPageHref(page: number) {
+  return page <= 1 ? "/collections" : `/collections?page=${page}`;
+}
+
+function parseCollectionPage(value?: string) {
+  const page = Number.parseInt(value ?? "1", 10);
+  return Number.isFinite(page) && page > 0 ? page : 1;
+}
+
+function showingCollectionsLabel(start: number, end: number, total: number) {
+  if (!total) return "Showing 0 collections";
+  if (start === 1 && end >= total) return `Showing ${collectionCountLabel(total)}`;
+  return `Showing ${start}-${end} of ${collectionCountLabel(total)}`;
 }
