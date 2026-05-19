@@ -7,6 +7,7 @@ import { SiteHeader } from "@/components/site-header";
 import { Chip } from "@/components/ui/chip";
 import { getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
 import { buildFallbackBiography, canonicalizePersonName, findBiographyProfile, isDisplayableBiographyName, slugifyPersonName } from "@/lib/biographies";
+import { JsonLd, SITE_NAME, buildBreadcrumbJsonLd, buildPersonJsonLd, canonicalPath, seoDescription } from "@/lib/seo";
 import type { BiographyProfile } from "@/lib/biographies";
 import type { ArchiveSource } from "@/lib/types";
 
@@ -18,10 +19,50 @@ export const revalidate = 3600;
 
 export async function generateMetadata({ params }: BiographyPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const profile = findBiographyProfile(slug);
+  const sources = await getArchiveSourcesFromSupabase();
+  const profile = resolveBiography(slug, sources);
+
+  if (!profile) {
+    return {
+      title: `Biography not found | ${SITE_NAME}`,
+      robots: {
+        index: false,
+        follow: false
+      }
+    };
+  }
+
+  const description = seoDescription(profile.dek || profile.paragraphs[0], "Biography in The Psychedelic History Archive.");
+  const canonical = canonicalPath(`/biographies/${profile.slug}`);
+
   return {
-    title: `${profile?.name ?? "Biography"} | The Psychedelic History Archive`,
-    description: profile?.dek ?? "Biography in The Psychedelic History Archive."
+    title: `${profile.name} | ${SITE_NAME}`,
+    description,
+    alternates: {
+      canonical
+    },
+    openGraph: {
+      title: profile.name,
+      description,
+      url: canonical,
+      siteName: SITE_NAME,
+      images: profile.imagePath
+        ? [
+            {
+              url: profile.imagePath,
+              alt: profile.imageAlt || profile.name
+            }
+          ]
+        : undefined,
+      locale: "en_US",
+      type: "profile"
+    },
+    twitter: {
+      card: profile.imagePath ? "summary_large_image" : "summary",
+      title: profile.name,
+      description,
+      images: profile.imagePath ? [profile.imagePath] : undefined
+    }
   };
 }
 
@@ -33,9 +74,18 @@ export default async function BiographyPage({ params }: BiographyPageProps) {
   if (!profile) notFound();
 
   const relatedSources = sources.filter((source) => source.people.some((person) => slugifyPersonName(canonicalizePersonName(person)) === slug));
+  const structuredData = [
+    buildPersonJsonLd(profile, relatedSources),
+    buildBreadcrumbJsonLd([
+      { name: "Home", path: "/" },
+      { name: "People", path: "/people" },
+      { name: profile.name, path: `/biographies/${profile.slug}` }
+    ])
+  ];
 
   return (
     <>
+      <JsonLd data={structuredData} />
       <SiteHeader activeLabel="People" variant="bio" />
       <main className="mx-auto grid w-full max-w-[1160px] gap-12 px-4 py-7 sm:px-6 lg:grid-cols-[minmax(0,680px)_320px] lg:gap-20 lg:px-10">
         <article className="min-w-0">

@@ -17,6 +17,11 @@ const projectLinks = [
     description: "Texts, images, audio, biographies, and personal histories are welcome."
   },
   {
+    label: "Meet the team",
+    href: "/project-team",
+    description: "Project team and advisory board."
+  },
+  {
     label: "Read the FAQ",
     href: "/faq",
     description: "Rights, reuse, submissions, and project background."
@@ -63,11 +68,11 @@ export default function AboutPage() {
                     Benjamin Breen
                   </a>{" "}
                   at the University of California, Santa Cruz in 2024, then
-                  contributed to by a group of undergraduate students at UCSC in
-                  2025. In 2026, the project received a grant from the Mahindra
-                  Humanities Center at Harvard. The current project team is
-                  Breen (UCSC), Rebecca Lemov (Harvard), Anne Harrington
-                  (Harvard), and Paul Gillis-Smith.
+                  developed with UCSC student contributors and collaborators.
+                  In 2026, the project received a grant from the Mahindra
+                  Humanities Center at Harvard. The current team and advisory
+                  board are listed on the{" "}
+                  <Link href="/project-team">project team page</Link>.
                 </p>
 
                 <p>

@@ -3,9 +3,10 @@
     "id": "56e15ba7-37d8-5d2a-bf20-1325190ef58d",
     "slug": "psychedelic-information-bulletin",
     "title": "Psychedelic Information Bulletin",
-    "subtitle": "Trial issue-level import",
-    "summary": "A pilot compound-source import for the Psychedelic Information Bulletin / PIC Bulletin, organized as issue-level PDF records.",
-    "body": "This trial collection keeps the periodical run at collection level while preserving each issue as its own archive source with an original PDF.",
+    "subtitle": "PIC Bulletin nos. 32-34",
+    "summary": "Three late issues of the Psychedelic Information Bulletin / PIC Bulletin, a Boston-based periodical associated with Lisa Bieberman and the Psychedelic Information Center. The issues collect research summaries, drug-policy commentary, movement news, and practical notes from the turn of the 1970s.",
+    "body": "Overview: This collection comes from Lisa Bieberman's personal archive and preserves the issue-level PIB/PIC Bulletin files now represented here, with searchable records and OCR added for archive use.\nProvenance: Lisa Bieberman Collection.\nDigitization: Digitized by Paul Gillis-Smith.",
+    "cover_image_path": "documents/pic-bulletin-32/thumbnail/page-1.jpg",
     "status": "published"
   }
 ]

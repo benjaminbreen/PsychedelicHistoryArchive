@@ -11,6 +11,7 @@ type ArchiveFilterSidebarProps = {
     access?: string;
     region?: string;
     people?: string;
+    type?: string;
   };
   sources: ArchiveSource[];
 };
@@ -21,6 +22,7 @@ export function ArchiveFilterSidebar({ active = {}, sources }: ArchiveFilterSide
   const facetCounts = getFacetCounts(sources);
   const topTags = Object.entries(facetCounts.tags).sort((a, b) => b[1] - a[1]).slice(0, 5);
   const regions = Object.entries(facetCounts.regions).sort((a, b) => a[0].localeCompare(b[0]));
+  const types = Object.entries(facetCounts.types).sort((a, b) => a[0].localeCompare(b[0]));
 
   return (
     <aside className="hidden w-[17.5rem] shrink-0 pr-6 lg:block" id="filters">
@@ -43,10 +45,35 @@ export function ArchiveFilterSidebar({ active = {}, sources }: ArchiveFilterSide
           ))}
         </FacetGroup>
         <FacetGroup icon={<Tag className="h-4 w-4" />} title="Category">
-          <SelectLike label="All Categories" />
+          <form action="/archive" className="grid gap-2">
+            <select
+              className="focus-ring h-8 w-full rounded border border-archive-line bg-archive-surface px-3 text-sm text-archive-muted"
+              defaultValue={active.type ?? ""}
+              name="type"
+            >
+              <option value="">All Categories</option>
+              {types.map(([label, count]) => (
+                <option key={label} value={label}>{label} ({count.toLocaleString()})</option>
+              ))}
+            </select>
+            <button className="focus-ring h-8 rounded border border-archive-line bg-archive-surface px-3 text-xs font-semibold text-archive-ink hover:bg-archive-lavender2" type="submit">
+              Apply category
+            </button>
+          </form>
         </FacetGroup>
         <FacetGroup icon={<Tag className="h-4 w-4" />} title="Tags">
-          <SearchLike placeholder="Search tags..." />
+          <form action="/archive" className="grid gap-2">
+            <input
+              className="focus-ring h-8 w-full rounded border border-archive-line bg-archive-surface px-3 text-sm text-archive-ink placeholder:text-archive-muted/75"
+              defaultValue={active.tag}
+              name="tag"
+              placeholder="Search tags..."
+              type="search"
+            />
+            <button className="focus-ring h-8 rounded border border-archive-line bg-archive-surface px-3 text-xs font-semibold text-archive-ink hover:bg-archive-lavender2" type="submit">
+              Search tags
+            </button>
+          </form>
           <div className="mt-2 space-y-1">
             {topTags.map(([label, count]) => (
               <FacetCheckbox active={active.tag === label} count={count} href={`/archive?tag=${encodeURIComponent(label)}`} key={label} label={label} />
@@ -138,25 +165,6 @@ function ActivePill({ href, label }: { href: string; label: string }) {
   );
 }
 
-function SelectLike({ label }: { label: string }) {
-  return (
-    <button className="focus-ring flex h-8 w-full items-center justify-between rounded border border-archive-line bg-archive-surface px-3 text-left text-sm text-archive-muted" type="button">
-      {label}
-      <ChevronDown className="h-3.5 w-3.5" />
-    </button>
-  );
-}
-
-function SearchLike({ placeholder }: { placeholder: string }) {
-  return (
-    <input
-      className="focus-ring h-8 w-full rounded border border-archive-line bg-archive-surface px-3 text-sm text-archive-ink placeholder:text-archive-muted/75"
-      placeholder={placeholder}
-      type="search"
-    />
-  );
-}
-
 function formatMedium(label: string) {
   const plural: Record<string, string> = {
     Text: "Text",
@@ -170,6 +178,7 @@ function getFacetCounts(items: ArchiveSource[]) {
     eras: countBy(items, (item) => item.era),
     mediums: countBy(items, (item) => item.medium),
     regions: countBy(items, (item) => item.region),
+    types: countBy(items, (item) => item.type),
     tags: countByMany(items, (item) => item.tags)
   };
 }

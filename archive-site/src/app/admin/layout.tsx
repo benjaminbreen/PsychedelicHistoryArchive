@@ -31,6 +31,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
           <nav className="ml-auto flex items-center gap-2 text-sm font-semibold">
             <a className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/sources">Sources</a>
+            <a className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/collections">Collections</a>
+            <a className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/topics">Topics</a>
+            <a className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/bibliography">Bibliography</a>
             <a className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/archive">Public archive</a>
           </nav>
         </div>

@@ -14,6 +14,7 @@ import {
   getEraBySlug,
   sourceMatchesEra
 } from "@/lib/eras";
+import { getBibliographyForEra, itemTypeLabel, primaryUrl } from "@/lib/bibliography";
 import { getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
 import { getSourceTitleParts } from "@/lib/source-title";
 import { biographyProfiles } from "@/lib/biographies";
@@ -50,6 +51,7 @@ export default async function EraDetailPage({
   if (!era) notFound();
 
   const allSources = await getArchiveSourcesFromSupabase();
+  const furtherReading = await getBibliographyForEra(era.slug, 4);
   const sources = allSources
     .filter((source) => source.year && sourceMatchesEra(source.year, era))
     .sort((a, b) => a.year - b.year);
@@ -94,7 +96,7 @@ export default async function EraDetailPage({
             <EraStat label="Primary sources" value={sources.length} />
             <EraStat label="People" value={peopleSet.size} />
             <EraStat label="Collections" value={collectionSet.size} />
-            <EraStat label="Further reading" value={era.furtherReading.length} />
+            <EraStat label="Further reading" value={furtherReading.length} />
           </div>
         </div>
       </section>
@@ -268,24 +270,31 @@ export default async function EraDetailPage({
                 <span className="text-[0.84rem] text-archive-muted">Secondary sources</span>
               </header>
               <ul className="divide-y divide-archive-line px-6">
-                {era.furtherReading.map((item) => (
-                  <li className="grid grid-cols-[minmax(0,1fr)_auto] gap-4 py-4" key={item.title}>
+                {furtherReading.map((item) => (
+                  <li className="grid grid-cols-[minmax(0,1fr)_auto] gap-4 py-4" key={item.id}>
                     <div className="min-w-0">
-                      <h3 className="font-serif text-[0.98rem] font-semibold leading-snug text-archive-ink">
+                      <Link className="font-serif text-[0.98rem] font-semibold leading-snug text-archive-ink hover:text-archive-violet" href={primaryUrl(item) || "/further-reading"}>
                         {item.title}
-                      </h3>
+                      </Link>
                       <p className="mt-0.5 text-[0.82rem] leading-5 text-archive-muted">
-                        {item.byline}
+                        {item.contributors.map((contributor) => contributor.displayName).join(", ")}
+                        {item.publicationTitle ? ` · ${item.publicationTitle}` : ""}
+                        {item.year ? `, ${item.year}` : ""}
                       </p>
                       <p className="mt-1.5 text-[0.88rem] leading-[1.45] text-archive-ink/85">
-                        {item.note}
+                        {item.editorialNote}
                       </p>
                     </div>
                     <span className="self-start font-display text-[0.72rem] uppercase tracking-[0.08em] text-archive-muted border border-archive-line rounded-sm bg-archive-lavender2 px-2 py-0.5">
-                      {item.kind}
+                      {itemTypeLabel(item.itemType)}
                     </span>
                   </li>
                 ))}
+                {!furtherReading.length && (
+                  <li className="py-6 text-sm text-archive-muted">
+                    Vetted secondary sources for this era are being prepared.
+                  </li>
+                )}
               </ul>
               <div className="border-t border-archive-line px-6 py-3 text-right">
                 <Link

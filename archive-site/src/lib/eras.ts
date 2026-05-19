@@ -28,11 +28,11 @@ export const ERAS: EraDefinition[] = [
     label: "Pre-500 CE",
     eyebrow: "Archaeology & Antiquity",
     shortDescription:
-      "Archaeological and earliest textual evidence for ritual intoxication and visionary practice — Tassili rock art, Chavín San Pedro, soma, Eleusis, classical pharmacology.",
+      "Archaeological and early textual evidence for ritual intoxication: Tassili rock art, Chavín San Pedro, soma, Eleusis, classical pharmacology.",
     longDescription:
-      "From Tassili n'Ajjer mushroom-figure panels to Chavín de Huántar's San Pedro iconography, from soma in the Rigveda to Greek discussions of kykeon and the Eleusinian Mysteries, the era's evidence is overwhelmingly material: rock art, ceramics, mummified plants, and a thin layer of canonical text. Reading it requires its own interpretive apparatus, and the questions it sustains — what did they take, how, with what meaning — remain genuinely open.",
+      "The evidence for this era is mostly material rather than textual: rock art, ceramics, plant residues, and a thin layer of canonical text from the Vedic, Greek, and Roman worlds.",
     tagline:
-      "Rock art, ritual ceramics, sacred grains: the deep prehistory and early antiquity of altered states, read mostly through material remains.",
+      "The deep prehistory and early antiquity of altered states, read mostly through material remains.",
     yearEnd: 500,
     icon: "shamanism",
     bannerGradient:
@@ -45,30 +45,11 @@ export const ERAS: EraDefinition[] = [
       { name: "Plutarch", slug: "plutarch" },
       { name: "Dioscorides", slug: "dioscorides" }
     ],
-    furtherReading: [
-      {
-        title: "The Road to Eleusis: Unveiling the Secret of the Mysteries",
-        byline: "R. Gordon Wasson, Albert Hofmann & Carl A. P. Ruck · Harcourt Brace, 1978",
-        note: "The ergot-kykeon hypothesis that reframed scholarship on the Eleusinian Mysteries.",
-        kind: "Book"
-      },
-      {
-        title: "Soma: Divine Mushroom of Immortality",
-        byline: "R. Gordon Wasson · Harcourt Brace, 1968",
-        note: "The Amanita-soma argument; contested, generative, still cited.",
-        kind: "Book"
-      },
-      {
-        title: "Hallucinogens and Shamanism in Native South American Religions",
-        byline: "Michael J. Harner (ed.) · Oxford, 1973",
-        note: "Foundational essays on Andean and Amazonian visionary traditions extending into deep prehistory.",
-        kind: "Book"
-      }
-    ],
+    furtherReading: [],
     essay: [
-      "The evidence for human engagement with psychoactive substances in the deep past is overwhelmingly material rather than textual. Rock panels at Tassili n'Ajjer in the Algerian Sahara, dated to the seventh millennium BCE, show bee-headed dancers cradling what may be mushrooms; at Chavín de Huántar in the central Peruvian Andes, ceramic vessels and carved stones from the first millennium BCE depict the San Pedro cactus alongside fanged transformative figures. Across Eurasia, the discovery of cannabis residue in Pazyryk burials, opium poppy capsules in late Neolithic Mediterranean tombs, and amanita-fungus depictions on bronze-age objects all testify to ritual lives we can glimpse only in their material traces.",
-      "By the first millennium BCE, the textual record begins to thicken. The Rigveda's hymns to soma — composed in northwestern India between roughly 1500 and 1000 BCE — preserve liturgical detail about a divine intoxicant whose botanical identity has been argued over for two centuries. The Eleusinian Mysteries, observed annually at Eleusis from at least the seventh century BCE until their suppression in 392 CE, involved the drinking of kykeon under conditions of strict secrecy that classical authors honored. Greek and Roman natural-philosophical writing — Theophrastus, Pliny, Dioscorides — catalogues opium, mandrake, henbane, and hemp with practical sobriety. By 500 CE the apparatus of medical writing has stabilized; the visionary remains, mostly, off the page.",
-      "The archive's holdings for this era therefore lean heavily on iconography, archaeological description, and a small set of canonical texts. Reading them requires a double awareness: of what the maker or writer intended, and of what their object or word may have indexed in practices the historical record does not preserve."
+      "Direct evidence for psychedelic use in the deep past is thin, and the lack of evidence is itself one of the defining features of the era. A handful of well-documented archaeological cases — cannabis residue in Pazyryk burials, opium poppy capsules in Neolithic Mediterranean tombs — sit alongside a much larger body of speculative interpretation. Rock panels at Tassili n'Ajjer in the Algerian Sahara, sometimes read as depicting mushroom-using shamans, are far more ambiguous than the popular literature suggests. The San Pedro iconography at Chavín de Huántar in the Andes is on firmer ground but still tells us little about the ritual context.",
+      "The textual record is similarly uncertain. The Rigveda's hymns to soma describe a divine intoxicant whose botanical identity has been argued over for two centuries, with proposed candidates ranging from Amanita muscaria to ephedra to harmal. The Eleusinian Mysteries involved the drinking of kykeon under strict secrecy; Wasson, Hofmann, and Ruck proposed in 1978 that it was an ergot preparation, but there is no direct evidence for this, and the hypothesis remains contested. What we can say more confidently is that Greek and Roman writers — Theophrastus, Pliny, Dioscorides — catalogued opium, mandrake, henbane, and hemp with practical sobriety, and that by 500 CE the visionary remains, mostly, off the page.",
+      "*This is a placeholder summary. A full description will be added later.*"
     ]
   },
   {
@@ -76,11 +57,11 @@ export const ERAS: EraDefinition[] = [
     label: "500–1500",
     eyebrow: "Medieval Worlds, Pre-Columbian Americas",
     shortDescription:
-      "Mexica and Maya mushroom cults, Sufi cannabis treatises, European flying ointments, Bwiti origins, Vedic ritual continuities — a thousand years of regional traditions that barely speak to one another.",
+      "Mesoamerican mushroom imagery, Arab cannabis writing, and European herbals — a thousand years for which the evidence is regionally uneven and often indirect.",
     longDescription:
-      "The medieval millennium is, for this archive, the era in which distinct regional traditions of intoxication and vision develop in near-isolation. Mexica and Maya classic-period mushroom cults produce the Mixtec codices and the carved mushroom stones of highland Guatemala. Sufi poets and Arab botanists — Ibn al-Baytar most influentially — assemble a sophisticated literature of hashish. European witchcraft trial records and herbals record the use of solanaceous \"flying ointments.\" Bwiti and iboga emerge in West Central Africa. Each tradition has its own evidentiary culture; the archive's job is to keep them legible together.",
+      "Distinct regional traditions of intoxication developed across this millennium with little contact between them. The strongest evidence comes from the Mesoamerican mushroom stones and later Mixtec codices, and from Arab pharmacological writing on hashish. Claims about European \"flying ointments\" or about pre-modern African iboga use rest on much thinner evidence, and should be treated cautiously.",
     tagline:
-      "A thousand-year bridge era in which Mesoamerican, Islamic, European, African, and Vedic traditions of altered states develop in near-isolation.",
+      "Medieval regional traditions of altered states, unevenly documented.",
     yearStart: 501,
     yearEnd: 1500,
     icon: "indigenous-knowledge",
@@ -126,11 +107,11 @@ export const ERAS: EraDefinition[] = [
     label: "1500–1800",
     eyebrow: "Conquest, Encounter, Pharmacopoeia",
     shortDescription:
-      "Spanish chronicles of teonanácatl and peyote, suppression and survival of indigenous practice, first European reports of ayahuasca and kava, the global apothecary of the long Enlightenment.",
+      "Spanish chronicles of teonanácatl and peyote, the suppression of Indigenous practice, and the first European reports of ayahuasca and kava.",
     longDescription:
-      "From Sahagún's compilations of Mexica testimony in the Florentine Codex to José de Acosta's natural histories, from the Inquisition's pursuit of peyote to Hans Sloane's collecting in the Caribbean and Joseph Banks's Pacific voyages, the three centuries of the long early modern see the global pharmacopoeia assembled — and indigenous practice both suppressed and resilient. The era's sources are chronicles, inquisitorial trial records, herbals, ships' surgeons' journals, and the first sustained European reports of substances that would only later become central to Western pharmacology.",
+      "Three centuries in which the global pharmacopoeia was assembled by colonial powers and Indigenous knowledge-holders — at times collaboratively, more often by force. Sources include chronicles, Inquisition records, herbals, and ships' surgeons' journals.",
     tagline:
-      "Conquest ethnography, colonial pharmacology, and the slow assembly of a global apothecary — three centuries that set the terms for what followed.",
+      "Conquest ethnography and the slow assembly of a global apothecary.",
     yearStart: 1501,
     yearEnd: 1800,
     icon: "ethnobotany",
@@ -166,9 +147,9 @@ export const ERAS: EraDefinition[] = [
       }
     ],
     essay: [
-      "Between 1500 and 1800, European powers and the societies they encountered, conquered, and traded with built — sometimes collaboratively, sometimes violently — the first global pharmacopoeia. The earliest substantial European-language descriptions of substances that would later become central to the psychedelic story belong to this era: Sahagún's Mexica informants on teonanácatl and peyotl in the Florentine Codex; José de Acosta's Historia Natural; the Inquisition's prosecutions of curanderos in seventeenth-century Mexico; the East India Company's officers reporting on bhang, kava, and betel from the Indian Ocean rim.",
-      "These sources rarely use the conceptual vocabulary we would recognize today. \"Intoxication,\" \"witchcraft,\" \"frenzy,\" \"the Devil's herb,\" \"sleep,\" and \"melancholy\" are pressed into service to describe what may have been, in their original contexts, sacramental experiences. Reading them requires a double attention: to what the writer believed was happening, and to the practices being described that exceeded their conceptual frame.",
-      "By the eighteenth century, the apparatus of Linnaean botany and the medical-collegiate medical journal begins to absorb this knowledge, smoothing earlier wonder and horror into the language of systematic natural history. The era ends with Humphry Davy at the Pneumatic Institution and the threshold of the modern laboratory."
+      "Between 1500 and 1800, European powers and the societies they encountered built — sometimes collaboratively, often violently — the first global pharmacopoeia. The earliest substantial European-language descriptions of substances that would later become central to the psychedelic story belong to this era: Sahagún's Mexica informants on teonanácatl and peyotl in the Florentine Codex; José de Acosta's Historia Natural; the Inquisition's prosecutions of curanderos in seventeenth-century Mexico; East India Company officers reporting on bhang, kava, and betel.",
+      "These sources rarely use vocabulary we would recognize today. \"Intoxication,\" \"witchcraft,\" \"frenzy,\" \"the Devil's herb,\" and \"melancholy\" are pressed into service to describe what may have been, in their original contexts, sacramental experiences. By the eighteenth century the apparatus of Linnaean botany begins to absorb this knowledge, smoothing earlier wonder and horror into the language of natural history. The era ends with Humphry Davy at the Pneumatic Institution and the threshold of the modern laboratory.",
+      "*This is a placeholder summary. A full description will be added later.*"
     ]
   },
   {
@@ -176,11 +157,11 @@ export const ERAS: EraDefinition[] = [
     label: "1800–1850",
     eyebrow: "Romantic Pharmacology",
     shortDescription:
-      "Davy's nitrous oxide, Coleridge and De Quincey, Moreau de Tours's Du Hachisch — the first sustained Anglophone and Francophone literature of self-experiment with altered states.",
+      "Davy on nitrous oxide, Coleridge and De Quincey on opium, and Moreau de Tours on hashish — the first Anglophone and Francophone literature of drug self-experiment.",
     longDescription:
-      "Humphry Davy inhales nitrous oxide at the Pneumatic Institution in 1800 and writes the first widely circulated account of an induced altered state in English. Within a generation Coleridge and De Quincey have made opium a literary subject; Jacques-Joseph Moreau de Tours, working at the Bicêtre, will publish Du Hachisch et de l'Aliénation Mentale (1845), the first major clinical psychiatric work on a hallucinogen. The era invents the genre of the first-person introspective drug report.",
+      "Humphry Davy's 1800 nitrous oxide experiments at the Pneumatic Institution opened a new genre: the first-person introspective drug report. Within a generation Coleridge, De Quincey, and Moreau de Tours had made opium and hashish into subjects of serious literary and clinical writing.",
     tagline:
-      "Self-experiment as Romantic vocation: the first half-century in which the Anglophone and Francophone worlds learned to write seriously about altered states.",
+      "The half-century that learned to write seriously about altered states.",
     yearStart: 1801,
     yearEnd: 1850,
     icon: "nitrous-oxide",
@@ -216,9 +197,9 @@ export const ERAS: EraDefinition[] = [
       }
     ],
     essay: [
-      "On April 9, 1799, Humphry Davy inhaled nitrous oxide at the Pneumatic Institution in Bristol and recorded the experience in prose that the next half-century would treat as a model. Researches, Chemical and Philosophical (1800) opens the modern Anglophone literature of self-experiment with altered states. Within a generation Coleridge would publish 'Kubla Khan,' De Quincey the Confessions of an English Opium-Eater (1821), and Théophile Gautier, in Paris, his sketches of the Club des Hashischins.",
-      "The era's signature genre is the introspective first-person account: the experimenter is the experiment, and the experimental apparatus is the prose itself. The Romantic conviction that subjective experience is itself a form of knowledge — defensible against the encroachments of mechanistic science — gives these documents their argumentative force. They are, simultaneously, scientific reports and literary objects.",
-      "In Paris, Jacques-Joseph Moreau de Tours, working at the Bicêtre with patients and on himself, produces Du Hachisch et de l'Aliénation Mentale (1845) — the first sustained clinical psychiatric treatise on a hallucinogen, and arguably the first articulation of what Heffter, James, and Klüver will later develop into a full research program."
+      "On April 9, 1799, Humphry Davy inhaled nitrous oxide at the Pneumatic Institution in Bristol and recorded the experience in prose that the next half-century would treat as a model. Researches, Chemical and Philosophical (1800) opens the modern Anglophone literature of self-experiment with altered states. Within a generation Coleridge would publish 'Kubla Khan,' De Quincey the Confessions of an English Opium-Eater (1821), and Théophile Gautier his sketches of the Club des Hashischins.",
+      "The era's signature genre is the introspective first-person account: the experimenter is the experiment, and the experimental apparatus is the prose itself. In Paris, Jacques-Joseph Moreau de Tours, working at the Bicêtre, produced Du Hachisch et de l'Aliénation Mentale (1845) — the first sustained clinical psychiatric treatise on a hallucinogen, and arguably the first articulation of what Heffter, James, and Klüver would later develop into a full research program.",
+      "*This is a placeholder summary. A full description will be added later.*"
     ]
   },
   {
@@ -226,11 +207,11 @@ export const ERAS: EraDefinition[] = [
     label: "1850–1900",
     eyebrow: "Psychonauts & Isolation",
     shortDescription:
-      "Mitchell on mescal, Heffter isolating mescaline, William James's anaesthetic revelation, Mooney's Ghost Dance fieldwork — the lab, the clinic, and the ethnographic field site emerge.",
+      "Mitchell on mescal, Heffter isolating mescaline, William James on nitrous oxide, and Mooney's fieldwork on the Ghost Dance.",
     longDescription:
-      "Across the second half of the nineteenth century, the substances of the previous era are isolated, named, and absorbed into laboratory pharmacology — cocaine in 1860, mescaline by Arthur Heffter in 1897 — while ethnographers like James Mooney begin to document indigenous traditions in their own terms. Weir Mitchell publishes the first scientific account of mescal in 1896; William James lectures on the anaesthetic revelation; Havelock Ellis writes for the Contemporary Review on his mescaline experiment. The categories that will shape the next century — addiction, intoxication, hallucination, mystical experience — are essentially in place by 1900.",
+      "The plant intoxicants of earlier eras were isolated as alkaloids in this period — cocaine in 1860, mescaline by Arthur Heffter in 1897 — while ethnographers like James Mooney began to document Indigenous traditions on something closer to their own terms. The categories that would shape the twentieth century (addiction, hallucination, mystical experience) were largely in place by 1900.",
     tagline:
-      "The half-century in which the laboratory, the clinic, and the ethnographic field site converge on the modern category of the hallucinogen.",
+      "The laboratory, the clinic, and the field site converge on the modern hallucinogen.",
     yearStart: 1851,
     yearEnd: 1900,
     icon: "mescaline",
@@ -266,9 +247,9 @@ export const ERAS: EraDefinition[] = [
       }
     ],
     essay: [
-      "If 1800 to 1850 belongs to the Romantic self-experimenter, the next half-century belongs to the institutions: the laboratory, the medical journal, the asylum, the ethnographic field site, the natural-history museum. Chemists working in French and German laboratories isolate the active alkaloids of the great vegetable intoxicants — cocaine from coca leaves (1860), mescaline from peyote (Arthur Heffter, 1897) — and in doing so transform plants into molecules and cultural practices into pharmacological objects.",
-      "In Philadelphia, Weir Mitchell publishes the first scientific account of mescal in 1896; in Boston, William James returns repeatedly to nitrous oxide and what Benjamin Paul Blood had named \"the anaesthetic revelation,\" eventually weaving the material into The Varieties of Religious Experience. In Washington, James Mooney's Bureau of American Ethnology fieldwork on the Ghost Dance and the Kiowa peyote ceremony produces the first serious anthropological treatment of indigenous visionary practice. Havelock Ellis in London writes A New Artificial Paradise for the Contemporary Review.",
-      "The categories that will shape the twentieth century — addiction, intoxication, hallucination, mystical experience, ethnographic ritual — are essentially in place by 1900. So is the institutional structure that will carry them forward: the laboratory, the asylum, the journal, the museum."
+      "If 1800 to 1850 belongs to the Romantic self-experimenter, the next half-century belongs to the institutions: the laboratory, the medical journal, the asylum, the ethnographic field site. Chemists in French and German laboratories isolate the active alkaloids of the great vegetable intoxicants — cocaine from coca leaves (1860), mescaline from peyote (Arthur Heffter, 1897) — and in doing so transform plants into molecules and cultural practices into pharmacological objects.",
+      "In Philadelphia, Weir Mitchell publishes the first scientific account of mescal in 1896. In Boston, William James returns repeatedly to nitrous oxide and what Benjamin Paul Blood had named \"the anaesthetic revelation,\" eventually weaving the material into The Varieties of Religious Experience. In Washington, James Mooney's Bureau of American Ethnology fieldwork on the Ghost Dance and the Kiowa peyote ceremony produces the first serious anthropological treatment of Indigenous visionary practice. The categories that will shape the twentieth century — addiction, hallucination, mystical experience — are essentially in place by 1900.",
+      "*This is a placeholder summary. A full description will be added later.*"
     ]
   },
   {
@@ -276,11 +257,11 @@ export const ERAS: EraDefinition[] = [
     label: "1900–1942",
     eyebrow: "Mescaline & Modernism",
     shortDescription:
-      "Klüver and Beringer study mescal visions, Lewin publishes Phantastica, the Native American Church organizes, and a modernist literary imagination takes shape around the laboratory drug.",
+      "Klüver and Beringer on mescaline, Lewin's Phantastica, the Native American Church, and the modernist literary imagination.",
     longDescription:
-      "The early twentieth century makes mescaline the laboratory drug of psychiatry, anthropology, and modernist literature. Heinrich Klüver studies its visual phenomenology at Chicago; Kurt Beringer publishes Der Meskalinrausch (1927); Louis Lewin's Phantastica (1924) inaugurates the modern category of \"hallucinogen.\" The Native American Church incorporates in Oklahoma in 1918. Walter Benjamin writes his hashish protocols. By the eve of World War II, the conceptual and institutional ground is prepared for what 1943 will bring.",
+      "In the early twentieth century mescaline became the laboratory drug of psychiatry, anthropology, and literature. Heinrich Klüver studied its visual phenomenology at Chicago, Kurt Beringer published Der Meskalinrausch (1927), and Louis Lewin's Phantastica (1924) coined the modern category of the \"hallucinogen.\" The Native American Church incorporated in Oklahoma in 1918.",
     tagline:
-      "Four decades that make mescaline the model hallucinogen of laboratory psychiatry, anthropology, and the modernist imagination.",
+      "Four decades that made mescaline the model hallucinogen.",
     yearStart: 1901,
     yearEnd: 1942,
     icon: "mescaline",
@@ -351,7 +332,7 @@ export const ERAS: EraDefinition[] = [
       {
         title: "Acid Dreams: The Complete Social History of LSD",
         byline: "Martin A. Lee & Bruce Shlain · Grove Press, 1985",
-        note: "Still the most comprehensive narrative history of LSD from Hofmann through MKULTRA into the counterculture.",
+        note: "A narrative history of LSD from Hofmann through MKULTRA and into the counterculture.",
         kind: "Book"
       },
       {
@@ -376,7 +357,8 @@ export const ERAS: EraDefinition[] = [
     essay: [
       "On April 19, 1943, the Sandoz chemist Albert Hofmann ingested 250 micrograms of a substance he had first synthesized five years earlier and shelved as uninteresting. The bicycle ride home through wartime Basel — vivid, terrifying, transformative — initiates the modern psychedelic era.",
       "What follows in the next two decades is not yet \"the sixties.\" It is, instead, the strange middle period in which LSD circulates almost exclusively through the laboratory, the psychiatric clinic, and the covert intelligence program. Sandoz distributes thousands of ampules to researchers worldwide. The U.S. Army and Central Intelligence Agency fund studies under cover names. Aldous Huxley takes mescaline in Hollywood and writes a book.",
-      "By the late 1950s, ethnographers and amateur mycologists begin to bridge the gap between the laboratory and the long history of indigenous use. R. Gordon Wasson's 1955 velada with María Sabina in Huautla de Jiménez, reported in Life two years later, opens a channel through which the postwar laboratory will encounter — and very often misunderstand — much older traditions. By 1962 the conditions are in place for the cultural rupture that the next era will deliver."
+      "By the late 1950s, ethnographers and amateur mycologists begin to bridge the gap between the laboratory and the long history of Indigenous use. R. Gordon Wasson's 1955 velada with María Sabina in Huautla de Jiménez, reported in Life two years later, opens a channel through which the postwar laboratory will encounter — and very often misunderstand — much older traditions. By 1962 the conditions are in place for the cultural rupture that the next era will deliver.",
+      "*This is a placeholder summary. A full description will be added later.*"
     ]
   },
   {
@@ -471,6 +453,15 @@ export const ERAS: EraDefinition[] = [
 
 export function getEraBySlug(slug: string) {
   return ERAS.find((era) => era.slug === slug);
+}
+
+export function getEraForYear(year?: number | null) {
+  if (!year) return undefined;
+  return ERAS.find((era) => sourceMatchesEra(year, era));
+}
+
+export function eraHref(era: Pick<EraDefinition, "slug">) {
+  return `/eras/${era.slug}`;
 }
 
 export function sourceMatchesEra(year: number, era: EraDefinition) {

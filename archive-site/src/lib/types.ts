@@ -10,8 +10,13 @@ export type HostingStatus =
 export type SourceType =
   | "Book"
   | "Academic Article"
+  | "Ancient Text"
+  | "Archaeological Site"
+  | "Architectural Site"
   | "Essay"
   | "Letter"
+  | "Iconography"
+  | "Material Artifact"
   | "Patient Report"
   | "Medical Report"
   | "Audio/Video"

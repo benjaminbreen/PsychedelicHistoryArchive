@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowDownUp, ArrowRight, CalendarDays, ChevronDown, ChevronLeft, ChevronRight, FileText, Search, Tag } from "lucide-react";
+import { ArrowRight, CalendarDays, ChevronLeft, ChevronRight, FileText, Tag } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { PageShell } from "@/components/page/page-shell";
+import { getCollectionSourcesFromSupabase } from "@/lib/supabase-archive";
+import type { ArchiveSource } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Collections | The Psychedelic History Archive",
@@ -22,21 +24,10 @@ type CollectionCard = {
   theme: string;
 };
 
-const featuredCollection: CollectionCard = {
-  title: "The Birth of Psychedelic Inquiry",
-  description:
-    "From nineteenth-century investigations of altered states to early twentieth-century experiments in psychology, pharmacology, and spiritual experience.",
-  href: "/archive?medium=Text&era=1800-1950",
-  imageTone: "lab",
-  sourceCount: 36,
-  dateRange: "1800-1930",
-  theme: "Science, Psychology"
-};
-
 const collections: CollectionCard[] = [
   {
     title: "William James and Altered States",
-    description: "Writings on mystical experience, consciousness, and the varieties of religious experience.",
+    description: "James on mystical experience, nitrous oxide, and the varieties of religious experience.",
     href: "/archive?people=William%20James",
     imagePath: "/images/bios/william-james.webp",
     imageAlt: "Portrait of William James",
@@ -46,7 +37,7 @@ const collections: CollectionCard[] = [
   },
   {
     title: "Cannabis Before Prohibition",
-    description: "Medical texts, cultural accounts, and policy debates on cannabis in the nineteenth century.",
+    description: "Nineteenth-century medical and policy writing on cannabis, before it was outlawed.",
     href: "/archive?tag=Cannabis",
     imageTone: "botanical",
     sourceCount: 22,
@@ -55,7 +46,7 @@ const collections: CollectionCard[] = [
   },
   {
     title: "Peyote and Ethnography",
-    description: "Early ethnographic reports, ceremonial accounts, and cross-cultural interpretations.",
+    description: "Early ethnographic accounts of peyote use, mostly written by outside observers.",
     href: "/archive?tag=Peyote",
     imageTone: "paper",
     sourceCount: 28,
@@ -64,7 +55,7 @@ const collections: CollectionCard[] = [
   },
   {
     title: "Women in Psychedelic History",
-    description: "Pioneering women researchers, therapists, and writers whose work shaped the field.",
+    description: "Women researchers, therapists, and writers in twentieth-century psychedelic science.",
     href: "/archive?tag=Biography",
     imagePath: "/images/bios/eisner.webp",
     imageAlt: "Portrait of Betty Eisner",
@@ -74,7 +65,7 @@ const collections: CollectionCard[] = [
   },
   {
     title: "Nitrous Oxide and Consciousness",
-    description: "From recreational use to clinical experiments in anesthesia and mystical experience.",
+    description: "Nitrous oxide in fairground demonstrations, surgical anesthesia, and mystical writing.",
     href: "/archive?tag=Nitrous%20Oxide",
     imagePath: "/images/sources/anaesthetic-revelation.jpg",
     imageAlt: "Cover detail for The Anaesthetic Revelation",
@@ -84,7 +75,7 @@ const collections: CollectionCard[] = [
   },
   {
     title: "Psychiatry and Psychedelic Therapy",
-    description: "Clinical research, case studies, and debates in mid-century psychiatry.",
+    description: "Mid-century psychiatric research on LSD and mescaline as treatment tools.",
     href: "/archive?tag=Psychiatry",
     imageTone: "clinical",
     sourceCount: 27,
@@ -93,7 +84,7 @@ const collections: CollectionCard[] = [
   },
   {
     title: "Mysticism, Vision, and Experiment",
-    description: "The intersection of spiritual traditions and experimental explorations of the mind.",
+    description: "Where mystics, mediums, and laboratory experimenters met.",
     href: "/archive?tag=Mysticism",
     imageTone: "cosmic",
     sourceCount: 21,
@@ -102,8 +93,8 @@ const collections: CollectionCard[] = [
   },
   {
     title: "The 1950s Psychedelic Revival",
-    description: "Key experiments, researchers, and publications of the first psychedelic renaissance.",
-    href: "/archive?era=1950-1970",
+    description: "Mescaline, LSD, and the first wave of postwar psychedelic research.",
+    href: "/eras/1943-1962",
     imageTone: "cosmic",
     sourceCount: 23,
     dateRange: "1947-1960",
@@ -112,10 +103,18 @@ const collections: CollectionCard[] = [
 ];
 
 const collectionsPerPage = 16;
-const visibleCollections = collections.slice(0, collectionsPerPage);
-const totalPages = Math.ceil(collections.length / collectionsPerPage);
 
-export default function CollectionsPage() {
+export default async function CollectionsPage() {
+  const supabaseCollections = await getCollectionSourcesFromSupabase();
+  const liveCollections = supabaseCollections.length ? supabaseCollections.map(collectionSourceToCard) : collections;
+  const showFeaturedCollection = liveCollections.length >= 3;
+  const featured = showFeaturedCollection ? liveCollections[0] : undefined;
+  const visibleCollections = showFeaturedCollection
+    ? liveCollections.slice(1, collectionsPerPage)
+    : liveCollections.slice(0, collectionsPerPage);
+  const shownCollectionCount = visibleCollections.length + (featured ? 1 : 0);
+  const totalPages = Math.ceil(liveCollections.length / collectionsPerPage);
+
   return (
     <>
       <SiteHeader activeLabel="Collections" />
@@ -135,29 +134,16 @@ export default function CollectionsPage() {
                 <CalendarDays className="h-6 w-6" />
               </span>
               <span>
-                <span className="block text-[1.02rem] font-semibold text-archive-ink">{collections.length} collections</span>
-                <span className="mt-1 block text-sm text-archive-muted">Explore our curated groupings</span>
+                <span className="block text-[1.02rem] font-semibold text-archive-ink">{collectionCountLabel(liveCollections.length)}</span>
+                <span className="mt-1 block text-sm text-archive-muted">Browse curated source groupings</span>
               </span>
             </div>
           </div>
         </header>
 
-        <section className="mt-7 rounded-md border border-archive-line bg-archive-surface/70 p-3 shadow-sm">
-          <div className="grid gap-3 xl:grid-cols-[minmax(20rem,1fr)_13rem_10rem_12rem_10rem]">
-            <div className="flex min-h-11 items-center gap-3 rounded-md border border-archive-line bg-archive-surface px-3.5 text-[0.86rem] text-archive-muted">
-              <Search className="h-4 w-4" />
-              <span>Search collections by title, theme, person, or keyword...</span>
-            </div>
-            <FilterButton icon={<ArrowDownUp className="h-4 w-4" />} label="Sort by: Newest" />
-            <FilterButton icon={<CalendarDays className="h-4 w-4" />} label="Era: All" />
-            <FilterButton icon={<Tag className="h-4 w-4" />} label="Theme: All" />
-            <FilterButton icon={<FileText className="h-4 w-4" />} label="Type: All" />
-          </div>
-        </section>
-
-        <section className="mt-4">
-          <FeaturedCollection collection={featuredCollection} />
-          <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+        <section className="mt-7">
+          {featured && <FeaturedCollection collection={featured} />}
+          <div className={featured ? "mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4" : "grid gap-3 md:grid-cols-2 xl:grid-cols-4"}>
             {visibleCollections.map((collection) => (
               <CollectionTile collection={collection} key={collection.title} />
             ))}
@@ -166,15 +152,29 @@ export default function CollectionsPage() {
 
         <footer className="mt-6 grid gap-4 text-sm text-archive-muted md:grid-cols-[1fr_auto_1fr] md:items-center">
           <Link className="focus-ring inline-flex w-fit items-center gap-2 rounded-sm font-semibold text-archive-violet transition hover:text-archive-violetDark" href="/archive">
-            View all collections <ArrowRight className="h-4 w-4" />
+            Browse all sources <ArrowRight className="h-4 w-4" />
           </Link>
           {totalPages > 1 ? <Pagination pageCount={totalPages} /> : <span />}
-          <span className="md:justify-self-end">Showing 1-{visibleCollections.length} of {collections.length} collections</span>
+          <span className="md:justify-self-end">{showingCollectionsLabel(shownCollectionCount, liveCollections.length)}</span>
         </footer>
       </PageShell>
       <SiteFooter />
     </>
   );
+}
+
+function collectionSourceToCard(source: ArchiveSource): CollectionCard {
+  return {
+    title: source.title,
+    description: source.summary || source.excerpt || "Curated collection from the archive.",
+    href: `/collections/${source.slug}`,
+    imagePath: source.imagePath,
+    imageAlt: source.imageAlt || source.title,
+    imageTone: "paper",
+    sourceCount: source.collectionItemCount ?? source.collectionItems?.length ?? 0,
+    dateRange: source.displayDate,
+    theme: source.subtitle || "Collection"
+  };
 }
 
 function Pagination({ pageCount }: { pageCount: number }) {
@@ -195,18 +195,6 @@ function Pagination({ pageCount }: { pageCount: number }) {
         <ChevronRight className="h-4 w-4" />
       </PaginationButton>
     </div>
-  );
-}
-
-function FilterButton({ icon, label }: { icon: React.ReactNode; label: string }) {
-  return (
-    <button className="focus-ring inline-flex min-h-11 items-center justify-between gap-3 rounded-md border border-archive-line bg-archive-surface px-4 text-[0.86rem] font-semibold text-archive-ink transition hover:border-archive-violet/40 hover:bg-archive-lavender2" type="button">
-      <span className="inline-flex items-center gap-3">
-        <span className="text-archive-violet">{icon}</span>
-        {label}
-      </span>
-      <ChevronDown className="h-4 w-4 text-archive-muted" />
-    </button>
   );
 }
 
@@ -320,3 +308,12 @@ const imageToneClasses = {
   cosmic: "bg-[radial-gradient(circle_at_50%_45%,#E2B85B_0_10%,#2B4864_11%_28%,#743D52_29%_42%,#1D1B2E_43%)]",
   paper: "bg-[linear-gradient(135deg,#F8F1DF,#D1BE91_48%,#7F7055)]"
 };
+
+function collectionCountLabel(count: number) {
+  return `${count} ${count === 1 ? "collection" : "collections"}`;
+}
+
+function showingCollectionsLabel(shown: number, total: number) {
+  if (total <= shown) return `Showing ${collectionCountLabel(total)}`;
+  return `Showing 1-${shown} of ${collectionCountLabel(total)}`;
+}

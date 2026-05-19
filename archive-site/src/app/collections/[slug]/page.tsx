@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { notFound, redirect } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -7,7 +8,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SourceImage } from "@/components/source-image";
 import { SourceReaderTabs } from "@/components/source-reader-tabs";
 import { Chip } from "@/components/ui/chip";
-import { SITE_NAME, canonicalPath, seoDescription, sourceImageMetadata } from "@/lib/seo";
+import { JsonLd, SITE_NAME, buildBreadcrumbJsonLd, buildCollectionJsonLd, canonicalPath, seoDescription, sourceImageMetadata } from "@/lib/seo";
 import { getCollectionSourceFromSupabase } from "@/lib/supabase-archive";
 import type { ArchiveSource } from "@/lib/types";
 
@@ -81,8 +82,19 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
 }
 
 function CollectionSourcePage({ source }: { source: ArchiveSource }) {
+  const collectionNotes = parseCollectionNotes(source.excerpt, source.summary);
+  const structuredData = [
+    buildCollectionJsonLd(source),
+    buildBreadcrumbJsonLd([
+      { name: "Home", path: "/" },
+      { name: "Collections", path: "/collections" },
+      { name: source.title, path: `/collections/${source.slug}` }
+    ])
+  ];
+
   return (
     <>
+      <JsonLd data={structuredData} />
       <SiteHeader activeLabel="Collections" variant="source" />
       <main className="container-page py-6">
         <Link className="focus-ring mb-5 inline-flex items-center gap-2 rounded-sm text-sm font-semibold text-archive-muted hover:text-archive-violet" href="/collections">
@@ -124,14 +136,15 @@ function CollectionSourcePage({ source }: { source: ArchiveSource }) {
 
           <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
             <div className="rounded-lg border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] p-4 shadow-[0_10px_28px_rgb(var(--archive-shadow)/0.05)]">
-              <div className="grid grid-cols-[5rem_1fr] gap-4">
-                <SourceImage className="aspect-[4/5] w-full" source={source} />
+              <div className="grid grid-cols-[7rem_1fr] gap-4">
+                <SourceImage className="aspect-[4/5] w-full shadow-[0_8px_18px_rgb(var(--archive-shadow)/0.08)]" source={source} />
                 <div>
                   <div className="text-[10px] font-bold uppercase tracking-[0.1em] text-archive-olive">
                     Collection
                   </div>
                   <p className="mt-2 font-semibold">Compound source</p>
                   <p className="mt-2 text-sm text-archive-muted">{source.displayDate}</p>
+                  <p className="mt-3 text-sm font-semibold text-archive-ink">{source.collectionItemCount ?? 0} item-level records</p>
                 </div>
               </div>
             </div>
@@ -141,6 +154,8 @@ function CollectionSourcePage({ source }: { source: ArchiveSource }) {
               <dl className="mt-5 space-y-3 text-sm">
                 <Detail label="Archive ID" value={source.id} />
                 <Detail label="Items" value={`${source.collectionItemCount ?? 0}`} />
+                {collectionNotes.provenance && <Detail label="Provenance" value={collectionNotes.provenance} />}
+                {collectionNotes.digitization && <Detail label="Digitization" value={<CollectionNoteValue value={collectionNotes.digitization} />} />}
                 <Detail label="Rights" value={source.rights} />
                 <Detail label="Citation" value={source.citation} />
               </dl>
@@ -171,11 +186,40 @@ function MetaCell({ label, value }: { label: string; value: string }) {
   );
 }
 
-function Detail({ label, value }: { label: string; value: string }) {
+function Detail({ label, value }: { label: string; value: ReactNode }) {
   return (
     <div className="grid grid-cols-[5.4rem_1fr] gap-3 border-b border-archive-line/80 pb-3 last:border-b-0">
       <dt className="text-[13px] font-semibold text-archive-ink">{label}</dt>
       <dd className="text-[13px] leading-5 text-archive-muted">{value || "Not recorded"}</dd>
     </div>
   );
+}
+
+function CollectionNoteValue({ value }: { value: string }) {
+  if (!value.includes("Paul Gillis-Smith")) return value;
+  const [before, after] = value.split("Paul Gillis-Smith");
+
+  return (
+    <>
+      {before}
+      <Link className="font-semibold text-archive-violet hover:text-archive-violetDark" href="/project-team#paul-gillis-smith">
+        Paul Gillis-Smith
+      </Link>
+      {after}
+    </>
+  );
+}
+
+function parseCollectionNotes(notes: string, summary: string) {
+  if (!notes || notes === summary) return {};
+
+  return notes.split(/\n+/).reduce<{ provenance?: string; digitization?: string }>((accumulator, line) => {
+    const [rawLabel, ...rest] = line.split(":");
+    const label = rawLabel.trim().toLowerCase();
+    const value = rest.join(":").trim();
+    if (!value) return accumulator;
+    if (label === "provenance") accumulator.provenance = value;
+    if (label === "digitization") accumulator.digitization = value;
+    return accumulator;
+  }, {});
 }

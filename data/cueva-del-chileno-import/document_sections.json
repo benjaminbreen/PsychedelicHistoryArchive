@@ -1,0 +1,47 @@
+[
+  {
+    "id": "ab32021b-4169-5bab-9cf4-43442bdd5700",
+    "document_id": "fab1f1da-ebe2-5453-947f-3ec50f9418f2",
+    "position": 1,
+    "heading": "Site Overview",
+    "section_type": "overview",
+    "body_format": "markdown",
+    "body": "Cueva del Chileno is a dry rock shelter in the Sora River valley of the Lipez Altiplano in southwestern Bolivia, at roughly 3,900 meters above sea level. Archaeological work at the shelter documents intermittent human use across roughly four millennia, but the site is especially important for psychedelic history because of a single, unusually well-preserved ritual bundle dated to the early second millennium CE.\n\n{{figure:site}}\n\nThe bundle was not found in a tropical ayahuasca context. It came from a high-altitude Andean setting where the detected plants do not naturally grow. That mismatch is historically important: the find points to travel, exchange, or specialist procurement across ecological zones rather than a local plant assemblage. The Penn State release quotes Jose Capriles calling the find the \"largest number of psychoactive substances ever found\" in a South American archaeological assemblage.\n\nThis makes Cueva del Chileno a better archive entry than broad claims about ancient mystery cults. The evidence is material, dated, chemically tested, and tied to specific ritual equipment."
+  },
+  {
+    "id": "837ed998-8840-5893-a827-1a80cfd1e6f9",
+    "document_id": "fab1f1da-ebe2-5453-947f-3ec50f9418f2",
+    "position": 2,
+    "heading": "The Ritual Bundle",
+    "section_type": "transcript",
+    "body_format": "markdown",
+    "body": "The bundle was wrapped in a large leather bag. Inside were two carved wooden snuffing tablets, a carved snuffing tube with human-hair braids, a pair of llama-bone spatulas, a polychrome textile band, dried plant fragments tied with fiber and wool strings, and a pouch sewn from three fox snouts. The PNAS release summarizes the date directly: \"Radiocarbon dating traced the bundle to 905-1170 CE.\"\n\n{{figure:bundle}}\n\nThese objects matter because they are not merely symbolic. Snuffing tablets, tubes, and spatulas are part of a recognizable Andean and Amazonian technology for preparing and ingesting powdered psychoactive plants. The fox-snout pouch is the key tested object: scrapings from its interior produced the chemical evidence that anchors the interpretation.\n\n{{figure:pouch}}\n\nThe assemblage also cautions against flattening the find into a single drug name. It appears to preserve a small ritual pharmacopoeia, not a single plant."
+  },
+  {
+    "id": "a784687f-19f6-570e-9c9f-3c12b2bcb32f",
+    "document_id": "fab1f1da-ebe2-5453-947f-3ec50f9418f2",
+    "position": 3,
+    "heading": "Chemical Evidence",
+    "section_type": "transcript",
+    "body_format": "markdown",
+    "body": "Miller, Albarracin-Jordan, Moore, and Capriles analyzed residue samples using liquid chromatography-tandem mass spectrometry. They detected cocaine and benzoylecgonine, indicating coca; bufotenine, consistent with *Anadenanthera* vilca or cebil; harmine, associated with *Banisteriopsis caapi* or related harmala-bearing plants; DMT, found in several South American plants including *Psychotria* and *Anadenanthera* species; and a possible psilocin signal.\n\nThe UC Berkeley release framed the result as the \"first evidence of ancient South Americans potentially combining\" plants into an ayahuasca-like preparation. That wording is useful because it remains conditional. Harmine and DMT together are highly significant, but residues alone cannot show whether the plants were brewed as a beverage, inhaled as a composite snuff, or used in more than one preparation.\n\nThe strongest claim is therefore precise: Cueva del Chileno provides direct archaeological evidence that a ritual specialist had access to multiple psychoactive plants and tools for their preparation or ingestion around 1,000 years ago."
+  },
+  {
+    "id": "20ad4c81-f62b-5030-b917-e9724772bfa7",
+    "document_id": "fab1f1da-ebe2-5453-947f-3ec50f9418f2",
+    "position": 4,
+    "heading": "Mobility, Knowledge, And Ritual Authority",
+    "section_type": "transcript",
+    "body_format": "markdown",
+    "body": "The plants implied by the chemical profile do not fit the immediate highland environment. Coca, *Anadenanthera*, and harmine- or DMT-bearing plants point toward lower-elevation and tropical ecological zones. Penn State quoted Melanie Miller on this point: \"None of the psychoactive compounds we found\" came from plants growing in the local Andes.\n\nThat makes the bundle evidence for more than intoxication. It documents botanical knowledge, material skill, and access to exchange routes or long-distance movement. In the period after Tiwanaku's political fragmentation, the owner of the bundle appears to have preserved a ritual toolkit whose power depended partly on plants obtained from far beyond the shelter.\n\nCueva del Chileno should therefore be read as a compact archive of Andean ritual expertise: carved tools, animal materials, textiles, plant residues, and high-altitude deposition all brought together in one find."
+  },
+  {
+    "id": "ca8bde79-a2ca-5741-8897-8ea9210c9933",
+    "document_id": "fab1f1da-ebe2-5453-947f-3ec50f9418f2",
+    "position": 5,
+    "heading": "Sources",
+    "section_type": "note",
+    "body_format": "markdown",
+    "body": "- Miller, Melanie J., Juan Albarracin-Jordan, Christine Moore, and Jose M. Capriles. \"Chemical evidence for the use of multiple psychotropic plants in a 1,000-year-old ritual bundle from South America.\" *Proceedings of the National Academy of Sciences* 116, no. 23 (2019): 11207-11212. [doi:10.1073/pnas.1902174116](https://doi.org/10.1073/pnas.1902174116). PubMed: [PMID 31061128](https://pubmed.ncbi.nlm.nih.gov/31061128/); PMCID: PMC6561276.\n- Penn State / EurekAlert, [\"Ancient ritual bundle contained multiple psychotropic plants\"](https://www.eurekalert.org/news-releases/712994), May 6, 2019.\n- UC Berkeley News, [\"Ayahuasca fixings found in 1,000-year-old Andean sacred bundle\"](https://news.berkeley.edu/2019/05/06/ayahuasca-sacred-bundle/), May 6, 2019.\n- PNAS / EurekAlert, [\"Chemical hints of ayahuasca use in pre-Columbian rituals\"](https://www.eurekalert.org/news-releases/622296), May 6, 2019."
+  }
+]

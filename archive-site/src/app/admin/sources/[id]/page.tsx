@@ -1,9 +1,28 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, Save } from "lucide-react";
-import { MarkdownContent } from "@/components/markdown-content";
-import { createDocumentSection, saveDocumentSection, seedSectionFromImportedText, updateSourceMetadata } from "@/app/admin/actions";
-import { getAdminSource, isAdminWritable, type AdminDocumentFigure, type AdminDocumentSection, type AdminSource } from "@/lib/admin-cms";
+import { ArrowDown, ArrowLeft, ArrowUp, Copy, ExternalLink, Save, Trash2 } from "lucide-react";
+import { CopyTokenButton } from "@/components/admin/copy-token-button";
+import { MarkdownSectionEditor } from "@/components/admin/markdown-section-editor";
+import {
+  addDocumentPerson,
+  addDocumentTag,
+  addSourceToCollection,
+  createDocumentFigure,
+  createDocumentSection,
+  deleteDocumentFigure,
+  deleteDocumentSection,
+  duplicateDocumentSection,
+  moveDocumentSection,
+  removeDocumentPerson,
+  removeDocumentTag,
+  removeSourceFromCollection,
+  saveDocumentSection,
+  seedSectionFromImportedText,
+  updateTagVisibility,
+  updateDocumentFigure,
+  updateSourceMetadata
+} from "@/app/admin/actions";
+import { getAdminSource, isAdminWritable, listAdminCollections, listAdminPeople, listAdminTags, type AdminCollectionListItem, type AdminDocumentFigure, type AdminDocumentPerson, type AdminDocumentSection, type AdminDocumentTag, type AdminPerson, type AdminSource, type AdminSourceCollectionMembership, type AdminTag } from "@/lib/admin-cms";
 import { getStoragePublicUrl } from "@/lib/supabase";
 import type { SourceFigure } from "@/lib/types";
 
@@ -15,7 +34,12 @@ type AdminSourcePageProps = {
 
 export default async function AdminSourcePage({ params }: AdminSourcePageProps) {
   const { id } = await params;
-  const source = await getAdminSource(id);
+  const [source, people, tags, collections] = await Promise.all([
+    getAdminSource(id),
+    listAdminPeople(),
+    listAdminTags(),
+    listAdminCollections()
+  ]);
   if (!source) notFound();
 
   const figures = mapAdminFigures(source.document_figures);
@@ -47,13 +71,15 @@ export default async function AdminSourcePage({ params }: AdminSourcePageProps) 
       <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_26rem]">
         <div className="space-y-6">
           <MetadataForm source={source} />
+          <RelationshipsPanel collections={collections} people={people} source={source} tags={tags} />
           <TranscriptSections sourceId={source.id} slug={source.slug} sections={sections} figures={figures} />
         </div>
         <aside className="space-y-5 xl:sticky xl:top-6 xl:self-start">
           <SourceHealthPanel source={source} sectionCount={sections.length} figureCount={figures.length} />
           <ImportedTextPanel sourceId={source.id} slug={source.slug} stats={importedTextStats} />
-          <FigureReferencePanel figures={figures} />
-          <CreateSectionForm sourceId={source.id} slug={source.slug} />
+          <FigureReferencePanel figures={source.document_figures ?? []} sourceId={source.id} slug={source.slug} />
+          <CreateFigureForm sourceId={source.id} slug={source.slug} />
+          <CreateSectionForm figures={figures} sourceId={source.id} slug={source.slug} />
         </aside>
       </div>
     </div>
@@ -107,7 +133,124 @@ function MetadataForm({ source }: { source: AdminSource }) {
   );
 }
 
-function TranscriptSections({ sourceId, slug, sections, figures }: { sourceId: string; slug: string; sections?: AdminDocumentSection[]; figures: SourceFigure[] }) {
+function RelationshipsPanel({ collections, people, source, tags }: { collections: AdminCollectionListItem[]; people: AdminPerson[]; source: AdminSource; tags: AdminTag[] }) {
+  const sourcePeople = (source.document_people ?? []).map((item) => ({
+    role: item.role || "person",
+    person: firstRelated(item.people)
+  })).filter((item) => Boolean(item.person?.id));
+  const sourceTags = (source.document_tags ?? []).map((item) => firstRelated(item.tags)).filter((tag): tag is AdminTag => Boolean(tag?.id));
+  const memberships = [...(source.collection_documents ?? [])].sort((a, b) => (a.position ?? 0) - (b.position ?? 0));
+
+  return (
+    <section className="rounded-md border border-archive-line bg-archive-surface p-5 shadow-sm">
+      <h3 className="text-lg font-semibold">Relationships And Visibility</h3>
+      <p className="mt-1 text-sm text-archive-muted">
+        Source visibility is controlled by Public status above. Draft sources stay editable here but are excluded from archive listings and public source pages.
+      </p>
+
+      <div className="mt-5 grid gap-5 xl:grid-cols-3">
+        <div className="rounded-md border border-archive-line bg-archive-paper p-4">
+          <h4 className="font-semibold">People</h4>
+          <div className="mt-3 space-y-2">
+            {sourcePeople.length ? sourcePeople.map(({ person, role }) => person && (
+              <form action={removeDocumentPerson} className="flex items-center gap-2 rounded-md border border-archive-line bg-white px-3 py-2 text-sm" key={`${person.id}-${role}`}>
+                <input name="document_id" type="hidden" value={source.id} />
+                <input name="slug" type="hidden" value={source.slug} />
+                <input name="person_id" type="hidden" value={person.id} />
+                <input name="role" type="hidden" value={role} />
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate font-semibold">{person.name}</span>
+                  <span className="block text-xs text-archive-muted">{role}</span>
+                </span>
+                <button className="focus-ring rounded-md border border-red-200 px-2 py-1 text-xs font-semibold text-red-700" type="submit">Remove</button>
+              </form>
+            )) : <p className="text-sm text-archive-muted">No people attached.</p>}
+          </div>
+          <form action={addDocumentPerson} className="mt-4 space-y-3">
+            <input name="document_id" type="hidden" value={source.id} />
+            <input name="slug" type="hidden" value={source.slug} />
+            <SelectObjectField label="Add person" name="person_id" options={people.map((person) => ({ label: person.name, value: person.id }))} />
+            <TextField label="Role" name="role" value="person" />
+            <SaveButton label="Add person" />
+          </form>
+        </div>
+
+        <div className="rounded-md border border-archive-line bg-archive-paper p-4">
+          <h4 className="font-semibold">Tags And Topics</h4>
+          <div className="mt-3 space-y-2">
+            {sourceTags.length ? sourceTags.map((tag) => (
+              <div className="rounded-md border border-archive-line bg-white px-3 py-2 text-sm" key={tag.id}>
+                <div className="flex items-start gap-2">
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate font-semibold">{tag.name}</span>
+                    <span className="block text-xs text-archive-muted">{tag.tag_type || "tag"} · {tag.status || "published"}</span>
+                  </span>
+                  <form action={removeDocumentTag}>
+                    <input name="document_id" type="hidden" value={source.id} />
+                    <input name="slug" type="hidden" value={source.slug} />
+                    <input name="tag_id" type="hidden" value={tag.id} />
+                    <button className="focus-ring rounded-md border border-red-200 px-2 py-1 text-xs font-semibold text-red-700" type="submit">Remove</button>
+                  </form>
+                </div>
+                <form action={updateTagVisibility} className="mt-2 flex items-end gap-2">
+                  <input name="document_id" type="hidden" value={source.id} />
+                  <input name="tag_id" type="hidden" value={tag.id} />
+                  <SelectField label="Topic card" name="status" options={STATUSES} value={tag.status || "published"} />
+                  <button className="focus-ring h-10 rounded-md border border-archive-line bg-white px-3 text-xs font-semibold" type="submit">Save</button>
+                </form>
+              </div>
+            )) : <p className="text-sm text-archive-muted">No tags attached.</p>}
+          </div>
+          <form action={addDocumentTag} className="mt-4 space-y-3">
+            <input name="document_id" type="hidden" value={source.id} />
+            <input name="slug" type="hidden" value={source.slug} />
+            <SelectObjectField label="Add tag" name="tag_id" options={tags.map((tag) => ({ label: `${tag.name}${tag.status === "draft" ? " (draft)" : ""}`, value: tag.id }))} />
+            <SaveButton label="Add tag" />
+          </form>
+        </div>
+
+        <div className="rounded-md border border-archive-line bg-archive-paper p-4">
+          <h4 className="font-semibold">Collections</h4>
+          <div className="mt-3 space-y-2">
+            {memberships.length ? memberships.map((membership) => {
+              const collection = firstRelated(membership.collections);
+              return (
+                <form action={addSourceToCollection} className="rounded-md border border-archive-line bg-white p-3 text-sm" key={`${membership.collection_id}-${membership.document_id}`}>
+                  <input name="document_id" type="hidden" value={source.id} />
+                  <input name="slug" type="hidden" value={source.slug} />
+                  <input name="collection_id" type="hidden" value={membership.collection_id} />
+                  <div className="flex items-start gap-2">
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate font-semibold">{collection?.title || membership.collection_id}</span>
+                      <span className="block text-xs text-archive-muted">{collection?.status || "draft"}</span>
+                    </span>
+                    <button className="focus-ring rounded-md border border-red-200 px-2 py-1 text-xs font-semibold text-red-700" formAction={removeSourceFromCollection} type="submit">Remove</button>
+                  </div>
+                  <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                    <TextField label="Position" name="position" type="number" value={membership.position?.toString()} />
+                    <TextField label="Sequence no." name="sequence_number" type="number" value={membership.sequence_number?.toString()} />
+                    <TextField label="Sequence label" name="sequence_label" value={membership.sequence_label} />
+                    <TextField label="Issue date" name="issue_date" value={membership.issue_date} />
+                  </div>
+                  <TextAreaField label="Caption" name="editorial_caption" rows={2} value={membership.editorial_caption} />
+                  <button className="focus-ring mt-3 h-9 rounded-md bg-archive-violet px-3 text-xs font-semibold text-white" type="submit">Save membership</button>
+                </form>
+              );
+            }) : <p className="text-sm text-archive-muted">Not attached to a collection.</p>}
+          </div>
+          <form action={addSourceToCollection} className="mt-4 space-y-3">
+            <input name="document_id" type="hidden" value={source.id} />
+            <input name="slug" type="hidden" value={source.slug} />
+            <SelectObjectField label="Add to collection" name="collection_id" options={collections.map((collection) => ({ label: `${collection.title} (${collection.status || "draft"})`, value: collection.id }))} />
+            <SaveButton label="Add collection" />
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TranscriptSections({ sourceId, slug, sections = [], figures }: { sourceId: string; slug: string; sections?: AdminDocumentSection[]; figures: SourceFigure[] }) {
   return (
     <section className="rounded-md border border-archive-line bg-archive-surface p-5 shadow-sm">
       <h3 className="text-lg font-semibold">Markdown Sections</h3>
@@ -116,42 +259,43 @@ function TranscriptSections({ sourceId, slug, sections, figures }: { sourceId: s
       </p>
 
       <div className="mt-5 space-y-5">
-        {sections?.length ? sections.map((section) => (
+        {sections.length ? sections.map((section, index) => (
           <form action={saveDocumentSection} className="rounded-md border border-archive-line bg-archive-paper p-4" key={section.id}>
             <input name="section_id" type="hidden" value={section.id} />
             <input name="document_id" type="hidden" value={sourceId} />
             <input name="slug" type="hidden" value={slug} />
 
-            <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_12rem_10rem]">
-              <TextField label="Heading" name="heading" value={section.heading} />
-              <SelectField label="Type" name="section_type" options={SECTION_TYPES} value={section.section_type} />
-              <SelectField label="Format" name="body_format" options={BODY_FORMATS} value={section.body_format || "plain"} />
-            </div>
-
-            <div className="mt-4 grid gap-4 lg:grid-cols-2">
-              <label className="block">
-                <span className="text-xs font-bold uppercase tracking-[0.08em] text-archive-muted">Body</span>
-                <textarea
-                  className="focus-ring mt-1 min-h-[28rem] w-full rounded-md border border-archive-line bg-white px-3 py-2 font-mono text-sm leading-6"
-                  name="body"
-                  defaultValue={section.body ?? ""}
-                />
-              </label>
-              <div>
-                <div className="text-xs font-bold uppercase tracking-[0.08em] text-archive-muted">Current preview</div>
-                <div className="mt-1 min-h-[28rem] rounded-md border border-archive-line bg-white p-4">
-                  {(section.body_format === "markdown") ? (
-                    <MarkdownContent className="source-transcript source-markdown space-y-5 text-archive-ink" figures={figures} markdown={section.body ?? ""} />
-                  ) : (
-                    <div className="source-transcript space-y-5 text-archive-ink">
-                      {(section.body ?? "").split(/\n{2,}/).filter(Boolean).map((paragraph: string, index: number) => (
-                        <p key={`${index}-${paragraph.slice(0, 18)}`}>{paragraph}</p>
-                      ))}
-                    </div>
-                  )}
-                </div>
+            <div className="mb-4 flex flex-wrap items-center gap-2 border-b border-archive-line pb-3">
+              <span className="font-mono text-xs text-archive-muted">Section {index + 1}</span>
+              <div className="ml-auto flex flex-wrap gap-2">
+                <button className="focus-ring inline-flex h-8 items-center gap-1 rounded-md border border-archive-line bg-white px-2 text-xs font-semibold disabled:cursor-not-allowed disabled:opacity-40" disabled={index === 0} formAction={moveDocumentSection} name="direction" type="submit" value="up">
+                  <ArrowUp className="h-3.5 w-3.5" />
+                  Up
+                </button>
+                <button className="focus-ring inline-flex h-8 items-center gap-1 rounded-md border border-archive-line bg-white px-2 text-xs font-semibold disabled:cursor-not-allowed disabled:opacity-40" disabled={index === sections.length - 1} formAction={moveDocumentSection} name="direction" type="submit" value="down">
+                  <ArrowDown className="h-3.5 w-3.5" />
+                  Down
+                </button>
+                <button className="focus-ring inline-flex h-8 items-center gap-1 rounded-md border border-archive-line bg-white px-2 text-xs font-semibold" formAction={duplicateDocumentSection} type="submit">
+                  <Copy className="h-3.5 w-3.5" />
+                  Duplicate
+                </button>
+                <button className="focus-ring inline-flex h-8 items-center gap-1 rounded-md border border-red-200 bg-white px-2 text-xs font-semibold text-red-700 hover:bg-red-50" formAction={deleteDocumentSection} type="submit">
+                  <Trash2 className="h-3.5 w-3.5" />
+                  Delete
+                </button>
               </div>
             </div>
+
+            <MarkdownSectionEditor
+              body={section.body}
+              bodyFormat={section.body_format || "plain"}
+              figures={figures}
+              formats={BODY_FORMATS}
+              heading={section.heading}
+              sectionTypes={SECTION_TYPES}
+              type={section.section_type}
+            />
 
             <div className="mt-4 grid gap-4 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
               <TextField label="Change note" name="change_note" value="" />
@@ -168,16 +312,23 @@ function TranscriptSections({ sourceId, slug, sections, figures }: { sourceId: s
   );
 }
 
-function CreateSectionForm({ sourceId, slug }: { sourceId: string; slug: string }) {
+function CreateSectionForm({ figures, sourceId, slug }: { figures: SourceFigure[]; sourceId: string; slug: string }) {
   return (
     <form action={createDocumentSection} className="rounded-md border border-archive-line bg-archive-surface p-5 shadow-sm">
       <input name="document_id" type="hidden" value={sourceId} />
       <input name="slug" type="hidden" value={slug} />
       <h3 className="font-semibold">Add Section</h3>
       <div className="mt-4 space-y-3">
-        <TextField label="Heading" name="heading" value="Transcript" />
-        <SelectField label="Type" name="section_type" options={SECTION_TYPES} value="transcript" />
-        <TextAreaField label="Starter body" name="body" rows={5} value="" />
+        <MarkdownSectionEditor
+          body=""
+          bodyFormat="markdown"
+          compact
+          figures={figures}
+          formats={BODY_FORMATS}
+          heading="Transcript"
+          sectionTypes={SECTION_TYPES}
+          type="transcript"
+        />
       </div>
       <div className="mt-4">
         <SaveButton label="Create section" />
@@ -222,22 +373,101 @@ function SourceHealthPanel({ figureCount, sectionCount, source }: { figureCount:
   );
 }
 
-function FigureReferencePanel({ figures }: { figures: SourceFigure[] }) {
+function FigureReferencePanel({ figures, sourceId, slug }: { figures: AdminDocumentFigure[]; sourceId: string; slug: string }) {
+  const sortedFigures = [...figures].sort((a, b) => (a.position ?? 0) - (b.position ?? 0));
+  const rowToken = sortedFigures.slice(0, 4).map((figure) => figure.token || figure.id).join(",");
+
   return (
     <section className="rounded-md border border-archive-line bg-archive-surface p-5 shadow-sm">
-      <h3 className="font-semibold">Figure Tokens</h3>
-      <p className="mt-1 text-sm text-archive-muted">Place a figure in Markdown by inserting its token on a line by itself.</p>
-      <div className="mt-4 space-y-3">
-        {figures.length ? figures.map((figure) => (
-          <div className="rounded-md border border-archive-line bg-archive-paper p-3" key={figure.id}>
-            <code className="text-xs">{`{{figure:${figure.token || figure.id}}}`}</code>
-            <p className="mt-2 line-clamp-2 text-xs text-archive-muted">{figure.caption || figure.alt}</p>
+      <h3 className="font-semibold">Figure Library</h3>
+      <p className="mt-1 text-sm text-archive-muted">Place one figure or a clickable row in Markdown by inserting tokens on a line by themselves.</p>
+      {rowToken && (
+        <div className="mt-4 rounded-md border border-archive-line bg-archive-paper p-3">
+          <p className="text-xs font-bold uppercase tracking-[0.08em] text-archive-muted">Row example</p>
+          <div className="mt-2 flex items-start gap-2">
+            <code className="block min-w-0 flex-1 break-all text-xs">{`{{figure-row:${rowToken}}}`}</code>
+            <CopyTokenButton value={`{{figure-row:${rowToken}}}`} />
           </div>
+        </div>
+      )}
+      <div className="mt-4 space-y-3">
+        {sortedFigures.length ? sortedFigures.map((figure) => (
+          <form action={updateDocumentFigure} className="rounded-md border border-archive-line bg-archive-paper p-3" encType="multipart/form-data" key={figure.id}>
+            <input name="figure_id" type="hidden" value={figure.id} />
+            <input name="document_id" type="hidden" value={sourceId} />
+            <input name="slug" type="hidden" value={slug} />
+            <div className="grid gap-3 sm:grid-cols-[5.5rem_1fr]">
+              <div className="aspect-square overflow-hidden rounded border border-archive-line bg-white">
+                {figure.image_path ? (
+                  <img alt={figure.alt_text || figure.caption || "Archive figure"} className="h-full w-full object-cover" src={getStoragePublicUrl(figure.image_path)} />
+                ) : null}
+              </div>
+              <div className="min-w-0">
+                <div className="flex items-start gap-2">
+                  <code className="block min-w-0 flex-1 break-all text-xs">{`{{figure:${figure.token || figure.id}}}`}</code>
+                  <CopyTokenButton value={`{{figure:${figure.token || figure.id}}}`} />
+                </div>
+                <p className="mt-2 line-clamp-2 text-xs text-archive-muted">{figure.caption || figure.alt_text || "No caption yet."}</p>
+              </div>
+            </div>
+            <details className="mt-3">
+              <summary className="focus-ring cursor-pointer rounded-md px-2 py-1 text-xs font-semibold text-archive-violet hover:bg-white">Edit figure</summary>
+              <div className="mt-3 space-y-3">
+                <label className="block">
+                  <span className="text-xs font-bold uppercase tracking-[0.08em] text-archive-muted">Replace upload</span>
+                  <input className="focus-ring mt-1 w-full rounded-md border border-archive-line bg-white px-3 py-2 text-sm" name="figure_file" type="file" accept="image/*" />
+                </label>
+                <TextField label="Storage path" name="image_path" value={figure.image_path} />
+                <TextField label="Token" name="token" value={figure.token || figure.id} />
+                <TextField label="Alt text" name="alt_text" value={figure.alt_text} />
+                <TextAreaField label="Caption" name="caption" rows={3} value={figure.caption} />
+                <TextField label="Credit" name="credit" value={figure.credit} />
+                <SelectField label="Placement" name="placement" options={FIGURE_PLACEMENTS} value={figure.placement || "inline"} />
+                <TextField label="Change note" name="change_note" value="" />
+                <div className="flex flex-wrap justify-end gap-2">
+                  <button className="focus-ring inline-flex h-9 items-center gap-2 rounded-md border border-red-200 bg-white px-3 text-xs font-semibold text-red-700 hover:bg-red-50" formAction={deleteDocumentFigure} type="submit">
+                    <Trash2 className="h-3.5 w-3.5" />
+                    Delete record
+                  </button>
+                  <button className="focus-ring inline-flex h-9 items-center gap-2 rounded-md bg-archive-violet px-3 text-xs font-semibold text-white hover:bg-archive-violetDark" type="submit">
+                    <Save className="h-3.5 w-3.5" />
+                    Save figure
+                  </button>
+                </div>
+              </div>
+            </details>
+          </form>
         )) : (
           <p className="text-sm text-archive-muted">No structured figures yet.</p>
         )}
       </div>
     </section>
+  );
+}
+
+function CreateFigureForm({ sourceId, slug }: { sourceId: string; slug: string }) {
+  return (
+    <form action={createDocumentFigure} className="rounded-md border border-archive-line bg-archive-surface p-5 shadow-sm" encType="multipart/form-data">
+      <input name="document_id" type="hidden" value={sourceId} />
+      <input name="slug" type="hidden" value={slug} />
+      <h3 className="font-semibold">Add Figure</h3>
+      <p className="mt-1 text-sm text-archive-muted">Upload a new archival image, or reference an existing Supabase Storage path.</p>
+      <div className="mt-4 space-y-3">
+        <label className="block">
+          <span className="text-xs font-bold uppercase tracking-[0.08em] text-archive-muted">Image upload</span>
+          <input className="focus-ring mt-1 w-full rounded-md border border-archive-line bg-white px-3 py-2 text-sm" name="figure_file" type="file" accept="image/*" />
+        </label>
+        <TextField label="Existing storage path" name="image_path" value="" />
+        <TextField label="Token" name="token" value="" />
+        <TextField label="Alt text" name="alt_text" value="" />
+        <TextAreaField label="Caption" name="caption" rows={3} value="" />
+        <TextField label="Credit" name="credit" value="" />
+        <SelectField label="Placement" name="placement" options={FIGURE_PLACEMENTS} value="inline" />
+      </div>
+      <div className="mt-4">
+        <SaveButton label="Create figure" />
+      </div>
+    </form>
   );
 }
 
@@ -284,6 +514,20 @@ function SelectField({ label, name, options, value }: { label: string; name: str
   );
 }
 
+function SelectObjectField({ label, name, options }: { label: string; name: string; options: Array<{ label: string; value: string }> }) {
+  return (
+    <label className="block">
+      <span className="text-xs font-bold uppercase tracking-[0.08em] text-archive-muted">{label}</span>
+      <select className="focus-ring mt-1 h-10 w-full rounded-md border border-archive-line bg-white px-3 text-sm" name={name} required>
+        <option value="">Choose...</option>
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>{option.label}</option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
 function SaveButton({ label }: { label: string }) {
   return (
     <button className="focus-ring inline-flex h-10 items-center gap-2 rounded-md bg-archive-violet px-4 text-sm font-semibold text-white hover:bg-archive-violetDark" type="submit">
@@ -291,6 +535,10 @@ function SaveButton({ label }: { label: string }) {
       {label}
     </button>
   );
+}
+
+function firstRelated<T>(value: T | T[] | null | undefined) {
+  return Array.isArray(value) ? value[0] : value ?? undefined;
 }
 
 function AdminDetail({ label, value }: { label: string; value: string }) {
@@ -322,7 +570,7 @@ function getImportedTextStats(pages: AdminSource["pages"] = []) {
   };
 }
 
-const SOURCE_TYPES = ["Book", "Academic Article", "Essay", "Letter", "Patient Report", "Medical Report", "Audio/Video", "Film", "Field Notes", "Manuscript", "Newspaper Article", "Source", "Testimony"];
+const SOURCE_TYPES = ["Book", "Academic Article", "Ancient Text", "Archaeological Site", "Architectural Site", "Essay", "Letter", "Iconography", "Material Artifact", "Patient Report", "Medical Report", "Audio/Video", "Film", "Field Notes", "Manuscript", "Newspaper Article", "Source", "Testimony"];
 const MEDIUMS = ["Text", "Image", "Audio/Video", "Personal History", "Biography"];
 const ACCESS_TYPES = ["hosted", "external", "metadata_only"];
 const HOSTING_STATUSES = ["metadata_only", "external_link", "transcript_only", "page_images", "pdf", "page_images_and_pdf"];
@@ -331,3 +579,4 @@ const READER_MODES = ["transcript", "translation", "overview", "pdf", "audio", "
 const STATUSES = ["draft", "published", "archived"];
 const SECTION_TYPES = ["overview", "transcript", "translation", "note"];
 const BODY_FORMATS = ["plain", "markdown"];
+const FIGURE_PLACEMENTS = ["inline", "before_overview"];

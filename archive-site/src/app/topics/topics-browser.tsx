@@ -134,7 +134,7 @@ function TopicListRow({ topic }: { topic: VisibleTopic }) {
         <span className="block whitespace-nowrap font-medium text-archive-ink">
           {topic.count} {topic.count === 1 ? "source" : "sources"}
         </span>
-        <Link className="focus-ring mt-0 inline-flex items-center gap-1 rounded-sm text-[0.78rem] font-semibold text-archive-violet transition hover:text-archive-violetDark sm:mt-1.5" href={`/archive?tag=${encodeURIComponent(topic.title)}`}>
+        <Link className="focus-ring mt-0 inline-flex items-center gap-1 rounded-sm text-[0.78rem] font-semibold text-archive-violet transition hover:text-archive-violetDark sm:mt-1.5" href={topic.href}>
           Explore topic
           <ArrowRight className="h-3.5 w-3.5" />
         </Link>
@@ -148,7 +148,7 @@ function TopicIconLink({ topic, icon, size }: { topic: VisibleTopic; icon: strin
   const imageClass = size === "grid" ? "h-[5.85rem] w-[5.85rem]" : "h-[3.65rem] w-[3.65rem]";
 
   return (
-    <Link className="focus-ring block rounded-sm" href={`/archive?tag=${encodeURIComponent(topic.title)}`}>
+    <Link className="focus-ring block rounded-sm" href={topic.href}>
       <span className={`grid aspect-square place-items-center rounded-sm border border-archive-line bg-archive-paper ${boxClass}`}>
         <img className={`topic-icon ${imageClass} object-contain opacity-[0.84] mix-blend-multiply`} src={icon} alt="" aria-hidden="true" />
       </span>
@@ -158,7 +158,7 @@ function TopicIconLink({ topic, icon, size }: { topic: VisibleTopic; icon: strin
 
 function TopicTitle({ topic }: { topic: VisibleTopic }) {
   return (
-    <Link className="focus-ring rounded-sm" href={`/archive?tag=${encodeURIComponent(topic.title)}`}>
+    <Link className="focus-ring rounded-sm" href={topic.href}>
       <h2 className="text-[1.05rem] font-semibold leading-5 text-archive-ink transition group-hover:text-archive-violetDark">
         {topic.title}
       </h2>
@@ -180,15 +180,32 @@ function TopicTags({ tags }: { tags: string[] }) {
 
 function TopicFooter({ topic }: { topic: VisibleTopic }) {
   return (
-    <div className="flex items-center justify-between border-t border-archive-line px-4 py-3 text-sm">
-      <span className="font-medium text-archive-ink">
-        {topic.count} {topic.count === 1 ? "source" : "sources"}
-      </span>
-      <Link className="focus-ring inline-flex items-center gap-1.5 rounded-sm text-[0.82rem] font-semibold text-archive-violet transition hover:text-archive-violetDark" href={`/archive?tag=${encodeURIComponent(topic.title)}`}>
-        Explore topic
-        <ArrowRight className="h-3.5 w-3.5" />
-      </Link>
-    </div>
+    <>
+      <div className="flex items-center justify-between border-t border-archive-line px-4 py-3 text-sm">
+        <span className="font-medium text-archive-ink">
+          {topic.count} {topic.count === 1 ? "source" : "sources"}
+        </span>
+        <Link className="focus-ring inline-flex items-center gap-1.5 rounded-sm text-[0.82rem] font-semibold text-archive-violet transition hover:text-archive-violetDark" href={topic.href}>
+          Explore topic
+          <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
+      </div>
+      {topic.sources.length > 0 && (
+        <div className="border-t border-archive-line bg-archive-paper/55 px-4 py-3">
+          <div className="text-[0.64rem] font-bold uppercase tracking-[0.08em] text-archive-muted">Featured sources</div>
+          <ul className="mt-2 space-y-1.5">
+            {topic.sources.slice(0, 2).map((source) => (
+              <li key={source.href}>
+                <Link className="focus-ring block rounded-sm text-[0.78rem] font-medium leading-4 text-archive-ink transition hover:text-archive-violet" href={source.href}>
+                  <span className="line-clamp-1">{source.title}</span>
+                  <span className="mt-0.5 block text-[0.7rem] text-archive-muted">{source.displayDate} · {source.type}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </>
   );
 }
 

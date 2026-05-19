@@ -2,6 +2,11 @@ import Link from "next/link";
 import { BookOpen, CalendarDays, FileText, ImageIcon, Mic, Newspaper, PlayCircle, ScrollText, Tag, UserRound } from "lucide-react";
 import type { FacetOption } from "@/lib/types";
 
+type EraFacetOption = FacetOption & {
+  imagePath?: string;
+  subtitle?: string;
+};
+
 const icons = {
   Eras: CalendarDays,
   Media: ImageIcon,
@@ -47,21 +52,35 @@ export function BrowsePills() {
   );
 }
 
-export function EraBand({ facets }: { facets: FacetOption[] }) {
+export function EraBand({ facets }: { facets: EraFacetOption[] }) {
   return (
     <div className="grid gap-0 divide-y divide-[rgb(var(--archive-warm-line))] rounded-md border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] md:grid-cols-3 md:divide-x">
       {facets.map((facet) => (
         <Link
-          className="focus-ring group relative flex items-center gap-3 px-4 py-4 transition hover:bg-[rgb(var(--archive-warm-hover))]"
+          className="focus-ring group relative flex items-center gap-4 px-4 py-4 transition hover:bg-[rgb(var(--archive-warm-hover))]"
           href={facet.href}
           key={facet.label}
         >
-          <CalendarDays className="h-5 w-5 text-archive-muted group-hover:text-archive-violet" />
+          {facet.imagePath ? (
+            <span className="h-12 w-12 shrink-0 overflow-hidden rounded-full border border-[rgb(var(--archive-warm-line))] bg-archive-paper shadow-[0_4px_12px_rgb(var(--archive-shadow)/0.08)]">
+              <img
+                alt=""
+                aria-hidden="true"
+                className="h-full w-full object-cover opacity-85 saturate-[0.9] transition duration-200 group-hover:scale-105 group-hover:opacity-100"
+                src={facet.imagePath}
+              />
+            </span>
+          ) : (
+            <CalendarDays className="h-5 w-5 text-archive-muted group-hover:text-archive-violet" />
+          )}
           <span>
             <span className="block font-semibold">
               {facet.label}
             </span>
             <span className="text-xs text-archive-muted">{facet.count.toLocaleString()} sources</span>
+            {facet.subtitle && (
+              <span className="mt-0.5 block text-xs leading-4 text-archive-muted/85">{facet.subtitle}</span>
+            )}
           </span>
         </Link>
       ))}
@@ -71,19 +90,19 @@ export function EraBand({ facets }: { facets: FacetOption[] }) {
 
 export function MediumTiles({ facets }: { facets: FacetOption[] }) {
   return (
-    <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
+    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8">
       {facets.map((facet) => {
         const Icon = icons[facet.label as keyof typeof icons] ?? BookOpen;
         return (
           <Link
-            className="focus-ring group flex min-h-20 items-center gap-3 rounded-md border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] px-4 py-3 transition hover:border-archive-violet/50 hover:bg-[rgb(var(--archive-warm-hover))]"
+            className="focus-ring group flex min-h-14 items-center gap-2 rounded-md border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] px-2.5 py-2 transition hover:border-archive-violet/50 hover:bg-[rgb(var(--archive-warm-hover))]"
             href={facet.href}
             key={facet.label}
           >
-            <Icon className="h-6 w-6 shrink-0 text-archive-olive transition group-hover:text-archive-violet" />
-            <span>
-              <span className="block text-sm font-semibold">{facet.label}</span>
-              <span className="text-xs text-archive-muted">{facet.count.toLocaleString()}</span>
+            <Icon className="h-[1.125rem] w-[1.125rem] shrink-0 text-archive-olive transition group-hover:text-archive-violet" />
+            <span className="min-w-0">
+              <span className="block truncate text-[0.8rem] font-semibold leading-4">{facet.label}</span>
+              <span className="text-[0.72rem] text-archive-muted">{facet.count.toLocaleString()}</span>
             </span>
           </Link>
         );

@@ -194,7 +194,117 @@ create table if not exists tags (
   name text not null,
   description text,
   tag_type text,
+  status text default 'published',
   created_at timestamptz default now()
+);
+
+alter table tags add column if not exists status text default 'published';
+
+create table if not exists topics (
+  id uuid primary key default gen_random_uuid(),
+  slug text unique not null,
+  name text not null,
+  dek text,
+  body_markdown text,
+  icon text,
+  seo_title text,
+  seo_description text,
+  status text default 'draft',
+  sort_order int,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now()
+);
+
+create table if not exists topic_documents (
+  topic_id uuid references topics(id) on delete cascade,
+  document_id uuid references documents(id) on delete cascade,
+  position int,
+  relationship_label text,
+  editorial_note text,
+  is_featured boolean default false,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now(),
+  primary key (topic_id, document_id)
+);
+
+create table if not exists bibliography_items (
+  id uuid primary key default gen_random_uuid(),
+  slug text unique not null,
+  item_type text not null,
+  title text not null,
+  subtitle text,
+  publication_title text,
+  publisher text,
+  publication_place text,
+  year int,
+  volume text,
+  issue text,
+  pages text,
+  doi text,
+  isbn text,
+  oclc text,
+  jstor_url text,
+  publisher_url text,
+  google_books_url text,
+  worldcat_url text,
+  open_access_url text,
+  pdf_url text,
+  abstract text,
+  editorial_note text,
+  reliability_note text,
+  recommendation_status text default 'recommended',
+  status text default 'draft',
+  created_at timestamptz default now(),
+  updated_at timestamptz default now()
+);
+
+create table if not exists bibliography_contributors (
+  id uuid primary key default gen_random_uuid(),
+  display_name text not null,
+  family_name text,
+  given_name text,
+  slug text unique,
+  created_at timestamptz default now()
+);
+
+create table if not exists bibliography_item_contributors (
+  bibliography_item_id uuid references bibliography_items(id) on delete cascade,
+  contributor_id uuid references bibliography_contributors(id) on delete cascade,
+  role text default 'author',
+  position int default 1,
+  primary key (bibliography_item_id, contributor_id, role)
+);
+
+create table if not exists bibliography_item_tags (
+  bibliography_item_id uuid references bibliography_items(id) on delete cascade,
+  tag_id uuid references tags(id) on delete cascade,
+  primary key (bibliography_item_id, tag_id)
+);
+
+create table if not exists bibliography_item_eras (
+  bibliography_item_id uuid references bibliography_items(id) on delete cascade,
+  era_slug text not null,
+  position int,
+  primary key (bibliography_item_id, era_slug)
+);
+
+create table if not exists bibliography_item_documents (
+  bibliography_item_id uuid references bibliography_items(id) on delete cascade,
+  document_id uuid references documents(id) on delete cascade,
+  relationship_label text,
+  editorial_note text,
+  primary key (bibliography_item_id, document_id)
+);
+
+create table if not exists topic_relations (
+  topic_id uuid references topics(id) on delete cascade,
+  related_topic_id uuid references topics(id) on delete cascade,
+  position int,
+  relation_label text,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now(),
+  primary key (topic_id, related_topic_id),
+  check (topic_id <> related_topic_id)
 );
 
 create table if not exists document_tags (
@@ -229,6 +339,75 @@ create table if not exists collection_documents (
   primary key (collection_id, document_id)
 );
 
+create table if not exists project_people (
+  id uuid primary key default gen_random_uuid(),
+  slug text unique not null,
+  display_name text not null,
+  group_key text not null default 'team',
+  role_title text,
+  affiliation text,
+  bio text,
+  portrait_path text,
+  portrait_alt text,
+  profile_url text,
+  sort_order int,
+  status text default 'draft',
+  created_at timestamptz default now(),
+  updated_at timestamptz default now(),
+  check (group_key in ('team', 'advisory_board', 'past_contributor'))
+);
+
+create index if not exists project_people_slug_idx on project_people(slug);
+create index if not exists project_people_status_group_idx on project_people(status, group_key, sort_order);
+
+grant select on project_people to anon, authenticated;
+grant all privileges on project_people to service_role;
+
+alter table project_people enable row level security;
+
+drop policy if exists "Public can read published project people" on project_people;
+create policy "Public can read published project people"
+  on project_people for select
+  using (status = 'published');
+
+insert into project_people (
+  slug,
+  display_name,
+  group_key,
+  role_title,
+  affiliation,
+  bio,
+  profile_url,
+  sort_order,
+  status
+) values
+  ('benjamin-breen', 'Benjamin Breen', 'team', 'Project team', 'UC Santa Cruz', null, 'https://benjaminpbreen.com', 10, 'published'),
+  ('paul-gillis-smith', 'Paul Gillis-Smith', 'team', 'Project team', null, null, null, 20, 'published'),
+  ('anne-harrington', 'Anne Harrington', 'team', 'Project team', 'Harvard University', null, null, 30, 'published'),
+  ('rebecca-lemov', 'Rebecca Lemov', 'team', 'Project team', 'Harvard University', null, null, 40, 'published'),
+  ('erik-davis', 'Erik Davis', 'advisory_board', 'Advisory board', null, null, null, 110, 'published'),
+  ('alexis-turner', 'Alexis Turner', 'advisory_board', 'Advisory board', null, null, null, 120, 'published'),
+  ('dagny-hatch', 'Dagny Hatch', 'past_contributor', '2024 UCSC student intern', null, null, null, 210, 'published'),
+  ('galen-latham-fairchild', 'Galen Latham-Fairchild', 'past_contributor', '2024 UCSC student intern', null, null, null, 220, 'published'),
+  ('molly-maher', 'Molly Maher', 'past_contributor', '2024 UCSC student intern', null, null, null, 230, 'published'),
+  ('jamie-penilla', 'Jamie Penilla', 'past_contributor', '2024 UCSC student intern', null, null, null, 240, 'published'),
+  ('emily-vasquez', 'Emily Vasquez', 'past_contributor', '2024 UCSC student intern', null, null, null, 250, 'published'),
+  ('richard-wolf', 'Richard Wolf', 'past_contributor', '2024 UCSC student intern', null, null, null, 260, 'published'),
+  ('walter-barnaby', 'Walter Barnaby', 'past_contributor', '2024 UCSC student intern', null, null, null, 270, 'published'),
+  ('owen-casey', 'Owen Casey', 'past_contributor', '2024 UCSC student intern', null, null, null, 280, 'published'),
+  ('francisco-moreno', 'Francisco Moreno', 'past_contributor', '2024 UCSC student intern', null, null, null, 290, 'published'),
+  ('alia-moore', 'Alia Moore', 'past_contributor', '2024 UCSC student intern', null, null, null, 300, 'published')
+on conflict (slug) do update set
+  display_name = excluded.display_name,
+  group_key = excluded.group_key,
+  role_title = excluded.role_title,
+  affiliation = excluded.affiliation,
+  bio = excluded.bio,
+  profile_url = excluded.profile_url,
+  sort_order = excluded.sort_order,
+  status = excluded.status,
+  updated_at = now();
+
 create index if not exists documents_slug_idx on documents(slug);
 create index if not exists documents_status_idx on documents(status);
 create index if not exists documents_date_start_idx on documents(date_start);
@@ -242,6 +421,17 @@ create index if not exists document_sections_document_id_idx on document_section
 create index if not exists document_figures_document_id_idx on document_figures(document_id);
 create index if not exists content_revisions_document_id_idx on content_revisions(document_id, created_at desc);
 create index if not exists tags_slug_idx on tags(slug);
+create index if not exists topics_slug_idx on topics(slug);
+create index if not exists topics_status_idx on topics(status);
+create index if not exists topic_documents_topic_id_idx on topic_documents(topic_id, position);
+create index if not exists topic_documents_document_id_idx on topic_documents(document_id);
+create index if not exists topic_relations_topic_id_idx on topic_relations(topic_id, position);
+create index if not exists bibliography_items_slug_idx on bibliography_items(slug);
+create index if not exists bibliography_items_status_idx on bibliography_items(status, recommendation_status);
+create index if not exists bibliography_item_contributors_item_idx on bibliography_item_contributors(bibliography_item_id, position);
+create index if not exists bibliography_item_tags_item_idx on bibliography_item_tags(bibliography_item_id);
+create index if not exists bibliography_item_eras_era_idx on bibliography_item_eras(era_slug, position);
+create index if not exists bibliography_item_documents_document_idx on bibliography_item_documents(document_id);
 
 grant usage on schema public to anon, authenticated, service_role;
 
@@ -255,6 +445,15 @@ grant select on document_people to anon, authenticated;
 grant select on document_sections to anon, authenticated;
 grant select on document_figures to anon, authenticated;
 grant select on tags to anon, authenticated;
+grant select on topics to anon, authenticated;
+grant select on topic_documents to anon, authenticated;
+grant select on topic_relations to anon, authenticated;
+grant select on bibliography_items to anon, authenticated;
+grant select on bibliography_contributors to anon, authenticated;
+grant select on bibliography_item_contributors to anon, authenticated;
+grant select on bibliography_item_tags to anon, authenticated;
+grant select on bibliography_item_eras to anon, authenticated;
+grant select on bibliography_item_documents to anon, authenticated;
 grant select on document_tags to anon, authenticated;
 grant select on collections to anon, authenticated;
 grant select on collection_documents to anon, authenticated;
@@ -271,6 +470,15 @@ grant all privileges on document_people to service_role;
 grant all privileges on document_sections to service_role;
 grant all privileges on document_figures to service_role;
 grant all privileges on tags to service_role;
+grant all privileges on topics to service_role;
+grant all privileges on topic_documents to service_role;
+grant all privileges on topic_relations to service_role;
+grant all privileges on bibliography_items to service_role;
+grant all privileges on bibliography_contributors to service_role;
+grant all privileges on bibliography_item_contributors to service_role;
+grant all privileges on bibliography_item_tags to service_role;
+grant all privileges on bibliography_item_eras to service_role;
+grant all privileges on bibliography_item_documents to service_role;
 grant all privileges on document_tags to service_role;
 grant all privileges on collections to service_role;
 grant all privileges on collection_documents to service_role;
@@ -287,6 +495,15 @@ alter table document_people enable row level security;
 alter table document_sections enable row level security;
 alter table document_figures enable row level security;
 alter table tags enable row level security;
+alter table topics enable row level security;
+alter table topic_documents enable row level security;
+alter table topic_relations enable row level security;
+alter table bibliography_items enable row level security;
+alter table bibliography_contributors enable row level security;
+alter table bibliography_item_contributors enable row level security;
+alter table bibliography_item_tags enable row level security;
+alter table bibliography_item_eras enable row level security;
+alter table bibliography_item_documents enable row level security;
 alter table document_tags enable row level security;
 alter table collections enable row level security;
 alter table collection_documents enable row level security;
@@ -371,6 +588,87 @@ drop policy if exists "Public can read tags" on tags;
 create policy "Public can read tags"
   on tags for select
   using (true);
+
+drop policy if exists "Public can read published topics" on topics;
+create policy "Public can read published topics"
+  on topics for select
+  using (status = 'published');
+
+drop policy if exists "Public can read published topic documents" on topic_documents;
+create policy "Public can read published topic documents"
+  on topic_documents for select
+  using (exists (
+    select 1 from topics
+    where topics.id = topic_documents.topic_id
+      and topics.status = 'published'
+  ) and exists (
+    select 1 from documents
+    where documents.id = topic_documents.document_id
+      and documents.status = 'published'
+  ));
+
+drop policy if exists "Public can read published topic relations" on topic_relations;
+create policy "Public can read published topic relations"
+  on topic_relations for select
+  using (exists (
+    select 1 from topics
+    where topics.id = topic_relations.topic_id
+      and topics.status = 'published'
+  ) and exists (
+    select 1 from topics related
+    where related.id = topic_relations.related_topic_id
+      and related.status = 'published'
+  ));
+
+drop policy if exists "Public can read published bibliography items" on bibliography_items;
+create policy "Public can read published bibliography items"
+  on bibliography_items for select
+  using (status = 'published');
+
+drop policy if exists "Public can read bibliography contributors" on bibliography_contributors;
+create policy "Public can read bibliography contributors"
+  on bibliography_contributors for select
+  using (true);
+
+drop policy if exists "Public can read published bibliography item contributors" on bibliography_item_contributors;
+create policy "Public can read published bibliography item contributors"
+  on bibliography_item_contributors for select
+  using (exists (
+    select 1 from bibliography_items
+    where bibliography_items.id = bibliography_item_contributors.bibliography_item_id
+      and bibliography_items.status = 'published'
+  ));
+
+drop policy if exists "Public can read published bibliography item tags" on bibliography_item_tags;
+create policy "Public can read published bibliography item tags"
+  on bibliography_item_tags for select
+  using (exists (
+    select 1 from bibliography_items
+    where bibliography_items.id = bibliography_item_tags.bibliography_item_id
+      and bibliography_items.status = 'published'
+  ));
+
+drop policy if exists "Public can read published bibliography item eras" on bibliography_item_eras;
+create policy "Public can read published bibliography item eras"
+  on bibliography_item_eras for select
+  using (exists (
+    select 1 from bibliography_items
+    where bibliography_items.id = bibliography_item_eras.bibliography_item_id
+      and bibliography_items.status = 'published'
+  ));
+
+drop policy if exists "Public can read published bibliography item documents" on bibliography_item_documents;
+create policy "Public can read published bibliography item documents"
+  on bibliography_item_documents for select
+  using (exists (
+    select 1 from bibliography_items
+    where bibliography_items.id = bibliography_item_documents.bibliography_item_id
+      and bibliography_items.status = 'published'
+  ) and exists (
+    select 1 from documents
+    where documents.id = bibliography_item_documents.document_id
+      and documents.status = 'published'
+  ));
 
 drop policy if exists "Public can read document tags" on document_tags;
 create policy "Public can read document tags"

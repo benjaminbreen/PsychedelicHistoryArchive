@@ -53,6 +53,7 @@ export default async function ArchivePage({ searchParams }: ArchivePageProps) {
               era: params.era,
               medium: params.medium,
               tag: params.tag,
+              type: params.type,
               region: params.region,
               people: params.people
             }}

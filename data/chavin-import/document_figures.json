@@ -1,0 +1,57 @@
+[
+  {
+    "id": "e3f35a74-352b-5f49-95a0-4928ec08e6f3",
+    "document_id": "d3f3729a-9a36-5655-b68f-f3bb1667ff22",
+    "position": 1,
+    "image_path": "documents/d3f3729a-9a36-5655-b68f-f3bb1667ff22/images/chavin-de-huantar-vilca-snuff/chavin-plaza.jpg",
+    "alt_text": "Central plaza at Chavin de Huantar.",
+    "caption": "Central plaza at Chavin de Huantar. Open plazas, restricted galleries, stairways, and interior passages worked together to stage movement from public gathering into controlled ritual space.",
+    "placement": "inline",
+    "token": "plaza",
+    "credit": "Photo by Martin St-Amant, Wikimedia Commons, CC BY-SA 3.0."
+  },
+  {
+    "id": "18ea3db7-0ddb-5cb7-8935-57246726a29a",
+    "document_id": "d3f3729a-9a36-5655-b68f-f3bb1667ff22",
+    "position": 2,
+    "image_path": "documents/d3f3729a-9a36-5655-b68f-f3bb1667ff22/images/chavin-de-huantar-vilca-snuff/estela-del-portador-del-cactus.jpg",
+    "alt_text": "Chavin cactus-bearer stele, showing a standing figure holding a cactus staff.",
+    "caption": "Cactus-bearer stele from Chavin de Huantar. The relief is one of the strongest visual anchors for San Pedro, or huachuma, in Chavin ritual imagery.",
+    "placement": "inline",
+    "token": "cactus-bearer",
+    "credit": "Photo by Carlo Brescia / Limaymanta pacha, Wikimedia Commons, CC BY-SA 4.0."
+  },
+  {
+    "id": "9b72c895-3695-5ac7-9e24-7d97122d880d",
+    "document_id": "d3f3729a-9a36-5655-b68f-f3bb1667ff22",
+    "position": 3,
+    "image_path": "documents/d3f3729a-9a36-5655-b68f-f3bb1667ff22/images/chavin-de-huantar-vilca-snuff/chavin-lanzon-stela-cyark.jpg",
+    "alt_text": "The Lanzon at Chavin de Huantar, photographed in the temple gallery.",
+    "caption": "The Lanzon, a central cult image within the Old Temple gallery. Its restricted placement matters: Chavin ritual power was staged through controlled access, darkness, sound, and encounter.",
+    "placement": "inline",
+    "token": "lanzon",
+    "credit": "CyArk, via Wikimedia Commons, CC BY-SA 3.0."
+  },
+  {
+    "id": "30940b45-171e-56b9-9250-97a3957d82c9",
+    "document_id": "d3f3729a-9a36-5655-b68f-f3bb1667ff22",
+    "position": 4,
+    "image_path": "documents/d3f3729a-9a36-5655-b68f-f3bb1667ff22/images/chavin-de-huantar-vilca-snuff/portico-falconidas.jpg",
+    "alt_text": "Black-and-White Portal at Chavin de Huantar.",
+    "caption": "The Black-and-White Portal, or Portico de las Falconidas. Chavin stonework used thresholds, contrast, and sculptural programs to mark transitions between ritual zones.",
+    "placement": "inline",
+    "token": "portico",
+    "credit": "Photo by Dtarazona, Wikimedia Commons, CC BY-SA 3.0."
+  },
+  {
+    "id": "2c7ffd6e-646b-5a5d-99c0-320133d3a8d2",
+    "document_id": "d3f3729a-9a36-5655-b68f-f3bb1667ff22",
+    "position": 5,
+    "image_path": "documents/d3f3729a-9a36-5655-b68f-f3bb1667ff22/images/chavin-de-huantar-vilca-snuff/feline-and-cactus-stirrup-vessel-walters.jpg",
+    "alt_text": "Chavin feline-and-cactus stirrup vessel in the Walters Art Museum.",
+    "caption": "Chavin feline-and-cactus stirrup vessel, 900-200 BCE. Cactus imagery appears in a larger visual grammar of feline, serpent, and transformed bodies.",
+    "placement": "inline",
+    "token": "vessel",
+    "credit": "Walters Art Museum, accession 48.2832, via Wikimedia Commons, CC BY-SA 3.0; object public domain."
+  }
+]

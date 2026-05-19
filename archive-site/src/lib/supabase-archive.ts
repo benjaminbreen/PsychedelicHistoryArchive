@@ -48,7 +48,7 @@ type DocumentRow = {
   document_people?: Array<{ role: string | null; people: RelatedPerson | RelatedPerson[] | null }>;
 };
 
-type RelatedTag = { name: string | null; tag_type: string | null };
+type RelatedTag = { name: string | null; tag_type: string | null; status?: string | null };
 type RelatedPerson = { name: string | null };
 
 type CollectionDocumentRow = {
@@ -81,6 +81,8 @@ const CORE_TOPIC_TAGS = [
   "Anesthesia",
   "Animal Research",
   "Anthropology",
+  "Archaeology",
+  "Architecture",
   "Chemistry",
   "Clinical",
   "Therapy",
@@ -90,6 +92,10 @@ const CORE_TOPIC_TAGS = [
   "Psychoanalysis",
   "PTSD",
   "Consciousness",
+  "Psychoactive Plants",
+  "Residue Analysis",
+  "Snuffing Paraphernalia",
+  "Trade Networks",
   "ESP",
   "Mysticism",
   "Religion",
@@ -112,6 +118,8 @@ const CORE_TOPIC_TAGS = [
   "Trip Reports",
   "Oral History",
   "Visual Culture",
+  "Material Culture",
+  "Sound",
   "Networks"
 ] as const;
 
@@ -131,6 +139,8 @@ const TOPIC_TAG_MAP: Record<string, string> = {
   "anesthetic revelation": "Anesthesia",
   "animal research": "Animal Research",
   "anthropology": "Anthropology",
+  "archaeology": "Archaeology",
+  "architecture": "Architecture",
   "ayahuasca": "Ayahuasca",
   "banisteriopsis caapi": "Ayahuasca",
   "bangue": "Cannabis",
@@ -164,11 +174,13 @@ const TOPIC_TAG_MAP: Record<string, string> = {
   "hemp": "Cannabis",
   "human experiments": "Clinical",
   "human potential": "Human Potential",
+  "iconography": "Visual Culture",
   "indigenous knowledge": "Indigenous Knowledge",
   "john c. lilly": "Networks",
   "kava": "Kava",
   "kavalactones": "Kava",
   "literature": "Literature",
+  "material culture": "Material Culture",
   "lsd": "LSD",
   "materia medica": "Medicine",
   "medical history": "Medicine",
@@ -183,6 +195,8 @@ const TOPIC_TAG_MAP: Record<string, string> = {
   "phytochemistry": "Chemistry",
   "pharmacology": "Pharmacology",
   "philosophy": "Philosophy",
+  "psychoactive plants": "Psychoactive Plants",
+  "residue analysis": "Residue Analysis",
   "piper methysticum": "Kava",
   "poetry": "Poetry",
   "ptsd": "PTSD",
@@ -195,7 +209,10 @@ const TOPIC_TAG_MAP: Record<string, string> = {
   "psychotomimetic": "Psychosis",
   "religion": "Religion",
   "self-experimentation": "Self-Experiment",
+  "sound": "Sound",
+  "snuffing paraphernalia": "Snuffing Paraphernalia",
   "therapy": "Therapy",
+  "trade networks": "Trade Networks",
   "trial records": "Law",
   "trip reports": "Trip Reports",
   "virola": "DMT",
@@ -205,11 +222,14 @@ const TOPIC_TAG_MAP: Record<string, string> = {
 
 const SUBSTANCE_TAG_MAP: Record<string, string> = {
   ayahuasca: "Ayahuasca",
+  bufotenine: "Bufotenine",
   cannabis: "Cannabis",
   chloroform: "Chloroform",
+  coca: "Coca",
   cocaine: "Cocaine",
   dmt: "DMT",
   ether: "Ether",
+  harmine: "Harmine",
   ibogaine: "Ibogaine",
   ketamine: "Ketamine",
   lsd: "LSD",
@@ -218,8 +238,12 @@ const SUBSTANCE_TAG_MAP: Record<string, string> = {
   mescaline: "Mescaline",
   "nitrous oxide": "Nitrous Oxide",
   "nitrous oxide and ether": "Nitrous Oxide",
+  nicotiana: "Nicotiana",
   peyote: "Peyote",
   psilocybin: "Psilocybin",
+  "san pedro": "San Pedro",
+  anadenanthera: "Anadenanthera",
+  vilca: "Vilca",
   yage: "Ayahuasca",
   yagé: "Ayahuasca"
 };
@@ -684,7 +708,10 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
   const correction = SOURCE_METADATA_CORRECTIONS[document.slug];
   const tags = unique(
     document.document_tags
-      ?.map((item) => firstRelated(item.tags)?.name)
+      ?.map((item) => {
+        const tag = firstRelated(item.tags);
+        return tag?.status === "draft" || tag?.status === "archived" ? undefined : tag?.name;
+      })
       .filter(Boolean) as string[] | undefined
   );
   const people = unique(
@@ -696,7 +723,7 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
   const substances = unique(
     [
       ...(document.document_tags
-        ?.filter((item) => firstRelated(item.tags)?.tag_type === "substance")
+        ?.filter((item) => firstRelated(item.tags)?.tag_type === "substance" && !["draft", "archived"].includes(firstRelated(item.tags)?.status || "published"))
         .map((item) => firstRelated(item.tags)?.name)
         .filter(Boolean) as string[] | undefined) ?? [],
       ...tags.map(toSubstanceTag).filter(Boolean)
@@ -788,6 +815,15 @@ function collectionToArchiveSource(collection: CollectionRow): ArchiveSource {
   const endYear = years.length ? Math.max(...years) : startYear;
   const displayDate = startYear && endYear && startYear !== endYear ? `${startYear}-${endYear}` : startYear ? String(startYear) : "Date range pending";
   const summary = collection.summary || collection.body || "";
+  const sequenceNumbers = items
+    .map((item) => item.sequenceNumber)
+    .filter((value): value is number => typeof value === "number");
+  const sequenceRange = sequenceNumbers.length
+    ? `${Math.min(...sequenceNumbers)}-${Math.max(...sequenceNumbers)}`
+    : "";
+  const citation = sequenceRange
+    ? `${collection.title}, nos. ${sequenceRange}. ${displayDate}.`
+    : `${collection.title}. ${displayDate}.`;
 
   return {
     id: collection.id,
@@ -811,8 +847,8 @@ function collectionToArchiveSource(collection: CollectionRow): ArchiveSource {
     creators: [],
     substances: [],
     summary,
-    excerpt: summary,
-    citation: collection.title,
+    excerpt: collection.body || summary,
+    citation,
     rights: "Collection-level rights vary by item. Review item details before republication.",
     sourceUrl: `/collections/${collection.slug}`,
     readerMode: "overview",
@@ -835,7 +871,10 @@ function mapCollectionItems(collectionDocuments: CollectionDocumentRow[] = []): 
       const imagePath = document.thumbnail_path || document.cover_image_path || firstImagePath(document.files);
       const tags = unique(
         document.document_tags
-          ?.map((item) => firstRelated(item.tags)?.name)
+          ?.map((item) => {
+            const tag = firstRelated(item.tags);
+            return tag?.status === "draft" || tag?.status === "archived" ? undefined : tag?.name;
+          })
           .filter(Boolean) as string[] | undefined
       );
 
@@ -1143,6 +1182,11 @@ function normalizeType(value: string | null): SourceType {
   if (type === "Testimony") return "Testimony";
   if (type === "Audio/Video") return "Audio/Video";
   if (type === "Academic Article") return "Academic Article";
+  if (type === "Ancient Text") return "Ancient Text";
+  if (type === "Archaeological Site") return "Archaeological Site";
+  if (type === "Architectural Site") return "Architectural Site";
+  if (type === "Iconography") return "Iconography";
+  if (type === "Material Artifact") return "Material Artifact";
   if (type === "Book") return "Book";
   return "Source";
 }

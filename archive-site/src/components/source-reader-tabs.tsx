@@ -123,31 +123,71 @@ function TranscriptReader({ source, transcript }: { source: ArchiveSource; trans
   const sections = source.transcriptSections?.length
     ? source.transcriptSections
     : [{ heading: "Transcript", kind: "transcript" as const, paragraphs: transcript }];
-  const overviewFigure = source.figures?.find((figure) => figure.position === "before_overview") ?? source.figures?.[0];
+  const overviewFigure = source.figures?.find((figure) => figure.position === "before_overview");
 
   return (
     <div className="space-y-9">
-      {sections.map((section, index) => (
-        <section key={`${section.heading}-${index}`}>
-          {index === 0 && overviewFigure && (
-            <div className="mb-7">
-              <SourceFigureBlock figure={overviewFigure} />
-            </div>
-          )}
-          <h2 className="source-transcript-heading">{section.heading}</h2>
-          {section.body && section.bodyFormat === "markdown" ? (
-            <MarkdownContent className="source-transcript source-markdown mt-5 space-y-6 text-archive-ink" figures={source.figures} markdown={section.body} />
-          ) : (
-            <div className="source-transcript mt-5 space-y-6 text-archive-ink">
-              {(section.paragraphs.length ? section.paragraphs : section.body ? [section.body] : []).map((paragraph, paragraphIndex) => (
-                <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`}>{paragraph}</p>
-              ))}
-            </div>
-          )}
-        </section>
-      ))}
+      {sections.map((section, index) => {
+        const isNote = section.kind === "note";
+        const isMediaTranscript = section.kind === "transcript" && isMediaSource(source);
+
+        return (
+          <section className={clsx(isNote && "source-transcript-note", isMediaTranscript && "source-media-transcript")} key={`${section.heading}-${index}`}>
+            {index === 0 && overviewFigure && (
+              <div className="mb-7">
+                <SourceFigureBlock figure={overviewFigure} />
+              </div>
+            )}
+            <h2 className="source-transcript-heading">{section.heading}</h2>
+            {section.body && section.bodyFormat === "markdown" ? (
+              <MarkdownContent className={clsx("source-transcript source-markdown mt-5 space-y-6 text-archive-ink", isNote && "source-transcript-note-body", isMediaTranscript && "source-media-transcript-body")} figures={source.figures} markdown={section.body} transcriptFormat={isMediaTranscript ? "media" : "prose"} />
+            ) : (
+              <div className={clsx("source-transcript mt-5 space-y-6 text-archive-ink", isNote && "source-transcript-note-body", isMediaTranscript && "source-media-transcript-body")}>
+                {(section.paragraphs.length ? section.paragraphs : section.body ? [section.body] : []).map((paragraph, paragraphIndex) => (
+                  isMediaTranscript ? (
+                    <MediaTranscriptPlainParagraph key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} text={paragraph} />
+                  ) : (
+                    <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`}>{paragraph}</p>
+                  )
+                ))}
+              </div>
+            )}
+          </section>
+        );
+      })}
     </div>
   );
+}
+
+function MediaTranscriptPlainParagraph({ text }: { text: string }) {
+  const bracketCue = text.match(/^\[([^\]]+)\]$/);
+  if (bracketCue) return <p className="source-media-transcript-cue source-media-transcript-cue-bracket">{bracketCue[1].trim()}</p>;
+
+  const parentheticalCue = text.match(/^\(([^)]+)\)$/);
+  if (parentheticalCue) return <p className="source-media-transcript-cue source-media-transcript-cue-parenthetical">{parentheticalCue[1].trim()}</p>;
+
+  const speaker = text.match(/^([A-Z][^:\n]{0,47}:)\s+(.+)$/);
+  if (speaker && isLikelySpeakerLabel(speaker[1])) {
+    return (
+      <p>
+        <strong className="source-media-transcript-speaker">{speaker[1]}</strong>{" "}
+        {speaker[2]}
+      </p>
+    );
+  }
+
+  return <p>{text}</p>;
+}
+
+function isLikelySpeakerLabel(label: string) {
+  const withoutColon = label.replace(/:$/, "").trim();
+  if (!withoutColon || withoutColon.length > 48) return false;
+  if (/[!?()[\]{}]/.test(withoutColon)) return false;
+  return /^[A-Z][\p{L}\p{M}.'’ -]*(?:\s+[A-Z][\p{L}\p{M}.'’ -]*)*$/u.test(withoutColon);
+}
+
+function isMediaSource(source: ArchiveSource) {
+  return source.medium === "Audio/Video" || source.type === "Film" || source.readerMode === "audio" || source.readerMode === "video" || Boolean(source.mediaEmbedUrl);
 }
 
 function TranslationReader({ paragraphs, source }: { paragraphs: string[]; source: ArchiveSource }) {
@@ -171,30 +211,29 @@ function TranslationReader({ paragraphs, source }: { paragraphs: string[]; sourc
 function CollectionOverview({ source }: { source: ArchiveSource }) {
   const items = source.collectionItems ?? [];
   const visibleItems = items.slice(0, 100);
+  const overviewText = getCollectionOverviewText(source);
+  const dateRange = collectionDateRange(items, source.displayDate);
 
   return (
-    <section className="mt-6">
-      <div className="rounded-md border border-archive-line bg-archive-surface p-5 shadow-[0_8px_24px_rgb(var(--archive-shadow)/0.04)]">
-        <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_12rem] md:items-start">
-          <div>
-            <h2 className="source-serif-heading">Collection Overview</h2>
-            <p className="mt-3 max-w-3xl text-sm leading-6 text-archive-muted">
-              {source.summary || "This compound source is organized as individual volumes, issues, or parts. Open an item below to read its transcript and inspect its source files."}
-            </p>
-          </div>
-          <dl className="grid grid-cols-2 gap-3 text-sm md:grid-cols-1">
-            <OverviewStat label="Items" value={`${source.collectionItemCount ?? items.length}`} />
-            <OverviewStat label="Date range" value={source.displayDate} />
-          </dl>
-        </div>
-      </div>
+    <section className="mt-2">
+    
 
       {visibleItems.length ? (
-        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-          {visibleItems.map((item) => (
-            <CollectionItemCard item={item} key={item.id} />
-          ))}
-        </div>
+        <>
+          <div className="mt-6 flex flex-wrap items-end justify-between gap-3 border-b border-archive-line pb-3">
+            <div>
+              <h3 className="font-serif text-xl font-semibold leading-tight text-archive-ink">Issue Index</h3>
+              <p className="mt-1 text-sm text-archive-muted">
+                {visibleItems.length.toLocaleString()} records, sorted by sequence and issue date.
+              </p>
+            </div>
+          </div>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            {visibleItems.map((item) => (
+              <CollectionItemCard item={item} key={item.id} />
+            ))}
+          </div>
+        </>
       ) : (
         <div className="mt-5 rounded-md border border-dashed border-archive-line bg-archive-surface p-6 text-sm leading-6 text-archive-muted">
           Item-level records have not been attached to this collection yet.
@@ -210,9 +249,20 @@ function CollectionOverview({ source }: { source: ArchiveSource }) {
   );
 }
 
+function getCollectionOverviewText(source: ArchiveSource) {
+  const overview = source.excerpt
+    .split(/\n+/)
+    .map((line) => line.trim())
+    .find((line) => line.toLowerCase().startsWith("overview:"))
+    ?.replace(/^overview:\s*/i, "")
+    .trim();
+
+  return overview || "This compound source is organized as individual volumes, issues, or parts. Open an item below to read its transcript and inspect its source files.";
+}
+
 function OverviewStat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-md border border-archive-line bg-archive-paper px-3 py-2">
+    <div className="rounded-md border border-[rgb(var(--archive-warm-line))] bg-archive-paper/70 px-3 py-2">
       <dt className="text-[0.62rem] font-bold uppercase tracking-[0.09em] text-archive-muted">{label}</dt>
       <dd className="mt-1 font-semibold text-archive-ink">{value || "Not recorded"}</dd>
     </div>
@@ -220,33 +270,66 @@ function OverviewStat({ label, value }: { label: string; value: string }) {
 }
 
 function CollectionItemCard({ item }: { item: CollectionItemSummary }) {
+  const metadata = [item.displayDate, item.pageCount ? `${item.pageCount} pages` : ""].filter(Boolean).join(" · ");
+
   return (
     <Link
-      className="focus-ring group overflow-hidden rounded-md border border-archive-line bg-archive-surface shadow-sm transition hover:border-archive-violet/35 hover:bg-archive-warm-hover"
+      className="focus-ring group overflow-hidden rounded-md border border-archive-line bg-archive-surface shadow-sm transition hover:border-archive-violet/35 hover:bg-[rgb(var(--archive-warm-hover))]"
       href={item.href || `/archive/${item.slug}`}
     >
-      <span className="flex aspect-[4/5] items-center justify-center overflow-hidden border-b border-archive-line bg-archive-paper">
+      <span className="flex aspect-[3/4] items-center justify-center overflow-hidden border-b border-archive-line bg-archive-paper">
         {item.imagePath ? (
           <img alt={item.imageAlt || item.title} className="h-full w-full object-cover transition duration-200 group-hover:scale-[1.02]" src={item.imagePath} />
         ) : (
           <Grid3X3 className="h-8 w-8 text-archive-violet/50" />
         )}
       </span>
-      <span className="block p-3">
-        {item.sequenceLabel && (
-          <span className="text-[0.64rem] font-bold uppercase tracking-[0.08em] text-archive-violet">
-            {item.sequenceLabel}
-          </span>
-        )}
-        <span className="mt-1 line-clamp-2 block text-sm font-semibold leading-5 text-archive-ink">
+      <span className="block p-3.5">
+        <span className="flex min-h-4 items-center justify-between gap-3">
+          {item.sequenceLabel ? (
+            <span className="truncate text-[0.64rem] font-bold uppercase tracking-[0.08em] text-archive-violet">
+              {item.sequenceLabel}
+            </span>
+          ) : (
+            <span />
+          )}
+          {item.sequenceNumber !== undefined && (
+            <span className="shrink-0 text-[0.68rem] font-semibold tabular-nums text-archive-muted">
+              #{item.sequenceNumber}
+            </span>
+          )}
+        </span>
+        <span className="mt-2 line-clamp-2 block text-[0.95rem] font-semibold leading-5 text-archive-ink transition group-hover:text-archive-violetDark">
           {item.shortTitle || item.title}
         </span>
-        <span className="mt-2 block text-xs text-archive-muted">
-          {[item.displayDate, item.pageCount ? `${item.pageCount} pages` : ""].filter(Boolean).join(" · ")}
-        </span>
+        {metadata && (
+          <span className="mt-2 block text-xs leading-4 text-archive-muted">
+            {metadata}
+          </span>
+        )}
+        {item.tags?.length ? (
+          <span className="mt-3 flex flex-wrap gap-1.5">
+            {item.tags.slice(0, 2).map((tag) => (
+              <span className="rounded-full border border-archive-line px-2 py-0.5 text-[0.68rem] leading-4 text-archive-muted" key={tag}>
+                {tag}
+              </span>
+            ))}
+          </span>
+        ) : null}
       </span>
     </Link>
   );
+}
+
+function collectionDateRange(items: CollectionItemSummary[], fallback: string) {
+  const years = items
+    .map((item) => item.displayDate?.match(/\b\d{4}\b/)?.[0])
+    .filter(Boolean)
+    .map(Number);
+  if (!years.length) return fallback;
+  const start = Math.min(...years);
+  const end = Math.max(...years);
+  return start === end ? String(start) : `${start}-${end}`;
 }
 
 function OriginalSourceViewer({ pages, source, transcript }: { pages: SourcePage[]; source: ArchiveSource; transcript: string[] }) {

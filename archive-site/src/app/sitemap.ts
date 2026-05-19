@@ -1,8 +1,11 @@
 import type { MetadataRoute } from "next";
 import { biographyProfiles, canonicalizePersonName, isDisplayableBiographyName, slugifyPersonName } from "@/lib/biographies";
+import { isCoreTopicSlug } from "@/lib/core-topics";
 import { ERAS } from "@/lib/eras";
+import { topicSlug } from "@/lib/internal-links";
 import { absoluteUrl } from "@/lib/seo";
 import { getArchiveSourcesFromSupabase, getCollectionSourcesFromSupabase } from "@/lib/supabase-archive";
+import { listPublicTopics } from "@/lib/topics";
 
 export const revalidate = 3600;
 
@@ -16,15 +19,20 @@ const staticRoutes: Array<{ path: string; priority: number }> = [
   { path: "/topics", priority: 0.75 },
   { path: "/eras", priority: 0.75 },
   { path: "/about", priority: 0.6 },
+  { path: "/project-team", priority: 0.55 },
   { path: "/further-reading", priority: 0.55 },
   { path: "/faq", priority: 0.45 },
-  { path: "/submit-a-source", priority: 0.35 }
+  { path: "/submit-a-source", priority: 0.35 },
+  { path: "/llms.txt", priority: 0.3 },
+  { path: "/llms-full.txt", priority: 0.3 },
+  { path: "/archive-index.json", priority: 0.3 }
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [sources, collections] = await Promise.all([
+  const [sources, collections, curatedTopics] = await Promise.all([
     getArchiveSourcesFromSupabase(),
-    getCollectionSourcesFromSupabase()
+    getCollectionSourcesFromSupabase(),
+    listPublicTopics()
   ]);
 
   const sourceEntries = sources.map((source) =>
@@ -62,12 +70,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   );
 
+  const topicEntries = Array.from(new Set([
+    ...sources.flatMap((source) => source.tags).map((tag) => topicSlug(tag)).filter(isCoreTopicSlug),
+    ...curatedTopics.map((topic) => topic.slug).filter(isCoreTopicSlug)
+  ]))
+    .sort()
+    .map((slug) =>
+      sitemapEntry(`/topics/${slug}`, {
+        priority: 0.66
+      })
+    );
+
   return [
     ...staticRoutes.map((route) => sitemapEntry(route.path, { priority: route.priority })),
     ...sourceEntries,
     ...collectionEntries,
     ...biographyEntries,
-    ...eraEntries
+    ...eraEntries,
+    ...topicEntries
   ];
 }
 

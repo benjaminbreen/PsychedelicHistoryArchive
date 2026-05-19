@@ -63,7 +63,7 @@ export function filterArchiveSources(items: ArchiveSource[], params: ArchiveSear
       (queryTerms.length === 0 || queryTerms.every((term) => haystack.includes(term))) &&
       (!era || normalize(source.era) === era) &&
       (!medium || normalize(source.medium) === medium) &&
-      (!tag || source.tags.some((value) => normalize(value) === tag)) &&
+      (!tag || source.tags.some((value) => normalize(value).includes(tag))) &&
       (!type || normalize(source.type) === type) &&
       (!region || normalize(source.region) === region) &&
       (!people || source.people.some((value) => normalize(value).includes(people))) &&

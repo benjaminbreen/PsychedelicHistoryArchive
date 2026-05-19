@@ -319,8 +319,8 @@ a {
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(ellipse at 50% 46%, transparent 0, transparent 30rem, rgba(92, 70, 40, 0.065) 52rem, rgba(92, 70, 40, 0.115) 100%),
-      radial-gradient(ellipse at 50% 48%, rgba(255, 252, 243, 0.12) 0, rgba(255, 252, 243, 0.24) 17rem, rgba(255, 251, 239, 0.62) 34rem, rgba(255, 251, 239, 0.88) 60rem),
+      radial-gradient(ellipse at 50% 46%, transparent 0, transparent 30rem, rgba(92, 70, 40, 0.15) 52rem, rgba(92, 70, 40, 0.115) 100%),
+      radial-gradient(ellipse at 50% 48%, rgba(255, 252, 243, 0.12) 0, rgba(255, 252, 243, 0.24) 17rem, rgba(255, 251, 239, 0.42) 34rem, rgba(255, 251, 239, 0.88) 60rem),
       linear-gradient(180deg, rgba(122, 96, 58, 0.035), rgba(122, 96, 58, 0) 44%, rgba(122, 96, 58, 0.055));
   }
 
@@ -348,17 +348,112 @@ a {
     mix-blend-mode: screen;
   }
 
+  .home-hero {
+    --hero-progress: 0;
+  }
+
   .home-hero-image {
     @apply absolute inset-0 h-full w-full object-cover object-center;
-    opacity: 0.34;
+    opacity: calc(0.30 + var(--hero-progress, 0) * -0.40);
     mix-blend-mode: multiply;
-    filter: sepia(0.16) saturate(0.62) hue-rotate(214deg) contrast(0.56) brightness(1.08);
+    filter:
+      sepia(calc(0.04 + var(--hero-progress, 0) * 0.08))
+      saturate(calc(0.55 + var(--hero-progress, 0) * -0.25))
+      contrast(calc(0.7 + var(--hero-progress, 0) * -0.06))
+      brightness(calc(1 + var(--hero-progress, 0) * -0.35));
+    transform-origin: 58% 42%;
+    will-change: transform;
   }
 
   :root[data-theme="dark"] .home-hero-image {
-    opacity: 0.26;
+    opacity: 0.28;
     mix-blend-mode: screen;
-    filter: sepia(0.18) saturate(0.58) contrast(0.72) brightness(0.68);
+    filter:
+      sepia(0.22)
+      saturate(calc(0.62 + var(--hero-progress, 0) * 0.15))
+      contrast(0.78)
+      brightness(calc(0.74 + var(--hero-progress, 0) * 0.06));
+  }
+
+  .home-hero-halo {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        ellipse 46rem 28rem at 50% 50%,
+        rgba(255, 228, 172, 0.42) 0%,
+        rgba(255, 224, 166, 0.26) 32%,
+        rgba(255, 220, 160, 0.12) 58%,
+        rgba(255, 216, 156, 0) 82%
+      ),
+      radial-gradient(
+        ellipse 70rem 38rem at 50% 50%,
+        rgba(255, 240, 204, 0.30) 0%,
+        rgba(255, 236, 196, 0.14) 50%,
+        rgba(255, 232, 188, 0) 84%
+      );
+    opacity: calc(1 - var(--hero-progress, 0) * 0.55);
+    transition: opacity 120ms linear;
+  }
+
+  :root[data-theme="dark"] .home-hero-halo {
+    background:
+      radial-gradient(
+        ellipse 32rem 20rem at 50% 50%,
+        rgba(232, 178, 96, 0.42) 0%,
+        rgba(200, 148, 76, 0.24) 36%,
+        rgba(150, 110, 56, 0.08) 64%,
+        rgba(0, 0, 0, 0) 82%
+      ),
+      radial-gradient(
+        ellipse 52rem 30rem at 50% 50%,
+        rgba(180, 138, 80, 0.22) 0%,
+        rgba(140, 106, 60, 0.10) 50%,
+        rgba(0, 0, 0, 0) 84%
+      );
+    mix-blend-mode: screen;
+    opacity: calc(0.95 - var(--hero-progress, 0) * 0.45);
+  }
+
+  .home-hero-vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        ellipse 92% 82% at 50% 50%,
+        transparent 0%,
+        transparent 88%,
+        color-mix(in srgb, rgba(58, 42, 22, 0.10) calc((1 - var(--hero-progress, 0)) * 100%), rgba(96, 76, 138, 0.10) calc(var(--hero-progress, 0) * 100%)) 86%,
+        color-mix(in srgb, rgba(50, 36, 18, 0.18) calc((1 - var(--hero-progress, 0)) * 100%), rgba(86, 66, 128, 0.16) calc(var(--hero-progress, 0) * 100%)) 96%,
+        color-mix(in srgb, rgba(40, 28, 14, 0.24) calc((1 - var(--hero-progress, 0)) * 100%), rgba(72, 54, 116, 0.20) calc(var(--hero-progress, 0) * 100%)) 100%
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, rgba(58, 42, 22, 0.1) calc((1 - var(--hero-progress, 0)) * 100%), rgba(96, 76, 138, 0.1) calc(var(--hero-progress, 0) * 100%)) 0%,
+        rgba(58, 42, 22, 0) 5%,
+        rgba(58, 42, 22, 0) 5%,
+        color-mix(in srgb, rgba(58, 42, 22, 0.10) calc((1 - var(--hero-progress, 0)) * 100%), rgba(96, 76, 138, 0.1) calc(var(--hero-progress, 0) * 100%)) 100%
+      );
+  }
+
+  :root[data-theme="dark"] .home-hero-vignette {
+    background:
+      radial-gradient(
+        ellipse 98% 82% at 50% 50%,
+        transparent 0%,
+        transparent 96%,
+        color-mix(in srgb, rgba(0, 0, 0, 0.32) calc((1 - var(--hero-progress, 0)) * 100%), rgba(110, 86, 168, 0.18) calc(var(--hero-progress, 0) * 100%)) 88%,
+        color-mix(in srgb, rgba(0, 0, 0, 0.56) calc((1 - var(--hero-progress, 0)) * 100%), rgba(94, 70, 152, 0.28) calc(var(--hero-progress, 0) * 100%)) 100%
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, rgba(0, 0, 0, 0.30) calc((1 - var(--hero-progress, 0)) * 100%), rgba(110, 86, 168, 0.16) calc(var(--hero-progress, 0) * 100%)) 0%,
+        rgba(0, 0, 0, 0) 18%,
+        rgba(0, 0, 0, 0) 80%,
+        color-mix(in srgb, rgba(0, 0, 0, 0.60) calc((1 - var(--hero-progress, 0)) * 100%), rgba(94, 70, 152, 0.28) calc(var(--hero-progress, 0) * 100%)) 100%
+      );
   }
 
   .home-hero-panel {
@@ -918,6 +1013,61 @@ a {
     font-size: var(--source-transcript-size);
     line-height: var(--source-transcript-line-height);
     letter-spacing: 0;
+  }
+
+  .source-media-transcript .source-transcript-heading {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 760;
+    line-height: 1.2;
+    text-transform: none;
+    transform: none;
+  }
+
+  .source-media-transcript-body {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-size: 0.98rem;
+    line-height: 1.66;
+    letter-spacing: 0;
+  }
+
+  .source-media-transcript-body p {
+    max-width: 68rem;
+  }
+
+  .source-media-transcript-body strong {
+    font-weight: 780;
+  }
+
+  .source-media-transcript-speaker {
+    color: rgb(var(--archive-ink));
+    font-weight: 800;
+  }
+
+  .source-media-transcript-cue {
+    color: rgb(var(--archive-muted));
+  }
+
+  .source-media-transcript-cue-bracket {
+    font-weight: 780;
+  }
+
+  .source-media-transcript-cue-parenthetical {
+    font-style: italic;
+  }
+
+  .source-media-transcript-body em,
+  .source-media-transcript-body code {
+    color: rgb(var(--archive-muted));
+  }
+
+  .source-transcript-note .source-transcript-heading {
+    font-size: 1.08rem;
+  }
+
+  .source-transcript-note-body {
+    font-size: 0.96rem;
+    line-height: 1.72;
   }
 
   .source-markdown-heading {

@@ -1,15 +1,18 @@
 import type { Metadata as NextMetadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { ArrowLeft, BookOpen, Copy, Download, ExternalLink, Share2 } from "lucide-react";
 import Link from "next/link";
+import { canonicalizePersonName, isDisplayableBiographyName, slugifyPersonName } from "@/lib/biographies";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SourceImage } from "@/components/source-image";
 import { SourceReaderTabs } from "@/components/source-reader-tabs";
 import { ButtonLink } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
-import { SITE_NAME, canonicalPath, seoDescription, sourceImageMetadata } from "@/lib/seo";
-import { getArchiveSourceFromSupabase } from "@/lib/supabase-archive";
+import { eraHref, getEraForYear } from "@/lib/eras";
+import { getRelatedSources, topicHref, type RelatedSource } from "@/lib/internal-links";
+import { JsonLd, SITE_NAME, buildBreadcrumbJsonLd, buildSourceJsonLd, canonicalPath, seoDescription, sourceImageMetadata } from "@/lib/seo";
+import { getArchiveSourceFromSupabase, getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
 import { getSourceTitleParts } from "@/lib/source-title";
 import type { ArchiveSource } from "@/lib/types";
 
@@ -68,19 +71,38 @@ export async function generateMetadata({ params }: SourcePageProps): Promise<Nex
 
 export default async function SourcePage({ params }: SourcePageProps) {
   const { slug } = await params;
-  const source = await getArchiveSourceFromSupabase(slug);
+  if (slug === "chavin-de-huantar-vilca-snuff") redirect("/archive/chavin-de-huantar");
+  const [source, sources] = await Promise.all([
+    getArchiveSourceFromSupabase(slug),
+    getArchiveSourcesFromSupabase()
+  ]);
 
   if (!source) notFound();
 
   const isExternal = source.accessType === "external";
   const titleParts = getSourceTitleParts(source);
+  const relatedSources = getRelatedSources(source, sources);
+  const structuredData = [
+    buildSourceJsonLd(source),
+    buildBreadcrumbJsonLd([
+      { name: "Home", path: "/" },
+      { name: "Archive", path: "/archive" },
+      { name: titleParts.title, path: `/archive/${source.slug}` }
+    ])
+  ];
 
   if (!isExternal) {
-    return <HostedSourcePage source={source} />;
+    return (
+      <>
+        <JsonLd data={structuredData} />
+        <HostedSourcePage relatedSources={relatedSources} source={source} />
+      </>
+    );
   }
 
   return (
     <>
+      <JsonLd data={structuredData} />
       <SiteHeader variant="source" />
       <main className="container-page py-8">
         <Link className="focus-ring mb-8 inline-flex items-center gap-2 rounded-sm text-sm font-semibold text-archive-muted hover:text-archive-violet" href="/archive">
@@ -116,7 +138,7 @@ export default async function SourcePage({ params }: SourcePageProps) {
 
             <div className="mt-5 flex flex-wrap gap-2">
               {source.tags.map((tag, index) => (
-                <Chip href={`/archive?tag=${encodeURIComponent(tag)}`} key={tag} tone={index === 2 ? "lavender" : "neutral"}>
+                <Chip href={topicHref(tag)} key={tag} tone={index === 2 ? "lavender" : "neutral"}>
                   {tag}
                 </Chip>
               ))}
@@ -201,6 +223,7 @@ export default async function SourcePage({ params }: SourcePageProps) {
               {!isExternal && <ActionRow icon={<Download className="h-5 w-5" />} label="Download PDF" meta="PDF" />}
               <ActionRow icon={<Share2 className="h-5 w-5" />} label="Share" />
             </div>
+            <RelatedSourcesCard sources={relatedSources} />
           </aside>
         </div>
       </main>
@@ -209,11 +232,12 @@ export default async function SourcePage({ params }: SourcePageProps) {
   );
 }
 
-function HostedSourcePage({ source }: { source: ArchiveSource }) {
+function HostedSourcePage({ relatedSources, source }: { relatedSources: RelatedSource[]; source: ArchiveSource }) {
   const transcript = getTranscriptPreview(source);
   const titleParts = getSourceTitleParts(source);
   const description = source.summary || source.excerpt;
   const pdfFile = getPdfFile(source);
+  const era = getEraForYear(source.year);
 
   return (
     <>
@@ -225,7 +249,7 @@ function HostedSourcePage({ source }: { source: ArchiveSource }) {
             Text
           </Link>
           <span>/</span>
-          <Link href="/archive?era=1800-1950">1800-1950</Link>
+          {era ? <Link href={eraHref(era)}>{era.label}</Link> : <span>{source.era}</span>}
           <span>/</span>
           <Link href={`/archive?type=${encodeURIComponent(source.type)}`}>{source.type}s</Link>
         </div>
@@ -265,12 +289,12 @@ function HostedSourcePage({ source }: { source: ArchiveSource }) {
             <div className="mt-4 flex flex-wrap items-start text-sm">
               <MetaCell label="Date" value={source.displayDate} />
               <MetaCell label="Type" value={source.type} />
-              <MetaCell label="People" value={formatPeople(source)} />
+              <PeopleMetaCell source={source} />
               <div className="border-l border-archive-line pl-5">
                 <div className="text-[0.62rem] font-bold uppercase tracking-[0.09em] text-archive-muted">Tags</div>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {source.tags.map((tag) => (
-                    <Chip href={`/archive?tag=${encodeURIComponent(tag)}`} key={tag} tone={tagTone(tag)}>
+                    <Chip href={topicHref(tag)} key={tag} tone={tagTone(tag)}>
                       {tag}
                     </Chip>
                   ))}
@@ -310,8 +334,8 @@ function HostedSourcePage({ source }: { source: ArchiveSource }) {
               </div>
               {pdfFile && <ActionRow icon={<Download className="h-5 w-5" />} label="Download PDF" meta="PDF" />}
               <ActionRow icon={<Share2 className="h-5 w-5" />} label="Share" />
-              <ActionRow icon={<BookOpen className="h-5 w-5" />} label="Related sources" />
             </div>
+            <RelatedSourcesCard sources={relatedSources} />
           </aside>
         </div>
         </div>
@@ -343,6 +367,37 @@ function MetaCell({ label, value }: { label: string; value: string }) {
   );
 }
 
+function PeopleMetaCell({ source }: { source: ArchiveSource }) {
+  const people = source.people.length ? source.people : [source.author];
+
+  return (
+    <div className="pr-5 border-l border-archive-line pl-5 first:border-l-0 first:pl-0">
+      <div className="text-[0.62rem] font-bold uppercase tracking-[0.09em] text-archive-muted">People</div>
+      <div className="mt-1 flex flex-wrap gap-x-2 gap-y-1 text-[13px] font-medium">
+        {people.map((person, index) => {
+          const canonicalName = canonicalizePersonName(person);
+          const content = (
+            <>
+              {canonicalName}
+              {index < people.length - 1 && <span className="text-archive-muted">,</span>}
+            </>
+          );
+
+          if (!isDisplayableBiographyName(canonicalName)) {
+            return <span key={`${person}-${index}`}>{content}</span>;
+          }
+
+          return (
+            <Link className="focus-ring rounded-sm text-archive-ink hover:text-archive-violet" href={`/biographies/${slugifyPersonName(canonicalName)}`} key={`${person}-${index}`}>
+              {content}
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 const TAG_TONES: Record<string, "lavender" | "olive" | "sand" | "rose" | "neutral"> = {
   "Nitrous Oxide": "lavender",
   "Consciousness": "olive",
@@ -362,6 +417,38 @@ function Detail({ label, value }: { label: string; value: string }) {
       <dt className="text-[13px] font-semibold text-archive-ink">{label}</dt>
       <dd className="text-[13px] leading-5 text-archive-muted">{value}</dd>
     </div>
+  );
+}
+
+function RelatedSourcesCard({ sources }: { sources: RelatedSource[] }) {
+  if (!sources.length) return null;
+
+  return (
+    <section className="rounded-lg border border-archive-line bg-archive-surface p-4 shadow-[0_10px_28px_rgb(var(--archive-shadow)/0.04)]">
+      <div className="flex items-center gap-2">
+        <BookOpen className="h-4 w-4 text-archive-violet" />
+        <h2 className="source-serif-heading">Related sources</h2>
+      </div>
+      <div className="mt-4 divide-y divide-archive-line">
+        {sources.map((source) => {
+          const titleParts = getSourceTitleParts(source);
+
+          return (
+            <Link className="focus-ring block rounded-sm py-3 first:pt-0 last:pb-0 hover:text-archive-violet" href={`/archive/${source.slug}`} key={source.id}>
+              <span className="block text-[0.64rem] font-bold uppercase tracking-[0.09em] text-archive-muted">
+                {source.type} · {source.displayDate}
+              </span>
+              <span className="mt-1 block text-sm font-semibold leading-5 text-archive-ink">
+                {titleParts.subtitle ? `${titleParts.title}: ${titleParts.subtitle}` : titleParts.title}
+              </span>
+              <span className="mt-1 block text-xs leading-5 text-archive-muted">
+                {source.relatedReason}
+              </span>
+            </Link>
+          );
+        })}
+      </div>
+    </section>
   );
 }
 

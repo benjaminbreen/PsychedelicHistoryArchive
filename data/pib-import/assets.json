@@ -5,13 +5,28 @@
     "mime_type": "application/pdf"
   },
   {
+    "local_path": "thumbnails/pic-bulletin-32-page-1.jpg",
+    "storage_path": "documents/pic-bulletin-32/thumbnail/page-1.jpg",
+    "mime_type": "image/jpeg"
+  },
+  {
     "local_path": "../pib/Bieberman - 1970 - PIC Bulletin 33.pdf",
     "storage_path": "documents/pic-bulletin-33/original/source.pdf",
     "mime_type": "application/pdf"
   },
   {
+    "local_path": "thumbnails/pic-bulletin-33-page-1.jpg",
+    "storage_path": "documents/pic-bulletin-33/thumbnail/page-1.jpg",
+    "mime_type": "image/jpeg"
+  },
+  {
     "local_path": "../pib/Bieberman - 1971 - PIC Bulletin 34.pdf",
     "storage_path": "documents/pic-bulletin-34/original/source.pdf",
     "mime_type": "application/pdf"
+  },
+  {
+    "local_path": "thumbnails/pic-bulletin-34-page-1.jpg",
+    "storage_path": "documents/pic-bulletin-34/thumbnail/page-1.jpg",
+    "mime_type": "image/jpeg"
   }
 ]

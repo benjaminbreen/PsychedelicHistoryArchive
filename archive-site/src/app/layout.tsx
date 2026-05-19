@@ -6,7 +6,7 @@ import {
   Source_Sans_3,
   Source_Serif_4
 } from "next/font/google";
-import { DEFAULT_SITE_DESCRIPTION, SITE_NAME, getSiteUrl } from "@/lib/seo";
+import { DEFAULT_SITE_DESCRIPTION, JsonLd, SITE_NAME, buildWebSiteJsonLd, getSiteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const sourceSans = Source_Sans_3({
@@ -78,6 +78,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${sourceSans.variable} ${sourceSerif.variable} ${newsreader.variable} ${cormorantGaramond.variable} ${antonio.variable}`}>
       <head>
+        <JsonLd data={buildWebSiteJsonLd()} />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>{children}</body>

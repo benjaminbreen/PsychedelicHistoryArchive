@@ -1,0 +1,20 @@
+[
+  { "id": "466dfa9e-0f9e-58ca-a9c8-22e7fe4a49d5", "name": "Cueva del Chileno", "slug": "cueva-del-chileno", "tag_type": "place" },
+  { "id": "5ddfe224-bf7f-5bc3-8886-7ae631a8f7ed", "name": "Bolivia", "slug": "bolivia", "tag_type": "region" },
+  { "id": "fe1cfd99-decc-51be-b5ea-919653caebf9", "name": "Lipez Altiplano", "slug": "lipez-altiplano", "tag_type": "region" },
+  { "id": "ffc687e3-50af-5cdd-93cc-00bd6ea553e6", "name": "Ayahuasca", "slug": "ayahuasca", "tag_type": "topic" },
+  { "id": "c4108fff-85a1-5918-9146-9bff87fac7df", "name": "DMT", "slug": "dmt", "tag_type": "topic" },
+  { "id": "c3106b82-f8ec-5618-81c4-a72278d569f6", "name": "Harmine", "slug": "harmine", "tag_type": "substance" },
+  { "id": "6088852b-0231-51d5-b8dd-93f3570087ff", "name": "Coca", "slug": "coca", "tag_type": "substance" },
+  { "id": "857ee6c0-37e7-5d42-9a67-4abdc609aab0", "name": "Bufotenine", "slug": "bufotenine", "tag_type": "substance" },
+  { "id": "8df62713-3bc8-564c-a7fc-1fa3ad858792", "name": "Residue Analysis", "slug": "residue-analysis", "tag_type": "topic" },
+  { "id": "603e9e72-4711-5d3f-9655-cf99270d8947", "name": "Snuffing Paraphernalia", "slug": "snuffing-paraphernalia", "tag_type": "topic" },
+  { "id": "efa3c250-6e28-5267-90a5-31e1f669df68", "name": "Trade Networks", "slug": "trade-networks", "tag_type": "topic" },
+  { "id": "059db4e4-0584-51c4-bb55-08dd1baec99f", "name": "Vilca", "slug": "vilca", "tag_type": "substance" },
+  { "id": "030edf6a-22c9-56e2-9191-22c45b156601", "name": "Anadenanthera", "slug": "anadenanthera", "tag_type": "substance" },
+  { "id": "91cbc98a-a2bb-5e6a-8516-3a80b8736058", "name": "Archaeology", "slug": "archaeology", "tag_type": "topic" },
+  { "id": "a95e815e-d678-5c6a-9bf0-7904f8839418", "name": "Material Culture", "slug": "material-culture", "tag_type": "topic" },
+  { "id": "37c185ab-e497-57c2-ac2d-fcfb09f72dd8", "name": "Ritual", "slug": "ritual", "tag_type": "topic" },
+  { "id": "271b5998-9d16-5e56-be25-38d25a65366f", "name": "Andes", "slug": "andes", "tag_type": "region" },
+  { "id": "e27426cc-1dfe-5924-abe5-95c094598be3", "name": "Psychoactive Plants", "slug": "psychoactive-plants", "tag_type": "topic" }
+]

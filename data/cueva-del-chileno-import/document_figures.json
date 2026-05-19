@@ -1,0 +1,35 @@
+[
+  {
+    "id": "c5f73f8b-392e-5216-9f30-207f88357298",
+    "document_id": "fab1f1da-ebe2-5453-947f-3ec50f9418f2",
+    "position": 1,
+    "image_path": "documents/fab1f1da-ebe2-5453-947f-3ec50f9418f2/images/cueva-del-chileno/cueva-del-chileno-rock-shelter.jpg",
+    "alt_text": "The Cueva del Chileno rock shelter in southwestern Bolivia.",
+    "caption": "Cueva del Chileno, a rock shelter in the Lipez Altiplano of southwestern Bolivia. The high-altitude setting is central to the interpretation because the detected psychoactive plants were not local to the immediate environment.",
+    "placement": "inline",
+    "token": "site",
+    "credit": "Photo courtesy of Juan V. Albarracin-Jordan and Jose M. Capriles, via UC Berkeley News / PNAS release materials."
+  },
+  {
+    "id": "364856ce-87dd-57e7-9f67-f3e41dacf86f",
+    "document_id": "fab1f1da-ebe2-5453-947f-3ec50f9418f2",
+    "position": 2,
+    "image_path": "documents/fab1f1da-ebe2-5453-947f-3ec50f9418f2/images/cueva-del-chileno/cueva-del-chileno-ritual-bundle.jpg",
+    "alt_text": "The Cueva del Chileno ritual bundle with leather bag, snuffing tablets, tube, pouch, spatulas, textile, and plant remains.",
+    "caption": "Contents of the Cueva del Chileno ritual bundle: leather bag, carved wooden snuffing tablets, snuffing tube with human-hair braids, fox-snout pouch, camelid-bone spatulas, dried plant material, and polychrome textile. The kit links chemical residues to a concrete technology of preparation and ingestion.",
+    "placement": "inline",
+    "token": "bundle",
+    "credit": "Photos courtesy of Juan V. Albarracin-Jordan and Jose M. Capriles, via UC Berkeley News."
+  },
+  {
+    "id": "d4e96cf2-62a0-573a-8ded-ab4af403bd20",
+    "document_id": "fab1f1da-ebe2-5453-947f-3ec50f9418f2",
+    "position": 3,
+    "image_path": "documents/fab1f1da-ebe2-5453-947f-3ec50f9418f2/images/cueva-del-chileno/fox-snout-pouch.jpg",
+    "alt_text": "Animal-skin pouch constructed from three fox snouts.",
+    "caption": "Fox-snout pouch from the ritual bundle. Scrapings from the pouch interior yielded cocaine, benzoylecgonine, bufotenine, harmine, DMT, and a possible psilocin signal in the 2019 LC-MS/MS study.",
+    "placement": "inline",
+    "token": "pouch",
+    "credit": "Photo courtesy of Juan V. Albarracin-Jordan and Jose M. Capriles, via UC Berkeley News; Penn State release credit: Jose Capriles, Penn State."
+  }
+]

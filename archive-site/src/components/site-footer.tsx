@@ -6,8 +6,6 @@ export function SiteFooter() {
     <footer className="mt-16 border-t-4 border-archive-lavender bg-archive-lavender/20">
       <div className="container-page grid gap-8 py-9 lg:grid-cols-[minmax(0,1.25fr)_minmax(18rem,0.9fr)_minmax(18rem,0.95fr)] lg:items-start">
         <div className="max-w-xl">
-          <div className="font-display text-2xl font-normal uppercase tracking-[0.01em] text-archive-ink">
-          </div>
           <p className="mt-3 max-w-md text-md leading-6 text-archive-muted">
             An open access digital archive preserving the history of psychedelics,
             altered states, and consciousness research.
@@ -33,6 +31,7 @@ export function SiteFooter() {
               title: "Project",
               links: [
                 ["About", "/about"],
+                ["Project Team", "/project-team"],
                 ["Further Reading", "/further-reading"],
                 ["FAQ", "/faq"],
                 ["Suggest a Source", "/submit-a-source"]
@@ -56,7 +55,7 @@ export function SiteFooter() {
           ))}
         </nav>
 
-        <form className="max-w-md" action="#" aria-label="Newsletter sign up">
+        <form className="max-w-md" action="mailto:bebreen@ucsc.edu?subject=Psychedelic%20History%20Archive%20newsletter" aria-label="Newsletter sign up" encType="text/plain" method="post">
           <label className="block max-w-sm text-sm leading-snug text-archive-ink" htmlFor="footer-email">
             <span className="underline decoration-archive-ink/60 underline-offset-4">
               Sign up for our newsletter
@@ -69,6 +68,7 @@ export function SiteFooter() {
               id="footer-email"
               name="email"
               placeholder="Email address"
+              required
               type="email"
             />
             <button

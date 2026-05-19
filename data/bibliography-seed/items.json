@@ -1,0 +1,69 @@
+[
+  {
+    "id": "49df236b-25e1-5eda-9972-b6214e7dc599",
+    "slug": "burger-2011-chavin-hallucinogenic-snuff",
+    "item_type": "article",
+    "title": "What Kind of Hallucinogenic Snuff Was Used at Chavin de Huantar? An Iconographic Identification",
+    "publication_title": "Nawpa Pacha",
+    "year": 2011,
+    "volume": "31",
+    "issue": "2",
+    "pages": "123-140",
+    "doi": "10.1179/naw.2011.31.2.123",
+    "publisher_url": "https://www.tandfonline.com/doi/abs/10.1179/naw.2011.31.2.123",
+    "editorial_note": "The core scholarly source for the archive's Chavin vilca-snuff entry.",
+    "reliability_note": "Peer-reviewed Andean archaeology article; useful because it makes a specific iconographic and material-culture argument rather than a broad speculative claim.",
+    "recommendation_status": "recommended",
+    "status": "published",
+    "eras": ["pre-500"],
+    "contributors": [
+      { "display_name": "Richard L. Burger", "family_name": "Burger", "given_name": "Richard L.", "role": "author", "position": 1 }
+    ],
+    "tags": ["archaeology", "iconography", "anadenanthera", "vilca", "chavin-de-huantar"],
+    "document_slugs": ["chavin-de-huantar"]
+  },
+  {
+    "id": "d71665a5-14e4-5a33-a31d-604032494a77",
+    "slug": "sharon-2019-sacred-sanpedro-ethnoarchaeological-context",
+    "item_type": "article",
+    "title": "Sacred Sanpedro in Ethnoarchaeological Context",
+    "publication_title": "Nawpa Pacha",
+    "year": 2019,
+    "volume": "39",
+    "issue": "1",
+    "pages": "113-147",
+    "doi": "10.1080/00776297.2019.1574959",
+    "publisher_url": "https://www.tandfonline.com/doi/abs/10.1080/00776297.2019.1574959",
+    "editorial_note": "Useful for San Pedro cactus in Andean archaeological and ethnographic context, especially when separated from unsupported claims about other ancient mystery traditions.",
+    "reliability_note": "Peer-reviewed article in an Andean archaeology journal; recommended with attention to the limits of ethnoarchaeological analogy.",
+    "recommendation_status": "recommended",
+    "status": "published",
+    "eras": ["pre-500"],
+    "contributors": [
+      { "display_name": "Douglas Sharon", "family_name": "Sharon", "given_name": "Douglas", "role": "author", "position": 1 },
+      { "display_name": "Bonnie Glass-Coffin", "family_name": "Glass-Coffin", "given_name": "Bonnie", "role": "author", "position": 2 }
+    ],
+    "tags": ["archaeology", "san-pedro", "andes", "material-culture"]
+  },
+  {
+    "id": "8167daf0-629e-58d2-a4e7-c89d65422683",
+    "slug": "torres-repke-2006-anadenanthera",
+    "item_type": "book",
+    "title": "Anadenanthera: Visionary Plant of Ancient South America",
+    "publisher": "Haworth Press",
+    "publication_place": "Binghamton, NY",
+    "year": 2006,
+    "isbn": "9780789026422",
+    "google_books_url": "https://books.google.com/books/about/Anadenanthera.html?id=cMSFT5K3C9wC",
+    "editorial_note": "Specialized synthesis on Anadenanthera archaeology, ethnobotany, chemistry, and iconography.",
+    "reliability_note": "Specialist monograph; use for Anadenanthera specifically, not as blanket evidence for loosely defined psychedelic prehistory.",
+    "recommendation_status": "recommended",
+    "status": "published",
+    "eras": ["pre-500", "500-1500"],
+    "contributors": [
+      { "display_name": "Constantino Manuel Torres", "family_name": "Torres", "given_name": "Constantino Manuel", "role": "author", "position": 1 },
+      { "display_name": "David B. Repke", "family_name": "Repke", "given_name": "David B.", "role": "author", "position": 2 }
+    ],
+    "tags": ["anadenanthera", "archaeology", "ethnobotany"]
+  }
+]

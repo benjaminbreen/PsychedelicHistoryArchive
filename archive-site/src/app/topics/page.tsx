@@ -5,7 +5,11 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { PageShell } from "@/components/page/page-shell";
 import { getFacetCounts } from "@/lib/archive-query";
+import { isCoreTopicSlug } from "@/lib/core-topics";
+import { topicHref, topicSlug } from "@/lib/internal-links";
 import { getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
+import { listPublicTopics, type PublicTopicListItem } from "@/lib/topics";
+import type { ArchiveSource } from "@/lib/types";
 import { TopicsBrowser } from "./topics-browser";
 
 export const metadata: Metadata = {
@@ -24,123 +28,137 @@ type TopicCard = {
   tags: string[];
 };
 
+type TagCloudItem = {
+  title: string;
+  count: number;
+  href: string;
+};
+
 export type VisibleTopic = TopicCard & {
   count: number;
+  href: string;
+  slug: string;
+  sources: Array<{
+    title: string;
+    href: string;
+    displayDate: string;
+    type: string;
+  }>;
 };
 
 const TOPIC_METADATA: TopicCard[] = [
   {
     title: "Ayahuasca",
     icon: "ethnobotany",
-    description: "Amazonian brew traditions, ceremony, and cross-cultural studies.",
+    description: "The Amazonian brew, its ceremonial use, and its reception abroad.",
     tags: ["Shamanism", "Indigenous Knowledge"]
   },
   {
     title: "Kava",
     icon: "ethnobotany",
-    description: "Pacific kava traditions, preparation, chemistry, and pharmacology.",
+    description: "Kava in the Pacific, from village preparation to pharmacology lab.",
     tags: ["Ethnobotany", "Pharmacology"]
   },
   {
     title: "Psilocybin",
     icon: "psilocybin",
-    description: "Psilocybin mushrooms, effects, history, and contemporary research.",
+    description: "Psilocybin mushrooms in ritual, laboratory, and clinical use.",
     tags: ["Pharmacology", "Consciousness"]
   },
   {
     title: "Nitrous Oxide",
     icon: "nitrous-oxide",
-    description: "Recreational, medical, and philosophical uses of laughing gas.",
+    description: "Laughing gas as fairground spectacle, surgical anesthetic, and mystical prompt.",
     tags: ["Chemistry", "Medicine"]
   },
   {
     title: "Mescaline",
     icon: "mescaline",
-    description: "Peyote and related cacti in ritual, religion, and research contexts.",
+    description: "Peyote and related cacti, from Indigenous ritual to laboratory isolation.",
     tags: ["Ethnobotany", "Religion"]
   },
   {
     title: "Mysticism",
     icon: "mysticism",
-    description: "Mystical experience, imagination, and the quest for ultimate meaning.",
+    description: "Accounts of mystical experience and the writers who interpreted them.",
     tags: ["Religion", "Consciousness"]
   },
   {
     title: "Psychiatry",
     icon: "psychiatry",
-    description: "Psychedelics in clinical practice, therapy, and mental health research.",
+    description: "Psychedelics in psychiatric clinics and mental health research.",
     tags: ["Medicine", "Therapy"]
   },
   {
     title: "Shamanism",
     icon: "shamanism",
-    description: "Shamanic traditions, altered states, and healing practices worldwide.",
+    description: "Healing and ecstatic practices, and the people who studied them.",
     tags: ["Indigenous Knowledge", "Ritual"]
   },
   {
     title: "Religious Experience",
     icon: "religious-experience",
-    description: "Sacred visions, ecstasy, and entheogenic perspectives across traditions.",
+    description: "Visions, ecstatic states, and entheogenic religion across cultures.",
     tags: ["Religion", "Consciousness"]
   },
   {
     title: "Ethnobotany",
     icon: "ethnobotany",
-    description: "Plants, fungi, and their cultural contexts across human societies.",
+    description: "Plants and fungi in their cultural settings.",
     tags: ["Botany", "Indigenous Knowledge"]
   },
   {
     title: "Cannabis",
     icon: "cannabis",
-    description: "History, culture, medicine, and policy of Cannabis sativa.",
+    description: "Cannabis sativa in medicine, culture, and law.",
     tags: ["Pharmacology", "Law"]
   },
   {
     title: "Pharmacology",
     icon: "pharmacology",
-    description: "Chemical compounds, drug action, and pharmacological research.",
+    description: "How drugs act on the body — the science and its history.",
     tags: ["Chemistry", "Research"]
   },
   {
     title: "Chemistry",
     icon: "pharmacology",
-    description: "Synthesis, analysis, isolation, and structure of psychoactive compounds.",
+    description: "Synthesis and structure of psychoactive compounds.",
     tags: ["Pharmacology", "Research"]
   },
   {
     title: "Clinical",
     icon: "clinical",
-    description: "Clinical reports, hospital settings, patient observation, and medical trials.",
+    description: "Hospital case notes and medical trial records.",
     tags: ["Medicine", "Research"]
   },
   {
     title: "Indigenous Knowledge",
     icon: "indigenous-knowledge",
-    description: "Traditional knowledge systems, oral histories, and cultural heritage.",
+    description: "Traditional knowledge and oral histories.",
     tags: ["Culture", "Oral History"]
   },
   {
     title: "Anthropology",
     icon: "indigenous-knowledge",
-    description: "Ethnographic fieldwork, cultural interpretation, and cross-cultural encounter.",
+    description: "Ethnographic fieldwork and the encounter between cultures.",
     tags: ["Culture", "Research"]
   },
   {
     title: "Visionary Art",
     icon: "visionary-art",
-    description: "Art, aesthetics, and visual cultures of altered states.",
+    description: "Art and visual culture inspired by altered states.",
     tags: ["Art", "Culture"]
   },
   {
     title: "Consciousness",
     icon: "consciousness",
-    description: "The nature of mind, perception, and states of consciousness.",
+    description: "Writing on the mind and its altered states.",
     tags: ["Philosophy", "Neuroscience"]
   },
   {
     title: "Psychology",
     icon: "psychiatry",
-    description: "Perception, emotion, behavior, and subjective effects in psychological research.",
+    description: "Psychological research on perception, emotion, and drug effects.",
     tags: ["Consciousness", "Research"]
   },
   {
@@ -152,44 +170,48 @@ const TOPIC_METADATA: TopicCard[] = [
   {
     title: "Ritual",
     icon: "religion",
-    description: "Ceremony, rites, and symbolic practice across cultures.",
+    description: "Ceremony and symbolic practice across cultures.",
     tags: ["Ritual", "Culture"]
   },
-  { title: "LSD", icon: "lsd", description: "Discovery, research, therapy, counterculture, and policy after 1943.", tags: ["Chemistry", "Therapy"] },
-  { title: "MDMA", icon: "therapy", description: "Therapy, underground practice, research networks, and revival.", tags: ["Therapy", "Networks"] },
-  { title: "DMT", icon: "pharmacology", description: "Plant, synthetic, and endogenous debates around visionary experience.", tags: ["Chemistry", "Consciousness"] },
-  { title: "Ibogaine", icon: "addiction", description: "Treatment claims, ritual contexts, and addiction research.", tags: ["Addiction", "Pharmacology"] },
-  { title: "Anesthesia", icon: "anesthesia", description: "Ether, chloroform, nitrous oxide, and altered consciousness.", tags: ["Medicine", "Consciousness"] },
-  { title: "Animal Research", icon: "clinical", description: "Laboratory studies involving nonhuman subjects and behavioral observation.", tags: ["Research", "Medicine"] },
-  { title: "Psychotherapy", icon: "therapy", description: "Therapeutic method, clinical settings, and session reports.", tags: ["Therapy", "Psychiatry"] },
-  { title: "Therapy", icon: "therapy", description: "Therapeutic use, treatment claims, clinical practice, and session reports.", tags: ["Psychiatry", "Medicine"] },
-  { title: "Counterculture", icon: "counterculture", description: "Media, scenes, politics, and alternative institutions.", tags: ["Culture", "Politics"] },
-  { title: "Law & Prohibition", icon: "law", description: "Drug control, criminalization, trials, and policy change.", tags: ["Law", "Policy"] },
-  { title: "Law", icon: "law", description: "Trials, testimony, regulation, criminalization, and legal conflict.", tags: ["Policy", "Public Record"] },
-  { title: "Prohibition", icon: "prohibition", description: "Drug control, enforcement, restriction, and policy change.", tags: ["Law", "Policy"] },
-  { title: "Military & Intelligence", icon: "intelligence", description: "Cold War research, state projects, and covert programs.", tags: ["Military", "Intelligence"] },
-  { title: "Military", icon: "military", description: "Military research, medicine, testing, and Cold War institutional settings.", tags: ["Government", "Research"] },
-  { title: "Intelligence", icon: "intelligence", description: "Intelligence agencies, covert programs, and behavioral research networks.", tags: ["Government", "Research"] },
-  { title: "Government Research", icon: "intelligence", description: "State-sponsored studies, laboratories, programs, and institutional oversight.", tags: ["Government", "Research"] },
-  { title: "MKULTRA", icon: "intelligence", description: "CIA-linked mind-control research, funding trails, and covert experiments.", tags: ["Intelligence", "Government"] },
-  { title: "Literature", icon: "literature", description: "Poetry, fiction, essays, and altered-state writing.", tags: ["Art", "Culture"] },
-  { title: "Psychoanalysis", icon: "psychosis", description: "Unconscious life, clinical interpretation, and drug-assisted therapy.", tags: ["Therapy", "Psychiatry"] },
-  { title: "PTSD", icon: "therapy", description: "Trauma treatment, narcosynthesis, and postwar clinical practice.", tags: ["Therapy", "Medicine"] },
-  { title: "ESP", icon: "mysticism", description: "Parapsychology, extrasensory perception, and anomalous experience research.", tags: ["Consciousness", "Research"] },
-  { title: "Human Potential", icon: "networks", description: "Growth movements, institutes, experiments, and networks.", tags: ["Networks", "Therapy"] },
-  { title: "Botany", icon: "ethnobotany", description: "Plant taxonomy, collection, identification, and botanical exchange.", tags: ["Ethnobotany", "Research"] },
-  { title: "Self-Experiment", icon: "self-experiment", description: "First-person trials, observations, and embodied research practices.", tags: ["Experience", "Research"] },
-  { title: "Trip Reports", icon: "trip-reports", description: "Subjective accounts of visions, insight, fear, and transformation.", tags: ["Experience", "Consciousness"] },
-  { title: "Oral History", icon: "oral-history", description: "Interviews, recollections, testimony, and remembered experience.", tags: ["Memory", "Culture"] },
-  { title: "Set & Setting", icon: "clinical", description: "Context, expectation, environment, and social framing of experience.", tags: ["Therapy", "Experience"] },
-  { title: "Harm Reduction", icon: "medicine", description: "Safety, education, care, and public health approaches.", tags: ["Public Health", "Policy"] },
-  { title: "Cybernetics", icon: "networks", description: "Systems theory, feedback, mind, and experimental communities.", tags: ["Networks", "Science"] }
+  { title: "LSD", icon: "lsd", description: "Lysergic acid diethylamide after Hofmann's 1943 discovery.", tags: ["Chemistry", "Therapy"] },
+  { title: "MDMA", icon: "therapy", description: "MDMA in therapy and in the underground research networks of the 1970s and 80s.", tags: ["Therapy", "Networks"] },
+  { title: "DMT", icon: "pharmacology", description: "DMT in plants, synthesis, and the human body.", tags: ["Chemistry", "Consciousness"] },
+  { title: "Ibogaine", icon: "addiction", description: "Ibogaine, Bwiti ritual, and the addiction-treatment literature.", tags: ["Addiction", "Pharmacology"] },
+  { title: "Anesthesia", icon: "anesthesia", description: "Ether, chloroform, and the history of surgical unconsciousness.", tags: ["Medicine", "Consciousness"] },
+  { title: "Animal Research", icon: "clinical", description: "Laboratory studies on nonhuman subjects.", tags: ["Research", "Medicine"] },
+  { title: "Psychotherapy", icon: "therapy", description: "Therapy sessions, methods, and case reports.", tags: ["Therapy", "Psychiatry"] },
+  { title: "Therapy", icon: "therapy", description: "Clinical use of psychedelics in treatment.", tags: ["Psychiatry", "Medicine"] },
+  { title: "Counterculture", icon: "counterculture", description: "Media, scenes, and alternative institutions of the 1960s and 70s.", tags: ["Culture", "Politics"] },
+  { title: "Law & Prohibition", icon: "law", description: "Drug control, criminalization, and the politics of policy change.", tags: ["Law", "Policy"] },
+  { title: "Law", icon: "law", description: "Trials, testimony, and the regulation of psychoactive substances.", tags: ["Policy", "Public Record"] },
+  { title: "Prohibition", icon: "prohibition", description: "Enforcement and restriction of drug use.", tags: ["Law", "Policy"] },
+  { title: "Military & Intelligence", icon: "intelligence", description: "Cold War state research and covert drug programs.", tags: ["Military", "Intelligence"] },
+  { title: "Military", icon: "military", description: "Military research and medicine in Cold War settings.", tags: ["Government", "Research"] },
+  { title: "Intelligence", icon: "intelligence", description: "Intelligence agencies and the behavioral research they funded.", tags: ["Government", "Research"] },
+  { title: "Government Research", icon: "intelligence", description: "State-sponsored studies and laboratory programs.", tags: ["Government", "Research"] },
+  { title: "MKULTRA", icon: "intelligence", description: "The CIA's mind-control research program and its funding trails.", tags: ["Intelligence", "Government"] },
+  { title: "Literature", icon: "literature", description: "Poetry, fiction, and essays written under the influence.", tags: ["Art", "Culture"] },
+  { title: "Psychoanalysis", icon: "psychosis", description: "The unconscious, clinical interpretation, and drug-assisted therapy.", tags: ["Therapy", "Psychiatry"] },
+  { title: "PTSD", icon: "therapy", description: "Trauma treatment and postwar clinical practice.", tags: ["Therapy", "Medicine"] },
+  { title: "ESP", icon: "mysticism", description: "Parapsychology and research on anomalous experience.", tags: ["Consciousness", "Research"] },
+  { title: "Human Potential", icon: "networks", description: "Growth movements, institutes, and the people who built them.", tags: ["Networks", "Therapy"] },
+  { title: "Botany", icon: "ethnobotany", description: "Plant taxonomy and the global trade in botanical specimens.", tags: ["Ethnobotany", "Research"] },
+  { title: "Self-Experiment", icon: "self-experiment", description: "First-person drug trials kept as research records.", tags: ["Experience", "Research"] },
+  { title: "Trip Reports", icon: "trip-reports", description: "First-person accounts of visions, insight, and disturbance.", tags: ["Experience", "Consciousness"] },
+  { title: "Oral History", icon: "oral-history", description: "Interviews and recorded recollections.", tags: ["Memory", "Culture"] },
+  { title: "Set & Setting", icon: "clinical", description: "How context shapes the drug experience.", tags: ["Therapy", "Experience"] },
+  { title: "Harm Reduction", icon: "medicine", description: "Public health approaches to drug use.", tags: ["Public Health", "Policy"] },
+  { title: "Cybernetics", icon: "networks", description: "Systems theory, feedback, and the experimental communities it shaped.", tags: ["Networks", "Science"] }
 ];
 
 export default async function TopicsPage() {
-  const sources = await getArchiveSourcesFromSupabase();
+  const [sources, curatedTopics] = await Promise.all([
+    getArchiveSourcesFromSupabase(),
+    listPublicTopics()
+  ]);
   const facetCounts = getFacetCounts(sources);
-  const visibleTopics = buildVisibleTopics(facetCounts.tags);
+  const visibleTopics = buildVisibleTopics(facetCounts.tags, sources, curatedTopics);
+  const tagCloud = buildTagCloud(facetCounts.tags, visibleTopics);
 
   return (
     <>
@@ -205,28 +227,102 @@ export default async function TopicsPage() {
         </header>
 
         <TopicsBrowser topics={visibleTopics} />
+        <TagCloud tags={tagCloud} />
       </PageShell>
       <SiteFooter />
     </>
   );
 }
 
-function buildVisibleTopics(counts: Record<string, number>): VisibleTopic[] {
+function buildVisibleTopics(counts: Record<string, number>, sources: ArchiveSource[], curatedTopics: PublicTopicListItem[]): VisibleTopic[] {
   const metadataByKey = new Map(TOPIC_METADATA.map((topic) => [normalizeTopicKey(topic.title), topic]));
+  const curatedBySlug = new Map(curatedTopics.map((topic) => [topic.slug, topic]));
+  const entries = new Map<string, { count: number; title: string }>();
 
-  return Object.entries(counts)
-    .filter(([, count]) => count > 0)
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([title, count]) => {
+  Object.entries(counts)
+    .filter(([title, count]) => count > 0 && isCoreTopicSlug(topicSlug(title)))
+    .forEach(([title, count]) => {
+      entries.set(topicSlug(title), { count, title });
+    });
+
+  curatedTopics.forEach((topic) => {
+    if (!isCoreTopicSlug(topic.slug)) return;
+    const existing = entries.get(topic.slug);
+    entries.set(topic.slug, {
+      count: topic.documentCount || existing?.count || 0,
+      title: topic.name
+    });
+  });
+
+  return [...entries.entries()]
+    .filter(([, entry]) => entry.count > 0)
+    .sort(([, a], [, b]) => a.title.localeCompare(b.title))
+    .map(([slug, entry]) => {
+      const curated = curatedBySlug.get(slug);
+      const title = curated?.name ?? entry.title;
       const metadata = metadataByKey.get(normalizeTopicKey(title));
+      const curatedIds = new Set(curated?.documentIds ?? []);
+      const topicSources = (curatedIds.size
+        ? sources.filter((source) => curatedIds.has(source.id))
+        : sources.filter((source) => source.tags.some((tag) => normalizeTopicKey(tag) === normalizeTopicKey(title)))
+      )
+        .sort((a, b) => a.year - b.year || a.title.localeCompare(b.title))
+        .slice(0, 3);
       return {
         title,
-        icon: iconForTopic(title, metadata?.icon),
-        description: metadata?.description ?? descriptionForTopic(title),
+        slug,
+        href: `/topics/${slug}`,
+        icon: iconForTopic(title, curated?.icon || metadata?.icon),
+        description: curated?.dek ?? metadata?.description ?? descriptionForTopic(title),
         tags: metadata?.tags ?? fallbackTagsForTopic(title),
-        count
+        sources: topicSources.map((source) => ({
+          title: source.title,
+          href: `/archive/${source.slug}`,
+          displayDate: source.displayDate,
+          type: source.type
+        })),
+        count: entry.count
       };
     });
+}
+
+function buildTagCloud(counts: Record<string, number>, visibleTopics: VisibleTopic[]): TagCloudItem[] {
+  const visibleSlugs = new Set(visibleTopics.map((topic) => topic.slug));
+
+  return Object.entries(counts)
+    .filter(([title, count]) => count > 0 && !visibleSlugs.has(topicSlug(title)))
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, 80)
+    .map(([title, count]) => ({
+      title,
+      count,
+      href: `/archive?tag=${encodeURIComponent(title)}`
+    }));
+}
+
+function TagCloud({ tags }: { tags: TagCloudItem[] }) {
+  if (!tags.length) return null;
+
+  return (
+    <section className="mt-10 border-t border-archive-line pt-7">
+      <div className="grid gap-5 lg:grid-cols-[minmax(12rem,18rem)_minmax(0,1fr)]">
+        <div>
+          <h2 className="source-serif-heading">Specific Tags</h2>
+          <p className="mt-2 text-sm leading-6 text-archive-muted">
+            Narrow labels, dates, places, methods, and one-off descriptors remain archive filters rather than editorial topic pages.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <a className="focus-ring inline-flex min-h-8 items-center rounded-full border border-archive-line bg-archive-surface px-3 py-1 text-xs font-semibold text-archive-muted transition hover:border-archive-violet/35 hover:bg-archive-lavender2 hover:text-archive-violetDark" href={tag.href} key={tag.title}>
+              {tag.title}
+              <span className="ml-2 rounded-full bg-archive-paper px-1.5 py-0.5 font-mono text-[0.65rem] text-archive-muted">{tag.count}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function normalizeTopicKey(value: string) {

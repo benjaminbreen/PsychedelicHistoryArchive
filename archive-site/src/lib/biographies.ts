@@ -30,7 +30,8 @@ type BiographyDirectoryMetadata = {
 
 const excludedBiographyNames = new Set([
   "bebreen@ucsc.edu",
-  "Burroughs Wellcome & Co."
+  "Burroughs Wellcome & Co.",
+  "The Psychedelic History Archive"
 ]);
 
 const canonicalPersonNames: Record<string, string> = {
@@ -347,7 +348,7 @@ export const biographyProfiles: BiographyProfile[] = [
       "Born on September 11, 1907 in San Luis Potosí, Mexico, Efrén C. del Pozo completed his early studies at the Autonomous University of San Luis Potosí (UASLP), where he also served as a professor and secretary. He went on to earn his medical degree from the National Autonomous University of Mexico (UNAM) in 1936.",
       "Del Pozo pursued advanced studies in physiology at Harvard Medical School from 1940-1943 under the mentorship of physiologist Walter B. Cannon. He also worked as an associate researcher at the National Institute for Medical Research in London in 1947. Upon returning to Mexico, del Pozo held positions at various institutions, including the National Polytechnic Institute (IPN), UNAM, and the Ministry of Health. He was a founding member of the National School of Biological Sciences at IPN and the Mexican Society of Physiological Sciences.",
       "As a researcher, del Pozo made notable contributions to the study of human physiology and pharmacology. He conducted early experiments on the effects of ethnobotanical specimens and traditional Aztec and Mayan medicines, including psychoactive plants. In 1959, American researcher Frank Barron participated in del Pozo's trials with psilocybin mushrooms in Mexico City, observing their effects on creativity. As Timothy Leary later recalled, it was Barron's account of this experience that triggered Leary's own interest in psychedelics.",
-      "Del Pozo was also a prominent historian of medicine. He played a key role in the publication of two seminal works of 16th-century Mexican medicine: the 1552 Badianus Manuscript, Libellus de Medicinalibus Indorum Herbis, in 1964, and the complete works of Francisco Hernandez, published between 1960 and 1984. These efforts helped preserve and bring attention to the rich history of Indigenous medical knowledge in Mexico.",
+      "Del Pozo was also a prominent historian of medicine. He played a key role in the publication of two seminal works of 16th-century Mexican medicine: the 1552 Badianus Manuscript, Libellus de Medicinalibus Indorum Herbis, in 1964, and the complete works of Francisco Hernandez, published between 1960 and 1984. This work brought sixteenth-century records of Indigenous medical knowledge in Mexico into wider scholarly circulation.",
       "From 1953 to 1961, del Pozo served as Secretary General of UNAM, working alongside rector Nabor Carrillo. In this role, he helped establish the University City campus and modernize the institution's academic and research programs. Del Pozo was also President of the National Academy of Medicine in 1961 and Secretary General of the Union of Latin American Universities.",
       "Throughout his career, del Pozo was known as a dedicated mentor and advocate for scientific research in Mexico. Efrén C. del Pozo passed away on May 14, 1979 in Mexico City."
     ],
@@ -400,7 +401,7 @@ export const biographyProfiles: BiographyProfile[] = [
     name: "Myron Stolaroff",
     slug: "myron-stolaroff",
     years: "1920-2013",
-    dek: "A pioneering electrical engineer and psychedelic researcher whose work helped legitimize the study of psychedelics as tools for therapy, self-discovery, and the exploration of human consciousness.",
+    dek: "Electrical engineer who left Ampex in 1960 to fund and direct one of the first sustained clinical studies of LSD therapy in the United States.",
     imagePath: "/images/bios/myron-stolaroff.webp",
     imageAlt: "Portrait of Myron Stolaroff",
     imageCaption: "Stolaroff in 1961, via the Museum of Magnetic Sound Recording.",
@@ -413,10 +414,10 @@ export const biographyProfiles: BiographyProfile[] = [
       { label: "Known for", value: "International Foundation for Advanced Study; psychedelic therapy research" }
     ],
     paragraphs: [
-      "Born in 1920 in Roswell, New Mexico, Stolaroff earned a Master's degree in electrical engineering from Stanford University in 1941. He then began a successful career at Ampex Corporation, where he played a key role in developing the first magnetic tape recorder. However, a profound personal experience with LSD in 1956 convinced Stolaroff that psychedelics held immense potential for psychological and spiritual growth. Believing that LSD was the most important discovery man had ever made, he left Ampex in 1960 to found the International Foundation for Advanced Study (IFAS) in Menlo Park, California.",
-      "As president of IFAS from 1960 to 1970, Stolaroff oversaw groundbreaking research into the therapeutic applications of LSD and mescaline. Between 1961 and 1965, the foundation administered psychedelics to hundreds of subjects in carefully controlled clinical settings, gathering valuable data on the drugs' effects. During this period, Stolaroff collaborated with numerous figures in the field, including psychologist Willis Harman, psychiatrist Charles Savage, and philosopher Gerald Heard. In 1965, the FDA began revoking permits for psychedelic research, forcing IFAS to conclude its studies prematurely.",
-      "Undeterred, Stolaroff continued to explore altered states of consciousness throughout his life. From 1978 to 1986, he conducted personal investigations with novel psychoactive compounds, documenting his experiences. He also became a prolific writer and speaker, authoring books and articles on psychedelics, creativity, problem-solving, and spirituality. His notable works include Thanatos to Eros: 35 Years of Psychedelic Exploration and The Secret Chief, a biography of underground psychedelic therapist Leo Zeff.",
-      "Stolaroff's research and advocacy helped lay the groundwork for the resurgence of scientific interest in psychedelics that began in the 1990s. He served on the board of directors of the Albert Hofmann Foundation and as a consultant to the Heffter Research Institute. In his later years, Stolaroff was revered as an elder statesman of the psychedelic movement.",
+      "Born in 1920 in Roswell, New Mexico, Stolaroff earned a Master's degree in electrical engineering from Stanford in 1941 and joined Ampex Corporation, where he worked on the first magnetic tape recorder. He took LSD for the first time in 1956 and afterwards described it as the most important discovery he had encountered. In 1960 he left Ampex to found the International Foundation for Advanced Study (IFAS) in Menlo Park.",
+      "As president of IFAS from 1960 to 1970, Stolaroff ran clinical studies of LSD and mescaline. Between 1961 and 1965 the foundation administered psychedelics to several hundred subjects under controlled conditions. His collaborators included the engineer Willis Harman, the psychiatrist Charles Savage, and the philosopher Gerald Heard. In 1965 the FDA began revoking research permits, and IFAS wound down its studies.",
+      "From 1978 to 1986 Stolaroff conducted private sessions with novel psychoactive compounds and kept detailed records of the results. He later wrote Thanatos to Eros: 35 Years of Psychedelic Exploration and The Secret Chief, a portrait of the underground therapist Leo Zeff.",
+      "Stolaroff served on the board of the Albert Hofmann Foundation and as a consultant to the Heffter Research Institute, and was an active figure in the renewed clinical research of the 1990s and 2000s.",
       "Stolaroff died in 2013 at the age of 92, leaving behind an important archive that is in the process of being catalogued and digitized at Erowid.org."
     ],
     sourceNotes: [

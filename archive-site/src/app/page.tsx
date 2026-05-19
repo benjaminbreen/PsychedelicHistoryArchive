@@ -6,22 +6,26 @@ import { ButtonLink } from "@/components/ui/button";
 import { SearchBar } from "@/components/ui/search-bar";
 import { Chip } from "@/components/ui/chip";
 import { SourceImage } from "@/components/source-image";
-import { SourceThumbnail } from "@/components/source-thumbnail";
 import { BrowsePills, EraBand, MediumTiles } from "@/components/browse-controls";
+import { HomeHeroImage } from "@/components/home-hero-image";
 import { SectionHeading } from "@/components/section-heading";
-import { featuredCollections } from "@/lib/archive-data";
 import { getFacetCounts } from "@/lib/archive-query";
-import { getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
+import { ERAS, countSourcesInEra, eraHref } from "@/lib/eras";
+import { getArchiveSourcesFromSupabase, getCollectionSourcesFromSupabase } from "@/lib/supabase-archive";
 import { getSourceTitleParts } from "@/lib/source-title";
 import type { FacetOption } from "@/lib/types";
 
 export const revalidate = 3600;
 
 export default async function HomePage() {
-  const sources = await getArchiveSourcesFromSupabase();
+  const [sources, collections] = await Promise.all([
+    getArchiveSourcesFromSupabase(),
+    getCollectionSourcesFromSupabase()
+  ]);
   const facetCounts = getFacetCounts(sources);
   const eraFacets = eraRangeFacets(sources);
   const mediumFacets = browseTypeFacets(facetCounts.types);
+  const featuredCollectionSources = collections.slice(0, 4);
   const featured = sources.find((source) => source.slug === "mead-lsd-memo") ?? sources.find((source) => source.featured) ?? sources[0];
   const supportingSources = sources.filter((source) => source.id !== featured.id).slice(0, 4);
   const recentSources = [...sources].sort((a, b) => b.year - a.year).slice(0, 5);
@@ -30,14 +34,9 @@ export default async function HomePage() {
     <>
       <SiteHeader />
       <main>
-        <section className="border-b border-archive-line">
+        <section className="border-b-2 border-archive-lavender">
           <div className="home-hero min-h-[24rem] sm:min-h-[27rem]">
-            <img
-              alt=""
-              aria-hidden="true"
-              className="home-hero-image"
-              src="/images/abramson-fish.jpg"
-            />
+            <HomeHeroImage />
             <div className="container-page relative flex min-h-[24rem] items-center justify-center py-8 sm:min-h-[27rem]">
               <div className="home-hero-panel w-full max-w-[50rem] rounded-lg border border-[rgb(var(--archive-warm-line))] px-7 py-6 sm:px-9 sm:py-7">
                 <h1 className="home-hero-title max-w-[42rem] text-archive-ink">
@@ -116,31 +115,33 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section className="container-page py-8">
-          <SectionHeading eyebrow="Featured collections" actionHref="/collections" actionLabel="View all collections" />
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {featuredCollections.map((collection) => (
-              <Link
-                className="focus-ring group grid grid-cols-[7rem_1fr] gap-4 border-r border-archive-line py-2 pr-4 transition duration-200 hover:border-archive-violet/45 hover:bg-archive-lavender2/55"
-                href={collection.href}
-                key={collection.title}
-              >
-                <SourceThumbnail className="aspect-[4/3] w-full transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-[0_8px_18px_rgba(57,45,31,0.12)]" title={collection.title} tone={collection.imageTone} />
-                <span>
-                  <span className="block font-serif text-lg font-semibold leading-snug text-archive-ink transition group-hover:text-archive-violetDark">
-                    {collection.title}
+        {featuredCollectionSources.length > 0 && (
+          <section className="container-page py-8">
+            <SectionHeading eyebrow="Featured collections" actionHref="/collections" actionLabel="View all collections" />
+            <div className="grid gap-5 lg:grid-cols-2">
+              {featuredCollectionSources.map((collection) => (
+                <Link
+                  className="focus-ring group grid grid-cols-[10rem_1fr] gap-5 border-r border-archive-line py-2 pr-5 transition duration-200 hover:border-archive-violet/45 hover:bg-archive-lavender2/55"
+                  href={`/collections/${collection.slug}`}
+                  key={collection.id}
+                >
+                  <SourceImage className="aspect-[5/4] w-full transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-[0_8px_18px_rgba(57,45,31,0.12)]" source={collection} />
+                  <span>
+                    <span className="block font-serif text-lg font-semibold leading-snug text-archive-ink transition group-hover:text-archive-violetDark">
+                      {collection.title}
+                    </span>
+                    <span className="mt-1 block text-sm leading-5 text-archive-muted">
+                      {collection.summary || collection.subtitle || "Curated collection from the archive."}
+                    </span>
+                    <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-archive-violet transition group-hover:text-archive-violetDark">
+                      {collection.collectionItemCount ?? 0} sources <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+                    </span>
                   </span>
-                  <span className="mt-1 block text-sm leading-5 text-archive-muted">
-                    {collection.description}
-                  </span>
-                  <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-archive-violet transition group-hover:text-archive-violetDark">
-                    Explore collection <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-                  </span>
-                </span>
-              </Link>
-            ))}
-          </div>
-        </section>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section className="container-page py-8">
           <SectionHeading eyebrow="Recent additions" actionHref="/archive?sort=newest" actionLabel="View all recent additions" />
@@ -193,20 +194,12 @@ export default async function HomePage() {
 }
 
 function eraRangeFacets(sources: Array<{ year: number }>): FacetOption[] {
-  return [
-    { label: "Pre-500 CE", href: "/eras/pre-500", matches: (year: number) => year <= 500 },
-    { label: "500-1500", href: "/eras/500-1500", matches: (year: number) => year >= 501 && year <= 1500 },
-    { label: "1500-1800", href: "/eras/1500-1800", matches: (year: number) => year >= 1501 && year <= 1800 },
-    { label: "1800-1850", href: "/eras/1800-1850", matches: (year: number) => year >= 1801 && year <= 1850 },
-    { label: "1850-1900", href: "/eras/1850-1900", matches: (year: number) => year >= 1851 && year <= 1900 },
-    { label: "1900-1942", href: "/eras/1900-1942", matches: (year: number) => year >= 1901 && year <= 1942 },
-    { label: "1943-1962", href: "/eras/1943-1962", matches: (year: number) => year >= 1943 && year <= 1962 },
-    { label: "1963-1979", href: "/eras/1963-1979", matches: (year: number) => year >= 1963 && year <= 1979 },
-    { label: "1980-present", href: "/eras/1980-present", matches: (year: number) => year >= 1980 }
-  ].map((range) => ({
-    label: range.label,
-    count: sources.filter((source) => range.matches(source.year)).length,
-    href: range.href
+  return ERAS.map((era) => ({
+    label: era.label,
+    count: countSourcesInEra(sources, era),
+    href: eraHref(era),
+    imagePath: era.bannerImage,
+    subtitle: era.eyebrow
   }));
 }
 
