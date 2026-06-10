@@ -1,0 +1,32 @@
+[
+  {
+    "chunk": "lettvin-vs-leary-000.wav",
+    "json": "lettvin-vs-leary-000.json",
+    "txt": "lettvin-vs-leary-000.txt",
+    "status": "transcribed"
+  },
+  {
+    "chunk": "lettvin-vs-leary-001.wav",
+    "json": "lettvin-vs-leary-001.json",
+    "txt": "lettvin-vs-leary-001.txt",
+    "status": "transcribed"
+  },
+  {
+    "chunk": "lettvin-vs-leary-002.wav",
+    "json": "lettvin-vs-leary-002.json",
+    "txt": "lettvin-vs-leary-002.txt",
+    "status": "transcribed"
+  },
+  {
+    "chunk": "lettvin-vs-leary-003.wav",
+    "json": "lettvin-vs-leary-003.json",
+    "txt": "lettvin-vs-leary-003.txt",
+    "status": "transcribed"
+  },
+  {
+    "chunk": "lettvin-vs-leary-004.wav",
+    "json": "lettvin-vs-leary-004.json",
+    "txt": "lettvin-vs-leary-004.txt",
+    "status": "transcribed"
+  }
+]

@@ -9,7 +9,8 @@ import { SiteHeader } from "@/components/site-header";
 import { ButtonLink } from "@/components/ui/button";
 import { SourceImage } from "@/components/source-image";
 import { filterArchiveSources, type ArchiveSearchParams } from "@/lib/archive-query";
-import { getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
+import { archiveClearFiltersHref, archiveHref } from "@/lib/archive-url";
+import { listArchiveSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { getSourceTitleParts } from "@/lib/source-title";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -32,31 +33,33 @@ type ArchivePageProps = {
 
 export default async function ArchivePage({ searchParams }: ArchivePageProps) {
   const params = await searchParams;
-  const sources = await getArchiveSourcesFromSupabase();
+  const sources = await listArchiveSourceSummariesFromSupabase();
   const results = filterArchiveSources(sources, params);
   const currentPage = parsePage(params.page);
   const pageCount = Math.max(1, Math.ceil(results.length / pageSize));
   const safePage = Math.min(currentPage, pageCount);
   const pagedResults = results.slice((safePage - 1) * pageSize, safePage * pageSize);
   const view = params.view === "grid" ? "grid" : params.view === "compact" ? "compact" : "list";
-  const queryString = toQueryString(params, ["view", "page"]);
   const featured = shouldShowFeaturedSource(params) ? getContextualFeaturedSource(results) : undefined;
   const pageHeading = archivePageHeading(params);
+  const activeFilters = {
+    access: params.access,
+    era: params.era,
+    medium: params.medium,
+    tag: params.tag,
+    type: params.type,
+    region: params.region,
+    people: params.people
+  };
+
   return (
     <>
       <SiteHeader variant="source" showSourceSettings={false} />
       <main className="w-full px-6 py-6 sm:px-8 lg:px-12">
         <div className="grid gap-8 lg:grid-cols-[17.5rem_1fr]">
           <ArchiveFilterSidebar
-            active={{
-              access: params.access,
-              era: params.era,
-              medium: params.medium,
-              tag: params.tag,
-              type: params.type,
-              region: params.region,
-              people: params.people
-            }}
+            active={activeFilters}
+            baseParams={params}
             sources={sources}
           />
           <div>
@@ -68,10 +71,25 @@ export default async function ArchivePage({ searchParams }: ArchivePageProps) {
                 <ArchiveToolbar
                   count={results.length}
                   currentView={view}
-                  queryString={queryString}
+                  filterHref="#mobile-filters"
+                  params={params}
                   sort={params.sort}
                 />
               </div>
+              <details id="mobile-filters" className="scroll-mt-24 rounded-md border border-archive-line bg-archive-surface p-4 lg:hidden">
+                <summary className="cursor-pointer list-none text-sm font-semibold text-archive-ink [&::-webkit-details-marker]:hidden">
+                  Browse filters
+                </summary>
+                <div className="mt-3">
+                  <ArchiveFilterSidebar
+                    active={activeFilters}
+                    baseParams={params}
+                    sources={sources}
+                    variant="mobile"
+                  />
+                </div>
+              </details>
+              <MobileActiveFilters active={activeFilters} params={params} />
               {featured && <FeaturedArchiveSource source={featured} />}
             </section>
 
@@ -138,6 +156,37 @@ export default async function ArchivePage({ searchParams }: ArchivePageProps) {
   );
 }
 
+function MobileActiveFilters({
+  active,
+  params
+}: {
+  active: Record<string, string | undefined>;
+  params: ArchiveSearchParams;
+}) {
+  const entries = Object.entries(active).filter((entry): entry is [string, string] => Boolean(entry[1]));
+  if (!entries.length) return null;
+
+  return (
+    <div className="flex flex-wrap items-center gap-2 rounded-md border border-archive-line bg-archive-lavender2/55 p-3 text-sm lg:hidden">
+      <span className="font-semibold text-archive-ink">Active filters:</span>
+      {entries.map(([key, value]) => (
+        <Link className="focus-ring rounded-full bg-archive-surface px-3 py-1 text-xs font-semibold text-archive-ink" href={archiveHref(params, { [key]: undefined })} key={key}>
+          {activeFilterLabel(key, value)} x
+        </Link>
+      ))}
+      <Link className="ml-auto text-xs font-semibold text-archive-violet" href={archiveClearFiltersHref(params)}>
+        Clear all
+      </Link>
+    </div>
+  );
+}
+
+function activeFilterLabel(key: string, value: string) {
+  if (key === "people") return `Person: ${value}`;
+  if (key === "type") return `Category: ${value}`;
+  return value;
+}
+
 function ArchivePagination({
   currentPage,
   pageCount,
@@ -189,8 +238,7 @@ function PaginationLink({ children, disabled, href }: { children: ReactNode; dis
 }
 
 function archivePageHref(params: ArchiveSearchParams, page: number) {
-  const query = toQueryString({ ...params, page: page > 1 ? String(page) : undefined });
-  return query ? `/archive?${query}` : "/archive";
+  return archiveHref(params, { page: page > 1 ? String(page) : undefined }, { resetPage: false });
 }
 
 function parsePage(value?: string) {
@@ -268,7 +316,7 @@ function archivePageHeading(params: ArchiveSearchParams) {
 }
 
 function archiveHeadingClass(heading: string) {
-  const base = "min-w-0 whitespace-nowrap font-display font-semibold uppercase leading-none tracking-[0.01em] text-archive-ink";
+  const base = "min-w-0 text-balance break-words font-display font-semibold uppercase leading-none tracking-[0.01em] text-archive-ink";
   if (heading.length > 48) return `${base} text-[1.65rem] sm:text-[2.1rem]`;
   if (heading.length > 32) return `${base} text-[1.9rem] sm:text-[2.75rem]`;
   return `${base} text-3xl sm:text-5xl`;
@@ -286,13 +334,4 @@ function formatHeadingMedium(medium: string) {
   if (medium === "Audio/Video") return "Sound & Video";
   if (medium === "Personal History") return "Personal histories";
   return medium;
-}
-
-function toQueryString(params: ArchiveSearchParams, omit: string[] = []) {
-  const searchParams = new URLSearchParams();
-  Object.entries(params).forEach(([key, value]) => {
-    if (!value || omit.includes(key)) return;
-    searchParams.set(key, value);
-  });
-  return searchParams.toString();
 }

@@ -429,7 +429,7 @@ export async function updateTagVisibility(formData: FormData) {
   if (!tagId) throw new Error("Missing tag.");
 
   const before = await fetchRow("tags", tagId);
-  let { error } = await supabase
+  const { error } = await supabase
     .from("tags")
     .update({ status })
     .eq("id", tagId);

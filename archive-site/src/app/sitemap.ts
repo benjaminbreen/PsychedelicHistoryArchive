@@ -4,7 +4,7 @@ import { isCoreTopicSlug } from "@/lib/core-topics";
 import { ERAS } from "@/lib/eras";
 import { topicSlug } from "@/lib/internal-links";
 import { absoluteUrl } from "@/lib/seo";
-import { getArchiveSourcesFromSupabase, getCollectionSourcesFromSupabase } from "@/lib/supabase-archive";
+import { listArchiveSourceSummariesFromSupabase, listCollectionSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { listPublicTopics } from "@/lib/topics";
 
 export const revalidate = 3600;
@@ -30,8 +30,8 @@ const staticRoutes: Array<{ path: string; priority: number }> = [
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [sources, collections, curatedTopics] = await Promise.all([
-    getArchiveSourcesFromSupabase(),
-    getCollectionSourcesFromSupabase(),
+    listArchiveSourceSummariesFromSupabase(),
+    listCollectionSourceSummariesFromSupabase(),
     listPublicTopics()
   ]);
 

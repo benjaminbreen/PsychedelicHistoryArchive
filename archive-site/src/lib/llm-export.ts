@@ -1,7 +1,7 @@
 import { biographyProfiles, canonicalizePersonName, isDisplayableBiographyName, slugifyPersonName } from "@/lib/biographies";
 import { ERAS } from "@/lib/eras";
 import { SITE_NAME, absoluteUrl } from "@/lib/seo";
-import { getArchiveSourcesFromSupabase, getCollectionSourcesFromSupabase } from "@/lib/supabase-archive";
+import { listArchiveSourceSummariesFromSupabase, listCollectionSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import type { ArchiveSource } from "@/lib/types";
 
 const SITE_DESCRIPTION =
@@ -11,8 +11,8 @@ type ArchiveExportData = Awaited<ReturnType<typeof loadArchiveExportData>>;
 
 export async function loadArchiveExportData() {
   const [sources, collections] = await Promise.all([
-    getArchiveSourcesFromSupabase(),
-    getCollectionSourcesFromSupabase()
+    listArchiveSourceSummariesFromSupabase(),
+    listCollectionSourceSummariesFromSupabase()
   ]);
   const people = buildPeopleIndex(sources);
 

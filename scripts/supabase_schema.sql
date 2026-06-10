@@ -309,6 +309,32 @@ create table if not exists bibliography_item_documents (
   primary key (bibliography_item_id, document_id)
 );
 
+create table if not exists bibliography_item_aliases (
+  id uuid primary key default gen_random_uuid(),
+  bibliography_item_id uuid references bibliography_items(id) on delete cascade,
+  alias text not null,
+  normalized_alias text not null,
+  source text default 'generated',
+  status text default 'reviewed',
+  created_at timestamptz default now(),
+  unique (bibliography_item_id, normalized_alias)
+);
+
+create table if not exists document_citation_links (
+  id uuid primary key default gen_random_uuid(),
+  document_id uuid references documents(id) on delete cascade,
+  bibliography_item_id uuid references bibliography_items(id) on delete cascade,
+  citation_text text not null,
+  normalized_citation text not null,
+  confidence numeric,
+  status text default 'auto',
+  match_reason text,
+  occurrence_count int default 1,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now(),
+  unique (document_id, normalized_citation, bibliography_item_id)
+);
+
 create table if not exists topic_relations (
   topic_id uuid references topics(id) on delete cascade,
   related_topic_id uuid references topics(id) on delete cascade,
@@ -445,6 +471,8 @@ create index if not exists bibliography_item_contributors_item_idx on bibliograp
 create index if not exists bibliography_item_tags_item_idx on bibliography_item_tags(bibliography_item_id);
 create index if not exists bibliography_item_eras_era_idx on bibliography_item_eras(era_slug, position);
 create index if not exists bibliography_item_documents_document_idx on bibliography_item_documents(document_id);
+create index if not exists bibliography_item_aliases_alias_idx on bibliography_item_aliases(normalized_alias);
+create index if not exists document_citation_links_document_idx on document_citation_links(document_id, status);
 
 grant usage on schema public to anon, authenticated, service_role;
 
@@ -467,6 +495,8 @@ grant select on bibliography_item_contributors to anon, authenticated;
 grant select on bibliography_item_tags to anon, authenticated;
 grant select on bibliography_item_eras to anon, authenticated;
 grant select on bibliography_item_documents to anon, authenticated;
+grant select on bibliography_item_aliases to anon, authenticated;
+grant select on document_citation_links to anon, authenticated;
 grant select on document_tags to anon, authenticated;
 grant select on collections to anon, authenticated;
 grant select on collection_documents to anon, authenticated;
@@ -492,6 +522,8 @@ grant all privileges on bibliography_item_contributors to service_role;
 grant all privileges on bibliography_item_tags to service_role;
 grant all privileges on bibliography_item_eras to service_role;
 grant all privileges on bibliography_item_documents to service_role;
+grant all privileges on bibliography_item_aliases to service_role;
+grant all privileges on document_citation_links to service_role;
 grant all privileges on document_tags to service_role;
 grant all privileges on collections to service_role;
 grant all privileges on collection_documents to service_role;
@@ -517,6 +549,8 @@ alter table bibliography_item_contributors enable row level security;
 alter table bibliography_item_tags enable row level security;
 alter table bibliography_item_eras enable row level security;
 alter table bibliography_item_documents enable row level security;
+alter table bibliography_item_aliases enable row level security;
+alter table document_citation_links enable row level security;
 alter table document_tags enable row level security;
 alter table collections enable row level security;
 alter table collection_documents enable row level security;
@@ -682,6 +716,32 @@ create policy "Public can read published bibliography item documents"
     where documents.id = bibliography_item_documents.document_id
       and documents.status = 'published'
   ));
+
+drop policy if exists "Public can read published bibliography item aliases" on bibliography_item_aliases;
+create policy "Public can read published bibliography item aliases"
+  on bibliography_item_aliases for select
+  using (exists (
+    select 1 from bibliography_items
+    where bibliography_items.id = bibliography_item_aliases.bibliography_item_id
+      and bibliography_items.status = 'published'
+  ));
+
+drop policy if exists "Public can read published document citation links" on document_citation_links;
+create policy "Public can read published document citation links"
+  on document_citation_links for select
+  using (
+    status in ('auto', 'reviewed') and
+    exists (
+      select 1 from documents
+      where documents.id = document_citation_links.document_id
+        and documents.status = 'published'
+    ) and
+    exists (
+      select 1 from bibliography_items
+      where bibliography_items.id = document_citation_links.bibliography_item_id
+        and bibliography_items.status = 'published'
+    )
+  );
 
 drop policy if exists "Public can read document tags" on document_tags;
 create policy "Public can read document tags"

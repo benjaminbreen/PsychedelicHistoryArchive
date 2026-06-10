@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BookOpen, CalendarDays, FileText, ImageIcon, Mic, Newspaper, PlayCircle, ScrollText, Tag, UserRound } from "lucide-react";
+import { ArchiveImage } from "@/components/ui/archive-image";
 import type { FacetOption } from "@/lib/types";
 
 type EraFacetOption = FacetOption & {
@@ -63,10 +64,10 @@ export function EraBand({ facets }: { facets: EraFacetOption[] }) {
         >
           {facet.imagePath ? (
             <span className="h-12 w-12 shrink-0 overflow-hidden rounded-full border border-[rgb(var(--archive-warm-line))] bg-archive-paper shadow-[0_4px_12px_rgb(var(--archive-shadow)/0.08)]">
-              <img
+              <ArchiveImage
                 alt=""
-                aria-hidden="true"
-                className="h-full w-full object-cover opacity-85 saturate-[0.9] transition duration-200 group-hover:scale-105 group-hover:opacity-100"
+                className="h-full w-full"
+                imageClassName="opacity-85 saturate-[0.9] transition duration-200 group-hover:scale-105 group-hover:opacity-100"
                 src={facet.imagePath}
               />
             </span>

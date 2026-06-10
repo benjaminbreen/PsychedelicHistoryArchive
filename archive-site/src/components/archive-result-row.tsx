@@ -9,9 +9,9 @@ export function ArchiveResultRow({ source }: { source: ArchiveSource }) {
   const titleParts = getSourceTitleParts(source);
 
   return (
-    <article className="grid grid-cols-[4.5rem_1fr] gap-4 border-b border-archive-line py-3 md:grid-cols-[minmax(24rem,1.45fr)_6rem_8rem_minmax(12rem,1fr)_minmax(10rem,0.8fr)] md:items-center">
+    <article className="grid grid-cols-1 gap-4 border-b border-archive-line py-3 md:grid-cols-[minmax(24rem,1.45fr)_6rem_8rem_minmax(12rem,1fr)_minmax(10rem,0.8fr)] md:items-center">
       <Link className="contents" href={`/archive/${source.slug}`}>
-        <div className="flex gap-4 md:min-w-0">
+        <div className="flex min-w-0 gap-4">
           <SourceImage className="aspect-[3/2] w-[4.5rem] shrink-0 md:w-[5.25rem]" source={source} />
           <div className="min-w-0">
             <h3 className="font-serif text-[1.02rem] font-semibold leading-tight transition hover:text-archive-violet">

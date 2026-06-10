@@ -24,7 +24,30 @@ After UI changes in `archive-site`, do not run `npm run build` by default. A pro
 Prefer lighter verification unless the user explicitly asks for a full build:
 Run `npm run build` only when explicitly requested, when release-level verification is needed, or when there is no active `archive-site` dev server and the user has not asked to avoid builds.
 
-## Stubbed / Missing Pages Inventory
+## Editorial Style
+
+For footnotes, captions, translation notes, and other editorial apparatus:
+
+- Write for scholarly usefulness first: identify, contextualize, clarify.
+- Keep notes brisk. One sentence is usually enough; two is fine when the second adds real information.
+- Link terms naturally inside the explanatory sentence. Avoid “see X” constructions.
+- Include dates for people when useful and readily available.
+- Use a lightly learned voice, but avoid ornamental flourishes, faux-archaic phrasing, or cleverness that does not carry information.
+- State uncertainty directly and compactly, especially for contested etymologies, taxonomies, translations, and identifications.
+
+## Audio/Video Transcript Workflow
+
+For long audio/video sources, do not run Whisper over a single full-length media file unless the file is very short. Use a chunked, resumable workflow so interrupted sessions preserve partial work.
+
+- Keep extracted working audio under `data/aapb/<source-slug>/` or a similarly named source-specific directory.
+- Extract or normalize media to mono 16 kHz WAV with `ffmpeg` before transcription when practical.
+- Split long audio into roughly five-minute chunks in `chunks/`, using deterministic names such as `<source-slug>-000.wav`, `<source-slug>-001.wav`, and so on.
+- Run `scripts/transcribe_whisper_chunks.py <chunks-dir> <output-dir>` for local Whisper transcription. The script skips chunks whose `.json` and `.txt` outputs already exist and updates `manifest.json` after each chunk, making the job safe to resume.
+- If the installed Whisper CLI fails on `numba`/NumPy import compatibility, use the repo-local shim by preserving `tools/fake_numba` on `PYTHONPATH`; the chunk script does this automatically.
+- Keep machine transcripts clearly marked until reviewed against the media. Use AAPB, YouTube, Internet Archive, or other platform transcripts as rough alignment/reference material rather than authoritative text when they are machine-generated.
+- After all chunks are transcribed, stitch chunk text in order, then do a separate cleanup pass for speaker labels, timestamps, uncertain words, and footnote annotations.
+
+## Implemented Route Inventory
 
 Current implemented app routes in `archive-site/src/app`:
 
@@ -32,16 +55,31 @@ Current implemented app routes in `archive-site/src/app`:
 - `/about` via `src/app/about/page.tsx`
 - `/archive` via `src/app/archive/page.tsx`
 - `/archive/[slug]` via `src/app/archive/[slug]/page.tsx`
+- `/biographies/[slug]` via `src/app/biographies/[slug]/page.tsx`
 - `/collections` via `src/app/collections/page.tsx`
 - `/collections/[slug]` via `src/app/collections/[slug]/page.tsx`
+- `/eras` via `src/app/eras/page.tsx`
+- `/eras/[slug]` via `src/app/eras/[slug]/page.tsx`
 - `/people` via `src/app/people/page.tsx`
+- `/project-team` via `src/app/project-team/page.tsx`
+- `/search` via `src/app/search/page.tsx`
 - `/topics` via `src/app/topics/page.tsx`
+- `/topics/[slug]` via `src/app/topics/[slug]/page.tsx`
 - `/further-reading` via `src/app/further-reading/page.tsx`
+- `/further-reading/[slug]` via `src/app/further-reading/[slug]/page.tsx`
 - `/submit-a-source` via `src/app/submit-a-source/page.tsx`
 - `/faq` via `src/app/faq/page.tsx`
 - `/admin` via `src/app/admin/page.tsx` - local/private CMS redirect.
+- `/admin/workbench` via `src/app/admin/workbench/page.tsx` - local/private editorial operations dashboard.
 - `/admin/sources` via `src/app/admin/sources/page.tsx` - local/private CMS source list.
 - `/admin/sources/[id]` via `src/app/admin/sources/[id]/page.tsx` - local/private CMS source editor.
+- `/admin/collections` via `src/app/admin/collections/page.tsx` - local/private CMS collection list.
+- `/admin/collections/[id]` via `src/app/admin/collections/[id]/page.tsx` - local/private CMS collection editor.
+- `/admin/topics` via `src/app/admin/topics/page.tsx` - local/private CMS topic list.
+- `/admin/topics/[id]` via `src/app/admin/topics/[id]/page.tsx` - local/private CMS topic editor.
+- `/admin/bibliography` via `src/app/admin/bibliography/page.tsx` - local/private CMS bibliography list.
+- `/admin/bibliography/[id]` via `src/app/admin/bibliography/[id]/page.tsx` - local/private CMS bibliography editor.
+- `/admin/qa` via `src/app/admin/qa/page.tsx` - local/private file-backed QA dashboard.
 
 Routes handled as archive filters rather than standalone pages:
 
@@ -75,11 +113,45 @@ Reader tab rules:
 
 Optional document fields added for this hierarchy include `source_kind`, `parent_collection_id`, `sequence_label`, `sequence_number`, `issue_date`, `content_language`, `translation_language`, `translation_text`, `translation_provider`, `translation_note`, `reader_mode`, and `media_embed_url`.
 
+Curated reader text should use `document_sections` when a source needs structured Markdown sections such as an overview, transcript sections, translation sections, or Q&A. The public reader prefers curated sections over OCR-derived transcript text, and the admin source editor exposes section creation, duplication, ordering, deletion, and revision logging. Use `section_type` to distinguish overview/editorial notes from main transcript or translation content rather than embedding internal production notes in reader-facing prose.
+
+## Bibliography And Citation Linking
+
+Bibliography records live in `bibliography_items` with contributor, tag, era, and document join tables. Public bibliography routes are `/further-reading` and `/further-reading/[slug]`; bibliography titles in lists should link to the slug detail page.
+
+Inline citation linking is intentionally conservative:
+
+- Source-local citation links live in `document_citation_links` and point from a `documents` row to a `bibliography_items` row.
+- Citation aliases live in `bibliography_item_aliases`; use normalized aliases for matching but keep the reader-facing citation text exactly as it appears in the source.
+- Only auto-link high-confidence author-year citations where the cited work can be identified with reasonable certainty. Leave compound or ambiguous references unresolved for later review rather than guessing.
+- Markdown rendering in `archive-site/src/components/markdown-content.tsx` links citation text from `source.citationLinks`; it should not rewrite existing Markdown links or code spans.
+- The current pilot generator is `npm run qa:citations`, which runs `scripts/build_citation_links.py` and writes `data/qa/citation-link-report.*` plus citation-link staging JSON in `data/latin-america-import/`.
+- `scripts/upload_squarespace_to_supabase.mjs` reads optional `bibliography_item_aliases.json` and `document_citation_links.json` files. If the remote Supabase schema does not yet have those newer tables, upload skips them rather than failing.
+- Apply the latest `scripts/supabase_schema.sql` before expecting remote DB-backed citation links. Local/dev rendering can fall back to generated JSON files when those tables are missing.
+
 ## CMS Plan
 
-The staged custom CMS plan lives in `cmsplan.md`. Use it as the reference before adding admin routes, Markdown rendering, editor-auth flows, revision history, or structured figure/media editing. The plan keeps Supabase as the source of truth and treats the CMS as a project-specific editing layer inside `archive-site`, not a migration to an external CMS.
+The staged custom CMS plan lives in `cmsplan.md`. Use it as the reference before extending admin routes, Markdown rendering, editor-auth flows, revision history, or structured figure/media editing. The plan keeps Supabase as the source of truth and treats the CMS as a project-specific editing layer inside `archive-site`, not a migration to an external CMS.
 
 Current CMS implementation is intentionally local/private. In development it is enabled unless `ADMIN_DISABLED=true`; outside development it requires `ADMIN_LOCAL_ENABLED=true`. Writes use server-only `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` for now, with the code organized so Supabase Auth/RLS collaborator flows can replace the local write path later. Never expose the service role key with a `NEXT_PUBLIC_` prefix.
+
+The admin QA dashboard at `/admin/qa` reads generated files from `data/qa/`:
+
+- `npm run qa:sources` runs `scripts/archive_qa.py` and produces `archive-quality-report.*` plus `archive-actionable-report.*`.
+- `npm run qa:citations` runs `scripts/build_citation_links.py` and produces `citation-link-report.*`.
+- The dashboard is file-backed; rerun the scripts to refresh it. It does not currently execute QA jobs itself.
+
+## Import And Upload Scripts
+
+Root-level import/upload scripts in `package.json` are the preferred entry points for data refreshes:
+
+- `npm run upload:squarespace` uploads `data/squarespace-import`.
+- `npm run upload:nitrous-ether` uploads `data/nitrous-ether-import`.
+- `npm run upload:latin-america` uploads `data/latin-america-import`.
+- `npm run topics:seed` runs `scripts/seed_topics_from_tags.mjs`.
+- `npm run qa:sources` and `npm run qa:citations` refresh file-backed QA data.
+
+The `archive-site/package.json` mirrors the upload scripts with `../data/...` paths for use from inside the Next.js app directory. The uploader expects staging JSON files such as `documents.json`, `files.json`, `document_sections.json`, `document_figures.json`, `bibliography_items.json`, and join-table JSON files when those data types are present. It uploads assets to Supabase Storage and upserts rows with deterministic IDs where the import script provides them.
 
 ## PIB Trial Import Workflow
 

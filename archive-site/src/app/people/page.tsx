@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 import { DirectoryGrid, type DirectoryItem } from "@/components/page/directory-grid";
 import { PageHeader } from "@/components/page/page-header";
 import { PageShell } from "@/components/page/page-shell";
-import { getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
+import { listArchiveSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { biographyProfiles, canonicalizePersonName, getBiographyDirectoryMetadata, getBiographyPortrait, isDisplayableBiographyName, slugifyPersonName } from "@/lib/biographies";
 import type { ArchiveSource } from "@/lib/types";
 
@@ -38,7 +38,7 @@ type PeoplePageProps = {
 
 export default async function PeoplePage({ searchParams }: PeoplePageProps) {
   const params = await searchParams;
-  const sources = await getArchiveSourcesFromSupabase();
+  const sources = await listArchiveSourceSummariesFromSupabase();
   const people = buildPeopleDirectory(sources);
   const profileOnlyPeople = biographyProfiles
     .filter((profile) => isDisplayableBiographyName(profile.name) && !people.some((person) => slugifyPersonName(person.name) === profile.slug))
@@ -57,6 +57,9 @@ export default async function PeoplePage({ searchParams }: PeoplePageProps) {
     const profile = biographyProfiles.find((item) => item.slug === slug);
     const portrait = getBiographyPortrait(person.name);
     const directoryMetadata = getBiographyDirectoryMetadata(person.name);
+    const chips = profile
+      ? directoryMetadata?.tags ?? profile.tags
+      : ["Metadata stub", ...(directoryMetadata?.tags ?? person.tags)];
 
     return {
       label: person.name,
@@ -70,7 +73,7 @@ export default async function PeoplePage({ searchParams }: PeoplePageProps) {
           {person.name.charAt(0)}
         </span>
       ),
-      chips: (directoryMetadata?.tags ?? profile?.tags ?? person.tags).slice(0, 2),
+      chips: chips.slice(0, 2),
       group: getPersonGroup(person.name)
     };
   });

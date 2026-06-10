@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { PageShell } from "@/components/page/page-shell";
-import { getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
+import { listArchiveSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { ERAS, bannerBackground, countSourcesInEra } from "@/lib/eras";
 import { ErasBrowser, type ErasBrowserCard } from "./eras-browser";
 
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 export default async function ErasPage() {
-  const sources = await getArchiveSourcesFromSupabase();
+  const sources = await listArchiveSourceSummariesFromSupabase();
   const cards: ErasBrowserCard[] = ERAS.map((era) => ({
     slug: era.slug,
     label: era.label,

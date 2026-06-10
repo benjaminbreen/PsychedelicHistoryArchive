@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
+    "test:unit": "node --experimental-transform-types --import ./tests/register-ts-paths.mjs --test tests/*.test.ts",
+    "test:ui": "playwright test",
     "upload:squarespace": "node ../scripts/upload_squarespace_to_supabase.mjs --import-dir ../data/squarespace-import",
     "upload:nitrous-ether": "node ../scripts/upload_squarespace_to_supabase.mjs --import-dir ../data/nitrous-ether-import",
     "upload:latin-america": "node ../scripts/upload_squarespace_to_supabase.mjs --import-dir ../data/latin-america-import",
@@ -21,6 +23,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "@types/node": "^22.10.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",

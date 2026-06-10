@@ -1,0 +1,189 @@
+[
+  {
+    "id": "3f06fc12-c1e1-590f-a873-424abfb393d7",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "2f43a49d-e7a8-5ff7-a5d9-6c73cb44119a",
+    "citation_text": "Friedberg (1965)",
+    "normalized_citation": "friedberg 1965",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  },
+  {
+    "id": "40a9fb6e-f85a-50d0-84eb-7827a5573c46",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "4d8ebf3e-13fd-5ead-85b9-7f57f60f8027",
+    "citation_text": "Bristol (1966)",
+    "normalized_citation": "bristol 1966",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 2
+  },
+  {
+    "id": "34618122-24cb-51fa-a6a0-0a130e4d51e1",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "b5fd1877-b567-52c1-b0a1-0a6fd82d6079",
+    "citation_text": "Cuatrecasas (1958)",
+    "normalized_citation": "cuatrecasas 1958",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  },
+  {
+    "id": "e37d916b-54db-52b5-a89c-e6313aa03c64",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "d8cca5be-d04f-58ae-86de-33f46adf44c4",
+    "citation_text": "Barriga (1958)",
+    "normalized_citation": "barriga 1958",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  },
+  {
+    "id": "461fac40-0157-5686-bfab-0453bda9b5c6",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "99c88fa1-defe-5268-a2a0-46c06c71728c",
+    "citation_text": "Arbelaez (1956)",
+    "normalized_citation": "arbelaez 1956",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  },
+  {
+    "id": "9cf8c1e9-e55b-54ab-8b24-91b50f892ab1",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "fb576d14-d070-5986-bcdc-70f09f707c0c",
+    "citation_text": "Uscategui (1959)",
+    "normalized_citation": "uscategui 1959",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  },
+  {
+    "id": "31efdc03-ca02-50dc-bebf-682ccfd269f7",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "36fc3ece-05a8-511f-96f7-d77db43178e0",
+    "citation_text": "Fischer (1923)",
+    "normalized_citation": "fischer 1923",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  },
+  {
+    "id": "eb8dd444-caab-5e48-b6cf-ba31fa4c5c9b",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "c7ed1cee-d467-58c8-b1da-99044aeb0121",
+    "citation_text": "Hochstein and Paradies (1957)",
+    "normalized_citation": "hochstein and paradies 1957",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  },
+  {
+    "id": "64385bc0-2a5a-5065-b028-f0b05c6baca3",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "34b1d26a-8b34-59e4-892f-c5bc675d6dcc",
+    "citation_text": "Rocha (1905)",
+    "normalized_citation": "rocha 1905",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  },
+  {
+    "id": "be101d93-8fc4-50d1-9625-d3ac379cc869",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "d82c382c-fef8-5767-a622-1c87c24bca04",
+    "citation_text": "Koch-Grunberg (1909)",
+    "normalized_citation": "koch grunberg 1909",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  },
+  {
+    "id": "0e32b077-f858-5ef3-af8c-c5d9b55cb0ba",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "014bbf36-6c81-5cf1-83a9-139a0094e38d",
+    "citation_text": "Bruzzi (1962)",
+    "normalized_citation": "bruzzi 1962",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  },
+  {
+    "id": "176f56a8-4d39-5ae9-a3f6-c4b97f0f2165",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "495e6a43-0167-5d36-96ee-f060bbb6bffc",
+    "citation_text": "Goldman (1963)",
+    "normalized_citation": "goldman 1963",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  },
+  {
+    "id": "3f7a09f8-ed5d-5e51-a4bc-44f42d69b666",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "fa7d1925-0f81-5edd-a050-eb0ea86df3bb",
+    "citation_text": "Pinkley, and Dobbins (1968)",
+    "normalized_citation": "pinkley and dobbins 1968",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  },
+  {
+    "id": "1c9a7bb8-9c79-509a-9838-1ff93a80676c",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "25c50930-ad8a-5c31-b412-023c3d04bd34",
+    "citation_text": "Recasens (1963)",
+    "normalized_citation": "recasens 1963",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  },
+  {
+    "id": "c21aae1a-d797-516a-a3fc-b7e74c59f5ca",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "92527837-fe34-597f-82e1-9fade36fa80a",
+    "citation_text": "Schultes (1960)",
+    "normalized_citation": "schultes 1960",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  },
+  {
+    "id": "1ae297ec-ca1b-5442-ab8e-8abe078842a9",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "c52c2d24-0fa1-5dee-9767-1ed7cc838127",
+    "citation_text": "Stradelli (1890)",
+    "normalized_citation": "stradelli 1890",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  },
+  {
+    "id": "0d17a90f-7c94-5cc4-b1d3-f66421c98bad",
+    "document_id": "0d0ecc94-e4d5-5baf-b174-67112069445c",
+    "bibliography_item_id": "7ca6584f-adb6-5f92-9efd-07a302d94530",
+    "citation_text": "Biocca (1965)",
+    "normalized_citation": "biocca 1965",
+    "confidence": 0.94,
+    "status": "auto",
+    "match_reason": "Exact source-local author/year match",
+    "occurrence_count": 1
+  }
+]

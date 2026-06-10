@@ -82,6 +82,16 @@ export type ArchiveSource = {
   figures?: SourceFigure[];
   pages?: SourcePage[];
   files?: SourceFile[];
+  citationLinks?: SourceCitationLink[];
+};
+
+export type SourceCitationLink = {
+  citationText: string;
+  bibliographySlug: string;
+  bibliographyTitle: string;
+  bibliographyYear?: number;
+  url: string;
+  title?: string;
 };
 
 export type CollectionItemSummary = {

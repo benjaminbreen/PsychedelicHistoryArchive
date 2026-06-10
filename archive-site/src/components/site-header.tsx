@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { ChevronDown, Menu, Search } from "lucide-react";
+import { ChevronDown, Menu, Search, X } from "lucide-react";
 import { SourceTextSettings } from "@/components/source-text-settings";
 import { SearchBar } from "@/components/ui/search-bar";
 
@@ -149,7 +149,7 @@ export function SiteHeader({ variant = "home", showSourceSettings = true, active
             <SourceTextSettings showSourceControls={false} />
             <Link
               className="focus-ring inline-flex h-8 items-center gap-2 whitespace-nowrap rounded-md border border-archive-line/75 bg-archive-surface/45 px-3.5 text-[0.82rem] font-medium text-archive-ink transition hover:border-archive-violet/35 hover:bg-archive-surface/75"
-              href="/archive"
+              href="/search"
             >
               <Search className="h-3.5 w-3.5" />
               Search
@@ -160,28 +160,61 @@ export function SiteHeader({ variant = "home", showSourceSettings = true, active
           <SourceTextSettings showSourceControls={variant === "source" && showSourceSettings} />
         </div>
         <button
-          aria-label="Open navigation"
+          aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
           aria-expanded={mobileOpen}
           className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-md border border-archive-line bg-archive-surface/70 lg:hidden"
           type="button"
           onClick={() => setMobileOpen((value) => !value)}
         >
-          <Menu className="h-5 w-5" />
+          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
       {mobileOpen && (
         <nav aria-label="Mobile primary" className="site-header-mobile-nav border-t border-archive-line bg-archive-surface px-4 py-3 lg:hidden">
-          <div className="grid gap-1">
-            {navItems.map((item) => (
-              <Link
-                className="focus-ring rounded-md px-3 py-2 text-sm font-semibold text-archive-ink transition hover:bg-archive-lavender2 hover:text-archive-violetDark"
-                href={item.href}
-                key={item.href}
-                onClick={() => setMobileOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+          <div className="grid max-h-[calc(100svh-5.5rem)] gap-1 overflow-auto pb-2">
+            <Link
+              className="focus-ring mb-1 inline-flex min-h-10 items-center gap-2 rounded-md border border-archive-line bg-archive-surface px-3 py-2 text-sm font-semibold text-archive-ink transition hover:bg-archive-lavender2 hover:text-archive-violetDark"
+              href="/search"
+              onClick={() => setMobileOpen(false)}
+            >
+              <Search className="h-4 w-4 text-archive-violet" />
+              Search the archive
+            </Link>
+            {navItems.map((item) => {
+              if (item.dropdown) {
+                return (
+                  <details className="group rounded-md" key={item.href}>
+                    <summary className="focus-ring flex min-h-10 cursor-pointer list-none items-center justify-between rounded-md px-3 py-2 text-sm font-semibold text-archive-ink transition hover:bg-archive-lavender2 hover:text-archive-violetDark [&::-webkit-details-marker]:hidden">
+                      <span>{item.label}</span>
+                      <ChevronDown className="h-4 w-4 text-archive-muted transition group-open:rotate-180" />
+                    </summary>
+                    <div className="grid gap-1 border-l border-archive-line/80 py-1 pl-3">
+                      {item.dropdown.map((dropdownItem) => (
+                        <Link
+                          className="focus-ring rounded-md px-3 py-2 text-sm font-medium text-archive-muted transition hover:bg-archive-lavender2 hover:text-archive-violetDark"
+                          href={dropdownItem.href}
+                          key={dropdownItem.href}
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {dropdownItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </details>
+                );
+              }
+
+              return (
+                <Link
+                  className="focus-ring rounded-md px-3 py-2 text-sm font-semibold text-archive-ink transition hover:bg-archive-lavender2 hover:text-archive-violetDark"
+                  href={item.href}
+                  key={item.href}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
         </nav>
       )}

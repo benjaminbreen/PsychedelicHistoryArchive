@@ -9,7 +9,7 @@ import { SourceImage } from "@/components/source-image";
 import { SourceReaderTabs } from "@/components/source-reader-tabs";
 import { Chip } from "@/components/ui/chip";
 import { JsonLd, SITE_NAME, buildBreadcrumbJsonLd, buildCollectionJsonLd, canonicalPath, seoDescription, sourceImageMetadata } from "@/lib/seo";
-import { getCollectionSourceFromSupabase } from "@/lib/supabase-archive";
+import { getCollectionSourceDetailFromSupabase } from "@/lib/supabase-archive";
 import type { ArchiveSource } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -27,7 +27,7 @@ type CollectionPageProps = {
 
 export async function generateMetadata({ params }: CollectionPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const source = await getCollectionSourceFromSupabase(slug);
+  const source = await getCollectionSourceDetailFromSupabase(slug);
 
   if (!source) {
     return {
@@ -70,7 +70,7 @@ export async function generateMetadata({ params }: CollectionPageProps): Promise
 
 export default async function CollectionPage({ params }: CollectionPageProps) {
   const { slug } = await params;
-  const source = await getCollectionSourceFromSupabase(slug);
+  const source = await getCollectionSourceDetailFromSupabase(slug);
 
   if (!source) {
     const legacyTarget = legacyCollectionArchiveTargets[slug];

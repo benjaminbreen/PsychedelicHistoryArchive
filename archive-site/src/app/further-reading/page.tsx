@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SlidersHorizontal } from "lucide-react";
+import Link from "next/link";
 import { BibliographyGroupedList } from "@/components/bibliography-list";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -80,9 +81,9 @@ export default async function FurtherReadingPage({ searchParams }: FurtherReadin
                   <button className="focus-ring h-9 rounded-md bg-archive-violet px-3 text-xs font-semibold text-white" type="submit">
                     Apply
                   </button>
-                  <a className="focus-ring inline-flex h-9 items-center rounded-md border border-archive-line px-3 text-xs font-semibold" href="/further-reading">
+                  <Link className="focus-ring inline-flex h-9 items-center rounded-md border border-archive-line px-3 text-xs font-semibold" href="/further-reading">
                     Reset
-                  </a>
+                  </Link>
                 </div>
               </div>
             </details>

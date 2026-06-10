@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { clsx } from "clsx";
 import {
   BookOpen,
   Check,
+  ChevronDown,
   ChevronLeft,
   ChevronRight,
   Copy,
@@ -21,6 +22,28 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { MarkdownContent, SourceFigureBlock } from "@/components/markdown-content";
+import { ArchiveImage } from "@/components/ui/archive-image";
+import {
+  buildDisplayPages,
+  buildReaderTabs,
+  buildReaderToc,
+  getOriginalMode,
+  isAudioFile,
+  isEmbeddableUrl,
+  isMediaSource,
+  isPdfFile,
+  isSiteEntry,
+  isVideoFile,
+  readerSectionId,
+  siteEvidenceLabel,
+  toEmbedUrl,
+  translationNote,
+  translationProviderLabel,
+  visibleReaderTab,
+  type ReaderTab,
+  type ReaderTabId,
+  type ReaderTocItem,
+} from "@/lib/source-reader";
 import type { ArchiveSource, CollectionItemSummary, SourceFile, SourceLineBox, SourcePage, SourcePageLine } from "@/lib/types";
 
 type SourceReaderTabsProps = {
@@ -28,18 +51,11 @@ type SourceReaderTabsProps = {
   transcript: string[];
 };
 
-type Tab = "overview" | "transcript" | "translation" | "original" | "details";
-
-type ReaderTab = {
-  id: Tab;
-  label: string;
-};
-
 export function SourceReaderTabs({ source, transcript }: SourceReaderTabsProps) {
   const tabs = useMemo(() => buildReaderTabs(source, transcript), [source, transcript]);
-  const [activeTab, setActiveTab] = useState<Tab>(tabs[0]?.id ?? "details");
+  const [activeTab, setActiveTab] = useState<ReaderTabId>(tabs[0]?.id ?? "details");
   const pages = useMemo(() => buildDisplayPages(source, transcript), [source, transcript]);
-  const translation = useMemo(() => getTranslationParagraphs(source), [source]);
+  const toc = useMemo(() => buildReaderToc(source, visibleReaderTab(activeTab, tabs), transcript), [activeTab, source, tabs, transcript]);
   const activeTabIsVisible = tabs.some((tab) => tab.id === activeTab);
   const visibleActiveTab = activeTabIsVisible ? activeTab : tabs[0]?.id ?? "details";
 
@@ -53,15 +69,7 @@ export function SourceReaderTabs({ source, transcript }: SourceReaderTabsProps) 
 
   return (
     <div data-source-reader-tab={visibleActiveTab}>
-      <div className="mt-5 border-b border-archive-line">
-        <div className="flex gap-8">
-          {tabs.map((tab) => (
-            <TabButton active={visibleActiveTab === tab.id} key={tab.id} onClick={() => setActiveTab(tab.id)}>
-              {tab.label}
-            </TabButton>
-          ))}
-        </div>
-      </div>
+      <ReaderTabNav activeTab={visibleActiveTab} onTabChange={setActiveTab} tabs={tabs} toc={toc} />
 
       {visibleActiveTab === "overview" && (
         <CollectionOverview source={source} />
@@ -70,7 +78,7 @@ export function SourceReaderTabs({ source, transcript }: SourceReaderTabsProps) 
       {visibleActiveTab === "translation" && (
         <>
           <section className="mt-6 max-w-[49rem]">
-            <TranslationReader source={source} paragraphs={translation} />
+            <TranslationReader source={source} />
           </section>
 
           <div className="mt-8 max-w-[49rem]">
@@ -102,10 +110,96 @@ export function SourceReaderTabs({ source, transcript }: SourceReaderTabsProps) 
       )}
 
       {visibleActiveTab === "original" && <OriginalSourceViewer pages={pages} source={source} transcript={transcript} />}
+      {visibleActiveTab === "sourcePdf" && <OriginalPdfSourceViewer source={source} />}
 
       {visibleActiveTab === "details" && (
         <SourceDetails source={source} pages={pages} />
       )}
+    </div>
+  );
+}
+
+function ReaderTabNav({ activeTab, onTabChange, tabs, toc }: { activeTab: ReaderTabId; onTabChange: (tab: ReaderTabId) => void; tabs: ReaderTab[]; toc: ReaderTocItem[] }) {
+  const [tocOpen, setTocOpen] = useState(false);
+  const [activeSectionId, setActiveSectionId] = useState(toc[0]?.id ?? "");
+  const activeSection = toc.find((item) => item.id === activeSectionId) ?? toc[0];
+
+  useEffect(() => {
+    setTocOpen(false);
+    setActiveSectionId(toc[0]?.id ?? "");
+  }, [activeTab, toc]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || toc.length < 2) return;
+
+    const elements = toc
+      .map((item) => document.getElementById(item.id))
+      .filter(Boolean) as HTMLElement[];
+    if (!elements.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        if (visibleEntry?.target.id) {
+          setActiveSectionId(visibleEntry.target.id);
+        }
+      },
+      {
+        rootMargin: "-116px 0px -68% 0px",
+        threshold: [0, 0.1, 0.25, 0.5],
+      }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, [toc]);
+
+  return (
+    <div className="source-reader-tab-bar">
+      <div className="grid min-w-0 gap-2 border-b border-archive-line sm:flex sm:items-end sm:justify-between sm:gap-5">
+        <div className="flex min-w-0 gap-6 overflow-x-auto sm:gap-8">
+          {tabs.map((tab) => (
+            <TabButton active={activeTab === tab.id} key={tab.id} onClick={() => onTabChange(tab.id)}>
+              {tab.label}
+            </TabButton>
+          ))}
+        </div>
+
+        {toc.length > 1 && activeSection && (
+          <div className="relative mb-2 shrink-0">
+            <button
+              aria-expanded={tocOpen}
+              className="source-reader-toc-button"
+              onClick={() => setTocOpen((open) => !open)}
+              type="button"
+            >
+              <span className="source-reader-toc-kicker">Section</span>
+              <span className="max-w-[13rem] truncate">{activeSection.label}</span>
+              <ChevronDown className={clsx("h-4 w-4 transition", tocOpen && "rotate-180")} />
+            </button>
+
+            {tocOpen && (
+              <div className="source-reader-toc-menu">
+                {toc.map((item) => (
+                  <a
+                    className={clsx("source-reader-toc-item", item.id === activeSection.id && "source-reader-toc-item-active")}
+                    href={`#${item.id}`}
+                    key={item.id}
+                    onClick={() => {
+                      setActiveSectionId(item.id);
+                      setTocOpen(false);
+                    }}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -147,9 +241,9 @@ function TranscriptReader({ source, transcript }: { source: ArchiveSource; trans
                 <SourceFigureBlock figure={overviewFigure} />
               </div>
             )}
-            <h2 className="source-transcript-heading">{section.heading}</h2>
+            <h2 className="source-transcript-heading" id={readerSectionId(section.heading)}>{section.heading}</h2>
             {section.body && section.bodyFormat === "markdown" ? (
-              <MarkdownContent className={clsx("source-transcript source-markdown mt-5 space-y-6 text-archive-ink", isNote && "source-transcript-note-body", isMediaTranscript && "source-media-transcript-body")} figures={source.figures} markdown={section.body} transcriptFormat={isMediaTranscript ? "media" : "prose"} />
+              <MarkdownContent citationLinks={source.citationLinks} className={clsx("source-transcript source-markdown mt-5 space-y-6 text-archive-ink", isNote && "source-transcript-note-body", isMediaTranscript && "source-media-transcript-body")} figures={source.figures} markdown={section.body} transcriptFormat={isMediaTranscript ? "media" : "prose"} />
             ) : (
               <div className={clsx("source-transcript mt-5 space-y-6 text-archive-ink", isNote && "source-transcript-note-body", isMediaTranscript && "source-media-transcript-body")}>
                 {(section.paragraphs.length ? section.paragraphs : section.body ? [section.body] : []).map((paragraph, paragraphIndex) => (
@@ -195,15 +289,9 @@ function isLikelySpeakerLabel(label: string) {
   return /^[A-Z][\p{L}\p{M}.'’ -]*(?:\s+[A-Z][\p{L}\p{M}.'’ -]*)*$/u.test(withoutColon);
 }
 
-function isMediaSource(source: ArchiveSource) {
-  return source.medium === "Audio/Video" || source.type === "Film" || source.readerMode === "audio" || source.readerMode === "video" || Boolean(source.mediaEmbedUrl);
-}
+function TranslationReader({ source }: { source: ArchiveSource }) {
+  const translation = source.translationText?.trim() || "";
 
-function isSiteEntry(source: ArchiveSource) {
-  return source.type === "Archaeological Site" || source.readerMode === "site_entry";
-}
-
-function TranslationReader({ paragraphs, source }: { paragraphs: string[]; source: ArchiveSource }) {
   return (
     <div>
       <h2 className="source-transcript-heading">Translation</h2>
@@ -212,11 +300,7 @@ function TranslationReader({ paragraphs, source }: { paragraphs: string[]; sourc
           Translation source: {translationProviderLabel(source.translationProvider)}
         </p>
       )}
-      <div className="source-transcript mt-5 space-y-6 text-archive-ink">
-        {paragraphs.map((paragraph, paragraphIndex) => (
-          <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`}>{paragraph}</p>
-        ))}
-      </div>
+      <MarkdownContent citationLinks={source.citationLinks} className="source-transcript source-markdown mt-5 space-y-6 text-archive-ink" figures={source.figures} markdown={translation} transcriptFormat="prose" />
     </div>
   );
 }
@@ -229,7 +313,18 @@ function CollectionOverview({ source }: { source: ArchiveSource }) {
 
   return (
     <section className="mt-2">
-    
+      <div className="grid gap-4 rounded-md border border-archive-line bg-archive-surface p-5 md:grid-cols-[minmax(0,1fr)_16rem]">
+        <div>
+          <h2 className="source-serif-heading">Collection Overview</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-archive-ink">
+            {overviewText}
+          </p>
+        </div>
+        <dl className="grid gap-2 text-sm">
+          <OverviewStat label="Items" value={`${items.length || source.collectionItemCount || 0}`} />
+          <OverviewStat label="Date range" value={dateRange} />
+        </dl>
+      </div>
 
       {visibleItems.length ? (
         <>
@@ -292,7 +387,12 @@ function CollectionItemCard({ item }: { item: CollectionItemSummary }) {
     >
       <span className="flex aspect-[3/4] items-center justify-center overflow-hidden border-b border-archive-line bg-archive-paper">
         {item.imagePath ? (
-          <img alt={item.imageAlt || item.title} className="h-full w-full object-cover transition duration-200 group-hover:scale-[1.02]" src={item.imagePath} />
+          <ArchiveImage
+            alt={item.imageAlt || item.title}
+            className="h-full w-full"
+            imageClassName="transition duration-200 group-hover:scale-[1.02]"
+            src={item.imagePath}
+          />
         ) : (
           <Grid3X3 className="h-8 w-8 text-archive-violet/50" />
         )}
@@ -365,6 +465,12 @@ function OriginalSourceViewer({ pages, source, transcript }: { pages: SourcePage
   return <PageImageSourceViewer pages={pages} source={source} transcript={transcript} />;
 }
 
+function OriginalPdfSourceViewer({ source }: { source: ArchiveSource }) {
+  const pdfFile = source.files?.find(isPdfFile);
+  if (!pdfFile) return null;
+  return <PdfSourceViewer file={pdfFile} source={source} />;
+}
+
 function PdfSourceViewer({ file, source }: { file: SourceFile; source: ArchiveSource }) {
   return (
     <section className="mt-5 overflow-hidden rounded-md border border-archive-line bg-archive-surface shadow-[0_12px_32px_rgb(var(--archive-shadow)/0.06)]">
@@ -386,7 +492,7 @@ function PdfSourceViewer({ file, source }: { file: SourceFile; source: ArchiveSo
           )}
         </div>
       </div>
-      <iframe className="h-[72vh] min-h-[42rem] w-full bg-archive-paper" src={file.url} title={`${source.title} PDF`} />
+      <iframe className="h-[72vh] min-h-[26rem] w-full bg-archive-paper sm:min-h-[42rem]" src={file.url} title={`${source.title} PDF`} />
     </section>
   );
 }
@@ -440,12 +546,23 @@ function MediaSourceViewer({ file, source, type }: { file?: SourceFile; source: 
 function PageImageSourceViewer({ pages, source }: { pages: SourcePage[]; source: ArchiveSource; transcript: string[] }) {
   const [pageIndex, setPageIndex] = useState(0);
   const [zoom, setZoom] = useState(1);
-  const [isPaulView, setIsPaulView] = useState(false);
+  const [isFitWidth, setIsFitWidth] = useState(false);
+  const [fitWidthPx, setFitWidthPx] = useState<number>();
+  const [arePanesSwapped, setArePanesSwapped] = useState(false);
   const [selectedLineId, setSelectedLineId] = useState<string | undefined>(pages[0]?.lines[0]?.id);
   const [isCitationPanelOpen, setIsCitationPanelOpen] = useState(false);
+  const imagePaneRef = useRef<HTMLDivElement>(null);
   const currentPage = pages[pageIndex] ?? pages[0];
   const selectedLine = currentPage?.lines.find((line) => line.id === selectedLineId);
   const pdfFile = source.files?.find(isPdfFile);
+  const updateFitWidth = useCallback(() => {
+    const pane = imagePaneRef.current;
+    if (!pane || typeof window === "undefined") return;
+
+    const style = window.getComputedStyle(pane);
+    const horizontalPadding = Number.parseFloat(style.paddingLeft) + Number.parseFloat(style.paddingRight);
+    setFitWidthPx(Math.max(280, Math.floor(pane.clientWidth - horizontalPadding)));
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -464,6 +581,18 @@ function PageImageSourceViewer({ pages, source }: { pages: SourcePage[]; source:
     setSelectedLineId(nextLine?.id);
     setIsCitationPanelOpen(Boolean(lineAnchor));
   }, [pages]);
+
+  useEffect(() => {
+    if (!isFitWidth) return;
+    updateFitWidth();
+
+    const pane = imagePaneRef.current;
+    if (!pane || typeof ResizeObserver === "undefined") return;
+
+    const observer = new ResizeObserver(updateFitWidth);
+    observer.observe(pane);
+    return () => observer.disconnect();
+  }, [currentPage?.imagePath, isFitWidth, updateFitWidth]);
 
   if (!currentPage) {
     return (
@@ -490,15 +619,31 @@ function PageImageSourceViewer({ pages, source }: { pages: SourcePage[]; source:
     updateLineAnchorUrl(currentPage, line);
   }
 
+  function changeZoom(nextZoom: (value: number) => number) {
+    setIsFitWidth(false);
+    setFitWidthPx(undefined);
+    setZoom(nextZoom);
+  }
+
+  function fitPageToWidth() {
+    setIsFitWidth(true);
+    setZoom(1);
+    updateFitWidth();
+  }
+
   const imagePane = (
-    <div className={clsx("relative overflow-auto bg-[#1f2024] p-5", isPaulView && "lg:order-2")}>
-      <div className="mx-auto flex min-h-[34rem] items-center justify-center">
+    <div className={clsx("relative overflow-auto bg-[#1f2024] p-5", arePanesSwapped && "lg:order-2")} ref={imagePaneRef}>
+      <div className="mx-auto flex min-h-[24rem] items-center justify-center sm:min-h-[34rem]">
         <div className="relative origin-top transition-transform" style={{ transform: `scale(${zoom})` }}>
           {currentPage.imagePath ? (
             <img
               alt={`${source.title}, page ${currentPage.label}`}
-              className="max-h-[58rem] w-auto max-w-full border border-black/20 bg-archive-paper shadow-2xl"
+              className={clsx(
+                "border border-black/20 bg-archive-paper shadow-2xl",
+                isFitWidth ? "h-auto max-w-none" : "max-h-[58rem] w-auto max-w-full"
+              )}
               src={currentPage.imagePath}
+              style={isFitWidth && fitWidthPx ? { width: `${fitWidthPx}px` } : undefined}
             />
           ) : (
             <div className="flex aspect-[3/4] w-[26rem] max-w-full items-center justify-center border border-archive-line bg-archive-paper p-8 text-center text-sm text-archive-muted shadow-2xl">
@@ -512,7 +657,7 @@ function PageImageSourceViewer({ pages, source }: { pages: SourcePage[]; source:
   );
 
   const transcriptPane = (
-    <div className={clsx("flex min-h-[38rem] flex-col border-t border-archive-line bg-white lg:border-t-0", isPaulView ? "lg:order-1 lg:border-r" : "lg:border-l")}>
+    <div className={clsx("flex min-h-[24rem] flex-col border-t border-archive-line bg-white sm:min-h-[38rem] lg:border-t-0", arePanesSwapped ? "lg:order-1 lg:border-r" : "lg:border-l")}>
       <div className="flex flex-wrap items-center gap-3 border-b border-archive-line px-5 py-4">
         <div>
           <h2 className="text-base font-semibold text-archive-ink">Line-by-line transcript</h2>
@@ -590,33 +735,41 @@ function PageImageSourceViewer({ pages, source }: { pages: SourcePage[]; source:
           </IconButton>
         </div>
 
-        <div className="ml-auto flex items-center gap-2">
-          <IconButton label="Zoom out" onClick={() => setZoom((value) => Math.max(0.7, value - 0.1))}>
+        <div className="ml-auto flex flex-wrap items-center justify-end gap-2">
+          <IconButton label="Zoom out" onClick={() => changeZoom((value) => Math.max(0.7, value - 0.1))}>
             <Minus className="h-4 w-4" />
           </IconButton>
           <span className="min-w-14 text-center text-xs font-medium">{Math.round(zoom * 100)}%</span>
-          <IconButton label="Zoom in" onClick={() => setZoom((value) => Math.min(1.8, value + 0.1))}>
+          <IconButton label="Zoom in" onClick={() => changeZoom((value) => Math.min(1.8, value + 0.1))}>
             <Plus className="h-4 w-4" />
           </IconButton>
-          <button className="focus-ring inline-flex h-9 items-center gap-2 rounded-md border border-archive-line px-3 font-medium hover:bg-archive-lavender2" type="button" onClick={() => setZoom(1)}>
-            <Maximize2 className="h-4 w-4" />
-            Fit width
-          </button>
           <button
-            aria-pressed={isPaulView}
+            aria-pressed={isFitWidth}
             className={clsx(
-              "focus-ring inline-flex h-9 items-center rounded-md border px-3 font-medium transition",
-              isPaulView ? "border-archive-violet bg-archive-lavender2 text-archive-violetDark" : "border-archive-line hover:bg-archive-lavender2"
+              "focus-ring inline-flex h-9 items-center gap-2 rounded-md border px-3 font-medium transition",
+              isFitWidth ? "border-archive-violet bg-archive-lavender2 text-archive-violetDark" : "border-archive-line hover:bg-archive-lavender2"
             )}
             type="button"
-            onClick={() => setIsPaulView((value) => !value)}
+            onClick={fitPageToWidth}
           >
-            Paul view
+            <Maximize2 className="h-4 w-4" />
+            <span className="hidden sm:inline">Fit width</span>
+          </button>
+          <button
+            aria-pressed={arePanesSwapped}
+            className={clsx(
+              "focus-ring hidden h-9 items-center rounded-md border px-3 font-medium transition lg:inline-flex",
+              arePanesSwapped ? "border-archive-violet bg-archive-lavender2 text-archive-violetDark" : "border-archive-line hover:bg-archive-lavender2"
+            )}
+            type="button"
+            onClick={() => setArePanesSwapped((value) => !value)}
+          >
+            Swap panes
           </button>
         </div>
       </div>
 
-      <div className="grid min-h-[38rem] lg:grid-cols-[minmax(0,1fr)_minmax(24rem,0.95fr)]">
+      <div className="grid min-h-[24rem] sm:min-h-[38rem] lg:grid-cols-[minmax(0,1fr)_minmax(24rem,0.95fr)]">
         {imagePane}
         {transcriptPane}
       </div>
@@ -750,7 +903,7 @@ function TabButton({ active, children, onClick }: { active: boolean; children: R
   return (
     <button
       className={clsx(
-        "px-1 py-2.5 text-sm font-semibold transition",
+        "whitespace-nowrap px-1 py-2.5 text-sm font-semibold transition",
         active ? "border-b-2 border-archive-violet text-archive-violet" : "text-archive-muted hover:text-archive-ink"
       )}
       type="button"
@@ -948,190 +1101,4 @@ function DetailRow({ label, value }: { label: string; value: string }) {
       <dd className="leading-5 text-archive-muted">{value || "Not recorded"}</dd>
     </div>
   );
-}
-
-function buildDisplayPages(source: ArchiveSource, transcript: string[]) {
-  if (source.sourceKind === "collection") return [];
-
-  const imagePages = source.pages?.filter((page) => page.imagePath);
-  if (imagePages?.length) return imagePages;
-  if (source.pages?.length) return source.pages;
-  if (!transcript.length && !source.imagePath) return [];
-
-  let lineIndex = 0;
-  const lines = transcript.flatMap((paragraph, paragraphIndex) =>
-    wrapLine(paragraph, 82).map((text, wrappedLineIndex) => {
-      lineIndex += 1;
-      return {
-        id: `${source.id}-fallback-${paragraphIndex}-${wrappedLineIndex}`,
-        index: lineIndex,
-        text,
-        paragraphIndex
-      };
-    })
-  );
-
-  return [
-    {
-      id: `${source.id}-fallback-page`,
-      pageNumber: 1,
-      label: "1",
-      imagePath: source.imagePath,
-      thumbnailPath: source.imagePath,
-      language: source.language,
-      transcriptionStatus: source.pages?.length ? "ingested" : "page image pending",
-      ocrText: transcript.join("\n\n"),
-      lines
-    }
-  ];
-}
-
-function buildReaderTabs(source: ArchiveSource, transcript: string[]): ReaderTab[] {
-  if (source.sourceKind === "collection") {
-    return [
-      { id: "overview", label: "Overview" },
-      { id: "details", label: "Details" }
-    ];
-  }
-
-  if (isSiteEntry(source)) {
-    return [
-      { id: "transcript", label: "Overview" },
-      { id: "details", label: "Details" }
-    ];
-  }
-
-  const tabs: ReaderTab[] = [];
-  const hasTranslation = Boolean(source.translationText?.trim());
-  const hasTranscript = transcript.some((paragraph) => paragraph.trim()) || Boolean(source.transcriptSections?.length);
-
-  if (hasTranslation) {
-    tabs.push({ id: "translation", label: "Translation" });
-  } else if (hasTranscript) {
-    tabs.push({ id: "transcript", label: "Transcript" });
-  } else {
-    tabs.push({ id: "details", label: "Overview" });
-  }
-
-  tabs.push({ id: "original", label: originalTabLabel(source) });
-
-  if (!tabs.some((tab) => tab.id === "details")) {
-    tabs.push({ id: "details", label: "Details" });
-  }
-
-  return tabs;
-}
-
-function siteEvidenceLabel(source: ArchiveSource) {
-  if (source.tags.includes("Material Culture") && source.tags.includes("Pharmacology")) {
-    return "Archaeological assemblage and chemical residue analysis";
-  }
-  if (source.tags.includes("Material Culture")) return "Archaeological assemblage";
-  if (source.tags.includes("Pharmacology")) return "Chemical or pharmacological evidence";
-  return "Archaeological and historical evidence";
-}
-
-function originalTabLabel(source: ArchiveSource) {
-  const mode = getOriginalMode(source, source.pages ?? []);
-  if (mode === "pdf") return "Original PDF";
-  if (mode === "audio") return "Original Audio";
-  if (mode === "video") return "Original Video";
-  if (source.pages?.some((page) => page.imagePath)) return "Page Images";
-  return "Original source";
-}
-
-function getOriginalMode(source: ArchiveSource, pages: SourcePage[]) {
-  const files = source.files ?? [];
-  const hasPdf = files.some(isPdfFile);
-  const hasAudio = files.some(isAudioFile);
-  const hasVideo = files.some(isVideoFile) || Boolean(source.mediaEmbedUrl && source.medium === "Audio/Video");
-  const shouldPreferPdf =
-    hasPdf &&
-    (source.readerMode === "pdf" ||
-      source.type === "Academic Article" ||
-      source.type === "Book" ||
-      !pages.some((page) => page.imagePath));
-
-  if (hasAudio || source.readerMode === "audio") return "audio";
-  if (hasVideo || source.readerMode === "video" || source.type === "Film") return "video";
-  if (shouldPreferPdf) return "pdf";
-  return "images";
-}
-
-function getTranslationParagraphs(source: ArchiveSource) {
-  return (source.translationText || "")
-    .split(/\n{2,}/)
-    .map((paragraph) => paragraph.trim())
-    .filter(Boolean);
-}
-
-function translationNote(source: ArchiveSource) {
-  const fromLanguage = source.contentLanguage || source.language || "the source language";
-  const toLanguage = source.translationLanguage || "English";
-  return `This ${toLanguage} translation is shown first for readability; cite or verify against the ${fromLanguage} original.`;
-}
-
-function translationProviderLabel(provider: NonNullable<ArchiveSource["translationProvider"]>) {
-  if (provider === "llm") return "LLM-generated draft";
-  if (provider === "human") return "Human translation";
-  return "Published translation";
-}
-
-function isPdfFile(file: SourceFile) {
-  return file.kind === "original_pdf" || file.kind === "pdf" || file.mimeType === "application/pdf";
-}
-
-function isAudioFile(file: SourceFile) {
-  return file.kind === "audio" || Boolean(file.mimeType?.startsWith("audio/"));
-}
-
-function isVideoFile(file: SourceFile) {
-  return file.kind === "video" || Boolean(file.mimeType?.startsWith("video/"));
-}
-
-function isEmbeddableUrl(url: string) {
-  return /^https?:\/\//.test(url);
-}
-
-function toEmbedUrl(url?: string) {
-  if (!url) return undefined;
-
-  try {
-    const parsed = new URL(url);
-    if (parsed.hostname === "youtu.be") {
-      const videoId = parsed.pathname.split("/").filter(Boolean)[0];
-      return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
-    }
-    if (parsed.hostname.endsWith("youtube.com")) {
-      const videoId = parsed.searchParams.get("v");
-      if (videoId) return `https://www.youtube.com/embed/${videoId}`;
-    }
-    if (parsed.hostname.endsWith("vimeo.com")) {
-      const videoId = parsed.pathname.split("/").filter(Boolean)[0];
-      return videoId ? `https://player.vimeo.com/video/${videoId}` : url;
-    }
-  } catch {
-    return url;
-  }
-
-  return url;
-}
-
-function wrapLine(text: string, maxLength: number): string[] {
-  const words = text.split(/\s+/).filter(Boolean);
-  const lines: string[] = [];
-  let current = "";
-
-  for (const word of words) {
-    const next = current ? `${current} ${word}` : word;
-    if (next.length > maxLength && current) {
-      lines.push(current);
-      current = word;
-    } else {
-      current = next;
-    }
-  }
-
-  if (current) lines.push(current);
-  return lines;
 }

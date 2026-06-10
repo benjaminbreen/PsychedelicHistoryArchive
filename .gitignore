@@ -17,6 +17,8 @@ build/
 .vite/
 .cache/
 coverage/
+playwright-report/
+test-results/
 
 # Logs
 *.log

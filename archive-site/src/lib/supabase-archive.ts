@@ -1,7 +1,9 @@
 import { sources as fallbackSources } from "@/lib/archive-data";
 import { getStoragePublicUrl, getSupabaseClient } from "@/lib/supabase";
 import { getSourceTitleParts } from "@/lib/source-title";
-import type { AccessType, ArchiveSource, CollectionItemSummary, HostingStatus, ReaderMode, SourceCreator, SourceFigure, SourceFile, SourceKind, SourceLineBox, SourcePage, SourcePageLine, SourceType, TranscriptSection } from "@/lib/types";
+import type { AccessType, ArchiveSource, CollectionItemSummary, HostingStatus, ReaderMode, SourceCitationLink, SourceCreator, SourceFigure, SourceFile, SourceKind, SourceLineBox, SourcePage, SourcePageLine, SourceType, TranscriptSection } from "@/lib/types";
+import fs from "node:fs";
+import path from "node:path";
 
 type DocumentRow = {
   id: string;
@@ -44,6 +46,7 @@ type DocumentRow = {
   files?: FileRow[];
   document_sections?: DocumentSectionRow[];
   document_figures?: DocumentFigureRow[];
+  document_citation_links?: DocumentCitationLinkRow[];
   document_tags?: Array<{ tags: RelatedTag | RelatedTag[] | null }>;
   document_people?: Array<{ role: string | null; people: RelatedPerson | RelatedPerson[] | null }>;
 };
@@ -52,6 +55,7 @@ type RelatedTag = { name: string | null; tag_type: string | null; status?: strin
 type RelatedPerson = { name: string | null };
 
 type CollectionDocumentRow = {
+  document_id?: string | null;
   position: number | null;
   sequence_label: string | null;
   sequence_number: number | null;
@@ -304,6 +308,22 @@ type DocumentFigureRow = {
   credit?: string | null;
 };
 
+type DocumentCitationLinkRow = {
+  citation_text: string | null;
+  confidence: number | null;
+  status: string | null;
+  bibliography_item: RelatedBibliographyItem | RelatedBibliographyItem[] | null;
+};
+
+type RelatedBibliographyItem = {
+  slug: string | null;
+  title: string | null;
+  year: number | null;
+};
+
+let localCitationLinkCache: Map<string, DocumentCitationLinkRow[]> | null | undefined;
+const SUPABASE_QUERY_TIMEOUT_MS = 10_000;
+
 const DOCUMENT_SELECT = `
   id,
   slug,
@@ -349,7 +369,7 @@ const DOCUMENT_SELECT = `
   document_people(role, people(name))
 `;
 
-const DOCUMENT_LIST_SELECT = `
+const DOCUMENT_SUMMARY_SELECT = `
   id,
   slug,
   title,
@@ -369,25 +389,16 @@ const DOCUMENT_LIST_SELECT = `
   publisher,
   summary,
   abstract,
+  publication_title,
   citation,
   rights_statement,
   source_url,
-  content_language,
-  translation_language,
-  translation_text,
-  translation_provider,
-  translation_note,
-  reader_mode,
-  media_embed_url,
   access_type,
   hosting_status,
   cover_image_path,
   thumbnail_path,
   is_featured,
   published_at,
-  files(id, storage_path, kind, mime_type, byte_size),
-  document_sections(id, position, heading, section_type, body),
-  document_figures(id, position, image_path, alt_text, caption, placement),
   document_tags(tags(name, tag_type)),
   document_people(role, people(name))
 `;
@@ -421,7 +432,7 @@ const LEGACY_DOCUMENT_SELECT = `
   document_people(role, people(name))
 `;
 
-const LEGACY_DOCUMENT_LIST_SELECT = `
+const LEGACY_DOCUMENT_SUMMARY_SELECT = `
   id,
   slug,
   title,
@@ -444,7 +455,6 @@ const LEGACY_DOCUMENT_LIST_SELECT = `
   thumbnail_path,
   is_featured,
   published_at,
-  files(id, storage_path, kind, mime_type, byte_size),
   document_tags(tags(name, tag_type)),
   document_people(role, people(name))
 `;
@@ -495,6 +505,35 @@ const COLLECTION_SELECT = `
   )
 `;
 
+const COLLECTION_LIST_SELECT = `
+  id,
+  slug,
+  title,
+  subtitle,
+  summary,
+  body,
+  cover_image_path,
+  collection_documents(
+    position,
+    sequence_label,
+    sequence_number,
+    issue_date,
+    document:documents(
+      id,
+      slug,
+      title,
+      short_title,
+      display_date,
+      date_start,
+      cover_image_path,
+      thumbnail_path,
+      sequence_label,
+      sequence_number,
+      issue_date
+    )
+  )
+`;
+
 const LEGACY_COLLECTION_SELECT = `
   id,
   slug,
@@ -524,9 +563,6 @@ const LEGACY_COLLECTION_SELECT = `
       source_url,
       cover_image_path,
       thumbnail_path,
-      sequence_label,
-      sequence_number,
-      issue_date,
       access_type,
       hosting_status,
       published_at,
@@ -538,56 +574,136 @@ const LEGACY_COLLECTION_SELECT = `
   )
 `;
 
-export async function getArchiveSourcesFromSupabase() {
+const LEGACY_COLLECTION_LIST_SELECT = `
+  id,
+  slug,
+  title,
+  subtitle,
+  summary,
+  body,
+  cover_image_path,
+  collection_documents(
+    position,
+    document:documents(
+      id,
+      slug,
+      title,
+      short_title,
+      display_date,
+      date_start,
+      cover_image_path,
+      thumbnail_path
+    )
+  )
+`;
+
+async function withSupabaseTimeout<T>(query: PromiseLike<T>, label: string): Promise<T> {
+  let timeoutId: ReturnType<typeof setTimeout> | undefined;
+  const timeout = new Promise<never>((_, reject) => {
+    timeoutId = setTimeout(() => {
+      reject(new Error(`${label} timed out after ${SUPABASE_QUERY_TIMEOUT_MS}ms`));
+    }, SUPABASE_QUERY_TIMEOUT_MS);
+  });
+
+  try {
+    return await Promise.race([Promise.resolve(query), timeout]);
+  } finally {
+    if (timeoutId) clearTimeout(timeoutId);
+  }
+}
+
+function errorMessage(error: unknown) {
+  return error instanceof Error ? error.message : String(error);
+}
+
+export async function listArchiveSourceSummariesFromSupabase() {
   const supabase = getSupabaseClient();
   if (!supabase) return normalizedFallbackSources();
 
-  let { data, error } = await supabase
-    .from("documents")
-    .select(DOCUMENT_LIST_SELECT)
-    .eq("status", "published")
-    .order("date_start", { ascending: true });
+  let data: unknown;
+  let error: { message: string } | null | undefined;
+  try {
+    const result = await withSupabaseTimeout(
+      supabase
+        .from("documents")
+        .select(DOCUMENT_SUMMARY_SELECT)
+        .eq("status", "published")
+        .order("date_start", { ascending: true }),
+      "Supabase archive summary query"
+    );
+    data = result.data;
+    error = result.error;
+  } catch (queryError) {
+    console.warn("Supabase archive summary query failed; using fallback data.", errorMessage(queryError));
+    return normalizedFallbackSources();
+  }
 
   if (error && isSchemaShapeError(error.message)) {
-    console.warn("Supabase archive list query used legacy select shape.", error.message);
-    const legacyResult = await supabase
-      .from("documents")
-      .select(LEGACY_DOCUMENT_LIST_SELECT)
-      .eq("status", "published")
-      .order("date_start", { ascending: true });
-    data = legacyResult.data as typeof data;
-    error = legacyResult.error;
+    try {
+      const legacyResult = await withSupabaseTimeout(
+        supabase
+          .from("documents")
+          .select(LEGACY_DOCUMENT_SUMMARY_SELECT)
+          .eq("status", "published")
+          .order("date_start", { ascending: true }),
+        "Supabase legacy archive summary query"
+      );
+      data = legacyResult.data;
+      error = legacyResult.error;
+    } catch (queryError) {
+      console.warn("Supabase legacy archive summary query failed; using fallback data.", errorMessage(queryError));
+      return normalizedFallbackSources();
+    }
   }
 
   if (error || !data) {
-    console.warn("Supabase archive query failed; using fallback data.", error?.message);
+    console.warn("Supabase archive summary query failed; using fallback data.", error?.message);
     return normalizedFallbackSources();
   }
 
   return (data as unknown as DocumentRow[]).map(documentToArchiveSource);
 }
 
-export async function getArchiveSourceFromSupabase(slug: string) {
+export async function getArchiveSourceDetailFromSupabase(slug: string) {
   const supabase = getSupabaseClient();
   if (!supabase) return fallbackSources.find((source) => source.slug === slug);
 
-  let { data, error } = await supabase
-    .from("documents")
-    .select(DOCUMENT_SELECT)
-    .eq("slug", slug)
-    .eq("status", "published")
-    .maybeSingle();
+  let data: unknown;
+  let error: { message: string } | null | undefined;
+  try {
+    const result = await withSupabaseTimeout(
+      supabase
+        .from("documents")
+        .select(DOCUMENT_SELECT)
+        .eq("slug", slug)
+        .eq("status", "published")
+        .maybeSingle(),
+      `Supabase source detail query for ${slug}`
+    );
+    data = result.data;
+    error = result.error;
+  } catch (queryError) {
+    console.warn("Supabase source query failed; using fallback data.", errorMessage(queryError));
+    return fallbackSources.find((source) => source.slug === slug);
+  }
 
   if (error && isSchemaShapeError(error.message)) {
-    console.warn("Supabase source query used legacy select shape.", error.message);
-    const legacyResult = await supabase
-      .from("documents")
-      .select(LEGACY_DOCUMENT_SELECT)
-      .eq("slug", slug)
-      .eq("status", "published")
-      .maybeSingle();
-    data = legacyResult.data as typeof data;
-    error = legacyResult.error;
+    try {
+      const legacyResult = await withSupabaseTimeout(
+        supabase
+          .from("documents")
+          .select(LEGACY_DOCUMENT_SELECT)
+          .eq("slug", slug)
+          .eq("status", "published")
+          .maybeSingle(),
+        `Supabase legacy source detail query for ${slug}`
+      );
+      data = legacyResult.data;
+      error = legacyResult.error;
+    } catch (queryError) {
+      console.warn("Supabase legacy source query failed; using fallback data.", errorMessage(queryError));
+      return fallbackSources.find((source) => source.slug === slug);
+    }
   }
 
   if (error) {
@@ -595,30 +711,155 @@ export async function getArchiveSourceFromSupabase(slug: string) {
     return fallbackSources.find((source) => source.slug === slug);
   }
 
-  return data ? documentToArchiveSource(data as unknown as DocumentRow) : undefined;
+  if (!data) return undefined;
+  const document = data as unknown as DocumentRow;
+  document.document_citation_links = await getDocumentCitationLinks(document.id);
+  return documentToArchiveSource(document);
 }
 
-export async function getCollectionSourceFromSupabase(slug: string) {
+export async function getArchiveSourceReaderPayloadFromSupabase(slug: string) {
+  return getArchiveSourceDetailFromSupabase(slug);
+}
+
+export async function getArchiveSourcesFromSupabase() {
+  return listArchiveSourceSummariesFromSupabase();
+}
+
+export async function getArchiveSourceFromSupabase(slug: string) {
+  return getArchiveSourceDetailFromSupabase(slug);
+}
+
+async function getDocumentCitationLinks(documentId: string): Promise<DocumentCitationLinkRow[]> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return [];
+
+  let data: unknown;
+  let error: { message: string } | null | undefined;
+  try {
+    const result = await withSupabaseTimeout(
+      supabase
+        .from("document_citation_links")
+        .select("citation_text, confidence, status, bibliography_item:bibliography_items(slug, title, year)")
+        .eq("document_id", documentId)
+        .in("status", ["auto", "reviewed"]),
+      `Supabase citation-link query for ${documentId}`
+    );
+    data = result.data;
+    error = result.error;
+  } catch (queryError) {
+    console.warn("Supabase citation-link query failed.", errorMessage(queryError));
+    return getLocalDocumentCitationLinks(documentId);
+  }
+
+  if (error) {
+    if (!isSchemaShapeError(error.message)) {
+      console.warn("Supabase citation-link query failed.", error.message);
+    }
+    return getLocalDocumentCitationLinks(documentId);
+  }
+
+  return (data ?? []) as DocumentCitationLinkRow[];
+}
+
+function getLocalDocumentCitationLinks(documentId: string): DocumentCitationLinkRow[] {
+  const cache = loadLocalCitationLinkCache();
+  return cache.get(documentId) ?? [];
+}
+
+function loadLocalCitationLinkCache(): Map<string, DocumentCitationLinkRow[]> {
+  if (localCitationLinkCache) return localCitationLinkCache;
+  localCitationLinkCache = new Map();
+
+  const root = path.basename(process.cwd()) === "archive-site" ? path.resolve(process.cwd(), "..") : process.cwd();
+  const dataDir = path.join(root, "data");
+  if (!fs.existsSync(dataDir)) return localCitationLinkCache;
+
+  for (const entry of fs.readdirSync(dataDir, { withFileTypes: true })) {
+    if (!entry.isDirectory() || !entry.name.endsWith("-import")) continue;
+    const importDir = path.join(dataDir, entry.name);
+    const linksPath = path.join(importDir, "document_citation_links.json");
+    const itemsPath = path.join(importDir, "bibliography_items.json");
+    if (!fs.existsSync(linksPath) || !fs.existsSync(itemsPath)) continue;
+
+    try {
+      const links = JSON.parse(fs.readFileSync(linksPath, "utf8")) as Array<{
+        document_id: string;
+        bibliography_item_id: string;
+        citation_text: string;
+        confidence: number | null;
+        status: string | null;
+      }>;
+      const items = JSON.parse(fs.readFileSync(itemsPath, "utf8")) as Array<{
+        id: string;
+        slug: string;
+        title: string;
+        year: number | null;
+      }>;
+      const itemById = new Map(items.map((item) => [item.id, item]));
+      for (const link of links) {
+        const item = itemById.get(link.bibliography_item_id);
+        if (!item) continue;
+        const rows = localCitationLinkCache.get(link.document_id) ?? [];
+        rows.push({
+          citation_text: link.citation_text,
+          confidence: link.confidence,
+          status: link.status,
+          bibliography_item: {
+            slug: item.slug,
+            title: item.title,
+            year: item.year,
+          },
+        });
+        localCitationLinkCache.set(link.document_id, rows);
+      }
+    } catch (error) {
+      console.warn(`Skipping local citation-link fallback data in ${entry.name}.`, error instanceof Error ? error.message : error);
+    }
+  }
+
+  return localCitationLinkCache;
+}
+
+export async function getCollectionSourceDetailFromSupabase(slug: string) {
   const supabase = getSupabaseClient();
   if (!supabase) return undefined;
 
-  let { data, error } = await supabase
-    .from("collections")
-    .select(COLLECTION_SELECT)
-    .eq("slug", slug)
-    .eq("status", "published")
-    .maybeSingle();
+  let data: unknown;
+  let error: { message: string } | null | undefined;
+  try {
+    const result = await withSupabaseTimeout(
+      supabase
+        .from("collections")
+        .select(COLLECTION_SELECT)
+        .eq("slug", slug)
+        .eq("status", "published")
+        .maybeSingle(),
+      `Supabase collection detail query for ${slug}`
+    );
+    data = result.data;
+    error = result.error;
+  } catch (queryError) {
+    console.warn("Supabase collection query failed.", errorMessage(queryError));
+    return undefined;
+  }
 
   if (error && isSchemaShapeError(error.message)) {
-    console.warn("Supabase collection query used legacy select shape.", error.message);
-    const legacyResult = await supabase
-      .from("collections")
-      .select(LEGACY_COLLECTION_SELECT)
-      .eq("slug", slug)
-      .eq("status", "published")
-      .maybeSingle();
-    data = legacyResult.data as typeof data;
-    error = legacyResult.error;
+    try {
+      const legacyResult = await withSupabaseTimeout(
+        supabase
+          .from("collections")
+          .select(LEGACY_COLLECTION_SELECT)
+          .eq("slug", slug)
+          .eq("status", "published")
+          .maybeSingle(),
+        `Supabase legacy collection detail query for ${slug}`
+      );
+      data = legacyResult.data;
+      error = legacyResult.error;
+    } catch (queryError) {
+      console.warn("Supabase legacy collection query failed.", errorMessage(queryError));
+      return undefined;
+    }
   }
 
   if (error) {
@@ -629,25 +870,44 @@ export async function getCollectionSourceFromSupabase(slug: string) {
   return data ? collectionToArchiveSource(data as unknown as CollectionRow) : undefined;
 }
 
-export async function getCollectionSourcesFromSupabase() {
+export async function listCollectionSourceSummariesFromSupabase() {
   const supabase = getSupabaseClient();
   if (!supabase) return [];
 
-  let { data, error } = await supabase
-    .from("collections")
-    .select(COLLECTION_SELECT)
-    .eq("status", "published")
-    .order("title", { ascending: true });
+  let data: unknown;
+  let error: { message: string } | null | undefined;
+  try {
+    const result = await withSupabaseTimeout(
+      supabase
+        .from("collections")
+        .select(COLLECTION_LIST_SELECT)
+        .eq("status", "published")
+        .order("title", { ascending: true }),
+      "Supabase collection summary query"
+    );
+    data = result.data;
+    error = result.error;
+  } catch (queryError) {
+    console.warn("Supabase collection summary query failed.", errorMessage(queryError));
+    return [];
+  }
 
   if (error && isSchemaShapeError(error.message)) {
-    console.warn("Supabase collection list query used legacy select shape.", error.message);
-    const legacyResult = await supabase
-      .from("collections")
-      .select(LEGACY_COLLECTION_SELECT)
-      .eq("status", "published")
-      .order("title", { ascending: true });
-    data = legacyResult.data as typeof data;
-    error = legacyResult.error;
+    try {
+      const legacyResult = await withSupabaseTimeout(
+        supabase
+          .from("collections")
+          .select(LEGACY_COLLECTION_LIST_SELECT)
+          .eq("status", "published")
+          .order("title", { ascending: true }),
+        "Supabase legacy collection summary query"
+      );
+      data = legacyResult.data;
+      error = legacyResult.error;
+    } catch (queryError) {
+      console.warn("Supabase legacy collection summary query failed.", errorMessage(queryError));
+      return [];
+    }
   }
 
   if (error || !data) {
@@ -655,7 +915,15 @@ export async function getCollectionSourcesFromSupabase() {
     return [];
   }
 
-  return (data as unknown as CollectionRow[]).map(collectionToArchiveSource);
+  return (data as unknown as CollectionRow[]).map((collection) => collectionToArchiveSource(collection, { includeItems: false }));
+}
+
+export async function getCollectionSourceFromSupabase(slug: string) {
+  return getCollectionSourceDetailFromSupabase(slug);
+}
+
+export async function getCollectionSourcesFromSupabase() {
+  return listCollectionSourceSummariesFromSupabase();
 }
 
 function isSchemaShapeError(message = "") {
@@ -705,6 +973,7 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
     .filter((creator) => ["author", "speaker", "recordist"].includes(creator.role))
     .map((creator) => creator.name);
   const structuredFigures = mapDocumentFigures(document.document_figures);
+  const citationLinks = mapCitationLinks(document.document_citation_links);
   const legacyFigures = extractTranscriptFigures(rawTranscript, getStoragePublicUrl(imagePath), title);
   const figures = structuredFigures.length ? structuredFigures : legacyFigures;
   const transcript = cleanTranscriptText(rawTranscript, {
@@ -763,13 +1032,15 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
     transcript,
     transcriptSections,
     figures,
+    citationLinks,
     pages,
     files
   };
 }
 
-function collectionToArchiveSource(collection: CollectionRow): ArchiveSource {
+function collectionToArchiveSource(collection: CollectionRow, { includeItems = true }: { includeItems?: boolean } = {}): ArchiveSource {
   const items = mapCollectionItems(collection.collection_documents);
+  const itemCount = collection.collection_documents?.length ?? items.length;
   const years = items
     .map((item) => yearFromDisplayDate(item.displayDate ?? null))
     .filter((year): year is number => Boolean(year));
@@ -794,8 +1065,8 @@ function collectionToArchiveSource(collection: CollectionRow): ArchiveSource {
     shortTitle: collection.title,
     subtitle: collection.subtitle || undefined,
     sourceKind: "collection",
-    collectionItemCount: items.length,
-    collectionItems: items,
+    collectionItemCount: itemCount,
+    collectionItems: includeItems ? items : undefined,
     author: "The Psychedelic History Archive",
     year: startYear,
     displayDate,
@@ -897,6 +1168,26 @@ function mapDocumentFigures(figures: DocumentFigureRow[] = []): SourceFigure[] {
       };
     })
     .filter(Boolean) as SourceFigure[];
+}
+
+function mapCitationLinks(rows: DocumentCitationLinkRow[] = []): SourceCitationLink[] {
+  return rows
+    .filter((row) => row.status === "auto" || row.status === "reviewed")
+    .map((row) => {
+      const item = firstRelated(row.bibliography_item);
+      const citationText = row.citation_text?.trim();
+      if (!citationText || !item?.slug || !item.title) return undefined;
+      const title = item.year ? `${item.title} (${item.year})` : item.title;
+      return {
+        citationText,
+        bibliographySlug: item.slug,
+        bibliographyTitle: item.title,
+        bibliographyYear: item.year ?? undefined,
+        url: `/further-reading/${item.slug}`,
+        title
+      };
+    })
+    .filter(Boolean) as SourceCitationLink[];
 }
 
 const SOURCE_METADATA_CORRECTIONS: Record<string, { title?: string; people?: string[] }> = {

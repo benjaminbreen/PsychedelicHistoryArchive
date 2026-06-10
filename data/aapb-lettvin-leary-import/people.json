@@ -1,0 +1,20 @@
+[
+  {
+    "id": "23425a04-f54d-54ad-b376-9e46badbc315",
+    "slug": "timothy-leary",
+    "name": "Timothy Leary",
+    "sort_name": "Leary, Timothy",
+    "birth_year": 1920,
+    "death_year": 1996,
+    "bio": "American psychologist and public advocate for psychedelic experience."
+  },
+  {
+    "id": "d7e59c3c-5a08-5636-8ee0-760eea16ece3",
+    "slug": "jerome-lettvin",
+    "name": "Jerome Lettvin",
+    "sort_name": "Lettvin, Jerome",
+    "birth_year": 1920,
+    "death_year": 2011,
+    "bio": "MIT physician, neurophysiologist, and communications physiology professor."
+  }
+]

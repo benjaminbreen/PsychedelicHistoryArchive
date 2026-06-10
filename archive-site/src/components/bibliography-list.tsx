@@ -36,7 +36,7 @@ function BibliographyRow({ item }: { item: BibliographyItem }) {
             {item.publicationTitle && <span className="normal-case tracking-normal">{item.publicationTitle}</span>}
           </div>
           <h3 className="mt-1 font-serif text-[1.08rem] font-semibold leading-snug text-archive-ink">
-            {item.title}
+            <Link className="hover:text-archive-violet" href={`/further-reading/${item.slug}`}>{item.title}</Link>
           </h3>
           <p className="mt-0.5 text-sm text-archive-muted">
             {item.contributors.map((contributor) => contributor.displayName).join(", ")}

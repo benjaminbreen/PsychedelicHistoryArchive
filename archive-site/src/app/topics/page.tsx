@@ -7,7 +7,7 @@ import { PageShell } from "@/components/page/page-shell";
 import { getFacetCounts } from "@/lib/archive-query";
 import { isCoreTopicSlug } from "@/lib/core-topics";
 import { topicHref, topicSlug } from "@/lib/internal-links";
-import { getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
+import { listArchiveSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { listPublicTopics, type PublicTopicListItem } from "@/lib/topics";
 import type { ArchiveSource } from "@/lib/types";
 import { TopicsBrowser } from "./topics-browser";
@@ -206,7 +206,7 @@ const TOPIC_METADATA: TopicCard[] = [
 
 export default async function TopicsPage() {
   const [sources, curatedTopics] = await Promise.all([
-    getArchiveSourcesFromSupabase(),
+    listArchiveSourceSummariesFromSupabase(),
     listPublicTopics()
   ]);
   const facetCounts = getFacetCounts(sources);
@@ -290,14 +290,23 @@ function buildTagCloud(counts: Record<string, number>, visibleTopics: VisibleTop
   const visibleSlugs = new Set(visibleTopics.map((topic) => topic.slug));
 
   return Object.entries(counts)
-    .filter(([title, count]) => count > 0 && !visibleSlugs.has(topicSlug(title)))
+    .filter(([title, count]) => count > 0 && shouldShowTagCloudTag(title) && !visibleSlugs.has(topicSlug(title)))
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
     .slice(0, 80)
     .map(([title, count]) => ({
       title,
       count,
-      href: `/archive?tag=${encodeURIComponent(title)}`
+      href: topicHref(title)
     }));
+}
+
+function shouldShowTagCloudTag(title: string) {
+  const normalized = title.trim();
+  if (!normalized) return false;
+  if (/^\d{3,4}$/.test(normalized)) return false;
+  if (/^\d{4}s$/.test(normalized)) return false;
+  if (/^ca\.?\s*\d+/i.test(normalized)) return false;
+  return true;
 }
 
 function TagCloud({ tags }: { tags: TagCloudItem[] }) {
@@ -309,7 +318,7 @@ function TagCloud({ tags }: { tags: TagCloudItem[] }) {
         <div>
           <h2 className="source-serif-heading">Specific Tags</h2>
           <p className="mt-2 text-sm leading-6 text-archive-muted">
-            Narrow labels, dates, places, methods, and one-off descriptors remain archive filters rather than editorial topic pages.
+            Additional labels used on source records. These pages are generated from current tags and list matching sources without implying a curated editorial topic.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">

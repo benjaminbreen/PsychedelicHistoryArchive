@@ -29,35 +29,7 @@ export function filterArchiveSources(items: ArchiveSource[], params: ArchiveSear
   const yearEnd = parseYearParam(params.yearEnd);
 
   const filtered = items.filter((source) => {
-    const haystack = normalize([
-      source.title,
-      source.shortTitle,
-      source.subtitle,
-      source.author,
-      source.summary,
-      source.excerpt,
-      source.citation,
-      source.publicationTitle,
-      source.type,
-      source.medium,
-      source.region,
-      source.language,
-      ...source.tags,
-      ...(source.legacyTags ?? []),
-      ...source.people,
-      ...(source.creators?.map((creator) => `${creator.name} ${creator.role}`) ?? []),
-      ...source.substances,
-      source.transcript,
-      ...(source.transcriptSections ?? []).flatMap((section) => [
-        section.heading,
-        ...section.paragraphs
-      ]),
-      ...(source.pages ?? []).flatMap((page) => [
-        page.label,
-        page.ocrText,
-        ...page.lines.map((line) => line.text)
-      ])
-    ].join(" "));
+    const haystack = buildArchiveSearchText(source);
 
     return (
       (queryTerms.length === 0 || queryTerms.every((term) => haystack.includes(term))) &&
@@ -78,6 +50,28 @@ export function filterArchiveSources(items: ArchiveSource[], params: ArchiveSear
     if (params.sort === "title") return a.title.localeCompare(b.title);
     return a.year - b.year;
   });
+}
+
+export function buildArchiveSearchText(source: ArchiveSource) {
+  return normalize([
+    source.title,
+    source.shortTitle,
+    source.subtitle,
+    source.author,
+    source.summary,
+    source.excerpt,
+    source.citation,
+    source.publicationTitle,
+    source.type,
+    source.medium,
+    source.region,
+    source.language,
+    ...source.tags,
+    ...(source.legacyTags ?? []),
+    ...source.people,
+    ...(source.creators?.map((creator) => `${creator.name} ${creator.role}`) ?? []),
+    ...source.substances,
+  ].join(" "));
 }
 
 function parseYearParam(value?: string) {
@@ -116,11 +110,19 @@ function countByMany<T extends string>(items: ArchiveSource[], fn: (item: Archiv
 }
 
 function normalize(value?: string) {
-  return decodeURIComponent(value ?? "")
+  return safeDecodeURIComponent(value ?? "")
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .trim();
+}
+
+function safeDecodeURIComponent(value: string) {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
 }
 
 function getQueryTerms(value?: string) {

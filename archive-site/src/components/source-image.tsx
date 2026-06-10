@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { ArchiveImage } from "@/components/ui/archive-image";
 import { SourceThumbnail } from "@/components/source-thumbnail";
 import type { ArchiveSource } from "@/lib/types";
 
@@ -20,17 +21,11 @@ export function SourceImage({ source, className, imageClassName }: SourceImagePr
   }
 
   return (
-    <div
-      className={clsx(
-        "overflow-hidden rounded-sm border border-archive-line bg-archive-sand",
-        className
-      )}
-    >
-      <img
-        alt={source.imageAlt ?? source.title}
-        className={clsx("h-full w-full object-cover sepia-[.18]", imageClassName)}
-        src={source.imagePath}
-      />
-    </div>
+    <ArchiveImage
+      alt={source.imageAlt ?? source.title}
+      className={clsx("rounded-sm border border-archive-line", className)}
+      imageClassName={clsx("sepia-[.18]", imageClassName)}
+      src={source.imagePath}
+    />
   );
 }

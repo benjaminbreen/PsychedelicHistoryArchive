@@ -256,6 +256,27 @@ export async function getBibliographyForEra(eraSlug: string, limit = 4) {
   return items.slice(0, limit);
 }
 
+export async function getBibliographyItemBySlug(slug: string) {
+  const supabase = getSupabaseClient();
+
+  if (supabase) {
+    const { data, error } = await withTimeout(
+      supabase
+        .from("bibliography_items")
+        .select(BIBLIOGRAPHY_SELECT)
+        .eq("slug", slug)
+        .eq("status", "published")
+        .neq("recommendation_status", "exclude")
+        .maybeSingle(),
+      2500
+    );
+
+    if (!error && data) return rowToBibliographyItem(data as BibliographyRow);
+  }
+
+  return FALLBACK_BIBLIOGRAPHY.find((item) => item.slug === slug);
+}
+
 export function filterBibliographyItems(items: BibliographyItem[], filters: BibliographyFilters = {}) {
   const q = normalize(filters.q);
   const era = normalize(filters.era);

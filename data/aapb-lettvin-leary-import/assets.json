@@ -1,0 +1,14 @@
+[
+  {
+    "local_path": "../aapb/lettvin-vs-leary/Lettvin-Leary-LSD-Debate-Merged-OCR.pdf",
+    "storage_path": "documents/ad821d23-2fac-5ac7-b915-4998f8018223/original/lettvin-leary-lsd-debate.pdf",
+    "mime_type": "application/pdf"
+  },
+  {
+    "local_path": "thumbnails/lettvin-vs-leary-thumbnail.jpg",
+    "storage_path": "documents/ad821d23-2fac-5ac7-b915-4998f8018223/thumbnail/lettvin-vs-leary.jpg",
+    "mime_type": "image/jpeg",
+    "byte_size": 43528,
+    "checksum": "1692441217abe2f9e99e0d690db81c9bce5e7ac17168a562074209c01e188240"
+  }
+]

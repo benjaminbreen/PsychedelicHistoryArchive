@@ -115,7 +115,7 @@ export function buildWebSiteJsonLd(): JsonLdObject {
     publisher: organizationJsonLd(),
     potentialAction: {
       "@type": "SearchAction",
-      target: `${absoluteUrl("/archive")}?q={search_term_string}`,
+      target: `${absoluteUrl("/search")}?q={search_term_string}`,
       "query-input": "required name=search_term_string"
     }
   };

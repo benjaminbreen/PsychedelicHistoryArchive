@@ -4,7 +4,7 @@ import { ArrowRight, CalendarDays, ChevronLeft, ChevronRight, FileText, Tag } fr
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { PageShell } from "@/components/page/page-shell";
-import { getCollectionSourcesFromSupabase } from "@/lib/supabase-archive";
+import { listCollectionSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import type { ArchiveSource } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -110,7 +110,7 @@ type CollectionsPageProps = {
 
 export default async function CollectionsPage({ searchParams }: CollectionsPageProps) {
   const params = await searchParams;
-  const supabaseCollections = await getCollectionSourcesFromSupabase();
+  const supabaseCollections = await listCollectionSourceSummariesFromSupabase();
   const liveCollections = supabaseCollections.length ? supabaseCollections.map(collectionSourceToCard) : collections;
   const totalPages = Math.max(1, Math.ceil(liveCollections.length / collectionsPerPage));
   const currentPage = Math.min(parseCollectionPage(params.page), totalPages);

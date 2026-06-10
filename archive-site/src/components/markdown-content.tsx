@@ -1,50 +1,66 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import type { SourceFigure } from "@/lib/types";
+import { markdownHeadingId, parseMarkdown, type Footnote, type MarkdownBlock as ParsedMarkdownBlock } from "@/lib/markdown";
+import type { SourceCitationLink, SourceFigure } from "@/lib/types";
 
 type MarkdownContentProps = {
   className?: string;
   figures?: SourceFigure[];
   markdown: string;
   transcriptFormat?: "media" | "prose";
+  citationLinks?: SourceCitationLink[];
 };
 
-type Block =
-  | { type: "blockquote"; lines: string[] }
-  | { type: "code"; language?: string; text: string }
-  | { type: "figure"; token: string }
-  | { type: "figure-row"; tokens: string[] }
-  | { type: "heading"; depth: number; text: string }
-  | { type: "list"; ordered: boolean; items: string[] }
-  | { type: "paragraph"; text: string };
+type InlineParseOptions = {
+  sidenotes?: Footnote[];
+  citationLinks?: SourceCitationLink[];
+};
 
-export function MarkdownContent({ className, figures = [], markdown, transcriptFormat = "prose" }: MarkdownContentProps) {
-  const blocks = parseBlocks(markdown);
+type WikipediaPreview = {
+  title: string;
+  extract: string;
+  thumbnail?: string;
+};
+
+type PreviewPosition = {
+  left: number;
+  top: number;
+  transform?: string;
+};
+
+const wikipediaPreviewCache = new Map<string, Promise<WikipediaPreview | null>>();
+
+export function MarkdownContent({ citationLinks = [], className, figures = [], markdown, transcriptFormat = "prose" }: MarkdownContentProps) {
+  const parsed = parseMarkdown(markdown);
+  const hasFootnotesBlock = parsed.blocks.some((block) => block.type === "footnotes");
+  const inlineOptions = { citationLinks };
 
   return (
     <div className={className}>
-      {blocks.map((block, index) => (
-        <MarkdownBlock block={block} figures={figures} key={`${block.type}-${index}`} transcriptFormat={transcriptFormat} />
+      {parsed.blocks.map((block, index) => (
+        <MarkdownBlock block={block} figures={figures} footnoteMap={parsed.footnoteMap} inlineOptions={inlineOptions} key={`${block.type}-${index}`} transcriptFormat={transcriptFormat} />
       ))}
+      {parsed.footnotes.length > 0 && !hasFootnotesBlock && <Footnotes footnotes={parsed.footnotes} />}
     </div>
   );
 }
 
-function MarkdownBlock({ block, figures, transcriptFormat }: { block: Block; figures: SourceFigure[]; transcriptFormat: "media" | "prose" }) {
+function MarkdownBlock({ block, figures, footnoteMap, inlineOptions, transcriptFormat }: { block: ParsedMarkdownBlock; figures: SourceFigure[]; footnoteMap: Map<string, Footnote>; inlineOptions: InlineParseOptions; transcriptFormat: "media" | "prose" }) {
   if (block.type === "heading") {
-    const content = parseInline(block.text);
-    if (block.depth <= 2) return <h3 className="source-markdown-heading">{content}</h3>;
-    return <h4 className="source-markdown-subheading">{content}</h4>;
+    const content = parseInline(block.text, footnoteMap);
+    if (block.depth <= 2) return <h3 className="source-markdown-heading" id={block.id}>{content}</h3>;
+    return <h4 className="source-markdown-subheading" id={block.id}>{content}</h4>;
   }
 
   if (block.type === "blockquote") {
     return (
       <blockquote className="border-l-2 border-archive-violet/60 pl-5 text-archive-ink/90">
         {block.lines.map((line, index) => (
-          <p key={`${index}-${line.slice(0, 16)}`}>{parseInline(line)}</p>
+          <MarkdownParagraph footnoteMap={footnoteMap} inlineOptions={inlineOptions} key={`${index}-${line.slice(0, 16)}`} text={line} />
         ))}
       </blockquote>
     );
@@ -58,12 +74,18 @@ function MarkdownBlock({ block, figures, transcriptFormat }: { block: Block; fig
     );
   }
 
+  if (block.type === "footnotes") {
+    return <Footnotes footnotes={[...footnoteMap.values()]} />;
+  }
+
   if (block.type === "list") {
     const ListTag = block.ordered ? "ol" : "ul";
     return (
       <ListTag className={block.ordered ? "list-decimal space-y-2 pl-7" : "list-disc space-y-2 pl-7"}>
         {block.items.map((item, index) => (
-          <li key={`${index}-${item.slice(0, 16)}`}>{parseInline(item)}</li>
+          <li key={`${index}-${item.slice(0, 16)}`}>
+            <MarkdownInlineWithSidenotes footnoteMap={footnoteMap} inlineOptions={inlineOptions} text={item} />
+          </li>
         ))}
       </ListTag>
     );
@@ -90,21 +112,84 @@ function MarkdownBlock({ block, figures, transcriptFormat }: { block: Block; fig
   }
 
   if (transcriptFormat === "media") {
-    return <MediaTranscriptParagraph text={block.text} />;
+    return <MediaTranscriptParagraph footnoteMap={footnoteMap} inlineOptions={inlineOptions} text={block.text} />;
   }
 
-  return <p>{parseInline(block.text)}</p>;
+  return <MarkdownParagraph footnoteMap={footnoteMap} inlineOptions={inlineOptions} text={block.text} />;
 }
 
-function MediaTranscriptParagraph({ text }: { text: string }) {
+function MarkdownParagraph({ footnoteMap, inlineOptions, text }: { footnoteMap: Map<string, Footnote>; inlineOptions?: InlineParseOptions; text: string }) {
+  const sidenotes: Footnote[] = [];
+  return (
+    <p>
+      {parseInline(text, footnoteMap, { ...inlineOptions, sidenotes })}
+      <SidenoteStack footnotes={sidenotes} />
+    </p>
+  );
+}
+
+function MarkdownInlineWithSidenotes({ footnoteMap, inlineOptions, text }: { footnoteMap: Map<string, Footnote>; inlineOptions?: InlineParseOptions; text: string }) {
+  const sidenotes: Footnote[] = [];
+  return (
+    <>
+      {parseInline(text, footnoteMap, { ...inlineOptions, sidenotes })}
+      <SidenoteStack footnotes={sidenotes} />
+    </>
+  );
+}
+
+function SidenoteStack({ footnotes }: { footnotes: Footnote[] }) {
+  if (footnotes.length === 0) return null;
+
+  return (
+    <span aria-hidden="true" className="source-sidenote-stack">
+      {footnotes.map((footnote) => (
+        <span className="source-sidenote" key={footnote.key}>
+          <span className="source-sidenote-number">{footnote.number}</span>
+          {parseInline(footnote.text)}
+        </span>
+      ))}
+    </span>
+  );
+}
+
+function Footnotes({ footnotes }: { footnotes: Footnote[] }) {
+  return (
+    <section aria-label="Notes" className="source-footnotes">
+      <h3 className="source-footnotes-heading" id={markdownHeadingId("Notes")}>Notes</h3>
+      <ol className="source-footnotes-list">
+        {footnotes.map((footnote) => (
+          <li id={footnoteId(footnote.key)} key={footnote.key}>
+            <span>
+              {parseInline(footnote.text)}{" "}
+              <a aria-label={`Return to note ${footnote.number} reference`} className="source-footnote-backlink" href={`#${footnoteRefId(footnote.key)}`}>
+                ↩
+              </a>
+            </span>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
+function MediaTranscriptParagraph({ footnoteMap, inlineOptions, text }: { footnoteMap: Map<string, Footnote>; inlineOptions?: InlineParseOptions; text: string }) {
   const bracketCue = text.match(/^\[([^\]]+)\]$/);
   if (bracketCue) {
-    return <p className="source-media-transcript-cue source-media-transcript-cue-bracket">{parseInline(bracketCue[1].trim())}</p>;
+    return (
+      <p className="source-media-transcript-cue source-media-transcript-cue-bracket">
+        <MarkdownInlineWithSidenotes footnoteMap={footnoteMap} inlineOptions={inlineOptions} text={bracketCue[1].trim()} />
+      </p>
+    );
   }
 
   const parentheticalCue = text.match(/^\(([^)]+)\)$/);
   if (parentheticalCue) {
-    return <p className="source-media-transcript-cue source-media-transcript-cue-parenthetical">{parseInline(parentheticalCue[1].trim())}</p>;
+    return (
+      <p className="source-media-transcript-cue source-media-transcript-cue-parenthetical">
+        <MarkdownInlineWithSidenotes footnoteMap={footnoteMap} inlineOptions={inlineOptions} text={parentheticalCue[1].trim()} />
+      </p>
+    );
   }
 
   const speaker = text.match(/^([A-Z][^:\n]{0,47}:)\s+(.+)$/);
@@ -112,12 +197,12 @@ function MediaTranscriptParagraph({ text }: { text: string }) {
     return (
       <p>
         <strong className="source-media-transcript-speaker">{speaker[1]}</strong>{" "}
-        {parseInline(speaker[2])}
+        <MarkdownInlineWithSidenotes footnoteMap={footnoteMap} inlineOptions={inlineOptions} text={speaker[2]} />
       </p>
     );
   }
 
-  return <p>{parseInline(text)}</p>;
+  return <MarkdownParagraph footnoteMap={footnoteMap} inlineOptions={inlineOptions} text={text} />;
 }
 
 export function SourceFigureBlock({ figure }: { figure: SourceFigure }) {
@@ -233,123 +318,45 @@ function FigureLightbox({ figures, initialIndex, onClose }: { figures: SourceFig
   );
 }
 
-function parseBlocks(markdown: string): Block[] {
-  const lines = markdown.replace(/\r\n/g, "\n").split("\n");
-  const blocks: Block[] = [];
-  let index = 0;
-
-  while (index < lines.length) {
-    const line = lines[index] ?? "";
-    const trimmed = line.trim();
-
-    if (!trimmed) {
-      index += 1;
-      continue;
-    }
-
-    const fence = trimmed.match(/^```(\w+)?\s*$/);
-    if (fence) {
-      const codeLines: string[] = [];
-      index += 1;
-      while (index < lines.length && !/^```\s*$/.test(lines[index]?.trim() ?? "")) {
-        codeLines.push(lines[index] ?? "");
-        index += 1;
-      }
-      if (index < lines.length) index += 1;
-      blocks.push({ type: "code", language: fence[1], text: codeLines.join("\n") });
-      continue;
-    }
-
-    const figureRow = trimmed.match(/^{{\s*(?:figure-row|figures|gallery):([^}]+)\s*}}$/i);
-    if (figureRow) {
-      blocks.push({
-        type: "figure-row",
-        tokens: figureRow[1].split(",").map((token) => token.trim()).filter(Boolean)
-      });
-      index += 1;
-      continue;
-    }
-
-    const figure = trimmed.match(/^{{\s*figure:([^}]+)\s*}}$/i);
-    if (figure) {
-      blocks.push({ type: "figure", token: figure[1].trim() });
-      index += 1;
-      continue;
-    }
-
-    const heading = trimmed.match(/^(#{1,4})\s+(.+)$/);
-    if (heading) {
-      blocks.push({ type: "heading", depth: heading[1].length, text: heading[2].trim() });
-      index += 1;
-      continue;
-    }
-
-    if (/^>\s?/.test(trimmed)) {
-      const quoteLines: string[] = [];
-      while (index < lines.length && /^>\s?/.test(lines[index]?.trim() ?? "")) {
-        quoteLines.push((lines[index] ?? "").trim().replace(/^>\s?/, ""));
-        index += 1;
-      }
-      blocks.push({ type: "blockquote", lines: quoteLines.filter(Boolean) });
-      continue;
-    }
-
-    if (/^[-*]\s+/.test(trimmed) || /^\d+\.\s+/.test(trimmed)) {
-      const ordered = /^\d+\.\s+/.test(trimmed);
-      const items: string[] = [];
-      while (index < lines.length) {
-        const current = lines[index]?.trim() ?? "";
-        const match = ordered ? current.match(/^\d+\.\s+(.+)$/) : current.match(/^[-*]\s+(.+)$/);
-        if (!match) break;
-        items.push(match[1].trim());
-        index += 1;
-      }
-      blocks.push({ type: "list", ordered, items });
-      continue;
-    }
-
-    const paragraphLines: string[] = [];
-    while (index < lines.length) {
-      const current = lines[index] ?? "";
-      const currentTrimmed = current.trim();
-      if (!currentTrimmed) break;
-      if (/^```/.test(currentTrimmed) || /^#{1,4}\s+/.test(currentTrimmed) || /^>\s?/.test(currentTrimmed) || /^{{\s*(?:figure|figure-row|figures|gallery):/.test(currentTrimmed)) break;
-      if (/^[-*]\s+/.test(currentTrimmed) || /^\d+\.\s+/.test(currentTrimmed)) break;
-      paragraphLines.push(currentTrimmed);
-      index += 1;
-    }
-    blocks.push({ type: "paragraph", text: paragraphLines.join(" ") });
-  }
-
-  return blocks;
-}
-
-function parseInline(text: string): ReactNode[] {
+function parseInline(text: string, footnoteMap = new Map<string, Footnote>(), options: InlineParseOptions = {}): ReactNode[] {
   const nodes: ReactNode[] = [];
-  const pattern = /(`[^`]+`|\*\*[^*]+\*\*|\*[^*]+\*|\[[^\]]+\]\(([^)\s]+)\))/g;
+  const pattern = /(`[^`]+`|\*\*[^*]+\*\*|\*[^*]+\*|\[\^([^\]]+)\]|\[[^\]]+\]\(([^)\s]+)\))/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
   let index = 0;
 
   while ((match = pattern.exec(text))) {
-    if (match.index > lastIndex) nodes.push(text.slice(lastIndex, match.index));
+    if (match.index > lastIndex) {
+      nodes.push(...linkCitationText(text.slice(lastIndex, match.index), options, `${index}-plain-${lastIndex}`));
+    }
     const token = match[0];
     const key = `${index}-${match.index}`;
 
     if (token.startsWith("`")) {
       nodes.push(<code className="rounded bg-archive-paper px-1 py-0.5 font-mono text-[0.9em]" key={key}>{token.slice(1, -1)}</code>);
     } else if (token.startsWith("**")) {
-      nodes.push(<strong key={key}>{parseInline(token.slice(2, -2))}</strong>);
+      nodes.push(<strong key={key}>{parseInline(token.slice(2, -2), footnoteMap, options)}</strong>);
     } else if (token.startsWith("*")) {
-      nodes.push(<em key={key}>{parseInline(token.slice(1, -1))}</em>);
+      nodes.push(<em key={key}>{parseInline(token.slice(1, -1), footnoteMap, options)}</em>);
+    } else if (token.startsWith("[^")) {
+      const footnoteKey = token.slice(2, -1).trim();
+      const footnote = footnoteMap.get(footnoteKey);
+      if (footnote) {
+        if (options.sidenotes && !options.sidenotes.some((note) => note.key === footnote.key)) {
+          options.sidenotes.push(footnote);
+        }
+        nodes.push(<FootnoteReference footnote={footnote} key={key} />);
+      } else {
+        nodes.push(token);
+      }
     } else {
       const link = token.match(/^\[([^\]]+)\]\(([^)\s]+)\)$/);
       const href = link?.[2] ?? "";
       if (link && isSafeHref(href)) {
         nodes.push(
-          <Link className="font-semibold text-archive-violet underline-offset-4 hover:underline" href={href} key={key}>
-            {parseInline(link[1])}
-          </Link>
+          <PreviewLink href={href} key={key}>
+            {parseInline(link[1], footnoteMap, options)}
+          </PreviewLink>
         );
       } else {
         nodes.push(token);
@@ -360,8 +367,253 @@ function parseInline(text: string): ReactNode[] {
     index += 1;
   }
 
-  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  if (lastIndex < text.length) {
+    nodes.push(...linkCitationText(text.slice(lastIndex), options, `${index}-plain-${lastIndex}`));
+  }
   return nodes;
+}
+
+function linkCitationText(text: string, options: InlineParseOptions, keyPrefix: string): ReactNode[] {
+  const links = [...(options.citationLinks ?? [])]
+    .filter((link) => link.citationText && link.url)
+    .sort((a, b) => b.citationText.length - a.citationText.length);
+  if (!links.length || !text) return [text];
+
+  const nodes: ReactNode[] = [];
+  let cursor = 0;
+  let keyIndex = 0;
+
+  while (cursor < text.length) {
+    let best: { link: SourceCitationLink; index: number } | undefined;
+    for (const link of links) {
+      const matchIndex = text.indexOf(link.citationText, cursor);
+      if (matchIndex === -1 || !citationBoundaryOk(text, matchIndex, link.citationText.length)) continue;
+      if (!best || matchIndex < best.index || (matchIndex === best.index && link.citationText.length > best.link.citationText.length)) {
+        best = { link, index: matchIndex };
+      }
+    }
+
+    if (!best) {
+      nodes.push(text.slice(cursor));
+      break;
+    }
+
+    if (best.index > cursor) nodes.push(text.slice(cursor, best.index));
+    nodes.push(
+      <PreviewLink href={best.link.url} key={`${keyPrefix}-${keyIndex}`} title={best.link.title || best.link.bibliographyTitle}>
+        {best.link.citationText}
+      </PreviewLink>
+    );
+    cursor = best.index + best.link.citationText.length;
+    keyIndex += 1;
+  }
+
+  return nodes.length ? nodes : [text];
+}
+
+function citationBoundaryOk(text: string, index: number, length: number) {
+  const before = index > 0 ? text[index - 1] : "";
+  const after = index + length < text.length ? text[index + length] : "";
+  return !isWordChar(before) && !isWordChar(after);
+}
+
+function isWordChar(value: string) {
+  return /[A-Za-z0-9ÁÉÍÓÚÜÑáéíóúüñ]/.test(value);
+}
+
+function PreviewLink({ children, href, title }: { children: ReactNode; href: string; title?: string }) {
+  const previewTarget = wikipediaPreviewTarget(href);
+  const linkWrapRef = useRef<HTMLSpanElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [preview, setPreview] = useState<WikipediaPreview | null>(null);
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const [canPortal, setCanPortal] = useState(false);
+  const [position, setPosition] = useState<PreviewPosition | null>(null);
+
+  useEffect(() => {
+    setCanPortal(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    function updatePosition() {
+      const linkWrap = linkWrapRef.current;
+      if (!linkWrap) return;
+
+      const rect = linkWrap.getBoundingClientRect();
+      const cardWidth = Math.min(336, window.innerWidth - 24);
+      const cardHeightEstimate = preview?.thumbnail ? 430 : 290;
+      const gap = 10;
+      const margin = 12;
+      const centeredLeft = rect.left + rect.width / 2 - cardWidth / 2;
+      const left = clamp(centeredLeft, margin, window.innerWidth - cardWidth - margin);
+      const hasRoomBelow = rect.bottom + gap + cardHeightEstimate < window.innerHeight - margin;
+      const top = hasRoomBelow ? rect.bottom + gap : Math.max(margin, rect.top - gap);
+
+      setPosition({
+        left,
+        top,
+        transform: hasRoomBelow ? undefined : "translateY(-100%)",
+      });
+    }
+
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+    window.addEventListener("scroll", updatePosition, true);
+    return () => {
+      window.removeEventListener("resize", updatePosition);
+      window.removeEventListener("scroll", updatePosition, true);
+    };
+  }, [isOpen, preview?.thumbnail]);
+
+  function loadPreview() {
+    if (!previewTarget || hasLoaded) return;
+    setHasLoaded(true);
+    fetchWikipediaPreview(previewTarget)
+      .then((result) => setPreview(result))
+      .catch(() => setPreview(null));
+  }
+
+  if (!previewTarget) {
+    return (
+      <Link className="font-semibold text-archive-violet underline-offset-4 hover:underline" href={href} title={title}>
+        {children}
+      </Link>
+    );
+  }
+
+  return (
+    <span
+      className="source-preview-link-wrap"
+      data-wikipedia-preview=""
+      ref={linkWrapRef}
+      onBlur={() => setIsOpen(false)}
+      onFocus={() => {
+        setIsOpen(true);
+        loadPreview();
+      }}
+      onPointerEnter={() => {
+        setIsOpen(true);
+        loadPreview();
+      }}
+      onPointerLeave={() => setIsOpen(false)}
+    >
+      <Link className="font-semibold text-archive-violet underline-offset-4 hover:underline" href={href} title={title}>
+        {children}
+      </Link>
+      {isOpen && canPortal && createPortal(
+        <WikipediaPreviewCard position={position} preview={preview} title={previewTarget.title} />,
+        document.body
+      )}
+    </span>
+  );
+}
+
+function WikipediaPreviewCard({ position, preview, title }: { position: PreviewPosition | null; preview: WikipediaPreview | null; title: string }) {
+  return (
+    <span className="source-link-preview" role="tooltip" style={previewStyle(position)}>
+      {preview ? (
+        <>
+          {preview.thumbnail && <img alt="" className="source-link-preview-image" src={preview.thumbnail} />}
+          <span className="source-link-preview-body">
+            <span className="source-link-preview-kicker">Wikipedia</span>
+            <span className="source-link-preview-title">{preview.title}</span>
+            <span className="source-link-preview-extract">{preview.extract}</span>
+          </span>
+        </>
+      ) : (
+        <span className="source-link-preview-body">
+          <span className="source-link-preview-kicker">Wikipedia</span>
+          <span className="source-link-preview-title">{title.replace(/_/g, " ")}</span>
+          <span className="source-link-preview-extract">Loading summary...</span>
+        </span>
+      )}
+    </span>
+  );
+}
+
+function previewStyle(position: PreviewPosition | null): CSSProperties {
+  if (!position) {
+    return {
+      left: 12,
+      top: 12,
+      visibility: "hidden",
+    };
+  }
+
+  return {
+    left: position.left,
+    top: position.top,
+    transform: position.transform,
+  };
+}
+
+function FootnoteReference({ footnote }: { footnote: Footnote }) {
+  return (
+    <span className="source-footnote-ref-wrap">
+      <a className="source-footnote-ref" href={`#${footnoteId(footnote.key)}`} id={footnoteRefId(footnote.key)}>
+        <sup>{footnote.number}</sup>
+      </a>
+    </span>
+  );
+}
+
+function wikipediaPreviewTarget(href: string) {
+  let url: URL;
+  try {
+    url = new URL(href);
+  } catch {
+    return null;
+  }
+
+  const host = url.hostname.toLowerCase();
+  if (!host.endsWith(".wikipedia.org") || !url.pathname.startsWith("/wiki/")) return null;
+  if (url.pathname.includes(":")) return null;
+
+  const title = decodeURIComponent(url.pathname.replace(/^\/wiki\//, ""));
+  if (!title) return null;
+  return { host, title };
+}
+
+function fetchWikipediaPreview(target: { host: string; title: string }) {
+  const cacheKey = `${target.host}/wiki/${target.title}`;
+  const cached = wikipediaPreviewCache.get(cacheKey);
+  if (cached) return cached;
+
+  const encodedTitle = encodeURIComponent(target.title.replace(/ /g, "_"));
+  const request = fetch(`https://${target.host}/api/rest_v1/page/summary/${encodedTitle}`)
+    .then(async (response) => {
+      if (!response.ok) return null;
+      const data = await response.json();
+      if (data.type === "disambiguation" || typeof data.extract !== "string" || !data.extract.trim()) return null;
+      return {
+        title: typeof data.title === "string" ? data.title : target.title.replace(/_/g, " "),
+        extract: data.extract,
+        thumbnail: typeof data.thumbnail?.source === "string" ? data.thumbnail.source : undefined,
+      };
+    })
+    .catch(() => null);
+
+  wikipediaPreviewCache.set(cacheKey, request);
+  return request;
+}
+
+function clamp(value: number, min: number, max: number) {
+  if (max < min) return min;
+  return Math.min(Math.max(value, min), max);
+}
+
+function footnoteId(key: string) {
+  return `fn-${slugifyFootnoteKey(key)}`;
+}
+
+function footnoteRefId(key: string) {
+  return `fnref-${slugifyFootnoteKey(key)}`;
+}
+
+function slugifyFootnoteKey(key: string) {
+  return key.toLowerCase().replace(/[^a-z0-9_-]+/g, "-");
 }
 
 function isLikelySpeakerLabel(label: string) {

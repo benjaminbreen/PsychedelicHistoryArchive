@@ -5,7 +5,7 @@ import { BookOpen, FileText, Plus, Users } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Chip } from "@/components/ui/chip";
-import { getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
+import { listArchiveSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { buildFallbackBiography, canonicalizePersonName, findBiographyProfile, isDisplayableBiographyName, slugifyPersonName } from "@/lib/biographies";
 import { JsonLd, SITE_NAME, buildBreadcrumbJsonLd, buildPersonJsonLd, canonicalPath, seoDescription } from "@/lib/seo";
 import type { BiographyProfile } from "@/lib/biographies";
@@ -19,7 +19,7 @@ export const revalidate = 3600;
 
 export async function generateMetadata({ params }: BiographyPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const sources = await getArchiveSourcesFromSupabase();
+  const sources = await listArchiveSourceSummariesFromSupabase();
   const profile = resolveBiography(slug, sources);
 
   if (!profile) {
@@ -68,11 +68,12 @@ export async function generateMetadata({ params }: BiographyPageProps): Promise<
 
 export default async function BiographyPage({ params }: BiographyPageProps) {
   const { slug } = await params;
-  const sources = await getArchiveSourcesFromSupabase();
+  const sources = await listArchiveSourceSummariesFromSupabase();
   const profile = resolveBiography(slug, sources);
 
   if (!profile) notFound();
 
+  const isGeneratedStub = !findBiographyProfile(profile.slug);
   const relatedSources = sources.filter((source) => source.people.some((person) => slugifyPersonName(canonicalizePersonName(person)) === slug));
   const structuredData = [
     buildPersonJsonLd(profile, relatedSources),
@@ -100,8 +101,20 @@ export default async function BiographyPage({ params }: BiographyPageProps) {
           <h1 className="max-w-[680px] font-display text-[2.75rem] font-semibold uppercase leading-[0.92] tracking-[0.005em] text-archive-ink sm:text-[3.35rem]">
             {profile.name}
           </h1>
-          {profile.years && <p className="mt-2 text-[1.35rem] font-bold leading-none text-archive-violet">{profile.years}</p>}
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            {profile.years && <p className="text-[1.35rem] font-bold leading-none text-archive-violet">{profile.years}</p>}
+            {isGeneratedStub && (
+              <span className="rounded-full border border-archive-line bg-archive-lavender2 px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-[0.08em] text-archive-muted">
+                Metadata stub
+              </span>
+            )}
+          </div>
           {profile.dek && <p className="mt-5 max-w-[680px] text-[1.04rem] font-semibold leading-7 text-archive-ink">{profile.dek}</p>}
+          {isGeneratedStub && (
+            <p className="mt-3 max-w-[680px] rounded-md border border-archive-line bg-archive-surface px-4 py-3 text-sm leading-6 text-archive-muted">
+              This page is generated from source metadata while a fuller editorial biography is prepared.
+            </p>
+          )}
 
           <div className="mt-7 h-px w-20 bg-archive-violet/45" />
 

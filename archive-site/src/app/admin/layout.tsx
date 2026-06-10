@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import type React from "react";
 import { isAdminEnabled } from "@/lib/admin-cms";
 
@@ -30,11 +31,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <h1 className="text-xl font-semibold">Psychedelic History Archive CMS</h1>
           </div>
           <nav className="ml-auto flex items-center gap-2 text-sm font-semibold">
-            <a className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/sources">Sources</a>
-            <a className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/collections">Collections</a>
-            <a className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/topics">Topics</a>
-            <a className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/bibliography">Bibliography</a>
-            <a className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/archive">Public archive</a>
+            <Link className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/workbench">Workbench</Link>
+            <Link className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/sources">Sources</Link>
+            <Link className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/collections">Collections</Link>
+            <Link className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/topics">Topics</Link>
+            <Link className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/bibliography">Bibliography</Link>
+            <Link className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/qa">QA</Link>
+            <Link className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/archive">Public archive</Link>
           </nav>
         </div>
       </header>

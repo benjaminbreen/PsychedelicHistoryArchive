@@ -1,0 +1,142 @@
+[
+  {
+    "id": "20032fa0-3564-5228-a369-1bf7f8637ede",
+    "display_name": "Claudine Friedberg",
+    "family_name": "Friedberg",
+    "given_name": "Claudine",
+    "slug": "claudine-friedberg"
+  },
+  {
+    "id": "3e9b909a-9da1-5ace-84c9-644fb2f89993",
+    "display_name": "Melvin L. Bristol",
+    "family_name": "Bristol",
+    "given_name": "Melvin L.",
+    "slug": "melvin-l-bristol"
+  },
+  {
+    "id": "df6b43f5-6411-5661-9500-5c1ddc44a8b8",
+    "display_name": "José Cuatrecasas",
+    "family_name": "Cuatrecasas",
+    "given_name": "José",
+    "slug": "jose-cuatrecasas"
+  },
+  {
+    "id": "396f126c-0a98-5421-be5d-bbeb32d53a87",
+    "display_name": "Hernando García Barriga",
+    "family_name": "Barriga",
+    "given_name": "Hernando García",
+    "slug": "hernando-garcia-barriga"
+  },
+  {
+    "id": "a4dba6f5-7517-56d1-be98-29310ed2e972",
+    "display_name": "Enrique Pérez Arbeláez",
+    "family_name": "Arbeláez",
+    "given_name": "Enrique Pérez",
+    "slug": "enrique-perez-arbelaez"
+  },
+  {
+    "id": "59f89bec-c2e7-55ff-af01-f50f23e26526",
+    "display_name": "Néstor Uscátegui M.",
+    "family_name": "M.",
+    "given_name": "Néstor Uscátegui",
+    "slug": "nestor-uscategui-m"
+  },
+  {
+    "id": "57cd07d1-39ce-5c06-9b93-e5bf51f4a96c",
+    "display_name": "G. Fischer Cárdenas",
+    "family_name": "Cárdenas",
+    "given_name": "G. Fischer",
+    "slug": "g-fischer-cardenas"
+  },
+  {
+    "id": "58f6eb99-6183-5956-b46e-440cb26969e2",
+    "display_name": "F. A. Hochstein",
+    "family_name": "Hochstein",
+    "given_name": "F. A.",
+    "slug": "f-a-hochstein"
+  },
+  {
+    "id": "f9f70aef-9878-5bba-b9f5-c7b46f008b3f",
+    "display_name": "A. M. Paradies",
+    "family_name": "Paradies",
+    "given_name": "A. M.",
+    "slug": "a-m-paradies"
+  },
+  {
+    "id": "07223d7d-cb50-53cd-8d25-c08555e798da",
+    "display_name": "Joaquín Rocha",
+    "family_name": "Rocha",
+    "given_name": "Joaquín",
+    "slug": "joaquin-rocha"
+  },
+  {
+    "id": "c9ef2b1b-b14b-50a5-b293-5f27e750d9e0",
+    "display_name": "Theodor Koch-Grünberg",
+    "family_name": "Koch-Grünberg",
+    "given_name": "Theodor",
+    "slug": "theodor-koch-grunberg"
+  },
+  {
+    "id": "053f8dcd-52c7-5548-89c5-ccaa4d589405",
+    "display_name": "Alcionílio Alves da Silva Bruzzi",
+    "family_name": "Bruzzi",
+    "given_name": "Alcionílio Alves da Silva",
+    "slug": "alcionilio-alves-da-silva-bruzzi"
+  },
+  {
+    "id": "fcdd9cce-9b51-5e1a-a261-c92ff9002ac3",
+    "display_name": "Irving Goldman",
+    "family_name": "Goldman",
+    "given_name": "Irving",
+    "slug": "irving-goldman"
+  },
+  {
+    "id": "ae836d4e-7966-542c-bddf-abbfd51b089c",
+    "display_name": "Ara H. Der Marderosian",
+    "family_name": "Marderosian",
+    "given_name": "Ara H. Der",
+    "slug": "ara-h-der-marderosian"
+  },
+  {
+    "id": "3b960be5-a88f-588d-88aa-d77e9862e5c2",
+    "display_name": "Homer V. Pinkley",
+    "family_name": "Pinkley",
+    "given_name": "Homer V.",
+    "slug": "homer-v-pinkley"
+  },
+  {
+    "id": "72d6c8b9-35a0-5aee-a30b-391e4a413839",
+    "display_name": "Murrell F. Dobbins IV",
+    "family_name": "IV",
+    "given_name": "Murrell F. Dobbins",
+    "slug": "murrell-f-dobbins-iv"
+  },
+  {
+    "id": "231531f7-60f0-5b4d-be74-2f6a3bfc4025",
+    "display_name": "M. R. Mallol de Recasens",
+    "family_name": "Recasens",
+    "given_name": "M. R. Mallol de",
+    "slug": "m-r-mallol-de-recasens"
+  },
+  {
+    "id": "9b45a347-b698-54c5-97d8-e3cbd9597746",
+    "display_name": "Richard Evans Schultes",
+    "family_name": "Schultes",
+    "given_name": "Richard Evans",
+    "slug": "richard-evans-schultes"
+  },
+  {
+    "id": "0f0e222f-158f-5466-a768-6416614f64f5",
+    "display_name": "Ermanno Stradelli",
+    "family_name": "Stradelli",
+    "given_name": "Ermanno",
+    "slug": "ermanno-stradelli"
+  },
+  {
+    "id": "b5beb666-0951-5e69-a316-b4bf43f95ddc",
+    "display_name": "Ettore Biocca",
+    "family_name": "Biocca",
+    "given_name": "Ettore",
+    "slug": "ettore-biocca"
+  }
+]

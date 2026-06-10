@@ -1,0 +1,28 @@
+{
+  "source_slug": "el-contexto-cultural-de-un-alucinogeno-aborigen-banisteriopsis-caapi",
+  "inline_citation_count": 20,
+  "auto_linked_count": 17,
+  "unresolved_count": 2,
+  "unresolved": [
+    {
+      "text": "Schultes (1957, 1960)",
+      "author": "Schultes",
+      "author_key": "schultes",
+      "years": [
+        "1957",
+        "1960"
+      ],
+      "reason": "compound_year_citation"
+    },
+    {
+      "text": "Reichel-Dolmatoff (1960, 1968)",
+      "author": "Reichel-Dolmatoff",
+      "author_key": "reichel dolmatoff",
+      "years": [
+        "1960",
+        "1968"
+      ],
+      "reason": "compound_year_citation"
+    }
+  ]
+}

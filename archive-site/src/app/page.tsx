@@ -11,7 +11,7 @@ import { HomeHeroImage } from "@/components/home-hero-image";
 import { SectionHeading } from "@/components/section-heading";
 import { getFacetCounts } from "@/lib/archive-query";
 import { ERAS, countSourcesInEra, eraHref } from "@/lib/eras";
-import { getArchiveSourcesFromSupabase, getCollectionSourcesFromSupabase } from "@/lib/supabase-archive";
+import { listArchiveSourceSummariesFromSupabase, listCollectionSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { getSourceTitleParts } from "@/lib/source-title";
 import type { FacetOption } from "@/lib/types";
 
@@ -19,8 +19,8 @@ export const revalidate = 3600;
 
 export default async function HomePage() {
   const [sources, collections] = await Promise.all([
-    getArchiveSourcesFromSupabase(),
-    getCollectionSourcesFromSupabase()
+    listArchiveSourceSummariesFromSupabase(),
+    listCollectionSourceSummariesFromSupabase()
   ]);
   const facetCounts = getFacetCounts(sources);
   const eraFacets = eraRangeFacets(sources);
@@ -76,9 +76,9 @@ export default async function HomePage() {
           <div className="border-b border-archive-line pb-6">
             <SectionHeading eyebrow="Featured sources" actionHref="/archive" actionLabel="View all sources" />
             <div className="grid gap-3 md:grid-cols-3 xl:grid-cols-4">
-              {[featured, ...supportingSources.slice(0, 3)].map((source, index) => (
+              {[featured, ...supportingSources.slice(0, 3)].map((source) => (
                 <Link
-                  className="featured-source-card focus-ring group grid min-h-[8.5rem] grid-cols-[6.25rem_1fr] gap-4 rounded-md border border-[rgb(var(--archive-warm-line))] p-3 transition hover:border-archive-violet/45 hover:bg-[rgb(var(--archive-warm-hover))]"
+                  className="featured-source-card focus-ring group grid min-h-[8.5rem] grid-cols-[6.25rem_minmax(0,1fr)] gap-4 rounded-md border border-[rgb(var(--archive-warm-line))] p-3 transition hover:border-archive-violet/45 hover:bg-[rgb(var(--archive-warm-hover))]"
                   href={`/archive/${source.slug}`}
                   key={source.id}
                 >
@@ -121,12 +121,12 @@ export default async function HomePage() {
             <div className="grid gap-5 lg:grid-cols-2">
               {featuredCollectionSources.map((collection) => (
                 <Link
-                  className="focus-ring group grid grid-cols-[10rem_1fr] gap-5 border-r border-archive-line py-2 pr-5 transition duration-200 hover:border-archive-violet/45 hover:bg-archive-lavender2/55"
+                  className="focus-ring group grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border-r border-archive-line py-2 pr-3 transition duration-200 hover:border-archive-violet/45 hover:bg-archive-lavender2/55 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-5 sm:pr-5"
                   href={`/collections/${collection.slug}`}
                   key={collection.id}
                 >
                   <SourceImage className="aspect-[5/4] w-full transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-[0_8px_18px_rgba(57,45,31,0.12)]" source={collection} />
-                  <span>
+                  <span className="min-w-0">
                     <span className="block font-serif text-lg font-semibold leading-snug text-archive-ink transition group-hover:text-archive-violetDark">
                       {collection.title}
                     </span>
@@ -157,7 +157,7 @@ export default async function HomePage() {
             </div>
             {recentSources.map((source) => (
               <Link
-                className="grid gap-3 border-b border-archive-line px-3 py-3 text-sm transition last:border-b-0 hover:bg-archive-lavender2/55 md:grid-cols-[1.4fr_8rem_10rem_1fr_1fr_9rem_2rem] md:items-center"
+                className="grid gap-2 border-b border-archive-line px-3 py-3 text-sm transition last:border-b-0 hover:bg-archive-lavender2/55 md:grid-cols-[1.4fr_8rem_10rem_1fr_1fr_9rem_2rem] md:items-center"
                 href={`/archive/${source.slug}`}
                 key={source.id}
               >
@@ -168,15 +168,15 @@ export default async function HomePage() {
                     <span className="block text-xs text-archive-muted">{source.author}</span>
                   </span>
                 </span>
-                <span>{source.displayDate}</span>
-                <span>{source.type}</span>
+                <span className="text-xs text-archive-muted md:text-sm md:text-archive-ink">{source.displayDate}</span>
+                <span className="text-xs font-semibold text-archive-muted md:text-sm md:font-normal md:text-archive-ink">{source.type}</span>
                 <span className="flex flex-wrap gap-1">
                   {source.tags.slice(0, 2).map((tag) => (
                     <Chip key={tag}>{tag}</Chip>
                   ))}
                 </span>
-                <span>{source.people[0]}</span>
-                <span>{source.addedDate}</span>
+                <span className="text-xs text-archive-muted md:text-sm md:text-archive-ink">{source.people[0]}</span>
+                <span className="text-xs text-archive-muted md:text-sm md:text-archive-ink">{source.addedDate}</span>
                 <ExternalLink className="hidden h-4 w-4 text-archive-muted md:block" />
               </Link>
             ))}

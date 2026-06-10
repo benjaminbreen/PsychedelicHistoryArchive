@@ -9,11 +9,10 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Chip } from "@/components/ui/chip";
 import { canonicalizePersonName, slugifyPersonName } from "@/lib/biographies";
-import { isCoreTopicSlug } from "@/lib/core-topics";
 import { eraHref, getEraForYear } from "@/lib/eras";
 import { findTopicBySlug, getTopicSources, topicHref, topicSlug } from "@/lib/internal-links";
 import { JsonLd, SITE_NAME, buildBreadcrumbJsonLd, canonicalPath, seoDescription } from "@/lib/seo";
-import { getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
+import { listArchiveSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { getPublicTopicBundle, listPublicTopics } from "@/lib/topics";
 import type { ArchiveSource } from "@/lib/types";
 
@@ -26,18 +25,9 @@ type TopicPageProps = {
 export async function generateMetadata({ params }: TopicPageProps): Promise<Metadata> {
   const { slug } = await params;
   const [sources, curatedBundle] = await Promise.all([
-    getArchiveSourcesFromSupabase(),
+    listArchiveSourceSummariesFromSupabase(),
     getPublicTopicBundle(slug)
   ]);
-  if (!curatedBundle && !isCoreTopicSlug(slug)) {
-    return {
-      title: `Topic not found | ${SITE_NAME}`,
-      robots: {
-        index: false,
-        follow: false
-      }
-    };
-  }
   const topic = curatedBundle?.topic.name ?? findTopicBySlug(sources, slug);
 
   if (!topic) {
@@ -73,12 +63,12 @@ export async function generateMetadata({ params }: TopicPageProps): Promise<Meta
 
 export async function generateStaticParams() {
   const [sources, curatedTopics] = await Promise.all([
-    getArchiveSourcesFromSupabase(),
+    listArchiveSourceSummariesFromSupabase(),
     listPublicTopics()
   ]);
   return Array.from(new Set([
-    ...sources.flatMap((source) => source.tags).map((tag) => topicSlug(tag)).filter(isCoreTopicSlug),
-    ...curatedTopics.map((topic) => topic.slug).filter(isCoreTopicSlug)
+    ...sources.flatMap((source) => source.tags).map((tag) => topicSlug(tag)),
+    ...curatedTopics.map((topic) => topic.slug)
   ]))
     .sort()
     .map((slug) => ({ slug }));
@@ -87,10 +77,9 @@ export async function generateStaticParams() {
 export default async function TopicPage({ params }: TopicPageProps) {
   const { slug } = await params;
   const [sources, curatedBundle] = await Promise.all([
-    getArchiveSourcesFromSupabase(),
+    listArchiveSourceSummariesFromSupabase(),
     getPublicTopicBundle(slug)
   ]);
-  if (!curatedBundle && !isCoreTopicSlug(slug)) notFound();
   const topic = curatedBundle?.topic.name ?? findTopicBySlug(sources, slug);
 
   if (!topic) notFound();

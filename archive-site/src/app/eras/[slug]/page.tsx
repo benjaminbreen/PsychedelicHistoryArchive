@@ -15,7 +15,7 @@ import {
   sourceMatchesEra
 } from "@/lib/eras";
 import { getBibliographyForEra, itemTypeLabel, primaryUrl } from "@/lib/bibliography";
-import { getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
+import { listArchiveSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { getSourceTitleParts } from "@/lib/source-title";
 import { biographyProfiles } from "@/lib/biographies";
 
@@ -50,7 +50,7 @@ export default async function EraDetailPage({
   const era = getEraBySlug(slug);
   if (!era) notFound();
 
-  const allSources = await getArchiveSourcesFromSupabase();
+  const allSources = await listArchiveSourceSummariesFromSupabase();
   const furtherReading = await getBibliographyForEra(era.slug, 4);
   const sources = allSources
     .filter((source) => source.year && sourceMatchesEra(source.year, era))

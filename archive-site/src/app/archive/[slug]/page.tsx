@@ -13,7 +13,8 @@ import { Chip } from "@/components/ui/chip";
 import { eraHref, getEraForYear } from "@/lib/eras";
 import { getRelatedSources, topicHref, type RelatedSource } from "@/lib/internal-links";
 import { JsonLd, SITE_NAME, buildBreadcrumbJsonLd, buildSourceJsonLd, canonicalPath, seoDescription, sourceImageMetadata } from "@/lib/seo";
-import { getArchiveSourceFromSupabase, getArchiveSourcesFromSupabase } from "@/lib/supabase-archive";
+import { getArchiveSourceDetailFromSupabase, listArchiveSourceSummariesFromSupabase } from "@/lib/supabase-archive";
+import { isPdfFile, isSiteEntry, siteEvidenceLabel } from "@/lib/source-reader";
 import { getSourceTitleParts } from "@/lib/source-title";
 import type { ArchiveSource } from "@/lib/types";
 
@@ -25,7 +26,7 @@ type SourcePageProps = {
 
 export async function generateMetadata({ params }: SourcePageProps): Promise<NextMetadata> {
   const { slug } = await params;
-  const source = await getArchiveSourceFromSupabase(slug);
+  const source = await getArchiveSourceDetailFromSupabase(slug);
 
   if (!source) {
     return {
@@ -74,8 +75,8 @@ export default async function SourcePage({ params }: SourcePageProps) {
   const { slug } = await params;
   if (slug === "chavin-de-huantar-vilca-snuff") redirect("/archive/chavin-de-huantar");
   const [source, sources] = await Promise.all([
-    getArchiveSourceFromSupabase(slug),
-    getArchiveSourcesFromSupabase()
+    getArchiveSourceDetailFromSupabase(slug),
+    listArchiveSourceSummariesFromSupabase()
   ]);
 
   if (!source) notFound();
@@ -232,23 +233,23 @@ function HostedSourcePage({ relatedSources, source }: { relatedSources: RelatedS
     <>
       <SiteHeader variant="source" />
       <main className="source-page-fade">
-        <div className="container-page py-6">
-        <div className="mb-5 flex items-center gap-3 text-sm text-archive-muted">
-          <Link className="font-semibold text-archive-violet" href={siteEntry ? `/archive?type=${encodeURIComponent(source.type)}` : "/archive?medium=Text"}>
-            {siteEntry ? "Archaeological Sites" : "Text"}
-          </Link>
-          <span>/</span>
-          {era ? <Link href={eraHref(era)}>{era.label}</Link> : <span>{source.era}</span>}
-          {!siteEntry && (
-            <>
-              <span>/</span>
-              <Link href={`/archive?type=${encodeURIComponent(source.type)}`}>{source.type}s</Link>
-            </>
-          )}
-        </div>
+        <div className="source-page-layout container-page py-6">
+          <div className="source-page-breadcrumb mb-3 flex items-center gap-3 text-sm text-archive-muted">
+            <Link className="font-semibold text-archive-violet" href={siteEntry ? `/archive?type=${encodeURIComponent(source.type)}` : "/archive?medium=Text"}>
+              {siteEntry ? "Archaeological Sites" : "Text"}
+            </Link>
+            <span>/</span>
+            {era ? <Link href={eraHref(era)}>{era.label}</Link> : <span>{source.era}</span>}
+            {!siteEntry && (
+              <>
+                <span>/</span>
+                <Link href={`/archive?type=${encodeURIComponent(source.type)}`}>{source.type}s</Link>
+              </>
+            )}
+          </div>
 
-        <div className="source-page-grid grid gap-7 lg:grid-cols-[minmax(0,1fr)_21rem] xl:grid-cols-[minmax(0,1fr)_24rem]">
-          <div>
+          <div className="source-page-grid grid gap-7 lg:grid-cols-[minmax(0,1fr)_21rem] xl:grid-cols-[minmax(0,1fr)_22rem]">
+            <div>
             <div className="grid gap-6">
               <div>
                 <h1 className="text-archive-ink">
@@ -291,8 +292,8 @@ function HostedSourcePage({ relatedSources, source }: { relatedSources: RelatedS
           </div>
 
           <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
-            <div className="rounded-lg border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] p-4 shadow-[0_10px_28px_rgb(var(--archive-shadow)/0.05)]">
-              <div className="grid grid-cols-[5rem_1fr] gap-4">
+            <div className="rounded-md border border-[rgb(var(--archive-warm-line))] bg-[rgb(var(--archive-warm-surface))] p-3.5 shadow-[0_8px_22px_rgb(var(--archive-shadow)/0.04)]">
+              <div className="grid grid-cols-[4.5rem_1fr] gap-3.5">
                 <SourceImage className="aspect-[4/5] w-full" source={source} />
                 <div>
                   <div className="text-[10px] font-bold uppercase tracking-[0.1em] text-archive-olive">
@@ -341,24 +342,11 @@ function HostedSourcePage({ relatedSources, source }: { relatedSources: RelatedS
 }
 
 function getPdfFile(source: ArchiveSource) {
-  return source.files?.find((file) => file.kind === "original_pdf" || file.mimeType === "application/pdf");
-}
-
-function isSiteEntry(source: ArchiveSource) {
-  return source.type === "Archaeological Site" || source.readerMode === "site_entry";
+  return source.files?.find(isPdfFile);
 }
 
 function siteRegionLabel(source: ArchiveSource) {
   return source.region.split(";").map((part) => part.trim()).filter(Boolean).slice(0, 2).join(", ") || source.region;
-}
-
-function siteEvidenceLabel(source: ArchiveSource) {
-  if (source.tags.includes("Material Culture") && source.tags.includes("Pharmacology")) {
-    return "Archaeological assemblage and chemical residue analysis";
-  }
-  if (source.tags.includes("Material Culture")) return "Archaeological assemblage";
-  if (source.tags.includes("Pharmacology")) return "Chemical or pharmacological evidence";
-  return "Archaeological and historical evidence";
 }
 
 function entryAuthorLabel(source: ArchiveSource) {
@@ -476,9 +464,9 @@ function SourceDetailsCard({
 
 function Detail({ label, value }: { label: string; value: string }) {
   return (
-    <div className="grid grid-cols-[5.4rem_1fr] gap-3 border-b border-archive-line/80 pb-3 last:border-b-0">
+    <div className="grid grid-cols-[5.4rem_minmax(0,1fr)] gap-3 border-b border-archive-line/80 pb-3 last:border-b-0">
       <dt className="text-[13px] font-semibold text-archive-ink">{label}</dt>
-      <dd className="text-[13px] leading-5 text-archive-muted">{value}</dd>
+      <dd className="min-w-0 [overflow-wrap:anywhere] text-[13px] leading-5 text-archive-muted">{value}</dd>
     </div>
   );
 }
@@ -530,10 +518,6 @@ function publicationLabel(source: ArchiveSource) {
   if (publication) return publication;
 
   return source.author;
-}
-
-function formatPeople(source: ArchiveSource) {
-  return source.people.length ? source.people.join(", ") : source.author;
 }
 
 function formatCreators(source: ArchiveSource) {
