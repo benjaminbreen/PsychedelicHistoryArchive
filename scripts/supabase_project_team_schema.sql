@@ -18,6 +18,12 @@ create table if not exists project_people (
   check (group_key in ('team', 'advisory_board', 'past_contributor'))
 );
 
+alter table project_people
+  drop constraint if exists project_people_group_key_check;
+alter table project_people
+  add constraint project_people_group_key_check
+  check (group_key in ('team', 'advisory_board', 'past_contributor'));
+
 create index if not exists project_people_slug_idx on project_people(slug);
 create index if not exists project_people_status_group_idx on project_people(status, group_key, sort_order);
 

@@ -9,6 +9,7 @@ export type ArchiveSearchParams = {
   region?: string;
   people?: string;
   access?: string;
+  mode?: string;
   sort?: string;
   view?: string;
   page?: string;

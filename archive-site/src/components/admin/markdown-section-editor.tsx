@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import type React from "react";
-import { Bold, Image, Images, Italic } from "lucide-react";
+import { AlertTriangle, Bold, Image as ImageIcon, Images, Italic, ListPlus } from "lucide-react";
 import { clsx } from "clsx";
 import { MarkdownContent } from "@/components/markdown-content";
 import type { SourceFigure } from "@/lib/types";
@@ -75,7 +75,30 @@ export function MarkdownSectionEditor({
     });
   }
 
+  function insertFootnote() {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+
+    const key = nextFootnoteKey(text);
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const before = text.slice(0, start);
+    const after = text.slice(end);
+    const selected = text.slice(start, end).trim();
+    const reference = `[^${key}]`;
+    const definition = `[^${key}]: ${selected || "Note text."}`;
+    const definitionPrefix = text.endsWith("\n\n") || !text ? "" : text.endsWith("\n") ? "\n" : "\n\n";
+    const next = `${before}${reference}${after}${definitionPrefix}${definition}`;
+    setText(next);
+
+    window.requestAnimationFrame(() => {
+      textarea.focus();
+      textarea.setSelectionRange(start + reference.length, start + reference.length);
+    });
+  }
+
   const rowToken = figures.slice(0, 4).map((figure) => figure.token || figure.id).join(",");
+  const footnoteIssues = getFootnoteIssues(text);
 
   return (
     <>
@@ -95,6 +118,9 @@ export function MarkdownSectionEditor({
             <ToolbarButton label="Italic" onClick={() => applyMarkdown("*")}>
               <Italic className="h-4 w-4" />
             </ToolbarButton>
+            <ToolbarButton label="Insert footnote" onClick={insertFootnote}>
+              <ListPlus className="h-4 w-4" />
+            </ToolbarButton>
             {figures.length > 0 && (
               <>
                 <span className="mx-1 h-5 w-px bg-archive-line" />
@@ -105,7 +131,7 @@ export function MarkdownSectionEditor({
                 )}
                 <details className="relative">
                   <summary className="focus-ring flex h-8 cursor-pointer list-none items-center gap-1 rounded-md px-2 text-xs font-semibold text-archive-ink hover:bg-white">
-                    <Image className="h-4 w-4" />
+                    <ImageIcon className="h-4 w-4" />
                     Figures
                   </summary>
                   <div className="absolute left-0 top-9 z-20 max-h-64 w-64 overflow-auto rounded-md border border-archive-line bg-white p-2 shadow-lg">
@@ -150,6 +176,17 @@ export function MarkdownSectionEditor({
             ref={textareaRef}
             value={text}
           />
+          {footnoteIssues.length > 0 && (
+            <div className="mt-2 rounded-md border border-yellow-200 bg-archive-warning px-3 py-2 text-xs leading-5 text-yellow-950">
+              <div className="flex items-center gap-2 font-semibold">
+                <AlertTriangle className="h-4 w-4" />
+                Footnote check
+              </div>
+              <ul className="mt-1 list-disc pl-5">
+                {footnoteIssues.map((issue) => <li key={issue}>{issue}</li>)}
+              </ul>
+            </div>
+          )}
         </div>
         {!compact && (
           <div>
@@ -170,6 +207,37 @@ export function MarkdownSectionEditor({
       </div>
     </>
   );
+}
+
+function nextFootnoteKey(markdown: string) {
+  const keys = new Set([...markdown.matchAll(/\[\^([^\]]+)\]/g)].map((match) => match[1]));
+  let index = keys.size + 1;
+  while (keys.has(`note${index}`)) index += 1;
+  return `note${index}`;
+}
+
+function getFootnoteIssues(markdown: string) {
+  const references = [...markdown.matchAll(/\[\^([^\]]+)\](?!:)/g)].map((match) => match[1].trim()).filter(Boolean);
+  const definitions = [...markdown.matchAll(/^\[\^([^\]]+)]:/gm)].map((match) => match[1].trim()).filter(Boolean);
+  const definitionCounts = definitions.reduce<Record<string, number>>((counts, key) => {
+    counts[key] = (counts[key] ?? 0) + 1;
+    return counts;
+  }, {});
+  const referenceSet = new Set(references);
+  const definitionSet = new Set(definitions);
+  const issues: string[] = [];
+
+  for (const key of referenceSet) {
+    if (!definitionSet.has(key)) issues.push(`Reference [^${key}] has no definition.`);
+  }
+  for (const key of definitionSet) {
+    if (!referenceSet.has(key)) issues.push(`Definition [^${key}] is not used in the body.`);
+  }
+  for (const [key, count] of Object.entries(definitionCounts)) {
+    if (count > 1) issues.push(`Definition [^${key}] appears ${count} times.`);
+  }
+
+  return issues;
 }
 
 function TextInput({ label, name, value }: { label: string; name: string; value: string }) {

@@ -13,7 +13,9 @@ type ArchiveToolbarProps = {
 };
 
 export function ArchiveToolbar({ count, currentView, filterHref = "#filters", params, sort }: ArchiveToolbarProps) {
-  const currentSort = sort ?? "oldest";
+  const hasQuery = Boolean(params.q?.trim());
+  const currentSort = sort ?? (hasQuery ? "relevance" : "oldest");
+  const sortOptions = hasQuery ? ["relevance", "oldest", "newest", "title"] as const : ["oldest", "newest", "title"] as const;
 
   return (
     <div>
@@ -25,10 +27,10 @@ export function ArchiveToolbar({ count, currentView, filterHref = "#filters", pa
             <ChevronDown className="h-3.5 w-3.5 text-archive-muted transition group-open:rotate-180" />
           </summary>
           <div className="absolute left-0 z-20 mt-2 min-w-40 rounded-md border border-archive-line bg-archive-surface p-1 shadow-[0_10px_24px_rgb(var(--archive-shadow)/0.12)] sm:left-auto sm:right-0">
-            {(["oldest", "newest", "title"] as const).map((option) => (
+            {sortOptions.map((option) => (
               <Link
                 className={option === currentSort ? "block rounded px-3 py-2 text-sm font-semibold text-archive-violet" : "block rounded px-3 py-2 text-sm text-archive-ink hover:bg-archive-lavender2"}
-                href={archiveHref(params, { sort: option })}
+                href={archiveHref(params, { sort: option === "relevance" ? undefined : option })}
                 key={option}
               >
                 {sortLabel(option)}
@@ -77,6 +79,7 @@ export function ArchiveToolbar({ count, currentView, filterHref = "#filters", pa
 }
 
 function sortLabel(sort: string) {
+  if (sort === "relevance") return "Relevance";
   if (sort === "newest") return "Newest first";
   if (sort === "title") return "Title";
   return "Oldest first";

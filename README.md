@@ -35,9 +35,25 @@ Create `archive-site/.env.local` with:
 NEXT_PUBLIC_SUPABASE_URL=https://yqcvybdabpnxyapnrjlp.supabase.co
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_publishable_key
 NEXT_PUBLIC_SUPABASE_STORAGE_BUCKET=archive-assets
+OPENAI_API_KEY=your_openai_key_for_server_side_search
 ```
 
-Do not commit `.env.local` or any Supabase secret/service keys.
+Server-side search also reads `OPENAI_API_KEY` from the repo-root `.env.local` during local development. On Vercel, set `OPENAI_API_KEY` as a protected server-side environment variable; do not expose it with a `NEXT_PUBLIC_` prefix.
+
+Do not commit `.env.local`, OpenAI keys, or any Supabase secret/service keys.
+
+## Search Index
+
+Hybrid archive search uses Postgres keyword/trigram search plus OpenAI embeddings stored in Supabase. Apply `scripts/supabase_schema.sql`, then refresh the search index after imports or substantial editorial batches:
+
+```bash
+SUPABASE_URL="https://yqcvybdabpnxyapnrjlp.supabase.co" \
+SUPABASE_SERVICE_ROLE_KEY="your_secret_key" \
+OPENAI_API_KEY="your_openai_key" \
+npm run search:index
+```
+
+Use `npm run search:index -- --dry-run` to inspect generated chunks without calling OpenAI or writing rows.
 
 ## Supabase Import
 

@@ -59,7 +59,9 @@ export default async function HomePage() {
                 <div className="mt-5">
                   <SearchBar
                     className="home-hero-search"
+                    mode="best"
                     placeholder="Search people, topics, sources, and more..."
+                    showModeOptions
                     size="lg"
                     submitLabel="Search"
                   />

@@ -1,4 +1,6 @@
 create extension if not exists pgcrypto;
+create extension if not exists vector;
+create extension if not exists pg_trgm;
 
 create table if not exists documents (
   id uuid primary key default gen_random_uuid(),
@@ -139,6 +141,48 @@ create table if not exists people (
   created_at timestamptz default now(),
   updated_at timestamptz default now()
 );
+
+create table if not exists biography_profiles (
+  id uuid primary key default gen_random_uuid(),
+  slug text unique not null,
+  name text not null,
+  years text,
+  dek text,
+  body_markdown text,
+  birth_date text,
+  birth_year int,
+  birth_place text,
+  death_date text,
+  death_year int,
+  death_place text,
+  occupations text[] default '{}',
+  regions text[] default '{}',
+  known_for text[] default '{}',
+  affiliations text[] default '{}',
+  image_path text,
+  image_alt text,
+  image_caption text,
+  tags text[] default '{}',
+  facts jsonb default '[]'::jsonb,
+  source_notes text[] default '{}',
+  related_sources text[] default '{}',
+  publications text[] default '{}',
+  collaborators text[] default '{}',
+  status text default 'draft',
+  created_at timestamptz default now(),
+  updated_at timestamptz default now()
+);
+
+alter table biography_profiles add column if not exists birth_date text;
+alter table biography_profiles add column if not exists birth_year int;
+alter table biography_profiles add column if not exists birth_place text;
+alter table biography_profiles add column if not exists death_date text;
+alter table biography_profiles add column if not exists death_year int;
+alter table biography_profiles add column if not exists death_place text;
+alter table biography_profiles add column if not exists occupations text[] default '{}';
+alter table biography_profiles add column if not exists regions text[] default '{}';
+alter table biography_profiles add column if not exists known_for text[] default '{}';
+alter table biography_profiles add column if not exists affiliations text[] default '{}';
 
 create table if not exists document_people (
   document_id uuid references documents(id) on delete cascade,
@@ -335,6 +379,45 @@ create table if not exists document_citation_links (
   unique (document_id, normalized_citation, bibliography_item_id)
 );
 
+create table if not exists biography_bibliography_items (
+  biography_profile_id uuid references biography_profiles(id) on delete cascade,
+  bibliography_item_id uuid references bibliography_items(id) on delete cascade,
+  relationship_type text not null default 'recommended_reading',
+  position int,
+  editorial_note text,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now(),
+  primary key (biography_profile_id, bibliography_item_id, relationship_type),
+  check (relationship_type in ('work_by', 'work_about', 'recommended_reading', 'primary_source', 'archival_context'))
+);
+
+create table if not exists search_chunks (
+  id uuid primary key default gen_random_uuid(),
+  document_id uuid not null references documents(id) on delete cascade,
+  page_id uuid references pages(id) on delete set null,
+  section_id uuid references document_sections(id) on delete set null,
+  stable_key text not null unique,
+  chunk_kind text not null,
+  source_slug text not null,
+  title text not null,
+  metadata_text text,
+  chunk_text text not null,
+  page_label text,
+  line_start int,
+  line_end int,
+  href text,
+  content_hash text not null,
+  embedding_model text,
+  embedding vector(1536),
+  search_vector tsvector generated always as (
+    setweight(to_tsvector('english', coalesce(title, '')), 'A') ||
+    setweight(to_tsvector('english', coalesce(metadata_text, '')), 'B') ||
+    setweight(to_tsvector('english', coalesce(chunk_text, '')), 'C')
+  ) stored,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now()
+);
+
 create table if not exists topic_relations (
   topic_id uuid references topics(id) on delete cascade,
   related_topic_id uuid references topics(id) on delete cascade,
@@ -396,6 +479,12 @@ create table if not exists project_people (
   check (group_key in ('team', 'advisory_board', 'past_contributor'))
 );
 
+alter table project_people
+  drop constraint if exists project_people_group_key_check;
+alter table project_people
+  add constraint project_people_group_key_check
+  check (group_key in ('team', 'advisory_board', 'past_contributor'));
+
 create index if not exists project_people_slug_idx on project_people(slug);
 create index if not exists project_people_status_group_idx on project_people(status, group_key, sort_order);
 
@@ -456,6 +545,8 @@ create index if not exists pages_document_id_idx on pages(document_id);
 create index if not exists page_lines_page_id_idx on page_lines(page_id);
 create index if not exists files_document_id_idx on files(document_id);
 create index if not exists external_sources_document_id_idx on external_sources(document_id);
+create index if not exists biography_profiles_slug_idx on biography_profiles(slug);
+create index if not exists biography_profiles_status_idx on biography_profiles(status, name);
 create index if not exists document_sections_document_id_idx on document_sections(document_id);
 create index if not exists document_figures_document_id_idx on document_figures(document_id);
 create index if not exists content_revisions_document_id_idx on content_revisions(document_id, created_at desc);
@@ -473,6 +564,15 @@ create index if not exists bibliography_item_eras_era_idx on bibliography_item_e
 create index if not exists bibliography_item_documents_document_idx on bibliography_item_documents(document_id);
 create index if not exists bibliography_item_aliases_alias_idx on bibliography_item_aliases(normalized_alias);
 create index if not exists document_citation_links_document_idx on document_citation_links(document_id, status);
+create index if not exists biography_bibliography_items_profile_idx on biography_bibliography_items(biography_profile_id, relationship_type, position);
+create index if not exists biography_bibliography_items_item_idx on biography_bibliography_items(bibliography_item_id);
+create index if not exists search_chunks_document_idx on search_chunks(document_id, chunk_kind);
+create index if not exists search_chunks_page_idx on search_chunks(page_id) where page_id is not null;
+create index if not exists search_chunks_section_idx on search_chunks(section_id) where section_id is not null;
+create index if not exists search_chunks_search_vector_idx on search_chunks using gin(search_vector);
+create index if not exists search_chunks_chunk_text_trgm_idx on search_chunks using gin(chunk_text gin_trgm_ops);
+create index if not exists search_chunks_title_trgm_idx on search_chunks using gin(title gin_trgm_ops);
+create index if not exists search_chunks_embedding_hnsw_idx on search_chunks using hnsw (embedding vector_cosine_ops) where embedding is not null;
 
 grant usage on schema public to anon, authenticated, service_role;
 
@@ -482,6 +582,7 @@ grant select on page_lines to anon, authenticated;
 grant select on files to anon, authenticated;
 grant select on external_sources to anon, authenticated;
 grant select on people to anon, authenticated;
+grant select on biography_profiles to anon, authenticated;
 grant select on document_people to anon, authenticated;
 grant select on document_sections to anon, authenticated;
 grant select on document_figures to anon, authenticated;
@@ -497,6 +598,8 @@ grant select on bibliography_item_eras to anon, authenticated;
 grant select on bibliography_item_documents to anon, authenticated;
 grant select on bibliography_item_aliases to anon, authenticated;
 grant select on document_citation_links to anon, authenticated;
+grant select on biography_bibliography_items to anon, authenticated;
+grant select on search_chunks to anon, authenticated;
 grant select on document_tags to anon, authenticated;
 grant select on collections to anon, authenticated;
 grant select on collection_documents to anon, authenticated;
@@ -509,6 +612,7 @@ grant all privileges on page_lines to service_role;
 grant all privileges on files to service_role;
 grant all privileges on external_sources to service_role;
 grant all privileges on people to service_role;
+grant all privileges on biography_profiles to service_role;
 grant all privileges on document_people to service_role;
 grant all privileges on document_sections to service_role;
 grant all privileges on document_figures to service_role;
@@ -524,6 +628,8 @@ grant all privileges on bibliography_item_eras to service_role;
 grant all privileges on bibliography_item_documents to service_role;
 grant all privileges on bibliography_item_aliases to service_role;
 grant all privileges on document_citation_links to service_role;
+grant all privileges on biography_bibliography_items to service_role;
+grant all privileges on search_chunks to service_role;
 grant all privileges on document_tags to service_role;
 grant all privileges on collections to service_role;
 grant all privileges on collection_documents to service_role;
@@ -536,6 +642,7 @@ alter table page_lines enable row level security;
 alter table files enable row level security;
 alter table external_sources enable row level security;
 alter table people enable row level security;
+alter table biography_profiles enable row level security;
 alter table document_people enable row level security;
 alter table document_sections enable row level security;
 alter table document_figures enable row level security;
@@ -551,6 +658,8 @@ alter table bibliography_item_eras enable row level security;
 alter table bibliography_item_documents enable row level security;
 alter table bibliography_item_aliases enable row level security;
 alter table document_citation_links enable row level security;
+alter table biography_bibliography_items enable row level security;
+alter table search_chunks enable row level security;
 alter table document_tags enable row level security;
 alter table collections enable row level security;
 alter table collection_documents enable row level security;
@@ -603,6 +712,11 @@ drop policy if exists "Public can read people" on people;
 create policy "Public can read people"
   on people for select
   using (true);
+
+drop policy if exists "Public can read published biography profiles" on biography_profiles;
+create policy "Public can read published biography profiles"
+  on biography_profiles for select
+  using (status = 'published');
 
 drop policy if exists "Public can read document people" on document_people;
 create policy "Public can read document people"
@@ -743,6 +857,28 @@ create policy "Public can read published document citation links"
     )
   );
 
+drop policy if exists "Public can read published biography bibliography links" on biography_bibliography_items;
+create policy "Public can read published biography bibliography links"
+  on biography_bibliography_items for select
+  using (exists (
+    select 1 from biography_profiles
+    where biography_profiles.id = biography_bibliography_items.biography_profile_id
+      and biography_profiles.status = 'published'
+  ) and exists (
+    select 1 from bibliography_items
+    where bibliography_items.id = biography_bibliography_items.bibliography_item_id
+      and bibliography_items.status = 'published'
+  ));
+
+drop policy if exists "Public can read published search chunks" on search_chunks;
+create policy "Public can read published search chunks"
+  on search_chunks for select
+  using (exists (
+    select 1 from documents
+    where documents.id = search_chunks.document_id
+      and documents.status = 'published'
+  ));
+
 drop policy if exists "Public can read document tags" on document_tags;
 create policy "Public can read document tags"
   on document_tags for select
@@ -783,3 +919,118 @@ create policy "Editors can read content revisions"
     where profile.user_id = auth.uid()
       and profile.role in ('owner', 'editor', 'viewer')
   ));
+
+create or replace function search_archive_keyword(
+  query_text text,
+  match_count int default 200
+)
+returns table (
+  document_id uuid,
+  score real,
+  snippet text,
+  match_kind text,
+  href text
+)
+language sql
+stable
+as $$
+  with query as (
+    select
+      websearch_to_tsquery('english', coalesce(query_text, '')) as ts_query,
+      lower(trim(coalesce(query_text, ''))) as normalized_query
+  ),
+  chunk_matches as (
+    select
+      search_chunks.document_id,
+      search_chunks.chunk_kind,
+      search_chunks.href,
+      left(regexp_replace(search_chunks.chunk_text, '\s+', ' ', 'g'), 320) as snippet,
+      (
+        ts_rank_cd(search_chunks.search_vector, query.ts_query) *
+          case search_chunks.chunk_kind
+            when 'metadata' then 3.0
+            when 'section' then 1.5
+            when 'translation' then 1.5
+            else 1.0
+          end
+      ) +
+      case
+        when query.normalized_query <> '' and lower(search_chunks.title) = query.normalized_query then 5.0
+        when query.normalized_query <> '' and lower(search_chunks.title) like '%' || query.normalized_query || '%' then 3.0
+        else 0.0
+      end +
+      case
+        when query.normalized_query <> '' then similarity(search_chunks.title, query.normalized_query)
+        else 0.0
+      end as score
+    from search_chunks, query
+    where
+      query.normalized_query <> '' and (
+        search_chunks.search_vector @@ query.ts_query or
+        search_chunks.title % query.normalized_query or
+        search_chunks.chunk_text % query.normalized_query
+      )
+  ),
+  ranked as (
+    select
+      chunk_matches.*,
+      row_number() over (partition by chunk_matches.document_id order by chunk_matches.score desc) as rank_in_document
+    from chunk_matches
+  )
+  select
+    ranked.document_id,
+    max(ranked.score)::real as score,
+    (array_agg(ranked.snippet order by ranked.score desc))[1] as snippet,
+    (array_agg(ranked.chunk_kind order by ranked.score desc))[1] as match_kind,
+    (array_agg(ranked.href order by ranked.score desc))[1] as href
+  from ranked
+  where ranked.rank_in_document <= 3
+  group by ranked.document_id
+  order by max(ranked.score) desc
+  limit greatest(match_count, 1);
+$$;
+
+create or replace function search_archive_semantic(
+  query_embedding vector(1536),
+  match_count int default 200,
+  similarity_threshold real default 0.12
+)
+returns table (
+  document_id uuid,
+  score real,
+  snippet text,
+  match_kind text,
+  href text
+)
+language sql
+stable
+as $$
+  with nearest_chunks as (
+    select
+      search_chunks.document_id,
+      search_chunks.chunk_kind,
+      search_chunks.href,
+      left(regexp_replace(search_chunks.chunk_text, '\s+', ' ', 'g'), 320) as snippet,
+      (1 - (search_chunks.embedding <=> query_embedding))::real as score
+    from search_chunks
+    where search_chunks.embedding is not null
+      and (1 - (search_chunks.embedding <=> query_embedding)) >= similarity_threshold
+    order by search_chunks.embedding <=> query_embedding
+    limit greatest(match_count, 1) * 4
+  )
+  select
+    nearest_chunks.document_id,
+    max(nearest_chunks.score)::real as score,
+    (array_agg(nearest_chunks.snippet order by nearest_chunks.score desc))[1] as snippet,
+    (array_agg(nearest_chunks.chunk_kind order by nearest_chunks.score desc))[1] as match_kind,
+    (array_agg(nearest_chunks.href order by nearest_chunks.score desc))[1] as href
+  from nearest_chunks
+  group by nearest_chunks.document_id
+  order by max(nearest_chunks.score) desc
+  limit greatest(match_count, 1);
+$$;
+
+grant execute on function search_archive_keyword(text, integer) to anon, authenticated, service_role;
+grant execute on function search_archive_semantic(vector, integer, real) to anon, authenticated, service_role;
+
+notify pgrst, 'reload schema';

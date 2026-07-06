@@ -4,9 +4,13 @@ import Link from "next/link";
 import { BookOpen, FileText, Plus, Users } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { MarkdownContent } from "@/components/markdown-content";
+import { CitationCopyButton } from "@/components/citation-copy-button";
 import { Chip } from "@/components/ui/chip";
 import { listArchiveSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { buildFallbackBiography, canonicalizePersonName, findBiographyProfile, isDisplayableBiographyName, slugifyPersonName } from "@/lib/biographies";
+import { getPublishedBiographyProfile } from "@/lib/supabase-biographies";
+import { formatCitation, itemTypeLabel, primaryUrl } from "@/lib/bibliography";
 import { JsonLd, SITE_NAME, buildBreadcrumbJsonLd, buildPersonJsonLd, canonicalPath, seoDescription } from "@/lib/seo";
 import type { BiographyProfile } from "@/lib/biographies";
 import type { ArchiveSource } from "@/lib/types";
@@ -20,7 +24,7 @@ export const revalidate = 3600;
 export async function generateMetadata({ params }: BiographyPageProps): Promise<Metadata> {
   const { slug } = await params;
   const sources = await listArchiveSourceSummariesFromSupabase();
-  const profile = resolveBiography(slug, sources);
+  const profile = await resolveBiography(slug, sources);
 
   if (!profile) {
     return {
@@ -69,11 +73,12 @@ export async function generateMetadata({ params }: BiographyPageProps): Promise<
 export default async function BiographyPage({ params }: BiographyPageProps) {
   const { slug } = await params;
   const sources = await listArchiveSourceSummariesFromSupabase();
-  const profile = resolveBiography(slug, sources);
+  const profile = await resolveBiography(slug, sources);
 
   if (!profile) notFound();
 
-  const isGeneratedStub = !findBiographyProfile(profile.slug);
+  const hasStaticProfile = Boolean(findBiographyProfile(profile.slug));
+  const isGeneratedStub = !hasStaticProfile && !profile.bodyMarkdown;
   const relatedSources = sources.filter((source) => source.people.some((person) => slugifyPersonName(canonicalizePersonName(person)) === slug));
   const structuredData = [
     buildPersonJsonLd(profile, relatedSources),
@@ -118,11 +123,15 @@ export default async function BiographyPage({ params }: BiographyPageProps) {
 
           <div className="mt-7 h-px w-20 bg-archive-violet/45" />
 
-          <div className="mt-7 max-w-[680px] space-y-5 text-[1.03rem] leading-[1.72] text-archive-ink">
-            {profile.paragraphs.slice(0, 3).map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
+          {profile.bodyMarkdown ? (
+            <MarkdownContent className="source-markdown mt-7 max-w-[680px] space-y-5 text-[1.03rem] leading-[1.72] text-archive-ink" markdown={profile.bodyMarkdown} />
+          ) : (
+            <div className="mt-7 max-w-[680px] space-y-5 text-[1.03rem] leading-[1.72] text-archive-ink">
+              {profile.paragraphs.slice(0, 3).map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          )}
 
           <section className="mt-9 border-t border-archive-line pt-5">
             <div className="mb-4 flex items-center justify-between gap-4">
@@ -148,7 +157,7 @@ export default async function BiographyPage({ params }: BiographyPageProps) {
             </div>
           </section>
 
-          {profile.paragraphs.length > 3 && (
+          {!profile.bodyMarkdown && profile.paragraphs.length > 3 && (
             <section className="mt-8 max-w-[680px] space-y-5 text-[1.03rem] leading-[1.72] text-archive-ink">
               {profile.paragraphs.slice(3).map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
@@ -172,13 +181,7 @@ export default async function BiographyPage({ params }: BiographyPageProps) {
                 View reading list →
               </Link>
             </div>
-            <div className="grid gap-3 md:grid-cols-2">
-              {(profile.sourceNotes?.length ? profile.sourceNotes : [`Further reading for ${profile.name} is being prepared.`]).slice(0, 4).map((item) => (
-                <div className="rounded-sm border border-archive-line bg-archive-surface p-4 text-sm leading-6 text-archive-muted transition hover:border-archive-violet/40 hover:bg-archive-lavender2/55" key={item}>
-                  {item}
-                </div>
-              ))}
-            </div>
+            <BiographyBibliography profile={profile} />
           </section>
 
           {profile.tags.length > 0 && (
@@ -238,7 +241,76 @@ export default async function BiographyPage({ params }: BiographyPageProps) {
   );
 }
 
-function resolveBiography(slug: string, sources: ArchiveSource[]): BiographyProfile | undefined {
+function BiographyBibliography({ profile }: { profile: BiographyProfile }) {
+  if (profile.bibliographyLinks?.length) {
+    const groups = groupBiographyBibliography(profile.bibliographyLinks);
+    return (
+      <div className="space-y-5">
+        {groups.map((group) => (
+          <section key={group.label}>
+            <h3 className="text-sm font-semibold text-archive-ink">{group.label}</h3>
+            <div className="mt-2 grid gap-3 md:grid-cols-2">
+              {group.links.map((link) => {
+                const url = primaryUrl(link.item);
+                return (
+                  <article className="rounded-sm border border-archive-line bg-archive-surface p-4 text-sm leading-6 text-archive-muted" key={`${link.relationshipType}-${link.item.id}`}>
+                    <div className="text-xs font-bold uppercase tracking-[0.08em] text-archive-muted">{itemTypeLabel(link.item.itemType)}{link.item.year ? ` · ${link.item.year}` : ""}</div>
+                    <Link className="mt-1 block font-semibold leading-5 text-archive-ink hover:text-archive-violet" href={`/further-reading/${link.item.slug}`}>
+                      {link.item.title}
+                    </Link>
+                    {link.item.publicationTitle && <p className="mt-1 text-xs">{link.item.publicationTitle}</p>}
+                    {link.editorialNote && <p className="mt-2 text-xs leading-5">{link.editorialNote}</p>}
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <CitationCopyButton citation={formatCitation(link.item, "chicago")} label="Chicago" />
+                      <CitationCopyButton citation={formatCitation(link.item, "mla")} label="MLA" />
+                      {url && (
+                        <a className="focus-ring rounded border border-archive-line bg-white px-2 py-1 text-xs font-semibold text-archive-ink hover:bg-archive-lavender2" href={url} rel="noreferrer" target="_blank">
+                          Source
+                        </a>
+                      )}
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <div className="grid gap-3 md:grid-cols-2">
+      {(profile.sourceNotes?.length ? profile.sourceNotes : [`Further reading for ${profile.name} is being prepared.`]).slice(0, 4).map((item) => (
+        <div className="rounded-sm border border-archive-line bg-archive-surface p-4 text-sm leading-6 text-archive-muted transition hover:border-archive-violet/40 hover:bg-archive-lavender2/55" key={item}>
+          {item}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function groupBiographyBibliography(links: NonNullable<BiographyProfile["bibliographyLinks"]>) {
+  const labels: Record<string, string> = {
+    work_by: "Works by this person",
+    work_about: "Works about this person",
+    recommended_reading: "Recommended reading",
+    primary_source: "Primary sources",
+    archival_context: "Archival context",
+  };
+  const order = ["work_by", "work_about", "recommended_reading", "primary_source", "archival_context"];
+  return order
+    .map((type) => ({
+      label: labels[type] ?? type.replaceAll("_", " "),
+      links: links.filter((link) => link.relationshipType === type),
+    }))
+    .filter((group) => group.links.length);
+}
+
+async function resolveBiography(slug: string, sources: ArchiveSource[]): Promise<BiographyProfile | undefined> {
+  const dbProfile = await getPublishedBiographyProfile(slug);
+  if (dbProfile) return dbProfile;
+
   const direct = findBiographyProfile(slug);
   if (direct) return direct;
 

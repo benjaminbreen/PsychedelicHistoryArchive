@@ -7,8 +7,10 @@ import {
   addDocumentPerson,
   addDocumentTag,
   addSourceToCollection,
+  createDocumentCitationLink,
   createDocumentFigure,
   createDocumentSection,
+  deleteDocumentCitationLink,
   deleteDocumentFigure,
   deleteDocumentSection,
   duplicateDocumentSection,
@@ -19,10 +21,12 @@ import {
   saveDocumentSection,
   seedSectionFromImportedText,
   updateTagVisibility,
+  updateDocumentCitationLink,
   updateDocumentFigure,
   updateSourceMetadata
 } from "@/app/admin/actions";
-import { getAdminSource, isAdminWritable, listAdminCollections, listAdminPeople, listAdminTags, type AdminCollectionListItem, type AdminDocumentFigure, type AdminDocumentPerson, type AdminDocumentSection, type AdminDocumentTag, type AdminPerson, type AdminSource, type AdminSourceCollectionMembership, type AdminTag } from "@/lib/admin-cms";
+import { getAdminSource, getSearchIndexStatusForSource, isAdminWritable, listAdminCollections, listAdminPeople, listAdminTags, type AdminCollectionListItem, type AdminDocumentCitationLink, type AdminDocumentFigure, type AdminDocumentSection, type AdminPerson, type AdminSource, type AdminTag, type SearchIndexStatus } from "@/lib/admin-cms";
+import { listAdminBibliographyItems, type AdminBibliographyItem } from "@/lib/admin-bibliography";
 import { getStoragePublicUrl } from "@/lib/supabase";
 import type { SourceFigure } from "@/lib/types";
 
@@ -34,13 +38,15 @@ type AdminSourcePageProps = {
 
 export default async function AdminSourcePage({ params }: AdminSourcePageProps) {
   const { id } = await params;
-  const [source, people, tags, collections] = await Promise.all([
+  const [source, people, tags, collections, bibliographyItems] = await Promise.all([
     getAdminSource(id),
     listAdminPeople(),
     listAdminTags(),
-    listAdminCollections()
+    listAdminCollections(),
+    listAdminBibliographyItems()
   ]);
   if (!source) notFound();
+  const searchIndexStatus = await getSearchIndexStatusForSource(source.id);
 
   const figures = mapAdminFigures(source.document_figures);
   const sections = [...(source.document_sections ?? [])].sort((a, b) => (a.position ?? 0) - (b.position ?? 0));
@@ -75,7 +81,8 @@ export default async function AdminSourcePage({ params }: AdminSourcePageProps) 
           <TranscriptSections sourceId={source.id} slug={source.slug} sections={sections} figures={figures} />
         </div>
         <aside className="space-y-5 xl:sticky xl:top-6 xl:self-start">
-          <SourceHealthPanel source={source} sectionCount={sections.length} figureCount={figures.length} />
+          <SourceHealthPanel source={source} sectionCount={sections.length} figureCount={figures.length} searchIndexStatus={searchIndexStatus} />
+          <CitationReviewPanel bibliographyItems={bibliographyItems} links={source.document_citation_links ?? []} sourceId={source.id} slug={source.slug} />
           <ImportedTextPanel sourceId={source.id} slug={source.slug} stats={importedTextStats} />
           <FigureReferencePanel figures={source.document_figures ?? []} sourceId={source.id} slug={source.slug} />
           <CreateFigureForm sourceId={source.id} slug={source.slug} />
@@ -358,7 +365,7 @@ function ImportedTextPanel({ sourceId, slug, stats }: { sourceId: string; slug: 
   );
 }
 
-function SourceHealthPanel({ figureCount, sectionCount, source }: { figureCount: number; sectionCount: number; source: AdminSource }) {
+function SourceHealthPanel({ figureCount, searchIndexStatus, sectionCount, source }: { figureCount: number; searchIndexStatus: SearchIndexStatus; sectionCount: number; source: AdminSource }) {
   return (
     <section className="rounded-md border border-archive-line bg-archive-surface p-5 shadow-sm">
       <h3 className="font-semibold">Record State</h3>
@@ -367,10 +374,88 @@ function SourceHealthPanel({ figureCount, sectionCount, source }: { figureCount:
         <AdminDetail label="Sections" value={`${sectionCount}`} />
         <AdminDetail label="Figures" value={`${figureCount}`} />
         <AdminDetail label="Reader" value={source.reader_mode || "auto"} />
+        <AdminDetail label="Search" value={searchIndexLabel(source, searchIndexStatus)} />
         <AdminDetail label="Updated" value={source.updated_at || "Not recorded"} />
       </dl>
     </section>
   );
+}
+
+function CitationReviewPanel({ bibliographyItems, links, sourceId, slug }: { bibliographyItems: AdminBibliographyItem[]; links: AdminDocumentCitationLink[]; sourceId: string; slug: string }) {
+  const sortedLinks = [...links].sort((a, b) => (a.status || "").localeCompare(b.status || "") || a.citation_text.localeCompare(b.citation_text));
+
+  return (
+    <section className="rounded-md border border-archive-line bg-archive-surface p-5 shadow-sm" id="citation-review">
+      <h3 className="font-semibold">Citation Review</h3>
+      <p className="mt-1 text-sm text-archive-muted">
+        Approve generated links, reject false matches, or manually connect source citations to further-reading records.
+      </p>
+      <div className="mt-4 space-y-3">
+        {sortedLinks.length ? sortedLinks.map((link) => {
+          const bibliographyItem = firstRelated(link.bibliography_item);
+          return (
+            <form action={updateDocumentCitationLink} className="rounded-md border border-archive-line bg-archive-paper p-3 text-sm" key={link.id}>
+              <input name="citation_link_id" type="hidden" value={link.id} />
+              <input name="document_id" type="hidden" value={sourceId} />
+              <input name="source_slug" type="hidden" value={slug} />
+              <TextField label="Citation text" name="citation_text" value={link.citation_text} />
+              <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                <SelectBibliographyField bibliographyItems={bibliographyItems} value={link.bibliography_item_id || bibliographyItem?.id || ""} />
+                <SelectField label="Status" name="status" options={CITATION_STATUSES} value={link.status || "reviewed"} />
+                <TextField label="Confidence" name="confidence" type="number" value={link.confidence?.toString()} />
+                <TextField label="Occurrences" name="occurrence_count" type="number" value={link.occurrence_count?.toString() || "1"} />
+              </div>
+              <TextAreaField label="Match reason" name="match_reason" rows={2} value={link.match_reason} />
+              <div className="mt-3 flex flex-wrap justify-end gap-2">
+                <button className="focus-ring h-9 rounded-md border border-red-200 bg-white px-3 text-xs font-semibold text-red-700" formAction={deleteDocumentCitationLink} type="submit">Delete</button>
+                <button className="focus-ring h-9 rounded-md bg-archive-violet px-3 text-xs font-semibold text-white" type="submit">Save link</button>
+              </div>
+            </form>
+          );
+        }) : <p className="rounded-md border border-dashed border-archive-line bg-archive-paper p-4 text-sm text-archive-muted">No citation links have been staged for this source.</p>}
+      </div>
+
+      <form action={createDocumentCitationLink} className="mt-4 rounded-md border border-archive-line bg-archive-paper p-4">
+        <input name="document_id" type="hidden" value={sourceId} />
+        <input name="source_slug" type="hidden" value={slug} />
+        <h4 className="font-semibold">Add Citation Link</h4>
+        <div className="mt-3 space-y-3">
+          <TextField label="Citation text" name="citation_text" value="" />
+          <SelectBibliographyField bibliographyItems={bibliographyItems} value="" />
+          <div className="grid gap-3 sm:grid-cols-3">
+            <SelectField label="Status" name="status" options={CITATION_STATUSES} value="reviewed" />
+            <TextField label="Confidence" name="confidence" type="number" value="1" />
+            <TextField label="Occurrences" name="occurrence_count" type="number" value="1" />
+          </div>
+          <TextAreaField label="Match reason" name="match_reason" rows={2} value="manual" />
+          <button className="focus-ring h-10 rounded-md border border-archive-line px-4 text-sm font-semibold" type="submit">Add link</button>
+        </div>
+      </form>
+    </section>
+  );
+}
+
+function SelectBibliographyField({ bibliographyItems, value }: { bibliographyItems: AdminBibliographyItem[]; value: string }) {
+  return (
+    <label className="block">
+      <span className="text-xs font-bold uppercase tracking-[0.08em] text-archive-muted">Bibliography item</span>
+      <select className="focus-ring mt-1 h-10 w-full rounded-md border border-archive-line bg-white px-3 text-sm" defaultValue={value} name="bibliography_item_id">
+        <option value="">No linked item</option>
+        {bibliographyItems.map((item) => (
+          <option key={item.id} value={item.id}>{item.title}{item.year ? ` (${item.year})` : ""}</option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
+function searchIndexLabel(source: AdminSource, status: SearchIndexStatus) {
+  if (status.status === "not_installed") return "Schema not installed";
+  if (status.status === "not_indexed") return "Not indexed";
+  if (status.latestIndexedAt && source.updated_at && new Date(status.latestIndexedAt) < new Date(source.updated_at)) {
+    return `Stale (${status.chunkCount} chunks)`;
+  }
+  return `Indexed (${status.chunkCount} chunks)`;
 }
 
 function FigureReferencePanel({ figures, sourceId, slug }: { figures: AdminDocumentFigure[]; sourceId: string; slug: string }) {
@@ -580,3 +665,4 @@ const STATUSES = ["draft", "published", "archived"];
 const SECTION_TYPES = ["overview", "transcript", "translation", "note"];
 const BODY_FORMATS = ["plain", "markdown"];
 const FIGURE_PLACEMENTS = ["inline", "before_overview"];
+const CITATION_STATUSES = ["auto", "reviewed", "rejected", "needs_review"];

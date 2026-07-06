@@ -141,7 +141,7 @@ export function SiteHeader({ variant = "home", showSourceSettings = true, active
         </nav>
         {variant === "source" ? (
           <div className="ml-3 hidden items-center gap-2 xl:flex">
-            <SearchBar className="w-[17rem]" />
+            <SearchBar className="w-[17rem]" showModeOptions />
             <SourceTextSettings showSourceControls={showSourceSettings} />
           </div>
         ) : (

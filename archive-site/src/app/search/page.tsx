@@ -4,10 +4,13 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, Search } from "lucide-react";
 import { ArchiveResultRow } from "@/components/archive-result-row";
 import { PageShell } from "@/components/page/page-shell";
+import { SearchModeToggle } from "@/components/search-mode-toggle";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SearchBar } from "@/components/ui/search-bar";
-import { searchArchiveIndex, type PersonSearchResult, type TopicSearchResult } from "@/lib/search";
+import { searchArchiveSourcesWithMode } from "@/lib/hybrid-search";
+import { searchCollections, searchPeople, searchTopics, type PersonSearchResult, type TopicSearchResult } from "@/lib/search";
+import { parseSearchMode, searchModeParam, type SearchMode } from "@/lib/search-types";
 import { listArchiveSourceSummariesFromSupabase, listCollectionSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { getSourceTitleParts } from "@/lib/source-title";
 import { listPublicTopics } from "@/lib/topics";
@@ -21,18 +24,28 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 type SearchPageProps = {
-  searchParams: Promise<{ q?: string }>;
+  searchParams: Promise<{ mode?: string; q?: string }>;
 };
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
   const params = await searchParams;
   const query = (params.q ?? "").trim();
+  const mode = parseSearchMode(params.mode);
   const [sources, collections, curatedTopics] = await Promise.all([
     listArchiveSourceSummariesFromSupabase(),
     listCollectionSourceSummariesFromSupabase(),
     listPublicTopics()
   ]);
-  const results = searchArchiveIndex({ collections, curatedTopics, query, sources });
+  const sourceSearch = query
+    ? await searchArchiveSourcesWithMode(sources, { mode, q: query })
+    : { matches: {}, mode, sources: [], usedFallback: false };
+  const results = {
+    collections: query ? searchCollections(collections, query).slice(0, 6) : [],
+    people: query ? searchPeople(sources, query).slice(0, 12) : [],
+    sources: sourceSearch.sources.slice(0, 12),
+    topics: query ? searchTopics(sources, curatedTopics, query).slice(0, 12) : [],
+  };
+  const total = results.sources.length + results.collections.length + results.topics.length + results.people.length;
 
   return (
     <>
@@ -48,7 +61,25 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
               Search across source titles, people, topics, collections, citations, and editorial metadata.
             </p>
           </div>
-          <SearchBar defaultValue={query} placeholder="Search people, topics, sources, and more..." submitLabel="Search" />
+          <div className="grid gap-3">
+            <SearchBar
+              defaultValue={query}
+              mode={mode}
+              placeholder="Search people, topics, sources, and more..."
+              showModeOptions
+              submitLabel="Search"
+            />
+            {query && (
+              <div className="flex flex-wrap items-center gap-3">
+                <SearchModeToggle currentMode={mode} hrefForMode={(nextMode) => searchHref(query, nextMode)} />
+                {sourceSearch.usedFallback && (
+                  <span className="rounded-full border border-archive-line bg-archive-paper px-2.5 py-1 text-xs font-semibold text-archive-muted">
+                    Keyword fallback
+                  </span>
+                )}
+              </div>
+            )}
+          </div>
         </header>
 
         {!query ? (
@@ -58,7 +89,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
               <p>Enter a name, substance, place, title, or phrase to search the archive.</p>
             </div>
           </section>
-        ) : results.total === 0 ? (
+        ) : total === 0 ? (
           <NoSearchResults query={query} />
         ) : (
           <div className="mt-8 grid gap-8">
@@ -68,10 +99,10 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
               sourceCount={results.sources.length}
               topicCount={results.topics.length}
             />
-            <ResultSection title="Sources" count={results.sources.length} actionHref={`/archive?q=${encodeURIComponent(query)}`} actionLabel="View all source matches">
+            <ResultSection title="Sources" count={results.sources.length} actionHref={archiveSearchHref(query, mode)} actionLabel="View all source matches">
               <div className="border-y border-archive-line">
                 {results.sources.map((source) => (
-                  <ArchiveResultRow key={source.id} source={source} />
+                  <ArchiveResultRow key={source.id} match={sourceSearch.matches[source.id]} source={source} />
                 ))}
               </div>
             </ResultSection>
@@ -84,6 +115,20 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       <SiteFooter />
     </>
   );
+}
+
+function searchHref(query: string, mode: SearchMode) {
+  const params = new URLSearchParams({ q: query });
+  const modeParam = searchModeParam(mode);
+  if (modeParam) params.set("mode", modeParam);
+  return `/search?${params.toString()}`;
+}
+
+function archiveSearchHref(query: string, mode: SearchMode) {
+  const params = new URLSearchParams({ q: query });
+  const modeParam = searchModeParam(mode);
+  if (modeParam) params.set("mode", modeParam);
+  return `/archive?${params.toString()}`;
 }
 
 function SearchSummary({

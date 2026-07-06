@@ -146,7 +146,7 @@ const FALLBACK_BIBLIOGRAPHY: BibliographyItem[] = [
   }
 ];
 
-type BibliographyRow = {
+export type BibliographyRow = {
   id: string;
   slug: string;
   item_type: BibliographyItemType;
@@ -197,7 +197,7 @@ type BibliographyTagRow = {
   tag_type: string | null;
 };
 
-const BIBLIOGRAPHY_SELECT = `
+export const BIBLIOGRAPHY_SELECT = `
   id,
   slug,
   item_type,
@@ -323,7 +323,7 @@ export function primaryUrl(item: BibliographyItem) {
   return item.openAccessUrl || item.pdfUrl || doiUrl(item.doi) || item.publisherUrl || item.googleBooksUrl || item.worldcatUrl || item.jstorUrl || "";
 }
 
-function rowToBibliographyItem(row: BibliographyRow): BibliographyItem {
+export function rowToBibliographyItem(row: BibliographyRow): BibliographyItem {
   const contributors = (row.bibliography_item_contributors ?? [])
     .map((entry) => {
       const contributor = firstRelated(entry.contributor);

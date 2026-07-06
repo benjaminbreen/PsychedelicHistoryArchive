@@ -322,5 +322,17 @@
     "width": 535,
     "height": 484,
     "checksum": "f311e1cff6296839a6a3c06b2bb466e6079e749faea5412a14beed9ba6718aab"
+  },
+  {
+    "id": "004e0a3c-722b-5453-9d2e-4ed264d216d4",
+    "document_id": "cd7298eb-bfb7-5421-ae16-f27d2ee07fc7",
+    "page_id": null,
+    "kind": "original_pdf",
+    "storage_path": "documents/cd7298eb-bfb7-5421-ae16-f27d2ee07fc7/pdfs/mead-lsd-memo/mead-lsd-memo-loc-1954.pdf",
+    "mime_type": "application/pdf",
+    "byte_size": 1904593,
+    "width": null,
+    "height": null,
+    "checksum": "c5c49d625d84bcddad9240ed7344be02ec3b445f2320743767f92912b10cf2e0"
   }
 ]

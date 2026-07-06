@@ -86,7 +86,7 @@ function TaskQueue({ tasksByTrack }: { tasksByTrack: Partial<Record<WorkbenchTra
           <ListChecks className="h-5 w-5 text-archive-violet" />
           <h3 className="font-semibold">Action Queue</h3>
         </div>
-        <p className="mt-1 text-sm text-archive-muted">Ordered by priority. Each row links to the relevant public/editorial surface.</p>
+        <p className="mt-1 text-sm text-archive-muted">Ordered by priority. Primary actions open the relevant editor.</p>
       </div>
       <div className="divide-y divide-archive-line">
         {tracks.map((track) => {
@@ -139,8 +139,8 @@ function TaskRow({ task }: { task: WorkbenchTask }) {
               <BookOpen className="h-4 w-4" />
             </Link>
           )}
-          <Link className="focus-ring inline-flex h-9 w-9 items-center justify-center rounded-md border border-archive-line hover:bg-archive-lavender2" href={task.href} title="Open item">
-            <ExternalLink className="h-4 w-4" />
+          <Link className="focus-ring inline-flex h-9 items-center justify-center rounded-md border border-archive-line px-3 text-xs font-semibold hover:bg-archive-lavender2" href={task.href} title="Open editor">
+            Edit
           </Link>
         </div>
       </div>
@@ -179,8 +179,11 @@ function BiographyStubQueue({ candidates, totalCount }: { candidates: BiographyS
                   Needs: {candidate.needs.join(", ") || "Review"}
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
+                  <Link className="focus-ring rounded border border-archive-violet bg-archive-violet px-2 py-1 text-white hover:bg-archive-violetDark" href={`/admin/biographies/new?name=${encodeURIComponent(candidate.name)}&slug=${encodeURIComponent(candidate.slug)}&years=${encodeURIComponent(candidate.years)}`}>
+                    Create bio
+                  </Link>
                   <Link className="focus-ring rounded border border-archive-line px-2 py-1 hover:bg-archive-lavender2" href={`/biographies/${candidate.slug}`}>
-                    Stub page
+                    Public stub
                   </Link>
                   <Link className="focus-ring rounded border border-archive-line px-2 py-1 hover:bg-archive-lavender2" href={`/archive?people=${encodeURIComponent(candidate.name)}`}>
                     Sources

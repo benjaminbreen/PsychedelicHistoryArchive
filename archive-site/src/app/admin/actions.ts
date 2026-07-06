@@ -2,7 +2,10 @@
 
 import { Buffer } from "node:buffer";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+import { biographyProfiles } from "@/lib/biographies";
 import { getAdminSupabaseClient, isAdminEnabled, isSchemaShapeError } from "@/lib/admin-cms";
+import { biographyProfileToRow } from "@/lib/supabase-biographies";
 
 function requireAdminClient() {
   if (!isAdminEnabled) throw new Error("Local admin is disabled.");
@@ -59,6 +62,38 @@ export async function updateSourceMetadata(formData: FormData) {
   revalidateSourcePaths(data.slug, id);
 }
 
+export async function createSource(formData: FormData) {
+  const supabase = requireAdminClient();
+  const title = readString(formData, "title") || "Untitled source";
+  const status = readString(formData, "status") || "draft";
+  const payload = {
+    title,
+    slug: readString(formData, "slug") || slugify(title),
+    document_type: readNullableString(formData, "document_type") || "Source",
+    medium: readNullableString(formData, "medium") || "Text",
+    source_kind: readNullableString(formData, "source_kind") || "single",
+    reader_mode: readNullableString(formData, "reader_mode"),
+    display_date: readNullableString(formData, "display_date"),
+    date_start: readNullableNumber(formData, "date_start"),
+    status,
+    published_at: status === "published" ? new Date().toISOString() : null,
+    updated_at: new Date().toISOString()
+  };
+
+  if (!payload.slug) throw new Error("Missing source slug.");
+
+  const { data, error } = await supabase
+    .from("documents")
+    .insert(payload)
+    .select("id, slug")
+    .single();
+
+  if (error) throw new Error(error.message);
+  await logRevision("documents", data.id, data.id, null, payload, "Created source");
+  revalidateSourcePaths(data.slug, data.id);
+  redirect(`/admin/sources/${data.id}`);
+}
+
 export async function updateCollectionMetadata(formData: FormData) {
   const supabase = requireAdminClient();
   const id = readString(formData, "id");
@@ -86,6 +121,130 @@ export async function updateCollectionMetadata(formData: FormData) {
   if (error) throw new Error(error.message);
   await logRevision("collections", id, id, before, payload, readNullableString(formData, "change_note"));
   revalidateCollectionPaths(data.slug, id);
+}
+
+export async function createCollection(formData: FormData) {
+  const supabase = requireAdminClient();
+  const title = readString(formData, "title") || "Untitled collection";
+  const payload = {
+    title,
+    slug: readString(formData, "slug") || slugify(title),
+    subtitle: readNullableString(formData, "subtitle"),
+    summary: readNullableString(formData, "summary"),
+    status: readString(formData, "status") || "draft",
+    updated_at: new Date().toISOString()
+  };
+  if (!payload.slug) throw new Error("Missing collection slug.");
+
+  const { data, error } = await supabase
+    .from("collections")
+    .insert(payload)
+    .select("id, slug")
+    .single();
+
+  if (error) throw new Error(error.message);
+  await logRevision("collections", data.id, null, null, payload, "Created collection");
+  revalidateCollectionPaths(data.slug, data.id);
+  redirect(`/admin/collections/${data.id}`);
+}
+
+export async function createBiographyProfile(formData: FormData) {
+  const supabase = requireAdminClient();
+  const payload = await biographyPayloadFromForm(supabase, formData);
+
+  const { data, error } = await supabase
+    .from("biography_profiles")
+    .insert(payload)
+    .select("id, slug")
+    .single();
+
+  if (error) throw adminSchemaError(error, "biography profiles", "scripts/supabase_biography_profiles_schema.sql");
+  await logRevision("biography_profiles", data.id, null, null, payload, "Created biography profile");
+  revalidateBiographyPaths(data.slug, data.id);
+  redirect(`/admin/biographies/${data.id}`);
+}
+
+export async function updateBiographyProfile(formData: FormData) {
+  const supabase = requireAdminClient();
+  const id = readString(formData, "id");
+  const storage = readString(formData, "storage");
+  const payload = await biographyPayloadFromForm(supabase, formData);
+  const before = id && storage === "database" ? await fetchRow("biography_profiles", id) : null;
+
+  const query = storage === "database" && isUuid(id)
+    ? supabase.from("biography_profiles").update(payload).eq("id", id)
+    : supabase.from("biography_profiles").upsert(payload, { onConflict: "slug", ignoreDuplicates: false });
+
+  const { data, error } = await query.select("id, slug").single();
+  if (error) throw adminSchemaError(error, "biography profiles", "scripts/supabase_biography_profiles_schema.sql");
+
+  await logRevision("biography_profiles", data.id, null, before, payload, readNullableString(formData, "change_note") || "Saved biography profile");
+  revalidateBiographyPaths(data.slug, data.id);
+}
+
+export async function seedStaticBiographyProfiles() {
+  const supabase = requireAdminClient();
+  const payload = biographyProfiles.map((profile) => ({
+    ...biographyProfileToRow(profile, "published"),
+    updated_at: new Date().toISOString()
+  }));
+
+  const { error } = await supabase
+    .from("biography_profiles")
+    .upsert(payload, { onConflict: "slug", ignoreDuplicates: false });
+
+  if (error) throw adminSchemaError(error, "biography profiles", "scripts/supabase_biography_profiles_schema.sql");
+  await logRevision("biography_profiles", "00000000-0000-0000-0000-000000000000", null, null, { count: payload.length }, "Seeded static biography profiles");
+  revalidatePath("/admin/biographies");
+  revalidatePath("/people");
+}
+
+export async function addBiographyBibliographyLink(formData: FormData) {
+  const supabase = requireAdminClient();
+  const profileId = readString(formData, "biography_profile_id");
+  const bibliographyItemId = readString(formData, "bibliography_item_id");
+  if (!profileId || !bibliographyItemId) throw new Error("Missing biography profile or bibliography item.");
+
+  const payload = {
+    biography_profile_id: profileId,
+    bibliography_item_id: bibliographyItemId,
+    relationship_type: readString(formData, "relationship_type") || "recommended_reading",
+    position: readNullableNumber(formData, "position"),
+    editorial_note: readNullableString(formData, "editorial_note"),
+    updated_at: new Date().toISOString()
+  };
+
+  const { error } = await supabase
+    .from("biography_bibliography_items")
+    .upsert(payload, { onConflict: "biography_profile_id,bibliography_item_id,relationship_type", ignoreDuplicates: false });
+
+  if (error) throw adminSchemaError(error, "biography bibliography links", "scripts/supabase_biography_profiles_schema.sql");
+  await logRevision("biography_bibliography_items", `${profileId}:${bibliographyItemId}:${payload.relationship_type}`, null, null, payload, "Updated biography bibliography link");
+  revalidateBiographyPaths(readString(formData, "biography_slug"), profileId);
+}
+
+export async function removeBiographyBibliographyLink(formData: FormData) {
+  const supabase = requireAdminClient();
+  const profileId = readString(formData, "biography_profile_id");
+  const bibliographyItemId = readString(formData, "bibliography_item_id");
+  const relationshipType = readString(formData, "relationship_type") || "recommended_reading";
+  if (!profileId || !bibliographyItemId) throw new Error("Missing biography bibliography link.");
+
+  const before = await fetchRowByComposite("biography_bibliography_items", {
+    biography_profile_id: profileId,
+    bibliography_item_id: bibliographyItemId,
+    relationship_type: relationshipType
+  });
+  const { error } = await supabase
+    .from("biography_bibliography_items")
+    .delete()
+    .eq("biography_profile_id", profileId)
+    .eq("bibliography_item_id", bibliographyItemId)
+    .eq("relationship_type", relationshipType);
+
+  if (error) throw adminSchemaError(error, "biography bibliography links", "scripts/supabase_biography_profiles_schema.sql");
+  await logRevision("biography_bibliography_items", `${profileId}:${bibliographyItemId}:${relationshipType}`, null, before, null, "Removed biography bibliography link");
+  revalidateBiographyPaths(readString(formData, "biography_slug"), profileId);
 }
 
 export async function createTopic(formData: FormData) {
@@ -307,6 +466,161 @@ export async function removeBibliographyEra(formData: FormData) {
   if (error) throw new Error(error.message);
   await logRevision("bibliography_item_eras", `${itemId}:${eraSlug}`, null, { bibliography_item_id: itemId, era_slug: eraSlug }, null, "Removed bibliography era");
   revalidateBibliographyPaths(readString(formData, "slug"), itemId);
+}
+
+export async function addBibliographySourceLink(formData: FormData) {
+  const supabase = requireAdminClient();
+  const itemId = readString(formData, "bibliography_item_id");
+  const documentId = readString(formData, "document_id");
+  if (!itemId || !documentId) throw new Error("Missing bibliography item or source.");
+
+  const payload = {
+    bibliography_item_id: itemId,
+    document_id: documentId,
+    relationship_label: readNullableString(formData, "relationship_label"),
+    editorial_note: readNullableString(formData, "editorial_note")
+  };
+
+  const { error } = await supabase
+    .from("bibliography_item_documents")
+    .upsert(payload, { onConflict: "bibliography_item_id,document_id", ignoreDuplicates: false });
+  if (error) throw new Error(error.message);
+
+  await logRevision("bibliography_item_documents", `${itemId}:${documentId}`, documentId, null, payload, "Updated bibliography source link");
+  revalidateBibliographyPaths(readString(formData, "slug"), itemId);
+}
+
+export async function removeBibliographySourceLink(formData: FormData) {
+  const supabase = requireAdminClient();
+  const itemId = readString(formData, "bibliography_item_id");
+  const documentId = readString(formData, "document_id");
+  if (!itemId || !documentId) throw new Error("Missing bibliography item or source.");
+
+  const before = await fetchRowByComposite("bibliography_item_documents", { bibliography_item_id: itemId, document_id: documentId });
+  const { error } = await supabase
+    .from("bibliography_item_documents")
+    .delete()
+    .eq("bibliography_item_id", itemId)
+    .eq("document_id", documentId);
+  if (error) throw new Error(error.message);
+
+  await logRevision("bibliography_item_documents", `${itemId}:${documentId}`, documentId, before, null, "Removed bibliography source link");
+  revalidateBibliographyPaths(readString(formData, "slug"), itemId);
+}
+
+export async function addBibliographyAlias(formData: FormData) {
+  const supabase = requireAdminClient();
+  const itemId = readString(formData, "bibliography_item_id");
+  const alias = readString(formData, "alias");
+  if (!itemId || !alias) throw new Error("Missing bibliography item or alias.");
+
+  const payload = {
+    bibliography_item_id: itemId,
+    alias,
+    normalized_alias: normalizeCitation(alias),
+    source: readNullableString(formData, "source") || "manual",
+    status: readString(formData, "status") || "reviewed"
+  };
+
+  const { error } = await supabase
+    .from("bibliography_item_aliases")
+    .upsert(payload, { onConflict: "bibliography_item_id,normalized_alias", ignoreDuplicates: false });
+  if (error) throw new Error(error.message);
+
+  await logRevision("bibliography_item_aliases", `${itemId}:${payload.normalized_alias}`, null, null, payload, "Added bibliography citation alias");
+  revalidateBibliographyPaths(readString(formData, "slug"), itemId);
+}
+
+export async function removeBibliographyAlias(formData: FormData) {
+  const supabase = requireAdminClient();
+  const aliasId = readString(formData, "alias_id");
+  const itemId = readString(formData, "bibliography_item_id");
+  if (!aliasId || !itemId) throw new Error("Missing bibliography alias.");
+
+  const before = await fetchRow("bibliography_item_aliases", aliasId);
+  const { error } = await supabase
+    .from("bibliography_item_aliases")
+    .delete()
+    .eq("id", aliasId);
+  if (error) throw new Error(error.message);
+
+  await logRevision("bibliography_item_aliases", aliasId, null, before, null, "Removed bibliography citation alias");
+  revalidateBibliographyPaths(readString(formData, "slug"), itemId);
+}
+
+export async function createDocumentCitationLink(formData: FormData) {
+  const supabase = requireAdminClient();
+  const documentId = readString(formData, "document_id");
+  const citationText = readString(formData, "citation_text");
+  if (!documentId || !citationText) throw new Error("Missing source or citation text.");
+
+  const payload = {
+    document_id: documentId,
+    bibliography_item_id: readNullableString(formData, "bibliography_item_id"),
+    citation_text: citationText,
+    normalized_citation: normalizeCitation(citationText),
+    confidence: readNullableNumber(formData, "confidence"),
+    status: readString(formData, "status") || "reviewed",
+    match_reason: readNullableString(formData, "match_reason") || "manual",
+    occurrence_count: readNullableNumber(formData, "occurrence_count") ?? 1,
+    updated_at: new Date().toISOString()
+  };
+
+  const { data, error } = await supabase
+    .from("document_citation_links")
+    .insert(payload)
+    .select("id")
+    .single();
+  if (error) throw new Error(error.message);
+
+  await logRevision("document_citation_links", data.id, documentId, null, payload, "Created citation link");
+  revalidateSourcePaths(readString(formData, "source_slug"), documentId);
+}
+
+export async function updateDocumentCitationLink(formData: FormData) {
+  const supabase = requireAdminClient();
+  const linkId = readString(formData, "citation_link_id");
+  const documentId = readString(formData, "document_id");
+  const citationText = readString(formData, "citation_text");
+  if (!linkId || !documentId || !citationText) throw new Error("Missing citation link data.");
+
+  const before = await fetchRow("document_citation_links", linkId);
+  const payload = {
+    bibliography_item_id: readNullableString(formData, "bibliography_item_id"),
+    citation_text: citationText,
+    normalized_citation: normalizeCitation(citationText),
+    confidence: readNullableNumber(formData, "confidence"),
+    status: readString(formData, "status") || "reviewed",
+    match_reason: readNullableString(formData, "match_reason"),
+    occurrence_count: readNullableNumber(formData, "occurrence_count") ?? 1,
+    updated_at: new Date().toISOString()
+  };
+
+  const { error } = await supabase
+    .from("document_citation_links")
+    .update(payload)
+    .eq("id", linkId);
+  if (error) throw new Error(error.message);
+
+  await logRevision("document_citation_links", linkId, documentId, before, payload, "Updated citation link");
+  revalidateSourcePaths(readString(formData, "source_slug"), documentId);
+}
+
+export async function deleteDocumentCitationLink(formData: FormData) {
+  const supabase = requireAdminClient();
+  const linkId = readString(formData, "citation_link_id");
+  const documentId = readString(formData, "document_id");
+  if (!linkId || !documentId) throw new Error("Missing citation link.");
+
+  const before = await fetchRow("document_citation_links", linkId);
+  const { error } = await supabase
+    .from("document_citation_links")
+    .delete()
+    .eq("id", linkId);
+  if (error) throw new Error(error.message);
+
+  await logRevision("document_citation_links", linkId, documentId, before, null, "Deleted citation link");
+  revalidateSourcePaths(readString(formData, "source_slug"), documentId);
 }
 
 export async function addSourceToTopic(formData: FormData) {
@@ -776,7 +1090,7 @@ export async function createDocumentFigure(formData: FormData) {
   if (!documentId) throw new Error("Missing document id.");
 
   const uploadedFile = formData.get("figure_file");
-  let imagePath = readString(formData, "image_path").replace(/^\/+/, "");
+  let imagePath = readString(formData, "image_path");
 
   if (uploadedFile instanceof File && uploadedFile.size > 0) {
     const bucket = process.env.SUPABASE_STORAGE_BUCKET || process.env.NEXT_PUBLIC_SUPABASE_STORAGE_BUCKET || "archive-assets";
@@ -967,6 +1281,14 @@ async function updatePositionOrThrow(tableName: "document_sections", id: string,
   if (error) throw new Error(error.message);
 }
 
+function adminSchemaError(error: { message?: string }, feature: string, migrationPath: string) {
+  const message = error.message ?? "";
+  if (isSchemaShapeError(message) || message.includes("Could not find the table")) {
+    return new Error(`Supabase is missing the ${feature} schema. Apply ${migrationPath} in the Supabase SQL editor, then retry this admin action. Original error: ${message}`);
+  }
+  return new Error(message || "Supabase admin write failed.");
+}
+
 async function uploadFigureFile(supabase: ReturnType<typeof requireAdminClient>, documentId: string, file: File) {
   const bucket = process.env.SUPABASE_STORAGE_BUCKET || process.env.NEXT_PUBLIC_SUPABASE_STORAGE_BUCKET || "archive-assets";
   const storagePath = `documents/${documentId}/figures/${Date.now()}-${safeStorageFileName(file.name)}`;
@@ -989,6 +1311,19 @@ async function uploadFigureFile(supabase: ReturnType<typeof requireAdminClient>,
     throw new Error(fileError.message);
   }
 
+  return storagePath;
+}
+
+async function uploadBiographyPortraitFile(supabase: ReturnType<typeof requireAdminClient>, slug: string, file: File) {
+  const bucket = process.env.SUPABASE_STORAGE_BUCKET || process.env.NEXT_PUBLIC_SUPABASE_STORAGE_BUCKET || "archive-assets";
+  const storagePath = `biographies/${slug}/portrait/${Date.now()}-${safeStorageFileName(file.name)}`;
+  const { error } = await supabase.storage
+    .from(bucket)
+    .upload(storagePath, Buffer.from(await file.arrayBuffer()), {
+      contentType: file.type || "application/octet-stream",
+      upsert: false
+    });
+  if (error) throw new Error(error.message);
   return storagePath;
 }
 
@@ -1022,6 +1357,74 @@ function revalidateBibliographyPaths(slug: string, id: string) {
   if (slug) revalidatePath(`/further-reading?item=${slug}`);
 }
 
+function revalidateBiographyPaths(slug: string, id: string) {
+  revalidatePath("/admin/biographies");
+  revalidatePath(`/admin/biographies/${id}`);
+  revalidatePath("/people");
+  revalidatePath("/sitemap.xml");
+  if (slug) revalidatePath(`/biographies/${slug}`);
+}
+
+async function biographyPayloadFromForm(supabase: ReturnType<typeof requireAdminClient>, formData: FormData) {
+  const name = readString(formData, "name") || "Untitled biography";
+  const slug = readString(formData, "slug") || slugify(name);
+  if (!slug) throw new Error("Missing biography slug.");
+  const uploadedPortrait = formData.get("portrait_file");
+  let imagePath = readString(formData, "image_path").replace(/^\/+/, "");
+
+  if (uploadedPortrait instanceof File && uploadedPortrait.size > 0) {
+    imagePath = await uploadBiographyPortraitFile(supabase, slug, uploadedPortrait);
+  }
+
+  return {
+    slug,
+    name,
+    years: readNullableString(formData, "years"),
+    dek: readNullableString(formData, "dek"),
+    body_markdown: readNullableString(formData, "body_markdown"),
+    birth_date: readNullableString(formData, "birth_date"),
+    birth_year: readNullableNumber(formData, "birth_year"),
+    birth_place: readNullableString(formData, "birth_place"),
+    death_date: readNullableString(formData, "death_date"),
+    death_year: readNullableNumber(formData, "death_year"),
+    death_place: readNullableString(formData, "death_place"),
+    occupations: readLines(formData, "occupations_text"),
+    regions: readLines(formData, "regions_text"),
+    known_for: readLines(formData, "known_for_text"),
+    affiliations: readLines(formData, "affiliations_text"),
+    image_path: imagePath || null,
+    image_alt: readNullableString(formData, "image_alt"),
+    image_caption: readNullableString(formData, "image_caption"),
+    tags: readLines(formData, "tags_text"),
+    facts: readFacts(formData, "custom_facts_text"),
+    source_notes: readLines(formData, "source_notes_text"),
+    related_sources: readLines(formData, "related_sources_text"),
+    publications: [],
+    collaborators: readLines(formData, "collaborators_text"),
+    status: readString(formData, "status") || "draft",
+    updated_at: new Date().toISOString()
+  };
+}
+
+function readLines(formData: FormData, key: string) {
+  return readString(formData, key)
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+}
+
+function readFacts(formData: FormData, key: string) {
+  return readLines(formData, key)
+    .map((line) => {
+      const [label, ...valueParts] = line.split(":");
+      return {
+        label: label?.trim() ?? "",
+        value: valueParts.join(":").trim().replace(/\\n/g, "\n")
+      };
+    })
+    .filter((fact) => fact.label && fact.value);
+}
+
 function readString(formData: FormData, key: string) {
   const value = formData.get(key);
   return typeof value === "string" ? value.trim() : "";
@@ -1051,6 +1454,21 @@ function slugify(value: string) {
     .replace(/&/g, "and")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
+}
+
+function isUuid(value: string) {
+  return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
+}
+
+function normalizeCitation(value: string) {
+  return value
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/['"“”‘’]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+    .replace(/\s+/g, " ");
 }
 
 function payloadForDelete<T>(value: T) {

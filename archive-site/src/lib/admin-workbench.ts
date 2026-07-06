@@ -170,8 +170,10 @@ export function buildBiographyTasks(candidates: BiographyStubCandidate[]): Workb
         : "This biography exists, but the profile is missing at least one reviewable editorial field.",
       severity: candidate.priority,
       track: "biographies",
-      href: `/biographies/${candidate.slug}`,
-      secondaryHref: `/archive?people=${encodeURIComponent(candidate.name)}`,
+      href: candidate.status === "metadata_stub"
+        ? `/admin/biographies/new?name=${encodeURIComponent(candidate.name)}&slug=${encodeURIComponent(candidate.slug)}&years=${encodeURIComponent(candidate.years)}`
+        : `/admin/biographies/${candidate.slug}`,
+      secondaryHref: `/biographies/${candidate.slug}`,
       meta: [
         { label: "Sources", value: String(candidate.sourceCount) },
         { label: "Years", value: candidate.years },
@@ -199,7 +201,8 @@ export function buildBibliographyTasks(items: BibliographyItem[]): WorkbenchTask
       description: "This further-reading record is visible enough to benefit from fuller metadata, source links, and an editorial/reliability note.",
       severity: needs.includes("contributors") || needs.includes("editorial note") ? "medium" : "low",
       track: "bibliography" as const,
-      href: `/further-reading/${item.slug}`,
+      href: `/admin/bibliography/${item.id}`,
+      secondaryHref: `/further-reading/${item.slug}`,
       meta: [
         { label: "Year", value: item.year ? String(item.year) : "n.d." },
         { label: "Type", value: item.itemType.replaceAll("_", " ") },
@@ -218,7 +221,7 @@ function buildCitationTasks(report: CitationReport | null): WorkbenchTask[] {
     description: "The citation-linking QA pass found unresolved citation candidates that need manual matching or rejection.",
     severity: report.unresolved_count > 5 ? "high" : "medium",
     track: "citations",
-    href: `/archive/${report.source_slug}`,
+    href: `/admin/sources/${report.source_slug}#citation-review`,
     secondaryHref: "/admin/qa",
     meta: [
       { label: "Found", value: String(report.inline_citation_count) },
@@ -235,7 +238,7 @@ function buildSourceQaTasks(report: QaReport | null): WorkbenchTask[] {
     description: issue.suggestion || issue.excerpt || "Source QA issue needs review.",
     severity: issue.severity,
     track: "source_qa",
-    href: `/archive/${issue.slug}`,
+    href: `/admin/sources/${issue.slug}`,
     secondaryHref: "/admin/qa",
     meta: [
       { label: "Kind", value: issue.kind.replaceAll("_", " ") },

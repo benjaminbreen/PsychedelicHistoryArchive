@@ -1,10 +1,28 @@
 import type { ArchiveSource } from "@/lib/types";
+import type { BibliographyItem } from "@/lib/bibliography";
+
+export type BiographyBibliographyLink = {
+  relationshipType: string;
+  editorialNote?: string;
+  item: BibliographyItem;
+};
 
 export type BiographyProfile = {
   name: string;
   slug: string;
   years?: string;
   dek?: string;
+  bodyMarkdown?: string;
+  birthDate?: string;
+  birthYear?: number;
+  birthPlace?: string;
+  deathDate?: string;
+  deathYear?: number;
+  deathPlace?: string;
+  occupations?: string[];
+  regions?: string[];
+  knownFor?: string[];
+  affiliations?: string[];
   imagePath?: string;
   imageAlt?: string;
   imageCaption?: string;
@@ -14,6 +32,7 @@ export type BiographyProfile = {
   sourceNotes?: string[];
   relatedSources?: string[];
   publications?: string[];
+  bibliographyLinks?: BiographyBibliographyLink[];
   collaborators?: string[];
 };
 
@@ -123,6 +142,11 @@ const biographyDirectoryMetadata: Record<string, BiographyDirectoryMetadata> = {
     role: "Engineer, Researcher",
     tags: ["Psychedelics", "Therapy"]
   },
+  "salvador-roquet": {
+    years: "1920-1995",
+    role: "Psychiatrist, Psychotherapist",
+    tags: ["Mexico", "Psychedelic Therapy"]
+  },
   "sidney-cohen": {
     years: "1910-1987",
     role: "Psychiatrist, Author",
@@ -185,6 +209,10 @@ const biographyPortraits: Record<string, BiographyPortrait> = {
   "myron-stolaroff": {
     imagePath: "/images/bios/myron-stolaroff.webp",
     imageAlt: "Portrait of Myron Stolaroff"
+  },
+  "salvador-roquet": {
+    imagePath: "/images/bios/salvador-roquet.webp",
+    imageAlt: "Portrait of Salvador Roquet"
   },
   "sidney-cohen": {
     imagePath: "/images/bios/sidney-cohen.webp",
@@ -395,6 +423,85 @@ export const biographyProfiles: BiographyProfile[] = [
     sourceNotes: [
       "Maia, J. G. Soares, and William Antônio Rodrigues. \"Virola theiodora como alucinógena e tóxica.\" Acta Amazonica 4, no. 1 (1974): 21-23.",
       "Rodrigues, William Antônio. \"Revisão taxonômica das espécies de Virola Aublet (Myristicaceae) do Brasil.\" Acta Amazonica 10, no. 1, suplemento (1980)."
+    ]
+  },
+  {
+    name: "Salvador Roquet",
+    slug: "salvador-roquet",
+    years: "1920-1995",
+    dek: "Mexican psychiatrist and psychotherapist whose controversial psychedelic sessions joined Indigenous Mazatec influences, psychodrama, sensory overload, ketamine, and group psychotherapy.",
+    imagePath: "/images/bios/salvador-roquet.webp",
+    imageAlt: "Portrait of Salvador Roquet",
+    imageCaption: "Salvador Roquet. Image via Asociación Española de Axiología.",
+    tags: ["Mexico", "Mazatec Traditions", "Psilocybin", "LSD", "Peyote", "Ketamine", "Psychedelic Therapy", "Psychosynthesis", "War on Drugs"],
+    facts: [
+      { label: "Born", value: "1920\nTierra Blanca, Veracruz, Mexico" },
+      { label: "Died", value: "1995" },
+      { label: "Occupation", value: "Psychiatrist, psychotherapist, public-health physician" },
+      { label: "Region", value: "Mexico; Oaxaca; United States" },
+      { label: "Institution", value: "Instituto de Psicosíntesis; Albert Schweitzer Cultural Organization" },
+      { label: "Known for", value: "Convivial psychedelic psychotherapy; sensory-overload sessions; collaboration with María Sabína; Los Alucinógenos de la Concepción Indígena a una Nueva Psicoterapia" }
+    ],
+    paragraphs: [
+      "Born in Tierra Blanca, Veracruz, in 1920, Salvador Roquet was a Mexican physician and psychiatrist whose career moved from public health into one of the most ambitious, controversial, and ethically fraught psychedelic-therapy programs in Latin America.",
+      "By his mid-thirties, Roquet had earned a master's degree in public health with a specialization in malariology and later specialized in neurology at Gea González Hospital. From 1951 to 1955 he held senior posts in national campaigns against malaria and tuberculosis before a political setback pushed him toward psychiatry and altered states of consciousness.",
+      "In the 1960s, Roquet founded the Instituto de Psicosíntesis in Mexico City, where he combined group psychotherapy, psychodrama, audiovisual stimulation, and hallucinogenic drugs including LSD, psilocybin mushrooms, mescaline, peyote, datura, and ketamine. He also directed the Albert Schweitzer Cultural Organization, which supported a humanistic school for patients' children, and he helped establish a hospital in the mountains of Oaxaca."
+    ],
+    bodyMarkdown: `Born in Tierra Blanca, Veracruz, in 1920, Salvador Roquet was a Mexican physician and psychiatrist whose career moved from public health into one of the most ambitious, controversial, and ethically fraught psychedelic-therapy programs in Latin America. His work joined clinical psychiatry, Indigenous Mazatec healing practices, psychodrama, sensory overload, and the language of humanistic psychotherapy.
+
+By his mid-thirties, Roquet had earned a master's degree in public health with a specialization in malariology and later specialized in neurology at Gea González Hospital. From 1951 to 1955 he held senior posts in national campaigns against malaria and tuberculosis. After a political setback, he turned more fully toward psychiatry and began to focus on altered states of consciousness as a therapeutic resource.
+
+In the 1960s, Roquet founded the Instituto de Psicosíntesis in Mexico City. There he integrated hallucinogenic substances such as LSD, psilocybin, mescaline, peyote, datura, and ketamine into psychotherapy. He also directed the Albert Schweitzer Cultural Organization, which supported a humanistic school for patients' children, and he helped establish a hospital in the mountains of Oaxaca, extending his work into a more explicitly social and community-oriented frame.
+
+Roquet's best-known Indigenous connection was with María Sabína, the Mazatec curandera of Huautla de Jiménez whose mushroom ceremonies became internationally famous in the decades after R. Gordon Wasson's 1950s reporting. Roquet treated Sabína's knowledge of sacred mushrooms as central to his effort to bridge Indigenous healing and modern psychotherapy. That relationship also remains ethically charged: later scholars have emphasized the risks of appropriation, romanticization, and unequal exchange in the countercultural traffic around Mazatec practices.
+
+Roquet's sessions were designed as immersive, often destabilizing events. Patients were given psychedelic drugs and then exposed to music, lights, films, images, and other intense stimuli intended to provoke emotional responses. He used ketamine hydrochloride as an adjunct, especially as other psychedelic effects waned, and he drew on the night-time structure of Mazatec mushroom ceremonies. His goal was to reach subconscious material that he believed ordinary psychotherapy could not easily access.
+
+The method was deliberately intense. Roquet argued that modern life suppressed a deep current of instinct and feeling, and that therapy should help patients confront fear, grief, aggression, desire, and wonder rather than keep them at the surface of ordinary consciousness. Later commentators described him as a "master of bad trips," a phrase that captures both the confrontational character of the sessions and the unease they produced among critics.
+
+Roquet called his group model "convivial" psychotherapy. A typical session lasted roughly twenty-two hours and used what he and Pierre Louis Favreau called psychodysleptics as therapeutic aids. About eight days later, patients returned for an approximately eight-hour drug-free group session in which the earlier experiences were narrated and confronted. In the following weeks they usually continued with individual interviews, observed other sessions, or joined the later stages of another group's work.
+
+In 1972, Roquet traveled to the Maryland Psychiatric Research Center to demonstrate his group-therapy methods for American clinicians interested in psychedelic psychotherapy. The visit occurred as psychedelic research in the United States was being reshaped by prohibition: LSD possession had been outlawed in 1968, and President Richard Nixon's 1971 declaration of a war on drugs brought new legal and political scrutiny to psychedelic work.
+
+Mexico's own drug policy also tightened. In 1974, reforms to the Mexican penal code increased penalties for possession of LSD, peyote, and psilocybin mushrooms. On November 21, 1974, police raided Roquet's clinic. About twenty-five patients, doctors, and staff members were arrested, and Roquet, Favreau, and Rubén Ocaña Soler were detained the next morning. Authorities cited psychedelic substances, clinic fees, and the presence of films they labeled pornographic as evidence for charges involving dangerous drugs, trafficking, and moral turpitude.
+
+The patients were released quickly, but Roquet and Favreau were imprisoned for several weeks. Former patients, including influential Mexicans, organized in his defense, and several American psychiatrists testified to the seriousness of his methods. Roquet and Favreau were eventually cleared and allowed to reopen the institute, but after the raid Roquet increasingly emphasized simulated sessions using lights, sound, and other stimuli without drugs. As Stanley Krippner later quoted Roquet, he came to describe psychedelics as "the launching pad" rather than the sole active force in the therapy.
+
+Roquet's legacy is further complicated by evidence that he collaborated with Mexico's Dirección Federal de Seguridad during a period of state repression. According to Alexander S. Dawson, Roquet used his knowledge of psychedelics in interrogations of student activists and defended the practice in language of civic reform. That collaboration raises serious questions about the use of psychiatric expertise in coercive state settings and prevents any simple celebration of his clinical innovation.
+
+At the same time, Roquet's patients and defenders described the therapy as transformative. Accounts by former patients such as Angélica Parragot Gronillet and Rosa María credited his sessions with helping them move through suicidal depression, substance dependence, and other crises. Those testimonies help explain why his former patients mobilized so quickly after the 1974 raid, even as historians continue to scrutinize the power relations and risks built into his methods.
+
+Roquet died in 1995. His historical importance lies in the difficulty of the archive he left behind: a Mexican psychedelic psychotherapy that was inventive, transnational, and clinically influential, but also entangled with Indigenous extraction, state power, sensational media campaigns, and the punitive politics of the war on drugs.`,
+    sourceNotes: [
+      "Rodiles, Janine. \"Psicoterapia Prohibida del Doctor Roquet.\" Liberaddictus AC, November 1, 1996.",
+      "Villoldo, Alberto. \"An Introduction to the Psychedelic Psychotherapy of Salvador Roquet.\" Journal of Humanistic Psychology 17, no. 4 (1977): 45-58.",
+      "Dawson, Alexander S. \"Salvador Roquet, María Sabína, and the Trouble with Jipis.\" Hispanic American Historical Review 95, no. 1 (2015): 103-133.",
+      "Dawson, Alexander S. \"Peyote Outlawed in Mexico.\" In The Peyote Effect: From the Inquisition to the War on Drugs, 121-133. University of California Press, 2018.",
+      "Wolfson, Philip E. \"Psychedelic Experiential Pharmacology: Pioneering Clinical Explorations with Salvador Roquet: An Interview with Richard Yensen.\" International Journal of Transpersonal Studies 33, no. 2 (2014): 160-174.",
+      "Macmillan, Alexander. \"The 'Convivial' Psychotherapy Process of Dr. Salvador Roquet.\" PhD diss., University of Massachusetts Amherst, 1987.",
+      "Roquet, Salvador, and Pierre L. Favreau. Los Alucinógenos de la Concepción Indígena a una Nueva Psicoterapia. Mexico City: Ediciones Prisma, 1981.",
+      "Krippner, Stanley. \"Salvador Roquet Remembered: An Innovative Psychedelic Therapist in 1960s Mexico.\" Chacruna Institute, March 1, 2017.",
+      "Clark, Walter Houston. \"BAD TRIPS may be the BEST TRIPS.\" FATE Magazine, April 1976.",
+      "Lee, Martin A., and Bruce Shlain. Acid Dreams: The Complete Social History of LSD: The CIA, the Sixties, and Beyond. Grove Press, 1994.",
+      "Witt, Emily. \"Ketamine Therapy Is Going Mainstream. Are We Ready?\" The New Yorker, December 29, 2021.",
+      "Goldhill, Olivia. \"What a Bad Trip Can Teach You.\" The Cut, December 8, 2021."
+    ],
+    relatedSources: [
+      "Salvador Roquet and Pierre Louis Favreau, Los Alucinógenos de la Concepción Indígena a una Nueva Psicoterapia, 1981.",
+      "Alberto Villoldo, \"An Introduction to the Psychedelic Psychotherapy of Salvador Roquet,\" 1977.",
+      "Alexander S. Dawson, \"Salvador Roquet, María Sabína, and the Trouble with Jipis,\" 2015.",
+      "Alexander Macmillan, \"The 'Convivial' Psychotherapy Process of Dr. Salvador Roquet,\" 1987."
+    ],
+    publications: [
+      "Los Alucinógenos de la Concepción Indígena a una Nueva Psicoterapia, with Pierre Louis Favreau, 1981."
+    ],
+    collaborators: [
+      "María Sabína",
+      "Pierre Louis Favreau",
+      "Rubén Ocaña Soler",
+      "Abraham Sussman",
+      "Richard Yensen",
+      "Stanislav Grof"
     ]
   },
   {

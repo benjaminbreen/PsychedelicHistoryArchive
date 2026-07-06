@@ -1,11 +1,16 @@
-import { AlertTriangle, ExternalLink, FileText, Search } from "lucide-react";
+import { AlertTriangle, ExternalLink, FileText, Plus, Search } from "lucide-react";
 import Link from "next/link";
 import { isAdminWritable, listAdminSources } from "@/lib/admin-cms";
 
 export const dynamic = "force-dynamic";
 
-export default async function AdminSourcesPage() {
-  const sources = await listAdminSources();
+type AdminSourcesPageProps = {
+  searchParams: Promise<{ q?: string; status?: string }>;
+};
+
+export default async function AdminSourcesPage({ searchParams }: AdminSourcesPageProps) {
+  const params = await searchParams;
+  const sources = filterSources(await listAdminSources(), params);
 
   return (
     <div className="space-y-5">
@@ -16,15 +21,29 @@ export default async function AdminSourcesPage() {
             Edit source metadata, reader settings, and curated Markdown sections.
           </p>
         </div>
-        <div className="ml-auto flex min-w-[18rem] items-center gap-2 rounded-md border border-archive-line bg-archive-surface px-3 py-2 text-sm text-archive-muted">
-          <Search className="h-4 w-4" />
-          Browser find is enough for this first local slice.
-        </div>
+        <Link className="focus-ring ml-auto inline-flex h-10 items-center gap-2 rounded-md border border-archive-line bg-archive-surface px-3 text-sm font-semibold hover:bg-archive-lavender2" href="/admin/sources/new">
+          <Plus className="h-4 w-4" />
+          New source
+        </Link>
       </div>
 
       {!isAdminWritable && (
         <SetupNotice />
       )}
+
+      <form className="grid gap-3 rounded-md border border-archive-line bg-archive-surface p-4 shadow-sm md:grid-cols-[minmax(0,1fr)_12rem_auto]">
+        <label className="block">
+          <span className="text-xs font-bold uppercase tracking-[0.08em] text-archive-muted">Search</span>
+          <span className="mt-1 flex h-10 items-center gap-2 rounded-md border border-archive-line bg-white px-3">
+            <Search className="h-4 w-4 text-archive-muted" />
+            <input className="min-w-0 flex-1 bg-transparent text-sm outline-none" defaultValue={params.q ?? ""} name="q" placeholder="Title, slug, type, date..." />
+          </span>
+        </label>
+        <SelectField label="Status" name="status" options={["", "draft", "published", "archived"]} value={params.status ?? ""} />
+        <button className="focus-ring mt-6 h-10 rounded-md border border-archive-line px-4 text-sm font-semibold hover:bg-archive-lavender2" type="submit">
+          Filter
+        </button>
+      </form>
 
       <div className="overflow-hidden rounded-md border border-archive-line bg-archive-surface shadow-sm">
         <table className="w-full border-collapse text-left text-sm">
@@ -106,4 +125,28 @@ function StatusBadge({ status }: { status: string | null }) {
       {label.replaceAll("_", " ")}
     </span>
   );
+}
+
+function SelectField({ label, name, options, value }: { label: string; name: string; options: string[]; value?: string }) {
+  return (
+    <label className="block">
+      <span className="text-xs font-bold uppercase tracking-[0.08em] text-archive-muted">{label}</span>
+      <select className="focus-ring mt-1 h-10 w-full rounded-md border border-archive-line bg-white px-3 text-sm" defaultValue={value ?? ""} name={name}>
+        {options.map((option) => <option key={option || "all"} value={option}>{option || "All"}</option>)}
+      </select>
+    </label>
+  );
+}
+
+function filterSources<T extends { title: string; slug: string; document_type: string | null; medium: string | null; display_date: string | null; status: string | null }>(sources: T[], params: { q?: string; status?: string }) {
+  const q = params.q?.trim().toLowerCase();
+  const status = params.status?.trim();
+  return sources.filter((source) => {
+    const matchesStatus = !status || (source.status || "draft") === status;
+    if (!matchesStatus) return false;
+    if (!q) return true;
+    return [source.title, source.slug, source.document_type, source.medium, source.display_date]
+      .filter(Boolean)
+      .some((value) => value!.toLowerCase().includes(q));
+  });
 }

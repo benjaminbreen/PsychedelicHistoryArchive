@@ -7,6 +7,7 @@
     "upload:latin-america": "node scripts/upload_squarespace_to_supabase.mjs --import-dir data/latin-america-import",
     "topics:seed": "node scripts/seed_topics_from_tags.mjs",
     "qa:sources": "python3 scripts/archive_qa.py",
-    "qa:citations": "python3 scripts/build_citation_links.py"
+    "qa:citations": "python3 scripts/build_citation_links.py",
+    "search:index": "node scripts/search_index_embeddings.mjs"
   }
 }

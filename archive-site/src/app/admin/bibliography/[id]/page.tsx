@@ -2,14 +2,19 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Save, Trash2 } from "lucide-react";
 import {
+  addBibliographyAlias,
   addBibliographyContributor,
+  addBibliographySourceLink,
   removeBibliographyContributor,
   removeBibliographyEra,
+  removeBibliographyAlias,
+  removeBibliographySourceLink,
   setBibliographyEra,
   updateBibliographyItem
 } from "@/app/admin/actions";
 import { ERAS } from "@/lib/eras";
-import { getAdminBibliographyItem, type AdminBibliographyContributor, type AdminBibliographyItem } from "@/lib/admin-bibliography";
+import { getAdminBibliographyItem, type AdminBibliographyItem, type AdminBibliographyItemDocument } from "@/lib/admin-bibliography";
+import { listAdminSources, type AdminSourceListItem } from "@/lib/admin-cms";
 
 export const dynamic = "force-dynamic";
 
@@ -19,11 +24,17 @@ type AdminBibliographyEditPageProps = {
 
 export default async function AdminBibliographyEditPage({ params }: AdminBibliographyEditPageProps) {
   const { id } = await params;
-  const item = await getAdminBibliographyItem(id);
+  const [item, sources] = await Promise.all([
+    getAdminBibliographyItem(id),
+    listAdminSources()
+  ]);
   if (!item) notFound();
 
   const contributors = [...(item.bibliography_item_contributors ?? [])].sort((a, b) => (a.position ?? 0) - (b.position ?? 0));
   const eras = [...(item.bibliography_item_eras ?? [])].sort((a, b) => (a.position ?? 0) - (b.position ?? 0));
+  const sourceLinks = [...(item.bibliography_item_documents ?? [])].sort((a, b) => firstRelated(a.document)?.title.localeCompare(firstRelated(b.document)?.title || "") ?? 0);
+  const linkedSourceIds = new Set(sourceLinks.map((link) => link.document_id).filter(Boolean));
+  const availableSources = sources.filter((source) => !linkedSourceIds.has(source.id));
 
   return (
     <div className="space-y-6">
@@ -135,7 +146,97 @@ export default async function AdminBibliographyEditPage({ params }: AdminBibliog
           </form>
         </section>
       </div>
+
+      <div className="grid gap-5 lg:grid-cols-2">
+        <SourceLinks item={item} links={sourceLinks} sources={availableSources} />
+        <CitationAliases item={item} />
+      </div>
     </div>
+  );
+}
+
+function SourceLinks({ item, links, sources }: { item: AdminBibliographyItem; links: AdminBibliographyItemDocument[]; sources: AdminSourceListItem[] }) {
+  return (
+    <section className="rounded-md border border-archive-line bg-archive-surface p-5 shadow-sm">
+      <h2 className="text-lg font-semibold">Linked Sources</h2>
+      <p className="mt-1 text-sm text-archive-muted">
+        These relationships power further-reading context and workbench completeness checks.
+      </p>
+      <div className="mt-4 space-y-2">
+        {links.length ? links.map((link) => {
+          const source = firstRelated(link.document);
+          return (
+            <form action={addBibliographySourceLink} className="rounded-md border border-archive-line bg-archive-paper p-3 text-sm" key={link.document_id}>
+              <input name="bibliography_item_id" type="hidden" value={item.id} />
+              <input name="document_id" type="hidden" value={link.document_id || ""} />
+              <input name="slug" type="hidden" value={item.slug} />
+              <div className="flex flex-wrap items-start gap-2">
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate font-semibold">{source?.title || link.document_id}</span>
+                  <span className="block font-mono text-xs text-archive-muted">{source?.slug || "unknown"} · {source?.status || "draft"}</span>
+                </span>
+                <button className="focus-ring rounded-md border border-red-200 bg-white px-3 py-2 text-xs font-semibold text-red-700" formAction={removeBibliographySourceLink} type="submit">
+                  Remove
+                </button>
+              </div>
+              <div className="mt-3 grid gap-3 md:grid-cols-2">
+                <TextField label="Relationship label" name="relationship_label" value={link.relationship_label} />
+                <TextAreaField label="Editorial note" name="editorial_note" value={link.editorial_note} />
+              </div>
+              <button className="focus-ring mt-3 h-9 rounded-md bg-archive-violet px-3 text-xs font-semibold text-white" type="submit">Save link</button>
+            </form>
+          );
+        }) : <p className="rounded-md border border-dashed border-archive-line bg-archive-paper p-4 text-sm text-archive-muted">No linked sources yet.</p>}
+      </div>
+      <form action={addBibliographySourceLink} className="mt-4 rounded-md border border-archive-line bg-archive-paper p-4">
+        <input name="bibliography_item_id" type="hidden" value={item.id} />
+        <input name="slug" type="hidden" value={item.slug} />
+        <h3 className="font-semibold">Add Source Link</h3>
+        <div className="mt-3 grid gap-3 md:grid-cols-[minmax(0,1fr)_12rem]">
+          <SelectObjectField label="Source" name="document_id" options={sources.map((source) => ({ label: `${source.title} (${source.status || "draft"})`, value: source.id }))} />
+          <TextField label="Label" name="relationship_label" />
+        </div>
+        <TextAreaField label="Editorial note" name="editorial_note" value="" />
+        <button className="focus-ring mt-3 h-10 rounded-md border border-archive-line px-4 text-sm font-semibold" type="submit">Add source</button>
+      </form>
+    </section>
+  );
+}
+
+function CitationAliases({ item }: { item: AdminBibliographyItem }) {
+  const aliases = item.bibliography_item_aliases ?? [];
+  return (
+    <section className="rounded-md border border-archive-line bg-archive-surface p-5 shadow-sm">
+      <h2 className="text-lg font-semibold">Citation Aliases</h2>
+      <p className="mt-1 text-sm text-archive-muted">
+        Aliases help inline citation linking recognize short or source-specific references.
+      </p>
+      <div className="mt-4 space-y-2">
+        {aliases.length ? aliases.map((alias) => (
+          <form action={removeBibliographyAlias} className="flex items-start gap-2 rounded-md border border-archive-line bg-archive-paper p-3 text-sm" key={alias.id}>
+            <input name="alias_id" type="hidden" value={alias.id} />
+            <input name="bibliography_item_id" type="hidden" value={item.id} />
+            <input name="slug" type="hidden" value={item.slug} />
+            <span className="min-w-0 flex-1">
+              <span className="block font-semibold">{alias.alias}</span>
+              <span className="block font-mono text-xs text-archive-muted">{alias.normalized_alias} · {alias.status || "reviewed"} · {alias.source || "manual"}</span>
+            </span>
+            <button className="focus-ring rounded-md border border-red-200 bg-white px-3 py-2 text-xs font-semibold text-red-700" type="submit">Remove</button>
+          </form>
+        )) : <p className="rounded-md border border-dashed border-archive-line bg-archive-paper p-4 text-sm text-archive-muted">No citation aliases yet.</p>}
+      </div>
+      <form action={addBibliographyAlias} className="mt-4 rounded-md border border-archive-line bg-archive-paper p-4">
+        <input name="bibliography_item_id" type="hidden" value={item.id} />
+        <input name="slug" type="hidden" value={item.slug} />
+        <h3 className="font-semibold">Add Alias</h3>
+        <div className="mt-3 grid gap-3 md:grid-cols-[minmax(0,1fr)_10rem_10rem]">
+          <TextField label="Alias text" name="alias" required />
+          <TextField label="Source" name="source" value="manual" />
+          <SelectField label="Status" name="status" options={["reviewed", "generated", "draft"]} value="reviewed" />
+        </div>
+        <button className="focus-ring mt-3 h-10 rounded-md border border-archive-line px-4 text-sm font-semibold" type="submit">Add alias</button>
+      </form>
+    </section>
   );
 }
 
@@ -163,6 +264,18 @@ function SelectField({ label, name, options, value }: { label: string; name: str
       <span className="text-xs font-bold uppercase tracking-[0.08em] text-archive-muted">{label}</span>
       <select className="focus-ring mt-1 h-10 w-full rounded-md border border-archive-line bg-archive-paper px-3 text-sm" defaultValue={value ?? options[0]} name={name}>
         {options.map((option) => <option key={option} value={option}>{option}</option>)}
+      </select>
+    </label>
+  );
+}
+
+function SelectObjectField({ label, name, options }: { label: string; name: string; options: Array<{ label: string; value: string }> }) {
+  return (
+    <label className="block">
+      <span className="text-xs font-bold uppercase tracking-[0.08em] text-archive-muted">{label}</span>
+      <select className="focus-ring mt-1 h-10 w-full rounded-md border border-archive-line bg-archive-paper px-3 text-sm" name={name} required>
+        <option value="">Choose...</option>
+        {options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
       </select>
     </label>
   );

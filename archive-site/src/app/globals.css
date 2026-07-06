@@ -473,7 +473,7 @@ a {
     position: relative;
     max-width: 100%;
     min-width: 0;
-    overflow: hidden;
+    overflow: visible;
     background:
       linear-gradient(180deg, rgba(255, 255, 252, 0.975), rgba(253, 250, 244, 0.965)),
       repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(100, 80, 50, 0.016) 28px);
@@ -522,7 +522,7 @@ a {
   }
 
   .home-hero-search {
-    overflow: hidden;
+    overflow: visible;
     border: 1px solid rgba(204, 190, 166, 0.9);
     border-radius: 0.82rem;
     background:

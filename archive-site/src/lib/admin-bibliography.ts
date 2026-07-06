@@ -29,6 +29,8 @@ export type AdminBibliographyItem = {
   status: string | null;
   bibliography_item_contributors?: AdminBibliographyItemContributor[];
   bibliography_item_eras?: AdminBibliographyItemEra[];
+  bibliography_item_documents?: AdminBibliographyItemDocument[];
+  bibliography_item_aliases?: AdminBibliographyItemAlias[];
 };
 
 export type AdminBibliographyContributor = {
@@ -49,6 +51,21 @@ export type AdminBibliographyItemContributor = {
 export type AdminBibliographyItemEra = {
   era_slug: string | null;
   position: number | null;
+};
+
+export type AdminBibliographyItemDocument = {
+  document_id: string | null;
+  relationship_label: string | null;
+  editorial_note: string | null;
+  document: { id: string; slug: string; title: string; status: string | null } | Array<{ id: string; slug: string; title: string; status: string | null }> | null;
+};
+
+export type AdminBibliographyItemAlias = {
+  id: string;
+  alias: string;
+  normalized_alias: string;
+  source: string | null;
+  status: string | null;
 };
 
 const ITEM_SELECT = `
@@ -79,7 +96,9 @@ const ITEM_SELECT = `
   recommendation_status,
   status,
   bibliography_item_contributors(role, position, contributor_id, contributor:bibliography_contributors(id, display_name, family_name, given_name, slug)),
-  bibliography_item_eras(era_slug, position)
+  bibliography_item_eras(era_slug, position),
+  bibliography_item_documents(document_id, relationship_label, editorial_note, document:documents(id, slug, title, status)),
+  bibliography_item_aliases(id, alias, normalized_alias, source, status)
 `;
 
 export async function listAdminBibliographyItems(): Promise<AdminBibliographyItem[]> {

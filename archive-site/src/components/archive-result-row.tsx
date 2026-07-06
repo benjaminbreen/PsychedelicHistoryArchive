@@ -3,14 +3,16 @@ import { ExternalLink } from "lucide-react";
 import { Chip } from "@/components/ui/chip";
 import { SourceImage } from "@/components/source-image";
 import { getSourceTitleParts } from "@/lib/source-title";
+import type { SearchMatchSummary } from "@/lib/search-types";
 import type { ArchiveSource } from "@/lib/types";
 
-export function ArchiveResultRow({ source }: { source: ArchiveSource }) {
+export function ArchiveResultRow({ match, source }: { match?: SearchMatchSummary; source: ArchiveSource }) {
   const titleParts = getSourceTitleParts(source);
+  const href = match?.href ?? `/archive/${source.slug}`;
 
   return (
     <article className="grid grid-cols-1 gap-4 border-b border-archive-line py-3 md:grid-cols-[minmax(24rem,1.45fr)_6rem_8rem_minmax(12rem,1fr)_minmax(10rem,0.8fr)] md:items-center">
-      <Link className="contents" href={`/archive/${source.slug}`}>
+      <Link className="contents" href={href}>
         <div className="flex min-w-0 gap-4">
           <SourceImage className="aspect-[3/2] w-[4.5rem] shrink-0 md:w-[5.25rem]" source={source} />
           <div className="min-w-0">
@@ -25,6 +27,12 @@ export function ArchiveResultRow({ source }: { source: ArchiveSource }) {
             <p className="mt-1 line-clamp-2 max-w-[32rem] text-[0.82rem] leading-5 text-archive-ink">
               {source.summary}
             </p>
+            {match?.snippet && (
+              <p className="mt-2 line-clamp-2 max-w-[32rem] border-l-2 border-archive-violet/45 pl-3 text-[0.76rem] leading-5 text-archive-muted">
+                <span className="font-semibold text-archive-violet">{match.label}:</span>{" "}
+                {match.snippet}
+              </p>
+            )}
             {source.accessType === "external" && (
               <span className="sr-only">
                 <ExternalLink className="h-3 w-3" /> External source
@@ -47,13 +55,14 @@ export function ArchiveResultRow({ source }: { source: ArchiveSource }) {
   );
 }
 
-export function ArchiveCompactRow({ source }: { source: ArchiveSource }) {
+export function ArchiveCompactRow({ match, source }: { match?: SearchMatchSummary; source: ArchiveSource }) {
   const titleParts = getSourceTitleParts(source);
+  const href = match?.href ?? `/archive/${source.slug}`;
 
   return (
     <Link
       className="grid min-h-12 grid-cols-[2.75rem_minmax(12rem,1fr)] items-center gap-3 border-b border-archive-line px-2 py-1.5 text-[0.82rem] transition hover:bg-archive-lavender2 md:grid-cols-[2.75rem_minmax(18rem,1.5fr)_6rem_8rem_minmax(10rem,0.9fr)_minmax(10rem,0.9fr)]"
-      href={`/archive/${source.slug}`}
+      href={href}
     >
       <SourceImage
         className="aspect-square w-11 border-0 bg-transparent"
@@ -67,6 +76,11 @@ export function ArchiveCompactRow({ source }: { source: ArchiveSource }) {
         {titleParts.subtitle && (
           <div className="truncate text-[0.76rem] leading-4 text-archive-muted md:hidden">
             {titleParts.subtitle}
+          </div>
+        )}
+        {match && (
+          <div className="truncate text-[0.7rem] leading-4 text-archive-violet md:hidden">
+            {match.label}
           </div>
         )}
       </div>

@@ -96,6 +96,11 @@ Notes:
 - `content_revisions` should capture meaningful editor saves, not every keystroke.
 - Add indexes for `content_revisions(document_id, created_at desc)`, `document_figures(document_id, position)`, and `document_sections(document_id, position)` if not already present.
 
+Current incremental CMS migrations:
+
+- `scripts/supabase_biography_profiles_schema.sql` creates the DB-backed biography table used by `/admin/biographies`.
+- `scripts/supabase_schema.sql` remains the canonical all-in-one schema and includes the same biography table definition.
+
 ## Auth And Security
 
 Use Supabase Auth for collaborators. Add an admin-only Supabase client path separate from the existing public client:

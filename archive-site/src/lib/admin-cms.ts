@@ -144,6 +144,18 @@ export type AdminSourceCollectionMembership = {
   collections: Pick<AdminCollectionListItem, "id" | "title" | "slug" | "status"> | Array<Pick<AdminCollectionListItem, "id" | "title" | "slug" | "status">> | null;
 };
 
+export type AdminDocumentCitationLink = {
+  id: string;
+  bibliography_item_id: string | null;
+  citation_text: string;
+  normalized_citation: string;
+  confidence: number | null;
+  status: string | null;
+  match_reason: string | null;
+  occurrence_count: number | null;
+  bibliography_item?: { id: string; slug: string; title: string; year: number | null; status: string | null } | Array<{ id: string; slug: string; title: string; year: number | null; status: string | null }> | null;
+};
+
 export type AdminPage = {
   id: string;
   page_number: number | null;
@@ -180,7 +192,14 @@ export type AdminSource = AdminSourceListItem & {
   document_people?: AdminDocumentPerson[];
   document_tags?: AdminDocumentTag[];
   collection_documents?: AdminSourceCollectionMembership[];
+  document_citation_links?: AdminDocumentCitationLink[];
   pages?: AdminPage[];
+};
+
+export type SearchIndexStatus = {
+  chunkCount: number;
+  latestIndexedAt: string | null;
+  status: "indexed" | "not_indexed" | "not_installed";
 };
 
 const SOURCE_LIST_SELECT = `
@@ -238,6 +257,7 @@ const SOURCE_SELECT = `
   document_figures(id, position, image_path, alt_text, caption, placement, token, credit),
   document_people(role, people(id, name, slug)),
   document_tags(tags(id, name, slug, tag_type, status)),
+  document_citation_links(id, bibliography_item_id, citation_text, normalized_citation, confidence, status, match_reason, occurrence_count, bibliography_item:bibliography_items(id, slug, title, year, status)),
   collection_documents(collection_id, document_id, position, sequence_label, sequence_number, issue_date, editorial_caption, collections(id, title, slug, status))
 `;
 
@@ -384,24 +404,48 @@ export async function getAdminSource(id: string) {
   const supabase = getAdminSupabaseClient();
   if (!supabase) return undefined;
 
-  let { data, error } = await supabase
+  let query = supabase
     .from("documents")
-    .select(SOURCE_SELECT)
-    .eq("id", id)
-    .maybeSingle();
+    .select(SOURCE_SELECT);
+  query = isUuid(id) ? query.eq("id", id) : query.eq("slug", id);
+  let { data, error } = await query.maybeSingle();
 
   if (error && isSchemaShapeError(error.message)) {
-    const legacyResult = await supabase
+    let legacyQuery = supabase
       .from("documents")
-      .select(LEGACY_SOURCE_SELECT)
-      .eq("id", id)
-      .maybeSingle();
+      .select(LEGACY_SOURCE_SELECT);
+    legacyQuery = isUuid(id) ? legacyQuery.eq("id", id) : legacyQuery.eq("slug", id);
+    const legacyResult = await legacyQuery.maybeSingle();
     data = legacyResult.data as typeof data;
     error = legacyResult.error;
   }
 
   if (error) throw new Error(error.message);
   return data as AdminSource | undefined;
+}
+
+export async function getSearchIndexStatusForSource(id: string): Promise<SearchIndexStatus> {
+  const supabase = getAdminSupabaseClient();
+  if (!supabase) return { chunkCount: 0, latestIndexedAt: null, status: "not_installed" };
+
+  const { count, data, error } = await supabase
+    .from("search_chunks")
+    .select("updated_at", { count: "exact" })
+    .eq("document_id", id)
+    .order("updated_at", { ascending: false })
+    .limit(1);
+
+  if (error) {
+    if (isSchemaShapeError(error.message)) return { chunkCount: 0, latestIndexedAt: null, status: "not_installed" };
+    throw new Error(error.message);
+  }
+
+  const chunkCount = count ?? 0;
+  return {
+    chunkCount,
+    latestIndexedAt: data?.[0]?.updated_at ?? null,
+    status: chunkCount > 0 ? "indexed" : "not_indexed",
+  };
 }
 
 export async function listAdminPeople() {
@@ -510,4 +554,8 @@ export function isSchemaShapeError(message = "") {
     message.includes("does not exist") ||
     message.includes("schema cache")
   );
+}
+
+function isUuid(value: string) {
+  return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
 }
