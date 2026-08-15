@@ -1,0 +1,36 @@
+Source fetched: https://www.cambridge.org/core/journals/journal-of-mental-science/article/abs/schizophrenia-a-new-approach/8298D2CF421A5D0D9F4A689AED993318
+Fetched: 2026-08-15
+Method: curl -sL (HTTP 200)
+DOI (via Crossref, doi.org/10.1192/bjp.98.411.309 resolves to this URL): 10.1192/bjp.98.411.309
+
+Citation metadata (from Crossref API, api.crossref.org/works/10.1192/bjp.98.411.309):
+Title: Schizophrenia: A New Approach
+Authors: Humphry Osmond; John Smythies
+Journal: Journal of Mental Science (short-container-title: J. ment. sci)
+Published-print: 1952-04
+Volume: 98, Issue: 411, Pages: 309-315
+Publisher: Royal College of Psychiatrists
+
+Verbatim opening paragraphs, extracted from the <meta name="citation_abstract"> tag on
+the fetched Cambridge Core landing page (this is the article's actual opening text, not a
+separate abstract — Journal of Mental Science articles of this era did not carry abstracts,
+so Cambridge Core's system used the first paragraphs instead):
+
+"Mr. Gladstone, with that candour which a great Statesman can afford, once said,
+"Government is a rough business, and the results are most unsatisfactory." Unfortunately
+no great psychiatrist has described the present state of our knowledge and treatment of
+schizophrenia in an equally robust phrase; but surely, "rough business and unsatisfactory
+results" would not be an unfair summing up? We have now known of this illness for nearly
+half a century, and yet our understanding of it is slight and our useful information
+scanty. This is not because we have been idle, but because our efforts have been poorly
+rewarded. Thousands of papers are written every decade; tens of thousands of observations
+are made; there is no lack of opportunity for studying patients when about one hospital
+bed in five in this country is occupied by a schizophrenic, yet we are still entirely
+ignorant of the cause of this disease."
+
+Full text is paywalled beyond this point (Cambridge Core, subscription required). Article
+first proposes the "M-substance" hypothesis: that schizophrenia may involve an abnormal
+adrenaline metabolite structurally close to mescaline, given the phenomenological overlap
+between acute mescaline intoxication and acute schizophrenic episodes. This paper is the
+starting point of the Osmond–Smythies–Hoffer adrenochrome/transmethylation research
+program pursued at Saskatchewan through the 1950s.

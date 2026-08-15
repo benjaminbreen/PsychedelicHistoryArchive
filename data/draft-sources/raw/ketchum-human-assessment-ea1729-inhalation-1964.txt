@@ -1,0 +1,5296 @@
+UNCLASSIFIED 
+AD  NUMBER 
+
+
+AD351962 
+
+CLASSIFICATION  CHANGES 
+
+TO: 
+
+unclassified 
+
+FROM: 
+
+confidential 
+
+LIMITATION  CHANGES 
+
+TO: 
+
+Approved  for  public  release,  distribution 
+unlimited 
+
+
+FROM: 
+
+Distribution  authorized  to  U.S.  Gov't, 
+agencies  and  their  contractors; 
+Administrative /Operational  Use;  JUL  1964. 
+Other  requests  shall  be  referred  to 
+Chemical  Research  and  Development  Labs . , 
+Edgewood  Arsenal,  MD . 
+
+AUTHORITY 
+
+EA  D/A  ltr,  17  Sep  1975;  EA  per  DTIC  form 
+55 
+
+
+THIS  PAGE  IS  UNCLASSIFIED 
+
+
+UNCLASSIFIED 
+
+
+AH  33  I  % 
+
+hl/.i  ^ 
+
+| 
+
+? 
+
+
+CLASSIFICATIOfl  CHANGED 
+
+
+TO:  _ 
+
+FR0»:C0NF 
+
+AUTHORITY 
+
+
+£f\.~0/A 
+
+
+UNCLASSIFIED 
+
+
+When  government  or  other  drawings,  sped* 
+
+•  '.ioiis  or  other  data  are  used  for  any  purpose 
+other  than  in  connection  with  a  definitely  related 
+government  procurement  operation,  the  U.  S. 
+Govjroment  thereby  incurs  no  responsibility,  nor  any 
+obligation  whatsoever;  and  the  fact  that  the  Govern¬ 
+ment  may  have  formulated,  furnished,  or  in  any  way 
+supplied  the  said  drawings,  specifications,  or  other 
+data  is  not  to  be  regarded  by  Implication  or  other¬ 
+wise  as  in  any  manner  licensing  the  holder  or  any 
+other  person  or  corporation,  or  conveying  any  rights 
+or  permission  to  manufacture,  use  or  sell  any 
+patented  invention  that  may  in  any  way  be  related 
+th  :reto. 
+
+
+NOTICE; 
+
+THIS  DOCUMENT  CONTAINS  INFORMATION 
+AFFECTING  THE  NATIONAL  DEFENSE  OF 
+THE  UNITED  STATES  WITHIN  THE  MEAN¬ 
+ING  OF  THE  ESPIONAGE  LAWS,  TITLE  18, 
+U.S.C.,  SECTIONS  793  and  79^-  THE 
+TRANSMISSION  OR  THE  REVELATION  OF 
+ITS  CONTENTS  IN  ANT  MANNER  TO  AN 
+UNAUTHORIZED  TERSON  IS  PROHIBITED 
+
+
+BY  LAW. 
+
+
+CONFIDENTIAL  AL 
+
+U.  S.  Army  >y 
+
+Chemical  Research  and  Development  Laboratorlopment  Laboratories 
+Technical  Report  port 
+
+
+CRDLR  2226 
+
+
+He  Humor  A '•segment  of  EA  '.T9  am 
+
+EA  3  ^  *  E  by  t  h  f  1  n  h  o  *  a  t '  o  n  R  o  u  t  f  0  \ 
+
+% 
+
+
+Ja««t  $.  Ktlckaa 
+Ghi|i  K.  A|lii|aiia* 
+
+Oicar  H.  1.  Hag 
+
+July  1964 
+
+
+EA  1729  and 
+on  Route  ( ILL,. 
+
+
+crol; 
+
+
+Wim.  MD 
+
+
+Ul,  MD 
+
+
+GROUP  4 
+
+DOWNGRADED  AT  3  YEAR  INTERVALS;  :A*  INTERVALS; 
+
+DECLASSIFIED  AFTER  12  YEARS  :  J2  ***** 
+
+
+CONFIDENTIAL 
+
+
+i  021.2,5 
+
+
+Defense  Documentation  Center  Availability  Notice 
+
+Qualified  requesters  may  obtain  copies  of  this  report  from 
+Headquarters,  Defense  Documentation  Center,  Attn:  TISJA-2, 
+Cameron  Station,  Alexandria,  Virginia. 
+
+
+CONFIDENTIAL 
+
+
+July  1 964 
+
+
+CRDLr 
+
+
+THE;  HUMAN  ASSESSMENT  OF  EA  1729  AND 
+fcA  3528  BY  THE  INHALATION  ROUTE  (U) 
+
+
+by 
+
+James  S.  Ketchum 
+George  K.  Aghajanian 
+Oscar  H.  L.  Bing 
+
+
+Clinical  Research  Division 
+
+
+Recommending  Approval: 
+
+
+R.  BLAIR 
+Colonel,  MC 
+
+Director  of  Medical  Research 
+
+
+Approved: 
+
+
+S.  D.  SILVER 
+Technical  Director 
+
+
+U.  S.  Army  Edgewood  Arsenal 
+
+CHEMICAL  RESEARCH  AND  DEVELOPMENT  LABORATORIES 
+Edgewood  Arsenal,  Maryland 
+
+
+3226 
+
+
+CONFIDENTIAL 
+
+
+UNCLASSIFIED 
+
+
+(U)  FOREWORD 
+
+This  work  was  conducted  under  Project  1C522301A079,  Non- 
+Defense  Medical  Aspects  of  Chemical  Agents  (U).  The  work  was  started  in 
+March  1963  and  completed  in  April  1964. 
+
+Acknowledgments 
+
+The  assistance  of  the  Aerosol  Branch  and  the  Clinical  Investi¬ 
+gation  Branch  is  gratefully  acknowledged. 
+
+Notices 
+
+
+This  document  contains  information  affecting  the  national  defense 
+of  the  United  States  within  the  meaning  of  the  Espionage  Laws,  Title  18,  U.  S.  C.  , 
+sections  793  and  794.  The  transmission  or  the  revelation  of  its  contents  in  any 
+manner  to  an  unauthorized  person  is  prohibited  by  law. 
+
+Reproduction  of  this  document  in  whole  or  in  part  is  prohibited 
+except  with  permission  of  the  issuing  office;  however,  DDC  is  authorized  to 
+reproduce  this  document  for  U.  S.  Governmental  purposes. 
+
+Disposition 
+
+When  this  document  has  served  its  purpose,  DESTROY  it  in 
+accordance  with  AR  380-5.  DO  NOT  return  the  document  to  U.  S.  Army 
+Edgewood  Arsenal  Chemical  Research  and  Development  Laboratories. 
+
+
+UNCLASSIFIED 
+
+
+2 
+
+
+CONFIDENTIAL 
+
+
+(C) 
+
+
+DIGEST 
+
+
+A  study  of  the  inhalation  effectiveness  of  agent  EA  1729  (d-if  agent  EA  1729  (d-lysergic 
+acid  diethylamide)  and  its  maleate  salt  was  conducted  in  which  retaineid  in  which  retained  doses 
+ranging  from  0.  3  to  7.  8  Mg/kg  were  administered  to  60  military  voluntj  60  military  volunteers. 
+
+The  ED50  for  EA  1729  by  the  inhalation  route  is  5.8  (2.  5  to  route  is  5.8  (2.  5  to  13.  5) 
+Mg/kg  retained  dose.  The  ECT50  is  55  (34  to  90)  mg  min/cu  m,  calculg  min/cu  m,  calculated  at 
+a  minute  volume  of  10  liters.  The  ED50  and  ECT50  for  the  maleate  s<0  for  the  maleate  salt 
+would  be  1/3  greater  on  a  formula  weight  basis,  i.  e. ,  7.  7pg/kgand  a.,  7.  7  jig/kg  and 
+73  mg  min/cu  m,  respectively. 
+
+Onset  time  for  the  effective  aerosol  dose  is  about  15  min,p>fe  is  about  15  min, peak  time 
+about  1-1/2  hr, and  partial  recovery  time  about  5-1/2  hr.  Full  recovef 2  hr.  Full  recovery 
+requires  at  least  12  hr. 
+
+The  safety  factor  in  man  cannot  be  stated  with  certainty.  4d  with  certainty.  If  man 
+resembles  most  other  animals  in  hi*  toxicological  response,  the  ratioresponse.  the  ratio  of 
+lethal  to  effective  dose  would  be  very  high;  however,  there  is  no  direct,  there  is  no  direct  infor¬ 
+mation  about  lethality  in  man. 
+
+If  a  correction  is  made  for  differences  in  formula  weight,  In  formula  weight,  the 
+effectiveness  of  the  maleate  and  free  base  forms  of  the  agent  by  inhalaftthe  agent  by  inhalation  is 
+roughly  the  same. 
+
+There  is  a  tendency  to  cough  during  inhalation  of  the  malesalation  of  the  maleate  at 
+higher  concentrations,  but  in  the  few  instances  in  which  this  occurredyhich  this  occurred,  there 
+was  no  change  in  the  retained  dose. 
+
+By  the  aerosol  dissemination  technique  employed,  it  was  slemployed,  it  was  shown 
+that  the  effectiveness  of  the  aerosol  route  is  0.  25  to  0.  30  that  of  the  o*>  0.  30  that  of  the  oral  or 
+intravenous  routes. 
+
+Prior  exposure  to  the  agent  does  not  significantly  influenc^nificantly  influence  the 
+numerical  facility  performance  decrement  observed  when  an  equivalent  when  an  equivalent 
+dose  is  given  2  weeks  later. 
+
+
+CONFIDENTIAL 
+
+
+3 
+
+
+UNCLASSIFIED 
+
+
+(U)  CONTENTS 
+
+
+p*ge 
+
+I.  INTRODUCTION .  5 
+
+II.  METHODS . 11 
+
+A.  Selection  and  Management  of  Volunteers .  11 
+
+B.  Description  of  Measurements  Used .  12 
+
+C.  Technique  of  Exposure .  17 
+
+D.  Tabulation  of  Data .  17 
+
+III.  RESULTS., .  19 
+
+A.  What  is  the  ED50  and  the  ECT50  for  LSD25  by  the 
+
+Inhalation  Route  ? . .  19 
+
+B.  What  are  the  Onset  Times,  Peak  Times  and  Durations  of 
+
+Action  of  the  Effective  Inhalation  Dose? .  19 
+
+C.  What  is  the  Estimated  Safety  Factor  for  the  Agent? .  22 
+
+D.  Is  There  Any  Difference  in  Potency  Between  the  Free  Base 
+
+and  the  Maleate  on  a  Molecule-for-Molecule  Basis? .  22 
+
+E.  Is  the  Coughing  Tendency  Observed  Earlier  With  the 
+
+Maleate  a.  Consistent  Finding  and  Does  It  Have  Practical 
+Significance? . . .  30 
+
+F.  What  is  the  Relative  Effectiveness  of  the  Inhalation  Route, 
+
+Compared  to  the  Oral  and  Intravenous  Routes? .  30 
+
+G.  Does  the  Response  to  a  Second  Dose  Differ  From  an 
+
+Equivalent  First  Dose ? .  34 
+
+IV.  CONCLUSIONS . .  35 
+
+APPENDIXES 
+
+A.  Self  Checklist . . .  37 
+
+B.  Numerical  Facility  Test .  38 
+
+C.  Aerosol  Protocol . .  39 
+
+D.  Abramson  Checklist .  40 
+
+E.  Behavior  Checklist . 45 
+
+
+UNCLASSIFIED 
+
+
+4 
+
+
+CONFIDENTIAL 
+
+
+(C)  the  HUMAN  ASSESSMENT  OF  EA  1729  AND 
+
+EA  3528  BY  THE  INHALATION  ROUTE  (U)' 
+
+I.  (C)  INTRODUCTION, 
+
+(C)  This  report  summarizes  the  results  of  recent  investigations  by  the 
+
+Psychopharmacology  Branch  of  the  Clinical  P.esearch  Division  into  the  aerosol 
+effectiveness  of  EA  1729  and  EA  3528,  the  free  base  and  maleate  forms,  respec¬ 
+tively,  of  d-lysergic  acid  diethylamide  (LSD25). 
+
+(IJ)  LSD25  has  been  well  known  to  pharmacologists  for  more  than  2u  years 
+
+as  the  most  potent  of  all  psychochemicals.  Because  of  its  interest  to  clinicians 
+as  well  as  research  scientists,  it  has  been  extensively  used  and  studied. 
+
+(IJ)  In  small  doses  (about  0.  5  fig/kg,  orally),  effects  are  generally  noted 
+
+within  half  an  hour  and  persist  for  at  least  4  to  8  hr.  The  following  features 
+are  commonly  observed  or  described: 
+
+1 .  Euphoria,  giggling, 
+
+2.  Increased  nervous  tension,  restlessness. 
+
+3.  Increased  sensitivity  to  minor  stimuli. 
+
+4.  Distractab’lity,  indecisiveness. 
+
+5.  Feelings  of  strangeness,  unreality. 
+
+6.  Passivity,  indifference. 
+
+(U)  Larger  doses  (1  to  2pg/kg,  orally)  cause  more  profound  effects, 
+
+detectable  within  15  min  and  disappearing  for  the  most  part  after  about  12  hr. 
+These  may  include: 
+
+1.  Loss  of  control  over  thoughts  and  inability  to  focus  attention. 
+
+2.  Marked  feelings  of  unreality,  strangeness,  detachment, 
+altered  identity, 
+
+3.  Perceptual  distortions:  fluctuations  in  apparent  size,  shape, 
+color,  distance,  and  texture  of  surfaces;  hyperacusis,  synesthesia,  kaleido¬ 
+scopic  imagery,  hallucinations. 
+
+
+CONFIDENTIAL 
+
+
+5 
+
+
+CONFIDENTIAL 
+
+
+4.  Disturbances  in  body  image,  feelings  of  electricity  ."butterflies," 
+abdominal  spasms,  pressure  in  head  and  chest,  coldness,  trembling,  changes 
+
+in  size,  shape,  or  consistency  of  body  parts,  etc. 
+
+5.  Various  "secondary"  symptoms:  paranoid  suspiciousness, 
+delusions,  outbursts  of  hostility,  sudden  assaultiveness,  muteness,  immobility, 
+pacing,  laughter,  sobbing,  etc.. 
+
+(C)  In  a  series  of  field  trials  in  19  58,  volunteers  at  Fort  Bragg,  N.  C.  , 
+
+were  assigned  a  variety  of  team  missions  to  be  carried  out  after  the  ingestion 
+of  150  pg/man  of  LSD25,  These  tasks  included  reporting  of  meteorological 
+information,  fire  direction  control,  artillery  control  surveying,  and  antiaircraft 
+tracking.  In  these  cases,  the  dose  given  resulted  in  loss  of  effectiveness  suffi¬ 
+cient  to  constitute  failure  in  the  mission,  as  judged  by  XVIII  Airborne  Corps 
+evaluation  teams. 
+
+(C)  In  the  1961  report,*  summarizing  the  results  of  these  and  other 
+
+clinical  studies  of  the  effectiveness  of  LSD25,  the  author  concluded  that  inca¬ 
+pacitation  by  the  oral  route  could  be  achieved  with  doses  as  low  as  )  pg/kg. 
+
+(C)  In  1963,  a  variety  of  preliminary  studies  on  LSD25  (including  the 
+
+free  base  various  salts**)  were  resumed  with  the  ultimate  aim  of  establishing 
+the  aerosol  effectiveness  of  this  agent.  The  following  initial  conclusions  were 
+reached: 
+
+
+1.  Both  the  maleate  and  the  free  base  were  effective  aerosols 
+but  it  was  not  possible  to  say  which,  if  either,  was  superior. t  The  maleate 
+sometimes  induced  coughing. 
+
+
+*  (U)  Sim,  Van  M.  CRDLR  3074.  Clinical  Investigation  of  EA  1729  (U). 
+June  1961.  SECRET  Report. 
+
+**  (C)  EA  1729:  free  base  of  LSD25;  EA  1653:  tartrate  salt;  and  EA  3528: 
+maleate  salt. 
+
+t  (C)  To  facilitate  comparison  of  effectiveness  of  the  various  forms  of  LSD, 
+it  was  decided  to  express  the  dose  in  terms  of  the  free  base,  which 
+has  a  molecular  weight  of  323.  Since  the  tartrate  (EA  1653)  and  the 
+maleate  (EA  3528)  salts  have  formula  weights  of  430  and  439,  respec¬ 
+tively,  doses  of  either  salt  must  be  multiplied  by  0.  74  or  0.  75  to 
+convert  them  to  the  free  base  equivalent. 
+
+
+CONFIDENTIAL 
+
+
+6 
+
+
+CONFIDENTIAL 
+
+
+2.  Plasma  levels  of  LSD 25  could  be  measured  reliably  and 
+used  as  a  basis  for  comparing  absorption  of  various  forms  of  the  drug  by 
+different.  routes  of  administration.  The  performance  and  plasma  level  values 
+of  an  intravenous  study  (figure  1)  were  later  used  in  effectiveness  comparisons 
+with  the  inhalation  route. 
+
+3.  The  degree  of  response  was  related  positively  to  both  the 
+aerosol  retained  dose  and  the  plasma  level,  but  considerable  variability  was 
+present  among  the  individuals  exposed  to  similar  doses. 
+
+4.  The  aerosol  retained  dose  and  the  plasma  level  were  highly 
+correlated,  indicating  that  absorption  is  highly  predictable  ■  from  the  retained 
+dose  ( figure  2), 
+
+
+5.  Further  inhalation  studies  were  required  to  provide  sufficient 
+observations  to  permit  adequate  statistical  analysis  of  dose- response  rela¬ 
+tionships. 
+
+(*J)  The  final  aerosol  test  series  employed  both  free  base  and  maleate. 
+
+The  data  from  these  tests  together  with  those  already  obtained  during  the 
+preliminary  test  series  were  combined  in  an  attempt  to  answer  the  following 
+questions: 
+
+1.  What  are  the  ED  50  and  the  ECT  50  for  these  compounds  by 
+the  inhalation  route? 
+
+2.  What  are  the  onset  times,  peak  times,  and  durations  ofaction 
+of  these  compounds  when  g;'ren  by  aerosol? 
+
+3.  W’hatare  the  estimated  safety  factors  for  these  agents? 
+
+4  Is  there  any  difference  in  potency  between  the  free  base  and 
+the  maleate  on  a  molecule-for-molecule  basis? 
+
+5.  Is  the  coughing  tendency  observed  earlier  with  the  maleate  a 
+consistent  finding  and  does  it  have  practical  significance? 
+
+6.  What  is  the  rt,»',;'  e  potency  of  these  agents  when  the  inha¬ 
+lation,  oral,  and  intravenous  routes  ..  re  compared? 
+
+7.  Does  the  response  to  a  second  dose  differ  from  the  response 
+to  an  equivalent  first  dose? 
+
+
+CONFIDENTIAL 
+
+
+l 
+
+
+CONFIDENTIAL 
+
+
+ut  aacog  u*ay^ 
+
+
+D 
+
+
+CONFIDENTIAL 
+
+
+8 
+
+
+Each  dot  represents  the  mean  value  for  five  subjects  receiving  the  tartrate  iv.  Dose  was  equivalent 
+to  2.  0  pg/kg  of  the  free  base.  Plasma  level  is  plotted  against  a  log  scale. 
+
+Closed  dots  =  plasma  levels;  open  dots  =  percent  numerical  facility  scores. 
+
+
+CONFIDENTIAL 
+
+9 
+
+
+Plasma  levels  are  the  means  of  samples  taken  at  1  and  2  hr  following  inhalation  of  EA  3528 
+Retained  doses  are  expressed  as  free  base  equivalent. 
+
+
+UNCLASSIFIED 
+
+
+(U)  In  keeping  with  the  above  expressed  aims,  the  following  features 
+
+were  included  in  the  test  plan  for  this  series: 
+
+1.  To  provide  a  sufficient  sample,  there  were  to  be  16  exposures 
+to  each  form  of  the  agent  (table  1);  however,  for  technical  reasons  a  second 
+exposure  was  not  completed  in  two  subjects. 
+
+2.  To  facilitate  comparisons  between  maleate  and  free  base, 
+matched  equivalent  doses  were  used. 
+
+(U)  TABLE  I 
+
+DESIGN  FOR  TEST  SERIES 
+March- April  1964 
+
+
+Name 
+
+Target  dose 
+
+First  dose 
+
+\  Second  dote 
+
+i 
+
+Joh 
+
+Rod 
+
+2.0 
+
+2.  0  F 
+
+2.  1  M 
+
+;  2.  0  M 
+
+2.  5  F 
+
+Kra 
+
+! 
+
+2.  1  M 
+
+2.  7  F 
+
+Pro 
+
+j 
+
+1 
+
+2.  2  F 
+
+Got 
+
+t 
+
+:  3.  o 
+
+3.0  F 
+
+2.  7  M 
+
+Hug 
+
+j 
+
+3.  2  F 
+
+3.  5  M 
+
+Wni 
+
+l  i 
+
+1 . 
+
+|  3.  5  M 
+
+3.  6  F 
+
+Ada 
+
+' 
+
+|  3.  5  M 
+
+3.  7  F 
+
+Dar 
+
+:  4.  5  ’ 
+
+4.  1  M 
+
+4.  0  F 
+
+Win 
+
+;  i 
+
+4.  4  M 
+
+4.  1  F 
+
+Gol 
+
+»  1 
+
+| 
+
+j  4.  5  F 
+
+4.  9  M 
+
+Hou 
+
+i 
+
+j  4.  7'  F 
+
+4.  9  M 
+
+Bat 
+
+I  6.8 
+
+;  6.  8  F 
+
+Nee 
+
+6.  9  F 
+
+6.9  M 
+
+Hyt 
+
+1 
+
+7.  1  M 
+
+7.  1  F 
+
+Nea 
+
+1  7.  8  M 
+
+7.  6  F 
+
+NOTE:  Doses  are  retained  doses  inftg/kg,  expressed 
+as  free  base  equivalent.  M  =  maleate;  F  =  free 
+base.  The  second  dose  in  each  case  was  intended 
+to  equal  the  actual  first  dose,  rather  than  the 
+initial  target  dose. 
+
+
+UNCLASSIFIED 
+
+
+10 
+
+
+UNCLASSIFIED 
+
+
+3.  To  control  response  variability,  each  man  was  to  be 
+exposed  twice,  once  to  each  form  of  the  agent,  with  a  2-week  interval  between 
+exposures;  the  second  dose  was  to  be  matched  to  the  first. 
+
+4.  To  avoid  effects  attributable  to  the  order  of  exposure  to  the 
+two  forms  of  the  agent,  a  counterbalanced  design  was  employed, 
+
+5.  To  provide  an  adequate,  but  not  excessively  broad,  dose 
+range,  there  were  four  target  doses:  2.0,  3.0,  4.5,  and6.8pg/kg,  repre¬ 
+senting  a  logarithmic  series  with  a  constant  increment  of  50%  between  levels. 
+
+6.  To  establish  a  clinical  criterion  for  effectiveness,  a  stand¬ 
+ardized  brief  interviewwas  conducted  at  a  specific  time  following  exposure. 
+This  was  rated  in  accordance  with  a  specified  rating  system."  Effectiveness" 
+does  not  imply  military  incapacitation. 
+
+7.  To  permit  quantitative  pharmacologic  comparisons  of 
+free  base  and  maleate,  the  plasma  assay  and  the  Numerical  Facility  (NF) 
+subtest  of  the  Texas  Battery  were  employed. 
+
+8.  To  reduce  bias,  a  double -blind  arrangement  was  followed 
+so  that  the  clinical  rating  was  made  without  knowledge  of  dose  or  performance 
+scores. 
+
+II.  (U)  METHODS. 
+
+A.  Selection  and  Management  of  Volunteers. 
+
+1 .  Screening  and  Selection. 
+
+Sixteen  subjects  were  selected  ftom  a  group  of  45  on  the  basis 
+of  a  psychiatric  interview.  All  had  previously  received  a  complete  physical 
+examination,  laboratory  studies,  including  an  EEG  and  a  Minnesota 
+Multiphasic  Personality  Inventory,  and  an  interview  by  the  screening 
+psychologist. 
+
+2.  Briefing  and  Supervision. 
+
+Following  selection,  the  16  subjects  were  assembled  and  the 
+program  was  explained  to  them  in  general  terms.  They  were  told  there 
+would  be  two  aerosol  tests  and  additional  psychological  and  other  test 
+activities  during  the  intervening  and  subsequent  periods.  All  the  men  readily 
+agreed  to  participate. 
+
+
+UNCLASSIFIED 
+
+
+UNCLASSIFIED 
+
+
+Arrangements  were  made  for  the  members  of  the  group  to  be 
+assigned  to  the  same  set  of  squad  rooms,  and  a  senior  Master  Sergeant  with 
+extensive  neuropsychiatric  training  and  experience  was  assigned  a  room 
+in  the  same  r.rea.  Each  individual  was  also  assigned  a  specific  partner  from 
+among  his  roommates  with  whom  he  would  always  be  scheduled  on  any  test 
+he  was  to  undergo.  Liaison  with  NCO  supervisor  was  facilitated  by  requiring 
+each  volunteer  subject  to  complete  a  short  checklist  (appendix  A)  twice  daily, 
+the  results  of  which  were  tabulated  by  the  supervisor. 
+
+During  the  6 -week  test  period,  biweekly  meetings  were  scheduled 
+with  the  psychiatrist,  at  which  time  the  men  were  given  an  opportunity  to 
+learn  of  the  progress  of  the  study  and  to  give  their  opinions  about  any  aspect 
+of  the  program. 
+
+t 
+
+Pi.  Description  of  Measurements  Used, 
+
+1 .  Clinical  Rating  of  Severity. 
+
+A  clinical  rating  of  severity  was  developed,  based  upon  the 
+independent  judgment  of  the  two  psychiatrists.  A  scale  of  0-3,  corre»* 
+sponding  to  no  effect,  mild,  moderate,  and  severe,  respectively,  was 
+employed.  Although  in  all  the  aerosol  series,  a  double-blind  procedure  was 
+adhered  to,  both  raters  had  access  to  all  clinical  information,  ihcluding  NF 
+scores,  during  the  preliminary  series;  however,  it  was  decided  that  NF  scores 
+might  influence  the  judgment  of  the  raters  and  they  were  accordingly  withheld 
+during  the  later  test  series.  Interrater  reliability  in  both  cases  was  approxi¬ 
+mately  0.80  by  rank  order  correlation. 
+
+The  following  procedure  was  adhered  to  during  the  later  series: 
+
+a.  A  standard  interview  was  constructed,  to  be 
+administered  at  0105  experimental  time  by  one  of  the  two  psychiatrists  on  the 
+team.  This  interview,  which  normally  required  5  to  8  min  to  complete, 
+consisted  of  questions  designed  to  bring  out  evidence  of  disorientation, 
+difficulty  ir.  mental  calculation,  inattentiveness,  loss  of  expressive  fluency, 
+disturbances  in  visual  perception  or  in  bodily  sensations,  and  inability  to 
+reproduce  a  simple  geometric  pattern  from  memory.  The  interviews  were 
+recorded  on  videotape  and  rated  at  a  convenient  time  later  in  the  study, 
+
+b.  In  rating  the  interviews,  primary  drug  effects  were 
+considered,  rather  than”secondary’,behavioral  features  (such  as  paranoid 
+ideation,  depression,  hostility,  etc^  This  distinction  is  based  on  an 
+earlier  study  in  which  it  was  concluded  the  so-called  primary  effects  are 
+
+UNCLASSIFIED 
+
+
+12 
+
+
+UNCLASSIFIED 
+
+
+dose  related  whereas  the  secondary  phenomena  are  not.*  The  primary 
+effects  included  an  essential  difficulty  in  directing  the  train  of  thought  (i.e. , 
+in  concentrating)  and  a  distortion  of  visual  perception  (e.g. ,  shifting,  rolling 
+or  undulating  appearance  to  the  walls  of  the  room).  Bodily  sensations  of 
+tension,  tingling,  trembling,  and  hypersensitivity,  as  well  as  distortions 
+(changes  in  size,  shape,  texture,  weight,  or  consistency  of  body  parts), 
+were  also  considered  to  be  manifestations  of  primary  drug  effect.  An  overall 
+rating,  emphasizing  the  thinking  difficulty,  was  assigned  to  each  case,  using 
+the  following  rating  scale: 
+
+
+Rating 
+
+Intensity  of  drug  effect 
+
+0  =  = 
+
+none 
+
+0-1 
+
+barely  discernible 
+
+1 
+
+mild 
+
+1-2 
+
+mild  to  moderate 
+
+2 
+
+moderate 
+
+2-3 
+
+moderate  to  severe 
+
+3 
+
+severe 
+
+Since  two  ratings  were  averaged  in 
+following  average  ratings  resulted: 
+
+each  case  to  produce  a  single  rating,  the 
+
+Defined  as  not  effective 
+
+Defined  as  effective 
+
+J3.0 
+
+2.2 
+
+0.2 
+
+2.5 
+
+0.  5 
+
+2.8 
+
+0.8 
+
+3.0 
+
+1.0 
+
+1.2 
+
+1.5 
+
+1.8 
+
+2.0 
+
+*  Klee,  Gerald  D.,  Bertino,  Joseph,  Weintraub,  Walter,  and  Callaway, 
+Enoch.  The  Influence  of  Varying  Doses  on  the  Effects  of  Lysergic  Acid 
+Diethylamide  (LSD-25)  In  Humans,  J.  Nervous  and  Mental  Disease 
+132:404  (1961). 
+
+
+UNCLASSIFIED 
+
+
+13 
+
+
+UNCLASSIFIED 
+
+
+c.  Ratings  of  2,  2  or  higher  were  decided  in  advance  to 
+be  indicative  of  an  effective  dose.  It  is  important  to  note  that  the  "effective" 
+dose  is  not  necessarily  equivalent  to  the  "incapacitating"  dose,  (To  regard 
+them  as  synonymous  plainly  requires  some  unusually  broad  assumptions.) 
+"Effective"  as  used  here  arbitrarily  means  the  effects  are  considered  to  be 
+more  than  moderate  in  intensity  by  a  crude  clinical  rating  system. 
+
+d.  By  way  of  further  clarification,  the  terms  moderate 
+and  severe  were  intended  to  be  applied  as  follows: 
+
+(1)  Moderate  Intensity  (Rating  of  "2"),  If  the  subject 
+displays  some  slowing  in  his  performance  of  serial  subtraction  (as  compared 
+with  control  performance)  and  makes  several  errors  or  hesitates  for  long 
+periods  in  the  middle  of  the  task,  he  is  considered  to  be  showing  moderate 
+difficulty  in  thinking.  In  addition,  there  are  usually  definite  alterations  in 
+visual  perception  (e.  g. ,  shimmering  or  oozing  appearance  to  flat  surfaces, 
+fluctuations  in  light  intensity,  etc^P  There  may  also  be  some  changes  in  body 
+image  (e.  g,  ,  feelings  of  lightness,  tingling,  coldness,  increase  in  muscle 
+tone,  etc). 
+
+
+(2)  Severe  Intensity  (Rating  of  "3").  Serial  subtrac¬ 
+tion  is  either  impossible  or  only  one  or  two  subtractions  are  performed;  with 
+great  effort  and  considerable  delay,  even  with  encouragement.  If  able  to 
+communicate  the  visual  distortions  he  is  experiencing,  the  subject  will  gener¬ 
+ally  describe  movements  of  an  oscillatory  type,  with  larger  amplitude  than 
+that  seen  with  lesser  effects.  His  body  may  feel  as  if  it  is  charged  with 
+electricity,  about  to  burst;  his  stomach  may  be  seized  with  intermittent 
+nausaating  contractions;  and  he  may  feel  as  if  he  is  "in  a  fog, "  changing  in 
+size  or  shape  or  composition.  Usually,  ne  is  only  capable  of  brief  phrases, 
+which  he  repeats  several  times;  or  at  times  he  can  only  nod,  or  smile  in  a 
+perplexed  manner,  in  response  to  questions.  It  may  be  noted  that  despite 
+these  profound  effects  subjects  are  not  stuporous  or  disoriented. 
+
+2.  Numerical  Facility  Test: 
+
+This  is  a  speed- accuracy  test  in  the  performance  of  addition 
+problems  (se*  cample  in  appendix  B)  which  are  available  in  20  forms  of 
+equal  difficulty.  The  subject  is  given  3  min  to  complete  as  many  problems 
+as  possible,  and  the  score  is  the  number  of  correct  solutions  divided  by  the 
+baseline  score,  yielding  a  percentage.  The  baseline  is  calculated  by  taking 
+the  mean  of  the  five  highest  scores  of  the  ten  baseline  trials,  which  are 
+obtained  over  a  2-day  period  prior  to  exposure.  Because  some  slight  practice 
+effect  continues  to  elevate  subsequent  scores,  a  new  baseline  (the  mean  of 
+
+UNCLASSIFIED 
+
+
+14 
+
+
+UNCLASSIFIED 
+
+
+the  5  highest  scores  from  the  original  10  and  an  additional  2  trials  given  just 
+prior  to  the  second  exposure)  is  calculated  for  use  during  the  second  experi¬ 
+ment.  The  scheduling  of  the  NF  test  is  shown  on  the  Aerosol  Protocol  to  be 
+found  in  appendix  C. 
+
+3.  Abramson  Checklist. 
+
+In  the  course  of  extensive  investigations  with  LSD25,  Abramson 
+and  his  associates  developed  a  list  of  symptoms  commonly  described  by 
+subjects.  *  He  has  indicated  that  low  and  high  doses  could  be  distinguished 
+through  the  simple  expedient  of  counting  the  number  of  positive  replies  given 
+by  the  subject  when  questioned  as  to  the  presence  or  absence  of  each  of  76 
+symptoms.  A  sample  of  the  questionnaire  form  and  the  schedule  followed  in 
+administering  it  are  both  to  be  found  in  appendix  D.  In  actual  use,  with  the 
+nurse  reading  the  questions  to  the  subject  and  recording  the  positive  replies, 
+about  5  min  are  required  for  its  completion. 
+
+4.  Behavior  Checklist. 
+
+This  is  a  list  of  J7  behavioral  signs,  originally  developed  for  BZ, 
+but  carried  over  to  other  agents  for  the  purpose  of  comparison.  The  sample 
+and  schedule  for  use  are  shown  in  appendix  E.  To  produce  a  single  score, 
+items  that  were  assumed  to  reflect  positive  drug  effects  were  given  a  plus  sign 
+and  those  that  reflect  absence  of  drug  effect  (i,  e. ,  indicate  normal  behavior) 
+were  assigned  a  minus  sign.  The  summation  of  ratings  for  the  I7  items 
+(adding  6  for  calibration)  was  used  as  a  score  in  subsequent  data  analysis. 
+
+5.  Behavioral  Notes. 
+
+
+As  in  all  psychochemical  studies  requiring  nurses  to  be  in  atten¬ 
+dance,  frequent  descriptive  entries  by  the  nurse  in  the  clinical  record  are 
+considered  highly  important.  Four  to  six  typewritten  pages  of  such  obser¬ 
+vations  are  generally  collected  in  the  course  of  a  24-hr  study  of  this  type. 
+
+
+*  Abramson,  H.  A.,  Jarvik,  M,  E. ,  Kaufman,  M.  R. ,  Kornetsky,  C. , 
+Levine,  A.,  and  Wagner,  M.  Lysergic  Acid  Diethylamide  (LSD-25). 
+I.  Physiological  and  Perceptual  Responses.  J.  Psychol.  39:3  (1955). 
+
+
+UNCLASSIFIED 
+
+
+15 
+
+
+UNCLASSIFIED 
+
+
+6.  Draw-a-Man  Test. 
+
+This  is  a  3- min  procedure  that  has  been  included  in  many  psycho¬ 
+chemical  studies  during  the  past 3  years.  A  quantitative  scoring  system 
+for  these  drawings  is  still  undergoing  development. 
+
+7.  Heart  Rate  and  Blood  Pressure, 
+
+These  measures  are  in  the  schedule  primarily  for  safety  purposes. 
+
+8.  Pupil  Size, 
+
+Various  techniques  for  the  recording  of  pupil  size  have  been 
+employed  in  previous  studies  within  the  Division,  but  none  have  proved 
+entirely  satisfactory.  In  this  test  series,  a  technique  was  introduced  entailing 
+the  use  of  a  binocular  telescope  with  direct  reading  of  pupil  size  from  a 
+millimeter  scale  positioned  along  the  horizontal  diameter  of  the  pupil. 
+
+9.  EEG  Studies. 
+
+
+A  single  EEG  was  carried  out  at  0130  experimental  time. 
+Spontaneous  activity  and  the  effect  of  single  flash  and  repetitive  photic 
+stimulation  (photic  driving)  were  compared  with  control  records.  The  results 
+of  this  study  will  be  reported  in  a  separate  publication  by  the  investigator 
+responsible  for  this  phase  of  the  project. 
+
+10.  Plasma  Levels  of  Agent. 
+
+A  12-ml  blood  sample  was  taken  at  0100  and  0200  hr  experimental 
+time.  Bloods  were  centrifuged  and  plasma  was  removed  and  frozen.  Plasma 
+samples  (5  ml)  were  later  assayed  according  to  a  modification  of  Axelrod's 
+spectrofluorometric  method.  #  Details  will  be  submitted  in  a  separate  report. 
+
+
+*  Axelrod,  Julius,  Brady,  RoscoeO. ,  Witkop,  Bernard,  and  Evarts, 
+Edward  V.  The  Distribution  and  Metabolism  of  Lysergic  Acid  Diethyl¬ 
+amide.  Annals  N.  Y,  Acad.  Sciences  66:435  (1957). 
+
+
+„  UNCLASSIFIED 
+
+
+16 
+
+
+UNCLASSIFIED 
+
+
+11.  Neurological  Measurement  of  Accommodation  and  Conver¬ 
+gence. 
+
+The  change  in  accommodative  convergence  ratios  observed  in 
+preliminary  studies  with  LSD25  was  studied  in  this  series  in  the  hope  that,  it 
+would  prove  a  sensitive  indicator  of  dose.  The  results  will  be  presented 
+elsewhere  by  the  investigator  responsible  for  these  studies. 
+
+C.  Technique  of  Exposure. 
+
+Subjects  were  trained  to  breathe  in  conformity  with  a  standard 
+pattern  that  assured  a  rate  of  15  breaths  per  minute  and  a  minute  volume  of 
+approximately  10  liters.  The  method,  developed  previously  for  BZ  inhalation 
+studies,  employs  an  oscilloscopic  display  of  the  respiratory  activity.  The 
+subject  endeavors  to  make  the  beam  track  a  prescribed  curve  of  inspiration 
+and  expiration  superimposed  on  the  oscilloscope  screen.  Rate  is  established 
+by  sweep  time  of  the  beam.  Vertical  deflection  is  produced  by  air  flow  across 
+a  detector  situated  in  the  orifice  of  the  face  mask.  With  minimal  practice, 
+stable  breathing  patterns  are  easily  achieved. 
+
+Because  of  the  possibility  that  coughing  might  occur  during  inha¬ 
+lation,  subjects  were  instructed  in  all  cases  that  if  the  urge  to  cough  occurred, 
+they  should  in  no  case  break  contact  with  the  mask,  but  cough  into  the  system 
+if  necessary. 
+
+The  agent,  both  maleate  and  free  base,  was  generated  as  a  water 
+solution  in  droplet  form\  average  particle  sise  being  0.8 M.  Concentration  in 
+air  was  usually  less  than  20  Mg/liter,  ctnd  exposure  time  from  1  to  4  min. 
+Retention  was  calculated  by  direct  measurement  of  concentration  differences 
+between  inspired  and  expired  air.  This  difference  was  multiplied  by  the  total 
+volume  breathed.  Drug  retained  in  apparatus  was  then  subtracted  to  give 
+total  retained  dose  per  man. 
+
+D.  Tabulation  of  Data. 
+
+
+Following  the  typing  and  collat'on  of  individual  case  records, 
+selected  information  was  abstracted  from  the  records  and  entered  on  code 
+sheets.  After  punch  cards  were  prepared  Jrom  these  sheets,  the  cases  were 
+sorted  in  order  of  retained  dose  and  certain  columns  of  data  were  extracted 
+in  list  form  as  shown  in  table  2.  The  cards  were  also  used  to  prepare  paper 
+tape  inputs  for  computer  analysis.  Complete  analysis  will  require  considerable 
+time,  and  further  statistical  findings  will  be  summarised  in  a  future  supplement 
+to  this  report. 
+
+
+UNCLASSIFIED 
+
+
+17 
+
+
+UNCLASSIFIED 
+
+
+(V)  TABLE  t 
+
+ABSTRAC  TEL  NUMERICAL  DATA  FOR  ALL  60  INHALATION  EXPOSURES 
+
+
+‘orm  of 
+agent* 
+
+Retained 
+
+dote 
+
+Platma  level 
+
+Score  on  numerical  facility 
+
+Average 
+
+Caen 
+
+number 
+
+Name 
+
+second 
+
+exposure 
+
+Ct 
+
+‘id 
+
+2  hour 
+
+Experimental  time 
+
+0050  1 01 30 10200  |0Z30  J0330 
+
+clinical 
+
+rating 
+
+)70 
+
+M 
+
+HI 
+
+1 
+
+03 
+
+*«/> 
+
+ter 
+
+090 
+
+090 
+
+% 
+
+092 
+
+096 
+
+0.0 
+
+358 
+
+M 
+
+1  3 
+
+1 
+
+15 
+
+. 
+
+099 
+
+099 
+
+- 
+
+- 
+
+105 
+
+1.0 
+
+1.4 
+
+1 
+
+10 
+
+. 
+
+• 
+
+084 
+
+093 
+
+- 
+
+C66 
+
+094 
+
+!.*• 
+
+1 
+
+20 
+
+. 
+
+- 
+
+029 
+
+045 
+
+- 
+
+062 
+
+045 
+
+M 
+
+1.9 
+
+1 
+
+17 
+
+. 
+
+. 
+
+081 
+
+090 
+
+• 
+
+079 
+
+075 
+
+367 
+
+M 
+
+1.9 
+
+1 
+
+19 
+
+. 
+
+. 
+
+084 
+
+071 
+
+- 
+
+069 
+
+071 
+
+ra 
+
+l 
+
+20 
+
+1.5 
+
+0.0 
+
+052 
+
+048 
+
+- 
+
+049 
+
+2 
+
+18 
+
+1.7 
+
+0.9 
+
+056 
+
+064 
+
+060 
+
+076 
+
+084 
+
+mm 
+
+■f 
+
+1 
+
+15 
+
+1.4 
+
+0.7 
+
+092 
+
+066 
+
+- 
+
+092 
+
+076 
+
+470 
+
+Rod 
+
+KB 
+
+Hi 
+
+1 
+
+22 
+
+l.l 
+
+1.2 
+
+072 
+
+099 
+
+085 
+
+093 
+
+085 
+
+1.5 
+
+I'M 
+
+mm 
+
+1 
+
+: 
+
+1.2 
+
+1.0 
+
+C72 
+
+056 
+
+066 
+
+093 
+
+064 
+
+2.3 
+
+* 
+
+2.2 
+
+1 
+
+7- 
+
+1.3 
+
+1.4 
+
+096 
+
+054 
+
+060 
+
+071 
+
+065 
+
+j  44 
+
+M 
+
+2  3 
+
+1 
+
+25 
+
+1.2 
+
+1.2 
+
+056 
+
+058 
+
+- 
+
+052 
+
+054 
+
+484 
+
+1 4 
+
+2.5 
+
+2 
+
+28 
+
+1.8 
+
+1.8 
+
+096 
+
+076 
+
+08) 
+
+096 
+
+086 
+
+1.5 
+
+fS 
+
+2.6 
+
+1 
+
+24 
+
+. 
+
+. 
+
+049 
+
+069 
+
+- 
+
+049 
+
+047 
+
+2  7 
+
+2 
+
+22 
+
+1.6 
+
+069 
+
+096 
+
+08) 
+
+093 
+
+084 
+
+2.7 
+
+2 
+
+29 
+
+1.2 
+
+079 
+
+063 
+
+056 
+
+079 
+
+087 
+
+Mcp 
+
+M 
+
+2.7 
+
+1 
+
+33 
+
+• 
+
+tm 
+
+056 
+
+040 
+
+- 
+
+065 
+
+062 
+
+2.2 
+
+F 
+
+3.0 
+
+1 
+
+33 
+
+0.8 
+
+.  B 
+
+071 
+
+071 
+
+079 
+
+0»3 
+
+095 
+
+J.O 
+
+394 
+
+Stu 
+
+F 
+
+3.1 
+
+1 
+
+31 
+
+* 
+
+SB 
+
+032 
+
+032 
+
+~ 
+
+“ 
+
+060 
+
+466 
+
+Hug 
+
+l 
+
+3.2 
+
+1 
+
+V 
+
+1.5 
+
+1.0 
+
+079 
+
+092 
+
+082 
+
+018 
+
+095 
+
+1.8 
+
+M 
+
+3.5 
+
+) 
+
+l 
+
+.3 
+
+1.0 
+
+070 
+
+059 
+
+089 
+
+089 
+
+092 
+
+2.0 
+
+Hu* 
+
+M 
+
+3.5 
+
+2 
+
+3 
+
+.0 
+
+1.2 
+
+086 
+
+083 
+
+117 
+
+092 
+
+101 
+
+2.0 
+
+M 
+
+3.5 
+
+1 
+
+26 
+
+2.5 
+
+e n 
+
+043 
+
+050 
+
+069 
+
+071 
+
+087 
+
+1.2 
+
+Whi 
+
+F 
+
+3.6 
+
+2 
+
+40 
+
+1.4 
+
+ESfl 
+
+050 
+
+C54 
+
+061 
+
+079 
+
+096 
+
+1.2 
+
+365 
+
+M 
+
+3. A 
+
+1 
+
+41 
+
+- 
+
+. 
+
+069 
+
+065 
+
+- 
+
+085 
+
+081 
+
+1.0 
+
+475 
+
+Ada 
+
+F 
+
+3.7 
+
+2 
+
+37 
+
+1.6 
+
+1.8 
+
+078 
+
+067 
+
+072 
+
+074 
+
+085 
+
+2.0 
+
+3.9 
+
+1 
+
+41 
+
+- 
+
+- 
+
+078 
+
+087 
+
+* 
+
+092 
+
+100 
+
+1.0 
+
+369 
+
+Hat 
+
+M 
+
+3.8 
+
+l 
+
+55 
+
+■ 
+
+• 
+
+038 
+
+031 
+
+- 
+
+035 
+
+063 
+
+2.0 
+
+474 
+
+Dar 
+
+F 
+
+4  0 
+
+2 
+
+41 
+
+1.7 
+
+1.8 
+
+093 
+
+093 
+
+090 
+
+110 
+
+097 
+
+0.8 
+
+Wii, 
+
+4.1 
+
+2 
+
+52 
+
+IS 
+
+0.9 
+
+042 
+
+036 
+
+056 
+
+044 
+
+072 
+
+2.2 
+
+4.1 
+
+1 
+
+19 
+
+2.1 
+
+067 
+
+070 
+
+077 
+
+090 
+
+094 
+
+1.  5 
+
+4.  1 
+
+1 
+
+33 
+
+. 
+
+- 
+
+081 
+
+100 
+
+- 
+
+066 
+
+026 
+
+2.2 
+
+4.1 
+
+1 
+
+40 
+
+• 
+
+- 
+
+029 
+
+011 
+
+• 
+
+000 
+
+006 
+
+Foj 
+
+4.2 
+
+l 
+
+47 
+
+. 
+
+• 
+
+058 
+
+049 
+
+- 
+
+055 
+
+069 
+
+2.0 
+
+4.4 
+
+1 
+
+43 
+
+1.4 
+
+1.7 
+
+031 
+
+0)0 
+
+044 
+
+0)6 
+
+056 
+
+2.5 
+
+4.5 
+
+1 
+
+35 
+
+1.8 
+
+OH 
+
+068 
+
+057 
+
+060 
+
+05) 
+
+06) 
+
+1.2 
+
+1 
+
+44 
+
+3.1 
+
+053 
+
+045 
+
+- 
+
+066 
+
+069 
+
+1.5 
+
+l 
+
+23 
+
+- 
+
+• 
+
+000 
+
+004 
+
+- 
+
+009 
+
+024 
+
+3.0 
+
+465 
+
+Hou 
+
+IB 
+
+» 
+
+32 
+
+2.3 
+
+1.5 
+
+064 
+
+068 
+
+064 
+
+062 
+
+067 
+
+1.2 
+
+4.9 
+
+2 
+
+33 
+
+2.5 
+
+ESI 
+
+092 
+
+094 
+
+089 
+
+080 
+
+106 
+
+1.2 
+
+471 
+
+M 
+
+4.9 
+
+2 
+
+53 
+
+3.0 
+
+SB 
+
+069 
+
+040 
+
+035 
+
+045 
+
+04) 
+
+2.0 
+
+428 
+
+n*r 
+
+1 
+
+30 
+
+3.6 
+
+ESI 
+
+039 
+
+040 
+
+- 
+
+070 
+
+0M 
+
+1.8 
+
+372 
+
+V 
+
+1 
+
+64 
+
+- 
+
+- 
+
+054 
+
+0)8 
+
+• 
+
+056 
+
+056 
+
+2.0 
+
+396 
+
+Bf 
+
+1 
+
+50 
+
+- 
+
+• 
+
+049 
+
+069 
+
+- 
+
+077 
+
+074 
+
+2.0 
+
+^Bf 
+
+Hv 
+
+1 
+
+35 
+
+2.2 
+
+1.5 
+
+069 
+
+065 
+
+- 
+
+059 
+
+084 
+
+2.0 
+
+W 
+
+1 
+
+64 
+
+■ 
+
+• 
+
+060 
+
+054 
+
+• 
+
+038 
+
+076 
+
+2.0 
+
+393 
+
+1 
+
+74 
+
+- 
+
+- 
+
+055 
+
+000 
+
+- 
+
+025 
+
+055 
+
+3.0 
+
+[^Bv 
+
+1 
+
+56 
+
+5.3 
+
+000 
+
+000 
+
+• 
+
+000 
+
+000 
+
+3.0 
+
+430 
+
+Rup 
+
+K 
+
+IB 
+
+1 
+
+66 
+
+4.7 
+
+047 
+
+002 
+
+‘ 
+
+042 
+
+042 
+
+2.8 
+
+425 
+
+Wht 
+
+■F 
+
+m 
+
+71 
+
+3.5 
+
+3.1 
+
+000 
+
+000 
+
+- 
+
+000 
+
+020 
+
+3.0 
+
+|Bf' 
+
+65 
+
+3.0 
+
+1.8 
+
+000 
+
+004 
+
+037 
+
+000 
+
+01 
+
+2.8 
+
+467 
+
+V 
+
+58 
+
+2.0 
+
+1.2 
+
+745 
+
+047 
+
+05) 
+
+072 
+
+09C 
+
+2.C 
+
+IDHt 
+
+ISK 
+
+fn^BB 
+
+69 
+
+3.3 
+
+2.5 
+
+049 
+
+012 
+
+033 
+
+042 
+
+029 
+
+>.5 
+
+Hyt 
+
+Hyt 
+
+Hyt 
+
+65 
+
+4.2 
+
+069 
+
+059 
+
+- 
+
+062 
+
+066 
+
+2.5 
+
+477 
+
+I  MB* 
+
+i*U 
+
+64 
+
+5.9 
+
+4.4 
+
+020 
+
+009 
+
+034 
+
+026 
+
+034 
+
+3.0 
+
+461 
+
+V 
+
+\mm 
+
+IBfl 
+
+IE 
+
+3.2 
+
+2.2 
+
+000 
+
+009 
+
+012 
+
+003 
+
+01* 
+
+3  0 
+
+429 
+
+V 
+
+i  B1 
+
+64 
+
+6.0 
+
+4.5 
+
+009 
+
+012 
+
+- 
+
+029 
+
+071 
+
+2.0 
+
+469 
+
+fSmrt 
+
+74 
+
+4.4 
+
+2.8 
+
+017 
+
+023 
+
+032 
+
+0)9 
+
+049 
+
+1  8 
+
+413 
+
+|  Naa 
+
+B 
+
+IBfl 
+
+[HI 
+
+74 
+
+6.2 
+
+3.4 
+
+001 
+
+028 
+
+031 
+
+030 
+
+05 
+
+2.5 
+
+♦  M  •  male  ate;  F  «  free  bn*.  Retained  d&ee  ie  In  ygA|.  expreaeed  *•  free  baa*  equivalent. 
+
+
+UNCLASSIFIED 
+
+18 
+
+
+CONFIDENTIAL 
+
+
+RESULTS. 
+
+The  results  are  presented  and  discussed  in  terms  of  the  specific 
+raised  at  the  initiation  of  this  study. 
+
+(C)  What  is  the  ED50  and  the  SCT50  for  LSD25  by  the  Inhalation 
+
+
+A.-<  shown  in  tables  3  and  4,  the  estimated  values  (expressed  as  free 
+base  equivalen  )  are  as  follows: 
+
+ED50  =  5.  8  ng/kg 
+
+(95%  confidence  limits:  2.  5  to  13.  5) 
+
+ECT50  =  55mgmin/cum 
+
+(95%  confidence  limits:  34  to  90) 
+
+(Because  of  the  greater  formula  weight  of  the  maleate  salt,  the 
+ED50  and  ECT50  for  it  would  be  7.  7  pg/kg  and  73  mg  min/cu  m,  respectively. ) 
+
+The  effective  dose,  based  on  a  clinical  rating  as  defined  in  the 
+Methods  Section,  cannot  be  equated  with  military  incapacitation.  Effective  was 
+defined  here  only  to  mean  greater  than  moderate  clinical  drug  effect. 
+
+B.  (C)  What  are  the  Onset  Times,  Peak  Times,  and  Durations  of 
+Action  of  the  Effective  Inhalation  Dose? 
+
+
+III.  (C) 
+(U) 
+
+questions 
+
+A. 
+
+Route  ? 
+
+
+Onset  time  is  defined  here  as  that  time  at  which  performance  on 
+the  NF  test  fell  below  75%  of  baseline.  Clinically,  this  represents  definite 
+impairment  in  mental  efficiency. 
+
+Employing  this  criterion,  the  onset  time  for  the  effective  dose  may 
+be  interpolated  to  approximately  15  min  (figure  3).  Peak  time  is  about  1-1/2 hr. 
+Partial  recovery  time  (time  at  which  scores  return  to  75%  or  higher)  is  about 
+5-1/2  hr,  and  "full"  recovery  time  (100%  or  higher)  is  between  8  and  12  hr. 
+
+As  shown  in  figure  1,  the  half-life  of  the  drug  following  intravenous 
+injection  is  about  3  hr.  The  percent  decrease  from  1  to  2  hr  is  22%.  In  the 
+inhalation  cases,  blood  levels  were  measured  at  1  and  2  hr,  and  with  the 
+maleate,  the  blood  level  dropped  an  average  of  23%  from  the  first  to  the  second 
+hour,  while  the  average  decrease  for  the  free  base  was  28%.  This  would 
+indicate  a  half-life  of  155  and  130  min,  respectively,  for  the  maleate  and  the 
+free  base.  It  seems  unlikely  that  the  half-life  for  the  free  base  would  be 
+
+CONFIDENTIAL 
+
+
+19 
+
+
+UNCLASSIFIED 
+
+TABLE  3 
+
+
+PROBIT  ANALYSIS  OF  EFFECTIVE  DOSE 
+
+
+Mean  dose* 
+
+Responses 
+
+1.67 
+
+0/10 
+
+2.  59 
+
+5/10 
+
+3.62 
+
+0/10 
+
+4.  32 
+
+5/10 
+
+5.  39 
+
+3/10 
+
+7.  16 
+
+7/10 
+
+Criterion:  clinical  rating 
+2.  2  or  higher 
+
+
+Solution:  ** 
+
+Slope  =  2. 52 
+Standard  error  of  slope 
+=  0.94 
+
+ED50  =  5.  8  (2.  5  to  13.  5) 
+
+
+*  All  doses  are  retained  dose  in  p  g/kg  of  free  base  equivalent. 
+**  Bliss  method  used  for  statistical  solution. 
+
+
+TABLE  4 
+
+PROBIT  ANALYSIS  OF  EFFECTIVE  CT 
+
+
+Mean  Ct* 
+
+Responses 
+
+14.6 
+
+0/10 
+
+20.  1 
+
+3/10 
+
+33.8 
+
+3/10 
+
+41.1 
+
+3/10 
+
+56.  3 
+
+4/10 
+
+68.6 
+
+7/10 
+
+Criterion:  clinical  rating 
+2.  2  or  higher 
+
+
+Solution:  ** 
+
+Slope  =  2.  42 
+Standard  error  of  slope 
+=  0.83 
+
+ECT50  =  55  (34  to  90) 
+
+
+*  All  doses  are  expressed  as  concentration  x  time  (milligrams 
+per  cubic  meter  x  minutes  of  exposure.)  Minute  volumes  are 
+10  liters/min. 
+
+##  The  Bliss  method  is  used  for  statistical  solution. 
+
+
+UNCLASSIFIED 
+
+
+20 
+
+
+UNCLASSIFIED 
+
+
+UNCLASSIFIED 
+
+21 
+
+
+Dose  valves  are  mean  retained  doses  (ng/kg)  expressed  as  free  base  equivalent.  Each  dose 
+group  consists  of  7  to  8  subjects.  Points  plotted  represent  median  scores  for  each  group. 
+
+
+CONFIDENTIAL 
+
+
+shorter  by  the  inhalation  route  than  the  intravenous  route,  and  it  may  will  be 
+that  these  differences  are  not  significant.  Also,  it  should  be  noted  that  a 
+half-life  estimate  based  on  only  two  times  of  measurement  is  not  fully 
+acceptable,  since  there  is  no  assurance  that  equilibration  has  been  completed. 
+If  a  compromise  figure  of  150  min  is  used,  the  prediction  would  be' that  less 
+than  10%  of  the  original  blood  concentration  at  the  time  of  equilibration  would 
+remain  at  10  hr.  This  corresponds  to  the  time  of  nearly  "complete"  recovery 
+(100%  on  NF)  from  effects  (figure  4). 
+
+C.  (C)  What  is  the  Estimated  Safety  Factor  for  the  Agent? 
+
+The  safety  factor  for  an  incapacitating  agent  has  been  defined  as 
+the  ratio  between  the  LD1  and  the  ED50.  Since  no  direct  information  is 
+available  concerning  the  lethality  of  the  compound  in  man,  it  is  difficult  to 
+assume  a  value  for  the  LD50  and,  of  course,  the  LDl  is  unknown. 
+
+With  the  exception  of  the  rabbit,  all  animal  species  tested  have 
+demonstrated  unusually  high  lethal  to  effective  ratios;  as  high  as  several 
+thousand  in  the  monkey.  If  man  has  a  toxicological  response  to  this  agent 
+similar  to  most  animals  then  there  would  be  a  wide  margin  of  safety. 
+
+D.  (C)  Is  There  Any  Difference  in  Potency  Between  the  Free  Base 
+and  the  Maleate  on  a  Molecule-for-Molecule  Basis? 
+
+
+None  of  the  comparisons  made  in  this  study  reveal  any  distinct 
+differences  between  the  two  forms  of  LSD25  as  far  as  potency  is  concerned. 
+
+As  can  be  seen  in  figures  4,  5,  6,  and  7,  the  distribution  of  maleate  response 
+is  completely  overlapping  with  those  for  the  free  base.  No  consistent  tendency 
+for  one  form  to  show  greater  correlations  between  dose  and  response  variables 
+is  discernible  (table  5).  The  average  dose/plasma  level  ratios  for  the  two 
+forms  are  virtually  identical,  as  shown  in  table  6. 
+
+A  comparison  of  the  NF  scores  and  blood  levels  at  1  hr  for  the 
+maleate  exposures  with  those  for  the  free  base  (using  only  those  14  cases  that 
+were  exposed  to  both  forms  in  nearly  equal  dosage)  reveals  no  difference  of 
+any  consequence  (table  7). 
+
+Thus,  all  the  evidence  so  far  examined  indicates  that  if  one  allows 
+for  differences  in  formula  weight,  the  free  base  and  the  maleate  are  equally 
+effective  by  the  inhalation  route. 
+
+
+CONFIDENTIAL 
+
+
+22 
+
+
+Rei  lined  Dose  {ng/kg ) 
+
+
+FIGURE  4 
+
+RETAINED  DOSE  VERSUS  CT  (U) 
+
+(U)  Both  retained  doses  and  Ct  values  are  expressed  in  terms  of  free  base 
+equivalent.  Black  dots  =  maleate;  white  dots  =  free  base. 
+
+
+CONFIDENTIAL 
+
+
+Clinical  Rating  of  Seventy 
+
+
+CONFIDENTIAL 
+
+
+.  01 
+
+o  • 
+
+o 
+
+f  o 
+
+OCD© 
+
+oo 
+
+o  o 
+
+•  «0 
+
+m  •m 
+
+O  0 
+
+«D 
+
+®  a» 
+
+»  0  o 
+
+• 
+
+o 
+
+r  i  1  i 
+
+D - W - 
+
+o  o 
+
+- - , - H 
+
+- 1 - 1 - 
+
+1  2  3  4  5  6  7 
+
+Retained  Dose  (fig/kg) 
+
+FIGURE  5 
+
+
+RETAINED  DOSE  VERSUS  CLINICAL  RATING  OF  SEVERITY  (U) 
+
+(U)  Retained  doses  are  expressed  in  terms  of  free  base  equivalent. 
+Black  dots  =  maieate;  white  dots  =  free  base. 
+
+
+CONFIDENTIAL 
+
+24 
+
+
+CONFIDENTIAL 
+
+
+0 
+
+0 
+
+O  O 
+
+o 
+
+HB 
+
+o  • 
+
+i 
+
+) 
+
+_ u  _ 
+
+D 
+
+1 - 1 - i— — i - 1 - 1 — i - 1 - r 
+
+1  2  3  4  5  6  7  8  9 
+
+
+Retained  Dose  0»g/kg) 
+
+FIGURE  6 
+
+RETAINED  DOSE  VERSUS  PLASMA  LEVEL  (U) 
+
+(U)  Plasma  levels  are  the  mean  of  the  1-  and  2-hr  values.  Retained 
+dose  is  expressed  as  free  base  equivalent.  Black  dots  =  maleate; 
+white  dots  =  free  base. 
+
+
+CONFIDENTIAL 
+
+25 
+
+
+Percentage  Score  in  Numerical  Facility  Test 
+
+
+CONFIDENTIAL 
+
+
+• 
+
+-•  • 
+
+Q  i 
+
+o 
+
+r  •  • 
+
+o 
+
+•  °  1 
+o 
+
+9 — £ - 1 
+
+• 
+
+• 
+
+0  0  • 
+
+6> 
+
+9 
+
+o# 
+
+■  ■  >  — -  ■ 
+
+•  8 
+
+O  o 
+o  u 
+o 
+
+_ rrd> 
+
+1  2  3  4  5  6  7 
+
+Retained  Dose  (pg/kg) 
+
+
+FIGURE  7 
+
+RETAINED  DOSE  VERSUS  NUMERICAL  FACILITY  (U) 
+
+(U)  Retained  doses  are  expressed  as  free  base  equivalent.  Percentage 
+scores  represent  the  mean  of  the  0130  and  0230  scores  for  each 
+individual.  Black  dots  =  maleate;  white  dots  =  free  base. 
+
+
+CONFIDENTIAL 
+
+
+CONFIDENTIAL 
+
+
+(C) 
+
+
+TABLE  5 
+
+CORRELATIONS  (U) 
+
+
+Maleate 
+
+Free  base 
+
+Retained  dose  versus: 
+
+1.  Ct 
+
+0. 95** 
+
+.0.  94** 
+
+2. 
+
+Plasma  level  (1  hr) 
+
+0. 88** 
+
+0. 80** 
+
+3. 
+
+Plasma  level  (2  hr) 
+
+0.  77* 
+
+0.  69* 
+
+4. 
+
+Numerical  facility,  %  (0050) 
+
+-0.  64 
+
+-0. 80** 
+
+5. 
+
+Numerical  facility,  %  (0130) 
+
+-0. 75* 
+
+-0. 68* 
+
+6. 
+
+Numerical  facility,  %  (0205) 
+
+-0.  62 
+
+-0. 83** 
+
+7. 
+
+Numerical  facility,  %  (0230) 
+
+-0.81** 
+
+-0. 63* 
+
+a. 
+
+Numerical  facility,  %  (0325) 
+
+-0. 67* 
+
+-0.  59 
+
+9. 
+
+Pupil  size  (0045) 
+
+-0.09 
+
+-0.  11 
+
+10. 
+
+Pupil  size  (0120) 
+
+0.43 
+
+0.  36 
+
+11. 
+
+Pupil  size  (0220) 
+
+0.  12 
+
+0.05 
+
+12. 
+
+Pupil  size  (0320) 
+
+-0.01 
+
+-0.  11 
+
+13. 
+
+Heart  rate  (0045) 
+
+0.42 
+
+0.39 
+
+14. 
+
+Heart  rate  (0120) 
+
+0.58 
+
+0.  51 
+
+15. 
+
+Heart  rate  (0220) 
+
+0.29 
+
+0.  57 
+
+16. 
+
+Heart  rate  (0320) 
+
+0.  53 
+
+0.28 
+
+17. 
+
+Behavior  check  list  (0030) 
+
+0.  57 
+
+0.  62* 
+
+18. 
+
+Behavior  check  list  (0125) 
+
+0.  70* 
+
+0.  38 
+
+19. 
+
+Abramson  checklist  (0040) 
+
+0.  15 
+
+0.  11 
+
+20. 
+
+Abramson  check  list  (0125) 
+
+0.24 
+
+0.22 
+
+21. 
+
+Abramson  check  list  (0225) 
+
+0.49 
+
+-0.03 
+
+22. 
+
+EEG  severity 
+
+0.21 
+
+-0.  11 
+
+23. 
+
+Accommodative  convergence  ratio  change 
+
+0.  64 
+
+-0.  16 
+
+24. 
+
+Clinical  severity  rating 
+
+0.48 
+
+0.  78** 
+
+Note:  (U)  Except  for  items  22  and  23,  the  number  of  subjects  =  14  for  the 
+maleate  and  16  for  the  free  base.  A  single  asterisk  indicates 
+significance  at  the  0.01  level,  two  asterisks  indicates  the 
+0.  001  level. 
+
+
+CONFIDENTIAL 
+
+
+27 
+
+
+CONFIDENTIAL 
+
+
+(C) 
+
+
+TABLE  6 
+
+
+COMPARISON  OF  PLASMA  LEVELS  (0100)  AND  NUMERICAL 
+FACILITY  SCORES  (0050)  AT  EQUIVALENT  DOSES  OF 
+MALE  ATE  AND  FREE  BASE  (U) 
+
+
+EA  3528 
+
+EA  1729 
+
+Mean 
+
+(maleate) 
+
+(free 
+
+base) 
+
+dose 
+
+■a 
+
+Plasma  level 
+
+Plasma  level 
+
+^g/kg 
+
+% 
+
+ng/ml 
+
+% 
+
+ng/ml 
+
+56 
+
+1.7 
+
+52 
+
+1.5 
+
+2.2 
+
+72 
+
+1.  1 
+
+86 
+
+1.8 
+
+72 
+
+1.2 
+
+69 
+
+1.6 
+
+79 
+
+1.2 
+
+71 
+
+0.8 
+
+86 
+
+2.0 
+
+79 
+
+1.5 
+
+3.  3 
+
+70 
+
+1.  3 
+
+50 
+
+1.4 
+
+43 
+
+2.  5 
+
+78 
+
+1.  6 
+
+67 
+
+2.7 
+
+93 
+
+1.7 
+
+4.4 
+
+31 
+
+1.4 
+
+42 
+
+1.9 
+
+68 
+
+3.0 
+
+68 
+
+1.8 
+
+92 
+
+2.5 
+
+64 
+
+2.3 
+
+48 
+
+3.  3 
+
+45 
+
+2.0 
+
+7.  2 
+
+0 
+
+3.2 
+
+20 
+
+5.9 
+
+17 
+
+4.  4 
+
+1 
+
+6.2 
+
+Means: 
+
+57.2 
+
+2.25 
+
+58.4 
+
+1  1  ■  ■  — 
+
+2.28 
+
+CONFIDENTIAL 
+
+
+28 
+
+
+CONFIDENTIAL 
+
+
+(C)  TABLE  7 
+
+COMPARISON  OF  RATIOS  (RETAINED  DOSE/PLASMA  LEVEL)  AT 
+VARIOUS  DOSE  LEVELS  OF  MALEATE  AND  FREE  BASE  (U) 
+
+
+EA  3528  (maleate) 
+
+EA  1729  (free  base) 
+
+Number 
+
+of 
+
+subjects 
+
+Mean  dose 
+
+Mean 
+
+plasma 
+
+level 
+
+Ratio 
+
+Number 
+
+of 
+
+subjects 
+
+Mean  dose 
+
+Mean 
+
+plasma 
+
+level 
+
+— 
+
+Ratio 
+
+4g/kg 
+
+ng /  ml 
+
+ug/kg 
+
+ng/  ml 
+
+5 
+
+2.  5 
+
+1 . 4 
+
+1.8 
+
+5 
+
+2.2 
+
+1.  1 
+
+2.0 
+
+5 
+
+3.9 
+
+1.4 
+
+2.8 
+
+4 
+
+4.  1 
+
+1.7 
+
+2.4 
+
+6 
+
+4.0 
+
+1.9 
+
+2.  1 
+
+5 
+
+6. 4 
+
+3.  7 
+
+1.7 
+
+5 
+
+6.2 
+
+2.9 
+
+2.  1 
+
+5 
+
+6.9 
+
+3.7 
+
+1.9 
+
+Mean  ratio  =  2. 
+
+1 
+
+Mean  ratio  =  2. 1 
+
+NOTE:  (U)  ,  Administered  by  inhalation  route..  Doses  are  expressed  as 
+free  base  equivalent.  Plasma  levels  are  the  mean  values  of 
+the  1-  and  2-hr  determinations. 
+
+
+CONFIDENTIAL 
+
+
+29 
+
+
+CONFIDENTIAL 
+
+
+E.  (C)  Is  the  Coughing  Tendency  Observed  Earlier  With  the  Maleate 
+a  Consistent  Finding  and  Does  It  Have  Practical  Significance? 
+
+The  answer  to  this  question  would  appear  to  be  no,  at  least  not  at 
+the  concentrations  used  in'this  study.  Two  subjects  out  of  14  did  cough  in  the 
+presence  of  the  maleate  aerosol,  while  none  of  those  exposed  to  the  free  base 
+displayed  this  symptom.  A  few  others  reported  a  mildly  irritating  sensation 
+in  the  throat,  This  was  confirmed  by  one  of  the  investigators  who  took  several 
+breaths  of  the  same  concentration  that  elicited  the  coughing  and  noted  a  dust¬ 
+like  sensation  in  the  back  of  the  throat.  The  concentration  of  agent  that  caused 
+both  instances  of  coughing  was  the  highest  used  in  the  entire  series  (approxi¬ 
+mately  20  n  g/liter).  It  is,  therefore,  possible  that  some  coughing  would  be 
+produced  if  the  agent  were  disseminated  at  higher  concentrations;  however, 
+this  may  not  be  of  any  great  practical  importance  because  the  two  subjects  who 
+coughed  were  able  to  continue  breathing  the  aerosol  and  had  the  usual  retention 
+of  the  drug,. 
+
+F.  (U)  What  1.3  the  Relative  Effectiveness  of  the  Inhalation  Route, 
+Compared  to  the  Oral  and  Intravenous  Routes? 
+
+
+1 .  Oral  Versus  Aerosol:  Figure  8  illustrates  the  method  used 
+to  estimate  the  ratio  of  effectiveness  for  these  two  routes.  NF  percent  scores 
+at  1.  5  and  2.  5  hr  following  exposure  were  averaged  for  each  subject,  and  the 
+subjects  were  grouped  according  to  dose.  The  mean  score  for  each  group  was 
+plotted  and  a  linear  relationship  was  observed  between  dose  and  response 
+values.  The  ratio  between  the  slopes  of  the  best  fitting  lines  is  defined  to  be 
+the  effectiveness  ratio.  This  ratio  is  approximately  3.  75. 
+
+2,  Intravenous  Versus  Aerosol:  Figure  9  shows  a  similar 
+technique  again  applied  to  the  NF  percent  scores.  Only  one  intravenous  dose 
+group  of  five  auojects  was  available.  The  same  subjects,  however,  were  also 
+exposed  to  the  same  material  by  the  inhalation  route.  The  small  sample  size 
+is,  therefore,  partially  compensated  for  by  the  elimination  of  most  of  the 
+sampling  error.  One  hundred  percent  performance  of  NF  at  a  dose  of  0.  0  is 
+assumed  to  anchor  one  end  of  a  linear  regression  line.  The  ratio  of  the  slopes 
+here  is  3.  9. 
+
+
+In  figure  10, an  alternative  calculation  is  shown,  based  on  the 
+plasma  levels  plotted  against  dose  in  the  same  cases.  The  ratio  obtained  by 
+this  method  is  3.  7. 
+
+On  the  basis  of  these  ratios, it  seems  probable  that  the  oral  and 
+intravenous  routes  are  roughlv  equal  in  effectiveness,  and  the  inhalation 
+route  is  25%  to  30%  as  effective  as  either, 
+
+CONFIDENTIAL 
+
+
+30 
+
+
+UNCLASSIFIED 
+
+
+2  % 
+
+o  • 
+
+S’g  sf 
+-as* 
+
+£  •**  Is- 
+
+O  -)  fl) 
+
+«  "  « | 
+
+2  „&  3 
+
+®  a  s=r 
+
+(Q 
+
+U  I)  U  * 
+
+(i  n  u  *** 
+
+U  O  •  . 
+
+•o  ”  ■* 
+
+H  M 
+J3  O  CL  d 
+U  »  *H 
+
+(6  0  S  § 
+
+®  *  *2 
+
+2  <;  ®  a 
+
+Si  3  o 
+
+2  2  K  « 
+
+2  2  rt  §• 
+
+_  2  »  o 
+o  M  4)  u 
+-*  ^  0  00 
+V4  0  O  ~ 
+
+O  «  T3  ^ 
+
+«  «  -H 
+
+SL  «  «3  o 
+
+^ 
+
+&& .  i 
+^ «?( 
+u  *•  5  « 
+
+£  ,*'3  E 
+
+—  dl  ^  4-* 
+
+S  o  g.  1 
+
+3  O  »  S 
+
+*d  w  jr 
+
+41  (I)  W 
+
+S  o  «  A 
+
+C  fO  m  4) 
+
++,  M  «  H 
+
+4>  w 
+
+*  -o  5  u 
+
+•  Sfi  o 
+
+H  fi 
+
+OiO  «  n 
+4)  <*>  rtS 
+
+“  S  *  3 
+
+0  4>  H 
+
+4)  **  0  Q 
+U  O  «  ^  . 
+
+O  d  4)  jj* 
+
+S  I  S 
+
+fi  «.  *>  *3 
+
+
+UNCLASSIFIED 
+
+31 
+
+
+UNCLASSIFIED 
+
+
+T 
+
+O 
+
+
+I 
+
+
+o 
+
+
+>  a-ioog  aSaquaojaj 
+
+
+W 
+
+a 
+
+D 
+
+8 
+
+
+t 
+
+
+The  white  dot  represents  the  mean  percent  score  for  5  subjects  who  received  2.0  pg/kg  of 
+free  base  iv.  The  black  dot  represents  moan  score  for  the  sime  5  subjects  who  received 
+a  mean  retained  dose  of  6.0  pg/kg  free  base.  A  linear  dose  response  regression  line  is 
+assumed  xrom  the  previous  figure’s  demonstration  of  linearity  in  the  case  of  the  oral  and 
+
+
+UNCLASSIFIED 
+
+
+ft) 
+
+A 
+
+
+r  ^ 
+
+
+bC 
+
+00 
+
+«  3 
+
+m 
+O 
+
+Q 
+
+
+rg 
+
+
+8 
+
+D 
+
+g 
+
+
+W  43  4) 
+
+”  -*J  4-» 
+
+0  ft) 
+
+^  w  -o 
+
+«  ts 
+rt  p.  >» 
+
+ft)  t~4 
+
+5?  »  * 
+3  ft)  ri 
+ft)  M  <2 
+
+6  g-g 
+
+d  * ;» 
+
+5  c  f-i 
+
+.  Id  ft) 
+
+3  2  s 
+
+®  _,  r-< 
+
+§.-  d 
+
+x  -  g 
+"Jj 
+
+m  >  <5 
+«)  - 
+u  ^ 
+
+An 
+
+ft 
+
+w  ri 
+
+in 't! 
+
+k  * 
+o  « 
+
+V.  1j 
+
+<— i  o 
+ft)  ft) 
+
+I? 
+
+n  * 
+
+6  ^ 
+
+5  y 
+
+
+c  >> 
+
+rt)  *H 
+
+^  n 
+
+a  ss 
+
+.5  .2 
+
+&  " 
+ft) 
+
+
+o 
+
+M 
+
+a 
+to  c 
+<4  g  . 
+
+.h  r*- 
+4)  **4  ‘ 
+ft)  *r<  «) 
+M  g  U 
+
+^  S  2s 
+
+e  C  oo 
+
+•5  3  £ 
+
+0)  (0  ft) 
+4->  nJ  ft) 
+
+,  d  « 
+
+I  p  ‘H 
+
+L  S  .S  « 
+
+!  J  “  U 
+
+i  e  C  -* 
+
+;  £  o 'd 
+
+,  o  x  ° 
+
+^-5 
+
+*S 
+
+
+bO 
+
+
+**  Id 
+O  J5 
+
+
+eg 
+
+
+ft) 
+tt 
+
+-  o 
+00 
+
+2  <s 
+
+-  S  jj 
+
+ft)  to  4) 
+
+*  n  £ 
+
+d  p,  § 
+
+Oft  y 
+
+o  S  * 
+
+8*  .5  a, 
+
+X  H  ‘H 
+
+•  0  -s 
+
+Id  o  ri 
+
+«)  *H  2 
+
+3  «  O 
+to  *3 
+ft)  rt 
+
+L  •“ 4 
+M  ® 
+(y  M 
+
+K  Id 
+
+
+(4 
+
+
+W  ft)  .g 
+
+in  5  A 
+
+o  -"2 
+
+c  <;  2 
+
+»  .  >2 
+to  ♦  +» 
+
+
+ft) 
+
+
+UNCLASSIFIED 
+
+33 
+
+
+UNCLASSIFIED 
+
+
+G.  (U)  Does  the  Response  to  a  Second  Dose  Differ  From  an 
+Equivalent  First  Dose? 
+
+Figure  11  shows  no  apparent  differences  in  NF  percent  scores 
+for  the  14  subjects  who  were  each  exposed  to  the  agent  on  two  occaiions. 
+
+
+Retained  Doee  (Mg/kg) 
+
+
+RETAINED  DOSE  VERSUS  NUMERICAL  FACILITY 
+COMPARISON  BETWEEN  FIRST  AND  SECOND  DOSE  EFFECTS 
+
+Retained  doses  are  expressed  as  free  base  equivalent. 
+
+White  dots  =  first  exposures;  black  dots  =  second  exposures. 
+
+
+UNCLASSIFIED 
+
+34 
+
+
+CONFIDENTIAL 
+
+
+IV.  (C)  CONCLUSIONS. 
+
+
+The  ED50  for  EA  1729  by  the  inhalation  route  is  5.8  (2.  5  to  13.  5) 
+(ig/kg  retained  dose.  The  ECT50  is  55  (34  to  90)  mg  min/cu  m,  calculated  at 
+a  minute  volume  of  10  liters.  The  ED50  and  ECT50  for  the  maleate  salt  would 
+be  1  / 3  greater  on  a  formula  weight  basis,  i.  e.  ,  7.  7  (ig/kg  and  73  mg  min/cu  m, 
+respectively. 
+
+Onset  time  for  the  effective  aerosol  dose  is  about  15  min,  peak 
+time  about  1-1/2  hr,  and  partial  recovery  time  about  5-1/2  hr.  Full  recovery 
+requires  at  least  12  hr. 
+
+The  safety  factor  in  man  cannot  be  stated  with  certainty.  If  man 
+resembles  most  other  animals  in  his  toxicological  response,  the  ratio  of 
+lethal  to  effective  do3e  would  be  very  high;  however,  there  is  no  direct  infor¬ 
+mation  about  lethality  in  man. 
+
+If  a  correction  is  made  for  differences  in  formula  weight,  the 
+effectiveness  of  the  maleate  and  free  base  forms  of  the  agent  by  inhalation  is 
+roughly  the  same. 
+
+There  is  a  tendency  to  cough  during  inhalation  of  the  maleate  at 
+higher  concentrations,  but  in  the  few  instances  in  which  this  occurred,  there 
+was  no  change  in  the  retained  dose. 
+
+By  the  aerosol  dissemination  technique  employed,  it  was  shown 
+that  the  effectiveness  of  the  aerosol  route  is  0.  25  to  0.  30  that  of  the  oral  or 
+intravenous  routes. 
+
+Prior  exposure  to  the  agent  does  not  significantly  influence  the 
+numerical  facility  performance  decrement  observed  when  an  equivalent  dose 
+is  given  2  weeks  later. 
+
+
+CONFIDENTIAL 
+
+
+35 
+
+
+UNCLASSIFIED 
+
+
+APPENDIX  A 
+
+
+SELF  CHECKLIST 
+
+Name 
+
+
+Date 
+
+
+Day:  S  M  T  W  T  F 
+
+A.  M.  Item*: 
+
+
+1.  Hours  of  sleep  last  night: 
+
+
+2.  Last  night  I  slept. _ 
+
+a.  Less  soundly  than  usual 
+
+b.  As  soundly  as  usual 
+
+c.  More  soundly  than  usual 
+
+3.  Last  night  1  dreamed:  _________ 
+
+a.  Not  at  all 
+b  Occasionally 
+c.  Frequently 
+
+
+4.  Today  I  feel:  __________ 
+
+a.  Tired 
+
+b.  Normally  rested 
+
+c.  Full  of  psp 
+
+
+□ 
+
+
+5.  I  think  today  will  be: 
+
+a.  One  of  my  bad  days 
+
+b.  An  average  day 
+
+c.  One  of  my  good  days 
+
+
+P.  M.  Items: 
+
+6.  Today  the  time  seemed  to  pass:  __ __ 
+
+a.  Slowly 
+
+b.  At  the  usual  pace 
+
+c.  Quickly 
+
+7.  In  general  it  was:  _ 
+
+a.  One  of  my  bad  days 
+
+b.  An  average  day 
+
+c.  One  of  my  good  days 
+
+8.  The  things  I  did  were:  ___________ 
+
+a.  Pretty  boring 
+
+b.  Routine  with  a  few  high  spots 
+
+c.  Quite  interesting 
+
+9.  Right  now  I'm:  ______________ 
+
+a.  Quite  tired 
+
+b.  Not  really  tired 
+
+c.  Full  of  psp 
+
+10.  During  the  day  1  found  1  was:  ______ 
+
+a.  Very  relaxed 
+
+b.  Quite  keyed  up  and  jittery 
+
+c.  Somewhere  in  between 
+
+
+*  □ 
+*  □ 
+♦  □ 
+
+
+□ 
+
+
+COMMENT: 
+
+(This  part  is  optional.  Write 
+down  anything  you  think  may 
+
+interest  the  research  staff. )  (Use  other  side  if  necessary) 
+
+
+UNCLASSIFIED 
+
+
+UNCLASSIFIED 
+
+
+APPENDIX  B 
+
+
+NUMERICAL  FACILITY  TEST 
+
+
+Form  NF-6  >w»»tan«i»>««i»inni.i«i.nw 
+
+
+66  M  68  20  64  5  7  6S  14  17 
+
+67  90  5  46  19  26  97  71  65  S3 
+
+40  84  51  78  58  93  10  86  52  77 
+
+□□□□□□□□□□ 
+
+73  97  70  88  85  68  58  21  55  56 
+
+14  11  90  79  60  23  85  74  71  19 
+
+64  75  33  97  15  22  9  54  87  71 
+
+□□□□□□□□□□ 
+
+5  73  96  51  6  35  98  87  37  59 
+
+71  88  2  40  .  15  85  42  66  78  36 
+
+95  5  74  14  93  15  99  <7  22  50 
+
+□ 
+
+86  90  19  2  20  13  64  54  41  72 
+
+ll  52  7  4  1  92  61  73  26  12 
+
+5  27  60  2  90  3  71  32  78  41 
+
+
+□□□□□□□□□□ 
+
+
+65 
+
+41 
+
+62 
+
+33 
+
+10 
+
+51 
+
+62 
+
+98 
+
+63 
+
+94 
+
+9 
+
+14 
+
+93 
+
+31 
+
+75 
+
+59 
+
+99 
+
+11 
+
+6 
+
+96 
+
+68 
+
+86 
+
+55 
+
+8 
+
+6 
+
+77 
+
+6 
+
+1Z 
+
+55 
+
+26 
+
+□□□□□□□□□□ 
+
+
+76  22  59  39  40  59  SI  44  13  44 
+
+83  98  33  54  78  56  29  95  8  95 
+
+20  12  82  16  78  78  16  92  27  27 
+
+□  □□□□□□!-]□□ 
+
+37  22  43  49  89  6  93  63  1  36 
+
+90  8  90  36  62  83  15  16  50  99 
+
+53  51  35  37  93  2  49  84  18  79 
+
+□□□□□□□□□□ 
+
+81  86  91  71  66  96  83  60  17  69 
+
+13  66  29  95  83  45  48  62  88  61 
+
+29  32  70  67  13  8  43  71  30  10 
+
+□  □□□□□□□□□ 
+
+39  92  13  13  27  64  36  46  71  78 
+
+35  33  80  20  92  13  92  40  44  71 
+
+1  98  3  2  79  5  88  80  91  32 
+
+□□□□□□□□□□ 
+
+3ubj*ct _ _  _  Emniatr _  Dm 
+
+
+UNCLASSIFIED 
+
+
+38 
+
+
+UNCLASSIFIED 
+
+APPENDIX  C 
+
+
+AEROSOL  PROTOCOL 
+
+
+Real  Exp. 
+
+Time  Time  Check* 
+
+
+0010 
+
+
+0015 
+
+
+0020 
+
+
+0030 
+
+
+0040 
+
+
+0045 
+
+
+0050 
+
+
+0100 
+
+
+0105 
+
+
+0120 
+
+
+0125 
+
+
+0130 
+
+
+0135 
+
+
+0200 
+
+
+0205 
+
+
+0220 
+
+
+0225 
+
+
+0230 
+
+
+0240 
+
+
+0320 
+
+
+0325 
+
+
+0450 
+
+
+0455 
+
+
+0500 
+
+
+0510 
+
+
+0650 
+
+
+0655 
+
+
+0700 
+
+
+0710 
+
+
+0850 
+
+
+0900 
+
+
+1220 
+
+
+1225 
+
+
+1230 
+
+
+1720 
+
+
+1730 
+
+
+2220 
+
+
+2230 
+
+
+2300 
+
+
+2400 
+
+
+*  Check  when  completed. 
+
+
+Procedure 
+
+
+S.C.L.  (Symptom  Check-List)  (1) 
+
+
+NF  (Numerical  Facilit 
+
+
+HR  and  PS  (Heart  Rate  and  Pupil  Size) 
+
+
+B.C.L.  (Behavior  Check-List) 
+
+
+S.C.L.  (2) 
+
+
+HR  and  PS 
+
+
+D.  A.  M.  (Praw-A-Man)  and  NF 
+
+
+Draw  Blood 
+
+
+TV  Interview 
+
+
+HR  and  PS 
+
+
+S.C.L.  (3) 
+
+
+D.A.M.  and  NF 
+
+
+EEG  and  B.C.L. 
+
+
+Draw  Blood 
+
+
+NF 
+
+
+HR  and  PS 
+
+
+S.C.L.  (4) 
+
+
+D.A.M.  and  NF 
+
+
+TV  Interview  (B.C.L.) 
+
+
+HR  and  PS 
+
+
+NF 
+
+
+HR  and  PS 
+
+
+S.C.L.  (5) 
+
+
+D.A.M.  and  NF 
+
+
+B.C.L. 
+
+
+HR  and  PS 
+
+
+S.C.L.  (6) 
+
+
+D.A.M.  and  NF 
+
+
+B.  C.  L. 
+
+
+HR  and  PS 
+
+
+NF 
+
+
+HR  and  PS 
+
+
+S.C.L.  (7) 
+
+
+D.A.M.  and  NF 
+
+
+HR  and  PS 
+
+
+NF 
+
+
+HR  and  PS 
+
+
+NF 
+
+
+Write  Personal  Account  of  Test 
+
+
+Complete  Check  List 
+
+
+UNCLASSIFIED 
+
+
+39 
+
+
+UNCLASSIFIED 
+
+
+APPENDIX  D  (contd) 
+
+
+18. 
+
+Have  you  passed  more  urine  than 
+usual  ? 
+
+| 
+
+■ 
+
+■ 
+
+■ 
+
+9 
+
+■ 
+
+■ 
+
+19. 
+
+Are  you  aware  of  your  heartbeat? 
+
+■ 
+
+■ 
+
+20. 
+
+Is  it  faster  than  usual  ? 
+
+■ 
+
+■ 
+
+21. 
+
+Are  you  sweating? 
+
+1 
+
+■ 
+
+■ 
+
+22. 
+
+Are  you  hot? 
+
+2V 
+
+Or  cold  ? 
+
+24. 
+
+Are  you  palms  moist? 
+
+m 
+
+■ 
+
+_ 
+
+i 
+
+25. 
+
+Or  dry? 
+
+■ 
+
+u 
+
+■ 
+
+■ 
+
+i 
+
+m 
+
+26. 
+
+Or  cold? 
+
+■ 
+
+m 
+
+■ 
+
+■ 
+
+ii 
+
+27. 
+
+Is  your  skin  sensitive? 
+
+■ 
+
+■ 
+
+■ 
+
+28. 
+
+Do  you  have  funny  feelings  on  your 
+skin? 
+
+■ 
+
+■ 
+
+■ 
+
+1 
+
+9 
+
+9 
+
+■ 
+
+29. 
+
+Do  your  hands  and  feet  feel  peculiar? 
+
+0 
+
+9 
+
+30. 
+
+Do  they  feel  heavy? 
+
+■ 
+
+31. 
+
+Or  light? 
+
+■ 
+
+32. 
+
+Is  there  pressure  in  your  ears? 
+
+— 
+
+33. 
+
+Is  your  hearing  abnormal? 
+
+i  !  1 
+
+34. 
+
+Is  it  more  acute  than  usual? 
+
+! 
+
+35. 
+
+Is  your  ey sight  blurred? 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+1  ;  _  : 
+
+36. 
+
+Do  you  have  difficulty  in  focusing 
+your  vision? 
+
+i 
+
+■ 
+
+s 
+
+9 
+
+37. 
+
+Do  you  see  double? 
+
+■ 
+
+I 
+
+UNCLASSIFIED 
+
+
+41 
+
+
+UNCLASSIFIED 
+
+
+APPENDIX  D  (contd) 
+
+
+38.  Are  shapes  and  colors  altered  in 
+any  way? 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+39.  Does  light  bother  you? 
+
+1 
+
+40.  Do  things  seem  too  close? 
+
+41.  Or  too  tar  away? 
+
+■ 
+
+42.  Do  you  tremble  inside? 
+
+■ 
+
+H 
+
+43.  Do  you  feel  weak? 
+
+44.  Or  fatigued? 
+
+45.  Do  you  feel  drowsy? 
+
+46.  Do  you  feel  as  if  in  a  dream? 
+
+II 
+
+47.  Are  you  anxious? 
+
+48.  Do  you  tremble  outside  ? 
+
+49.  Are  you  nervous  ? 
+
+50.  Are  you  afraid? 
+
+51.  'Do  you  feel  confused  ? 
+
+52.  Do  you  feel  different  since  you  have 
+had  the  medicine? 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+53.  Do  you  see  any  lights  with  your  eyes 
+closed? 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+54.  Do  people  appear  to  be  larger? 
+
+■ 
+
+1 
+
+H 
+
+■ 
+
+55.  Do  people  appear  to  be  smaller? 
+
+“J 
+
+■ 
+
+56.  Do  you  see  any  colors  with  your  eyes 
+closed? 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+B 
+
+UNCLASSIFIED 
+
+
+42 
+
+
+UNCLASSIFIED 
+
+
+APPENDIX  D  (contd) 
+
+
+57.  Do  things  appear  to  move  nearer 
+and  closer  as  you  watch  them? 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+58,  Do  your  hands  feel  clumsy? 
+
+59.  Do  you  feel  nappy? 
+
+60.  Do  you  feel  sad? 
+
+i 
+
+61.  Do  yon  f"el  bored? 
+
+H 
+
+i 
+
+■ 
+
+62.  Do  questions  bother  you? 
+
+M 
+
+■ 
+
+n 
+
+63.  Do  you  want  to  be  alone? 
+
+■ 
+
+| 
+
+■ 
+
+■ 
+
+64.  Do  you  want  to  be  with  people  ? 
+
+i 
+
+i 
+
+65.  Do  you  feel  the  medicine? 
+
+_ 
+
+66.  is  the  feeling  from  the  medicine 
+stronger? 
+
+■ 
+
+■ 
+
+■ 
+
+m 
+
+■ 
+
+■ 
+
+■ 
+
+67.  Is  the  feeling  from  the  medicine 
+weaker? 
+
+■ 
+
+■ 
+
+■ 
+
+u 
+
+■ 
+
+■ 
+
+■ 
+
+68.  Is  it  hard  to  concentrate? 
+
+H 
+
+1 
+
+1 
+
+| 
+
+1 
+
+i 
+
+|| 
+
+69.  Do  you  have  pains  in  the  stomach? 
+
+iO.  Have  you  felt  that  you  need  to  move 
+your  bowels  ? 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+m 
+
+■ 
+
+71.  Do  your  hands  and  feet  change  size 
+as  you  look  at  them? 
+
+i 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+72.  Co  your  hands  and  feet  change  shape 
+as  you  look  at  them? 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+73,  Do  your  hands  and  feet  change  color 
+as  you  look  at  them? 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+UNCLASSIFIED 
+
+
+43 
+
+
+UNCLASSIFIED 
+
+
+APPENDIX  D  (contd) 
+
+
+74.  Do  you  feel  that  your  hands,  feet  or 
+any  other  part  of  your  body  is  no 
+longer  a  part? 
+
+■ 
+
+■ 
+
+■ 
+
+■ 
+
+75.  Have  you  seen  any  colors  on  the  wall? 
+
+76.  Have  you  seen  things  like  a  fantastic 
+Walt  Disney  movie? 
+
+UNCLASSIFIED 
+
+
+44 
+
+
+UNCLASSIFIED 
+
+
+APPENDIX  E 
+
+BBiAVIOR  CHICK  LIST 
+
+
+NAME _ _ DATS 
+
+SERIAL  NUMBER _ PAGE 
+
+
+EMU  14  Fora  S  -81 
+34  Jul  83 
+
+
+UNCLASSIFIED 
+
+45 
+
+
+CONFIDENTIAL 
+
+
+ABSTRACT 
+
+I.  ORIGINATING  ACTIVITY  -  U.  S.  Army  Edgewood  Arsenal  Chemical 
+Research  and  Development  Laboratories,  Edgewood  Arsenal, 
+Maryland  -  Clinical  Research  Division. 
+
+2a.  REPORT  SECURITY  CLASSIFICATION  -  CONFIDENTIAL 
+
+2b.  GROUP  -  GROUP  4,  DOWNGRADED  AT  3  YEAR  INTERVALS; 
+
+DECLASSIFIED  AFTER  12  YEARS 
+
+3.  REPORT  TITLE  -  THE  HUMAN  ASSESSMENT  OF  EA  1729  AND 
+
+EA  3  528  BY  THE  INHALATION  ROUTE  (U) 
+
+4.  DESCRIPTIVE  NOTES  -  The  work  was  started  in  March  1963  and 
+
+completed  in  April  1964 
+
+AUTHORS  -  Ketchum,  James  S.  ,  Aghajanian,  George  K.  .  ,  Bing, 
+Oscar  H.,  L. 
+
+6 .  REPORT  DATE  -  July  1 964 
+
+7a.  TOTAL  NO.  OF  PAGES  -  45 
+
+7b.  NO.  OF  REFS.  -  4 
+
+8a.  CONTRACT  OR  GRANT  NO.  - 
+
+8b.  PROJECT  NO.  -  Project  1C522301A079 
+
+8c .  TASK  NO.  - 
+
+9a.  ORIGINATORS  REPORT  NO.  -  CRDLR  3226 
+9b.  OTHER  REPORT  NG(S).  - 
+
+10.  AVAILABILITY /LIMITATION  NOTICES  -  Qualified  requesters  may 
+obtain  copies  of  this  report  from  Headquarters,  Defense  Documen¬ 
+tation  Center,  ATTN:  TISIA-2,  Cameron  Station,  Alexandria, 
+Virginia 
+
+II.  SUPPLEMENTARY  NOTES  -  Nondefense  medical  aspects  of 
+chemical  agents  (U) 
+
+12.  SPONSORING  ACTIVITY  - 
+
+
+CONFIDENTIAL 
+
+
+CONFIDENTIAL 
+
+
+13.  ABSTRACT 
+
+(C)  This  report  summarizes  the  results  of  recent  irvoftigations,  by 
+the  Psychopharmacology  Branch  of  the  Clinical  Research  Divi*  on>i'-.to  the 
+aerosol  effectiveness  of  EA  1729  and  EA  3528.  The  ED50  for  £A  1729  by 
+inhalation  is  5.8pg/kg  retained  dose.  The  ECT50  is  55mgmin;ea  ,.•>  i'.j 
+ED50  and  ECT50  for  EA  1653  is  one  third  greater,  because  of  the  weight 
+of  the  maieate.  On  a  molecule -for-molecule  basis,  EA  172"  and  EA  16.93 
+are  equally  potent.  Onset  time  for  the  effective  dose  is  15  min,  peak  lime 
+1  -  1  / 2 h r ,  and  partial  recovery  time  about  5-1/2  hr.  The  eflectivenc  ss  of 
+the  aerosol  route  appears  to  be  about  0,25  to  0.30  that  of  the  oral  o,* 
+intravenous  routes. 
+
+14.  KEYWORDS 
+
+Incapacitation 
+
+Effectiveness 
+
+Plasma  levels 
+
+Retained  dose 
+
+Hallucinations 
+
+Numerical  facility  test 
+
+Clinical  rating 
+
+Human  assessments 
+
+Psychopharmacology 
+
+EA  1729 
+
+EA  3528 
+
+EA  1653 
+
+Inhalation 
+
+ED50 
+
+ECT50 
+
+Toxicological  response. 
+
+Dissemination 
+Chemical  agents 
+LSD25 
+
+
+CONFIDENTIAL 
+
+

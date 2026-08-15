@@ -1,0 +1,66 @@
+{
+  "slug": "commissioner-indian-affairs-peyote-reports-1913-1916",
+  "title": "Peyote in the Annual Reports of the Commissioner of Indian Affairs, 1913-1916",
+  "shortTitle": "Commissioner of Indian Affairs on Peyote, 1913-1916",
+  "author": "Cato Sells",
+  "creators": [
+    {
+      "name": "Cato Sells",
+      "role": "author"
+    }
+  ],
+  "year": 1913,
+  "displayDate": "1913-1916",
+  "type": "Field Notes",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "United States",
+  "language": "English",
+  "substances": [
+    "Peyote",
+    "Mescaline"
+  ],
+  "people": [
+    "Cato Sells"
+  ],
+  "tags": [
+    "peyote",
+    "indian-affairs",
+    "federal-indian-policy",
+    "prohibition",
+    "bureau-of-indian-affairs"
+  ],
+  "summary": "Four passages from Commissioner Cato Sells's annual reports (fiscal years 1913–1916) tracing the Bureau of Indian Affairs' escalating anti-peyote campaign: Indian petitions and prosecution decisions (1913), suppression efforts \"under difficulties\" (1914), increased use and calls for federal legislation (1915), and explicit endorsement of bills pending before Congress (1916).",
+  "excerpt": "Two bills have been introduced in Congress for the purpose of controlling and eliminating the use of peyote, an imported Mexican product which produces a dangerous narcotic intoxication. These laws should be quickly passed.",
+  "citation": "Report of the Commissioner of Indian Affairs to the Secretary of the Interior for the Fiscal Years Ended June 30, 1913 to June 30, 1917 (Washington: Government Printing Office, 1914-1917).",
+  "rights": "US Government work, public domain",
+  "sourceUrl": "https://archive.org/details/usindianaffairs13usdorich",
+  "accessType": "hosted",
+  "hostingStatus": "transcript_only",
+  "readerMode": "transcript",
+  "transcript": "### From the Report for the Fiscal Year Ended June 30, 1913\n\nPEYOTE.\n\nVery careful consideration is being given to the question of the use of peyote. Much information has been submitted both by Indians who were members of so-called mescal organizations and who have pressed their petitions for permission to use it, and by missionaries, physicians in the Government service, and others interested in both sides of the question. The bureau has taken a firm stand against the introduction and use of peyote in the Indian country, and directed its liquor officers to obtain evidence of the use of this drug with a view to prosecution, on the ground that the data in the files of the bureau fully warrant the classification of peyote as an intoxicant. A full discussion of peyote was incorporated in the annual report of the Commissioner of Indian Affairs for 1911.\n\n### From the Report for the Fiscal Year Ended June 30, 1914\n\nOur efforts to suppress the use of peyote or mescal among the Indians have been carried on under difficulties, but we universally endeavor to show the Indian that this article contains properties which are detrimental to his welfare and should not be used.\n\n### From the Report for the Fiscal Year Ended June 30, 1915\n\nPeyote buttons, as they are commonly called, are the dried crowns of a cactus which grows on the rocky, arid lands of northern Mexico and are classed with intoxicants. Their use appears to be on the increase. Under an order of the Department of Agriculture its importation into the United States has been prohibited. It is too early to ascertain the effectiveness of this exclusion order. Appropriate legislation is being agitated to give the Indian Office enlarged powers for the suppression of peyote.\n\n### From the Report for the Fiscal Year Ended June 30, 1916\n\nTwo bills have been introduced in Congress for the purpose of controlling and eliminating the use of peyote, an imported Mexican product which produces a dangerous narcotic intoxication. These laws should be quickly passed. \n\n_[The bound volume's report for fiscal year 1917 contains no further mention of peyote by name; the H.R. 2614 hearings, held in February and March of the following year, took up the legislation these reports were urging.]_",
+  "wordCount": 380,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket B: peyote and US federal policy, 1890-1940)",
+    "proposedOn": "2026-08-15",
+    "rationale": "The administrative voice behind the suppression campaign that the archive's other 1918-1920s peyote sources respond to. Read alongside the H.R. 2614 hearing testimony, these four short annual-report passages show the Bureau of Indian Affairs building its case for legislation year over year, in the commissioner's own words, immediately before Congress took the question up.",
+    "textSource": {
+      "url": "https://archive.org/download/usindianaffairs13usdorich/usindianaffairs13usdorich_djvu.txt",
+      "kind": "internet-archive-djvu",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/commissioner-indian-affairs-1913-1917.txt",
+      "scope": "A single Internet Archive item binds the fiscal-year 1913 through 1917 annual reports together in one scan. Four short passages on peyote were located by full-text search across all five years' reports (raw OCR lines 1082-1095, 63576-63579, 102438-102447, 152098-152103); the fiscal year 1917 report contains no mention of peyote by name. Everything else in this roughly 2,700-page bound volume — allotment, education, agriculture, and the rest of each year's report — is omitted."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "high",
+      "notes": "OCR of a 1910s GPO document set in wide-spaced type; the scanner inserted extra spaces between words throughout (e.g. 'Peyote  buttons'), which were collapsed to single spaces. A stray running head ('COMMISSIONER OF INDIAN AFFAIRS. 15') at the top of one excerpted page was removed.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

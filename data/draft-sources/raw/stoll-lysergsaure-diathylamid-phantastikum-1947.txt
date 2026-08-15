@@ -1,0 +1,34 @@
+[Bibliographic verification capture, not the article text — this source is external-only.
+Werner A. Stoll's 1947 paper predates DOI indexing and is not available through any
+fetchable full-text host; the passages below are the citation metadata independently
+confirmed from a live, curl-fetched page, used to verify author, title, journal, volume,
+pages, and year before drafting the external-access record.]
+
+Source fetched: https://www.thieme-connect.de/products/ejournals/abstract/10.1055/a-2282-6399
+Fetched: 2026-08-15
+Method: curl -sL (HTTP 200)
+
+Relevant citation metadata extracted from the page's <meta> tags (this page is a later
+Thieme-published article that cites Stoll 1947 in its reference list; the meta tags below
+are Highwire-style citation tags for THAT reference, scraped verbatim from the HTML):
+
+citation_publication_date=1947
+citation_title=Lysergsäure-diäthylamid, ein Phantastikum aus der Mutterkorngruppe
+citation_firstpage=279
+citation_lastpage=323
+citation_journal_title=Schweizer Archiv für Neurologie und Psychiatrie
+citation_volume=60
+
+Reference-list entry as rendered on the page:
+"Stoll WA. Lysergsäure-diäthylamid, ein Phantastikum aus der Mutterkorngruppe."
+
+Cross-check (secondary, not independently fetchable — Erowid's reference database blocks
+automated fetches with a Cloudflare challenge, confirmed by direct curl and by WebFetch,
+both returning HTTP 403): a WebSearch snippet independently returned the identical
+citation — "Stoll, W. 1947. Lysergsäure-diäthylamid, ein Phantastikum aus der
+Mutterkorngruppe. Schweizer Archiv für Neurologie und Psychiatrie LX: 279–323" — matching
+the Thieme metadata on every point (title, volume/LX=60, pages, year).
+
+No English translation or public-domain digitization of the full 1947 article was located.
+Held under copyright (Switzerland; author Werner A. Stoll died 1969, so still well within
+copyright term). Draft record accordingly uses accessType "external" with no transcript.

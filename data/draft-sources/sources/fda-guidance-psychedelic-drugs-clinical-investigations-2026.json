@@ -1,0 +1,68 @@
+{
+  "slug": "fda-guidance-psychedelic-drugs-clinical-investigations-2026",
+  "title": "Psychedelic Drugs: Considerations for Clinical Investigations (Guidance for Industry)",
+  "shortTitle": "FDA Psychedelic Drugs Guidance",
+  "author": "U.S. Food and Drug Administration, Center for Drug Evaluation and Research",
+  "creators": [
+    {
+      "name": "FDA Division of Psychiatry, Center for Drug Evaluation and Research",
+      "role": "author"
+    }
+  ],
+  "year": 2026,
+  "displayDate": "July 2026 (finalizing a June 2023 draft)",
+  "type": "Source",
+  "medium": "Text",
+  "era": "2000-Present",
+  "region": "United States",
+  "language": "English",
+  "substances": [
+    "Psilocybin",
+    "LSD",
+    "MDMA"
+  ],
+  "people": [],
+  "tags": [
+    "fda",
+    "clinical-trials",
+    "regulatory-history",
+    "mdma",
+    "psilocybin",
+    "research-revival",
+    "drug-development",
+    "controlled-substances-act"
+  ],
+  "summary": "FDA guidance (July 2026) for sponsors developing psychedelics—5-HT2A agonists including psilocybin and LSD, plus MDMA—as approved medicines. It addresses the regulatory pathway for Schedule I drugs in clinical trials and identifies methodological challenges: perceptual effects complicate blinding ('functional unblinding'), and the independent contribution of psychotherapy paired with dosing remains uncharacterized.",
+  "excerpt": "Because this is an emerging area of drug development, there is limited experience with the design of drug development programs that may support approval of psychedelic drugs.",
+  "citation": "U.S. Food and Drug Administration, Center for Drug Evaluation and Research, Psychedelic Drugs: Considerations for Clinical Investigations, Guidance for Industry (July 2026).",
+  "rights": "US Government work, public domain",
+  "sourceUrl": "https://www.fda.gov/media/169694/download",
+  "accessType": "hosted",
+  "hostingStatus": "transcript_only",
+  "readerMode": "transcript",
+  "transcript": "### I. Introduction\n\nThe U.S. Food and Drug Administration (FDA or Agency) is issuing this guidance to provide general considerations to sponsors developing psychedelic drugs for the treatment of medical conditions (e.g., psychiatric disorders, substance use disorders). For the purposes of this guidance, the term psychedelic drug is used as shorthand to include classic psychedelics, typically understood to be 5-HT2A receptor agonists such as psilocybin and lysergic acid diethylamide (LSD), as well as entactogens or empathogens such as 3,4-methylenedioxymethamphetamine (MDMA). The regulatory concepts discussed in this guidance may also apply to other related products that can cause perceptual disturbances and alterations in consciousness.\n\nIn general, FDA's guidance documents do not establish legally enforceable responsibilities. Instead, guidances describe the Agency's current thinking on a topic and should be viewed only as recommendations, unless specific regulatory or statutory requirements are cited. The use of the word should in Agency guidances means that something is suggested or recommended, but not required.\n\n### II. Background\n\nIn recent years, interest in the therapeutic potential of psychedelic drugs has been increasing. Drug development programs for psychedelic drugs are subject to the same regulations and same evidentiary standards for approval as other drug development programs. However, designing clinical studies to evaluate the safety and effectiveness of these products presents a number of unique challenges. Psychedelic drugs can cause intense perceptual disturbances and alterations in consciousness that can last for several hours or days. Some drug development programs incorporate a psychological or behavioral intervention. Investigators hypothesize that psychedelic drugs have both rapid-onset and long-term benefits after only one or a few doses.\n\nThese and other unusual characteristics should be considered when designing clinical studies so that the results of those studies can provide reliable data on efficacy and safety.\n\nBecause this is an emerging area of drug development, there is limited experience with the design of drug development programs that may support approval of psychedelic drugs. Rather than providing specific recommendations on study design, this guidance will present foundational constructs that all sponsors studying the therapeutic potential of psychedelic drugs, including sponsors without commercial drug development as primary interest (e.g., academic researchers), should consider. Sponsors are encouraged to request meetings with FDA for advice on a specific drug development program.\n\nThis guidance applies to clinical trials that will be conducted under an investigational new drug application (IND), including clinical trials conducted under a research IND that are not intended to support marketing applications. The principles in this guidance are intended to support the ethical conduct of clinical trials as well as to ensure the integrity of the trial and the reliability of the results.\n\n### III.D. Abuse Potential Assessment\n\nThe assessment of the abuse potential of a drug product under development is generally conducted as a component of its safety evaluation. New drug products that are assessed for abuse potential include those that are active on the central nervous system. For general information on how to conduct the abuse potential evaluation, including recommended methodologies and what studies should be included as part of the new drug application submission, see the guidance for industry Assessment of Abuse Potential of Drugs (January 2017). The following considerations\n\n_[Several bullets on general abuse-potential-assessment methodology (animal studies, human abuse-potential studies) are omitted between here and the next excerpt.]_\n\nduring drug development. Data from the abuse potential assessment and a proposal for drug scheduling under the Controlled Substances Act are required to be included in a new drug application submission. Many psychedelic drugs are Schedule I substances under the Controlled Substances Act because they have a high potential for abuse and do not have a currently accepted medical use in treatment in the United States. Should a psychedelic drug that is a Schedule I controlled substance receive FDA approval as a drug product, the abuse potential assessment would assist in determining an appropriate rescheduling action under the Controlled Substances Act.\n\n• For psychedelic drugs that are Schedule I controlled substances, activities associated with investigations under an IND must comply with the Controlled Substances Act, and applicable implementing regulations adopted by the Drug Enforcement Administration (DEA), relating to research, manufacturing, importation/exportation, handling, and storage requirements for a Schedule I drug. Sponsors may contact DEA to discuss and ensure compliance with all applicable DEA requirements.\n\n• Some psychedelic drugs have already been well-characterized in preclinical investigations published in the scientific literature. The need for a sponsor to conduct new abuse-related animal studies (such as drug discrimination) with a specific psychedelic drug will depend on an FDA evaluation of the design and quality of published animal studies that will be referenced by the sponsor. Self-administration and conditioned place preference studies are not usually required for psychedelic drugs because they typically do not produce positive signals in those studies.\n\n• A human abuse potential study should generally be conducted when a drug has shown abuse-related signals in animal and/or human studies. However, a human abuse potential study may not be scientifically necessary for certain psychedelic drugs to support the abuse potential assessment in a new drug application when the subjective effects predictive of abuse are well-characterized from extensive clinical studies and robust epidemiological data exist to demonstrate that individuals are using the psychedelic drug for abuse purposes. Sponsors are encouraged to reach out to FDA during the IND stage if they believe there is sufficient existing data that the human abuse potential is already well-characterized.\n\n### III.E.1. Trial Design\n\n• Given concerns for functional unblinding, the use of a traditional placebo as a control can be problematic for assessing efficacy even though it provides better contextualization for safety findings. Alternatives to an inert placebo (e.g., lower doses of a psychedelic, other psychoactive drugs that mimic some aspects of the subjective experience associated with psychedelic drugs) may be considered as well. The Agency encourages the consideration of innovative approaches for control groups. In general, controls should be closely matched to the treatment group for clinically relevant variables and clinical care. Study results should be strongly persuasive and robust across study endpoints to overcome biases that may be introduced by functional unblinding.\n\n• Clinical trial design proposals should be discussed with the review division before the initiation of a study.\n\n_[Bullets on control-group design, durability of response and repeat dosing, and complementary phase 2/3 trial designs are omitted.]_\n\n• Although the FDA does not address inclusion and exclusion criteria in this guidance, we advise that the included population be representative of the population intended to receive the treatment. Trials should not unnecessarily exclude subjects who have certain health characteristics (e.g., age, treatment history, concurrent treatments, pregnancy) if these groups are intended to receive the treatment post-approval, but they should be appropriately stratified. Excluded populations may not be described in the approved indication in prescribing information.\n\n• Many of the psychedelic drug development programs involve administration of the investigational product and engaging in psychological support or psychotherapy either while the subject is experiencing the acute effects of the drug or in a separate session. This additional variable both complicates the assessment of effectiveness and presents a challenge for any future product labeling.\n\n– As of the publication date of this guidance, the contribution of the psychotherapy component to any efficacy observed with psychedelic drug treatment has not been characterized. A factorial design may be useful for characterizing the separate contributions of drug and psychotherapy to any observed treatment response.\n\n– The therapist monitoring the session can usually deduce the treatment assignment by observing the subject's behavior; thus, their knowledge of the treatment could bias the delivery of subsequent therapy. One option for managing this bias within the clinical trial could be to ensure that the in-session monitor is not involved in post-session psychotherapy.\n\n– Sponsors should describe their planned treatment paradigm, including whether drug administration will be paired with psychological support or psychotherapy, and provide a rationale for the chosen model. Sponsors should also describe any trial design elements intended to reduce potential bias or to quantify the contribution of psychotherapy to the overall treatment effect. The treatment paradigm used in the trials may be described in product labeling.",
+  "wordCount": 1348,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research-agent-bucket-k",
+    "proposedOn": "2026-08-15",
+    "rationale": "The brief asked for 'FDA's 2023 draft guidance on psychedelic drug clinical trials'; the document at the cited FDA URL turns out to be the finalized version, issued July 2026, one year past this bucket's nominal 1980-2025 window but the direct completion of the same regulatory process and the natural closing document for the 'research revival' half of the bucket. Flagged for the human reviewer to confirm the date is acceptable for this bucket.",
+    "textSource": {
+      "url": "https://www.fda.gov/media/169694/download",
+      "kind": "other",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/fda-guidance-psychedelic-drugs-clinical-investigations-2026.txt",
+      "scope": "Born-digital PDF (16 pp.), text extracted with pdftotext -layout. Excerpted: the Introduction and Background (Sections I-II in full), the opening of the Abuse Potential Assessment subsection on Schedule I/DEA compliance (Section III.D, first four bullets), and two bullet groups from the Trial Design subsection (Section III.E.1) on functional unblinding and on pairing drug administration with psychotherapy. The Chemistry/Manufacturing, Nonclinical, Clinical Pharmacology, remaining Abuse Potential bullets, and Safety Considerations sections are omitted."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "high",
+      "notes": "Born-digital PDF, no OCR needed. pdftotext -layout preserves the source's per-line indentation, which broke each wrapped bullet into hard line breaks; these were rejoined into flowing paragraphs by hand (a mechanical reflow, not a content change), and interleaved footnote-marker digits (e.g. the '27' in 'submission. 27 Many') and running headers/page numbers were removed as page furniture, also by hand, since the automated cleanup regex only strips furniture that sits on its own line.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

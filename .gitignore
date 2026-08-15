@@ -39,3 +39,6 @@ pnpm-debug.log*
 # Temporary files
 .tmp/
 tmp/
+
+# Generated from data/draft-sources by scripts/build_draft_import.mjs; images are copies
+data/draft-import/images/

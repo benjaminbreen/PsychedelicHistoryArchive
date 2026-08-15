@@ -1,0 +1,72 @@
+{
+  "slug": "jean-bassett-johnson-elements-mazatec-witchcraft-1939",
+  "title": "The Elements of Mazatec Witchcraft",
+  "author": "Jean Bassett Johnson",
+  "creators": [
+    {
+      "name": "Jean Bassett Johnson",
+      "role": "author"
+    }
+  ],
+  "year": 1939,
+  "displayDate": "1939",
+  "type": "Academic Article",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "Mexico",
+  "language": "English",
+  "substances": [
+    "Psilocybin",
+    "Ololiuhqui",
+    "Salvia divinorum"
+  ],
+  "people": [
+    "Jean Bassett Johnson",
+    "Irmgard Weitlaner-Johnson",
+    "Robert J. Weitlaner",
+    "Louise Lacaud",
+    "Bernard Bevan"
+  ],
+  "tags": [
+    "mazatec",
+    "huautla-de-jimenez",
+    "brujeria",
+    "curanderismo",
+    "oaxaca",
+    "hierba-maria",
+    "semilla-de-la-virgen"
+  ],
+  "summary": "A Berkeley anthropologist's field survey of Mazatec witchcraft from a 1938 expedition to Huautla de Jiménez, Oaxaca. It describes mushrooms eaten by brujos for divination, alongside ololiuhqui and Salvia divinorum, noting mushrooms were never sold openly in markets.",
+  "excerpt": "\"While the brujo is under the influence of the narcotic mushroom, it is the mushroom which speaks, and not the brujo.\"",
+  "citation": "Johnson, Jean Bassett. \"The Elements of Mazatec Witchcraft.\" Ethnologiska Studier 9 (Göteborg: Göteborgs Etnografiska Museum, 1939): 128–150.",
+  "rights": "In copyright (published 1939). Full text digitized and hosted by the Internet Archive; used here only as a short verified excerpt per this project's pre-1930 hosting rule.",
+  "sourceUrl": "https://archive.org/details/EtnologiskaStudier09",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "_No transcript hosted (text postdates 1930 and is not a US Government work). Excerpt below verified against the Internet Archive scan of Etnologiska Studier 9, pp. 128–150._\n\n\"Mushrooms are also eaten by the brujos of Mazatlan, as is general throughout the entire Mazatec area... While the brujo is under the influence of the narcotic mushroom, it is the mushroom which speaks, and not the brujo... Throughout the whole of the Mazatec area, the articles of witchcraft, save the mushrooms, are sold openly in the markets.\"",
+  "wordCount": 85,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket E: Mesoamerican mushrooms and morning glory, 1915-1962)",
+    "proposedOn": "2026-08-15",
+    "rationale": "Written directly out of the 1938 Huautla expedition that produced the first outsider-witnessed velada; it is the earliest professional ethnographic account to set the sacred mushroom alongside ololiuqui and Salvia divinorum as a single regional complex of divinatory plants, and to note the mushroom's uniquely restricted, non-commercial status.",
+    "textSource": {
+      "url": "https://archive.org/download/EtnologiskaStudier09/Etnologiska_Studier-09_djvu.txt",
+      "kind": "internet-archive-djvu",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/jean-bassett-johnson-elements-mazatec-witchcraft-1939.txt",
+      "scope": "Full OCR text of Johnson's article, pp. 128-150 of the volume, downloaded for verification; only a short quoted excerpt is used in the published transcript field per the copyright rule for post-1930 texts."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "high",
+      "notes": "OCR of the archive.org scan is reasonably clean for this article; ligature and long-s artifacts (e.g. 'throughhout', 'estiércol'-style breaks) appear in places and were not corrected here since only a short excerpt is published. The excerpt quoted was checked directly against the raw OCR file.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

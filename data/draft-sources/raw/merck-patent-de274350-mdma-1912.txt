@@ -1,0 +1,316 @@
+10
+15
+20
+25
+
+30
+
+e
+
+KAISERLICHES
+
+PATENTSCHRIFT
+
+— M 274350 —
+KLASSE 12 g. GRUPPE 32/70-
+
+Fırma E.MERCK ın DARMSTADT.
+
+Verfahren zur Darstellung von Alkyloxyaryl-, Dialkyloxyaryl- und Alkylendioxyarylamino-
+
+propanen bzw. deren am Stickstoff monoalkylierten Derivaten.
+
+Patentiert im Deutschen Reiche vom 24. Dezember 1912 ab.
+
+In der Literatur ist die Anlagerung zweier
+Atome Brom an Arylpropylene der allge-
+meinen Formeln:
+
+R-CH,-CH:CH,
+
+„2.00, — CHKOSCH, — CH,
+
+bedeutet, schon des öfteren beschrieben, da-
+gegen ist die Anlagerung von Bromwasser-
+stoffsäure an diese Doppelbindungen noch
+niemals durchgeführt worden. Es wurde
+nunmehr die unerwartete Beobachtung ge-
+macht, daß Halogenwasserstoffsäuren unter
+geeigneten Bedingungen sich an die erwähnten
+ungesättigten Verbindungen unter Bildung
+der bisher unbekannten Alkyloxy-, Dialkyloxy-
+oder Alkylendioxyarylhalogenpropane anlagern,
+ohne daß die von vornherein zu befürchtende
+Aufspaltung der Alkyloxygruppe /n) erfolgt.
+
+Die Anlagerung von Halogenwasserstofi er-
+folgt dabei so, daß das Halogen an das dem
+Benzolkern näher stehende Kohlenstoffatom
+tritt. Die Derivate des Allylbenzols, z. B.
+Methyleugenol, Safrol, Apiol, liefern dabei
+also in ß-Stellung substituierte (arylierte) Iso-
+propylhalogenide:
+
+(CH Oh: GR! «CH,.-CH:CH,+ HBr
+—= (CH C,H; CH,:CH.CH,.
+Br
+
+s O)r*
+
+und
+R-CH:CH:CH,,
+in welchen R einen ätherifizierten Arylrest
+
+‚0CH,
+NOCH,
+
+Die Abkömmlinge des Propenylbenzols, z. B.
+Anethol, Isosafrol, addieren Halogenwasser-
+stoff unter Bildung von a-substituierten (ary-
+lierten) n-Propylhalogeniden:
+
+CH,-0-C,H,-CH:CH-CH,+HBr
+= CH3-0.C,H,: CH (Br). CH,-CH,.
+
+Die entstandenen Halogenwasserstofladdi-
+tionsprodukte sind schwere, schwach gefärbte
+Öle. Sie sind verhältnismäßig unbeständig
+und lassen sich, selbst im Vakuum, nicht un-
+zersetzt destillieren. . Trotzdem lassen sie sich
+wider Erwarten glatt mit Ammoniak und pri-
+mären aliphatischen Aminen umsetzen, wobei
+die entsprechenden Alkyloxy-, Dialkyloxy-
+oder Alkylendioxyarylaminopropane bzw. de-
+ren N-Monoalkylderivate entstehen.
+
+Diese Reaktion war um so weniger zu er-
+warten, als die Gefahr vorlag, daß durch Ab-
+spaltung von Halogenwasserstoffsäure aus-
+schließlich die die ungesättigte Seitenkette
+enthaltenden Ausgangsstofie zurückgebildet
+werden würden. Tatsächlich verläuft die
+
+35
+
+40
+
+45
+
+50
+
+35
+
+60
+10
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+45
+
+50
+
+: derselben Temperatur geschüttelt.
+
+55
+
+60
+
+Reaktion auch teilweise in der letzten Rich-
+tung; das ist aber für das Endergebnis ohne
+Belang, da die zurückgewonnenen Ausgangs-
+stoffe stets wieder in die Reaktion zurück-
+geführt werden können. Die durch die Um-
+setzung mit Ammoniak oder monoalkylierten
+Ammoniaken erhältlichen Alkyloxy-, Dialkyl-
+oxy- und Alkylendioxyarylaminopropane sind
+wichtige Zwischenprodukte zur Herstellung
+therapeutisch wirksamer Verbindungen.
+
+Beispiele.
+
+1. An geschmolzenes Anethol wird auf die
+im Beispiel 3 ausführlich dargelegte Weise
+Bromwasserstoffsäure angelagert und der rohe
+Bromkörper, wie dort angegeben, mit alko-
+holischem Ammoniak umgesetzt.
+
+Das a» p-Methoxyphenyl-n-propylamin
+
+0:CH,
+!
+
+j
+CH({NH,)-CH,-CH,
+
+stellt ein farbloses, unter einem Druck von
+7 mm bei ı16 bis ı17° siedendes Öl dar.
+Das salzsaure Salz schmilzt bei 217°.
+2. Das aus Methyleugenol auf dieselbe
+Weise erhaltene 8-3. 4-Dimethoxyphenyliso-
+propylamin
+
+0.CH,
+|
+-0.CH,
+
+j .
+CH, CH(NH,)-CH,
+
+ist ein farbloses Öl vom Sdp. 141 bis 142°
+unter 535 mm Druck. Das salzsaure Salz
+schmilzt bei 150 bis 151°.
+
+3. 150 g Safrol werden langsam und unter
+Eiskühlung in 500 ccm einer bei 0° gesättig-
+ten Lösung von Bromwasserstofisäure in
+Wasser eingetragen und mehrere Stunden bei
+Das Re-
+aktionsprodukt wird mit Chloroform aufge-
+nommen, diese Lösung nacheinander mit ver-
+dünnter Sodalösung und Wasser geschüttelt
+und mit Chlorcalcium getrocknet. Nach dem
+Verdampfen des Chloroforms unter vermin-
+dertem Druck bleibt das Monobromdihydro-
+safrol zusammen mit etwas Safrol zurück.
+
+Das Reaktionsprodukt wird mit der vier- bis
+fünffachen Menge starken wässerigen Am-
+
+moniaks mehrere Stunden auf 120° erhitzt
+
+und die entstandene Base
+
+O—-CH,
+! |
+
+-0
+
+|
+CH,-CH(NH,):CH,
+
+auf bekannte Weise gewonnen.
+
+Die Verbindung stellt eine farblose Flüssig-
+keit dar, die unter ıgmm Druck bei 153°
+siedet; sie bildet ein gut und leicht kristalli-
+sierendes saures Sulfat. j
+
+Das salzsaure Salz bildet weiße Nadeln
+vom F. 183 bis 185°.
+
+4. 50 g des nach der in Beispiel 3 be-
+schriebenen Methode gewonnenen rohen Brom-
+dihydrosafrols werden mit der fünffachen
+
+‚Menge starker alkoholischer Methylaminlösung
+
+2 Stunden auf 130° erhitzt. Nach dem Ent-
+fernen der Hauptmenge des Methylamins wird
+der Rückstand auf bekannte Weise aufgear-
+beitet. Die neue sekundäre Base von der
+Formel:
+
+CH,-0,:C,H,-CH,: CH (CH,):NH-CH,
+
+bildet ein farbloses Öl, das unter 20 mm
+Druck bei 155° siedet.
+
+Das salzsaure Salz bildet derbe weiße
+Kristalle, die bei 148 bis 150° schmelzen.
+
+3. 50g Isosafrol werden in Ioo ccm einer
+bei 0° gesättigten Lösung von Bromwasser-
+stofisäure in Eisessig langsam und unter Küh-
+lung mit Eis eingetragen und mehrere Stunden
+geschüttelt. Die Aufarbeitung geschieht, wie
+im Beispiel 3 angegeben.
+
+Der so erhaltene rohe Bromkörper wird mit
+der vier- bis fünffachen Menge gesättigten
+alkoholischen Ammoniaks 2 Stunden auf 100°
+erhitzt. Ammoniak und Alkohol werden im
+Vakuum entfernt und aus dem Rückstand
+die Base durch Zugabe von überschüssiger
+Lauge gewonnen.
+
+Das a-3.« 4-Methylendioxyphenyl-n-propyl-
+amin
+0-——-CH,
+| j
+u)
+
+|
+CH(NH,)-CH,-CH,
+
+siedet unter einem Druck von I2 mm bei
+I4I°.
+
+Das salzsaure Salz schmilzt bei 200 bis
+201°.
+
+65
+
+79
+
+75
+
+8o
+
+85
+
+90
+
+95
+
+-
+
+00
+
+»
+
+05
+
+110
+
+115
+
+120
+PATENT-ÄNSPRUCH:!:
+
+Verfahren zur Darstellung von Alkyl-
+
+oxyaryl-, Dialkyloxyaryl- und Alkylen-
+dioxyarylaminopropanen bzw. deren am
+Stickstoff mönoalkylierten Derivaten, darin
+bestehend, daß man die entsprechenden
+ungesättigten Propylenverbindungen der
+allgemeinen. Formeln:
+
+R-CH,-CH:CH,
+
+und
+R-CH:CH.CH,
+{R = Alkoxyaryl, Dialkoxyaryl oder Al-
+kylendioxyaryl)
+mit Halogenwasserstoffsäuren behandelt
+
+und die so entstandenen halogenhaltigen
+Reaktionsprodukte mit Ammoniak oder
+primären aliphatischen Aminen umsetzt.
+
+®
+BERLIN. GEDRUCKT IN DER REICHSDRUCKEREL
+
+10
+
+15

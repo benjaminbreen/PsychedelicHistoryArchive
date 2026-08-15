@@ -1,0 +1,65 @@
+{
+  "slug": "cohen-lsd-side-effects-complications-1960",
+  "title": "Lysergic Acid Diethylamide: Side Effects and Complications",
+  "author": "Sidney Cohen",
+  "creators": [
+    {
+      "name": "Sidney Cohen",
+      "role": "author"
+    }
+  ],
+  "year": 1960,
+  "displayDate": "January 1960",
+  "type": "Academic Article",
+  "medium": "Text",
+  "era": "1950-1970",
+  "region": "United States",
+  "language": "English",
+  "substances": [
+    "LSD",
+    "Mescaline"
+  ],
+  "people": [
+    "Sidney Cohen"
+  ],
+  "tags": [
+    "lsd",
+    "mescaline",
+    "safety-survey",
+    "veterans-administration",
+    "clinical-research"
+  ],
+  "summary": "Sidney Cohen surveyed researchers at the VA Neuropsychiatric Hospital who had administered LSD or mescaline to nearly 5,000 subjects across more than 25,000 doses. He found no cases of serious prolonged physical harm and quantified low rates of suicide attempts, psychotic breaks over 48 hours, and other adverse effects.",
+  "excerpt": "",
+  "citation": "Sidney Cohen, \"Lysergic Acid Diethylamide: Side Effects and Complications,\" Journal of Nervous and Mental Disease 130, no. 1 (January 1960): 30–40.",
+  "rights": "In copyright (Wolters Kluwer / Ovid). No US Government interest — Cohen wrote in his VA capacity but this is a journal publication, not a VA report.",
+  "sourceUrl": "https://doi.org/10.1097/00005053-196001000-00005",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "",
+  "wordCount": 0,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket F: LSD/mescaline in psychiatry, 1943-1962)",
+    "proposedOn": "2026-08-15",
+    "rationale": "For a decade the empirical backbone of arguments for LSD's safety in clinical research and therapy. Distinct from and earlier than the archive's 1965-66 Cohen UCLA speeches, which are public addresses rather than peer-reviewed data.",
+    "textSource": {
+      "url": "https://api.crossref.org/works/10.1097/00005053-196001000-00005",
+      "kind": "other",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/cohen-lsd-side-effects-complications-1960.txt",
+      "scope": "Crossref bibliographic record only (title, author, journal, volume/issue/pages, date). Full text was not reachable: PubMed returned HTTP 403 to automated fetch, and the LWW/Ovid journal platform is a client-rendered app that returned no server-side abstract text."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "medium",
+      "notes": "Citation fields confirmed via Crossref API. No exact-text quotation obtained — study description in the summary draws on non-verbatim WebSearch result summaries, not a fetched primary page, so no quotation is included in the record.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15. Not the same as the archive's existing 1965 and 1966 Sidney Cohen UCLA speeches.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

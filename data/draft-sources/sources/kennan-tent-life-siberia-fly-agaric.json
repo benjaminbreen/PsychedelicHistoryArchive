@@ -1,0 +1,66 @@
+{
+  "slug": "kennan-tent-life-siberia-fly-agaric",
+  "title": "Tent Life in Siberia",
+  "shortTitle": "Tent Life in Siberia",
+  "author": "George Kennan",
+  "creators": [
+    {
+      "name": "George Kennan",
+      "role": "author"
+    }
+  ],
+  "year": 1870,
+  "displayDate": "1870",
+  "type": "Book",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "Kamchatka, Siberia",
+  "language": "English",
+  "substances": [
+    "Amanita muscaria"
+  ],
+  "people": [
+    "George Kennan"
+  ],
+  "tags": [
+    "fly-agaric",
+    "koryak",
+    "kamchatka",
+    "siberia",
+    "travel-narrative",
+    "telegraph-expedition"
+  ],
+  "summary": "An American telegraph surveyor's account of Koryak men intoxicated on fly-agaric at a wedding celebration in northern Kamchatka. Kennan describes the mushroom's price, preparation, etiquette of serving, and the trade dynamics between Russian merchants and Koryak consumers.",
+  "excerpt": "It may sound strangely to American ears, but the invitation which a convivial Korak extends to his passing friend is not, \"Come in and have a drink,\" but, \"Won't you come in and take a toadstool?\"",
+  "citation": "George Kennan, Tent Life in Siberia: Adventures among the Koraks and Other Tribes in Kamchatka and Northern Asia (New York: G. P. Putnam's Sons, 1870), chap. XVII.",
+  "rights": "Public domain (published before 1930)",
+  "sourceUrl": "https://www.gutenberg.org/ebooks/12328",
+  "accessType": "hosted",
+  "hostingStatus": "transcript_only",
+  "readerMode": "transcript",
+  "transcript": "### Chapter XVII\n\nAfter the conclusion of the ceremony we removed to an adjacent tent, and were surprised, as we came out into the open air, to see three or four Koraks shouting and reeling about in an advanced stage of intoxication — celebrating, I suppose, the happy event which had just transpired. I knew that there was not a drop of alcoholic liquor in all northern Kamchatka, nor, so far as I knew, anything from which it could be made, and it was a mystery to me how they had succeeded in becoming so suddenly, thoroughly, hopelessly, undeniably drunk. Even Ross Browne's beloved Washoe, with its \"howling wilderness\" saloons, could not have turned out more creditable specimens of intoxicated humanity than those before us. The exciting agent, whatever it might be, was certainly as quick in its operation, and as effective in its results, as any \"tanglefoot\" or \"bottled lightning\" known to modern civilisation. Upon inquiry we learned to our astonishment that they had been eating a species of the plant vulgarly known as toadstool. There is a peculiar fungus of this class in Siberia, known to the natives as \"muk-a-moor,\" and as it possesses active intoxicating properties, it is used as a stimulant by nearly all the Siberian tribes. [Footnote: _Agaricus muscarius_ or fly-agaric.] Taken in large quantities it is a violent narcotic poison; but in small doses it produces all the effects of alcoholic liquor. Its habitual use, however, completely shatters the nervous system, and its sale by Russian traders to the natives has consequently been made a penal offence by Russian law. In spite of all prohibitions, the trade is still secretly carried on, and I have seen twenty dollars' worth of furs bought with a single fungus. The Koraks would gather it for themselves, but it requires the shelter of timber for its growth, and is not to be found on the barren steppes over which they wander; so that they are obliged for the most part to buy it, at enormous prices, from the Russian traders. It may sound strangely to American ears, but the invitation which a convivial Korak extends to his passing friend is not, \"Come in and have a drink,\" but, \"Won't you come in and take a toadstool?\" Not a very alluring proposal perhaps to a civilised toper, but one which has a magical effect upon a dissipated Korak. As the supply of these toadstools is by no means equal to the demand, Korak ingenuity has been greatly exercised in the endeavour to economise the precious stimulant, and make it go as far as possible. Sometimes, in the course of human events, it becomes imperatively necessary that a whole band shall get drunk together, and they have only one toadstool to do it with. For a description of the manner in which this band gets drunk collectively and individually upon one fungus, and keeps drunk for a week, the curious reader is referred to Goldsmith's _Citizen of the World_, Letter 32. It is but just to say, however, that this horrible practice is almost entirely confined to the settled Koraks of Penzhinsk Gulf — the lowest, most degraded portion of the whole tribe. It may prevail to a limited extent among the wandering natives, but I never heard of more than one such instance outside of the Penzhinsk Gulf settlements.\n\n_[A later chapter describing the settled Koraks, which repeats that they use the mushroom in large quantities, is omitted.]_",
+  "wordCount": 579,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket C: Amanita muscaria in Siberian/Kamchatkan ethnography, c. 1730-1930)",
+    "proposedOn": "2026-08-15",
+    "rationale": "A widely-read popular account, distinct in register from the scholarly ethnographies of Bogoras and Jochelson, that shows fly-agaric use as an American traveler of the 1860s actually encountered and described it, including its cash trade value and social role at a wedding celebration.",
+    "textSource": {
+      "url": "https://www.gutenberg.org/cache/epub/12328/pg12328.txt",
+      "kind": "gutenberg",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/kennan-tent-life-siberia-fly-agaric.txt",
+      "scope": "The fly-agaric ('muk-a-moor') passage from the chapter describing a Koryak wedding celebration. This Gutenberg text reproduces the revised 1910 Putnam edition (with the author's 1909 footnotes); the work was first published in 1870. The rest of the 400-plus-page travel narrative was not transcribed."
+    },
+    "textQuality": {
+      "ocrPass": "hand-checked",
+      "confidence": "high",
+      "notes": "Clean Gutenberg plain text verified against raw source. All 16 sentences of the fly-agaric passage confirmed to match the 1910 Putnam edition. Elisions properly marked with editorial interpolations in italics and square brackets. Kennan's original transliterations and place names preserved.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15. Distinct from the already-archived Langsdorff account of fly agaric among the Koryak (1812).",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

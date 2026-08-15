@@ -1,0 +1,67 @@
+{
+  "slug": "osmond-review-psychotomimetic-agents-1957",
+  "title": "A Review of the Clinical Effects of Psychotomimetic Agents",
+  "author": "Humphry Osmond",
+  "creators": [
+    {
+      "name": "Humphry Osmond",
+      "role": "author"
+    }
+  ],
+  "year": 1957,
+  "displayDate": "March 1957",
+  "type": "Academic Article",
+  "medium": "Text",
+  "era": "1950-1970",
+  "region": "Canada",
+  "language": "English",
+  "substances": [
+    "LSD",
+    "Mescaline"
+  ],
+  "people": [
+    "Humphry Osmond",
+    "Aldous Huxley"
+  ],
+  "tags": [
+    "psychedelic-coinage",
+    "terminology",
+    "mescaline",
+    "lsd",
+    "saskatchewan",
+    "model-psychosis"
+  ],
+  "summary": "Osmond surveyed psychotomimetic agents and proposed new terminologies, settling on \"psychedelic, mind-manifesting\" as his choice. This paper put the word into circulation among psychiatrists, coining the term still used today.",
+  "excerpt": "\"My choice, because it is clear, euphonious, and uncontaminated by other associations, is psychedelic, mind-manifesting.\"",
+  "citation": "Humphry Osmond, \"A Review of the Clinical Effects of Psychotomimetic Agents,\" Annals of the New York Academy of Sciences 66, no. 3 (March 1957): 418–434.",
+  "rights": "In copyright (Wiley, for the New York Academy of Sciences). No US Government interest.",
+  "sourceUrl": "https://nyaspubs.onlinelibrary.wiley.com/doi/10.1111/j.1749-6632.1957.tb40738.x",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "",
+  "wordCount": 0,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket F: LSD/mescaline in psychiatry, 1943-1962)",
+    "proposedOn": "2026-08-15",
+    "rationale": "The single most important terminological document in the archive's period: the paper that coined \"psychedelic.\" Delivered to a New York Academy of Sciences conference and drawing on roughly fifty administrations of LSD and mescaline to volunteers (including Aldous Huxley). Osmond argued that \"psychotomimetic\" was too narrow and pathologizing, proposing several alternative coinages (psychehormic, psycherhexic, psychezymic, psychelytic) before settling on psychedelic. Directly continues the Osmond-Smythies 1952 biochemical research program and Osmond-Hoffer-Smythies threads.",
+    "textSource": {
+      "url": "http://www.hofmann.org/papers/osmond/index.html",
+      "kind": "other",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/osmond-review-psychotomimetic-agents-1957.txt",
+      "scope": "A substantial editorial excerpt (roughly pages 427-432 of 418-434) freely posted by the nonprofit Albert Hofmann Foundation; used here only to verify and quote the naming passage. Canonical publisher record confirmed separately via Crossref API (DOI 10.1111/j.1749-6632.1957.tb40738.x)."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "high",
+      "notes": "The quoted coinage passage is verbatim from the fetched hofmann.org page, which itself reproduces the journal text (this is a copyright-holder-tolerated foundation excerpt, not evidence the work is public domain — the article is a 1957 Wiley/NYAS publication and remains in copyright, so only the short quote is used here rather than the full excerpt available on that page).",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

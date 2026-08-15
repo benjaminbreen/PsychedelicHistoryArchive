@@ -1,0 +1,73 @@
+{
+  "slug": "cia-gottlieb-ssci-testimony-1975",
+  "title": "Testimony of Sidney Gottlieb before the Senate Select Committee on Intelligence Activities",
+  "shortTitle": "Sidney Gottlieb Church Committee Testimony (1975)",
+  "author": "Sidney Gottlieb",
+  "creators": [
+    {
+      "name": "Sidney Gottlieb",
+      "role": "author"
+    },
+    {
+      "name": "United States Senate Select Committee to Study Governmental Operations with Respect to Intelligence Activities",
+      "role": "editor"
+    }
+  ],
+  "year": 1975,
+  "displayDate": "15 October 1975",
+  "type": "Testimony",
+  "medium": "Text",
+  "era": "1970-2000",
+  "region": "United States",
+  "language": "English",
+  "substances": [
+    "LSD"
+  ],
+  "people": [
+    "Sidney Gottlieb",
+    "Terry Lenzner"
+  ],
+  "tags": [
+    "mkultra",
+    "cia",
+    "church-committee",
+    "self-administration",
+    "informed-consent"
+  ],
+  "summary": "Staff testimony by CIA chemist Sidney Gottlieb before the Church Committee on MKULTRA. Gottlieb discusses LSD training for intelligence officers and contract research, and confirms TSS had no informed-consent policy for contracted experiments.",
+  "excerpt": "Do you recall in a general sense... whether there was a policy on the part of TSS in regard to the forms of consent obtained... Dr. Gottlieb: We didn't have any. We felt that was their responsibility.",
+  "citation": "Sidney Gottlieb, testimony before the Senate Select Committee to Study Governmental Operations with Respect to Intelligence Activities, 15 October 1975, CIA CREST document C00095085.",
+  "rights": "US Government work, public domain",
+  "sourceUrl": "https://www.cia.gov/readingroom/document/00095085",
+  "accessType": "hosted",
+  "hostingStatus": "transcript_only",
+  "readerMode": "transcript",
+  "transcript": "_[Surviving scan is degraded by declassification watermark. Ellipses mark illegible passages or excerpt boundaries.]_\n\n\n\nMr. Maxwell. ...in the Agency, or throughout the [DDP], how were people told that they could participate?\n\nDr. Gottlieb. It wasn't that kind of a program. They were approached -- and I forget how -- it wasn't a paper that said, anybody that wants LSD show up or present your case. It was much more a program of somehow -- I don't remember the mechanism -- of people who were going to serve in the Soviet Union or in places that would be exposed, they were approached, and told, we have this capability of exposing you to this drug, and the reason we think you might be interested in it is because you might someday be covertly attacked by it.\n\nMr. Lenzner. You used the word tests. Those weren't actually tests. They were actually considered a part of training. Maybe they were evaluating reactions, but it was mainly training.\n\n\n\nDr. Gottlieb. I imagine there would be some consultation with whoever was monitoring the project, sure. My problem is that I can't remember now either exactly where they were, who monitored them, what experiments were done, or what the design was. I can only say that the experiments involved both the pharmacology of LSD and similar materials, and probably some clinical testing on humans.\n\nMr. Maxwell. By clinical testing you mean what?\n\nDr. Gottlieb. I mean the administering them to human beings to see what their clinical effect was. And my remembrance of this period was that a lot of people began to be interested in the therapeutic possibility of LSD.\n\n\n\n...Do you recall in a general sense in regard to human experimentation at that time whether there was a policy on the part of TSS in regard to the forms of consent obtained or the notification to those people who are involved in projects that have been contracted out, experiments that have been contracted out?\n\nDr. Gottlieb. To the best of my remembrance, I think we counted on the investigator and the system they were using at the institution or installation to handle that. We didn't have any. We felt that was their responsibility.\n\nMr. Maxwell. Would that normally be involved in a research design that was brought to your attention or to the attention of TSS?\n\nDr. Gottlieb. I don't think so. ...",
+  "wordCount": 398,
+  "draft": {
+    "status": "needs-work",
+    "proposedBy": "research agent (bucket G: US government documents on LSD/psychedelics, 1953-1980)",
+    "proposedOn": "2026-08-15",
+    "rationale": "The fullest surviving direct testimony from the CIA officer who ran MKULTRA, on exactly the questions the archive wants documented: institutional self-administration/exposure of officers to LSD, contract human testing, and the absence of an informed-consent policy. Flagged needs-work because the source scan is unusually degraded (see textQuality) and only a short, high-confidence excerpt could be responsibly transcribed; a better scan or a transcript from a published secondary source (e.g. John Marks's FOIA-derived notes) could substantially extend this record.",
+    "textSource": {
+      "url": "https://archive.org/details/cia-readingroom-document-00095085",
+      "kind": "crest",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/cia-gottlieb-ssci-testimony-1975.txt",
+      "scope": "Three short passages (raw lines 4185-4219, 7973-8003, 8228-8272) from the archive.org tesseract OCR of the full document. A second, higher-resolution re-OCR of pp. 38-46 also exists in the raw file but proved equally garbled on inspection and was not used."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "This document -- an original court-reporter transcript stamped with a diagonal CIA declassification watermark -- is the worst-preserved of the five documents fetched for this bucket. The watermark overlaps and destroys individual character pixels rather than merely obscuring them, so no amount of re-OCR or image thresholding recovers the affected text (multiple re-OCR attempts at up to 400dpi, and a bilevel-threshold pass, were tried against the source PDF during this research pass and all failed in the same way). Most of the ~330-page raw file is unusable: text is either scrambled by two-column merging (words from adjacent columns interleaved out of order) or destroyed by the watermark. The three passages transcribed here were the only stretches found, after checking roughly a dozen candidate LSD-related passages across the file, that read as coherent, correctly-ordered prose; short illegible words within them are marked with ellipses or square brackets rather than guessed. No word was reordered from how it appears in the raw file. A hand transcription directly from the CIA CREST PDF, or from a less degraded copy if one exists, would likely recover much more of this testimony and should be attempted before this draft is finalized.",
+      "uncertainReadings": [
+        "'[DDP]' in the first exchange is an editorial guess at a redacted/illegible directorate name, not legible in the source",
+        "the interviewer's identity ('Mr. Maxwell' vs. committee counsel) follows the raw OCR's speaker labels, which are themselves sometimes garbled elsewhere in the file and were not independently verified"
+      ]
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "richard-evans-schultes-teonanacatl-1940",
+  "title": "Teonanacatl: The Narcotic Mushroom of the Aztecs",
+  "author": "Richard Evans Schultes",
+  "creators": [
+    {
+      "name": "Richard Evans Schultes",
+      "role": "author"
+    }
+  ],
+  "year": 1940,
+  "displayDate": "July-September 1940",
+  "type": "Academic Article",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "Mexico",
+  "language": "English",
+  "substances": [
+    "Psilocybin"
+  ],
+  "people": [
+    "Richard Evans Schultes",
+    "Blas Pablo Reko",
+    "Robert J. Weitlaner",
+    "Jean Bassett Johnson"
+  ],
+  "tags": [
+    "teonanacatl",
+    "paneolus-campanulatus",
+    "mazatec",
+    "huautla-de-jimenez",
+    "botanical-identification",
+    "ethnobotany"
+  ],
+  "summary": "Schultes's botanical account of his 1938-39 fieldwork with Blas Pablo Reko among the Mazatec, tracing the teonanácatl rediscovery from Reko's 1923 letter through Robert Weitlaner's 1936 visit to Huautla de Jiménez. Schultes identifies the mushroom as Paneolus campanulatus var. sphinctrinus.",
+  "excerpt": "\"In 1936, Mr Robert J. Weitlaner of Mexico City visited the capital of the Mazatec region of Oaxaca, Huautla de Jimenez, and learned of the use of certain mushrooms in witchcraft and divination among these primitive peoples.\"",
+  "citation": "Schultes, Richard Evans. \"Teonanacatl: The Narcotic Mushroom of the Aztecs.\" American Anthropologist, n.s., 42, no. 3, pt. 1 (July-September 1940): 429-443.",
+  "rights": "In copyright (published 1940). A scan is hosted by the Internet Archive; used here only as a short verified excerpt per this project's pre-1930 hosting rule.",
+  "sourceUrl": "https://archive.org/details/Schultes1940TeonanacatlMushroom",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "_No transcript hosted (text postdates 1930 and is not a US Government work). Excerpt below verified against the Internet Archive scan (JSTOR stable URL 663232)._\n\n\"In 1936, Mr Robert J. Weitlaner of Mexico City visited the capital of the Mazatec region of Oaxaca, Huautla de Jimenez, and learned of the use of certain mushrooms in witchcraft and divination among these primitive peoples. He secured a few samples of the narcotic plants and sent them to Reko who forwarded several pieces to the Botanical Museum of Harvard University for identification.\"",
+  "wordCount": 89,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket E: Mesoamerican mushrooms and morning glory, 1915-1962)",
+    "proposedOn": "2026-08-15",
+    "rationale": "The founding botanical paper of the field: the first peer-reviewed botanical identification of a living teonanácatl mushroom cult, and the first source to give the mushroom a Linnaean name. The article is the hinge between amateur/ethnographic reports of the 1920s-30s and the botanically rigorous work of Heim and Wasson in the 1950s. Its footnotes are the best surviving record of Robert Weitlaner's unpublished 1936 discovery at Huautla de Jiménez.",
+    "textSource": {
+      "url": "https://archive.org/download/Schultes1940TeonanacatlMushroom/Schultes_1940_Teonanacatl_Mushroom_djvu.txt",
+      "kind": "internet-archive-djvu",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/richard-evans-schultes-teonanacatl-1940.txt",
+      "scope": "Full OCR text of the article (American Anthropologist 42(3): 429-443) downloaded for verification, sourced from a JSTOR-watermarked scan; only a short quoted excerpt is used in the published transcript field per the copyright rule for post-1930 texts."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "high",
+      "notes": "OCR is clean apart from scattered ligature/italic-letter substitutions typical of JSTOR-sourced scans (e.g. 'Bias' for 'Blas', smart-quote artifacts). The excerpt quoted was checked directly against the raw OCR file.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

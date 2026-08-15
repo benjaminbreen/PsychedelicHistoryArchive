@@ -1,0 +1,95 @@
+{
+  "slug": "psychedelic-review-1963-vol1no1",
+  "title": "The Psychedelic Review, Vol. I, No. 1",
+  "shortTitle": "Psychedelic Review, No. 1",
+  "author": "Timothy Leary, Ralph Metzner, and Gunther M. Weil, eds.",
+  "creators": [
+    {
+      "name": "Timothy Leary",
+      "role": "editor"
+    },
+    {
+      "name": "Ralph Metzner",
+      "role": "editor"
+    },
+    {
+      "name": "Gunther M. Weil",
+      "role": "editor"
+    },
+    {
+      "name": "Gerald Heard",
+      "role": "author"
+    },
+    {
+      "name": "R. Gordon Wasson",
+      "role": "author"
+    },
+    {
+      "name": "Alan Watts",
+      "role": "author"
+    }
+  ],
+  "year": 1963,
+  "displayDate": "June 1963",
+  "type": "Academic Article",
+  "medium": "Text",
+  "era": "1950-1970",
+  "region": "United States",
+  "language": "English",
+  "substances": [
+    "LSD",
+    "Psilocybin",
+    "Mescaline"
+  ],
+  "people": [
+    "Timothy Leary",
+    "Ralph Metzner",
+    "Gunther M. Weil",
+    "Gerald Heard",
+    "R. Gordon Wasson",
+    "Alan Watts",
+    "George Andrews"
+  ],
+  "tags": [
+    "psychedelic-review",
+    "underground-press",
+    "ifif",
+    "statement-of-purpose",
+    "little-magazine",
+    "harvard-psilocybin-project",
+    "1963"
+  ],
+  "summary": "The founding issue of The Psychedelic Review, published in June 1963 by Timothy Leary and Ralph Metzner's International Federation for Internal Freedom. The issue contains essays on consciousness and psychedelics by Gerald Heard, R. Gordon Wasson, and Alan Watts.",
+  "excerpt": "The creation and furtherance of internal freedom for large numbers of people through the intelligent use of psychedelic substances are now a practical reality. These modern substances are but the synthetic equivalents of mind-changing plants and potions that have been known for thousands of years. Through them we now have powerful aids on the inward journey, a new key to the doors of perception, new access to the ancient problems of identity and reality.",
+  "citation": "The Psychedelic Review, vol. 1, no. 1 (June 1963), ed. Timothy Leary, Ralph Metzner, and Gunther M. Weil (Cambridge, MA: International Federation for Internal Freedom).",
+  "rights": "In copyright (published 1963, renewal status unresearched). Digitized and freely hosted by the Multidisciplinary Association for Psychedelic Studies (MAPS) research archive; underlying text rights not cleared for republication.",
+  "sourceUrl": "https://maps.org/research-archive/psychedelicreview/v1n1/psychreview01.pdf",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "",
+  "wordCount": 0,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket H: counterculture in print, 1963-1975)",
+    "proposedOn": "2026-08-15",
+    "rationale": "The launch issue of the movement's first dedicated journal, appearing the same month Leary and Alpert lost their Harvard appointments. The unsigned editorial and 'Statement of Purpose' set out a program for serious, interdisciplinary study of consciousness-expanding drugs and techniques, framed as a corrective to narrowly technological culture. The journal ran through 1971 as the movement's most sustained attempt at a scholarly-literary organ.",
+    "textSource": {
+      "url": "https://maps.org/research-archive/psychedelicreview/v1n1/psychreview01.pdf",
+      "kind": "other",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/psychedelic-review-1963-vol1no1.txt",
+      "scope": "Full 59-page issue PDF converted to text via pdftotext for verification; only the editorial/statement of purpose was excerpted for the quoted passage. Full issue kept in raw/ for provenance only, not published as transcript."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "high",
+      "notes": "Text is a clean digital PDF (not a scan), so pdftotext extraction is reliable; some running-head and OCR-adjacent artifacts (e.g. ligature/kerning glitches like 'C_ntents') appear in the raw conversion but not in the quoted excerpt, which was checked against the extracted text by hand.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

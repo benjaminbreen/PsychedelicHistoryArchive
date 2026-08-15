@@ -1,0 +1,2095 @@
+[
+  {
+    "id": "a28dcfa3-65e0-5e19-86d2-399e6b8152df",
+    "slug": "peyote",
+    "name": "Peyote",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "3f38d9d3-b66c-5ac0-8396-5873c756b3f7",
+    "slug": "mescaline",
+    "name": "Mescaline",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "86198b10-5f38-5d4f-ad04-cb72b4b552aa",
+    "slug": "native-american-church",
+    "name": "Native American Church",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4cdf6825-4e81-5480-b535-4d7d0249e59a",
+    "slug": "airfa",
+    "name": "AIRFA",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "eb17d39f-805f-5671-bab5-d4855695f1d6",
+    "slug": "religious-freedom-restoration-act",
+    "name": "Religious Freedom Restoration Act",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "55a66b56-b29b-53e3-90bd-e74a46840912",
+    "slug": "congress",
+    "name": "Congress",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "56f5eb6a-10dc-5344-a5b1-9ea9b13ef39a",
+    "slug": "statute",
+    "name": "Statute",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "bf52c7d5-b8cd-53bb-ae83-19c5ee1df535",
+    "slug": "employment-division-v-smith",
+    "name": "Employment Division v. Smith",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "73058270-a28e-50e1-91bb-d5681830797c",
+    "slug": "drug-policy",
+    "name": "Drug Policy",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "5373ff75-9d0b-503d-aa14-53666afed175",
+    "slug": "1970-2000",
+    "name": "1970-2000",
+    "description": "",
+    "tag_type": "era"
+  },
+  {
+    "id": "a5392957-62ea-545e-be29-32aa53006192",
+    "slug": "united-states",
+    "name": "United States",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "f5277511-b159-5e29-9b44-d0db101e86a1",
+    "slug": "lsd",
+    "name": "LSD",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "f51065bb-508c-5ec1-807b-e88ba36636b4",
+    "slug": "army",
+    "name": "Army",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "a55af7dc-ab87-5d5c-afda-e9a921819dfe",
+    "slug": "edgewood-arsenal",
+    "name": "Edgewood Arsenal",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "f165178a-f781-5604-bd8d-c43dd64f04e0",
+    "slug": "informed-consent",
+    "name": "Informed Consent",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "451b3ea5-8b37-5a75-9979-4df8f52178e1",
+    "slug": "inspector-general",
+    "name": "Inspector General",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "085e4869-f444-5e45-b4c5-6b1f087756b6",
+    "slug": "intelligence-corps",
+    "name": "Intelligence Corps",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "452356d2-9214-5136-8af8-1401745e4618",
+    "slug": "human-experimentation",
+    "name": "Human Experimentation",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "75be90ed-1f25-57a3-9168-1c5c2a1f0a25",
+    "slug": "psilocybin",
+    "name": "Psilocybin",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "7071ae20-1505-570e-aed1-f9efbb66bde7",
+    "slug": "ololiuhqui",
+    "name": "Ololiuhqui",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "d199c958-439b-54f3-9684-77668fa725c5",
+    "slug": "teonanacatl",
+    "name": "Teonanacatl",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "5146f0a3-f990-5c01-b3df-e95bb3df5325",
+    "slug": "ololiuqui",
+    "name": "Ololiuqui",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "371d635a-ddac-57a2-8187-03de42d8a678",
+    "slug": "aztec-ethnobotany",
+    "name": "Aztec Ethnobotany",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8bcd6e8f-5926-5803-bc92-1a8158c9bce6",
+    "slug": "oaxaca",
+    "name": "Oaxaca",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "fe19e7f4-5c59-59e3-89d5-89e119999992",
+    "slug": "mesoamerican-mushrooms",
+    "name": "Mesoamerican Mushrooms",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "43790bcb-1d6f-5efa-8cbb-39156f5ef9ad",
+    "slug": "botanical-nomenclature",
+    "name": "Botanical Nomenclature",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "a5fa7520-308a-5e2a-adf2-f0fd6ef114c1",
+    "slug": "1800-1950",
+    "name": "1800-1950",
+    "description": "",
+    "tag_type": "era"
+  },
+  {
+    "id": "9d1d5fcd-79a9-55aa-ba42-59a15c80aea6",
+    "slug": "mexico",
+    "name": "Mexico",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "5bac1404-4ffe-5f63-84ed-4492ee6b799e",
+    "slug": "amanita-muscaria",
+    "name": "Amanita muscaria",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "26c0f07c-884d-5004-89eb-ae71fbbbc37a",
+    "slug": "fly-agaric",
+    "name": "Fly Agaric",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "be7de3c5-84c9-564d-b198-3af3d9ad51b7",
+    "slug": "chukchee",
+    "name": "Chukchee",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "001d7209-cc6e-5bd7-900c-a5126304acff",
+    "slug": "koryak",
+    "name": "Koryak",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8bb840ef-1508-517b-ba86-11b93f2c9cc2",
+    "slug": "jesup-north-pacific-expedition",
+    "name": "Jesup North Pacific Expedition",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "f234b56e-e939-56e5-a76b-4e3a92d71a9e",
+    "slug": "shamanism",
+    "name": "Shamanism",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d28b1ea1-f494-5191-b824-453eb429c11c",
+    "slug": "urine-drinking",
+    "name": "Urine Drinking",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4bf66cd1-5c32-51da-80cd-afa787bdf100",
+    "slug": "siberia",
+    "name": "Siberia",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "cef6641b-6e2b-531d-929c-d0d720391b5c",
+    "slug": "field-observation",
+    "name": "Field Observation",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "27b04002-5057-5e81-97b8-20e2e95f7e00",
+    "slug": "chukotka-siberia",
+    "name": "Chukotka, Siberia",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "87fb2938-4912-5009-960f-27e937b5a1d7",
+    "slug": "phonograph-recording",
+    "name": "Phonograph Recording",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "33b1ab5e-e7e5-5385-91b8-45ec94f764ed",
+    "slug": "indigenous-testimony",
+    "name": "Indigenous Testimony",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "dbe7efcc-e909-52a6-83ec-84ef06c19987",
+    "slug": "songs",
+    "name": "Songs",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "06fbbab6-eba7-5292-8ccf-02abb0331b9b",
+    "slug": "kamchatka",
+    "name": "Kamchatka",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "76bbc247-80d7-5c93-803a-16d525e903e7",
+    "slug": "kamchatka-siberia",
+    "name": "Kamchatka, Siberia",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "12ec7e4a-f384-55e1-a295-cf8ba229d502",
+    "slug": "dmt",
+    "name": "DMT",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "ec0c1a6f-3d18-5b1d-a477-8f320e8859c1",
+    "slug": "ayahuasca",
+    "name": "Ayahuasca",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "26cd056f-136c-5dad-9ab8-004c3a5d8916",
+    "slug": "harmala-alkaloids",
+    "name": "Harmala Alkaloids",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "34750cba-9d04-56e8-94d6-46c8f07b6187",
+    "slug": "santo-daime",
+    "name": "Santo Daime",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "b1887de1-c017-55a6-9a98-df7f0335ecc9",
+    "slug": "rfra",
+    "name": "RFRA",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "0d22fec2-9a28-5b2e-a469-befabb95fde9",
+    "slug": "religious-freedom",
+    "name": "Religious Freedom",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "af2f14ca-cfac-55ce-bc65-7470eb9c294c",
+    "slug": "court-opinion",
+    "name": "Court Opinion",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "124834b6-6290-55f1-8548-b810ffe264c2",
+    "slug": "controlled-substances-act",
+    "name": "Controlled Substances Act",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e7136bcc-9b53-5107-b65a-9e80ec67ea25",
+    "slug": "daime-tea",
+    "name": "Daime Tea",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "1586eb29-ac99-5f6e-84b3-23fb9a34eab9",
+    "slug": "2000-present",
+    "name": "2000-Present",
+    "description": "",
+    "tag_type": "era"
+  },
+  {
+    "id": "5a40fb43-c8d3-50de-8a77-38745aca0dce",
+    "slug": "united-states-oregon",
+    "name": "United States (Oregon)",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "525ab146-1753-57ac-bad8-4a26798e9600",
+    "slug": "mkultra",
+    "name": "MKULTRA",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "55b3a2e7-495b-5cbc-b3b9-a85663b6de26",
+    "slug": "cia",
+    "name": "CIA",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "58c0995c-f002-5d4d-9e7c-a6e97f4f8265",
+    "slug": "church-committee",
+    "name": "Church Committee",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "1f6a600a-1dcb-58d3-9023-c47fc4bae0d2",
+    "slug": "self-administration",
+    "name": "Self Administration",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "31031fc5-5238-524d-8f15-4a56d983cac8",
+    "slug": "unwitting-testing",
+    "name": "Unwitting Testing",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "5a846e4f-ea71-5913-9db5-3b6b1398b64f",
+    "slug": "bureau-of-narcotics",
+    "name": "Bureau Of Narcotics",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "24b3d88b-638f-5342-aafa-8451c8e3691f",
+    "slug": "safehouse",
+    "name": "Safehouse",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "6e48211c-661d-5d80-823e-81358da623a7",
+    "slug": "1950-1970",
+    "name": "1950-1970",
+    "description": "",
+    "tag_type": "era"
+  },
+  {
+    "id": "4fdf1c16-45bf-505e-8380-01fc68d220e1",
+    "slug": "frank-olson",
+    "name": "Frank Olson",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e2b1f2b0-aec8-59ab-bb00-346c0c786fd8",
+    "slug": "artichoke",
+    "name": "Artichoke",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "33c11da2-bc7c-5539-a6a0-a74f947c648e",
+    "slug": "bluebird",
+    "name": "Bluebird",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "314824ed-bd6b-56d2-80be-c8287a423855",
+    "slug": "kykeon",
+    "name": "Kykeon",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "36b936de-848c-596e-869e-678546b5529d",
+    "slug": "eleusinian-mysteries",
+    "name": "Eleusinian Mysteries",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "1d5747d7-1387-5172-af15-4095a6c780c6",
+    "slug": "early-christianity",
+    "name": "Early Christianity",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4cc85f26-bdfe-5f0d-b2f3-e900c8c05a6d",
+    "slug": "polemic",
+    "name": "Polemic",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "b431220e-7180-55fa-962c-25da8c321321",
+    "slug": "ancient-greece",
+    "name": "Ancient Greece",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "070dd9eb-4d7a-5793-b141-cc38101f8afd",
+    "slug": "pre-1800",
+    "name": "Pre-1800",
+    "description": "",
+    "tag_type": "era"
+  },
+  {
+    "id": "473d9bae-d194-55e6-984d-1065ae3680d3",
+    "slug": "alexandria-roman-egypt",
+    "name": "Alexandria, Roman Egypt",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "3454d2d9-82a5-5cf5-84f0-e5a7bba975db",
+    "slug": "safety-survey",
+    "name": "Safety Survey",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "3321518e-b32b-5411-9657-49a71fec8d8a",
+    "slug": "veterans-administration",
+    "name": "Veterans Administration",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "30d172ad-5ff0-5722-b5eb-aca97372d587",
+    "slug": "clinical-research",
+    "name": "Clinical Research",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "05e7348a-42ff-516b-8fbd-cb05042d2ec8",
+    "slug": "indian-affairs",
+    "name": "Indian Affairs",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8bf2c04b-1aee-585c-966e-e46712f03380",
+    "slug": "federal-indian-policy",
+    "name": "Federal Indian Policy",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "bcc9def8-2f93-5d80-b248-e9f2f749d4ed",
+    "slug": "prohibition",
+    "name": "Prohibition",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8dcae0d3-7dcc-5d9d-b291-70c63f1b0a3d",
+    "slug": "bureau-of-indian-affairs",
+    "name": "Bureau Of Indian Affairs",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "faafd44b-a7da-5237-99f1-84623a03acff",
+    "slug": "amanita",
+    "name": "Amanita",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "5bd7b260-6fe6-560d-a403-15ca5ab45766",
+    "slug": "popular-science",
+    "name": "Popular Science",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "9829da09-bb49-5708-97fc-3a785f5ec885",
+    "slug": "narcotics-survey",
+    "name": "Narcotics Survey",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "c1306589-831b-5f30-9f97-0c4499c01d76",
+    "slug": "victorian",
+    "name": "Victorian",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "766c0b52-69bc-59e2-a3ec-b37271902f89",
+    "slug": "self-experimentation",
+    "name": "Self Experimentation",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "0f5eed5f-118a-56a7-a23a-46b2aaaca071",
+    "slug": "visual-hallucinations",
+    "name": "Visual Hallucinations",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8997f08c-0c20-52fb-8709-f416a0dd3490",
+    "slug": "19th-century-pharmacology",
+    "name": "19th Century Pharmacology",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "1064ee4d-1459-56c6-964a-d2ca4f491669",
+    "slug": "synaesthesia",
+    "name": "Synaesthesia",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d3b8e054-80a6-5857-8b15-f94481a06866",
+    "slug": "britain",
+    "name": "Britain",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "50b1187f-88f0-5255-a5b5-3fabdc7db23d",
+    "slug": "free-exercise-clause",
+    "name": "Free Exercise Clause",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d99adb3d-32c8-5337-a948-845aae0daa9a",
+    "slug": "first-amendment",
+    "name": "First Amendment",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "1e9afa6e-a843-5103-97c7-476fa1e0f3d7",
+    "slug": "supreme-court",
+    "name": "Supreme Court",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "ef1f71f5-4e8c-5f85-989b-af8ecea07dee",
+    "slug": "fbi-vault",
+    "name": "FBI Vault",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "a3b39220-d384-5f7a-82e8-aab7873190f2",
+    "slug": "foia",
+    "name": "Foia",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8707adb3-2985-5f3b-ac1e-1b6750710c85",
+    "slug": "surveillance",
+    "name": "Surveillance",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "53eed20b-f2f2-5226-88d3-e874e685715d",
+    "slug": "brotherhood-of-eternal-love",
+    "name": "Brotherhood Of Eternal Love",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4b668575-e548-5e63-b418-fac866d2da29",
+    "slug": "prison-escape",
+    "name": "Prison Escape",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "45164991-34f6-57d3-bd3d-e987cad2c16a",
+    "slug": "weather-underground",
+    "name": "Weather Underground",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "accfc33e-138b-5c0e-91ee-d7185aa903bc",
+    "slug": "millbrook",
+    "name": "Millbrook",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "57aa6004-c96f-5abd-a262-3b08af7540a0",
+    "slug": "laguna-beach",
+    "name": "Laguna Beach",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "bf4d6a92-eab4-564a-a20c-caf7d590d717",
+    "slug": "mdma",
+    "name": "MDMA",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "ab1fe116-55d6-526f-bf29-2e613963cb9c",
+    "slug": "fda",
+    "name": "FDA",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "eb067bee-8208-5f4c-8110-3de49d78cb85",
+    "slug": "clinical-trials",
+    "name": "Clinical Trials",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "22d1f65b-5ba5-5ac4-88b2-e98f9e788951",
+    "slug": "regulatory-history",
+    "name": "Regulatory History",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e1a9e450-3196-5512-9dbb-aa066a474c5a",
+    "slug": "research-revival",
+    "name": "Research Revival",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "955b9beb-ccd4-5e34-8f41-8d094693b652",
+    "slug": "drug-development",
+    "name": "Drug Development",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "b490ce7a-f262-527a-adf2-a28a7921d05d",
+    "slug": "yage",
+    "name": "Yage",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e3e3dd89-43f5-54a7-9aac-c16f011d118d",
+    "slug": "telepatina",
+    "name": "Telepatina",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "3861b0c4-47c9-5617-8f1b-8aef81f9f9e6",
+    "slug": "telepathine",
+    "name": "Telepathine",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "213e8b9b-cdad-55b4-9a8f-aad9420f0dc8",
+    "slug": "colombia",
+    "name": "Colombia",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "9fd13918-9bb7-5235-8db3-ad807b073af2",
+    "slug": "medical-thesis",
+    "name": "Medical Thesis",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "10c7848b-b3dc-5aeb-9dc0-9ad1c3ec268b",
+    "slug": "dreams-and-hallucination",
+    "name": "Dreams And Hallucination",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "c7f21019-7901-5ff3-93d7-41e30c424b96",
+    "slug": "botanists-era",
+    "name": "Botanists Era",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "f0f3ec1d-050e-5fad-97cc-5beb466578da",
+    "slug": "morning-glory",
+    "name": "Morning Glory",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "bd963fed-8a6c-54bb-9c0f-f75c2b31e8af",
+    "slug": "hernandez",
+    "name": "Hernandez",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "2dd22f2c-ab7c-5d33-bb0a-f7960d245717",
+    "slug": "colonial-natural-history",
+    "name": "Colonial Natural History",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "49cf9846-3b08-5b21-ab43-897be1e7f820",
+    "slug": "aztec-medicine",
+    "name": "Aztec Medicine",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "069b9cf0-7fee-5d21-9c2d-c5b5b4deedd3",
+    "slug": "divination",
+    "name": "Divination",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e2a1c3fc-7531-5d0f-a543-c9894eb36b0c",
+    "slug": "hoasca",
+    "name": "Hoasca",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "378820cd-ede2-546d-b5a7-7d5897e3468b",
+    "slug": "uniao-do-vegetal",
+    "name": "Uniao Do Vegetal",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "f0f74cf9-df38-5668-b873-d1d74eff4f5c",
+    "slug": "psychotropic-convention",
+    "name": "Psychotropic Convention",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "16a93a16-d6fa-58ea-a3b2-7e2d50fee815",
+    "slug": "united-states-new-mexico",
+    "name": "United States (New Mexico)",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "40ad9a03-3c99-5c5b-9880-7b57d032e81a",
+    "slug": "iboga",
+    "name": "Iboga",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "1a922f9b-fd57-5956-8d43-c2d811625eb5",
+    "slug": "gabon",
+    "name": "Gabon",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4934a4d7-4ff3-57d0-8bc5-a39d8ce9cf4b",
+    "slug": "tabernanthe-iboga",
+    "name": "Tabernanthe Iboga",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "5d3a8701-5210-5b80-8167-b3c37d82c5bb",
+    "slug": "ethnobotany",
+    "name": "Ethnobotany",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "f32d556c-8f6c-5526-97b3-06b32c3adcf4",
+    "slug": "french-colonial-medicine",
+    "name": "French Colonial Medicine",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "85a51b01-c2a7-5961-b91d-bfc11ea660b9",
+    "slug": "apocynaceae",
+    "name": "Apocynaceae",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "36a989ec-876f-5606-916c-80e845fe25f1",
+    "slug": "equatorial-africa",
+    "name": "Equatorial Africa",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "0f6b3a7f-0c2c-5487-af7f-7f14c393ab0c",
+    "slug": "scheduling",
+    "name": "Scheduling",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "78fb174a-ced3-5e66-93bd-2117f461fb0d",
+    "slug": "dea",
+    "name": "DEA",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "98908894-f700-5350-ad34-768eb111da2d",
+    "slug": "first-circuit",
+    "name": "First Circuit",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d0d82f27-1de2-599d-8a1a-883ee29cd010",
+    "slug": "harvard-psilocybin-project",
+    "name": "Harvard Psilocybin Project",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "974629df-8806-529d-839f-31a72420f30d",
+    "slug": "harvard-crimson",
+    "name": "Harvard Crimson",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "212077a3-352f-5877-9dcf-f02d4de6b5b4",
+    "slug": "leary",
+    "name": "Leary",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "04077e79-e6c1-52f9-b6c3-58f171712f4b",
+    "slug": "richard-alpert",
+    "name": "Richard Alpert",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "ccac5729-f71c-5510-86fd-4ee4e86b6dcd",
+    "slug": "academic-freedom",
+    "name": "Academic Freedom",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "ebed6978-b461-58bd-be9d-f6d40fc54498",
+    "slug": "1963",
+    "name": "1963",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "a78e7da4-60f9-5b32-b2e4-9b133ef3c7f0",
+    "slug": "demeter",
+    "name": "Demeter",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "b21dec7e-4a9a-5a3b-87bc-13bdc13e2e5c",
+    "slug": "persephone",
+    "name": "Persephone",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "c3240261-671d-5e63-bbe2-c15f08ff61b8",
+    "slug": "mystery-religion",
+    "name": "Mystery Religion",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "38ed068c-4a46-526b-a340-02e90bcf0266",
+    "slug": "greece",
+    "name": "Greece",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "7c221139-9891-567c-81ce-a6d1ac501d33",
+    "slug": "senate-hearing",
+    "name": "Senate Hearing",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "acf10bba-ea93-523f-8253-8453c11d187b",
+    "slug": "addiction-research-center",
+    "name": "Addiction Research Center",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "5c38dda9-c688-58ea-b03f-23a633cfe29d",
+    "slug": "lexington-kentucky",
+    "name": "Lexington Kentucky",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "eeb4e4ac-fe7d-5ccf-84a6-1f2a0660d16a",
+    "slug": "public-health-service",
+    "name": "Public Health Service",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "b0c08aa0-4033-5c3a-8189-14febe2a0bf2",
+    "slug": "tolerance",
+    "name": "Tolerance",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "ae7cc151-670d-52f0-a532-efd8a2d4b54f",
+    "slug": "prisoner-research",
+    "name": "Prisoner Research",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "34940700-ba81-586c-92e8-2bd391369488",
+    "slug": "nimh",
+    "name": "NIMH",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "1aed1efa-bdf9-59a7-92d2-5800ec9eac8c",
+    "slug": "salvia-divinorum",
+    "name": "Salvia divinorum",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "620475e9-1d0e-5b66-bd66-19af73c1c70d",
+    "slug": "mazatec",
+    "name": "Mazatec",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "31115556-fe99-57a3-8c84-8ccf84f58841",
+    "slug": "huautla-de-jimenez",
+    "name": "Huautla De Jimenez",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d3e331a8-7035-519b-84d8-3eafc85e50c7",
+    "slug": "brujeria",
+    "name": "Brujeria",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "577ae44c-01f0-5c20-b6a2-73ca925e441a",
+    "slug": "curanderismo",
+    "name": "Curanderismo",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "5cd912a5-6d89-58a5-bd96-7fea333a3e3e",
+    "slug": "hierba-maria",
+    "name": "Hierba Maria",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d4f201b1-d8c9-5146-bcbb-b3174e7fc0a8",
+    "slug": "semilla-de-la-virgen",
+    "name": "Semilla De La Virgen",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "b5182877-f976-52ef-9cdd-cb49c7b462da",
+    "slug": "natema",
+    "name": "Natema",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d323f808-b3bf-5257-afdd-5dffb9909d9a",
+    "slug": "jibaro",
+    "name": "Jibaro",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "f73e95d2-6fec-5ab0-a795-5b5371a29fee",
+    "slug": "jivaro",
+    "name": "Jivaro",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "913a715e-c41c-567f-a876-bd49d5c93999",
+    "slug": "tsantsa",
+    "name": "Tsantsa",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "162156af-116e-5fc5-a4c2-24104c2bc99e",
+    "slug": "shrunken-heads",
+    "name": "Shrunken Heads",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8278456c-0684-54cb-bf83-9bb2b75daca2",
+    "slug": "ecuador",
+    "name": "Ecuador",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "cd488c01-f6b4-5022-8bdb-0146216f7f62",
+    "slug": "smithsonian",
+    "name": "Smithsonian",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "880f6acd-2dc2-5ebe-a09c-b236dd55cd98",
+    "slug": "bureau-of-american-ethnology",
+    "name": "Bureau Of American Ethnology",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "a8943d30-a3f1-569b-8edd-238f390b0c19",
+    "slug": "travel-narrative",
+    "name": "Travel Narrative",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "76cfb751-b526-5b05-9b41-613188f94266",
+    "slug": "telegraph-expedition",
+    "name": "Telegraph Expedition",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "af795b16-c849-5222-977c-884feb54e2a6",
+    "slug": "army-chemical-corps",
+    "name": "Army Chemical Corps",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d6cd3a8e-e42d-50cd-a514-831c2ecb973e",
+    "slug": "incapacitating-agents",
+    "name": "Incapacitating Agents",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "667f9834-d91b-54d2-8d52-c35aa8637c84",
+    "slug": "cold-war-research",
+    "name": "Cold War Research",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "1cecf184-86ec-5c28-bb00-fe00a78470c2",
+    "slug": "military-testing",
+    "name": "Military Testing",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e635b5d2-eced-5230-abef-5be9947920a8",
+    "slug": "neo-american-church",
+    "name": "Neo American Church",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "1c4bc819-d0ef-53e7-9596-f4450d48e7db",
+    "slug": "boo-hoo-bible",
+    "name": "Boo Hoo Bible",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "080dd094-3542-53f6-a899-096226ee9c65",
+    "slug": "psychedelic-religion",
+    "name": "Psychedelic Religion",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "9eaff5a6-98af-5759-b9ad-3ebc7d300afd",
+    "slug": "session-guide",
+    "name": "Session Guide",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "dac141ad-e342-5310-a931-c381dd1436ed",
+    "slug": "1971",
+    "name": "1971",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "06b8ac92-a0f2-5c5c-b7dc-bf7d82bda3ed",
+    "slug": "psychiatry",
+    "name": "Psychiatry",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "b74df8e8-150d-56af-9e62-c219b0358bfe",
+    "slug": "hallucination-theory",
+    "name": "Hallucination Theory",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "5b9087de-19fc-5af9-b0e4-b7b1d09a74b2",
+    "slug": "experimental-psychosis",
+    "name": "Experimental Psychosis",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "085f5a9d-af21-5f71-8a6d-2edd2ef44008",
+    "slug": "kamchadal",
+    "name": "Kamchadal",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "3ac04fb6-2e30-53c7-9199-39a56a78470c",
+    "slug": "18th-century-ethnography",
+    "name": "18th Century Ethnography",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "49f58eb0-50ca-5ddd-9bfb-f247cb49993c",
+    "slug": "intoxication",
+    "name": "Intoxication",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "a4edf70f-d0b0-5a4b-ba38-9a72a774d4ba",
+    "slug": "tibetan-book-of-the-dead",
+    "name": "Tibetan Book Of The Dead",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d01777eb-aff4-5879-a5e1-f318389467c1",
+    "slug": "set-and-setting",
+    "name": "Set And Setting",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8f78e09e-3fd4-54ad-942c-78c781cda52c",
+    "slug": "1964",
+    "name": "1964",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "7499929f-83ac-5996-a09d-bc7bc3d3c6e3",
+    "slug": "banisterine",
+    "name": "Banisterine",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "6c57b674-c8eb-5e23-b7a5-dcca51d49a85",
+    "slug": "harmine",
+    "name": "Harmine",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "968b1604-7138-522f-9c4f-263da4f8199d",
+    "slug": "banisteria-caapi",
+    "name": "Banisteria Caapi",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "f489fd24-bc76-574c-8de2-5fd679e9becd",
+    "slug": "pharmacology",
+    "name": "Pharmacology",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "c5a49a7d-d1ff-591a-9f5b-ca795a76ca8b",
+    "slug": "encephalitis-lethargica",
+    "name": "Encephalitis Lethargica",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "7144f25b-edf6-57ce-b1e1-beb977214e79",
+    "slug": "germany",
+    "name": "Germany",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "6cce597a-368a-51c9-81f3-c2fa3a5a6165",
+    "slug": "drug-scheduling",
+    "name": "Drug Scheduling",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e07fc8a9-3d63-5bcc-998f-1beb9a8c629d",
+    "slug": "psychotherapy",
+    "name": "Psychotherapy",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8e688649-ffb5-5d60-83ed-87757b8fcee4",
+    "slug": "administrative-law",
+    "name": "Administrative Law",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "eab3cb3d-6551-52e4-ba7e-b2388c044a97",
+    "slug": "mda",
+    "name": "Mda",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "2ee70ee4-a9ce-5112-94be-1520fc76aef9",
+    "slug": "synthetic-psychedelics",
+    "name": "Synthetic Psychedelics",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "b4420cf7-4713-54f9-bf86-5ec90baf79ea",
+    "slug": "patent",
+    "name": "Patent",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "a18d6a76-9578-5d93-8ee1-2edba51feae7",
+    "slug": "pharmaceutical-industry",
+    "name": "Pharmaceutical Industry",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "b39f848b-55ea-5a66-9752-2b0cd013b7e7",
+    "slug": "safrole",
+    "name": "Safrole",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "0c62a728-48c5-5dd2-b689-5a32d168ef13",
+    "slug": "merck",
+    "name": "Merck",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "f7b0456c-88a0-5de0-bd00-9d22bd704ea1",
+    "slug": "mescal-ceremony",
+    "name": "Mescal Ceremony",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "de85e90e-fb74-545c-b4d3-57afcbe4fbff",
+    "slug": "kiowa",
+    "name": "Kiowa",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "69850847-2885-5a3a-bbb5-40240478d877",
+    "slug": "comanche",
+    "name": "Comanche",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "44e4a2f6-e89a-56a5-90e8-1ac0711a98af",
+    "slug": "bureau-of-ethnology",
+    "name": "Bureau Of Ethnology",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "2d5f4d66-7f0d-5fd5-859c-1200aaa201ee",
+    "slug": "indian-policy",
+    "name": "Indian Policy",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d325b545-22f6-5a6c-b147-00211126d425",
+    "slug": "aztec-religion",
+    "name": "Aztec Religion",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "3b72166d-a62b-597a-a319-a2b96089a681",
+    "slug": "franciscan-mission",
+    "name": "Franciscan Mission",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e3bf52ce-d6b5-5c61-83c0-16a0b64dad0f",
+    "slug": "colonial-ethnography",
+    "name": "Colonial Ethnography",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "fb2dce27-3d71-5942-9434-ea39bb09f947",
+    "slug": "tezcatlipoca",
+    "name": "Tezcatlipoca",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "63448991-7789-5005-b0a5-f48aefd15276",
+    "slug": "incorporation",
+    "name": "Incorporation",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "b10c8d02-8f3e-5b73-b871-e7bc19128431",
+    "slug": "oklahoma",
+    "name": "Oklahoma",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8e24c554-5f38-5a97-9250-40e99fb64698",
+    "slug": "cheyenne",
+    "name": "Cheyenne",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "119f7642-ad66-591e-9f2b-868aa09de9a6",
+    "slug": "otoe",
+    "name": "Otoe",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "a3c252f2-adcb-5490-9b9f-de13ae75451a",
+    "slug": "ponca",
+    "name": "Ponca",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "40f6e15e-9a1c-5876-a3df-aa5c6347eecc",
+    "slug": "kiowa-apache",
+    "name": "Kiowa Apache",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "43394b81-04ab-520f-a6d8-a66470ed70e6",
+    "slug": "navajo-nation",
+    "name": "Navajo Nation",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8984b24d-433c-5098-b63b-e3282fb51545",
+    "slug": "tribal-sovereignty",
+    "name": "Tribal Sovereignty",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "41641528-824e-5e1c-a792-aa63b408fd30",
+    "slug": "drug-prohibition",
+    "name": "Drug Prohibition",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "56e34079-650f-516d-a462-980b8040be9e",
+    "slug": "united-states-navajo-nation",
+    "name": "United States (Navajo Nation)",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "daa6fed3-3a2a-55f4-8095-8c792dcacfda",
+    "slug": "nida",
+    "name": "NIDA",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "af6515e9-7daa-5a1c-b776-bd19f3088ebf",
+    "slug": "hallucinogens",
+    "name": "Hallucinogens",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "dd4c1957-6ed6-5cfc-9066-727c643ccc14",
+    "slug": "university-of-new-mexico",
+    "name": "University Of New Mexico",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "666269e2-50f3-5987-8ca8-d0a409dff683",
+    "slug": "government-pamphlet",
+    "name": "Government Pamphlet",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "9c37a385-b2f0-578f-9278-854af7b36025",
+    "slug": "lsd-education",
+    "name": "LSD Education",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e8822c16-f547-57f1-8335-e405b5f1e819",
+    "slug": "chromosome-damage",
+    "name": "Chromosome Damage",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "fcfe6a20-a3fd-5dc8-9af6-b79c91272f1e",
+    "slug": "haight-ashbury",
+    "name": "Haight Ashbury",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "06af012b-e699-5314-becb-8326fafb5071",
+    "slug": "credibility-gap",
+    "name": "Credibility Gap",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "cea8fa8f-512e-55f5-89d8-768c52aa0817",
+    "slug": "harm-reduction",
+    "name": "Harm Reduction",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "9259386f-6260-57b6-a697-cfa7c8a8393d",
+    "slug": "1967",
+    "name": "1967",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "5fa3fd8b-ee41-5648-8b75-685c5dcd4468",
+    "slug": "oregon",
+    "name": "Oregon",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "86dc2e75-672e-5ac3-b912-2287f0ca9919",
+    "slug": "ballot-measure",
+    "name": "Ballot Measure",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4102f078-543a-5dba-8951-34e166475a67",
+    "slug": "legalization",
+    "name": "Legalization",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "692f81ed-2325-5c2f-89b7-3abd497701e8",
+    "slug": "psilocybin-services",
+    "name": "Psilocybin Services",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "2e9c055e-02a6-54c4-9eb4-53a703aec329",
+    "slug": "state-law",
+    "name": "State Law",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "82360acd-4aa8-5604-b5a3-ecbe0a39c754",
+    "slug": "psychedelic-coinage",
+    "name": "Psychedelic Coinage",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e5854af2-b952-5408-97aa-aa4cd398e4e4",
+    "slug": "terminology",
+    "name": "Terminology",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "bc4dc5a8-8a54-5800-aa4b-1f7d49856a3f",
+    "slug": "saskatchewan",
+    "name": "Saskatchewan",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "2c8dcce4-355e-533e-ae19-001d33cc3511",
+    "slug": "model-psychosis",
+    "name": "Model Psychosis",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "a963d246-b679-5d08-8140-daecef7842ec",
+    "slug": "canada",
+    "name": "Canada",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "f4186273-748a-5659-a0cc-6a197521b146",
+    "slug": "schizophrenia",
+    "name": "Schizophrenia",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "85231adc-3b5d-531e-b5bd-d9759a72a12f",
+    "slug": "adrenochrome",
+    "name": "Adrenochrome",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "cf313ce9-9ed9-5167-bcd9-73bad7966e8c",
+    "slug": "transmethylation-hypothesis",
+    "name": "Transmethylation Hypothesis",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "44ed2d25-ba5f-5322-a3b4-60e2f2870011",
+    "slug": "biochemical-psychiatry",
+    "name": "Biochemical Psychiatry",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "093754c7-acf5-5383-8b91-25ada924b50c",
+    "slug": "navajo",
+    "name": "Navajo",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4beb7fe0-0c71-5a9a-a5e5-cdd035649944",
+    "slug": "compelling-state-interest",
+    "name": "Compelling State Interest",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e5426ffc-1c5d-5395-832c-f301d1af9fb3",
+    "slug": "united-states-california",
+    "name": "United States (California)",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "d4fc9c7a-5785-5576-8821-2ccc0c8841f7",
+    "slug": "congressional-hearing",
+    "name": "Congressional Hearing",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e860f07b-2c47-5ee0-8fcb-c5f76141afd6",
+    "slug": "arapaho",
+    "name": "Arapaho",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "b6125de3-cc68-5b91-8b4d-8a30b6e6ccad",
+    "slug": "osage",
+    "name": "Osage",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "49e1e4a0-b6ac-5f8e-94f9-a09d9aa55356",
+    "slug": "omaha",
+    "name": "Omaha",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "c584a8b7-620f-5855-b5a2-a093ae6f5f80",
+    "slug": "cheyenne-arapaho",
+    "name": "Cheyenne Arapaho",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "ff26b5f2-73b2-5386-9c9c-9c774dbba797",
+    "slug": "case-report",
+    "name": "Case Report",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "a3d9a2d0-c343-5948-8938-d66d1f5cb9b6",
+    "slug": "psychedelic-review",
+    "name": "Psychedelic Review",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "43c243f8-5d66-5763-995b-e75bd80b49b1",
+    "slug": "underground-press",
+    "name": "Underground Press",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4d7633a6-2bcb-5ae4-b0d8-8eb7183617d4",
+    "slug": "ifif",
+    "name": "Ifif",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "dd9cfc43-c8f3-57af-b377-dc8fb72beece",
+    "slug": "statement-of-purpose",
+    "name": "Statement Of Purpose",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e6f22abf-8875-59e7-88e4-221c955a32a6",
+    "slug": "little-magazine",
+    "name": "Little Magazine",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "707232a3-d768-5077-a2cb-39cfea2e860e",
+    "slug": "life-magazine",
+    "name": "Life Magazine",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "141a354b-3010-5cef-86f4-392669a5533e",
+    "slug": "maria-sabina",
+    "name": "Maria Sabina",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "579a64aa-6796-5519-92e5-381607c89c80",
+    "slug": "psilocybe-mexicana",
+    "name": "Psilocybe Mexicana",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "10e442dd-462e-5ac8-80df-aa543e9ba802",
+    "slug": "velada",
+    "name": "Velada",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "73649b10-a1d6-595a-abd5-137850541a68",
+    "slug": "popular-press",
+    "name": "Popular Press",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4d7255d7-0146-54c8-bf22-553e8bb44294",
+    "slug": "yaje",
+    "name": "Yaje",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d097e523-ffe7-586b-841b-9ac5383565b1",
+    "slug": "zaparo",
+    "name": "Zaparo",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "24a3bacc-f804-5320-a8d2-f164307dbf57",
+    "slug": "toxicology",
+    "name": "Toxicology",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "375ef632-fd11-5955-8d32-97548c96582a",
+    "slug": "rivea-corymbosa",
+    "name": "Rivea Corymbosa",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "c0f58a36-7ad1-5c9a-870d-fcc1826496cf",
+    "slug": "botanical-identification",
+    "name": "Botanical Identification",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "3520bc39-4a32-53ae-8399-f43da20a9265",
+    "slug": "convolvulaceae",
+    "name": "Convolvulaceae",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "92fda7db-8723-5cbf-8ef9-93b03833e034",
+    "slug": "paneolus-campanulatus",
+    "name": "Paneolus Campanulatus",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d1d32417-49a9-5acd-8f0d-7403200b1f37",
+    "slug": "boston-psychopathic-hospital",
+    "name": "Boston Psychopathic Hospital",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "aa90bdcf-0507-55cb-900c-54b7763957b9",
+    "slug": "experimental-psychiatry",
+    "name": "Experimental Psychiatry",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "aef9ca2d-e111-56ce-a1b9-b3a827caa7f7",
+    "slug": "yageine",
+    "name": "Yageine",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "190a4ed5-247b-5b82-b28f-c13fb3e7e4a1",
+    "slug": "peyotl-comparison",
+    "name": "Peyotl Comparison",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "0ba44442-2288-5c67-ad7b-9310eb8d8a8a",
+    "slug": "metagnomy",
+    "name": "Metagnomy",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "beec64f7-4520-5054-9248-512757ace94b",
+    "slug": "telepathy-era",
+    "name": "Telepathy Era",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "c2bbff51-91bf-5e3f-ba6a-c3108e6f9e7e",
+    "slug": "france",
+    "name": "France",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "d839e166-7706-5faf-8bcb-e85398974cfb",
+    "slug": "peyote-society",
+    "name": "Peyote Society",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "401179b8-9d47-5907-977c-4f25df553cba",
+    "slug": "aztec",
+    "name": "Aztec",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "903b3e4c-5100-5518-a28f-c167fb7e962c",
+    "slug": "bureau-of-chemistry",
+    "name": "Bureau Of Chemistry",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "9b550a48-e4cb-5bfa-bf83-e72609cb523c",
+    "slug": "court-testimony",
+    "name": "Court Testimony",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "63a29283-c6de-58c3-bbcd-c51aa144ba63",
+    "slug": "botany",
+    "name": "Botany",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4dcdddf8-c25d-5dca-8468-f80c4df731f9",
+    "slug": "san-francisco-oracle",
+    "name": "San Francisco Oracle",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "7bd6dc77-6e0b-56c3-9fd8-f7656ccd6889",
+    "slug": "drop-out",
+    "name": "Drop Out",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e0b84f68-66d8-56ac-b0b9-cdb74cfddbfd",
+    "slug": "counterculture",
+    "name": "Counterculture",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "fc774037-7ba9-58b4-9d29-e740ca9921ee",
+    "slug": "summer-of-love",
+    "name": "Summer Of Love",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "2158a86f-9ff3-59d9-b4ca-5fdddd86b5cf",
+    "slug": "fort-bragg",
+    "name": "Fort Bragg",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "59d2e5c1-84f1-5071-b79b-08e8feee2e4c",
+    "slug": "crow-tribe",
+    "name": "Crow Tribe",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "35192354-572b-524d-ba0d-b8592f4f0283",
+    "slug": "tribal-jurisdiction",
+    "name": "Tribal Jurisdiction",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "a337f903-6ece-55a1-8078-e1ccff4313f7",
+    "slug": "free-exercise",
+    "name": "Free Exercise",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "90c37df9-6c20-5e26-b024-4bc06b7ead49",
+    "slug": "indian-law",
+    "name": "Indian Law",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4a6b4ded-fdc1-5966-94d1-ae2a167445a8",
+    "slug": "united-states-montana",
+    "name": "United States (Montana)",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "983be2a5-e5e4-5cb6-a263-1405a2893e73",
+    "slug": "sandoz",
+    "name": "Sandoz",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "e3aad1da-fce7-574a-b746-8547e6418e4d",
+    "slug": "burgholzli",
+    "name": "Burgholzli",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "ea8d385e-ef99-508c-80fa-e79c82ea3641",
+    "slug": "switzerland",
+    "name": "Switzerland",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "6edc6161-78a6-5c5d-b5bc-19144faccd4a",
+    "slug": "controlled-substances",
+    "name": "Controlled Substances",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "afa65e92-f2e6-53db-9e70-1ffde5512737",
+    "slug": "boo-hoo-church",
+    "name": "Boo Hoo Church",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "550a75a9-082a-5714-b8dd-23c48afd7b26",
+    "slug": "united-states-washington-d-c",
+    "name": "United States (Washington, D.C.)",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "b7ede652-834f-562f-bff3-96cb8dbb54b1",
+    "slug": "hojas-de-la-pastora",
+    "name": "Hojas De La Pastora",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "bc9fcd93-cf18-5dc2-991b-cc46b963f609",
+    "slug": "botanical-museum-leaflets",
+    "name": "Botanical Museum Leaflets",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "ca2afe84-082e-523d-b41e-98f38cc999d1",
+    "slug": "oaxaca-mexico",
+    "name": "Oaxaca, Mexico",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "64985baa-46f6-504a-83af-0614a80e67c8",
+    "slug": "neurology",
+    "name": "Neurology",
+    "description": "",
+    "tag_type": "topic"
+  }
+]

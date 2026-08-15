@@ -1,0 +1,69 @@
+{
+  "slug": "richard-evans-schultes-rivea-corymbosa-ololiuqui-1941",
+  "title": "A Contribution to Our Knowledge of Rivea Corymbosa: The Narcotic Ololiuqui of the Aztecs",
+  "shortTitle": "A Contribution to Our Knowledge of Rivea Corymbosa",
+  "author": "Richard Evans Schultes",
+  "creators": [
+    {
+      "name": "Richard Evans Schultes",
+      "role": "author"
+    }
+  ],
+  "year": 1941,
+  "displayDate": "1941",
+  "type": "Academic Article",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "Mexico",
+  "language": "English",
+  "substances": [
+    "Ololiuhqui"
+  ],
+  "people": [
+    "Richard Evans Schultes",
+    "Manuel Urbina",
+    "William Edwin Safford",
+    "Blas Pablo Reko"
+  ],
+  "tags": [
+    "ololiuqui",
+    "rivea-corymbosa",
+    "morning-glory",
+    "botanical-identification",
+    "convolvulaceae",
+    "oaxaca"
+  ],
+  "summary": "Schultes's botanical monograph settling the identity of ololiuqui, the Aztec morning-glory narcotic. He credits Urbina's 1897 identification as Rivea corymbosa, corrects Safford's 1915 misidentification as jimsonweed, and surveys continued ritual and medicinal use among the Chinantec, Mazatec, Mixtec, and Zapotec of Oaxaca.",
+  "excerpt": "\"In 1897, Urbina correctly identified ololiuqui as Rivea corymbosa (L.) Hall. f., but, in 1915, Safford referred ololiuqui to Datura meteloides... The Safford identification, although erroneous, gained wide acceptance, and, in spite of a reaffirmation of the Urbina identification by Reko in 1934, has persisted.\"",
+  "citation": "Schultes, Richard Evans. A Contribution to Our Knowledge of Rivea Corymbosa: The Narcotic Ololiuqui of the Aztecs. Cambridge, Mass.: Botanical Museum of Harvard University, 1941.",
+  "rights": "In copyright (published 1941). A scan is hosted publicly by samorini.it; used here only as a short verified excerpt per this project's pre-1930 hosting rule.",
+  "sourceUrl": "https://www.samorini.it/doc1/alt_aut/sz/schultes-a-contribution-to-our-knowledge-of-rivea-corymbosa.pdf",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "_No transcript hosted (text postdates 1930 and is not a US Government work). Excerpt below verified against the samorini.it PDF scan of the original Botanical Museum monograph._\n\n\"In 1897, Urbina correctly identified ololiuqui as Rivea corymbosa (L.) Hall. f., but, in 1915, Safford referred ololiuqui to Datura meteloides Dunal ex DC. The Safford identification, although erroneous, gained wide acceptance, and, in spite of a reaffirmation of the Urbina identification by Reko in 1934, has persisted.\"",
+  "wordCount": 75,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket E: Mesoamerican mushrooms and morning glory, 1915-1962)",
+    "proposedOn": "2026-08-15",
+    "rationale": "The definitive early-twentieth-century botanical identification of ololiuqui, closing a debate that had run since Safford's 1915 misidentification. This is the companion piece to Schultes's 1940 mushroom paper and the direct scholarly ancestor of Hofmann's 1960 isolation of ergot alkaloids from the same plant.",
+    "textSource": {
+      "url": "https://www.samorini.it/doc1/alt_aut/sz/schultes-a-contribution-to-our-knowledge-of-rivea-corymbosa.pdf",
+      "kind": "other",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/richard-evans-schultes-rivea-corymbosa-ololiuqui-1941.txt",
+      "scope": "Full text extracted with pdftotext from the samorini.it PDF scan of the original 1941 Botanical Museum monograph, downloaded for verification; only a short quoted excerpt is used in the published transcript field per the copyright rule for post-1930 texts."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "high",
+      "notes": "This PDF has an embedded text layer (not raw OCR), so extraction with pdftotext is clean apart from occasional broken ligatures ('VVorId' for 'World', 'IJe' for 'De') typical of older scanned typefaces; not corrected since only a short excerpt is published. The excerpt quoted was checked directly against the extracted text file.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

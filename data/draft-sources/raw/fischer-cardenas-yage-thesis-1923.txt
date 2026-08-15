@@ -1,0 +1,787 @@
+  REPUBLICA DE COLOMBIA - UNIVERSIDAD NACIONAL - FACULTAD DE MEDICINA
+
+                     Estudio sobre el principio activo del Yagé
+
+   Tesis presentada para optar al título de Doctor en Medicina y Cirurgía por Guillermo Fischer
+  Cardenas Disector de Anatomia Descriptiva. segundo curso, con el Profesor Luis María Rivas.
+Practicante externo del Hospital de San Jnan de Dios, por concsrso. Practicante ititerno dei Hospital
+   de San Junn de Dios, por concurso, en la Clinica Obstetrical con el Profesor Miguel Rueda A.
+ (1927). Vencedor en el concurso de Practicantes internos para las clinicas quírurgicas del Hospital
+                     de San Juan de Dios. Ex-Médico de la Policía Nacional.
+                           Ex-Miembro de la Sociedad de Practicantes.
+  1923 Casa Editorial de "La Cruzada" - Bogota, Colombia A mis padres como manifestación de
+                           gratitud y de amor profundos. A mi hermano
+A mis queridos tíos Antonio Cárdenas Mosquera y Eusebia Arboleda de Cárdenas. A mi Presidente
+                                   de Tesis Al Dr. Juan N. Corpas
+    Como un testímonio de agradecimiento por sus sabias enseñanzas consagr,. al frente de este
+   estudio, un recuerdo cariñoso a todos mis profesores de la Facultad, muy singularmente a los
+    doctores Juan David Herrera, José María Lombana Barreneche, Luis Maria Rívas, Pompilio
+   Martínez. Agustin Uribe. Nicolás Buendáa, Carlo Esguerra. Juan N. Corpas, Lulio Manrique,
+           Joaquín Lombana, Guillermo Márquez, Federico Lleras A. y Jorge Bejarano.
+         Rector de la Faculdad de Médicina y Ciencias Naturales: Doctor Juan N. Corpas
+                        Présidente de Tesis: Doctor Eduardo Lleras Codazzi
+        Examinadores: Doctores: Agustín Uribe, Luis M. Rivas Merizalde, Nicolás Buendía
+                         Secretario de Faculdad: Doctor José del C. Acosta
+
+
+
+
+Bogotá, octubre 23 de 1923.
+
+Señor Rector de la Facultad de Medicina y Ciencias Naturales-E. S. D.
+
+Tengo el honor de informar a usted que he seguido de cerca los trabajos ejecutados por el señor
+Guillermo Fischer sobre la planta conocida con el nombre de Yagé en la región del Putumayo, cuya
+relación presenta como tesis para optar al título de Doctor en Medicina y Cirugía.
+
+El punto escogido por el señor Fischer es tal vez uno de los más dificiles de tratar, puesto que, por
+su originalidad, no admite más datos que los que el autor se procura con sus propias experiencias,
+en la conducción de los cuales muestra un caudal de conocimientos y un criterio cientifico que lo
+colocan entre los más aventajados estudiantes de la Facultad.
+
+El aislamiento de un alcaloide hasta hoy desconocido y el estudio de sus propiedades tanto quimicas
+como fisiológicas, son tarea que pocos de entre nosotros son capaces de llevar a cabo con el éxito
+con que lo ha hecho el señor Fischer y, por tanto, conceptúo que este trabajo llena las condiciones
+reglamentarias y honra tanto a su autor como a la Facuitad de Medicina y Ciencias Naturales, y
+debe publicarse. Con toda consideración quedo del señor Rector atento y seguro servidor,
+
+Eduardo Lleras Codazzi
+Universidad Nacional.-Facultad de Medicina.
+Publiquese.
+El Rector,
+Juan N. Corpas
+
+[9]
+INTRODUCCIÓN
+
+Los Indios salvajes de las llanuras del Caquetá y el Putumayo, hacia el Sur de la República, toman,
+para procurarse un estado de embriaguez particular, la decocción y la maceración de una planta
+denominada el Yagé, a la cual atribuyen propiedades maravillosas confirmadas por la tradición de
+distintas tribus.
+
+Relaciones de personas serias e ilustradas están todas contestes en admitir que esta planta produce
+especialmente sueños y alucinaciones visuales, en las cuales el individuo sometido a la acción de
+una cualquiera de sus preparaciones, ve cosas que no están de acuerdo con la civilización salvaje
+que lo rodea y que corresponden a una más complicada.
+
+El Yagé es un bejuco, una trepadora, cuya clasificación botánica no se ha hecho aún. Queda al
+botáinico este campo de experimentación. Parece que sea una aristoloquia por ciertos detalles de su
+estructura anatómica e histológica: presenta al corte trasversal sus haces leñosos dispuestos en
+corona.
+
+El primero que entre nosotros acometió su estudio fue el doctor Rafael Zerda Bayón, de grata
+memoria, verdadero hombre de ciencia, quien pasó la mayor parte de su vida observando la
+naturaleza con la idea y la convicción de arrancarle algún día algunos de sus escondidos secretos.
+[10]
+
+El hizo una célebre expedición científica al Caquetá y el Putumayo con el propósito, entre otros
+muchos, de estudiar más de cerca y detailadamente el principio activo de esta planta, la que fue
+objeto de una labor profunda y concienzuda, mediante la cual logró suponer, después de multiples
+experimentos sin lograr llegar a su aislamiento, que este vegetal debía contener como principio
+activo un alcaloide, al cual bautizó con el nombre de telepatina por los efectos muy particulares y
+curiosos que produce la ingestión de sus preparaciones.
+
+Debe, por honor a la memoria del ilustre sabio, conservar el alcaloide que hemos aislado, y que él
+supuso que existía, el nombre de telepatína.
+
+Sea esta la ocasión de presentar nuestros más rendidos agradecimientos al distinguido profesor de la
+Facultad, doctor Eduardo Lleras Codazzi, por la manera gentil con que dio acogida a este estudio y
+por las sabias enseñanzas que desinteresada y ampliamente nos prodigó a manos llenas,
+constituyéndose por ello en el director espiritual de este trabajo.
+
+El interés que ha despertado esta planta en el mundo científico ha sido el motivo del presente
+estudio que adolece de muchos defectos y vacíos por falta de medios, pero que representa el
+esfuerzo honrado de toda obra original y la buena voluntad de llevarlo a término con el fin de sacar
+a la luz algo de verdad en el terreno de la ciencia. [11]
+
+
+CAPITULO I
+
+Preliminares
+
+PRINCIPIOS ACTIVOS DE LAS PLANTAS
+Todas las plantas contienen principios activos, entre los cuales se cuentan en primera linea los
+alcaloides y los glucosidos y en segunda las resinas y gomoresinas, que no poseen propiedades tan
+activas ni tan notorias como los primeros.
+
+Casi siempre las plantas encierran varios alcaloides de acción general común, que solamente
+difieren entre si por ciertas afinidades especiales sobre el organismo.
+
+Cuando existe tan sólo uno o a lo más dos principios activos, es menester pensar-ya a priori-en la
+existencia más bien de un glucosido que de un alcaloide. Sin embargo esta regia-como todas-tiene
+sus excepciones.
+
+Alcaloides.-Los alcaloides son sustancias azoadas básicas, extraídas de los tejidos vegetales;
+encierran casi todos oxígeno; los que carecen de él como la nicotina, la conicina, etc., son líquidos
+aceitosos y volátiles.
+
+Entre los oxigenados los unos son fijos, los otros pueden volatilizarse en el vacío.
+
+Son sólidos, cristalizables, de color blanco, de sabor amargo. Obran sobre la luz polarizada.
+Algunos se alteran con facilidad, bajo diversas influencias. [12]
+
+Los alcaloldes se combinan con los ácidos para formar sales, generalmente solubles en el agua y
+susceptibles de cristalizar. Es conveniente tener en cuenta sus solubilidades en el éter, el alcohol
+amilico, el agua, el cloroformo, etc., porque precisamente sobre estas propiedades se basan
+procedimientos de extracción. Ciertas sales de los alcaloides son poco solubles o insolubles en el
+agua. Como la solubilidad en los disolventes orgánicos es casi siempre mayor que en el agua, toda
+solución acuosa del alcaloide libre, al ser agitada con el disolvente, le cede la base que contiene.
+Inversamente las sales de los alcaloides son más solubles en el agua que en los disolventes. Así,
+agitando un disolvente que contenga un alcaloide libre, con una solución ácida extendida, hace
+pasar la base al estado de sal disuelta en el liquido ácido. Salvo, por supuesto, ciertas excepciones,
+como con la colchicina, la narcotina, etc.
+
+Glucosidas.-Otros de los principios activos de las plantas son los glucosidos, sustancias que se
+desdoblan per la acción de los ácidos, de los álcalis y hasta de algunos fermentos solubles,
+suministrando, como productos de desdoblamiento, la glucosa. Entre las sustancias más importantes
+de este grupo están la digitalina, la picrotoxina, etc.
+
+
+ACCION DE LOS ALCALOIDES SOBRE EL ORGANISMO
+
+Los alcaloides tienen propiedades enérgicas y constituyen casi siempre venenos violentos. Su
+acción sobre los seres organizados de la escala zoológica se traduce por reacciones y
+manifestaciones de defensa, como acontece contra toda sustancia introducida en la economía. Sus
+electos estan sujetos a ciertas condiciones y varian de modos diversos según la dosis a que se los
+suministre, según el mayor o menor estado de resistencia [13] del organismo que la recibe, según su
+especialidad de acción, según las vías de introducción y según muchas circunstancias y causales que
+seria prolijo enumerar.
+
+Es cosa bien sabida que toda sustancia tóxica suprime o altera en diferentes grados las
+manifestaciones vitales de la materia organizada, en una palabra, del protoplasma, y que esa
+modificación, en veces desconocida, que soporta este protoplasma, suele, en ciertos casos, no ser
+muy grande, porque reaparece la vida tan pronto como el veneno ha desaparecido; mientras que en
+otros su acción brutal produce una verdadera destrucción de la materia organizada y por
+consiguiente la muerte.
+
+Partiendo de los seres más inferiores hasta llegar a los de una organización más perfecta, se observa
+que, a medida que el sistema nervioso se complica, el organismo se vuelve más impresionable a las
+influencias de un tóxico. Cada nueva diferenciación expone a un veneno especial. Sin embargo esta
+regia no es absoluta en todas sus partes, porque se presentan casos de sustancias agresivas para un
+elemento o un sistema anatómicamente determinados en un ser superior, que lo son también para
+uno inferior que carece de esos mismos sistemas. Qué explicación podría darse en semejantes
+casos? "Quizá esto sea debido, dice Ch. Vibert, a que la sustancia nerviosa que existe en los seres
+inferiores al estado de difusión, no sea suficiente para ponerlos en capacidad de defenderse contra
+productos que la atacan en organismos de una serie más elevada".
+
+Especificidad de acción. - La especificidad de acción es la elección más o menos marcada de un
+tòxico (alcaloide en el caso presente) sobre determinados grupos celulares. Así el curare paraliza los
+nervios motores por acción sobre sus extremidades, la estricnina obra sobre el sistema nervioso
+central produciendo convulsiones, la atropina produce en el corazón los mismos efectos que [14] la
+sección experimental del neumogàstrico. Esta electividad la aprovecha el investigador para estudios
+fisiológicos y para orientarse en cuestiones de toxicología. Con todo, no es absoluta y alcaloides de
+acción al principio localizada pueden, después de atacar un elemento, atacar otros per etapas
+sucesivas.
+
+Hay entre los alcaloides unos que alteran principalmente el funcionamiento cardiaco en casi todos
+los animales, ejerciendo su acción sobre el sistema nervioso cardiaco, sobre el miocardio y el
+sistema vascular. Otros ejercen una acción más compleja, y es dificil en semejantes casos saber, a la
+luz de la ciencia actual, con seguridad, entre los múltiples efectos que son capaces de producir cuál
+de ellos tiene acción primordial y esencial.
+
+Hay especies animales refractarias, porque su organismo posee medios de destruir o de modificar
+los venenos antes de que lleguen al sistema nervioso central. Basta suprimir esta defensa e
+inmediatamente aparece la intoxicación con su cortejo de síntomas. Un ejemplo: un conejo soporta
+con facilidad por inyección hipodérmica 30 centigramos de clorhidrato de morfina; en cambio si se
+introducen siquiera 2 miligramos per vía intravenosa, rápidamente cae el animal en un estupor
+marcado y muere en un lapso de tiempo que varía entre 24 y 48 horas a lo más. Absorción. - Los
+alcaloides son absorbidos y arrastrados desde su punto de aplicación, por medio de la linfa y de la
+red venosa circulatoria, para irse a repartir y localizar en los diferentes órganos de la economía.
+
+Sólo después de absorbidos son capaces de producir los efectos que le son propios.
+
+La rapidez o la lentitud de la absorción depende en gran manera de muchos factores, entre los
+cuales son dignos de mención especial el estado fisico en que se encuentren y las vías porque se
+introduzcan. Entre éstas las principales son: [15]
+
+1.a Vía gastrointestinal. Poco regular y menos rápida que algunas de las otras, debído a las
+alteraciones que pueden sufrir los alcaloides con la presencia de los jugos digestivos, el mayor o
+menor estado de repleción y de vacuidad del estómago, y que en muchos casos son capaces de
+destruir o disminuir su acción, y al papel de órgano de defensa que desempeña el higado, una vez el
+tóxico arrastrado por el sistema porta.
+
+2.a Vía hipodérmica. La absorción por el tejido celular subcutáneo es rápida y muy regular para los
+alcaloides disueltos en un vehículo, haciendose más lenta si se inyectan en particulas sólidas.
+
+3.a Vía intravenosa. La absorción directa por la sangre en inyecciones intravenosas, hechas en casos
+de experimentaciones fisiológicas, tiene efectos sumamente rápidos, trayendo como su
+consecuencia una intoxicación brutal, en masa, que sorprende al organismo completamente
+desarmado, sin darle tiempo de preparar ninguna defensa, precisamente porque el tóxico escapa a la
+acción de los baluartes que tiene emplazados el organismo en otros caminos.
+
+4.a La absorción cutánea es nula, ligera en caso de que el alcaloide sea volátil, y aun en este caso per
+esa misma volatilidad habría que achacar más los efectos producidos a la absorción pulmonar que a
+la cutánea.
+
+
+TRASFORMACIÓN Y ELIMINACIÓN
+
+Hay alcaloides que atraviesan el organismo sin sufrir transformación alguna, eliminándose en
+naturaleza per los distintos emonctorios; otros, por el contrario experimentan en la intimidad de los
+tejidos metamórfosis, las más de las veces suficientes para anular sus propiedades tóxicas.
+
+La eliminación es más o menos rápida, es lenta cuando en el organismo se forman precipitados
+insolubles. [16]
+
+Las princlpales vías de eliminación son: los riñones, las vías digestivas y sus glándulas anexas, los
+pulmones, las glándulas mamarias, etc.
+
+
+CAPITULO II
+
+TENTATIVAS DE AISLAMIENTO DEL PRINCIPIO ACTIVO DEL YAGÉ
+
+Con el objeto de averiguar la naturaleza del principio activo del yagé, se hizo una infusión en frío
+del bejuco, reducido a virutas, en agua ligeramente acidulada con el ácido sulfurico, y el liquido
+resultante se trató por el procedimiento general de Dragendorff para la extracción de los alcaloides
+en toxicología.
+
+EI éter de petróleo, la bencina y el cloroformo no separaron ninguna sustancia de la solución acida.
+En cambio la bencina, el cloroformo y el alcohol amílico separaron de la solución alcalina un
+cuerpo que dio las reacciones generales de los alcaloides, cuerpo soluble en el alcohol, poco soluble
+en el agua y fácilmente en el agua acidulada; esta última solución presentaba una notable
+eflorescencia verde y un sabor ligeramente amargo y picante.
+
+Sabiendo ya que se trataba de un alcaloide soluble en la bencina, se procedió a su aislamiento en
+mayor escala, para poder estudiar sus propiedades. Con tal fin se hicieron los siguientes
+experimentos:
+
+Reducido el bejuco a virutas pequeñas, se introdujeron éstas en un digestor de Payen, ligeramente
+modificado, y se agotaron por la bencina, en presencia del amoniaco, tornando entonces, al cabo de
+cierto tiempo, la bencina un color amarillo. Agitada con agua acidulada por el ácido sulfúrico tomó
+ésta un tinte amarillo más intenso, con una eflorescencia verde muy marcada. [17]
+
+Alcanzado nuevamente por el amoníaco este liquido, se formó un precipitado abundante que se
+agitó con un exceso de bencina, hasta que el liquido acuoso ligeramente acidulado con el ácido
+sulfúrico no daba las reacciones generales de los alcaloides. Otra vez se agitó la bencina con ácido
+sulfúrico diluido y la solución eflorescente así obtenida se neutralizó exactamente con bicarbonato
+de soda, en caliente, y se evapora hasta sequedad. El residuo se trató por alcohol a 95° para separar
+el sulfato de sodio, insoluble en el alcohol, del alcaloide probablemente soluble en este liquido.
+
+Evaporada la solución alcohólica dejó un residuo amarillento de apariencia gomosa. Al día siguiente
+había cambiado el aspecto de este residuo: examinado al microscopio estaba formado por bellos
+cristales prismáticos agupados en estrellas y activas sobre la luz polarizada.
+
+Fue éste un ensayo que marcó los primeros caracteres del alcaloide.
+
+El segundo experimento se hizo reemplazando la bencina por el alcohol amílico, por observarse que
+en este último se disolvía mejor el alcaloide.
+
+La cantidad de disolvente que es menester emplear en este caso, es menor que con la bencina, sólo
+que el residuo resulta más coloreado, para evitar lo cual, se trata por el negro animal la solución
+sulfúrica, antes de saturarla por el carbonato de sodio. Con este procedimiento se obtuvo mayor
+rendimiento.
+
+
+CARACTERES QUIMICOS DEL PRINCIPIO ACTIVO
+
+Las únicas reacciones coloreadas que se pudieron obtener fueron las siguientes: una pequeña
+cantidad del alcaloide tratada por el ácido suifúrico concentrado da una solución arnarilla; al
+agregarle una particula de bi[18]cromato de potasio se forma al rededor suyo una aureola de color
+azul oscuro, que pasa al negro y luego al amarillo.
+
+Con el reactivo de Mendelin (sulfovanadato de amonio) se produce una reacción semejante, pero
+los tintes son más vivaces y menos fugaces. La primera parte de estas reacciones tiene alguna
+semejanza con la de la estricnina (coloración azul), sólo que en el caso de la estricnina va pasando
+al violeta y luego al rojo, mientras que la del alcaloide en cuestión pasa al negro y luego al amarillo.
+
+Tiene también cierta semejanza con la del curare, pero éste en solución ácida concentrada de ácido
+sulfúrico da un precipitado amorfo que pasa al azul al agregarle bicromato de potasio, coloración
+que permanece así y que unicamente pasa al rosado mediante un suave calentamiento al baño de
+maría.
+
+Con los reactivos generales de los alcaloides se obtienen precipitados sin interés alguno, aun en
+soluciones muy extendidas.
+
+
+PRECAUCIONES QUE ES PRECISO TENER CON LOS ANIMALES SOMETIDOS A UN
+EXPERIMENTO FISIOLÓGICO
+
+El estudio experimental de un principio aislado se hace de preferencia en animales pequeños, por
+ser de más fácil manejo y presentar con débiles dosis introducidas en su organismo, síntomas de
+reacción muy claros y muy marcados y casi siempre caracteristicos. De entre ellos los más usados
+son: la rana, la rata, el conejo y a veces el perro.
+
+La via escogida para la aplicación de la sustancia cuya acción se investiga, es generalmente la
+hipodérmica; en un segundo orden la intravenosa y la intramuscular.
+
+La inyección del producto se hace en la rana con [19] una jeringa de las que se usan corrientemente
+en la práctica médica, provista de una aguja bien fína, con el objeto de no dilacerar la epidermis de
+este animal que es muy delgada y muy tenue. El punto escogido es la piel del dorso o en el muslo.
+La inyección debe hacerse despacio y con sumo cuidado para no herir partes delicadas que podrían
+falsear los resultados del experimento, tenendo a la vez precaución de ir observando desde ese
+momento el animal, porque hay tóxicos que en minimas dosis, gotas apenas, y casi
+instantaneamente producen perturbaciones que pueden poner sobre la via del principio cuya acción
+se estudia.
+
+En los otros animales: rata, concio, perro, deben tenerse las mismas precauciones con relación a la
+introducción del tóxico. La inyección se hace debajo de la piel de la región del dorso, en un fianco o
+en un muslo. Es siempre conveniente afeitar bien y limpiar el sitio elegido, con el fin de ponerse al
+seguro de posibles errores y para más facilidad en las maniobras requeridas.
+
+Una vez el animal inyectado, se lo deja en reposo y se lo observa detenidamente, tomando nota de
+cualquier síntoma extraño y del momento de su aparición y después colocarlo en posiciones y
+condiciones especiales en las que el animal puede presentar fenómenos útiles, que pueden dar una
+luz muy grande para su interpretación fisiológica y aun patológica.
+
+Está por demás decir que los animales escogidos deben ser sanos y estar al abrigo de cualquier
+causa que induzca a error, porque entonces los resultados no serían fieles.
+
+El residuo alcalóidico debe estar bajo la forma de una solución acuosa, que permite una absorción
+más fácil y mis segura. [20] Hay que rechazar, tanto como ello sea posible, el empleo de disolventes
+que por si mismos puedan ejercer una acción tóxica (alcohol) y complicar las observaciones.
+
+
+CAPITULO III
+
+ESTUDIO FISIOLOGICO DEL PRINCIPIO ACTIVO DEL YAGÉ SOBRE LOS
+ANIMALES DEL LABORATORIO.
+
+Rana. - Debajo de la piel de la región dorsal se aplicó a la primera rana una inyección de tres
+centigramos del sulfato de alcaloide, y, al cabo de veinte minutos, se presentaron los siguientes
+fenómenos parálisis del tren posterior con flexión de los dedos, que hacia difficil la marcha; a los
+pocos minutos la parálisis invadía el tren anterior, quedando el animal sostenido sobre el piano
+ventral del cuerpo. Como no permitía esta parálisis tomar al animal punto de apoyo en el suelo para
+progresar, hacia movimientos extensos en el vacío, dando la ilusión de que estaba nadando. En
+ciertos momentos permanecía inmóvil, con la respiración ligeramente acelerada, por espacio de
+cortos minutos, para volver otra vez a sus movimientos infructuosos. Puesta en un plano inclinado
+no ejecutaba movimientos para tratar de conservar el equilibrio; cayéndose si se le hacía más
+pendiente. Colocada sobre el dorso hacía movimientos lentos de los miembros sin lograr voltearse;
+al pincharla respondía débilmente a tal excitación. Colocada, con otras testigos, en un recipiente
+lleno de agua, al principio tenia débiles movimientos de defensa para sobrenadar, pero luego se iba
+al fondo, donde permanecía oblicuamente, con los miembros anteriores en semiflexión sobre las
+regiones laterales del tronco y los posteriores en extensión, haciendo fuertes respiraciones.
+
+A la segunda rana se le inyectó una dosis mayor; [21] siete centigramos. Observándose, como en la
+anterior, fenómenos de parálisis, pero de aparición más precoz y casi simultáneamente sobre los
+cuatro miembros; pérdida del equilibrio, abolición casi completa de la motilidad, caída de los
+párpados, reposo, sin responder a ninguna excitación exterior y sueño y estupor completos hasta la
+cesación total de la vida.
+
+En varias otras ranas se hicieron los mismos experimentos sin pasar de una dosis mayor de cinco
+centígramos-dosis ya tóxica para la rana e invariablemente se observaron los mismos fenómenos
+que con las anteriores.
+
+Rana blanca. - A este animal se le aplicó una dosis mayor. Diez centigramos, en inyección
+subcutánea, produjeron los siguientes sintomas: a los veinte minutos se presentó un temblor
+menudo que sacudía el cuerpo en el sentido antero-posterior, luego en el lateral; poco a poco
+invadía el tren posterior una parálisis con flexión de los dedos. El animal se movía con dificultad,
+arrastrando los miembros posteriores con una especie de estepage caracteristico; después los
+miembros anteriores, hasta entonces indemnes, empezaron a ser invadidos también por la parálisis.
+El animal caminaba aumentando su poligono de sustentación, con un andar vacilante, difìcil,
+incoordinado, casi atáxico, con pérdida del equilibrio estático, el que aumentaba con la oclusión de
+los ojos, acentuación del temblor, cayéndose indistintamente sobre los fiancos derecho e izquierdo y
+permaneciendo acostado, en veces, sobre uno de estos lados, volviendo a la estática mediante
+grandes esfuerzos. A las dos horas de inyectada la dosis inicial, los movimientos de incoordinación
+eran más notorios, con excitación intensa, ejecutando una serie de movimientos desordenados,
+típicos y bizarros, acompañados de chillidos.
+
+Por momentos se detenía en su marcha y entonces [22] se apoderaba de él un sueño entrecortado
+por sacudidas y nueva excitación, que aumentaba el temblor; trataba a veces de apoyarse en las
+patas traseras para levantar el tronco y la cabeza, pero la pérdida inmediata del equilibrio lo hacía
+rodar por tierra y permanecer así corto tiempo.
+
+Cosa digna de anotarse era la serie de vueltas que daba al rededor de su eje vertical, hasta caer, para
+levantarse dificilmente con mayor incoordinación en sus movimientos y mayor temblor.
+
+Este periodo de intoxicación se prolongó durante 8 horas, pasadas las cuales fueron desapareciendo
+los sintomas de parálisis e incoordinación motora, quedando el animal tan sumergido en el letargo y
+el estupor que sólo salía de ellos mediante excitaciones llevadas sobre distintas partes del cuerpo. Al
+día siguiente se encontraba en su estado normal.
+
+Conejo. - En un pliegue de la región dorsal se le inyectaron al conejo, de peso de 1 kilo, diez
+centigramos del sulfato del alcaloide disueltos en 2 c.c. de vehículo. A los 30 minutos principió una
+excitación traducida por saltos y carreras desordenados en distintas direcciones; vino luego un poco
+de quietud y la aparición de un temblor menudo que agitaba su cuerpo en las direcciones antero-
+posterior y lateral. Después hizo su aparición una parálisis en los dos miembros posteriores. Todavía
+el animal podía caminar, pero con alguna dificultad. En seguida se presentaron los mismos
+fenómenos en los miembros anteriores, haciendo la marcha vacilante, oscilante, ébria, a pesar de
+que el animal aumentaba el poligono de sustentación. Al subir algún obstáculo, colocado
+intencionalmente en su camino, cala de espaldas y sólo volvía a la estática merced a repetidos
+esfuerzos.
+
+Igual que en la rata la oclusión de los ojos aumentaba la pérdida del equilibrio, con inclinación y
+rotación [23] al rededor de su eje vertical; igual que en ella también incoordinación motora en todos
+sus movimientos, disminución de los reflejos, sueño entrecortado por sacudimientos súbitos. La
+respiración estaba aumentada.
+
+Poco a poco, en el transcurso de hora y media, fueron desapareciendo estos sintomas en el orden
+siguiente: primero la incoordinación motora y la parálisis, después el temblor menudo y por último
+el sopor. A las dos horas el animai estaba sano.
+
+Perro. - A un perro de 15 kilos de peso se le inocularon en inyección subcutánea y por dosis
+crecientes hasta treinta centigramos del sulfato del alcaloide, disueltos en 5 cc. de vehículo,
+observándose, como en los otros animales, temblor menudo, sueño y fenómenos de incoordinación
+motora, pero poco marcados. Las pulsaciones aumentaron de 100 a 120 por minuto, haciéndose más
+fuertes. En una hora pasaron los efectos del alcaloide, sin dejar ninguna consecuencia.
+
+
+CONSIDERACIONES SOBRE LA ACCIÓN DEL ALCALOIDE EN LOS ANIMALES
+OBSERVADOS
+
+Parece que la acción del alcaloide del yagé en la rana tenga lugar sobre la protuberancia, porque la
+ablación de esta parte, así como las acciones excitantes de las corrientes eléctricas en los
+experimentos fisiológicos sobre el mismo, producen síntomas bastante semejantes a los descritos en
+el curso de este estudlo por la acción del sulfato del alcaloide. En ambos casos el animal colocado
+sobre el dorso no puede voltearse y aun en posición normal no se apoya sobre las patas sino sobre el
+vientre, mueve los miembros en distintas direcciones sin un fin útil, sin lograr tomar punto de
+apoyo.
+
+Colocada en el agua en ambos casos se sumerge; en una palabra, hay pérdida del equilibrio y la
+función del equilibrio tiene su asiento en el mesocéfalo. Consérvese [24] éste y quitense los
+hemisferios cerebrales y el animal acerebrado continuará, como al estado normal, en pieno uso de
+las facultades de la vida de relación, con existencia del equilibrio: si se lo coloca sobre el dorso, se
+voltea; si se lo pone en un piano inclinado, no se deja caer; si se lo echa en un recipiente con agua,
+nada y gana la orilla.
+
+Igual conclusión parece desprenderse respecto a los mamiferos sobre los que se ha estudiado la
+acción del alcaloide, pues en ellos también las acciones y las lesiones sobre el mesocéfalo producen
+alteraciones del equilibrio, incoordinación motora, titubeación, caidas frecuentes, falta de firmeza y
+energía en la marcha, sacudidas y temblores; alteraciones éstas, en verdad, muy parecidas a las
+producidas por el alcaloide del Yagé. Por supuesto que hay diferencia entre la intensidad de los
+fenómenos habidos con motivo de la ablación anatómica del mesocéfalo y la acción fisiológica y
+tóxica producida sobre el mismo por el alcaloide. En el primer caso los síntomas son más marcados,
+más francos, de fisonomía más clásica; en el segundo, no son tan claros ni tan nitidos, pero con todo
+existen en cierta medida.
+
+
+CAPITULO IV
+
+ACCION DEL ALCALOIDE DEL YAGÉ SOBRE EL ORGANISMO HUMANO
+
+Primera observación.
+
+Señor N. N., de 24 años de edad, de 64 kilos de peso. Tomó por via digestiva LX gotas de una
+solución acuosa de Yagé y tuvo los siguientes síntomas: a los veinte minutos de ingerida la
+preparación comenzó a experimentar una sensación de bienestar extraordinaria,mezclada a un gran
+optimismo sobre los acontecimientos de [25] su vida presente y su porvenir, aumento de la memoria
+y de las facultades intelectuales. Al caminar parecíale como que andaba en el aire y que sus
+miembros apenas si se apoyaban sobre el suelo. A los treinta minutos se acostó, porque principió a
+tener ciertas sensaciones subjetivas: aumento desmedido de la cabeza y sensación vertiginosa
+desagradable; después se apoderó de él un sueño pesado y tuvo la siguiente alucinación, que
+describe asi: Empecé a soñar que me había convertido en un hombre gigantesco, cuya altura pasaba
+en mucho a la de los edificios más altos, y contemplaba a mis pies una multitud de pigmeos que se
+movían en distintas direcciones y que alzaban su cara diminula para mirarme sorprendidos y soltar
+luégo sonoras carcajadas. Después vino una laguna, quién sabe de cuanto tiempo, y vi sobre el
+escritorio de mi cuarto a dos personajes muy pequeños, de una estatura no mayor de diez
+centimetros cada uno, hombre y mujer, vestidos así: la mujer con chaqueta amarilla, apretada al
+talle y falda del mismo color con arandelas negras, medias verdes y zapatillas verdes; el hombre con
+un levitón entallado y pantalones hasta la rodilla, de color ambos verde, medias rojas y zapatos
+negros. Danzaban alegremente y me miraban sonrientes y con suma coquetería. Al día siguiente me
+levanté con un poco de dolor de cabeza, que duró hasta la midad de ese mismo día.
+
+
+Segunda observación.
+
+El autor de este estudio tomó una noche al acostarse una dosis de cerca de 10 gramos de una
+solución acuosa, y al cabo de 15 minutos empezó a ver manchas azules en todo cuanto lo rodeaba,
+acompañado esto de hemianopsía y adormecimiento en los miembros inferiores, fatiga y angustia
+con opresión precordial, que dificultaba los movimientos respiratorios, sequedad en la laringe, [26]
+calor en el epigastrio y cólicos intestinales, retardo de las pulsaciones, zumbidos en los oídos y una
+extraña sensación del cuero cabelludo, como si estuviese fuertemente templado y apretado contra la
+bóveda craneana a la manera de un casquete. Un ligero frío corría desde la nuca hasta las regiones
+gluteas como un hilillo de agua. La sensibilidad estaba intacta. Estos sintomas le hicieron
+comprender que había llegado al periodo de intoxicación. Al levantarse de la cama una sensación
+vertiginosa le impedía marchar con apresuramiento. Aplicaciones rápidas con el fin de evacuar el
+tóxico no permitieron la acentuación ni el aumento de todos estos desagradables fenómenos. Con
+todo, hizo, en último término, su aparición en la escena una cefalalgía gravativa, localizada
+especialmente en la región frontal derecha y que se prolongó-aun cuando no con la misma
+intensidad-hasta la tarde del día siguiente.
+
+
+Tercera observación.
+
+Señor N. N., estudiante de Medicina; tenia gran interés en experimentar los efectos del alcaloide y
+con tal motivo se le obsequió una pequeña cantidad de una solución ligeramente ácida,
+advirtiéndole que no pasase, en 24 horas, de una dosis mayor de XL o L gotas. Hé aquí su relación:
+"Confieso, que la primera noche escogida para el experimento, a tiempo de recogerme, me asaltó el
+temor de que aquella preparación pudiera envenenarme. Tras de muchas cavilaciones, y con los
+nervios excesivamente excitados, resolví al fin, con la esperanza de un bizarro sueño alucinador,
+tomar apenas 25 gotas.
+
+"Acostéme arrepentido de haber bebido esa preparación, pero cuál sería mi sorpresa, cuando al
+cuarto de hora poco más o menos de la ingestión, experimenté una gran calma, un estado de
+verdadera euforia que con[27]trastaba con el pánico anterior. Y qur tanta seria mi serenidad, que
+casi instintivamente eché en un poco de agua otras XXV gotas. Me pulsé. El número de
+revoluciones cardiacas, que hasta hacía un instante era de 98, había descendido a 76.
+
+"Pero a pesar de mi tranquilidad no vinieron, ni antes del sueño normal, ni durante él, alucinaciones
+ni ilusiones.
+
+A las tres de a mañana algún enfermero del hospital vino a despertarme para que fuera a atender un
+herido de gravedad. Me levanté sin el menor malestar ni entorpecimiento, riéndome interiormente
+del tal Yagé sin embargo a la noche siguiente, y a tiempo de acostarme, resolví de nuevo tomar la
+sustancia.
+
+"Esta vez ingerí L gotas de un solo trago.
+"El sueño vino como siempre, sin la menor alucinación. Unicamente volví a experimentar el mismo
+estado de tranquilidad, de indiferencia del día anterior.
+
+Debo confesar que rara, rarisima vez, logro soñar algo. Por regia general duermo toda la noche sul
+que la menor imagen, ni la más leve ilusión aparezcan en ese sueño. Quizá por eso mismo, logré
+darme cuenta a las tres noches seguidas de estar tomando el yagé, que durante el sueño volvía yo a
+tener la representación clara y precisa de cuantos sucesos más importantes había visto o
+experimentado durante la vigilia. Lo más trascendental de mi vida cotidiana volvía a surgir por la
+noche, durante el sueño, com la misma precisión que se torna a contemplar en la pantalla
+cinematográfica, la vista de un sitio o de un edificio que nos es familiar.
+
+La primera noche, cuando el enfermero vino a despertarme para cuidar al herido, después de
+prestarle los auxilios del caso, volví a mi pieza y me dormí de nuevo. Pues bien, aun cuando esa vez
+no le di importancia, recordé luégo que había soñado con ese herido tal [28] como lo contemplé
+cuando lo atendýa: con su herida penetrante del pulmón, con su disnea y con su cara de angustia.
+
+"Al otro día estuve en una tertulia y por la noche, sin duda bajo la influencia del yagé, volví a ver
+esa reunión detalladamente, con los mismos personajes y con detalles de una nitidez asombrosa.
+
+"El tercer día me entretuve con la lectura de un interesante capitulo de Los Cuatro Jinetes del
+Apocalipsis. En aquel capitulo relata Blasco Ibáñez, de manera magistral, un ataque a un castillo de
+Francia. Pues bien, dormido, la escena pintada por Blasco Ibáñez tornó a surgir con toda claridad;
+volvíme a ver con la novela en las manos leyendo el capitulo.
+
+"En resumen: con 150 gotas que ingerí de la preparación de Yagé, pude darme cuenta, durante tres
+noches, que tornaba a soñar con lo más importante que había visto, sentido o leído durante el curso
+del día. Es de notarse, asimismo, que la planta ejerce un efecto sedativo sobre el sistema nervioso,
+pues de otro modo no puede explicarse el bienestar general que produce. Las orinas de la mañana
+tienen un ligero color verdoso de oliva y han aumentado en cantidad".
+
+
+Cuarta observación.
+
+Señor N. N., de 70 kilos de peso. Comerciante en maderas. La primera noche tomó XXV gotas de
+una solución acuosa de yagé y, a la media hora, comenzó a sentir una sensación de bienestar y
+calma. Se durmió muy rápidamente y soñó con gran nitidez haciendo un viaje en una bella
+población, donde todo lo que veía lo sorprendía por su novedad. Al día siguiente despertó sin
+ninguna perturbación. [29]
+
+
+Quinta observación.
+
+La misma persona, noches después, tomó 40 gotas de la misma solución, experimentando, como en
+la vez anterior, bienestar y calma, plenitud de vida y alegría. Media hora después se dormía y
+soñaba que se encontraba en una hermosa poblaciòn que no había conocido nunca, con edificios
+soberbios y con gran movimiento de gentes, y que en el suono se figuraba que era de Méjico; pero
+todo con una nitidez perfecta como si lo estuviese viendo en vigilia. Dice que tenía momentos como
+de semi-vigilia en que se daba cuenta de que había tomado las gotas de la preparación del yagé y en
+que lo preocupaba el temor de irse a envenenar, momentos que pasaban con rapidez para volverse a
+soñar en la misma población viendo edificios suntuosos. Al día siguiente se despertó a la hora de
+costumbre con un poco de pesantez en la cabeza.
+Sexta observación.
+
+Señor N. N., de e2 años de edad, de 66 kilos de peso. Tomó una noche al acostarse L gotas de una
+solución acuosa del alcaloide. Hé aquí su descripción:
+
+"A los 20 minutos de haber ingerido las gotas de la preparación con un poco de agua, empecé a
+tener una sensación tan agradable, tan deliciosa, con una ligereza tan grande en todos mis
+movimientos que parecía que me hubiese rejuvenecido subitamente.
+
+"Aproveché este estado de euforia para leer una obra que tenía a la mano y noté que como que
+asimilaba con mucha facilidad los trozos de las descripciones que pasaban ante mi vista; pero poco
+a poco me fue sorprendiendo en esta tarea un sueño tranquilo y resolví acostarme. A los 5 minutos a
+más tardar me dormí y vi, cosa que me ha sorprendido enormemente, con una ni[30]tidez pasmosa,
+una escena de mi infancia con la que nunca había soñado y siempre había tratado de olvidar en el
+curso de mi vida posterior a esos acontecimientos. En ella hicieron parte dos personas que ya
+desaparecieron, a las que veía perfectas, con sus rasgos más salientes y su fisonomía completa,
+nitida, con sus ademanes característicos cual si los hubiese visto otra vez vivos a mi lado.
+
+"Pasada la representación de esta escena, vi a una multitud de hombres y mujeres muy hermosas,
+con vestidos de colores vivos, que asidos de las mirarnos giraban alegres al rededor de una rueda
+gigantesca cubierta literalmente con unas flores amarillas tan grandes como un paraguas abierto.
+
+"Confieso que casi nunca sueño, ni aun con las cosas que más me han preocupado en el día, en
+medio de los afanes de la vida, ni cuando me duermo cavilando sobre ellas, porque siempre su
+última idea se ha desvanecido con el sueño sin continuar durante él".
+
+
+Séptima observación.
+
+Señor N. N., de 23 años de edad, de 52 kilos de peso, de temperamento muy nervioso. Ingirió una
+noche XL gotas de una solución acuosa. Hé aquí su relación: 'No me animé a tomar de un solo
+golpe las XL o L gotas que se me indicaron que podía tomar sin peligro de mi salud, por temor
+siempre de que me fuera a suceder algo raro: una intoxicación, por ejemplo. "Resolví ir tomando de
+X en X gotas, por tanteo, y con el ánimo de suspender tan pronto como notase algun sintoma
+alarmante, pero felizmente notaba que a medida que iba aumentando la dosis me iba ponendo más
+tranquilo y más sereno. Poco tiempo después me fue embargando un sueño algo pesado con una
+sensa[31]ción de mareo y malestar. Me acosté y, con el reposo en la cama, disminuyeron estos
+síntomas desagradables hasta dormirme completamente y ver en un sueño lo siguiente: andaba yo
+paseando por un campo cuando repentinamente se me apareciò un hombre de estatura media,
+provisto de una enorme cabeza y de fisonomía altamente ridícula: cara apergaminada cubierta de
+ateltes, ojos malignos que giraban continuamente en sus órbitas en todos sentídos, sonrisa
+sardónica. Este personaje desagradable dio en perseguirme do quiera que fuera; yo le huía y me le
+escondía en donde podía, pero con tan mala fortuna que siempre tropezaba con su figura
+repugnante; desagradado y asustado, volvía yo a sacarle el cuerpo, siempre con el mismo resultado.
+
+"Al día siguiente me desperté a la hora de costumbre con un poco de dolor de cabeza y todavía bajo
+la impresión del sueño tan desagradable que me había proporcionado la preparación de Yagé.
+
+
+CONSIDERACIONES SOBRE LA ACCIÓN DEL YAGÉ EN EL HOMBRE
+Los siguientes estudios sobre el sueño y los ensueños tienen por objeto seniar ciertas bases
+científicas para la explicación de los sueños y las alucinaciones producidas por el Yagé.
+
+Qué es el sueño natural? Las funciones cerebrales, como todas las funciones del organismo, son
+intermitentes y pasan por dos estados: el de actividad o de vigilia y el de reposo, inactividad
+reparadora o sueño.
+
+EI sueño está esencialmente constituido: 1.° Por la suspensión de la actividad cerebral, sensitiva,
+psiquica y voluntaria; 2.° Por la abolición de la actividad automática de los centros para la vida de
+relación con todos sus movimientos (equilibrio, locomoción); 3.° Por disminución de la actividad
+refleja; 4.° Por retardo del corazón, la respiración, etc., etc. [32]
+
+Se han ideado muchas teorías para explicar el sueño. Hé aquí las principales:
+I.a La causa próxima del sueño, dicen Viault y Jolyet, es el agotamiento del sistema nervioso y su
+fatiga, la disminución de su excitabilidad, efecto del funcionamiento de los nervios y de los centros
+nerviosos, y que trae para el organismo la necesidad de reparar las pérdidas y eliminar los residuos
+del trabajo. Estas causas explican por qué el sueño viene a intervalos periódicos que corresponden,
+en el hombre y los animales, a la noche, precisamente cuando la excitabilidad nerviosa cerebro-
+espinal está más agotada.
+
+2.a Teoría vascular. - El sueño sería debido a la anemia de los centros nerviosos por efecto de una
+vasoconstricción de la circulación cerebral. Esa anemia existe, es verdad, pero es consecuencia del
+sueño y no su causa.
+
+3.a Teoría histológica.-Las prolongaciones protoplasmáticas de las células del cerebro estarían,
+durante la vigilia, más o menos en contacto y, durante el sueño se separarían. Pero en este caso no
+hay causa suficiente que explique por qué se separan en el sueño y mediante qué mecanismo.
+
+4.a Teoría de la hipnotoxina. - El organismo forma en la vigilia, como producto de desasimilación de
+la célula nerviosa, una toxina que, al obrar sobre los centros nerviosos, produce el sueño.
+
+Existen otras muchas teorías que, francamente, no resisten el ataque de una critica cientifica y
+severa, por eso no se mencionan aquí. De entre todas, la que más responde a los hechos, es la de la
+hipnotoxina, pero el autor achaca a la desasimilación de la sola célula nerviosa la formación de
+dicha toxina. Ahora, por qué esta eiectividad de la sola célula nerviosa para producirla, mediante
+qué ley y qué especialidad biológicas? Acaso los demás grupos celu[33]lares de los distintos tejidos
+del organismo no pueden formar, como sus mismos productos de desasimilación, una hipnotoxina
+que provoque ei sueño?
+
+El sueño es una señal de cansancio y puede explicarse así: En la vigilia todos los grupos celulares
+dll organismo, a causa de su funcionamiento fisiológico, forman productos de desasimilación que,
+como todo deshecho de la vida, son tóxicos. De estos productos una parte se eliminaría por los
+distintos emonctorios, quedando otra que no podría ser arrojada fuera del organismo y que
+arrastrada por el torrente circulatorio, hasta ponerse en contacto con los centros nerviosos, iría
+acumulándose sobre éstos basta llegar a cierto limite de toxicidad y producir por eso mismo la
+suspensión de la actividad cerebral, sensitiva, psiquica y voluntaria, con abolición de la actividad
+automática de los centros de la vida de relación, en una palabra el sueño. De este modo se explicaría
+per qué cuando se ha desplegado mayor actividad en el curso de la vigilia y por consiguiente los
+productos de excreción de las células han sido mayores y se han acumulado más rápidamente y
+alcanzado en menor tiempo más toxicidad, el sueño venga más temprano que de costumbre.
+
+De manera que se puede decir que el sueño es una intoxicación fisiológica del organismo que él
+mismo se encarga de efectuar para reparar sus pérdidas.
+
+En el curso del sueño existen los ensuellos que son una combinación involuntaria de imágenes o
+ideas, a veces confusas, a veces muy nítidas. Los ensueños o sueños son indicio de un sueño parcial,
+de la vigilia, propiamente hablando, de una pequeña parte de los órganos del pensamiento, sin el
+concurso de los órganos todos del cerebro. Es el producto de la actividad espontánea de ciertos
+órganos que se despertan, mientras otros duermen, hasta tal punto que a veces se produ[34]cen
+verdaderos trabajos intelectuales que la voluntad parece dirigir. Por eso ha habido casos en que se
+resuelven de golpe, con prontitud, dificultades de mentoria, de juicios, de imaginación, que en la
+vigilia no se habían podido resolver.
+
+El yagé, a ciertas dosis, tiene una acción narcótica; produce el sueño y en su curso sueños y
+alucinaciones. Absorbida esta sustancia per las distintas vías por que se la introduzca, toma el
+torrente circulatorio y parece que va a obrar sobre el sistema nervioso central ejerciendo sobre la
+célula nerviosa una acción especial que la obliga a suspender su actividad y entrar en el reposo;
+pero talvez a esto sólo no se encaminan sus efectos; entrado en reposo el cerebro en corto espacio
+de tiempo, como acontece en el sueño natural, en su primera parte, vendría después el despertar de
+algunos grupos celulares per la acción excitante del tóxico, ya directamente sobre las neuronas
+corticales o ya per acción sobre una parte del organismo, como los órganos de los sentidos, cuya
+impresión trasmitida al cerebro suscitaría la actividad de la parte que le corresponde a cada uno de
+estos órganos. Así cuando la impresión fuese más grande sobre el centro de la visión se tendrían
+alucinaciones visuales, sobre los centros de la audición alucinaciones auditivas, etc., etc.; y como en
+estos casos las ideas instintivas y reflejadas de los órganos puestos en juego per la acción del tóxico,
+no son pesadas per el examen de la realidad, ni aplicadas a una base objetiva con la ayuda de los
+sentidos, toman un sello de intensidad y variedad singulares y bizarras que no están de acuerdo con
+la realidad y que constituyen las alucinaciones.
+
+Puede concluirse que las alucinaciones y los ensueños producidos por el yagé son un sintoma que
+revela la acción tóxica de la sustancia sobre el cerebro, que [35] es el órgano de la sensibilidad
+consciente, al igual de lo que acontece con la belladona, el haschisch, la datura arbórea o "cacao
+sabanero", etc., etc.
+
+
+PARALELO ENTRE LA ACCIÓN DEL HASCHISCH Y LA DEL YAGÉ
+
+Se fabrican con el cáñamo Indio (Cannabis Indica) preparaciones narcóticas, empleadas en el
+Oriente, y conocidas bajo el nombre de haschisch.
+
+La preparación más usada lleva el nombre de Dawamesk, que es una preparación formada por los
+principios activos extraídos de las hojas, las inflorescencias, mezclados a una sustancia grasa,
+generalmente la manteca, y a ciertos condimentos, como esencias y picantes. La intoxicación
+sobreviene así después de un periodo de excitación con embriaguez, se experimenta una necesidad
+imprescindible de locomoción; luego viene aceleración de las pulsaciones y un delirio activo, rara
+vez agradable, generalmente terrifico, furioso, violento. Todas las sensaciones son percibidas en
+proporciones gigantescas; después aparece un sueño tranquilo o estupor analogo al del sueño
+clorofórmico: en China se lo ha utilizado en la anestesia quirúrgica. Los excesos repetidos del
+haschisch traen como consecuencia efectos funestos, debilitamiento progresivo de las fuerzas
+musculares; pérdida del apetito y un estado de torpeza particular que requiere casi siempre el
+internamiento en un asilo.
+
+Dosis pequeñas exaltan la memoria, la imaginación y el sentido genésico.
+Los principios activos son: la haschischina, la cannabina, la cannabena, la cannabinona, la
+tetanocannabina y el cannabinol. Parece que el haschisch exalta las tendencias a las ideas favoritas
+de cada cual. [36]
+
+En los fenómenos producidos por el Yagé hay conservación de la sensibilidad, el delirio es
+agradable, plácido, sin gran excitación. No se observan perturbaciones mentales, pues a pesar de
+usar sus preparaciones casi toda la masa de la población salvaje del Caquetá y el Putumayo, no se
+han registrado hasta el presente casos de este orden. Ambos, como excitantes que son del sistema
+nervioso, aumentan la memoria y casi todas las facultades intelectuales.
+
+Ahora, en un a palabra, sus efectos no son tan brutales ni tan extendidos en toda la economía
+humana como los del cáñamo indio.
+
+
+CONCLUSIONES GENERALES SOBRE LA ACCIÓN DEL ALCALOIDE DEL YAGÉ
+
+Absorción y eliminación.-La absorción por la epidermis es nula.
+
+La absorción por la via digestiva es rápida: entre 15 y 20 minutos se observan ya fenómenos
+generales.
+
+La absorción por la via subcutánea se hace en un tiempo que oscila generalmente entre 10 y 15
+minutos.
+
+La eliminación se efectúa por la orina, a la que comunica una coloración verde-amarilla.
+
+La absorción parece que tenga lugar por la vía venosa: si se le liga a una rata una pata en la raíz del
+miembro y se le inyecta en el mismo una solución del sulfato del alcaloide, aun al cabo de media
+hora no se presenta ningún síntoma; basta soltar la ligadura para que a los cinco minutos aparezcan
+los fenómenos generales de la intoxicación.
+
+Toxicidad.-Tres centigramos del sulfato del alcaloide en solución acuosa producen en la rana
+perturbación del equilibrio. [37]
+
+Una dosis mayor, siete centigramos, traen la muerte en el espacio de dos horas con estupor.
+
+La rata y el conejo con diez centigramos del stillato del alcaloide, en solución acuosa, presentan
+síntomas de pérdida del equilibrio, con temblor e incoordinación motora.
+
+En el hombre la ingestión de pequeñas dosis produce ensueños. Dosis altas, la intoxicación.
+
+Aparato digestivo. - Las preparaciones del Yagé tienen un sabor ligeramente amargo y picante que
+provoca la secreción refleja de la saliva. Dosis altas ocasionan calor en el epigastrio y débiles
+cólicos intestinales.
+
+Aparato respiratorio. - En la rana, la rata y el conejo hay aumento del número de respiraciones. En
+el hombre hay retardo. Dosis altas provocan en este último sequedad en la laringe.
+
+Con dosis pequeñas hay disminución del número de pulsaciones. En algunos casos parece que la
+tensión aumenta.
+
+Sistema nervioso. - A dosis pequeñas produce una sensación agradable de bienestar y de serenidad y
+ensueños agradables. A dosis altas hay alucinaciones, cefalalgía, zumbidos de oídos, vértigo,
+opresión y angustia precordiales y sensaciones subjetivas, como adormecimiento de los miembros
+inferiores, perturbaciones visuales: hemianopsia y visión de manchas azules y sensación de frío en
+las espaldas. [38]
+
+
+BIBLIOGRAFÍA
+J. Ogier, Traité de Chimie Toxicologique.
+J. Beclard, Physiologie.
+Viault y Jolyet, Precis de Physiologie.
+Troost, Precis de Chimie.
+M. Arthus, Precis de Chimie Physiologique.
+Doctor Juan David Herrera, Conferencias de Toxicologia.
+Doctor Eduardo Lleras Codazzi, Conferencia de Quimica Orgánica.
+

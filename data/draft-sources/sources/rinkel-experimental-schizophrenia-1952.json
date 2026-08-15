@@ -1,0 +1,78 @@
+{
+  "slug": "rinkel-experimental-schizophrenia-1952",
+  "title": "Experimental Schizophrenia-Like Symptoms",
+  "author": "Max Rinkel, H. Jackson DeShon, Robert W. Hyde, and Harry C. Solomon",
+  "creators": [
+    {
+      "name": "Max Rinkel",
+      "role": "author"
+    },
+    {
+      "name": "H. Jackson DeShon",
+      "role": "author"
+    },
+    {
+      "name": "Robert W. Hyde",
+      "role": "author"
+    },
+    {
+      "name": "Harry C. Solomon",
+      "role": "author"
+    }
+  ],
+  "year": 1952,
+  "displayDate": "February 1952",
+  "type": "Academic Article",
+  "medium": "Text",
+  "era": "1950-1970",
+  "region": "United States",
+  "language": "English",
+  "substances": [
+    "LSD"
+  ],
+  "people": [
+    "Max Rinkel",
+    "Robert W. Hyde",
+    "Harry C. Solomon"
+  ],
+  "tags": [
+    "lsd",
+    "model-psychosis",
+    "boston-psychopathic-hospital",
+    "schizophrenia",
+    "experimental-psychiatry"
+  ],
+  "summary": "Rinkel and colleagues at Boston Psychopathic Hospital administered microgram doses of LSD tartrate to normal volunteers and schizophrenic, depressive, and paranoid patients. They reported the drug reliably produced thought disorder, hallucination, and depersonalization resembling clinical schizophrenia.",
+  "excerpt": "",
+  "citation": "Max Rinkel, H. Jackson DeShon, Robert W. Hyde, and Harry C. Solomon, \"Experimental Schizophrenia-Like Symptoms,\" American Journal of Psychiatry 108, no. 8 (February 1952): 572–578.",
+  "rights": "In copyright (American Psychiatric Association Publishing). No US Government interest.",
+  "sourceUrl": "https://doi.org/10.1176/ajp.108.8.572",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "",
+  "wordCount": 0,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket F: LSD/mescaline in psychiatry, 1943-1962)",
+    "proposedOn": "2026-08-15",
+    "rationale": "The founding paper of the American model-psychosis LSD research tradition (Boston Psychopathic Hospital), distinct from the Saskatchewan psychotherapeutic and biochemical schools already represented in the archive. Rinkel had brought LSD back from a 1949 European trip, and this paper, alongside Stoll's 1947 study, launched the American \"experimental\" or \"model psychosis\" school that treated LSD chiefly as a tool for inducing reversible schizophrenia-like states rather than as a psychotherapeutic agent.",
+    "textSource": {
+      "url": "https://api.crossref.org/works/10.1176/ajp.108.8.572",
+      "kind": "other",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/rinkel-experimental-schizophrenia-1952.txt",
+      "scope": "Crossref bibliographic record only (title, authors, affiliations, journal, volume/issue/pages, date). Full text was not reachable: both PubMed and the American Journal of Psychiatry's online platform returned HTTP 403 to automated fetch."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "medium",
+      "notes": "Citation fields confirmed via Crossref API, a structured bibliographic source. No exact-text quotation obtained — the summary above draws on non-verbatim WebSearch result summaries for study description, not a fetched primary page, so no quotation is included in the record.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

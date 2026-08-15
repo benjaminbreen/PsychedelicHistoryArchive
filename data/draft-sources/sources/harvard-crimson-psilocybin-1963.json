@@ -1,0 +1,71 @@
+{
+  "slug": "harvard-crimson-psilocybin-1963",
+  "title": "Psilocybin, Senate Race Highlight Harvard Year",
+  "shortTitle": "Psilocybin Highlights Harvard Year",
+  "author": "Efrem Sigel",
+  "creators": [
+    {
+      "name": "Efrem Sigel",
+      "role": "author"
+    }
+  ],
+  "year": 1963,
+  "displayDate": "July 9, 1963",
+  "type": "Newspaper Article",
+  "medium": "Text",
+  "era": "1950-1970",
+  "region": "United States",
+  "language": "English",
+  "substances": [
+    "Psilocybin"
+  ],
+  "people": [
+    "Timothy Leary",
+    "Richard Alpert",
+    "Nathan Pusey",
+    "Dana L. Farnsworth"
+  ],
+  "tags": [
+    "harvard-psilocybin-project",
+    "harvard-crimson",
+    "leary",
+    "richard-alpert",
+    "academic-freedom",
+    "1963"
+  ],
+  "summary": "The Harvard Crimson's July 1963 year-in-review covers Richard Alpert's May dismissal for giving psilocybin to an undergraduate and Timothy Leary's suspension. The article traces the dispute from March 1962 through the November 1962 warning by Dean Monro and Dr. Farnsworth.",
+  "excerpt": "President Pusey announced on May 27 that the Corporation had terminated the appointment of Richard Alpert as assistant professor of Clinical Psychology and of Education for giving hallucinogenic drugs to an undergraduate in violation of an agreement with the University. The dismissal, the first in Pusey's ten years at Harvard, climaxed more than a year of off-and-on controversey [sic] over the work of Alpert and an associate, Timothy Leary, Lecturer on Clinical Psychology, with psilocybin.",
+  "citation": "Efrem Sigel, \"Psilocybin, Senate Race Highlight Harvard Year,\" The Harvard Crimson, July 9, 1963.",
+  "rights": "In copyright, The Harvard Crimson. Freely readable on the paper's own website; not cleared for full republication here.",
+  "sourceUrl": "https://www.thecrimson.com/article/1963/7/9/psilocybin-senate-race-highlight-harvard-year/",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "",
+  "wordCount": 0,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket H: counterculture in print, 1963-1975)",
+    "proposedOn": "2026-08-15",
+    "rationale": "Contemporary student-press record of the Harvard Psilocybin Project's collapse, written six weeks after Alpert's dismissal; gives the university's own chronology of the dispute (March 1962 complaint, the Food and Drug Division ruling, the November 1962 Monro-Farnsworth warning, Leary and Alpert's December rebuttal) in one place, distinct from the archive's existing Lettvin-Leary debate and Chicago Seven testimony, which post-date the firing by years.",
+    "textSource": {
+      "url": "https://www.thecrimson.com/article/1963/7/9/psilocybin-senate-race-highlight-harvard-year/",
+      "kind": "other",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/harvard-crimson-psilocybin-1963.txt",
+      "scope": "Full article as rendered on thecrimson.com, extracted from the page's HTML (a React/Next.js app; the article body sits inside inlined markup mixed with CSS rules, which were stripped programmatically). Kept in raw/ for provenance; only a short quoted passage is used in the record."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "high",
+      "notes": "Not OCR - fetched directly from the Crimson's own HTML, so no scan artifacts. The word 'controversey' in the excerpt appears to be a typo in the original 1963 article (not an extraction error) and is reproduced as printed, flagged with [e] rather than silently corrected.",
+      "uncertainReadings": [
+        "controversey (possible original typo for 'controversy')"
+      ]
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15. Distinct from the archive's existing Lettvin-Leary debate (1967) and Leary's Chicago Seven testimony (1969); this item predates both by years and covers the original Harvard dismissal itself.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

@@ -50,8 +50,14 @@ type BiographyDirectoryMetadata = {
 const excludedBiographyNames = new Set([
   "bebreen@ucsc.edu",
   "Burroughs Wellcome & Co.",
+  "E. Merck",
   "The Psychedelic History Archive"
 ]);
+
+// Corporate authors — a congressional committee, a bureau, a drug company — are credited as
+// authors of their documents but do not belong in a directory of biographies.
+const institutionalNamePattern =
+  /\b(congress|committee|subcommittee|bureau|administration|institute|inspector general|office of|department of|division of|agency|commission|corporation|incorporated|company|& co\.|society of|senate|house of representatives|ministry|university of)\b/i;
 
 const canonicalPersonNames: Record<string, string> = {
   "Edward Wheeler Scripture (1864 – 1945)": "Edward Wheeler Scripture",
@@ -71,6 +77,11 @@ const biographyDirectoryMetadata: Record<string, BiographyDirectoryMetadata> = {
     years: "1832-1919",
     role: "Philosopher, Mystic",
     tags: ["Philosophy", "Mysticism"]
+  },
+  "bernardino-de-sahagun": {
+    years: "c. 1499-1590",
+    role: "Franciscan Friar, Ethnographer",
+    tags: ["Mexico", "Indigenous Knowledge", "Ethnobotany"]
   },
   "claudio-naranjo": {
     years: "1932-2019",
@@ -252,6 +263,50 @@ export const biographyProfiles: BiographyProfile[] = [
       "Shulgin, Alexander T. \"The Narcotic Pepper: The Chemistry and Pharmacology of Piper methysticum and Related Species.\" Bulletin on Narcotics 25, no. 2 (1973): 59-74.",
       "Shulgin, Alexander, and Ann Shulgin. PiHKAL: A Chemical Love Story, 1991.",
       "Washington Post and Los Angeles Times obituaries of Alexander Shulgin, June 2014."
+    ]
+  },
+  {
+    name: "Bernardino de Sahagún",
+    slug: "bernardino-de-sahagun",
+    years: "c. 1499-1590",
+    dek: "Franciscan friar, missionary, linguist, and compiler of the Florentine Codex, a vast Nahuatl-Spanish account of sixteenth-century central Mexico produced with Nahua collaborators.",
+    tags: ["Mexico", "New Spain", "Florentine Codex", "Indigenous Knowledge", "Ethnobotany", "Early Modern Medicine"],
+    facts: [
+      { label: "Born", value: "c. 1499\nSahagún, Crown of Castile" },
+      { label: "Died", value: "February 5, 1590\nTlatelolco, New Spain" },
+      { label: "Occupation", value: "Franciscan friar, missionary, linguist, compiler" },
+      { label: "Region", value: "Spain; New Spain; Tlatelolco" },
+      { label: "Known for", value: "Historia general de las cosas de Nueva España; the Florentine Codex" }
+    ],
+    paragraphs: [
+      "Bernardino de Sahagún was born in Castile around 1499 and entered the Franciscan order before traveling to New Spain in 1529. He became one of the most accomplished Spanish students of Nahuatl in the first century after the conquest, teaching and working for decades around Mexico City and Tlatelolco.",
+      "His name is attached to the Historia general de las cosas de Nueva España, best known through the Florentine Codex, but the work was not a solitary achievement. It was assembled through interviews, translation, painting, and alphabetic writing by Nahua elders, authors, artists, and former students of the Colegio de Santa Cruz de Tlatelolco. The codex's paired Nahuatl and Spanish columns make it a colonial document and an Indigenous intellectual archive at the same time.",
+      "For psychedelic history, Sahagún matters above all because Book 11 records central Mexican knowledge about plants, mushrooms, medicines, intoxicants, and dangerous substances. Its notices on ololiuhqui, peyotl, tlapatl, mixitl, and teonanácatl preserve early colonial Spanish descriptions of visions, intoxication, sorcery, appetite, courage, and medical uses.",
+      "The same passages must be read critically. Sahagún was a Franciscan missionary writing under colonial conditions, and his categories of idolatry, witchcraft, and danger shaped how Indigenous knowledge was presented. Yet the work remains one of the richest sixteenth-century witnesses to Nahua pharmacology and natural history.",
+      "For the archive, Sahagún provides an early modern Mexican anchor for substances often narrated through twentieth-century ethnobotany or psychedelic science. His work shows that the history of psychedelics begins not with modern laboratories but with older systems of medicine, ritual knowledge, translation, and colonial power."
+    ],
+    sourceNotes: [
+      "Digital Florentine Codex, Getty Research Institute, 2023.",
+      "Bernardino de Sahagún, Historia general de las cosas de Nueva España / Florentine Codex, Biblioteca Medicea Laurenziana, Mediceo Palatino 218-220.",
+      "Miguel León-Portilla, Bernardino de Sahagún: First Anthropologist, translated by Mauricio J. Mixco, 2002.",
+      "Arthur J. O. Anderson and Charles E. Dibble, Florentine Codex: General History of the Things of New Spain, 1950-1982.",
+      "H. B. Nicholson, \"Fray Bernardino de Sahagún: A Spanish Missionary in New Spain, 1529-1590,\" in Representing Aztec Ritual, 2002."
+    ],
+    relatedSources: [
+      "Ololiuhqui, Peyotl, and Teonanácatl in the Florentine Codex, c. 1577."
+    ],
+    publications: [
+      "Historia general de las cosas de Nueva España / Florentine Codex.",
+      "Psalmodia Christiana, 1583.",
+      "Colloquios y doctrina cristiana, compiled from early Franciscan-Nahua dialogues."
+    ],
+    collaborators: [
+      "Nahua elders, authors, and artists",
+      "Students and graduates of the Colegio de Santa Cruz de Tlatelolco",
+      "Antonio Valeriano",
+      "Alonso Vegerano",
+      "Martín Jacobita",
+      "Pedro de San Buenaventura"
     ]
   },
   {
@@ -572,7 +627,11 @@ export function canonicalizePersonName(name: string) {
 
 export function isDisplayableBiographyName(name: string) {
   const canonicalName = canonicalizePersonName(name);
-  return !excludedBiographyNames.has(canonicalName) && !canonicalName.includes("@");
+  return (
+    !excludedBiographyNames.has(canonicalName) &&
+    !canonicalName.includes("@") &&
+    !institutionalNamePattern.test(canonicalName)
+  );
 }
 
 export function getBiographyPortrait(name: string) {

@@ -1,0 +1,70 @@
+{
+  "slug": "osmond-smythies-schizophrenia-new-approach-1952",
+  "title": "Schizophrenia: A New Approach",
+  "author": "Humphry Osmond and John Smythies",
+  "creators": [
+    {
+      "name": "Humphry Osmond",
+      "role": "author"
+    },
+    {
+      "name": "John Smythies",
+      "role": "author"
+    }
+  ],
+  "year": 1952,
+  "displayDate": "April 1952",
+  "type": "Academic Article",
+  "medium": "Text",
+  "era": "1950-1970",
+  "region": "Britain",
+  "language": "English",
+  "substances": [
+    "Mescaline",
+    "LSD"
+  ],
+  "people": [
+    "Humphry Osmond",
+    "John Smythies"
+  ],
+  "tags": [
+    "schizophrenia",
+    "mescaline",
+    "adrenochrome",
+    "transmethylation-hypothesis",
+    "biochemical-psychiatry"
+  ],
+  "summary": "Osmond and Smythies propose that schizophrenia involves a naturally occurring adrenaline derivative chemically similar to mescaline, which would account for the overlap between mescaline intoxication and acute schizophrenic episodes.",
+  "excerpt": "\"Mr. Gladstone, with that candour which a great Statesman can afford, once said, 'Government is a rough business, and the results are most unsatisfactory.' ... surely, 'rough business and unsatisfactory results' would not be an unfair summing up?\"",
+  "citation": "Humphry Osmond and John Smythies, \"Schizophrenia: A New Approach,\" Journal of Mental Science 98, no. 411 (April 1952): 309–315.",
+  "rights": "In copyright (Royal College of Psychiatrists / Cambridge University Press). No US Government interest.",
+  "sourceUrl": "https://www.cambridge.org/core/journals/journal-of-mental-science/article/abs/schizophrenia-a-new-approach/8298D2CF421A5D0D9F4A689AED993318",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "",
+  "wordCount": 0,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket F: LSD/mescaline in psychiatry, 1943-1962)",
+    "proposedOn": "2026-08-15",
+    "rationale": "The theoretical starting point for Osmond's whole psychedelic-research career and for the biochemical (adrenochrome/transmethylation) hypothesis of schizophrenia that dominated one wing of 1950s psychiatric LSD/mescaline research. Written from St George's Hospital, London. This work motivated Osmond's human LSD and mescaline trials and led eventually to his 1957 coining of \"psychedelic.\" A necessary complement to the archive's existing psychoanalysis-and-LSD item, representing the rival psychodynamic wing. It is the founding paper of the adrenochrome research programme pursued at Saskatchewan Hospital through the 1950s.",
+    "textSource": {
+      "url": "https://www.cambridge.org/core/journals/journal-of-mental-science/article/abs/schizophrenia-a-new-approach/8298D2CF421A5D0D9F4A689AED993318",
+      "kind": "other",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/osmond-smythies-schizophrenia-new-approach-1952.txt",
+      "scope": "Citation metadata (Crossref API) plus the article's opening two paragraphs, which Cambridge Core surfaces as a citation_abstract meta tag since the original journal carried no formal abstract. Article is paywalled beyond that point; not read in full."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "high",
+      "notes": "Author names, journal, volume/issue/pages, and date confirmed via Crossref API (DOI 10.1192/bjp.98.411.309) and cross-checked against the live Cambridge Core landing page. The quoted excerpt is verbatim from that page's citation_abstract meta tag, not paraphrased.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

@@ -1,0 +1,43 @@
+[Bibliographic verification capture, not the article text — this source is external-only.
+The Journal of Nervous and Mental Disease is now distributed by Ovid/Wolters Kluwer via a
+JavaScript-rendered single-page app; the fetched HTML contained no server-rendered
+abstract text (confirmed by curl — page loads but body is empty until client-side JS
+executes), and PubMed blocked automated fetch with a cookie-consent gate (HTTP 403,
+confirmed by both curl and WebFetch). No exact-text quotation was obtainable and none is
+used in the draft record. Citation fields below are independently confirmed via the
+Crossref API.]
+
+Source fetched: https://api.crossref.org/works/10.1097/00005053-196001000-00005
+Fetched: 2026-08-15
+Method: curl -sL (HTTP 200), raw JSON response
+
+Relevant fields from the Crossref work record:
+  DOI: 10.1097/00005053-196001000-00005
+  type: journal-article
+  title: LYSERGIC ACID DIETHYLAMIDE
+  container-title: The Journal of Nervous and Mental Disease
+  publisher: Ovid Technologies (Wolters Kluwer Health)
+  volume: 130
+  issue: 1
+  page: 30-40
+  published-print: 1960-01
+  author: SIDNEY COHEN
+  is-referenced-by-count: 209
+  link: https://www.ovid.com/00005053-196001000-00005
+
+Attempted full-text/abstract access points (all blocked or empty to automated fetch):
+  https://pubmed.ncbi.nlm.nih.gov/13811003/ — HTTP 403 (cookie-consent gate)
+  https://journals.lww.com/jonmd/citation/1960/01000/lysergic_acid_diethylamide__side_effects_and.5.aspx
+    — HTTP 200 but body is a JS single-page-app shell with no server-rendered text
+  https://www.ovid.com/jnls/jonmd/abstract/00005053-196001000-00005 — redirect chain
+    resolves here per DOI but not independently rendered
+
+Secondary confirmation (WebSearch snippet, not independently fetched, consistent across
+multiple independent result summaries): Cohen, then chief of psychiatry at the VA
+Neuropsychiatric Hospital in Los Angeles, circulated a questionnaire to 66 researchers who
+had administered LSD or mescaline to human subjects; 44 responded, covering more than
+25,000 LSD/mescaline administrations to nearly 5,000 subjects. The survey reported no
+instance of serious, prolonged physical complication and quantified rates of suicide,
+psychotic breaks lasting more than 48 hours, and other adverse outcomes. This is the
+paper most cited as the empirical basis for the "LSD is safe" consensus of the
+psychotherapeutic-use era, later undercut by subsequent recreational-use data.

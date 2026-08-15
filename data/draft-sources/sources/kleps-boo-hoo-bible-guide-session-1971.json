@@ -1,0 +1,67 @@
+{
+  "slug": "kleps-boo-hoo-bible-guide-session-1971",
+  "title": "How to Guide a Session (from The Boo Hoo Bible)",
+  "shortTitle": "How to Guide a Session",
+  "author": "Art Kleps",
+  "creators": [
+    {
+      "name": "Art Kleps",
+      "role": "author"
+    }
+  ],
+  "year": 1971,
+  "displayDate": "1971",
+  "type": "Essay",
+  "medium": "Text",
+  "era": "1970-2000",
+  "region": "United States",
+  "language": "English",
+  "substances": [
+    "LSD"
+  ],
+  "people": [
+    "Art Kleps",
+    "Timothy Leary"
+  ],
+  "tags": [
+    "neo-american-church",
+    "boo-hoo-bible",
+    "psychedelic-religion",
+    "session-guide",
+    "millbrook",
+    "1971"
+  ],
+  "summary": "Art Kleps's chapter on running an LSD session from The Boo Hoo Bible (1971), the Neo-American Church catechism and handbook. The section covers set, setting, and the guide's preparation and temperament, written in Kleps's mix of deadpan comedy and practical session-craft.",
+  "excerpt": "There are a variety of requirements to assure the success of a guided session, but chief among them is the conspicuous presence in the session room of a copy of Popular Mechanics (in the case of women, a magazine such as Cosmopolitan should be substituted). All statues of people with three or more arms should be removed, as well as all dogs, goats, blackbirds, insects, people who are too bad, people who are too good...",
+  "citation": "Art Kleps, \"How to Guide a Session,\" in The Boo Hoo Bible: The Neo-American Church Catechism (San Cristobal, N.M.: Toad Books, 1971), 147-152.",
+  "rights": "In copyright, Art Kleps estate / Neo-American Church. Freely republished on the church's own current website (okneoac.org); not cleared for full republication here.",
+  "sourceUrl": "https://okneoac.org/bhb/how-to-guide-a-session",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "",
+  "wordCount": 0,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket H: counterculture in print, 1963-1975)",
+    "proposedOn": "2026-08-15",
+    "rationale": "A movement-religion primary text with real how-to specificity about LSD session practice, distinct from the archive's better-known Leary/Millbrook material; the Internet Archive scan of the full 1971 Boo Hoo Bible (identifier boohoobibleneoam00klep) is lending-restricted with no accessible full text, but the Neo-American Church's own site hosts this chapter in full.",
+    "textSource": {
+      "url": "https://okneoac.org/bhb/how-to-guide-a-session",
+      "kind": "other",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/kleps-boo-hoo-bible-guide-session-1971.txt",
+      "scope": "Full chapter text as posted on the church's current website, including its own citation note confirming the passage is from The Boo Hoo Bible (1971), pp. 147-152, with an earlier 1967 recension in The Neo-American Church Catechism and Handbook. Kept in raw/ for provenance; only a short excerpt used in the record per copyright rules."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "high",
+      "notes": "Not OCR - fetched directly from the church's HTML, which itself reproduces Kleps's 1971 text (with footnoted 1980s-era editorial asides by Kleps distinguished in the source with daggers/asterisks). No transcription concerns.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

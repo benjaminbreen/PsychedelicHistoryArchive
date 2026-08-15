@@ -1,0 +1,82 @@
+{
+  "slug": "bogoras-koryak-texts-fly-agaric-song",
+  "title": "Koryak Texts",
+  "shortTitle": "Koryak Texts (Introduction and fly-agaric song)",
+  "author": "Waldemar Bogoras",
+  "creators": [
+    {
+      "name": "Waldemar Bogoras",
+      "role": "author"
+    },
+    {
+      "name": "Waldemar Jochelson",
+      "role": "editor"
+    }
+  ],
+  "year": 1917,
+  "displayDate": "1917",
+  "type": "Book",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "Kamchatka, Siberia",
+  "language": "English",
+  "contentLanguage": "Koryak and Chukchee, with English translation",
+  "substances": [
+    "Amanita muscaria"
+  ],
+  "people": [
+    "Waldemar Bogoras",
+    "Waldemar Jochelson",
+    "Basile",
+    "Nicholas Vilkhin",
+    "Anne",
+    "Aqan'kau'",
+    "Maria",
+    "Andrew",
+    "Ivan Kulagin",
+    "Tatiana"
+  ],
+  "tags": [
+    "fly-agaric",
+    "koryak",
+    "chukchee",
+    "jesup-north-pacific-expedition",
+    "phonograph-recording",
+    "indigenous-testimony",
+    "songs",
+    "kamchatka"
+  ],
+  "summary": "Excerpts from Bogoras's Koryak Texts, including the introduction and two songs transcribed from phonograph recordings. The second song, sung by an elderly Chukchee man, records an Indigenous voice describing fly-agaric use for recovering consciousness.",
+  "excerpt": "I shall recover my senses, I shall have rest. Simply with fly-agaric (I have stunned myself).",
+  "citation": "Waldemar Bogoras, Koryak Texts, Publications of the American Ethnological Society, vol. 5, ed. Franz Boas (Leyden: E. J. Brill, 1917), Introduction and Appendix I.",
+  "rights": "Public domain (published before 1930)",
+  "sourceUrl": "https://archive.org/details/koryaktextswald05bogorich",
+  "accessType": "hosted",
+  "hostingStatus": "transcript_only",
+  "readerMode": "transcript",
+  "transcript": "### Introduction\n\nThe collection of Koryak texts here published was made as part of the field-work of the Jesup North Pacific Expedition of the American Museum of Natural History. Since the Museum does not allow sufficient space for the publication of all the linguistic material, which naturally forms one of the most important aspects of the work of the Expedition, the American Ethnological Society has undertaken the publication of part of it.\n\nThe texts contained in this volume were collected by me between December, 1900, and April, 1901. While Mr. Waldemar Jochelson, my colleague in the ethnological work of the Expedition in northeastern Siberia, investigated the ethnology of the Koryak, I undertook the study of their language, because my practical knowledge and previous studies of the Chukchee language put me in a position to acquire with ease a knowledge of the Koryak, which is closely related to the Chukchee.\n\nI left the Anadyr country in December, 1900, and travelled to the village of Kamenskoye, on Penshina Bay, where I met Mr. Jochelson. I stayed with him one month, after which time I proceeded to the southeast, to the eastern branch of the Koryak, and also visited the Kamchadal. I travelled among these tribes for two months, until my return to the mouth of the Anadyr, on April 8, 1901. A considerable part of this time was spent in covering the long distances between the villages, the journey being made by reindeer or dog sledge and on snowshoes. Some parts of this territory had never been visited by any white man, not even by a single Russian trader, and I met camps and villages the inhabitants of which did not even know the taste of brandy — in these countries, the foremost product of civilization, and the first to arrive.\n\n_[Technical discussion of dialect boundaries, twenty pages of linguistic notes, and a full roster of narrators are omitted. Named narrators include: Basile (Maritime Koryak, Pallan), Nicholas Vilkhin (Jochelson's interpreter, Kamenskoye), Anne (Koryak woman, Kamenskoye), Aqan'kau' (Maritime Chukchee, Anadyr mouth), Maria (Koryak woman, Qare'nm), Andrew (Maritime Koryak, Lesna), Ivan Kulagin (Kamchadal, Napana), and Tatiana (Kamchadal woman, Sedanka).]_\n\n### Appendix I — Songs\n\n_[Two further songs, not part of the numbered tale-collection, are appended.]_ These two songs were written down from the phonographic records of Mr. Jochelson (No. 2 and No. 7 on his list). The first is in Koryak of Kamenskoye; the second is Chukchee in grammar and phonetics, and Koryak in vocabulary. It was obtained from an old Reindeer Chukchee of Parapolski Dol, who had lived for a long time among the Reindeer Koryak.\n\n**1.**\n\nIt seems that I am going' to sing of Qutx and his family. I have a wife Alfiatva'gal. I will sing of the people of Ye'jmel.\n\n**2.**\n\nI shall recover my senses, I shall have rest. Simply with fly-agaric (I have stunned myself). I shall recover my senses, then I will simply run to my sweetheart. I will sing of my bad children.\n\n_[The original Koryak/Chukchee text with interlinear gloss, published elsewhere in the volume, is omitted here.]_",
+  "wordCount": 512,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket C: Amanita muscaria in Siberian/Kamchatkan ethnography, c. 1730-1930)",
+    "proposedOn": "2026-08-15",
+    "rationale": "Where Bogoras's and Kennan's other accounts describe fly-agaric use from an outside observer's vantage, this short song -- recorded on Jochelson's phonograph and transcribed with interlinear translation -- gives an Indigenous singer's own words about the mushroom's effect, fulfilling the archive's interest in first-person Indigenous testimony rather than only ethnographic description of it. The introduction's roll of named narrators (several explicitly credited by name and village) also documents the collaborative, credited nature of the Jesup Expedition's textual fieldwork.",
+    "textSource": {
+      "url": "https://archive.org/download/koryaktextswald05bogorich/koryaktextswald05bogorich_djvu.txt",
+      "kind": "internet-archive-djvu",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/bogoras-koryak-texts-fly-agaric-song.txt",
+      "scope": "Excerpts from the Introduction (pp. 1-3, on the expedition's fieldwork and, from footnotes elsewhere in the volume, several named narrators) and the complete Appendix I ('Songs', pp. 103-104), which contains the two phonograph-recorded songs including the fly-agaric song. The volume's 25 numbered narrative texts (in Koryak with interlinear and free English translation, pp. 1-103) were not transcribed, as they are lengthy folklore texts unrelated to the mushroom."
+    },
+    "textQuality": {
+      "ocrPass": "haiku-corrected",
+      "confidence": "high",
+      "notes": "Corrected OCR errors in transliterated Koryak names (Song 1: 'Alfiatva'gal' and 'Ye'jmel' with preserved diacritics; narrator entry 'Qare'nm' per raw text). Marked archive editorial interpolations about omitted sections in square brackets. Song 2 and the introduction's expedition narrative matched cleanly with raw text. Grounding re-checked with scripts/check_draft_fuzzy.mjs: mean best-window similarity to the raw scan is 95.5%, so the sentences the exact-match checker flags are OCR repair rather than invention.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15. Distinct from the already-archived Langsdorff account of fly agaric among the Koryak (1812).",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

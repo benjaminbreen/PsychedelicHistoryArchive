@@ -1,0 +1,85 @@
+{
+  "slug": "sf-oracle-houseboat-summit-1967",
+  "title": "The Houseboat Summit",
+  "shortTitle": "Houseboat Summit",
+  "author": "Timothy Leary, Allen Ginsberg, Gary Snyder, and Alan Watts",
+  "creators": [
+    {
+      "name": "Alan Watts",
+      "role": "interviewer"
+    },
+    {
+      "name": "Timothy Leary",
+      "role": "author"
+    },
+    {
+      "name": "Allen Ginsberg",
+      "role": "author"
+    },
+    {
+      "name": "Gary Snyder",
+      "role": "author"
+    },
+    {
+      "name": "Allen Cohen",
+      "role": "editor"
+    }
+  ],
+  "year": 1967,
+  "displayDate": "February 1967",
+  "type": "Newspaper Article",
+  "medium": "Text",
+  "era": "1950-1970",
+  "region": "United States",
+  "language": "English",
+  "substances": [
+    "LSD"
+  ],
+  "people": [
+    "Timothy Leary",
+    "Allen Ginsberg",
+    "Gary Snyder",
+    "Alan Watts"
+  ],
+  "tags": [
+    "san-francisco-oracle",
+    "underground-press",
+    "drop-out",
+    "counterculture",
+    "summer-of-love",
+    "1967"
+  ],
+  "summary": "A conversation among Leary, Ginsberg, Snyder, and Watts, taped aboard Watts's houseboat and published in San Francisco Oracle no. 7 (February 1967). The four debate dropping out of mainstream society or seeking change from within, discussing LSD, utopian withdrawal, and post-drop-out economics.",
+  "excerpt": "ALAN WATTS: ...Look then, we're going to discuss where it's going... the whole problem of whether to drop out or take over. TIMOTHY LEARY: Or anything in between? WATTS: Or anything in between, sure. LEARY: Cop out... drop in...",
+  "citation": "Alan Watts, Timothy Leary, Allen Ginsberg, and Gary Snyder, \"The Houseboat Summit,\" San Francisco Oracle, no. 7 (February 1967).",
+  "rights": "In copyright (published 1967; rights holder(s) not identified by the digitizing institutions). Scanned copies held by Letterform Archive and by an independent Internet Archive contributor 'for purposes of education and research'; not cleared for full republication here.",
+  "sourceUrl": "https://archive.org/details/SanFranciscoOracleVol.1No.7D.D.TeoliJr.A.C.1",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "",
+  "wordCount": 0,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket H: counterculture in print, 1963-1975)",
+    "proposedOn": "2026-08-15",
+    "rationale": "The best-known piece of writing to come out of the San Francisco Oracle and the fullest primary transcript of the four central movement figures debating strategy at the peak of the underground press, six months before the Human Be-In's afterglow curdled into the Diggers' 'Death of Hippie.'",
+    "textSource": {
+      "url": "https://archive.org/download/SanFranciscoOracleVol.1No.7D.D.TeoliJr.A.C.1/SanFranciscoOracleVol.1No.7D.D.TeoliJr.A.C.1_djvu.txt",
+      "kind": "internet-archive-djvu",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/sf-oracle-houseboat-summit-1967.txt",
+      "scope": "Full OCR text of the issue (35,000+ words, including the multi-page Houseboat Summit transcript and other Oracle no. 7 content) fetched and confirmed to contain the conversation. Kept in raw/ for provenance only; only a short opening exchange is quoted in the record per copyright rules. A separate archive.org scan of the same issue (identifier lfaperiodicalssforacle0002, from Letterform Archive) is access-restricted and was not usable."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "medium",
+      "notes": "Raw OCR has the usual scan artifacts (ligature errors like 'far-outer', broken line wraps, stray characters); the quoted excerpt was checked by hand against the OCR and is legible with high confidence, but the OCR as a whole has not been corrected.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15. Distinct from the archive's existing Lettvin-Leary debate (1967) and Leary's Chicago Seven testimony (1969).",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

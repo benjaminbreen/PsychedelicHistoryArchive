@@ -1,0 +1,938 @@
+[
+  {
+    "id": "9b104be6-2244-5986-8ae8-2c80d69ad8a3",
+    "slug": "103rd-united-states-congress",
+    "name": "103rd United States Congress",
+    "sort_name": "Congress, 103rd United States",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "52693943-7bc5-5e8f-95bc-373379718f14",
+    "slug": "james-r-taylor",
+    "name": "James R. Taylor",
+    "sort_name": "Taylor, James R.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "e5149f47-398c-5fa6-aa01-74a0c61becce",
+    "slug": "william-n-johnson",
+    "name": "William N. Johnson",
+    "sort_name": "Johnson, William N.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "662dc1cb-5812-5666-9122-bdf2e8f33fdb",
+    "slug": "united-states-army-office-of-the-inspector-general-and-auditor-general",
+    "name": "United States Army Office of the Inspector General and Auditor General",
+    "sort_name": "General, United States Army Office of the Inspector General and Auditor",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "fcbad9bc-d8bf-59fe-8abd-e6fd043e6b8b",
+    "slug": "blas-pablo-reko",
+    "name": "Blas Pablo Reko",
+    "sort_name": "Reko, Blas Pablo",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "82ec7437-ada9-5ed1-90ae-faef2ef8f4f4",
+    "slug": "waldemar-bogoras",
+    "name": "Waldemar Bogoras",
+    "sort_name": "Bogoras, Waldemar",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "f2996e62-2d74-5ab2-ab4a-75066a98ff82",
+    "slug": "waldemar-jochelson",
+    "name": "Waldemar Jochelson",
+    "sort_name": "Jochelson, Waldemar",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "d47b3f26-09d7-5665-a188-709c6de2de6b",
+    "slug": "owen-m-panner",
+    "name": "Owen M. Panner",
+    "sort_name": "Panner, Owen M.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "5357ebca-05c9-54df-ac2a-4e72410b3d3a",
+    "slug": "sidney-gottlieb",
+    "name": "Sidney Gottlieb",
+    "sort_name": "Gottlieb, Sidney",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "8d7e9928-b96b-5ab8-bd53-7fe0eeba2916",
+    "slug": "united-states-senate-select-committee-to-study-governmental-operations-with-respect-to-intelligence-activities",
+    "name": "United States Senate Select Committee to Study Governmental Operations with Respect to Intelligence Activities",
+    "sort_name": "Activities, United States Senate Select Committee to Study Governmental Operations with Respect to Intelligence",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "02a5d826-ea19-5347-a5ac-1c324d1f3e04",
+    "slug": "j-s-earman",
+    "name": "J. S. Earman",
+    "sort_name": "Earman, J. S.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "d212b2d8-f0ab-548f-acc7-0e7585b32e84",
+    "slug": "donald-f-chamberlain",
+    "name": "Donald F. Chamberlain",
+    "sort_name": "Chamberlain, Donald F.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "887fade3-4aaf-5cb6-9413-ab44999ee046",
+    "slug": "clement-of-alexandria",
+    "name": "Clement of Alexandria",
+    "sort_name": "Alexandria, Clement of",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "df608277-a6f4-5448-a427-3d342a2be57c",
+    "slug": "william-wilson",
+    "name": "William Wilson",
+    "sort_name": "Wilson, William",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "50783b8d-64ff-5707-8918-c9c668e29027",
+    "slug": "sidney-cohen",
+    "name": "Sidney Cohen",
+    "sort_name": "Cohen, Sidney",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "74ba459f-2582-5d9d-bb85-5a98c82de14b",
+    "slug": "cato-sells",
+    "name": "Cato Sells",
+    "sort_name": "Sells, Cato",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "dee63c39-1cab-5938-9da5-4752ccb85ab7",
+    "slug": "mordecai-cubitt-cooke",
+    "name": "Mordecai Cubitt Cooke",
+    "sort_name": "Cooke, Mordecai Cubitt",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "92630a8a-92e1-5acb-9a11-b6824a51dc2b",
+    "slug": "walter-e-dixon",
+    "name": "Walter E. Dixon",
+    "sort_name": "Dixon, Walter E.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "8eac9121-550e-5973-8a5a-6d1da1256a73",
+    "slug": "havelock-ellis",
+    "name": "Havelock Ellis",
+    "sort_name": "Ellis, Havelock",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "2ca4f46d-b7ad-569b-9d46-01d64fa3c1a6",
+    "slug": "antonin-scalia",
+    "name": "Antonin Scalia",
+    "sort_name": "Scalia, Antonin",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "a9c0b1a7-6d98-5615-9068-f3efb49db109",
+    "slug": "harry-blackmun",
+    "name": "Harry Blackmun",
+    "sort_name": "Blackmun, Harry",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "e5773a2b-3052-55aa-91bb-72d38f2870bb",
+    "slug": "federal-bureau-of-investigation",
+    "name": "Federal Bureau of Investigation",
+    "sort_name": "Investigation, Federal Bureau of",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "cd8ccdca-96d1-573a-a402-fa2a5e40a12c",
+    "slug": "r-j-la-jeunesse-jr",
+    "name": "R. J. La Jeunesse Jr.",
+    "sort_name": "Jr., R. J. La Jeunesse",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "816852d2-9818-5f97-9eef-001f30dbc3a4",
+    "slug": "timothy-leary",
+    "name": "Timothy Leary",
+    "sort_name": "Leary, Timothy",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "ef9038d4-c402-5594-b81f-c8f2e6afdfc5",
+    "slug": "fda-division-of-psychiatry-center-for-drug-evaluation-and-research",
+    "name": "FDA Division of Psychiatry, Center for Drug Evaluation and Research",
+    "sort_name": "Research, FDA Division of Psychiatry, Center for Drug Evaluation and",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "e123daca-caef-5d69-b26c-8f81c647fd7e",
+    "slug": "guillermo-fischer-cardenas",
+    "name": "Guillermo Fischer Cárdenas",
+    "sort_name": "Cárdenas, Guillermo Fischer",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "1434ee9f-ee6a-5b45-8eb9-c57f912f7339",
+    "slug": "francisco-hernandez",
+    "name": "Francisco Hernández",
+    "sort_name": "Hernández, Francisco",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "f72b5e4a-9bae-5858-ab67-b9b5f34f0535",
+    "slug": "francisco-ximenez",
+    "name": "Francisco Ximénez",
+    "sort_name": "Ximénez, Francisco",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "6892fbfc-6781-58fe-9e18-3f7f2884984e",
+    "slug": "john-g-roberts",
+    "name": "John G. Roberts",
+    "sort_name": "Roberts, John G.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "c1ffc918-927c-5bfc-9d2f-bb411c2e8b39",
+    "slug": "marie-theophile-griffon-du-bellay",
+    "name": "Marie-Théophile Griffon du Bellay",
+    "sort_name": "Bellay, Marie-Théophile Griffon du",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "380e93cc-039a-5027-8317-56a4e2a6b3c5",
+    "slug": "frank-m-coffin",
+    "name": "Frank M. Coffin",
+    "sort_name": "Coffin, Frank M.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "4226f14e-43b4-5a4b-8130-88cea2e907f0",
+    "slug": "efrem-sigel",
+    "name": "Efrem Sigel",
+    "sort_name": "Sigel, Efrem",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "4901dc47-a82d-5f73-a22f-deaa16250388",
+    "slug": "homer",
+    "name": "Homer",
+    "sort_name": "Homer",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "b7e05618-edc8-565c-963d-378a6a528e37",
+    "slug": "hugh-g-evelyn-white",
+    "name": "Hugh G. Evelyn-White",
+    "sort_name": "Evelyn-White, Hugh G.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "513f7438-a83a-5596-807b-be36a4566f90",
+    "slug": "edward-m-kennedy",
+    "name": "Edward M. Kennedy",
+    "sort_name": "Kennedy, Edward M.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "3145db96-e01d-503e-bf64-69dbfb5199a2",
+    "slug": "robert-lashbrook",
+    "name": "Robert Lashbrook",
+    "sort_name": "Lashbrook, Robert",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "a8d9b666-e543-54b8-9b6c-b0470741851e",
+    "slug": "charles-siragusa",
+    "name": "Charles Siragusa",
+    "sort_name": "Siragusa, Charles",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "1d88965d-98ae-5e22-9a38-fa9204a718a6",
+    "slug": "united-states-senate-subcommittee-on-health-and-scientific-research",
+    "name": "United States Senate Subcommittee on Health and Scientific Research",
+    "sort_name": "Research, United States Senate Subcommittee on Health and Scientific",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "447c8dbf-5d90-5c25-bfcf-a3e0637ac52f",
+    "slug": "harris-isbell",
+    "name": "Harris Isbell",
+    "sort_name": "Isbell, Harris",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "df799ed8-abb6-56cb-85c9-5bd4f8e808f7",
+    "slug": "r-e-belleville",
+    "name": "R. E. Belleville",
+    "sort_name": "Belleville, R. E.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "4edf131a-796c-5cca-ab70-5007d6ec66da",
+    "slug": "h-f-fraser",
+    "name": "H. F. Fraser",
+    "sort_name": "Fraser, H. F.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "611de327-b6c2-552a-a3b4-7de4cb04a34f",
+    "slug": "abraham-wikler",
+    "name": "Abraham Wikler",
+    "sort_name": "Wikler, Abraham",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "75f92e91-8cb7-5eca-98dd-57daf8a720e8",
+    "slug": "c-r-logan",
+    "name": "C. R. Logan",
+    "sort_name": "Logan, C. R.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "4a7e776d-47f5-5a11-85f4-ae238475d9fd",
+    "slug": "jean-bassett-johnson",
+    "name": "Jean Bassett Johnson",
+    "sort_name": "Johnson, Jean Bassett",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "312c588c-2e83-5d48-922d-c4207d8d6226",
+    "slug": "rafael-karsten",
+    "name": "Rafael Karsten",
+    "sort_name": "Karsten, Rafael",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "bb98d24b-3a30-58f5-ae6d-70295e1c3526",
+    "slug": "george-kennan",
+    "name": "George Kennan",
+    "sort_name": "Kennan, George",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "2a69cae9-3bd7-5cfe-aecc-068292f8552e",
+    "slug": "james-s-ketchum",
+    "name": "James S. Ketchum",
+    "sort_name": "Ketchum, James S.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "75c432fc-f7a2-5559-a040-e69eaa77f984",
+    "slug": "george-k-aghajanian",
+    "name": "George K. Aghajanian",
+    "sort_name": "Aghajanian, George K.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "73ad7a12-68b3-5cb7-a2d2-41d87db74023",
+    "slug": "oscar-h-l-bing",
+    "name": "Oscar H. L. Bing",
+    "sort_name": "Bing, Oscar H. L.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "161966e9-fee7-5df4-bedc-97546147aa3e",
+    "slug": "art-kleps",
+    "name": "Art Kleps",
+    "sort_name": "Kleps, Art",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "d13b3375-2f59-5547-9d43-36f3e6e0f085",
+    "slug": "alwyn-knauer",
+    "name": "Alwyn Knauer",
+    "sort_name": "Knauer, Alwyn",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "9665cc05-0985-539c-9050-f8c36b693432",
+    "slug": "william-j-m-a-maloney",
+    "name": "William J. M. A. Maloney",
+    "sort_name": "Maloney, William J. M. A.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "f6da5ca2-9920-58a7-b4f6-eb39be652140",
+    "slug": "stepan-krasheninnikov",
+    "name": "Stepan Krasheninnikov",
+    "sort_name": "Krasheninnikov, Stepan",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "8e824de2-008e-535a-a7eb-d7fc2232c941",
+    "slug": "james-grieve",
+    "name": "James Grieve",
+    "sort_name": "Grieve, James",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "7e771035-6725-564a-bcf2-7929d4ffdd34",
+    "slug": "ralph-metzner",
+    "name": "Ralph Metzner",
+    "sort_name": "Metzner, Ralph",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "66188953-f476-5ba8-a2d7-42901eb307d3",
+    "slug": "richard-alpert",
+    "name": "Richard Alpert",
+    "sort_name": "Alpert, Richard",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "5ae5ee58-33f4-593e-b447-64e25e0dc0d9",
+    "slug": "louis-lewin",
+    "name": "Louis Lewin",
+    "sort_name": "Lewin, Louis",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "d0d974d6-8195-5401-a8a6-723d73df4121",
+    "slug": "francis-l-young",
+    "name": "Francis L. Young",
+    "sort_name": "Young, Francis L.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "d025f90c-b795-5a42-b18d-7a2a5c816d79",
+    "slug": "e-merck",
+    "name": "E. Merck",
+    "sort_name": "Merck, E.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "45e55639-12c2-543a-a63d-75772196cc3a",
+    "slug": "james-mooney",
+    "name": "James Mooney",
+    "sort_name": "Mooney, James",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "fc7f653c-656b-5435-8bf0-024be4c56d6b",
+    "slug": "toribio-de-benavente",
+    "name": "Toribio de Benavente",
+    "sort_name": "Benavente, Toribio de",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "e622123f-fc38-563d-a3d6-5e35f5d33db0",
+    "slug": "mack-haag",
+    "name": "Mack Haag",
+    "sort_name": "Haag, Mack",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "6a9880d2-ad88-59da-a359-af9077b1c146",
+    "slug": "sidney-white-crane",
+    "name": "Sidney White Crane",
+    "sort_name": "Crane, Sidney White",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "99f00290-0bd3-5a9a-adf2-8bfd18e11baa",
+    "slug": "frank-eagle",
+    "name": "Frank Eagle",
+    "sort_name": "Eagle, Frank",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "04f27553-cb38-532c-9fab-9ae6c904aa6e",
+    "slug": "kiowa-charley",
+    "name": "Kiowa Charley",
+    "sort_name": "Charley, Kiowa",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "b8326a88-6d55-5c51-9fb9-59daf1559b39",
+    "slug": "delmas-c-hill",
+    "name": "Delmas C. Hill",
+    "sort_name": "Hill, Delmas C.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "8efd226c-66b2-55ae-8fb7-836cdbb4526b",
+    "slug": "geraline-c-lin",
+    "name": "Geraline C. Lin",
+    "sort_name": "Lin, Geraline C.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "baab4520-40eb-5f26-b5d0-c35eb2de4566",
+    "slug": "richard-a-glennon",
+    "name": "Richard A. Glennon",
+    "sort_name": "Glennon, Richard A.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "6541a5b2-ce53-5f52-b490-98630cdbf883",
+    "slug": "rick-j-strassman",
+    "name": "Rick J. Strassman",
+    "sort_name": "Strassman, Rick J.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "48688788-332a-56a1-9c86-cc28d68d0f68",
+    "slug": "national-institute-of-mental-health",
+    "name": "National Institute of Mental Health",
+    "sort_name": "Health, National Institute of Mental",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "eec37fbe-63ab-5d2c-9f03-ec4218f7ffa5",
+    "slug": "roger-e-meyer",
+    "name": "Roger E. Meyer",
+    "sort_name": "Meyer, Roger E.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "cfc4d1d6-a93d-55c3-920e-29c6320e2f86",
+    "slug": "thomas-eckert",
+    "name": "Thomas Eckert",
+    "sort_name": "Eckert, Thomas",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "4c165d15-79d7-5c39-a446-02e78406b156",
+    "slug": "sheri-eckert",
+    "name": "Sheri Eckert",
+    "sort_name": "Eckert, Sheri",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "e0befda5-2f89-5e1e-88b8-929d19557830",
+    "slug": "humphry-osmond",
+    "name": "Humphry Osmond",
+    "sort_name": "Osmond, Humphry",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "9f24b3ea-c625-51b1-91df-c185bad251be",
+    "slug": "john-smythies",
+    "name": "John Smythies",
+    "sort_name": "Smythies, John",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "9413af20-3755-5897-acbb-ae765b0b483e",
+    "slug": "mathew-o-tobriner",
+    "name": "Mathew O. Tobriner",
+    "sort_name": "Tobriner, Mathew O.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "9d9d2a64-f56a-50c0-a2a2-c7ed326f0825",
+    "slug": "francis-la-flesche",
+    "name": "Francis La Flesche",
+    "sort_name": "Flesche, Francis La",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "f91a58d7-0779-53b9-9a45-8cc1fb4ea181",
+    "slug": "fred-lookout",
+    "name": "Fred Lookout",
+    "sort_name": "Lookout, Fred",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "ef564eab-6c22-5c07-b99b-d447ba8d62c6",
+    "slug": "paul-boynton",
+    "name": "Paul Boynton",
+    "sort_name": "Boynton, Paul",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "8b3b5b20-0c48-53ca-b133-a2d066a584fd",
+    "slug": "cleaver-warden",
+    "name": "Cleaver Warden",
+    "sort_name": "Warden, Cleaver",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "96e1f037-6d2f-5fc4-8b59-a966d31e355b",
+    "slug": "united-states-house-committee-on-indian-affairs",
+    "name": "United States House Committee on Indian Affairs",
+    "sort_name": "Affairs, United States House Committee on Indian",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "2dc7b0bf-c1cc-56d1-acb3-40ccb5b68131",
+    "slug": "d-w-prentiss",
+    "name": "D. W. Prentiss",
+    "sort_name": "Prentiss, D. W.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "e7371e87-cdf0-561b-8cd8-bf95f192f3ed",
+    "slug": "francis-p-morgan",
+    "name": "Francis P. Morgan",
+    "sort_name": "Morgan, Francis P.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "0d917c0a-837d-5901-a308-4175570a5434",
+    "slug": "gunther-m-weil",
+    "name": "Gunther M. Weil",
+    "sort_name": "Weil, Gunther M.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "0bf91a54-127f-5812-8368-9174b8ae8efd",
+    "slug": "gerald-heard",
+    "name": "Gerald Heard",
+    "sort_name": "Heard, Gerald",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "82869d53-1679-5f22-9554-7c643fb8caac",
+    "slug": "r-gordon-wasson",
+    "name": "R. Gordon Wasson",
+    "sort_name": "Wasson, R. Gordon",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "3379b994-1398-50a3-bb7e-328d3cd680e1",
+    "slug": "alan-watts",
+    "name": "Alan Watts",
+    "sort_name": "Watts, Alan",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "b0cd2ba9-ee99-53aa-8b57-e8fe83bb4816",
+    "slug": "p-reinburg",
+    "name": "P. Reinburg",
+    "sort_name": "Reinburg, P.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "e59a60cd-8ab5-547d-bd2c-b4f7bda1eeb7",
+    "slug": "richard-evans-schultes",
+    "name": "Richard Evans Schultes",
+    "sort_name": "Schultes, Richard Evans",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "2de5d792-dc4f-51e9-b773-8f824aebb523",
+    "slug": "max-rinkel",
+    "name": "Max Rinkel",
+    "sort_name": "Rinkel, Max",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "99f36125-019d-5f26-ac47-c616671afdc9",
+    "slug": "h-jackson-deshon",
+    "name": "H. Jackson DeShon",
+    "sort_name": "DeShon, H. Jackson",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "e55d5467-c650-53ab-9ab7-6fd0635ad999",
+    "slug": "robert-w-hyde",
+    "name": "Robert W. Hyde",
+    "sort_name": "Hyde, Robert W.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "678b60c6-e6e1-5c29-8be7-f6a5a7484e54",
+    "slug": "harry-c-solomon",
+    "name": "Harry C. Solomon",
+    "sort_name": "Solomon, Harry C.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "b324ca0e-e0d8-501f-9718-8c07b2cd5142",
+    "slug": "alexandre-rouhier",
+    "name": "Alexandre Rouhier",
+    "sort_name": "Rouhier, Alexandre",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "98348bbd-5d4b-5347-a259-2f9a63aee67f",
+    "slug": "a-m-barriga-villalba",
+    "name": "A. M. Barriga Villalba",
+    "sort_name": "Villalba, A. M. Barriga",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "f752503a-c176-530c-84fc-0d82043664e3",
+    "slug": "william-e-safford",
+    "name": "William E. Safford",
+    "sort_name": "Safford, William E.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "6b65c33b-b953-5ef9-9112-6d7adf6365d0",
+    "slug": "allen-ginsberg",
+    "name": "Allen Ginsberg",
+    "sort_name": "Ginsberg, Allen",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "fe9d69d7-9830-5345-8eac-608858076f7b",
+    "slug": "gary-snyder",
+    "name": "Gary Snyder",
+    "sort_name": "Snyder, Gary",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "90e54059-cd48-5752-afb7-11159b95748c",
+    "slug": "allen-cohen",
+    "name": "Allen Cohen",
+    "sort_name": "Cohen, Allen",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "ee98930e-3731-533c-9ec1-5e76bd225e86",
+    "slug": "van-m-sim",
+    "name": "Van M. Sim",
+    "sort_name": "Sim, Van M.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "337b0da1-b61d-5ba8-8394-603e279c87e3",
+    "slug": "s-c-callaway",
+    "name": "S. C. Callaway",
+    "sort_name": "Callaway, S. C.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "ca73cb1c-5614-51d2-8ac4-b4ef964beba9",
+    "slug": "werner-a-stoll",
+    "name": "Werner A. Stoll",
+    "sort_name": "Stoll, Werner A.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "d6dd4c02-e5b0-5c29-8e85-683b60bfca60",
+    "slug": "gerhard-a-gesell",
+    "name": "Gerhard A. Gesell",
+    "sort_name": "Gesell, Gerhard A.",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  },
+  {
+    "id": "92dc3a3d-de80-5bba-a8d8-aef7adfd10e4",
+    "slug": "s-weir-mitchell",
+    "name": "S. Weir Mitchell",
+    "sort_name": "Mitchell, S. Weir",
+    "birth_year": null,
+    "death_year": null,
+    "bio": ""
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "slug": "krasheninnikov-kamtschatka-fly-agaric",
+  "title": "The History of Kamtschatka, and the Kurilski Islands, with the Countries Adjacent",
+  "shortTitle": "The History of Kamtschatka",
+  "author": "Stepan Krasheninnikov",
+  "creators": [
+    {
+      "name": "Stepan Krasheninnikov",
+      "role": "author"
+    },
+    {
+      "name": "James Grieve",
+      "role": "translator"
+    }
+  ],
+  "year": 1764,
+  "displayDate": "1764 (English translation; Russian original 1755)",
+  "type": "Book",
+  "medium": "Text",
+  "era": "Pre-1800",
+  "region": "Kamchatka, Siberia",
+  "language": "English",
+  "substances": [
+    "Amanita muscaria"
+  ],
+  "people": [
+    "Stepan Krasheninnikov",
+    "James Grieve"
+  ],
+  "tags": [
+    "fly-agaric",
+    "kamchatka",
+    "koryak",
+    "kamchadal",
+    "urine-drinking",
+    "siberia",
+    "18th-century-ethnography",
+    "intoxication"
+  ],
+  "summary": "Krasheninnikov's 1764 English translation describes fly-agaric (Amanita muscaria) intoxication in Kamchatka: its effects, use by the Koryak, and the practice of drinking an intoxicated person's urine to prolong inebriation. He covers dose-dependent effects and behavioral consequences including murderous impulses.",
+  "excerpt": "They give him a vessel to save his urine in, which they drink, and it has the same effect as the mushroon itself.",
+  "citation": "Stepan Krasheninnikov, The History of Kamtschatka, and the Kurilski Islands, with the Countries Adjacent, trans. James Grieve (Gloucester: R. Raikes; London: T. Jefferys, 1764), 207-209.",
+  "rights": "Public domain (published before 1930)",
+  "sourceUrl": "https://archive.org/details/historyofkamtsch00kras",
+  "accessType": "hosted",
+  "hostingStatus": "transcript_only",
+  "readerMode": "transcript",
+  "transcript": "### CHAP. XIV. Of their Feasts and Diversions.\n\nTHEY make feasts when one village entertains another, either upon the account of a wedding, or having had a plentiful fishing or hunting. The landlords entertain their guests with great bowls of opanga, 'till they are all set a vomiting; sometimes they use a liquor made of a large mushroon, with which the Russians kill flies. This they prepare with the juice of epilobium, or French willow.\n\nThe first symptom of a man's being affected with this liquor is a trembling in all his joints, and in half an hour he begins to rave as if in a fever; and is either merry or melancholy mad, according to his peculiar constitution. Some jump, dance, and sing; others weep, and are in terrible agonies, a small hole appearing to them as a great pit, and a spoonful of water as a lake: but this is to be understood of those who use it to excess; for taken in a small quantity it raises their spirits, and makes them brisk, courageous, and chearful.\n\nIt is observed, whenever they have eaten of this plant, they maintain that, whatever foolish things they did, they only obeyed the commands of the mushroon: however, the use of it is certainly so dangerous, that unless they were well looked after it would be the destruction of numbers of them. The Kamtschadales do not much care to relate these drunken frolicks, and perhaps the continual use of it renders it less dangerous to them. One of our Cossacks resolved to eat of this mushroon in order to surprise his comrades; and this he actually did, but it was with great difficulty they preserved his life. Another of the inhabitants of Kamtschatka, by the use of this mushroom, imagined that he was upon the brink of hell ready to be thrown in, and that the mushroon ordered him to fall upon his knees, and make a full confession of all the sins he could remember, which he did before a great number of his comrades, to their no small diversion. It is related, that a soldier of the garrison having eaten a little of this mushroon, walked a great way without any fatigue, but at last, having taken too great a quantity, he died. My interpreter drank some of this juice without knowing of it, and became so mad, that it was with difficulty that we kept him from ripping open his belly, being, as he said, ordered to do it by the mushroon.\n\nThe Kamtschadales and the Koreki eat of it when they resolve to murder any body; and it is in such esteem among the Koreki, that they do not allow any one that is drunk with it to make water upon the ground, but they give him a vessel to save his urine in, which they drink, and it has the same effect as the mushroon itself. None of this mushroon grows in their country, so that they are obliged to purchase it of the Kamtschadales. Three or four of them are a moderate dose, but when they want to get drunk they take ten. The women never use it; so that all their merriment consists in jesting, dancing, and singing.\n\n_[The chapter continues with an account of Kamtschadal dances, love-songs, and mimicry, here omitted.]_",
+  "wordCount": 557,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket C: Amanita muscaria in Siberian/Kamchatkan ethnography, c. 1730-1930)",
+    "proposedOn": "2026-08-15",
+    "rationale": "This is the foundational Western source for fly-agaric ethnography in Kamchatka, predating Langsdorff (already archived) by nearly sixty years and establishing the urine-drinking detail that later travelers (Kennan, Cooke) cite back to Krasheninnikov by name.",
+    "textSource": {
+      "url": "https://archive.org/download/historyofkamtsch00kras/historyofkamtsch00kras_djvu.txt",
+      "kind": "internet-archive-djvu",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/krasheninnikov-kamtschatka-fly-agaric.txt",
+      "scope": "Chapter XIV, 'Of their Feasts and Diversions,' the paragraphs describing mushroom (fly-agaric) intoxication and the drinking of the intoxicated person's urine. The remainder of the 500-plus-page work (geography, natural history, other chapters on customs) was not transcribed."
+    },
+    "textQuality": {
+      "ocrPass": "haiku-corrected",
+      "confidence": "high",
+      "notes": "Fixed OCR error: 'Katstchadales' corrected to 'Kamtschadales' to match other instances in text. Previous normalization of 18th-century long-s (ſ) to 's' and correction of f/s confusions was verified against raw text and is consistent. The book's own spelling 'mushroon' was preserved as printed throughout, as stated in notes. Grounding re-checked with scripts/check_draft_fuzzy.mjs: mean best-window similarity to the raw scan is 91.3%, so the sentences the exact-match checker flags are OCR repair rather than invention.",
+      "uncertainReadings": [
+        "mushroon (kept as printed; period spelling used consistently in this 1764 translation, likely variant of 'mushroom')"
+      ]
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15. Distinct from the already-archived Langsdorff account of fly agaric among the Koryak (1812).",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

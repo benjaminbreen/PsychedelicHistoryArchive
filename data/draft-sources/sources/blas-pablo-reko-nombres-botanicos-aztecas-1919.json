@@ -1,0 +1,69 @@
+{
+  "slug": "blas-pablo-reko-nombres-botanicos-aztecas-1919",
+  "title": "De los nombres botánicos aztecas",
+  "shortTitle": "On Aztec Botanical Names",
+  "author": "Blas Pablo Reko",
+  "creators": [
+    {
+      "name": "Blas Pablo Reko",
+      "role": "author"
+    }
+  ],
+  "year": 1919,
+  "displayDate": "December 1919",
+  "type": "Academic Article",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "Mexico",
+  "language": "Spanish",
+  "contentLanguage": "Spanish",
+  "substances": [
+    "Psilocybin",
+    "Ololiuhqui"
+  ],
+  "people": [
+    "Blas Pablo Reko",
+    "William Edwin Safford"
+  ],
+  "tags": [
+    "teonanacatl",
+    "ololiuqui",
+    "aztec-ethnobotany",
+    "oaxaca",
+    "mesoamerican-mushrooms",
+    "botanical-nomenclature"
+  ],
+  "summary": "An essay by physician and ethnobotanist Blas Pablo Reko arguing against Safford's claim that teonanácatl was a fanciful name for peyote. Reko insists teonanácatl was a real mushroom still eaten by Indigenous communities in Oaxaca.",
+  "excerpt": "\"Div. géneros de hongos, especialmente un hongo negro que crece sobre estiércol y produce efectos narcóticos\" (\"Various genera of mushrooms, especially a black mushroom that grows on dung and produces narcotic effects\").",
+  "citation": "Reko, Blas Pablo. \"De los nombres botánicos aztecas.\" El México Antiguo 1, no. 5 (December 1919): 113–157.",
+  "rights": "Public domain (published before 1930).",
+  "sourceUrl": "https://openlibrary.org/works/OL7701712W/On_Aztec_botanical_names",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "_No transcript hosted. The 1919 issue of El México Antiguo (vol. 1, no. 5) has not been located in a digitized, machine-readable form; the passage below is Reko's own wording as quoted, with citation, on a page actually consulted for this draft._\n\n\"Div. géneros de hongos, especialmente un hongo negro que crece sobre estiércol y produce efectos narcóticos.\"\n\n(\"Various genera of mushrooms, especially a black mushroom that grows on dung-heaps and produces narcotic effects.\")",
+  "wordCount": 74,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket E: Mesoamerican mushrooms and morning glory, 1915-1962)",
+    "proposedOn": "2026-08-15",
+    "rationale": "First twentieth-century scholar to argue in print that teonanácatl was a surviving, living mushroom cult rather than a historical curiosity or a synonym for peyote; the direct ancestor of the Weitlaner-Johnson-Schultes-Wasson rediscovery chain the archive already documents in part.",
+    "textSource": {
+      "url": "https://web.archive.org/web/2023/https://erowid.org/library/books_online/mushroom_pioneers/mushroom_pioneers7.shtml",
+      "kind": "other",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/blas-pablo-reko-nombres-botanicos-aztecas-1919.txt",
+      "scope": "Secondhand quotation of Reko (1919) as reproduced, with citation to El México Antiguo vol. 1, no. 5, in Guzmán/Ott-derived secondary literature (Erowid's 'Mushroom Pioneers,' ch. 1, archived copy). Original journal issue not located in digitized form; no direct page image or OCR of the 1919 article itself was obtained."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "medium",
+      "notes": "The Spanish sentence is quoted, with a pinpoint citation to pp. 113-157 of El México Antiguo vol. 1 no. 5, by two independent secondary sources (Erowid's Mushroom Pioneers essay and Schultes 1940's own bibliography, which cites the same volume/pages). Not verified against a page image of the original 1919 journal, which could not be located on Internet Archive, HathiTrust, or the Mexican Hemeroteca Nacional Digital. A German-cousin work by Victor A. Reko (no relation confirmed) is sometimes conflated with Blas Pablo Reko in secondary sources; this record concerns Blas Pablo Reko only.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15. Distinct from the archive's existing Sahagún and Durán teonanácatl material, which Reko is responding to.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

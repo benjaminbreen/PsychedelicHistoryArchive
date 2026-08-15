@@ -1,0 +1,71 @@
+{
+  "slug": "r-gordon-wasson-seeking-magic-mushroom-life-1957",
+  "title": "Seeking the Magic Mushroom",
+  "author": "R. Gordon Wasson",
+  "creators": [
+    {
+      "name": "R. Gordon Wasson",
+      "role": "author"
+    }
+  ],
+  "year": 1957,
+  "displayDate": "May 13, 1957",
+  "type": "Newspaper Article",
+  "medium": "Text",
+  "era": "1950-1970",
+  "region": "United States",
+  "language": "English",
+  "substances": [
+    "Psilocybin"
+  ],
+  "people": [
+    "R. Gordon Wasson",
+    "Valentina Pavlovna Wasson",
+    "Allan Richardson",
+    "Roger Heim",
+    "Eva Mendez",
+    "Robert J. Weitlaner"
+  ],
+  "tags": [
+    "life-magazine",
+    "huautla-de-jimenez",
+    "maria-sabina",
+    "psilocybe-mexicana",
+    "velada",
+    "popular-press",
+    "mazatec"
+  ],
+  "summary": "R. Gordon Wasson's photo-essay in Life magazine announcing that he and photographer Allan Richardson had participated in a Mazatec mushroom ceremony near Huautla de Jiménez in June 1955. The article, illustrated with color photographs and watercolor plates, named Roger Heim as Wasson's collaborator.",
+  "excerpt": "\"Richardson and I were the first white men in recorded history to eat the divine mushrooms, which for centuries have been a secret of certain Indian peoples living far from the great world in southern Mexico. No anthropologists had ever described the scene that we witnessed.\"",
+  "citation": "Wasson, R. Gordon. \"Seeking the Magic Mushroom.\" Life, May 13, 1957, 100-102, 109-120.",
+  "rights": "In copyright (Time Inc., 1957). A scan is hosted publicly by the Internet Archive; used here only as a short verified excerpt per this project's pre-1930 hosting rule.",
+  "sourceUrl": "https://archive.org/details/Life-1957-05-13-Vol-42-No-19",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "_No transcript hosted (text postdates 1930 and is not a US Government work). Excerpt below verified against the Internet Archive scan of Life, vol. 42, no. 19 (May 13, 1957)._\n\n\"Richardson and I were the first white men in recorded history to eat the divine mushrooms, which for centuries have been a secret of certain Indian peoples living far from the great world in southern Mexico. No anthropologists had ever described the scene that we witnessed.\"",
+  "wordCount": 76,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket E: Mesoamerican mushrooms and morning glory, 1915-1962)",
+    "proposedOn": "2026-08-15",
+    "rationale": "The single most consequential popularization in the archive's rediscovery arc: a mass-circulation magazine piece that moved the Mazatec mushroom cult from specialist ethnobotany into American popular consciousness. It effectively launched the postwar Western psilocybin vogue and was the direct trigger for Hofmann's 1958 isolation of psilocybin and the wave of self-experimentation that followed through the early 1960s.",
+    "textSource": {
+      "url": "https://archive.org/download/Life-1957-05-13-Vol-42-No-19/Life%20-%201957-05-13%20-%20v42%20n19_djvu.txt",
+      "kind": "internet-archive-djvu",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/r-gordon-wasson-seeking-magic-mushroom-life-1957.txt",
+      "scope": "Full OCR text of the article ('Seeking the Magic Mushroom,' Life, May 13, 1957, pp. 100-120, including captions and acknowledgments) downloaded for verification; only a short quoted excerpt is used in the published transcript field per the copyright rule for post-1930 texts."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "high",
+      "notes": "OCR of this magazine scan is generally clean for body text; the excerpt quoted was checked directly against the raw OCR file. A contemporaneous Spanish-language translation of the same article ('En busca del hongo mágico,' Life en español, June 3, 1957) is also on the Internet Archive and was used only to confirm the English scan's identifier, not as a text source.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

@@ -1,0 +1,39 @@
+[Bibliographic and quotation verification capture — this source is external-only under
+copyright. The passages below were fetched live and are kept here as an audit trail for
+the ≤75-word quote used in the draft record's "excerpt" field. Do NOT treat this file as
+authorization to host the full transcript: the 1957 Annals of the New York Academy of
+Sciences article is still in copyright (Wiley; author Humphry Osmond died 2004).]
+
+Source fetched: http://www.hofmann.org/papers/osmond/index.html
+Fetched: 2026-08-15
+Method: curl -sL (HTTP 200)
+
+This page, maintained by the nonprofit Albert Hofmann Foundation, posts a long editorial
+excerpt (not the complete article — page numbers 427-432 of 418-434 are covered, omitting
+the opening clinical-effects sections) of:
+
+Osmond, Humphry. "A Review of the Clinical Effects of Psychotomimetic Agents." Annals of
+the New York Academy of Sciences 66, no. 3 (March 1957): 418-434.
+DOI (confirmed via Crossref API): 10.1111/j.1749-6632.1957.tb40738.x
+Canonical publisher URL: https://nyaspubs.onlinelibrary.wiley.com/doi/10.1111/j.1749-6632.1957.tb40738.x
+
+The naming passage (page 430), quoted exactly as it appears on the fetched page:
+
+"I have tried to find an appropriate name for the agents under discussion: a name that
+will include the concepts of enriching the mind and enlarging the vision. Some
+possibilities are: psychephoric, mind-moving; psychehormic, mind-rousing; and
+psycheplastic, mind-molding. Psychezymic, mind-fermenting, is indeed appropriate.
+Psycherhexic, mind bursting forth, though difficult, is memorable. Psychelytic,
+mind-releasing, is satisfactory. My choice, because it is clear, euphonious, and
+uncontaminated by other associations, is psychedelic, mind-manifesting."
+
+Also present on the fetched page (used for context, not quoted at length in the draft):
+Osmond's list of roughly 50 research subjects including "authors, artists, a junior
+cabinet minister, scientists, a hero, philosophers, businessmen," his statement that his
+own LSD/mescaline experiences were "the most strange, most awesome and among the most
+beautiful things in a varied and fortunate life," his working definition of
+"psychotomimetic agents," and his closing summary paragraph restating the coinage:
+"my own preference being 'psychelytic,' or 'psychedelic'--mind-manifesting."
+
+Full text beyond this excerpt requires Wiley Online Library subscription access; not
+independently verified beyond what is quoted above.

@@ -37,6 +37,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <Link className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/collections">Collections</Link>
             <Link className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/topics">Topics</Link>
             <Link className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/bibliography">Bibliography</Link>
+            <Link className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/drafts">Drafts</Link>
             <Link className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/admin/qa">QA</Link>
             <Link className="focus-ring rounded-md px-3 py-2 hover:bg-archive-lavender2" href="/archive">Public archive</Link>
           </nav>

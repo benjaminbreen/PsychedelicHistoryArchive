@@ -1,0 +1,3766 @@
+UNCLASSIFIED 
+AD  NUMBER 
+
+_ AD323701 _ 
+
+_ CLASSIEICATION  CHANGES 
+
+TO:  unclassified 
+
+FROM:  confidential 
+
+LIMITATION  CHANGES 
+
+TO: 
+
+Approved  for  public  release,  distribution 
+unlimited 
+
+
+FROM: 
+
+Distribution  authorized  to  U.S.  Gov't, 
+agencies  only;  Administrative/Operational 
+Use;  May  1961.  Other  requests  shall  be 
+referred  to  US  Army  Chemical  Research  and 
+Development  Labs,  Army  Chemical  Center, 
+MD. 
+
+
+_ AUTHORITY _ 
+
+Army  Edgewood  Arsenal  notice  dtd  17  Sep 
+1975;  Army  Edgewood  Arsenal  notice  dtd  17 
+Sep  1975 
+
+
+THIS  PAGE  IS  UNCLASSIEIED 
+
+
+UNCLASSIFIED 
+
+
+AD  NUMBER 
+
+AD323701 
+
+CLASSIEICATION  CHANGES 
+
+TO 
+
+confidential 
+
+EROM 
+
+secret 
+
+AUTHORITY 
+
+30  Jun 
+
+1973  per  DoDD  5200.10  document 
+
+marking 
+
+THIS  PAGE  IS  UNCLASSIEIED 
+
+
+REPRODUCTION  QUALITY  NOTICE 
+
+
+This  document  is  the  best  quality  avaiiabie.  The  copy  furnished 
+to  OTIC  contained  pages  that  may  have  the  following  quality 
+problems: 
+
+•  Pages  smaller  or  larger  than  normal. 
+
+•  Pages  with  background  color  or  light  colored  printing. 
+
+•  Pages  with  small  type  or  poor  printing;  and  or 
+
+•  Pages  with  continuous  tone  material  or  color 
+photographs. 
+
+Due  to  various  output  media  avaiiabie  these  conditions  may  or 
+may  not  cause  poor  legibility  in  the  microfiche  or  hardcopy  output 
+you  receive. 
+
+
+I  I  If  this  block  is  checkeo.  the  copy  furnished  to  OTIC 
+contained  pages  with  color  printing,  that  when  reproduced  in 
+Black  and  White,  may  change  detail  of  the  original  copy. 
+
+
+NOTICE;  When  government  or  other  dravings,  speci¬ 
+fications  or  other  data  are  used  for  any  purpose 
+other  than  in  connection  vith  a  definitely  related 
+government  procurement  operation,  the  U.  S. 
+Government  thereby  incurs  no  responsibility,  nor  any 
+obligation  v^at soever;  and  the  fact  that  the  Govern¬ 
+ment  may  have  formulated,  furnished,  or  in  any  vay 
+supplied  the  said  drawings,  specifications,  or  other 
+data  is  not  to  be  regarded  by  implication  or  other¬ 
+wise  as  in  any  manner  licensing  the  holder  or  any 
+other  person  or  corporation,  or  conveying  any  rights 
+or  permission  to  manufacture,  use  or  sell  any 
+patented  invention  that  may  in  any  vay  be  related 
+thereto. 
+
+
+NOTICE; 
+
+y* 
+
+TECS  DOCUMENT  CONTAINS  INEORMATION 
+AFFECTING  THE  NATIONAL  DEFENSE  OF 
+THE  UNITED  STATES  WITHEN  THE  MEAN¬ 
+ING  OF  THE  ESPIONAGE  LAWS,  TITLE  l8, 
+U.S.C.,  SECTIONS  793  and  79^.  THE 
+TRANSMISSION  OR  THE  REVELATION  OF 
+ITS  CONTENTS  IN  ANY  MANNER  TO  AN 
+UNAUTHORIZED  PERSON  IS  PROHIBITED 
+
+
+BY  LAW 
+
+
+o 
+
+
+(Si 
+
+
+U.  $.  Anir 
+
+Chtnicoi  Rtstqrch  aid  Davtlapaait  Laboralorits 
+Tfchilcal  Rtport 
+
+
+y 
+
+
+o 
+
+
+CO 
+
+
+Docinait  coisiits  of-— -pa|t(s) 
+
+- 
+
+w/Copies  1  thru  9  of  Abstract  Card 
+
+
+June  1961 
+
+
+ARMY  CHIMICAL  CENTER,  MD. 
+
+
+Ktl 
+
+
+A  8  T  I  A 
+
+!  .-  '  •  .  ' — >-a  .*«• 
+
+r')  M!  ^ 
+
+JiJN  lyg? 
+
+
+liras 
+
+
+15 
+
+■  !  i  • 
+
+
+DOWNGRADED  AT  12  YEAR  INTERVALS; 
+
+NOT  AUTOMATICALLY  DECLASSIFIED. 
+
+DOD  DIR  5200.10  cRM-p,b-«.s.6i 
+
+
+< 
+
+
+June  1961 
+
+
+CROLR  3074 
+
+
+CLINICAL  INVESTIGATION  OF  EA  1729  (U) 
+
+
+by 
+
+
+Van  M.  Sim 
+
+
+Clinical  Research  Division 
+
+
+Recommending  Approval: 
+
+
+DOUGLAS  LINDSEyI 
+Colonel,  MC  ' 
+
+Director  of  Medical  Research 
+
+
+Approved: 
+
+
+S.  D.  SILVER 
+Scientific  Director 
+
+
+U.  S.  ARMY 
+
+Chemical  Corps  Research  and  Development  Command 
+CHEMICAL  RESEARCH  AND  DEVELOPMENT  LABORATORIES 
+Army  Chemical  Center,  Maryland 
+
+
+UNCLASSIFIED 
+
+
+(U) 
+
+
+FOREWORD 
+
+
+The  work  described  in  this  report  was  authorized  under  Project 
+No.  4C08-02-022,  Medical  Aspects  of  Chemical  Warfare  (U).  The  work  was 
+started  in  1955  and  completed  in' I960. 
+
+Acknowledgments 
+
+The  author  wishes  to  make  it  clear  that  the  ^studies  reported  in 
+this  document  represent  the  work  of  many  individuals,  both  within  these 
+Laboratories  and  under,  contract  .  A  number  of  the  studies  described  have  been 
+reported  in  the  open  literature,  but  several  are  being  reported  here  for  the 
+first  time.  Particular  acknowledgment  is  made  of  the  collaborative  efforts  of 
+Capt.  Joseph  R.  Bertino,  Capt.  Duane  Collier,  Capt.  Leslie  E.  Geiger,  and 
+Dr.  Gerald  Klee  in  the  studies  on  dose-response  effects;  the  work  of 
+Capt.  Ernest  R.  Clovis  in  planning,  coordinating,  and  evaluating  many  of  the 
+demonstrations;  and  the  work  of  Dr.  Kazuo  K.  Kimura,  Dr.  Alvin  I.  Goodman, 
+and  Dr,  Bernard  J.  Clark,  who  conducted  many  of  the  experiments  reported. 
+The  author  also  wishes  to  thank  Mrs.  Marion  P.  Royston  for  her  assistance 
+in  compiling  this  report. 
+
+
+Notices 
+
+This  document  contains  information  affecting  the  national  defense 
+of  the  United  States  within  the  meaning  of  the  Espionage  Laws,  Title  18, 
+
+U.  S,  C.  ,  sections  793  and  794,  The  transmission  or  the  revelation  of  its 
+contents  in  any  manner  to  an  unauthorized  person  is  prohibited  by  law. 
+
+Reproduction  of  this  document  in  whole  or  part  is  proliibited 
+except  with  the  permission  of  the  issuing  office;  however,  ASTIA  io 
+
+authorized  to  reproduce  the  document  for  U,  S.  Governmental  purposes. 
+
+/ 
+
+Disposition 
+
+When  this  document  has  served  its  purpose,  DESTROY  it  in 
+accordance  with  paragraph  28  of  AR  380-5.  DO  NOT  return  the  document  to 
+U.  S,  Army  Chemical  Research  and  Development  Laboratories. 
+
+
+UNCLASSIFIED 
+
+
+SECRET 
+
+
+(S)  digest 
+
+£A  1729  (lysergic  acid  diethylamide,  LSDZS)  has  been  studied 
+extensively  in  animals  and  in  humans  as  a  possible  incapacitating  CW 
+compound.  Clinical,  physiological,  and  psychiatric  studies  have  been 
+conducted. 
+
+
+From  the  standpoint  uf  biological  effectiveness,  EA  1729 
+incapacitates  man  at  doses  as  low  as  1  fig/kg,  the  degree  of  incapacitation 
+increasing  with  the  dose.  Its  effects;  endure  for  periods  ranging  from  6  to  24 
+hours.  There  is  a  very, wide  margin  of  safety  between  the  incapacitating  and 
+lethal  doses. 
+
+
+SECRET 
+
+
+3 
+
+
+UNCLASSIFIED 
+
+
+CONTENTS 
+
+-  -- 
+
+I.  INTRODUCTION . 5 
+
+II.  HUMAN  STUDIES  . .  6 
+
+III.  ANIMAL  STUDIES . 31 
+
+IV.  ANALOGS  AND  HOMOLOGS  OF  EA  1729  .  37 
+
+V.  ANTIDOTAL  OR  BLOCKING  AGENTS .  37 
+
+VI.  DISCUSSION .  40 
+
+VII.  CONCLUSIONS . 45 
+
+LITERATURE  CITED .  47 
+
+APPENDIX .  49 
+
+
+UNCLASSIFIED 
+
+
+4 
+
+
+SECRET 
+
+
+(S)  CLINICAL.  INVESTIGATION  OF  EA  1729  (U) 
+
+I.  (5)  INTRODUCTION. 
+
+(S)  The  ability  of  EA  1729  (lysergic  acid  diethylamide,  LSD25)  to 
+
+produce  aberrant  mental  behavior  in  humans  came  to  the  attention  of  the 
+U.  S.  Army  Chemical  Corps  about  1947,  and  this  material  has  been  one  of 
+the  most  promising  CW  incapacitating  compounds  since  that  time.  It  is  the 
+most  potent  of  the  incapacitating  agents  studied  to  date  and  has  the  veryimpor- 
+tant  attribute  of  a  large  Safety. margin  betweenthe  incapacitating  and  lethal  doses. 
+
+(U)  The  objectives  of  the  project  under  which  the  reported  work  was 
+
+carried  out  are: 
+
+1.  To  supply  fundamental  knowledge  concerning  the  nature  of  the 
+mechanism  and  sites  of  action  in  man  of  CW  agents  and  of  prophylactic  and 
+therapeutic  drugs. 
+
+2.  On  the  basis  of  this  information,  to  suggest  the  development 
+of  novel  or  more  effective  agents,  as  well  as  to  develop  diagnostic,  protective, 
+antidotal,  and  therapeutic  devices  and  procedures  applicable  to  poisoning  by 
+such  compounds. 
+
+(U)  A  research  and  development  program  on  agents  that  temporarily 
+
+incapacitate  but  do  not  kill  requires  a  more  complex  structure  of  research 
+than  is  necessary  for  a  program  on  lethal  agents.  Quantitating  the  lethality  of 
+a  compound  does  not  require  the  extensive  knowledge  of  the  physiological  and 
+pharmacological  effects  of  the  material  that  is  required  when  dealing  with  an 
+incapacitating  compound,  especially  one  that  produces  effects  on  the  mind.  It 
+has  therefore  been  necessary  to  extend  the  program  of  these  Laboratories  to 
+include  studies  that  will  yield  the  more  detailed  information  on  incapacitating 
+agents  required  to  meet  the  program  objectives. 
+
+(C)  Because  of  its  profound  effect  on  the  mental  processes  of  man, 
+
+EA  1729  is  of  interest  to  investigators  in  many  parts  of  the  world.  It  has  been 
+used  extensively  to  produce  experimental  model  psychoses  that  sometimes 
+mimic  the  acute  schizophrenic  patient.  The  survey  of  open  publications 
+continues,  keeping  the  Laboratories  cognizant  of  the  work  being  done  and 
+permitting  an  economy  of  effort.  These  Laboratories  have  restricted  studies 
+to  those  questions  that  would  probably  not  be  considered  b /■  private  research 
+because  they  are  especially  applicable  to  the  search  for  and  evaluation  of 
+CW  agents  and  the  treatment  of  casualties  therefrom. 
+
+
+SECRET 
+
+
+5 
+
+
+CONFIDENTIAL 
+
+
+(U)  Since  the  establishment  of  the  Medical  Research  Volunteer  Program 
+
+in  1955,  numerous  studies  in  volunteers  have  yielded  sufficient  data  to  delineate 
+essentially  the  physiological  and  psychological  effects  of  this  material  in  man. 
+Dose-response  relationships  also  have  been  determined,  and  the  effectiveness 
+of  a  number  of  antidotal  and  blocking  agents  luis  been  evaluated. 
+
+(C)  The  effect  of  EA  1729  on  the  ability  of  small  groups  of  individuals 
+
+to  participate  in  activities  that  require  group  cooperation  has  been  assessed. 
+These  demonstrations  were  followed  by  field  tests  designed  to*  measure  this 
+agent's  disorganizing  and  disrupting  influence  on  a  disciplined  military  unit. 
+
+(U)  An  extensive  and  systematic  investigation  of  the  n^ervous  system  of 
+
+lower  animals  has  been  undertaken  as  a  step  toward  arriving  at  a  more  complete 
+understanding  of  the  mechanism  and  site  of  action  of  psychotomimetic  agents  in 
+man.  The  continuing  need  for  improved  methods  of  recognizing  potent 
+psychochemical  agents  in  animals,  in  order  to  permit  the  effectual  and 
+expeditious  evaluation  of  the  large  number  of  compounds  that  the  Chemical  Corps 
+must  screen,  motivated  many  of  the  animal  studies  reported. 
+
+(C)  The  potency  of  several  analogs  and  homologs  of  EA  1729  has  been 
+
+studied  to  determine  whether  they  merit  consideration  as  CW  incapacitating 
+agents. 
+
+(U)  The  data  reported  fall  into  two  categories: 
+
+1.  Work  that  has  been  done  in  these  Laboratories  or  performed 
+in  cooperation  with  other  military  organizations  which  is  being  reported  for 
+the  first  time. 
+
+2.  Work  in  universities  by  contractors,  which  may  have  been 
+reported  in  the  open  literature,  as  a  classified  contractor's  report,  or  in  a 
+collaborative  study  at  this  facility. 
+
+II.  (C):  HUMAN  STUDIES. 
+
+1  2  4 
+
+A.  (C)  Clinical,  Physiological,  and  Psychiatric  Studies.  '  ’ 
+
+(C)  A  conservative  estimate  is  that  approximately  3,  000  doses  of 
+
+EA  17  29  have  been  given  to  some  1, 500  individuals  either  in  clinical  studies 
+at  Army  Chemical  Center,  in  group  demonstrations  and  exercises  conducted 
+at  other  military  installations,  or  in  contract  programs  at  the  University  of 
+Maryland  Psychiatric  Institute;  Tulane  University,  Department  of  Neurology 
+and  Psychiatry;  New  York  Psychiatric  Institute;  and  University  of  Washington 
+Medical  School,  Department  of  Pharmacology.  These  studies  indicated  that 
+
+CONFIDENTIAL 
+
+
+6 
+
+
+CONFIDENTIAL 
+
+
+the  effects  elicited  by  EA  1729  increase  more  or  less  proportionately  to  the 
+dosage,  up  to  2/jig/kg.  Above  this  dose,  there  was  no  clear-cut  relationship 
+between  dose  and  response.  Subjects  have  had  very  distinct  effects  from  only 
+25  jitg(total  dose),  but  they  were  relatively  mild  compared  with  those  produced 
+by  higher  doses.  Most  subjects  received  total  doses  of  approximately  . 
+
+70  to  150  fig.  At  this  dose  range,  the  majority  of  men  had  marked  effects. 
+
+After  considerable  numbers  of  clinical  trials,  it  was  found  that,  for  field 
+demonstration  purposes,  total  doses  of  100  to  150  fig  (without  strict  regard  to 
+body  weight)  were  sufficient  to  cause  incapacitation. 
+
+(C)  The  general  physiological  effects  of  EA  1729  are  mild,  consisting 
+
+of  pupillary  dilatation  and  a  slight  increase  in  blood  pressure  and  pulse  rate. 
+Nausea  and  dizziness  and  an  increase  or  a  decrease  of  appetite  are  also  reported 
+by  some  subjects.  The  only  consistent  neurological  change  noted  was  an 
+increase  in  deep  tendon  reflexes,  such  as  knee,  ankle,  wrist,  and  elbow 
+hyperreflexia.  The  major  and  most  consistent  physiological  effect  was 
+disturbance  of  visual  perception,  evidenced  by  distortion  of  shapes  and  objects, 
+and,  subjectively,  by  hallucinations  of  colors  and  geometrical  patterns.  The 
+latter  were  more  pronounced  in  darkened  rooms. 
+
+(U)  Psychological  changes  were,  consistent  and  profound.  Almost  all 
+
+the  subjects  had  difficulty  in  concentrating,  making  decisions,  and 
+communicating.  The  particular  type  of  observed  reaction  depended  on  the 
+total  personality  of  the  individual.  The  broad  term  "personality"  in  this  sense 
+means  the  evaluation  of  psychological  and  psychometric  testing,  as  well  as  the 
+psychiatric  evaluation  of  the  individual's  ability  to  cope  with  his  social 
+environment,  either  in  military  or  in  civilian  life. 
+
+(U)  The  observed  reactions  ranged  from  tenseness  to  panic  and  from 
+
+friendliness  to  (rarely)  verbal  manifestation  of  aggressiveness  without  physical 
+action. 
+
+
+1,  (C)  Dose-Response  Effects. 
+
+(C)  In  an  experiment  to  determine  the  dose-response  effects  of  EA  1729, 
+
+18  volunteers  were  given  a  different  dose  of  the  drug  at  weekly  intervals  for  a 
+totpl  of  3  weeks.  The  oral  dosages  used  were  I,  2,  4,  8,  and  16  fig/kg  body 
+weight,  dissolved  in  distilled  water  and  administered  on  a  double- blind  basis. 
+Even  at  the  highest  concentrations  used,  the  drug  was  found  to  be  odorless, 
+colorless,  and  tasteless. 
+
+
+CONFIDENTIAL 
+
+
+7 
+
+
+CONFIDENTIAL 
+
+
+a.  (C)  General  Effects. 
+
+« 
+
+With  increasing  doses,  the  onset  of  signs  and  symptoms  became 
+more  rapid  and  more  severe.  At  the  16  pg/kg  dose  level,  symptoms  were 
+noted  5  to  10  minutes  after  ingestion.  Severe  psychic  effects  lasted  10  to  24 
+hours,  and,  in  a  few  instances,  24  to  48  hours.  Tingling,  numbness, 
+lightheadedness,  and  "woozy"  feelings  were  reported  by  the  majority  of 
+subjects.  Impaired  time  sense  and  slurring  of  speech  were  frequent  results. 
+
+b.  (C)  Other  Effects. 
+
+(1)  (C)  Neurological  Changes. 
+
+At  the  4  /ig/kg  dose  level,  difficulty  in  walking  was  evident.  Some 
+volunteers  preferred  not  to  leave  their  beds,  but  two  subjects  at  this  dose 
+level  exhibited  extreme  restlessness  and  paced  up  and  down  with  little  difficulty 
+in  walking.  Confusion  and  severe  perceptual  disturbance  seemed  to  be 
+responsible  for  the  impairment  of  locomotion.  Tests  of  cerebellar  function 
+gave  normal  results;  only  slight  incoordination  was  seen.  Mutism  was  observed 
+in  two  volunteers  at  the  higher  dose  levels,  and  at  16  Mg/kg  one  volunteer 
+became  totally  uncommunicative  for  4  hours. 
+
+Increased  deep  tendon  reflexes  were  noted  in  some  subjects  at  the 
+1  and  2  fig/kg  dose,  and  all  subjects  given  doses  of  4,  8,  and  16  ng/kg  exhibited 
+hyperreflexia.  Above  the  4  gg/kg  level,  there  seemed  to  be  no  correlation 
+between  the  degree  of  hyperreflexia  and  dose. 
+
+(2)  (C)  Circulatory  Systemic  Changes. 
+
+Generally,  it  was  found  that  blood  pressure  increased  with  the  drug 
+dose.  Systolic  and  diastolic  pressure  rises  were  maximal  2  to  3  hours  after 
+a  dose  of  1  to  2  fig/kg.  When  the  dose  of  EA  17  29  was  4  jig/kg  or  higher,  the 
+maximum  blood  pressure  was  observed  30  minutes  after  drug  administration. 
+
+In  almost  every  subject,  blood  pressure  returned  to  control  levels  within 
+6  hours  postingestion.  Blood  pressure  effects  were  most  pronounced  when 
+anxiety,  restlessness,  and  panic  were  predominant  symptoms.  However, 
+regardless  of  the  psychological  reaction,  a  blood  pressure  rise  was  noted  in 
+every  subject  given  doses  of  4,  8,  and  16  jig/kg.  Figure  1  illustrates  the 
+effects  on  blood  pressure  of  3  doses  of  EA  1729.  Due  to  the  apprehension  and 
+hyperactivity  of  this  subject,  50  lig/kg  of  Thorazine  was  given  intramuscularly 
+and  was  followed  by  a  rather  rapid  decrease  of  both  systolic  and  diastolic 
+p, eo3ure.  Figure  2  indicates  the  change  in  blood  pressure  in  an  individual 
+receiving  dost  n  of  4,  8,  and  1  6 /ig/kg  of  EA  1729  at  1-week  intervals.  It 
+would  appear  that  the  difference  in  these  two  subject  a  {figures  1  and  2)  is  that 
+
+CONFIDENTIAL 
+
+
+8 
+
+
+CONFIDENTIAL 
+
+
+M 
+
+
+u 
+
+
+CONFIDENTIAL 
+
+9 
+
+
+BLOOD  PRESSURE  CHANGES  RESULTING  FROM  THREE  DOSES  OF  EA  1729 
+AND  AFTER  TREATMENT  WITH  THORAZINE  (U) 
+
+(Subject  C.  A. ) 
+
+
+CONFIDENTIAL 
+
+
+10 
+
+
+BLOOD  PRESSURE  CHANGES  RESULTING  FROM  THREE  DOSES  OF  EA  1729  (U) 
+
+(Subject  A.  B.  ) 
+
+
+CONFIDENTIAL 
+
+in  the  hyperreactor  both  the  diastolic  and  systolic  pressures  rose  rather 
+rapidly  in  the  first  30  minutes  whereas  in  the  subject  described  by  figure  Z, 
+the  systolic  pressure  rose  without  a  concomitant  marked  increase  in  the 
+diastolic  pressure.  Acceleration  of  the  pulse  rate  was  observed  in  all 
+volunteers  given  more  than  Z  {xg/kg,  and  pulse  rate  changes  paralleled  blood 
+pressure  increases.  No  instances  of  abnormal  rhythm  or  extrasystoles  were 
+recorded. 
+
+
+(3)  (U)  Pupillary  Size  Changes. 
+
+Pupillary  dilatation  could  not  be  measured  accurately  because  of 
+the  difficulty  in  getting  the  subjects  to  cooperate,  to  move  into  a  room  with 
+constant  illumination.  Estimates  of  pupillary  size  were  made  on  the  basis  of  0 
+for  no  change  to  4^  for  maximum  dilatation.  Subjects  given  4  ixg/kg  had  an 
+average  of  S'*”  change  in  pupil  size,  while  higher  doses  produced  no  apparent 
+increase  of  this  near-maximum  dilatation.  Light  reflex  and  accommodation 
+were  normal.  Table  1  summarizes  these  changes. 
+
+(C)  TABLE  1 
+
+CHANGES  IN  PUPILLARY  SIZE  RESULTING  FROM  EA  1729  (U) 
+
+
+Number  of 
+subjects 
+
+Dose  EA  1729 
+
+Average  increase  in 
+pupillary  size>:< 
+
+6 
+
+Pg/kg 
+
+1 
+
+1+  :(0-?.+  ) 
+
+6 
+
+2 
+
+2+  (1+-2+) 
+
+18 
+
+4 
+
+3+  (2+-3+) 
+
+12 
+
+8 
+
+3+  (2+.-4+) 
+
+! 
+
+11 
+
+16 
+
+3+  (3+-4+) 
+
+*  (U)  0  =  no  change 
+
+4+’  =  maximum  dilatation 
+
+
+CONFIDENTIAL 
+
+
+11 
+
+
+CONFIDENTIAL 
+
+
+(4)  (C)  Nausea  and  Vomiting. 
+
+At  low  doses  of  EA  1729>  nausea  was  usually  transient;  at  higher 
+doses,  it  became  more  persistent.  No  subject  given  a  dose  of  1  and  2  pg/kg 
+vomited.  Both  the  severity  and  frequency  of  nausea  and  vomiting  increased 
+with  dosage,  as  seen  in  table  2. 
+
+
+(C)  TABLE  2 
+
+FREQUENCY  OF  NAUSEA  AND  VOMITING  AFTER 
+ADMINISTRATION  OF  EA  17^9:  {U) 
+
+
+Number  of 
+subjects 
+
+Dose  EA  1729 
+
+Nausea 
+
+Vomiting 
+
+6 
+
+/ig/kg 
+
+1 
+
+2/6 
+
+0/6 
+
+6 
+
+2 
+
+3/6 
+
+0/6 
+
+IS 
+
+4 
+
+10/18 
+
+1/18 
+
+12 
+
+8 
+
+10/12 
+
+4/12 
+
+11 
+
+16 
+
+8/11 
+
+5/11 
+
+(5)  (C)  Respiratory  Changes. 
+
+Changes  in  respiration  were  not  evident  at  low  doses  of  EA  1729. 
+
+At  4  pg/kg,  one  subject  developed  hyperventilation,  respiratory  alkalosis, 
+and  a  positive  Chvostek  sign.  Four  of  the  12  volunteers  who  received  8  pg/kg 
+and  4  of  the  11  volunteers  who  received  16  pg/kg  also  exhibited  hyperventilation 
+with  signs  of  alkalosis.  Carbon  dioxide  levels  in  blood,  taken  3  hours  after 
+drug  administration,  were  determined  in  fa  subjects  at  various  dose  levels, 
+and  the  results  are  summarized  in  table  3. 
+
+
+CONFIDENTIAL 
+
+
+12 
+
+
+CONFIDENTIAL 
+
+
+(C)  TABL.E  3 
+
+CO2  LEVELS  BEFORE  AND  AFTER  ADMINISTRATION  OF  EA  1729  (U) 
+
+
+Subject 
+
+Dose 
+
+Hyperventilation 
+
+CO2  content 
+(  venous  whole  blood) 
+
+Predrug 
+
+Postdrug 
+
+Mg/kg 
+
+vol  % 
+
+J.G. 
+
+4 
+
++ 
+
+63.  7 
+
+56.  3 
+
+R.  R. 
+
+4 
+
+- 
+
+62.  1 
+
+61. 0 
+
+R.  T. 
+
+i 
+
+8 
+
+- 
+
+51.  3 
+
+55.5 
+
+W.  L. 
+
+8 
+
+- 
+
+60.  4 
+
+47.  6 
+
+D.  B. 
+
+16 
+
+- 
+
+48.  9 
+
+51. 9 
+
+R.  B. 
+
+16 
+
++ 
+
+59.  3 
+
+41. 7 
+
+(6)  (U)  Electrocardiogram  (ECG)  Findings. 
+
+(U)  egg's  were  taken  on  12  subjects,  both  under  control  conditions 
+
+and  at  the 'height  of  the  drug  reaction  (table  4  summarizes  the  data  obtained). 
+
+The  most  significant  change  in  the  ECG  was  a  prolongation  of  the  P-R  interval, 
+but  this  bore  no  relationship  to  the  dose  of  drug  ingested.  There  does,  however, 
+appear  to  be  some  relationship  between  P-R  changes  and  the  occurrence  of 
+nausea. 
+
+(U)  In  all  except  one  case,  prolongation  of  the  P-R  interval  at  a  given 
+
+dose  was  followed  by  an  equal  or  longer  P-R  interval  at  the  higher  doses. 
+
+(U)  There  were  several  other  ECG  findings,  but  these  were  inconsistent. 
+
+The  findings  which  were  not  consistent  were  changes  in  voltage  and  small  but 
+insignificant  changes  in  S-T  segment  patterns. 
+
+
+CONFIDENTIAL 
+
+
+13 
+
+
+CONFIDENTIAL 
+
+
+(C)  TABLE  4 
+
+PROLONGATION  OF  P-R  INTERVAL  AFTER 
+ADMINISTRATION  OF  EA  1729  :(ll) 
+
+
+Prolongation  of  P-R  interval  (.  01  sec) 
+
+
+Dose  EA  1729 
+
+-1 
+
+0 
+
+1 
+
+2 
+
+3 
+
+4 
+
+Mg/kg 
+
+4 
+
+0 
+
+2 
+
+2 
+
+2 
+
+2 
+
+0 
+
+8 
+
+0 
+
+1 
+
+4 
+
+2 
+
+1, 
+
+0 
+
+16  ; 
+
+1 
+
+1 
+
+1 
+
+2 
+
+1 
+
+Total 
+
+1 
+
+4 
+
+7 
+
+7 
+
+5 
+
+0 
+
+Nausea 
+
+0 
+
+1 
+
+5 
+
+4 
+
+5 
+
+0 
+
+(7)  (C)  Electroencephalogram  (EEG)  Findings. 
+
+EEC's  were  recorded  on  two  subjects  given  a  16  /xg/kg  dose  of 
+EA  1729.  The  recordings  taken  at  the  height  of  the  EA  1729  reaction  were 
+difficult  to  interpret  because  of  excessive  muscular  activity  over  the  frontal 
+and  temporal  leads.  No  reliability  was  placed  on  these  records.  Other  studies 
+by  contractors  have  covered  the  EEG  findings. 
+
+(8)  (C)  Blood  Chemistry  Changes. 
+
+Electrolyte  studies  included  calcium,  magnesium,  chlorides, 
+sodium,  and  potassium  determinations  and  showed  no  significant  change  after 
+administration  of  EA  1729.  Blood  glucose  determinations  of  six  volunteers 
+given  doses  of  4,  8,  and  16  Atg/kg  showed  a  slight  rise  2  hours  after  drug 
+ingestion. 
+
+
+(9)  (U)  Temperature  Changes. 
+
+
+Skin  and  body  temperatures  were  also  measured  on  these  subjects. 
+
+In  general,  body  temperatures  fell  slightly  (0.  5°  to  1 . 0®C)  at  doses  of  8  and  Ifi  ^xg/^. . 
+
+
+CONFIDENTIAL 
+
+
+14 
+
+
+CONFIDENTIAL 
+
+
+(10)  (U)  In  a  omnia. 
+
+Insomnia,  a  common  complaint  of  the  volunteers,  could  be  related 
+to  the  dose  of  drug  administered.  Subjects  with  insomnia  were  effectively 
+treated  with  100  mg  secobarbital, 
+
+2.  (C)  Correlation  of  Oral  and  Aerosol  Doses. 
+
+In  a  test  to  determine  the  comparative  effectiveness  of  inhalation 
+and  oral  doses  of  EA  1729,  four  volunteers  were  first  exposed  to  aerosols  of 
+the  agent  and  then  administered  oral  doses  2  weeks  to  1  month  later.  Aerosol 
+total  doses  (particle  size  MMD  =  ca  2.  4ji)  ranged  from  11. 8  ^g  to  67.  7  jug; 
+oral  total  doses  were  70  and  72  jug.  It  was  found  that  the  agent  produced 
+similar  reactions  by  both  routes,  results  differing  only  in  rapidity  of  onset. 
+After  oral  doses,  onset  occurred  within  30  to  40  minutes;  after  inhalation 
+doses,  onset  occurred  within  15  to  25  minutes. 
+
+3.  (C)  Effect  on  Human  Tracking  Ability  and  Discriminability 
+
+of  Radar  Symbols. 
+
+Several  tests  were  conducted  to  evaluate"  the  effects  of  EA  1729 
+on  the  performance  of  military  tasks  that  require  quick,  accurate,  visual 
+discrimination. 
+
+In  one  test  of  1 1  volunteers,  5  served  as  controls  and  6  received 
+oral  doses  of  150  jug  of  EA  1729  2  hours  before  testing.  Differently  shaped 
+symbols  were  presented  to  the  subjects  on  a  Planned-Position-Indicator  Radar 
+Display,  which  is  integral  to  the  Antiaircraft  Fire  Control  System.  One  symbol 
+was  designated  the  target  symbol  during  each  display,  and  subjects  were 
+required  to  recognize  and  count  the  frequency  with  which  the  target  symbol 
+appeared,  among  varying  numbers  of  three  different  symbols.  A  total  of 
+24  symbols  appeared  on  each  display;  the  frequency  of  the  target  symbol  was 
+varied  from  2  to  4.  Statistical  comparison  of  scores  for  the  control  group 
+versus  the  drugged  group  indicated  that  the  mean  scanning  time  and  number  of 
+trials  during  which  an  error  occurred  increased  significantly  for  the 
+drugged  group  at  the  5%  and  0.  1%  level,  respectively  (table  5).  In  the  , 
+control  group,  the  mean  scanning  time  was  2.  74  seconds;  in  the  drugged  group, 
+it  was  4,  53  seconds.  In  the  control  group,  the  total  number  of  errors  was  15; 
+in  the  drugged  group,  it  was  57. 
+
+In  another  test,  16  volunteers  participated  in  a  study  to  evaluate 
+the  effects  of  3  dose  levels  of  EA  1729  on  tracking  proficiency.  The  tracking 
+device  used  responded  to  steering  much  like  a  tracked  vehicle,  and  the 
+
+
+CONFIDENTIAL 
+
+
+15 
+
+
+CONFIDENTIAL 
+
+
+accuracy  with  which  operators  tracked  a  moving  target  of  light  was  scored 
+automatically  by  photo  cells  and  counters.  For  example,  when  the  subject 
+deviated  1”  from  perfect  tracking,  3  or  4  photo  cells  were  stimulated.  Each 
+subject  had  five  15 -minute  trials  per  day  for  4  days.  On  the  second  and 
+fourth  days,  the  men  were  given  placebo.  On  the  third  day,  2  men  were 
+given  an  oral  dose  of  50  jig  of  EA  1729,  b  received  100  pg,  and  8  received 
+150  ^g.  Only  those  subjects  who  received  150  fig  showed  a  significant  decrement 
+in  their  tracking  ability.  The  minimum  decrement  in  performance  for  the 
+150-ptg-dose  group  was  twice  as  large  as  the  maximum  decrement  in  the  per¬ 
+formance  of  the  100-fxg-dose  group.  The  maximum  decrement  in  the  150-/ig-dose 
+group  was  nearly  six  times  greater  than  the  maximum  decrement  of  any  opera¬ 
+tor  in  the  lOO-ng-dose  group. 
+
+
+(Ci)  TABLE  5 
+
+INDIVIDUAL.  AND  GROUP  SCORES  FOR  SCANNING  TIME  AND  NUMBER 
+OF  ERRORS  COMMITTED  IN  CONTROL  AND  DRUGGED  GROUPS; ( U ) 
+
+
+Performance 
+
+criteria 
+
+Control-group 
+
+subjects 
+
+Drugged-group' 
+
+.  subjects* 
+
+B 
+
+B 
+
+C 
+
+D 
+
+E 
+
+F 
+
+G 
+
+H 
+
+I 
+
+! 
+
+j 
+
+Mean  scanning  time  (in  sec) 
+
+3.  06 
+
+2.  75 
+
+3.40 
+
+1. 94 
+
+2.  75 
+
+5.  27 
+
+6..  1.0 
+
+3..  74 
+
+4.58 
+
+4.68 
+
+Group  mean  scanning  time 
+
+2.  74 
+
+sec 
+
+1.  53  B 
+
+lec 
+
+Total  number  of  errors 
+committed 
+
+2 
+
+5 
+
+4 
+
+3 
+
+1 
+
+28 
+
+6 
+
+6 
+
+8 
+
+9 
+
+Number  of  trials  during 
+which  one  or  mors  errors 
+occurred 
+
+2 
+
+4 
+
+4 
+
+3 
+
+1 
+
+10 
+
+1 - 
+
+6 
+
+1 
+
+6 
+
+4 
+
+1 
+
+7 
+
+*  Dose  =  150  jig 
+
+
+CONFIDENTIAL 
+
+
+16 
+
+
+CONFIDENTIAL 
+
+
+4.  (C)  Effects  on  Humans  as  Determined  by  Self-Rating  Teats. 
+
+A  group  of  ten  volunteers  was  given  100  fxg  of  EA  1729  by  mouth. 
+These  subjects  rated  themselves  by  the  Clyde  Mood  Scale***  four  times:  once 
+before  taking  the  drug,  and  again  at  1,  2,  and  6  hours  after  taking  the  drug. 
+Table  6  lists  their  responses  to  the  six  general  factors  into  which  the 
+133  adjectives  were  categorized.  The  ''jittery"  factor  is  the  one  that  most 
+clearly  differentiates  the  subjects'  drug  and  nondrug  self-descriptions. 
+
+"Clear  thinking"  is  depressed  at  1  and  2  hours  aifter  drug,  but  by  6  hours 
+subjects  have  largely  recovered. 
+
+(C)  TABLE  6 
+
+MEDIAN  FACTOR  SCORES  ON  THE  CLYDE  MOOD  SCALE  (U) 
+
+
+Factor 
+
+Predrug 
+
+Postdrug 
+
+l-hr 
+
+2-hr 
+
+6-hr 
+
+Friendly 
+
+50.  5 
+
+47a/ 
+
+44.  5 
+
+44. 5b/ 
+
+Energetic 
+
+53 
+
+50 
+
+49 
+
+49_c/ 
+
+Clear-  thinking 
+
+55.5 
+
+49a/ 
+
+40b/ 
+
+51.5 
+
+Aggressive 
+
+45 
+
+42 
+
+43 
+
+40 
+
+Jittery 
+
+42 
+
+54c/ 
+
+68b/ 
+
+51a/ 
+
+Depressed 
+
+42 
+
+44 
+
+48£/ 
+
+43 
+
+a/  0.  02,  least  significant  difference 
+b/  0.  01,  least  significant  difference 
+c/  0.  05,  least  significant  difference 
+
+
+NOTE;  Ten  subjects  received  100  ug  of  KA.  1729  by  mouth.  Significance 
+of  the  difference  .between  each  postdrug  test  value  and  the  predrug 
+value  for  that  factor  was  tested  by  the  Wilcoxon  Signed  Ranks  Test, 
+
+>!t  (U)  The  Clyde  Mood  Scale  is  a  self-rating  test  consisting  of  133  cards,  each 
+bearing  an  adjective  that  is  descriptive  of  feeling.  The  subject  sorts 
+these  cards  into  four  groups,  according  to  the  degree  to  which  he  feels 
+a  given  adjective  describes  him  at  the  moment.  The  degrees  are: 
+
+"not  at  all,  "  "a  little,  "  "quite  a  bit,  "  and  "extremely.  " 
+
+CONFIDENTIAL 
+
+
+17 
+
+
+CONFIDENTIAL 
+
+
+5.  (C)  Effects  on  Personality  Factors. 
+
+•  • 
+
+Paranoid  reactions  to  EA  1729  have  frequently  been  noted  in 
+normal  subjects.  In  most  cases  this  reaction  can  be  related  to  definite 
+personality  factors  of  the  subject.  It  was  found  that  the  amount  of  drug 
+and  the  environmental  conditions  may  influence  the  degree  of  EA  1729 
+reaction,  but  the  predrug  personality  appeared  to  be  the  determining 
+variable  in  paranoid  reactions. 
+
+6.  (C)  Effect  on  Body  Image. 
+
+Figures  drawn  by  18  college  graduates, .  when  they  were  ex¬ 
+periencing  the  effects  elicited  by  ingestion  of  72  pg  of  EA  1729,  showed 
+less  attention  to  detail,  a  greater  number  and  higher  severity  of  distortions, 
+and  a  more  disturbed  line  quality  than  figures  drawn  by  the  same  subjects 
+when  normal.  The  figures  drawn  under  drug  also  tended  to  be  larger  than  the 
+control  figures. 
+
+7.  (C)  Effect  on  Intellectual  Functions. 
+
+Sixteen  subjects  were  tested  on  two  forms  of  the  Wechsler  Memory 
+Scale  and  Gorham  Proverbs  test  under  a  control  state  and  after  ingesting 
+72  ng  of  EA  1729.  Of  the  Wechsler  Memory  test's,  only  the  abilities  to  draw 
+geometric  figures  from  memory,  to  reproduce  brief  prose  passages,  to  count 
+backward,  to  say  the  alphabet,  and  to  perform  serial  addition  were  adversely 
+affected  by  the  drug.  There  was  a  significant  difference  between  performance 
+during  the  Gorham  Proverbs  test  under  control  and  drug  conditions, 
+
+8.  (C)  Effect  on  Sense  of  Time. 
+
+Twenty-four  subjects  tested  after  ingestion  of  1  or  2  pg/kg  of 
+EA  1729  for  any  alteration  in  their  sense  of  time  showed  that  external  events 
+are  perceived  as  passing  more  slowly.  This  was  a  fairly  consistent  finding 
+in  most  of  the  studies  of  this  drug.  In  an  Air  Force  study,  5  a  comparison  was 
+made  of  the  effects  of  isolation  and  the  effects  of  EA  1729.  It  was  found  that 
+the  drugged  volunteers  felt  a  loss  of  their  sense  of  time  more  frequently  than 
+did  the  undrugged, isolated  volunteers-.  They  also  found  that  a  few  of  the  drugged 
+subjects  had  the  sensation  that  time  was  passing  faster  than  usual.  This 
+acceleration  of  time  was  never  observed  in  the  studies  performed  in  these 
+laboratories;  in  fact,  the  opposite  has  been  true. 
+
+
+CONFIDENTIAL 
+
+
+18 
+
+
+CONFIDENTIAL 
+
+
+9.  (C)  Effect  on  Selected  Subjective  Reactions. 
+
+(C)  Drugged  subjects  were  tested  for  visual  effects  under  three  oral 
+
+doses  of  EA  1729: 
+
+
+No.  of  Subjects  Dose 
+
+Mg  , 
+
+10  100 
+
+4  150 
+
+5  200 
+
+
+Each  subject  was  tested  twice:  once  in  the  normal  state  and  once  at  the  pre¬ 
+sumed  peak  of  drug  action  (1-1/2  to  2  hours  after  administration). 
+
+This  testing  included: 
+
+
+cl.  (C)  Acuity:  Snellen  charts  were  projected  one  line 
+at  a  time, with  parallel  aeries,  to  negate  the  effects  of  learning, 
+
+b.  (C)  Manifest  Refraction:  Nearsightedness,  far¬ 
+sightedness,  and  astigmatism  were  checked  objectively  with  a  retinoscope 
+and  subjectively  with  a  fogging  technique. 
+
+c.  (C)  Muscle  Balance;  With  the  subject  focusing  at  20  feet, 
+the  Maddox  rod  was  used;  with  the  subject  focusing  on  a  near  object,  the 
+
+Von  Graph  method  was  used, 
+
+d.  (C)  Color  Discrimination:  A  series  of  44  pseudo- 
+isochromatic  plates  was  shown  to  subjects. 
+
+e.  (C)  Depth  Perception:  The  Verhoeff  test  was  use’d  to 
+assess  this  function.  The  subject  was  presented  with  three  vertical  bars,  one 
+of  which  was  either  nearer  to  him  or  farther  from  him  than  the  other  two.  He 
+was  asked  to  state  which  bar  was  out  of  line  for  each  of  a  series  of  such 
+presentations.  This  test  permits  the  elimination  of  size  as  a  systematic  cue 
+by  varying  size  .independent  of  distance., 
+
+(U)  With  scattered  exceptions,  these  subjects  did  not  revsa’  disturbances 
+
+of  vision.  One  of  the  100  fig  subjects  showed  a  slight  acuity  drop  in  one  eye, 
+as  did  two  of  the  150  fig  subjects.  But  at  the  200  fig  dosage,  none  of  the  subjects 
+showed  lessened  acuity  except  for  one  subject  who  showed  a  changed  refraction 
+under  the  drug  and  failed  one  portion  of  the  color  test. 
+
+
+CONFIDENTIAL 
+
+
+19 
+
+
+CONFIDENTIAL 
+
+
+(U)  A  probable  reason  for  this  negative  finding  of  visual  effects  is  that 
+
+no  time  limits  were  placed  on  these  tests.  Subjects  took  longer  to  read  a  given 
+line  of  the  Snellen  chart  under  drug,  commenting  that  "it  comes  and  goes" 
+or  "now  I  see  it;  now  I  don't.  "  It  may  be  that  strict  time  controls  in  the 
+visual  tests  should  be  introduced  along  with  other  tests  to  check  on  motivation, 
+concentration,  ability  to  communicate,  etc. 
+
+10.  (C)  Effect  on  Associative  Processes  and  on  Learning  and 
+
+Memory. 
+
+From  the  responses  of  25  normal  subjects  to  the  Rapaport  word 
+association  test  after  ingestion  of  2  pg  of  EA  1729,  it  can  be  concluded  that 
+the  learning  of  simple,  specific,  nonemotional,  verbal  material  presented  to 
+the  subjects  orally  is  not  affected  at  this  dose. 
+
+11.  (C)  Effect  on  Funkenstein  Test. 
+
+The  effect  of  EA  1729  on  cardiovascular  changes  resulting  from 
+injection  of  epinephrine  and  methacholine  bromide  (Mecholyl  bromide, 
+Funkenstein  test)  was  studied  in  14  volunteers.  No  subject  showed  a  liyper-  or 
+hyporeactivity  to  methacholine  (as  defined  by  Funkenstein).  The  usual  response 
+to  methacholine  is  an  initial  decrease  in  blood  pressure  associa,ted  with  an 
+increase  in  heart  rate.  This  is  followed  in  a  short  time  by  a  heart  rate  that  is 
+below  control  values.  Two  hours  after  ingestion  of  1 . 5  pg/kg  of  EA  1729,  the 
+subcutaneous  injection  of  10  mg  of  methacholine  produced  a  relatively  greater 
+drop  in  blood  pressure  and  a  slower  return  to  initial  blood  pressure  levels 
+than  in  the  control.  However,  an  analysis  of  covariance  indicated  that  these 
+results  were  probably  attributable  to  the  greater  initial  elevation  of  the  blood 
+pressure  caused  by  EA  1729. 
+
+Subjects  pretreated  with  EA  1729  had  significantly  smaller 
+elevations  of  blood  pressure  (compared  with  their  control  values)  after 
+intravenous  administration  of  0.  025  mg  of  epinephrine. 
+
+The  results  suggest  that  the  cardiovascular  mechanisms  that  react 
+to  a  hypotensive  stimulus  respond  normally  in  an  EA  17 29- drugged  individual. 
+The  smaller  rise  in  blood  pressure  following  administration  of  epinephrine, 
+s  ^phough  not  correlated  with  the  higher  initial  blood  pressures  caused  by 
+EA  1729,  may  still  reflect  the  higher  level  of  sympathetic  activity  seen 
+clinically.  It  appears  that  as  the  initial  level  of  sympathetic  activity  is 
+increased  the  magnitude  of  physiological  response,  such  as  that  seen  with 
+epinephrine,  is  decreased. 
+
+
+CONFIDENTIAL 
+
+
+20 
+
+
+CONFIDENTIAL 
+
+
+B.  (C)  Field  Demonstration  of  Effects  of  EA  1729  in  Humans.  . 
+
+(C)  On  17  December  1957,  a  demonstration  was  conducted  primarily 
+
+to  determine  the  problem  of  controlling  a  small  group  influenced  by  EA  1729 
+and  also  to  provide  a  filmed  record  of  the  effect  of  the  agent. 
+
+• 
+
+(C)  Nine  soldiers  were  ordered  by  a  typical  Army  drill  sergeant  to 
+
+"fall  in."  The  squad  responded  like  well-trained  soldiers;  the  drill  sergeant's 
+commands  were  obeyed  accurately  and  with  precision.  After  the  squad  was 
+given  2  fig/kg  of  EA  1729  orally  and  the  undrugged  drill  sergeant  again  ordered 
+the  men  to  fall  in,  the  response  was  entirely  different.  The  men  were  euphoric 
+and  disorganized;  commands  were  either  disregarded  or  obedience  was 
+haphazard  and  indifferent.  In  a  marching  exercise,  the  men  started  fairly  well 
+but  soon  began  to  break  ranks  and  straggle  out.  When  a  second  drill  sergeant 
+who  was  drugged  was  given  command  of  the  squad,  he  did  not  perform  effec¬ 
+tively.  In  fact,  when  an  officer  ordered  him  to  drill  the  squad,  he  responded 
+with,  "You  want  'em  drilled?  You  drill  'em!  " 
+
+(C)  On  18  December  1957,  in  another  demonstration,  eight  volunteers 
+
+were  each  given  2  ^ig/kg  of  EA  1729  orally.  This  group,  before  receiving  the 
+drug,  had  defeated  another  group  in  a  volleyball  game  by  a  score  of  21-5. 
+
+After  receiving  the  drug,  they  again  defeated  their  undrugged  opponents  21-17. 
+
+It  is  believed  that  one  individual,  an  Army  private  who  demonstrated  exceptional 
+leadership,  was  instrumental  in  holding  the  group  together.  When  he  was 
+removed  from  the  game,  there  was  a  tendency  for  his  team  to  slacken  play. 
+
+(U)  These  two  demonstrations  indicated  that  individual  reactions  to  this 
+
+agent  are  varied:  a  drugged  group  can  continue  simple  functions,  but  there  is 
+reduction  in  their  effectiveness  and  teamwork  is  less  efficient.  ’ 
+
+1.  (C)  Demonstration  of  Effects  of  EA  17  29  to  U.  S.  Army 
+
+Chemical  Corps  School  Personnel. 
+
+(C)  The  Chief  Chemical  Officer;  desires  all  officers  assigned  to  the 
+
+Chemical  Corps  to  be  thoroughly  familiar  with  the  current  standard  agents 
+that  the  Corps  has  developed  and  those  experimental  or  research  compounds 
+that  show  the  most  promise  of  ultimate  development  into  effective  agent  or 
+weapons  systems.  For  this  reason,  several  demonstrations  of  the  effects 
+of  EA  1729  were  conducted  at  the  U.  3.  Army  Chemical  Corps  School, 
+
+Fort  McClellan,  Alabama,  in  which  students  and  members  of  the  staff  and 
+faculty  participated.  It  was  felt  that  actually  experiencing  the  effects  of 
+EA  1729  would  enable  members  of  the  Advanced  Class  to  discuss  more 
+intelligently  the  potential  of  the  compound,  recognize  its  symptoms,  and  that 
+additional  clinical  data  could  be  gathered  upon  which  to  base  a  determination 
+of  the  value  of  EA  1729 
+
+CONFIDENTIAL 
+
+
+21 
+
+
+CONFIDENTIAL 
+
+
+(C)  In  these  demonstrations,  doses  from  100  to  150  /4g/man  were 
+
+administered  orally  to  the  participants,  and  then  the  individuals  engaged  in 
+such  activities  as  map  exercises,  target  analysis,  arithmetic  problems, 
+bridge  and  blackjack  games.  Some  staff  and  faculty  personnel  attempted  to 
+give  platform  presentations  and  to  conduct  seminar-type  discussions.  It 
+was  found  that  under  stress,  in  a  platform  presentation  of  familiar  material, 
+personnel  were  unable  to  complete  a  lecture  successfully.  In  a  similar  group 
+situation,  previously  rehearsed  5 -to- 10-minute  presentations  on  completely 
+familiar  subjects,  i.  e.  ,  the  diagnosis  and  treatment  of  tuberculosis  by  a 
+medical  officer,  or  a  concise  description  of  select  problems  of  radioactive 
+fal.lout  by  a  trained  radiological  safety  officer,  were  never  completed  by  the 
+subjects  under  drug.  The  results  of  the  map-reading  test  taken  by  68  subjects 
+are  contained  in  table  7. 
+
+(U)  TABLE  7 
+
+RESULTS  OF  MAP-READING  TEST  (U) 
+
+
+Day 
+
+Mean  score 
+
+Mean 
+
+difference 
+
+Difference  required  for 
+
+0.  05  confidence  level 
+
+Control 
+
+Experimental 
+
+1 
+
+79.  7 
+
+63..  8 
+
+15.  9’'‘ 
+
+,  11.8 
+
+2 
+
+79.  8 
+
+59-.  8 
+
+20.  0* 
+
+13.  7 
+
+3 
+
+76.5 
+
+56.  7 
+
+19,8^* 
+
+12.  9 
+
+Significant  0.  01  level 
+
+
+>!”l‘  Significant  0,  05  level 
+
+2.  (C)  Demonstration  of  Effects  of  EA  1729  to  XVIII  Airborne 
+
+Corps,  Fort  Bragg,  North  Carolina. 
+
+(C)  After  enough  experiments  in  individual  and  small  groups  of 
+
+volunteers  had  been  carried  out  to  ascertain  that  large-group  studies  were 
+feasible,  arrangements  were  made  by  CG,  USCONARC, to  conduct  a  test 
+at  Fort  Biagg,  North  Carolina,  in  September  1958.  Chemical  Corps  personnel 
+supplied  the  necessary  medical  support  for  all  test  operations,  but  operational 
+evaluation  of  the  tests  was  made  by  members  of  the  XVIII  Airborne  Corps. 
+
+All  scoring  was  based  on  standard  artillery  proficiency  tests.  Such  an 
+evaluation  allows  some  judgment  to  be  made  of  the  military  effectiveness  of  the 
+agent.  All  evaluations  of  test  results  that  appear  in  this  report  were  furnished 
+by  the  evaluation  team  of  the  XVIII  Airborne  Corps. 
+
+CONFIDENTIAL. 
+
+
+22 
+
+
+CONFIDENTIAL 
+
+
+(U)  Of  the  70  meTxfrom  the  XVIII  Airborne  Corps  Artillery  who  volun¬ 
+
+teered  to  compose  the  teams,  11  were  rejected  for  either  psychiatric  or 
+medical  reasons.  The  crews  selected  represented  above-average,  skilled 
+Army  units,  with  exceptional  morale.  The  tests  were  conducted  in  the  field 
+under  anticipated  operating  conditions,  with  only  minor  deviations  from  normal 
+procedure  to  insure  the  safety  of  individuals  and  to  allow  for  photographic 
+coverage. 
+
+(C)  The  total  dose  of  150  pg/man  of  EA  1729  was  selected  on  the  basis 
+
+of  previous  clinical  experience  as  a  dose  which  would  (1)  produce  measurable 
+effects  that  would  endure  for  the  period  of  the  test;  (2)  permit  the  degree  of 
+physical  activity  necessary;  and  (3)  not  be  so  severe  as  to  result  in  a  termination 
+of  the  test  before  missions  were  accomplished.  Although  several  of  the 
+volunteers  received  the  compound  more  than  once  during  the  5 -week  testing 
+period,  there  was  no  evidence  that  the  performance  of  these  men  was  improved 
+by  previous  drug  experience. 
+
+(C)  A  double- blind  procedure  was  used  on  all  tests;  EA  1729  in  water 
+
+and  plain  water  as  placebo  were  administered  to  the  volunteers. 
+
+(U)  The  criteria  used  for  selecting  the  types  of  teams  to  be  used  in  the 
+
+test  were; 
+
+(U)  a.  Team  missions  should  require  the  collective  efforts  of 
+
+the  individual  team  members  to  produce  results. 
+
+(U)  b.  The  success  or  failure  of  the  accomplishment  of  the 
+
+team  mission  should  have  a  maximum  effect  on  related  operations. 
+
+(U)  c.  Maximum  opportunity  to  supervise  the  safety  of  in¬ 
+
+dividuals  composing  the  team  should  be  possible. 
+
+(U)  Two  of  each  of  the  following  groups  participated  in  the  tests  outlined 
+
+below: 
+
+
+(1)  (C)  Meteorological  Section, 
+
+The  mission  of  this  section  is  to  furnish  necessary  weather  data*’* 
+that  will  affect  artillery  projectiles  or  rockets  in  flight  and  will  furnish 
+winds- aloft  data  for  prediction  of  fallout  after  an  atomic  burst. 
+
+*  (C)  Data  obtained  by  this  section  are  disseminated  to  artillery  units  through 
+out  the  Corps  sections  and  can  affect  the  firing  accuracy  of  several 
+artillery  units. 
+
+
+CONFIDENTIAL 
+
+
+23 
+
+
+CONFIDENTIAL 
+
+
+(C)  At  0820  on  3  September  1958,  £A  1729  in  water  was  administered 
+
+to  one  of  the  meteorological  sections;  the  other  section  received  placebo. 
+
+Both  sections  were  assigned  the  mission  of  making  weather  balloon. releases 
+at  0830,  0930,  and  1030  hours  and  reporting  weather  data  gained  from  the 
+releases.  The  section  which  received  placebo  disseminated  completed 
+messages  at  0900,  1000,  and  1100  hours.  The  drugged  section  disseminated 
+a  completed  message  at  0900  hours,  but*  was  unable  to  produce  any  part 
+of  a  message  after  the  next  two  balloon.releases. 
+
+(U)  Identical  results  were  achieved  when  the  same  procedure  was 
+
+followed  on  9  September  1959,  the  only  change  in  the  procedure  being  that 
+the  drugged  and  control  sections  were  reversed. 
+
+(C)  The  evaluation  team  of  the  XVIII  Airborne  Corps 
+
+concluded  from  this  phase  of  the  test  that  a 
+meteorological  section  subjected  to  attack  with 
+SA  1729  would  not  be  able  to  fulfill  its  mission. 
+
+(2)  (C)  Survey  Section. 
+
+(C)  The  mission  of  this  section  is  to  furnish  survey  control  data 
+
+needed  by  artillery  units  to  locate  firing  positions  and  targets. 
+
+(U)  On  4  September  1958,  both  survey  sections  were  given  data  for  a 
+
+survey  control  point  and  the  mission  of  extending  this  control  to  another  area. 
+Unoer  normal  conditions  successful  accomplishment  of  this  mission  should 
+be  achieved  within  2-1/2  hours. 
+
+(C)  Immediately  after  EA  1729  and  placebo  were  administered,  the 
+
+teams  began  survey  operations.  The  drugged  team  required  5  hours 
+50  minutes  to  complete  the  task.  The  accuracy  of  the  survey  was  within 
+allowable  tolerances  only  because  the  recorder  was  undrugged  and  was 
+able  to  assure  that  all  angles  and  taped  distances  were  rechecked  until  he 
+was  certain  of  their  accuracy,  ('When  the  test  was  repeated  on  10  September 
+and  all  members  of  the  same  section  were  drugged,  the  team  required 
+3  hours  40  minutes  to  complete  the  survey,  and  accuracy  was  not  within 
+tolerable  limits..}  The  undrugged  (control)  section  completed  its  mission  in 
+2  hours  5  minutes,  and  the  xeaults  were  accurate. 
+
+
+CONFIDENTIAL 
+
+
+24 
+
+
+CONFIDENTIAL 
+
+
+(C)  The  evaluation  team^of  the  XVIII  Airborne  Corps 
+
+concluded  that  although  a  survey  team  subjected 
+to  attack  with  EA  1729  might  be  able  to  produce 
+acceptably  accurate  results,  the  ti:  le  required  for 
+completion  of  even  the  simplest  type  of  survey  would 
+be  so  great  as  to  make  the  survey  section's  accomplish¬ 
+ment  of  its  mission  unsatisfactory. 
+
+(3)  (C)  Fire  Direction  Team. 
+
+(C)  The  mission  of  this  section  is  to  control  battery  or  battalion  firing 
+
+by  converting  information  furnished  by  an  observer  into  commands  for  guns 
+to  fire;  to  convert  without  adjustment  data  furnished  by  survey  and  meteorologi 
+cal  sections  into  commands  to  deliver  fire  on  targets  when  no  observer  is 
+available. 
+
+{Cj  On  16  September  1958,  the  two  fire  direction  teams  were  given  a 
+
+series  of  identical  fire  missions  that  were  typical  of  their  normal  operations. 
+An  hour  after  receiving  EA  1729,  the  drugged  team  was  much  slower  in 
+processing  fire  commands  than  the  control  section.  Although  the  members  of 
+the  drugged  team  were  able  to  perform  the  necessary  computations  for 
+delivering  area-type  fire  on  target  with  acceptable  results,  they  could  not  fire 
+precision  missions  with  any  degree  of  accuracy,  mainly  because  of  their 
+inability  to  concentrate. 
+
+(U)  _  Identical  results  were  obtained  when  the  test  was  repeated  on 
+
+23  September  1958,  the  only  change  in  procedure  being  that  the  drugged  and 
+control  teams  were  reversed, 
+
+(C)  The  evaluation  team  of  the  XVIII  Aif  borne  Corps 
+
+concluded  that  an  artillery  fire  direction  team 
+would  be  unable  to  perform  its  mission  satisfacto¬ 
+rily  while  experiencing  the  effects  of  EA  1729. 
+
+(4)  (C)  40-mm  Antiaircraft  Automatic  Weapons  Gun  Section. 
+
+The  mission  of  this  section  is  to  provide  air  defense  for  forward 
+combat  arms  and  to  attack  and  destroy  hostile  targets  on  land  or  water,  as 
+required, 
+
+*  (U)  It  should  be  borne  in  mind  that  the  recorder  was  not  drugged  in  the 
+
+test  on  which  this  conclusion  is  based.  That  this  would  be  the 
+case  in  an  actual  situation  is  not  probable. 
+
+
+CONFIDENTIAL 
+
+
+25 
+
+
+CONFIDENTIAL 
+
+
+(C)  On  5  September  1958,  the  40-mxn  antiaircraft  automatic  weapons 
+
+gun  sections  were  emplaced  on  a  ridge  which  afforded  a  field  of  fire  in  all 
+directions.  Cameras  were  mounted  parallel. to  the  gun  tubes,  and  an  L-19 
+aircraft  was  used  as  the  target.  The  tracking  by  the  undrugged  group  was 
+smooth  and  continuous,  and  the  gun  camera  film  indicates  this  group  was 
+able  to  accomplish  its  mission  of  defense  against  hostile  aircraft.  The 
+tracking  by  the  drugged  group  was  jerky  and  not  coordinated;  the  gun  camera 
+film  proved  that  the  only  hits  obtained  by  this  group  were  accidental. 
+
+(U)  When  the  test  was  repeated  on  11  September,  with  the  drugged  and 
+
+control  groups  alternated,  similar  results  were  obtained. 
+
+(C)  The  evaluation  team  of  the  XVIII  Airborne  Corps 
+
+concluded  that  a  40-mm  antiaircraft  automatic 
+weapons  gun  section  subjected  to  attack  with 
+EA  1729  would  be  unable  to  track  an  aircraft 
+that  was  using  evasive  tactics  and,  therefore, 
+would  not  be  able  to  accomplish  its  mission  of 
+furnishing  antiaircraft  protection. 
+
+Over- all  Results 
+
+(C)  The  over-all  results  of  the  tests  conducted  at  Fort  Bragg  (XVIII 
+
+Airborne  Corps)  indicate  that  an  artillery  unit  attacked  with  EA  1729  would 
+be  unable  to  deliver  artillery  fire  effectively  in  support  of  ground  operations. 
+
+3.  (C)  Demonstration  at  U,  S,  Army  Special  Warfare  School, 
+
+Fort  Bragg.  North  Carolina. 
+
+On  29  September  1958,  eight  members  of  a  Special  Forces  Group 
+stationed  at  Fort  Bragg  were  assigned  guard  posts  and  given  specific  instruc¬ 
+tions  for  restricted  access  to  the  area.  Then  they  were  given  a  dose  of 
+150  /.tg/man  of  EA  1729  orally.  Six  posts,  manned  by  drugged  subjects,  were 
+penetrated  successfully  at  lease  once  and  in  some  cases  several  times  by 
+personnel  without  proper  identification.  Two  subjects  did  not  permit 
+unauthorized  personnel  to  enter  their  posts.  With  one  exception,  none  of 
+the  guards  knowingly  let  an  unauthorized  visitor  pass  through  his  post. 
+However,  the  men  were  easily  confused  and  deceived  as  to  what  constituted 
+the  correct  identification.  The  one  exception  was  a  subject  who  experienced 
+an  extreme  reaction  to  the  drug  and  would  not  remain  on  his  post.  Although 
+the  agent  affected  the  men's  sense  of  responsibility  and  duty,  they  also  lost 
+physical  control,  were  unable  to  read  the  printing  and  signatures,  and  were 
+easily  confused. 
+
+
+CONFIDENTIAL 
+
+
+26 
+
+
+CONFIDENTIAL 
+
+
+It  was  concluded  by  personnel  of  the  school  that  the  use  of  1729 
+in  higher  doses  against  enemy  personnel  would  enable  an  exploiting  force  of 
+small  size  to  overcome  the  enemy  force  very  rapidly  and  without  violence. 
+
+On  30  September,  six  subjects  were  given  an  assumed  tactical 
+situation  and  told  not  to  divulge  this  information  during  the  course  of  a  sub¬ 
+sequent  interrogation.  After  receiving  a  dose  of  150  jKg/man  of  EA  1729 
+orally,  three  of  the  men  were  successfully  interrogated.  When  the  test  was 
+repeated  on  1  October,  the  six  subjects  ^d  not  show  the  usual  reaction  to  the 
+drug,  and  interrogation  was  generally  unsuccessful.  However,  the  men  were 
+confused  to  the  extent  that  one  unknowingly  signed  a  confession  of  germ 
+warfare . 
+
+
+A  slightly  higher  dosage  of  EA  1729  would  be  effective  in  enabling 
+an  interrogator  of  limited  experience  to  compel  a  subject  to  compromise 
+himself  and  sign  documents  which  would  place  his  existence  in  jeopardy  with 
+the  enemy. 
+
+
+4,  (C)  Demonstration  at  Infantry  School,  Fort  Penning, 
+
+Georgia. 
+
+(C)  Forty-one  officer -students  of  the  Infantry  School  at  Fort  Benning 
+
+participated  in  a  test  designed  to  familiarize  combat  arms  groups  with  the 
+effects  of  psychochemical  agents.  On  the  morning  of  8  January  I960,  oral 
+dosages  of  100  ng,  150  ng,  and  200  fig  of  EA  1729  (the  dosage  increasing  with 
+the  weight  of  the  subject)  were  given  in  distilled  water  to  test  subjects. 
+Thirty-four  men  actually  received  the  drug;  the  remaining  seven  were 
+unaware  that  they  had  received  only  water.  When  in  the  afternoon  the  test 
+subjects  were  asked  to  indicate  by  a  show  of  hands  those  who  felt  they  had 
+received  little  or  none  of  the  test  material,  only  the  seven  control  subjects 
+responded. 
+
+(U)  Comments  written  by  the  volunteers  while  in  the  drugged 
+
+condition  and  after  recovery  revealed  a  variety  of  subjective  responses. 
+Visual  perception  hallucinations  were  manifested  by  blurring  of  images, 
+and  objects  and  people  changing  to  a  green  or  yellow  color.  For  most,  time 
+seemed  to  come  to  a  almost  complete  standstill.  There  was  euphoria, 
+inability  to  concentrate,  confusion,  and  an  almost  complete  lack  of  concern 
+about  anything. 
+
+(U)  A  basic  arithmetic  test,  designed  for  students  at  the  eighth- 
+
+grade  level,  was  administered  to  the  group  when  under  the  influence  of  the 
+drug  and  after  recovery.  When  drugged,  the  group  averaged  a  score  of 
+
+
+CONFIDENTIAL 
+
+
+27 
+
+
+CONFIDENTIAL 
+
+
+13  out  of  a  possible  100.  After  recovery,  the  class  averaged  a  score  of  89  out 
+of  a  possible  100. 
+
+(U)  In  an  English  test,  composed  of  many  uses  of  everyday  English  and 
+
+problems  in  correct -word  selection,  the  class  averaged  a  score  of  55  out  of  a 
+possible  136  when  under  the  influence  of  the  drug.  After  recovery,  the  class 
+average  was  112  out  of  a  possible  136. 
+
+(U)  Some  of  the  comments  on  the  value  of  the  agent  and  the  demon¬ 
+
+stration  were: 
+
+"No  amount  of  research  on  the  effect  of  a  psychochemical  could 
+have  prepared  me  for  the  actual  effect.  " 
+
+"The  impressive  thing  about  the  drug  is  that  so  many  of  the 
+normal  students  didn't  detect  anything  particularly  wrong.  This  would  have  a 
+tremendous  effect  on  an  executive  officer  who  knew  his  commanding  officer 
+wasn't  behaving  in  a  normal  manner  but  who  hesitated  to  relieve  him  and 
+assume  command,  " 
+
+"I  had  lost  all  sense  of  urgency  as  to  the  situation  and  duties  that 
+I  was  performing.  During  this  period  I  never  felt  that  I  was  incapacitated  or 
+that  I  was  unable  to  perform  what  I  desired  to  do.  If  the  decision  to  request 
+someone  to  take  over  my  responsibilities  and  duties  was  to  be  mine,  then  it 
+would  never  be  accomplished." 
+
+"I  do  not  think  that  any  time  during  the  day  I  was  physically  or 
+mentally  able  to  perform  in  my  present  MOS.  " 
+
+"I  can  never  forget  the  effects  the  agent  had  on  myself  or  other 
+persoimel.  The  thought  of  what  could  be  done  to  an  entire  command  or 
+population  is  beyond  comprehension.  " 
+
+5.  (C)  Demonstration  of  Effects  of  EA  1729  on  Polygraph 
+
+Examination. 
+
+(C)  Fourteen  subjects  took  part  in  a  test  (August  1958)  to  determine 
+
+whether  an  individiial  experiencing  the  effects  of  EA  1729  is  capable  of 
+persisting  in  deliberate  falsehoods. 
+
+(U)  During  the  control  session,  each  subject  was  told  to  give  a  false 
+
+answer  deliberately  to  one  question  of  a  series  asked  him  while  he  was 
+iwdergoing  a  polygraph  examination.  The  purpose  of  this  control  session 
+
+CONFIDENTIAL 
+
+
+28 
+
+
+CONFIDENTIAL 
+
+
+was  to  determine  if  each  subject's  response  to  a  lie  could  be  picked  out  of  the 
+polygram. 
+
+(C)  In  the  drug  sessions,  each  subject  was  also  instructed  to  falsify 
+
+one  answer  deliberately,  and  the  machine  record  of  the  individual's  reaction 
+was  read  to  see  if  the  operator  could  detect  the  falsehood  and  select  this  area 
+as  one  potentially  valuable  for  further  questioning.  Subjects  received  a  total 
+oral  dose  of  100  /xg  to  150  jitg  of  EA  1729. 
+
+(U)  .  It  was  observed  that: 
+
+(C)  While  under  the  influence  of  £A  1729,  subjects  are  capable  of 
+
+falsification  and  persistence  in  a  previously  contrived  falsehood. 
+
+(U)  Falsification  while  under  the  drug  appears  to  be  limited  to  a  "yes" 
+
+or  "no"  type  of  response;  the  mental  state  of  subjects  appears  to  render  them 
+incapable  of  a  complex  false  response. 
+
+(C)  Polygraph  examination  of  subjects  experiencing  EA  1729  effects 
+
+indicates  a  more  effective  reaction  to  unexpected  key  questions  than  when  the 
+same  or  similar  questions  are  put  to  the  same  subjects  under  normal 
+conditions. 
+
+(C)  The  stress  of  the  polygraph  examination  appears  to  be  increased 
+
+for  subjects  under  the  influence  of  the  drug. 
+
+(C)  In  the  spring  of  I960,  polygraph  testing  was  again  undertaken  to 
+
+determine  whether  it  is  more  advantageous  to  polygraph  a  subject  while  under 
+the  influence  of  EA  1729  than  in  his  normal  state.  . 
+
+(U)  It  was  observed  that: 
+
+(C)  In  spite  of  some  strong  evidence  pointing  in  that  direction,  it  is 
+
+impossible  to  state  definitely  that  it  is  more  advantageous  to  polygraph  a 
+subject  while  under  the  influence  of  EA  1729  than  in  his  normal  state.  The 
+principal  limitation  to  a  distinct  advantage  appears  to  be  the  inability  of  the 
+polygraph  operator  to  interpret  the  machine's  charted  graphs  rather  than 
+the  state  of  the  subjf  -“^t  under  examination.  The  subject's  condition  under 
+the  drug's  influence  appears  to  be  such  that  he  is  less  capable  of  persisting 
+in  a  precontrived  falsehood  because  of  mental  confusion  between  the  truth 
+and  a  deliberately  distorted  response. 
+
+
+CONFIDENTIAL 
+
+
+29 
+
+
+CONFIDENTIAL 
+
+
+6.  (C)  Demotiatration  of  Effects  of  EA  1 729  in  a  Contrived 
+
+Social  Situation. 
+
+(C)  In  two  tests  (August  1958  and  September  1959)«  subjects  were  a 
+
+part  of  a  contrived  social  situation  (cocktail  party).  In  the  test  conducted  in 
+August  1958,  6  of  the  13  "naive"  (inexperienced  with  the  drug)  subjects  were 
+surreptitiously  administered  100  jug  to  150  jug  of  1729  in  their  first  drink 
+under  double-blind  conditions.  In  the  test  in  September  1959,  12  (10  naive, 
+
+2  esiperienced)  of  20  subjects  received  the  drug.  Otherwise,  the  conditions 
+of  the  two  tests  were  similar.  The  monitors  assigned  to  each  subject 
+observed  their  behavior  throughout  the  evening. 
+
+(U)  It  was  specifically  concluded  that: 
+
+(C)  It  is  possible  to  administer  EA  1729  surreptitiously  in  alcohol. 
+
+Most  naive  subjects  are  unaware  that  they  are  under  the  influence  of  a  drug; 
+however,  there  is  a  possibility  that  certain  subjects,  by  comparing  their 
+drug  reaction  with  theijr  known  reaction  to  alcohol,  may  relate  their  strange 
+feeling  to  drugs. 
+
+(U)  Subjects  are  reluctant  to  withdraw  from  the  psychological  support 
+
+afforded  by  their  remaining  in  a  group  situation. 
+
+(U)  An  uninformed  observer  cannot  tell  that  a  drugged  individual's 
+
+beliavior  is  not  attributable  to  alcohol.  An  observer  who  is  familiar  with  the 
+external  physical  symptoms  of  the  drug's  reaction  is  not  able  to  state  with 
+certainty  in  all  cases  that  an  individual  is  drugged. 
+
+7,  (C)  Demonstration  of  Effects  of  EA  1729  When  Subjects 
+
+are  in  Isolation. 
+
+(C)  Eleven  subjects  participated  in  a  test  (2  to  21  November  1958) 
+
+of  the  combined  effects  of  a  150  (ig  dose  of  EA  1729  and  deprivation  of 
+external  sensory  stimuli  (by  confinement  in  an  isolation  chamber)  to 
+determine  whether  the  combined  effects  of  isolation  and  drug  are  different 
+from  those  elicited  by  drug  alone. 
+
+(C)  Seven  volunteers  had  prior  experience  with  EA  1729  (sophisticated); 
+
+three  had  no  experience  with  the  drug  (naive):  and  one  subject,  although  he  had 
+never  taken  EA  1729,  had  observed  individuals  who  were  under  the  influence  of 
+the  drug. 
+
+
+CONFIDENTIAL 
+
+
+30 
+
+
+CONFIDENTIAL 
+
+
+(U)  The  three  naive  and  three  of  the  sophisticated  subjects  fled  the 
+
+•  unlocked  isolation  chamber  before  the  arbitrary  time  limit  of  4  hours  (which 
+the  subjects  did  not  know  had  been  set). 
+
+(U)  All  of'the  sophisticated  subjects  reported  that  the  combination  of 
+
+the  drug  and  isolation  generally  intensified  the  over -all  effects  elicited  by  the 
+drug  alone.  It  would  appear  that  naive  subjects  were  more  strongly  affected. 
+
+8.  (C)  Demonstration  of  Effects  of  EA  17Z9  on  Retentiveness 
+
+and  Recall. 
+
+(C)  A  program  for  testing  retentiveness  and  recall  under  the  effects 
+
+of  EA  1729  was  conducted  (3  November  T959  to  17  December  1959). 
+
+(U)  Twelve  subjects  were  verbally  given  a  set  of  detailed  instructions; 
+
+they  were  permitted  to  take  notes,  ask  questions,  and  repeat  instructions  over 
+a  period  of  1  hour.  Three  hours  later,  after  oral  drug  administration,  the 
+subjects  were  recalled  and  asked  to  repeat  the  given  instructions  to  the 
+monitor.  The  degree  of  completeness  and  accuracy  of  the  subjects'  recall  of 
+instructions  was  scored  by  the  monitors  according  to  preset  weighted  values. 
+
+(C)  It  was  apparent  that  individual  ability  to  absorb,  retain  for  a 
+
+period  not  exceeding  2  hours,  and  verbally  communicate  a  body  of  new  data  of 
+simple,  logical,  but  detailed  content  was  impaired  by  EA  1729. 
+
+(U)  Similar  ability  in  respect  to  a  body  of  previously  learned  data  of 
+
+the  same  type  is  variably  affected.  Variability  appears  to  be  dependent  upon 
+the  degree  of  sophistication  of  the  individual  with  regard  to  previous 
+experience  with  the  drug.  Impairment  does  not  appear  to  be  related  to 
+individual  intelligence,  training,  or  undrugged  experience  in  similar  situations. 
+
+III.  (C)  .  ANIMAL  STUDIES. 
+
+A  (C)  Neurophysiological  Studies. 
+
+(U)  It  is  not  possible  to  restrict  investigations  into  the  problems  of 
+
+pharmacological  psychoses  to  man  because  most  neurophysiological  techniques 
+are  not  applicable  to  man.  The  alternative  has  been  selected  of  studying  the 
+electrical  activity  of  the  brain  of  animals  and  correlating  new  .  ophysiology  with 
+behavior  in  so  far  as  possible. 
+
+
+CONFIDENTIAL 
+
+
+31 
+
+
+CONFIDENTIAL 
+
+
+1.  (C)  The  Pharmacological  Properties  of  an  Evoked 
+
+Potential  in  the  Midbrain  Reticular  Formation. 
+
+(C)  A  study  of  the  effect  of  EA  1729  on  several  electrophysiological 
+
+properties  of  the  cat  brain  revealed  that  even  in  massive  doses  EA  1729 
+failed  to  alter  the  evoked  potentials  in  the  electrocorticogram;  the  evoked 
+potentials  in  primary  visual,  auditory,  and  somatic  cortex;  the  direct  response 
+of  the  cortex;  the  transcallosal-evoked  potential;  and  the  somatic -evoked 
+responses  in  the  thalamus  :ajid  midbrain  reticular  formation.  EA  1729  does 
+appear  to  exert  a  definite  effect  on  electrical  activity  of  the  lateral  geniculate 
+nucleus,  but  the  dose  required  to  inhibit  the  postsynaptic  potential  in  the  lateral 
+geniculate  is  probably  100  times  the  quantity  needed  to  produce  visual 
+hallucinations  in  man. 
+
+(C)  There  is  evidence  that  the  process  involved  in  visual  hallucinations 
+
+is  in  some  manner  associated  with  the  lateral  geniculate  nucleus,  and  this 
+might  be  evidence  that  the  physiological  effects  of  EA  1729  on  the  lateral 
+geniculate  are  of  clinical  significance.  This  would,  however,  require  human 
+investigations,  because  hallucinations  are  a  subjective-  phenomenon  and  no 
+means  of  detecting  hallucinations  in  animals  is  yet  known.  Also,  paranoia 
+and  depersonalization  are  not  applicable  to  the  behavior  of  animals.  No  clinical 
+study  to  date  reports  that  EA  1729  has  produced  a  definite  neurological  deficit, 
+and  in  only  a  few  reports  has  this  drug  been  related  to  the  organic  toxic  psychoses. 
+This  is  of  Importance  in  interpreting  the  lateral  geniculate  effects  of  the  drug  ■ 
+since  the  most  logical  clinical  manifestation  of  the  effect  would  be  decreased 
+visual  acuity,  which  has  not  been  observed  in  man.  One  hundred'  times  the 
+hallucinating  dose  in  man  is  required  to  alter  the  electrical  properties  of  the 
+lateral  geniculate  in  cats  and  monkeys,  and  larger  doses  in  monkeys  appear 
+to  produce  blindness.  Therefore,  decreased  vision  must  be  considered  a 
+toxic  effect  of  the  drug  that  is  unrelated  to  its  hallucinatory  properties. 
+
+2.  (C)  The  Effect  of  EA  1729  on  Spinal  Reflexes  in  Cats.  ^ 
+
+(U)  Zoxazolamine’i*,  reported  to  be  a  centrally  acting  skeletal-muscle 
+
+relaxant,  was  studied  in  cats  to  establish  the  validity  of  the  techniques  of 
+studying  inhibition  of  spinal  reflexes.  Electrophysiological  techniques  were 
+used  to  analyze  the  mode  of  action  of  zoxazolamine.  Interference  from  possible 
+block  at  the  neuromuscular  junction  or  from  interaction  of  afferent  proprio¬ 
+ceptive  responses,  inherent  in  techniques  of  muscular  recording,  was  thus 
+
+•  J  -  J 
+
+
+(U)  A  10%  solution  of  the  drug  dissolved  in  polyethylene  glycol  was 
+
+administered  intravenously.  ’  No  significant  blood  pressure  changes  were 
+observed  at  doses  up  to  50  mg/kg.  Discharges  in  ^response  to  afferent-nerve 
+
+*  {U)  Flexin,  2-amino-5-chlorobenzoxazole 
+
+CONFIDENTIAL 
+
+
+32 
+
+
+CONFIDENTIAL 
+
+
+stimulation  were  recorded  from  ventral  roots  in  13  spinal  cats.  The 
+monosynaptic  and  first  polysynaptic  spikes  were  unchanged  by  doses  of 
+less  than  20  mg/kg.  Above  30  mg/kg,  the  amplitudes  of  these  complexes 
+were  reversibly  decreased.  The  later  polysynaptic  spikes  were  reversibly 
+inhibited  at  doses  between  15  and  30  mg/kg.  The  dorsal  roots  of  nine  other 
+spinal  cats  were  stimulated  with  intense  shocks  to  activate  repetitive 
+discharges,  which  were  recorded  from  thin  ventral  root  filaments.  The 
+frequency  of  discharge  evoked  by  the  stimulus  and  the  background  activity 
+were  found  to  be  depressed  by  intravenous  doses  greater  than  10  mg/kg  or  by 
+3  mg/kg  injected  into  the  upper  abdominal  aorta.  The  duration  and  degree  of 
+depression  paralleled  the  dosage. 
+
+(C)  After  establishing  the  methodology  and  determining  the  effect  of 
+
+zoxazolamine  on  spinal  reflexes,  the  effects  of  EA  1729  on  spinal  reflexes  of 
+cats  were  evaluated  by  measurement  of  changes  in  magnitude  of  the  reflex 
+volley  in  ventral  roots  rather  than  by  recording  muscular  contraction.  A 
+gastrocnemius,  tibial,  or  peroneal  nerve  was  stimulated  with  single  square 
+wave  stimuli  (0.  08  to  3  volts  intensity  and  0.  1  to  0.  4  msec  duration). 
+
+Twenty  preparations  of  dosages  ranging  from  4  to  1,  000  pg/kg  of  EA  1729, 
+dissolved  in  sterile  physiological  saline,  were  administered  in  36  injections 
+through  a  cephalic  vein.  The  characteristic  modification  of  reflex  activity 
+after  administration  of  EA  1729  was  the  increased  height  of  monosynaptic 
+response  observed  in  11  out  of  16  injections  of  more  than  200  jug/kg.  Below 
+this  dose,  only  1  out  of  20  injections  resulted  in  facilitation.  The  increased 
+amplitude  of  the  monosynaptic  spike  became  apparent  within  15  seconds 
+after  the  injection  and  lasted  from  4  minutes  to  3  hours.  Maximum 
+facilitation  was  observed  with  250  to  300  ng/kg  doses.  Higher  doses 
+prolonged  the  duration  of  facilitation,  but  did  not  increase  the  magnitude. 
+
+(C)  This  study  indicates  that  EA  1729  may  modify  spinal  reflexes  in 
+
+a  manner  analogous  to  that  of  epinephrine.  Thus,  EA  1729  may  interact 
+with  proposed  adrenaline-like  transmitters. 
+
+3,  (C)  Localization  of  EA  1729  Action  in  the  Brain. 
+
+To  attempt  localization  of  EA  1729  action  in  the  brain,  the  effect 
+of  chlorpromazine*,  pentobarbital**,  and  EA  1729  were  studied  in 
+
+*  (U)  2-Chloro-10-(3-dimethylaminopropyl)phenothiazine;  3-chloro-lO- 
+
+(3-dimethylaminopropyl)phenothiazine;  N-(3'dimethylaminopropyl)- 
+3-chlorophenothiazine:  Tera^tna;  4560  !<.  P.  ;  Novomazina;  Propa- 
+phenin;  Aminazine;  Largaouii;  Ampliactil;  Amplictil;  Megaphen; 
+Hibernal;  Promazil;  Thorazine;  Wintermin, 
+
+**  (U)  Sodium  5-ethyl-5-(l-methylbutyl)barbiturate)  Nembutal;  Embutal; 
+
+Pentyl;  Pentone;  pentobarbitone  sodium;  Sopental;  Sagatal;  Sotyl; 
+Barpental. 
+
+CONFIDENTIAL 
+
+
+33 
+
+
+CONFIDENTIAL 
+
+
+cats  with  electrodes  permanently  implanted  in  ^e  region  of  the  hypothalamus. 
+Upon  electrical  stimulation,  these  animals  constantly  responded  with 
+excellent  patterns  of  behavioral  rage.  Although  chlorprbmazine  produced 
+definite  behavioral  depression  or  tranqullizatibnA,  the  hypothalamic  rage 
+response  was  iittle  affected.  Chlorpromajtine  may  act  by  decreasing  afferent 
+input  to  the  hypothalamus,  thereby  reducing  its  activity.  In  contrast  to 
+chlor promazine,  pentobarbital  produced  a  marked  decrease  in  the  electrical 
+excitability  of  the  hypothalamus.  £A  1729,  in  doses  of  approximately  400  pg/kg, 
+produced  a  striking  rage  behavior.  It  has  been  postulated  that  this  rage  re¬ 
+action  is  produced  by  activating  some  region,  such  as  the  amygdaloid  nuclei, 
+which  then  fires  the  hypothalamus. 
+
+4.  (C)  Sffects  of  EA  1729  on  the  Medullary  Vagal  Center  in  the 
+
+Decerebrate  Cat: 
+
+£A  1729  produced  bradycardia,  a  decrease  in  respiratory  rate, 
+and  hypotension  in  the  intact  cat  anesthetized  with  pentobarbital,  but  this  drug 
+caused  the  reverse  effects  of  hypertension  and  tachycardia  in  the  spinal 
+animal.  An  explanation  advanced  for  this  divergence  of  effects  is  that  in  the 
+intact  animal  the  hypertension  and  tachycardia  due  to  peripheral  vasoconstric¬ 
+tion  are  masked  by  the  more  potent  effects  of  £A  1729  on  higher  centers. 
+
+Earlier  work  demonstrated  that,  in  the  decerebrate  cat,  ergot  alkaloids 
+caused  hypotension  and  bradycardia  via  medullary  vagal  centers.  Therefore, 
+the  possible  vagal  effects  of  EA  1729  in  the  decerebrate  cat  were  studied. 
+
+EA  1729  appeared  to  have  a  medullary- stimulating  action.  The 
+dose  of  this  compound  which  produced  clear-cut  behavioral  effects  in  the 
+unanesthetized  animal  approximates  the  dose  that  produces  a  conduction 
+disturbance  in  the  decerebrate  animal  (0.4  mg/kg)  and  is  approximately 
+400  times  the  amount  that  produces  behavioral  effects  in  man.  In  both  the 
+unanesthetized  and  the  decerebrate  cat,  severe  autonomic  disturbances  occur 
+at  this  dose  level,  whereas  in  man  pronounced  changes  in  the  autonomic 
+nervous  system  occur  at  a  dose  of/4pg/kg  with  behavioral  changes  occurring 
+at  1  pg/kg. 
+
+
+5.  (C)  Effects  of  Lysergic  Acid  and  its  Derivatives  on 
+
+Rhinencephalic  Electrograms  of  Monkeys. 
+
+iO  Subcortical  paroxysmal  activity  recorded  from  the  septal  and 
+
+hippocampal  regions  in  patients  suffering  from  schizophrenia  have  been 
+reported,  and  rhinencephalic  electrograms  of  humans  under  the 
+influence  of  EA  1729  and  mescaline  have  been  studied.  It  was  found 
+
+
+CONFIDENTIAL 
+
+
+34 
+
+
+CONFIDENTIAL 
+
+
+that  paroxysmal  activity  induced  in  the  hippocampal,  amygdaloid,  and  septal 
+regions  seemed  to  correlate  with  overt  expressions  of  psychotic  behavior. 
+Because  of  this,  6  Macaca  mulatta  monkeys  with  chronically  implanted 
+subcortical  electrodes  in  these  rhinencephalic  structures  were  given  lysergic 
+acid  derivatives  (d-L,SDE5.  ALD5.2,  MLD41,  L.SM,  DAM,  LPD,  1-LSD25, 
+
+BOL,  and  UML)  with  varying  degrees  of  psychotogenic  effects,  and  the 
+monkeys  were  studied  to  determine  whether  this  paroxysmal  hypersynchronous 
+activity  in  the  rhinencephalic  region  is  a  spurious  or  an  essential  neuro¬ 
+physiological  mechanism  in  individuals  demonstrating  psychotic  behavior  that 
+is  either  spontaneous  or  pharmacologically  induced.  If  a  gross  correlation 
+could  be  made  between  the  extent  of  hypersynchronous  activity  in  the 
+rhinencephalic  structure  and  the  overt  behavior  of  the  Macaca  mulatta  monkey, 
+and  then  a  gross,  correlation  could  be  made  between  this  rhinencephalic 
+activity  and  the  psychotogenic  effects  in  man  of  various  lysergic  acid  derivatives 
+as  established  by  Harris  Isbell,  it  would  offer  a  screening  device  for  both 
+psychotogenic  activity  and  tranquilizing  drugs. 
+
+(U)  No  correlation  was  found  between  the  pyretogenic,  antiserotonin, 
+
+or  psychotogenic  effect  as  found  by  Isbell  studying  these  same  drugs  on  humans. 
+However,  there  did  appear  to  be  a  good  correlation  between  the  behavioral 
+effect  in  monkeys  (which  had  the  appearance  of  either  disturbed  catatonic-like 
+or  agitated  behavior)  and  rhinencephalic  paroxysmal  hypersynchronous  activity, 
+particularly  in  the  septal  studies.  Mescaline  also  showed  a  similar  correlation. 
+Studies  on  a  combination  of  monoamine  oxidase  (MAO)  inhibitor 
+(phenylisopropylhydrazine)*  and  5-hydroxytryptophane  (a  serotonin  precursor 
+which  crosses  the  blood-brain  barrier),  showed  minimal  effects  in  the 
+subcortical  areas  as  well  as  minimal  behavioral  changes. 
+
+(U)  Rhinencephalic  paroxysmal  hypersynchronous  abnormality  appears 
+
+to  be  a  good  indication  of  the  psychotogenic  effects  of  such  drugs. 
+
+B.  (C)  Biochemical  Studies. 
+
+(C)  Studies  on  p-Phenylisopropylhydrazine 
+Hydrochloride. 
+
+(C)  If  the  postulate  that  an  increase  in  brain  levels  of  serotonin 
+
+cause  a  response  like  th-'*'  p’*oduced  by  EA  1729  and  5-hydroxytryptophane 
+(hyperthermia,  rage-like  reliction,  etc.  ),  it  should  be  possible  to  elicit  these 
+responses  by.  preventing  the  destruction  of  the  endogeu-  -  '■’•otonin  formed 
+
+
+*  (U)  JB516;  l-phenyl-2-hydrazlnopropane)  Catron,  GS  2570. 
+
+
+CONFIDENTIAL 
+
+
+35 
+
+
+CONFIDENTIAL 
+
+
+by  the  tissues.  Until  recently  the  most  effective  MAO  inhibitor  in  vivo  was 
+iproniazid’i’.  Although  iproniazid  potentiates  the  effects  of  serotonin  in 
+animals,  it  causes  little  behavioral  change  unless  given  in  near-lethal  doses. 
+
+(U)  Recently  another  hydrazine,  p-phenylisopropylhydrazine  (PIH), 
+
+has  been  discovered  that  is  an  effective  MAO  inhibitor  both  in  vitro  and 
+in  vivo.  The  structural  formula  of  this  compound  is: 
+
+
+CH2  CH  .  •  NH  NH2 
+
+CH3  .  HCl 
+
+(U)  PIH  in  doses  as  small  as  5  to  10  mg/kg  was  effective  in  potenti¬ 
+
+ating  the  actions  of  5-hydroxytryptophane  in  rabbits,  vitro,  PIH  was 
+50  times  .as  effective  as  iproniazid  as  an  MAO  inhibitor  when  measured  in 
+rat- brain  and  liver  homogenates,  using  serotonin  as  a  substrate. 
+
+(U)  When  rats  were  treated  with  20  mg/kg  of  PIH,  it  was  found  that 
+
+maximum  MAO  inhibition  occurred  on  the  day  of  injection,  but  even  after 
+7  days  the  liver  had  regained  only  about  80%  of  its  original  activity. 
+
+(U)  PIH  in  a  dose  of  5  mg /kg  had  no  effect  on  the  rectal  temperatures 
+
+of  rabbits.  However,  if  this  was  followed  by  10  mg/kg  of  5-hydroxy¬ 
+tryptophane,  a  marked  rise  in  temperature  resulted,  followed  by  death  of 
+the  animal, 
+
+(C)  A  dose  of  ZP  mg/kg  of  PIH  in  cats  produced  such  EA  1729-like 
+
+effects  as  hissing,  pupillary  dilatation,  salivation,  tachypnea,  fear,  and  rage 
+reaction.  Peak  activity  occurred  about  8  hours  after  injection  and  effects 
+persisted  over  a  period  of  25  hours. 
+
+(U)  The  slow  onset  of  action  suggests  that  PIH  itself  was  not  producing 
+
+the  symptoms,  but  that  the  inhibition  of  MAO  (which  develops  rather  slowly) 
+was  responsible  for  them.  The  action  of  PIH  may  be  similar  to  the  action 
+of  alkyl  phosphates  against  cholinesterase  enzymes,  causing  an  irreversible 
+inhibition  of  MAO  and  causing  the  accumulation  and  toxic  actions  of  the 
+endogenously  formed  amines. 
+
+
+^(U)  Isonicotinic  acid  2-isopropylhydrazine;  1-isonicotinoyl- 2-isopropyl- 
+hydrazine;  l-isonicotinyl-2-isopropyJhydrazine;  Marsilid. 
+
+
+CONFIDENTIAL 
+
+
+36 
+
+
+SECRET 
+
+
+IV.  (S)  ANALOGS  AND  HOMOLOGS  OF  EA  1729. 
+
+(C)  EA  1729.  ALD52  (l-acetyl-lysergic  acid  diethylamide),  and  MLD41 
+
+{l-methyl-lysergic  acid  diethylamide)  were  administered  orally  to  52  non¬ 
+hallucinating,  hospitalized,  psychiatric  patients  and  34  normal  volunteers.  A 
+comparison  of  the  clinical  effects  produced  by  these  compounds  was  made.  It 
+was  found  that  1.  6  times  more  ALD  and  1,  7  times  more  MLD  than  EA  1729 
+are  required  to  induce  clinically  apparent  responses  in  both  normal  volunteers 
+and  psychiatric  patients.  The  responses  to  ALD  and  MLD  do  not  differ 
+significantly  from  those  experienced  when  EA  1729  was  given.  In  contrast  to 
+the  EA  1729  subjects,  the  ALD  and  MLD  subjects  did  not  seem  to  be  disturbed 
+by  the  drug  reaction  cdfter  the  effects  wore  off.  There  were  no  problems 
+presented  in  their  psychotherapy  relating  to  the  study,  as  frequently  happened 
+after  an  EA  1729  study.  Many  individuals  in  the  EA  1729  volunteer  group  were 
+upset  after  the  study  and  did  not  want  to  repeat  it. 
+
+(S)  The  following  are  the  structural  formulas  of  d-  LSD25,  ALD5  2,  and  MLD41, 
+
+
+lysergic  acid 
+diethylamide 
+d-LSD25 
+(EA  1729) 
+
+
+l-acetyl-lysergic  acid 
+diethylamide 
+ALD52 
+
+
+1 -methyl-lysergic  acid 
+diethylamide 
+MLD41 
+
+
+V.'  (C)  ANTIDOTAL  OR  BLOCKING  AGENTS- 
+
+(C)  Chlor promazine  (Thorazine)  and  dibenzylamine  attenuate  the  acute 
+
+EA  1729  reaction  if  given  in  doses  of  from  10  mg  to  50  mg  by  intramuscular 
+injection  or  by  intravenous  infusion  about  30  minutes  before  EA  1729  is 
+
+
+SECRET 
+
+
+37 
+
+
+CONFIDENTIAL 
+
+
+administered.  Frenquel’^,  Promazine’j<>t<,  Amytal  sodium  ***,  and  a 
+combination  of  Amytal  sodium  and  Desoxyn*!"i< have  been  less  effective  in 
+attenuating  the  acute  symptoms  of  BA  1729  intoxication. 
+
+(C)  Studies  of  Trilafon  (perphenazine)  as  a  blocking  agent  for  BA  1729 
+
+revealed  that  onset  of  action  is  30  minutes  after  intravenous  administration 
+of  Trilafon.  Therefore,  it  is  considered  to  be  inferior  to  chlorpromazine, 
+which  acts  within  30  seconds  after  administration. 
+
+(C)  Dibenzyline,  an  adrenolytic  compound  with  adrenergic- blocking 
+
+properties,  was  studied  in  14  volunteers  for  its  effect  on  the  response. to 
+BA  1729  and  to  observe  the  psychological  effects  of  dibenzyline  itself.  All 
+were  given  0.  16  to  0.51  mg/kg  of  dibenzyline  by  intravenous  infusion.  Bleven 
+of  these  volunteers  received  BA  1729  orally  in  doses  of  1  fig/kg  1  hour  after 
+receiving  dibenzyline.  When  given  dibenzyline  alone  by  intravenous  infusir?n, 
+seven  of  the  volunteers  developed  orthostatic  hypotension  lasting  3  to  4  hours; 
+one  volunteer  had  orthostatic  hypotension  that  persisted  for  3  days.  T-wave 
+changes  were  noted  in  leads  II,  III,  AVF,  V4  to  V6  of  the  BCG,  which 
+reverted  to  normal  the  following  day.  Six  of  the  volunteers  experienced 
+impairment  of  concentration.  One  volunteer  reported  a  dream-like  state, 
+
+*  Azacyclonol,  a,  a- diphenyl-4-piperidenemethanol;  a -{4-piperidyl) - 
+
+benzhydrol;  MBR-17;  gamma-pipradol. 
+
+10-(3-dimethylaminopropyl)phenothiazine^;  3276  R.P.;  WY  1094; 
+
+Liranol;  Prazine;  Sparine;  A  145;  Verophen;  Neo-Hibernex; 
+
+Protactyl;  Ampazine;  Esparin. 
+
+5-Ethyl-5-isoamylbarbituric  acid;  barbamyl;  barbamil;  amylo  bar  bitone; 
+
+5 -ethyl -5 -isopentyl barbituric  acid;  Somnal;  Dormytal;  5-isoamyl-5- 
+ethyl barbituric  acid;  pentymal;  Isomytal;  Amytal. 
+
+d-Desoxyephedrine  hydrochloride.  d -N,a- dimethylphenethylamine 
+hydrochloride;  phenylmethylaminopropane  hydrochloride;  the 
+hydrochloride  of  dextro-1 -phenyl- 2-methylaminopropane;  of 
+d  r  phenyli  s  opr  opylm  e  thylamine.;  of  d-  N-r  a  -  m  ethyl  -  P  -  pheny  li  s  opr  opylamine; 
+of  d-N-methylamphetamine.  Norodin  hydrochloride;  Oesoxyn; 
+
+Pervitin;  Drinalfs;  Desoxyfed;  Methylisomyn;  Methedrine;  Isophen; 
+methaniphetamint  -  HCl;  Syndrox;  Dexoval;  Efroxine;  Doxephrin; 
+Semoxydrine;  Hiropon;  Soxysympamine ;  Destim;  Gerovit;  Tonedron; 
+Adipex;  Amphedroxyn. 
+
+
+CONFIDENTIAL 
+
+
+38 
+
+
+CONFIDENTIAL 
+
+
+subjective  numbness  of  the  body,  a  loss  of  time  sense,  and  feelings  of 
+depersonalization  and  unreality;  Another  volunteer  experienced  considerable 
+tension  and  vague  apprehension,  A  third  volunteer  reported  thought  disorder, 
+nervousness,  slight  numbness  of  the  body,  and  subjective  slowing  of  the  • 
+passage  of  time. 
+
+(C)  All  subjects  who  received  EA  1729  plus  dibenzyline  experienced 
+
+reactions  similar  to  those  with  EA  1729  alone,  except  for  the  mydriasis 
+produced  by  EA  1729. 
+
+(C)  BOLil48  (2-bromo-d-lysergic  acid  diethylamide)  has  also  been 
+
+studied  for  its  effect  as  a  prophylactic  compound  against  EA  1729. 
+
+Fifteen  subjects  received  a  daily  oral  dose  of  200  pg  to  300  pg  of  BOLil48  for  3 
+to  5  days  prior  to  a  challenging  dose  of  1  to  4  ng/kg  of  EA  1729.  The  men  were 
+examined  for  changes  in  blood  pressure,  pulse,  pupillary  size,  reflexes,  and. 
+psychic  and  physical  symptoms.  It  was  found  that  pretreatment  with 
+200  fig  to  300  fig  of  BOL148  for  several  days  before  and  on  the  day  of  EA  1729 
+challenge  prevented  to  a  large  degree  the  psychic  changes  caused  by 
+1  to  4  fig/kg  of  EA  1729.  The  physical  signs  and  symptoms  were  also 
+diminished  by  BOL148  pretreatment,  and  psychomotor  tests  confirmed  the 
+protection  afforded  by  this  compound.  The  BOLil48  did  not  cause  any  consistent 
+physiological  or  psychological  changes. 
+
+(C)  Librium  (RO  5-0690)  was  tested  for  its  therapeutic  or  prophylactic 
+
+effects  against  EA  1729.  One  hour  before  receiving  Zfig/kg  of  EA  1729,  three 
+volunteers  received  total  doses  of  25,  50,  or  75  mg  of  Librium,  respectively, 
+and  one  man  was  given  a  placebo.  In  another  group  of  four  volunteers,  three 
+received  total  doses  of  25,  50,  or  75  mg  of  Librium  and  one  received  placebo 
+1  hour  after  each  had  received  2  fig/kg  of  EA  1729.  No  modification  of  the 
+reaction  to  EA  1729  was  noted  in  those  individuals  who  were  given  Librium. 
+
+The  following  structural  formula  is  that  of  Librium: 
+
+
+CONFIDENTIAL 
+
+
+39 
+
+
+CONFIDENTIAL 
+
+
+(C)  Because  various  reports  appearing  in  the  literature  stated  that 
+
+substances  such  as  nicotinic  acid  were  effective  £A  1729  antidotes,  some 
+vitamins  were  studied.  Nicotinic  acid,  histamine  phosphate  pyridoxine, 
+and  thiamine  were  not  found  to  be  effective  antidotes. 
+
+VI.  (C)  DISCUSSION. 
+
+(C)  In  1955,  the  chairman  of  the  Technical  Advisory  Panel  on  Bio¬ 
+
+logical  and  Chemical  Warfare’^  appointed  an  ^  hoc  study  group  (  the  so-called 
+Wolff  Committee)  to  examine  the  problem  of  psychochemical  agents ,  with  a 
+view  to  advising  the  Chemical  Corps  in  regard  to  its  future  program.  Based 
+on  an  intensive  investigation  into  the  preliminary  work  the  Corps  had  completed 
+on  psychochemicals  and  a  survey  of  the  open  literature,  the  Wolff  Committee 
+recommended  that: 
+
+22 
+
+(C)  1.  A  quasi-realistic  experiment  (outlined  in  detail  in  its  report) 
+
+be  carried  out  with  EA  1729  and  volunteer  unite  as  soon  as  practicable. 
+
+(C)  2.  The  potential  and  promise  of  the  use  of  psychochemical 
+
+agents  in  warfare  be  re-evaluated  upon  completion  of  the  experiment, 
+
+(C)  3.  Increased  efforts  be  placed  on  screening  chemicals  in  the 
+
+lysergic  acid  class  to  find  a  substitute  for  EA  1729. 
+
+(U)  4.  Conditioned  reflex  studies,  using  psychochemical  agents,  be 
+
+made  on  dogs  and  additional  higher  animals  other  than  man. 
+
+(U)  5.  The  dog  or  similar  larger  animals  be  employed  in  long-term 
+
+toxication  and  lethal-dosage  studies. 
+
+(C)  All  of  the  Wolff  Committee's  recommendations  concerning  EA  1729 
+
+have  been  carried  out  and  are  reported  either  in  this  document  or  in  those 
+mentioned  in  the  bibliography. 
+
+(C)  EA  1729  was  selected  as  the  model  to  be  used  in  studies  to  provide 
+
+some  conception  of  the  worth  in  warfare  of  materials  that  produce  aberrant 
+mental  behavior  because  of  its  known  action  and  because  a  tremendous  amount 
+of  work  already  had  been  done  with  this  compound  in  psychiatric  research 
+with  humans. 
+
+
+Office  of  the  Assistant  Secretary  of  Defense,  R&D 
+
+
+CONFIDENTIAL 
+
+
+40 
+
+
+CONFIDENTIAL 
+
+
+(C)  Among  the  conclusions  of  the  Wolff  Committee  is  the  following; 
+
+The  promise  offered  in  this  field  can  be  determined 
+.  only  by  assaying  the  effect  of  psychochemical  agents 
+
+on  military  units.  If  LSD25,  used  as  outlined  in  the 
+experiment,  should  fail  to  produce  disorganizing  and 
+disrupting  effects  on  the  military  unit,  it  would  be 
+evident  that  there  is  no  military  propnise  in  this  field. 
+
+However,  if  the  use  of  these  agents  should,  under  the 
+specified  conditions,  produce  serious  disruptions  in 
+the  ability  of  the  unit  to  carry  out  its  missions,  then 
+it  could  be  reasonably  stated  that  these  agents  offer 
+great  promise  for  use  in  military  operations, 
+
+(C)  The  Fort  Bragg  field  test  described  in  this  report  is  comparable  to 
+
+the  experiment  recommended  by  the  Wolff  Committee  and  certainly  proved 
+that  EA  1729  will  "produce  serious  disruptions  in  the  ability  of  the  unit  to 
+carry  out  its  missions,  "  If  more  realistic  doses  had  been  used  (250  jug  to 
+300  jug  total  per  man),  the  men  probably  would  have  been  so  incapacitated  that 
+they  would  never  have  attempted  to  perform  their  mission  requirements. 
+
+(G)  From  the  studies  reported  in  this  document,  the  biological  activity 
+
+of  EA  1729  can  be  summarized  as  follows: 
+
+1.  (C)  Effective  Dose  for  Various. R-outes. 
+
+With  respect  to  dose,  EA  1729  is  twice  as  effective  as  the  next 
+most  potent  CW  incapacitating  agent  and  psychologically  incapacitates  man  by 
+either  the  oral  or  the  inhalation  route.  The  effective  dose  ranges  from 
+1  ;ig/kg  upward,  the  degree  of  incapacitation  increasing  with  the  dose. 
+
+There  has  been  insufficient  work  on  the  percutaneous  application 
+of  EA  1729  to  permit  a  conclusion  on  its  effectiveness  by  this  route. 
+
+In  all  the  studies  that  have  been  conducted  with  this  material, 
+no  human  insensitive  to  EA  1729  has  ever  been  encountered.  Although  it  is 
+possible  to  build  up  a  tolerance  to  small  doses  by  taking  the  drug  over  a  period 
+of  time,  no  one  has  succeeded  in  developing  a  tolerance  to  doses  of 
+300  /ig/man  or  higher. 
+
+2.  (C)  Safety  Factor  Between  Effective  and  Lethal  Doses. 
+
+There  is  a  very  wide  margin  of  safety  between  the  incapacitating 
+and  lethal  doses  of  EA  1729.  AJthough  the  LD50  for  man  is  not  known,  no 
+
+CONFIDENTIAL 
+
+
+41 
+
+
+CONFIDENTIAL 
+
+untoward  effects  were  seen  in  dose-response  studies  ranging  from  0.  1  MsAs 
+to  16  Atg/kg.  No  physiological  effects  have  been  seen  at  the  highest  doses 
+given  that  would  lead  one  to  suspect  that  the  limits  of  safety  were  even 
+approached. 
+
+
+3.  (U)  Speed  of  Onset  of  Incapacitation. 
+
+Effects  invariably  were  noted  within  20  to  30  minutes  following 
+ingestion,  autonomic  physiological  and  perceptual  changes  appearing  promptly 
+and  reaching  a  peak  between  1  and  2  hours.  Onset  of  effects  occurred  within 
+15  to  25  minutes  after  inhalation  of  70  pg,  and  «dter  large  oral  doses,  within 
+5  to  10  minutes.  Peak  psychotic  incapacitation  usually  developed  by  3  to  4 
+hours  after  exposure.  The  predictability  of  the  time  of  onset  and  duration  of 
+effects  are  valuable  tactical  assets. 
+
+4.  (U)  Duration  of  Incapacitation'. 
+
+Subjects  were  incapacitated  for  periods  ranging  from  6  to  24  hours, 
+depending  on  the  dose  received. 
+
+5.  (C)  Type  of  Action. 
+
+(C)  EA  1729  produces  consistent  and  profound  psychological  changes 
+
+in  man. 
+
+Because  the  drugged  individual  is  extremely  confused, 
+making  decisions  and  communicating  thoughts  is  almost 
+impossible.  Haphazard  and  indifferent  obedience  to 
+commands  is  characteristic.  The  drugged  subject  has 
+a  distorted  time  sense;  time  passes  extremely  slowly 
+and  experiences  cannot  be  related  to  time.  Vision  is 
+impaired,  waves  of  clear  perception  being  followed  by 
+distortion.  Because  psychbmotor  coordination  is 
+impaired,  the  subject  moves  more  slowly. 
+
+The  appendix  contains  two  excellent  example's  of  individual  subjective  responses 
+to  this  compound. 
+
+(U)  The  general  physiologic  effects  are  mild,  being  manifested  in 
+
+pupillary  dilatation,  a  slight  increase  in  blood  pressure  and  pulse  rate,  nausea, 
+and  dizziness.  At  higher  doses  than  those  used  in  the  studies  reported  here, 
+psychological  changes  would  be  compounded  by  an  increase  in  the  severity  of 
+the  physiological  changes. 
+
+
+CONFIDENTIAL 
+
+
+42 
+
+
+CONFIDENTIAL 
+
+
+(C)  To  the  untrained  eye,  EA  1729  intoxication  is  extremely  difficult 
+
+to  recognize.  Even  when  it  is  detected  and-treated  with  the  compound  of 
+choice,  chlorpromazine,  the  acute  EA  1729  effects  are  attenuated,  but  the 
+subject  becomes  a  medical  casualty. 
+
+6.  (C)  Degree  of  Incapacitation. 
+
+(C)  Psychological  incapacitation  is  difficult  to  scale  in  degrees.  If  one 
+
+considers  inability  to  accomplish- an  assigned  mission  as  the  criterion  for 
+complete  incapacitation,  the  tests  of  EA  1729  with  the  XVIII  Airborne  Group 
+at  Fort  Bragg  certainly  qualify  this  compound  as  one  that  produces  complete 
+incapacitation,  After  receiving  EA  1729,  the  inability  of  trained  instructors 
+to  deliver  lectures  that  they  have  given  time  and  again  indicates  a  drastic 
+mental  incapacitation  that  has  far-reaching  possibilities  when  one  considers 
+the  effect  on  subordinates  of  the  mental  derangement  of  a  superior. 
+
+(U)  At  total  doses  above  300  ytg,  physical  incapacitation  would  be 
+
+almost  complete. 
+
+7.  (C)  Routes  of  Entry. 
+
+EA  1729  is  effective  by  both  the  oral  and  inhalation  routes  in 
+comparable  doses.  The  inhalation  studies  admittedly  are  meager  and  should 
+be  continued  to  provide  a  stronger  basis  for  correlating  the  oral  and 
+inhalation  effectiveness  of  this  compound. 
+
+8.  (U)  Completeness  of  Recovery. 
+
+Every  one  of  the  exposures  reported  in  this  paper  and  about  which 
+the  author  has  personal  knowledge  was  followed  by  complete  recovery, 
+
+9.  (C)  Species  Variation. 
+
+Since  such  extensive  work  in  humans  has  been  done  with  EA  1729, 
+it  is  not  necessary  to  consider  species  variation  in  evaluating  the  potential 
+effectiveness  of  this  compound. 
+
+10.  (C)  Predictability  of  Military  Effects. 
+
+In  the  one  large  field  test  conducted  with  EA  1729,  every  unit  was 
+so  affected  it  could  not  perform  its  assigned  mission.  The  diversity  of  the 
+missions  involved  is  significant.  In  this  instance,  a  meteorological  section, 
+a  survey  section,  a  fire  direction  team,  and  an  antiaircraft  section  were  all 
+rendered  ineffective  by  EA  1729. 
+
+CONFIDENTIAL 
+
+
+43 
+
+
+CONFIDENTIAL 
+
+
+When  interpreting  the  results  of  the  demonstrations  and  field 
+test,  one  should  bear  in  mind  that  it  was  necessary  to  make  a  number  of 
+compromises  that  would  not  occur  in  an  actual  combat  situation.  All  these 
+compromises  reduced  the  apparent  effectiveness  of  EA  1729  and  did  not  permit 
+the  attainment  of  the  full  potential  of  this  agent.  For  instance,  an  artificial 
+population  of  subjects  resulted  from  the  elimination  of  those  who  did  not  meet 
+the  standards  of  the  physical  and  psychological  examinations.  In  an  actual 
+combat  situation,  the  effect  of  this  compound  on  psychologically  unstable 
+individuals  (who  would  moat  assuredly  be  found  in  any  large  group)  might  result 
+in  utter  chaos. 
+
+Another  artificial  factor  is  that  all  of  the  subjects  knew  they  would 
+be  given  some  kind  of  drug  and  that  medical  personnel  would  be  constantly 
+monitoring  their  response.  By  materially  decreasing  the  stress  that  would 
+normally  accompany  the  development  of  bewildering  psychic  changes,  one  of 
+the  most  profound  effects  of  EA  1729,  anxiety, was  considerably  diminished. 
+Anxiety  in  the  subjects  under  study  was  also  reduced  because  these  men  had 
+the  advantage  of  a  supportive  group  situation. 
+
+The  dosages  used  in  the  field  test  and  demonstrations  (100  pg  to 
+150 /ig)  were  not  as  high  as  could  be  expected  in  a  realistic  battlefield 
+situation.  They  were  selected  for  their  ability  to  produce  measurable  effects 
+without  so  physically  incapacitating  the  men  that  the  experiment  would  be  over 
+before  it  began.  Needless  to  say,  higher  doses  would  produce  even  more 
+disrupting  results.  In  spite  of  all  these  hindrances  to  achieving  the  full 
+potential  of  EA  1729,  every  unit  was  rendered  ineffective. 
+
+Because  there  is  a  fair  percentage  of  hyperreaction  to  EA  1729, 
+the  question  may  arise  as  to  whether  people  in  a  battlefield  situation  will  be 
+so  affected  that  they  will  become  menacing  fighters.  The  author  feels  that 
+should  the  drug  cause  an  individual  to  become  more  aggressive,  it  would  be 
+of  no  consequence  because- his  mental  state  would  make  it  very  difficult 
+for  him  to  distinguish  the  enemy  from  his  own  forces. 
+
+An  interesting  and  significant  outcome  of  the  studies  with  this 
+compound  is  that  all  military  personnel  who  received  EA  1729  were  so 
+impressed  by  their  individual  experience  that  they  have  enthusiastically 
+advocated  its  military  application. 
+
+
+CONFIDENTIAL 
+
+
+44 
+
+
+SECRET 
+
+
+VII.  (S)  CONCLUSIONS. 
+
+• 
+
+From  the  standpoint  of  biological  effectiveness,  £A  1729 
+incapacitates  man  at  doses  as  low  as  1  Mg/^g>  degree  of  incapacitation 
+increasing  with  the  dose.  Its  effects  endure  for  periods  ranging  from 
+6  to  24  hours.  There  is  a  very  wide  margin  of  safety  betwfeen  the  incapacitating 
+and  lethal  doses. 
+
+
+SECRET 
+
+
+45 
+
+
+CONFIDENTIAL 
+
+
+(C)  LITERATURE  CITED 
+
+1.  Klee,  G.  ,  Bertino,  J.  R,  ,  and  Sim,  V.  M.  CWLR  2159. 
+Clinical  Psychiatric  Studies  of  Subjects  Receiving  EA  1729.'  August  1957. 
+UNCLASSIFIED  Report. 
+
+2.  Klee,  G.  D.  Summary  of  Psychological,  Physiological,  and 
+Biochemical  Studies  Performed  Under  University  of  Maryland  Contracts. 
+DA-18-108-CML-5519  and  DA-18-108-CML-6337  in  CooJjeration  With  Army 
+Chemical  Center  Personnel.  May  1959.  UNCLASSIFIED  Report. 
+
+3.  Kays,  J.  M.  ,  and  Garrett,  R.  CRDLR  3032.  The  Effect 
+of  Three  Dose  Levels  of  EA  1729  Upon  Human  Tracking  Proficiency  (U). 
+
+January  1961.  CONFIDENTIAL  Report. 
+
+4.  Kays,  J.  M.  ,  and  Garrett,  R.  CRDLR  3012.  The  Effect 
+of  EA  1729  Upon  Visual  Discrimination  (U).  July  I960.  CONFIDENTIAL 
+Report. 
+
+5.  Holt,  R.  R.  ,  and  Goldberger,  L.  WADD  Technical  Report 
+60-260.  Research  on  the  Effects  of  Isolation  on  Cognitive  Functioning. 
+
+March  I960.  UNCLASSIFIED  Report. 
+
+6.  Langfitt,  T.  W.  Final  Report.  Contract  DAr  1 8- 1 08-CML- 
+64  25.  The  Pharmacological  Properties  of  an  Evoked  Potential  in  the  Midbrain 
+Reticular  Formation.  July  1957  to  December  1959.  UNCLASSIFIED  Report. 
+
+7.  Langfitt*  T.  W.  ,  and  Finney,  L.  A.  Effects  of  Lysergic 
+Acid  Diethylamide  (LSD)  on  Cortical  Sensory  Evoked  Potentials  in  the  Cat. 
+
+A.  M.  A.  Arch.  Neurol.  1,  258-268  (1959). 
+
+8.  Geiger,  L.  E.  ,  and  Cervoni,  P,  Effect  of  d-I.ysergic  Acid 
+Diethylamide  on  Spinal  Reflexes.  Proceedings  of  the  Society  for  Experimental 
+Pathology  and  Medicine  99,  179-181  (1958). 
+
+9.  Geiger,  L.  E.  ,  Cervoni,  P.  ,  and  Monteleone,  F.  Action  of 
+
+Zoxazolamine  Upon  Spinal  Segmental  Reflexes.  J.  P.  E.  T.  123,  164-170 
+(1958).  ' 
+
+10.  Maltiz,  S.  Final  Report.  Contract  DA- 1 8-1 08-405- CML-49. 
+December  1958.  UNCLASSIFIED  Report. 
+
+11.  Bertino,  J.  R,  ,  Cervoni,  P.  ,  and  Geiger,  Leslie  E.  Medullary 
+Vagal  Effects  of  LSD-25  in  the  Decerebrate  Cat,  (In  Publication).  UNCLASSIFIED 
+Report. 
+
+CONFIDENTIAL 
+
+47 
+
+
+Preceding  Page  Blank 
+
+
+CONFIDENTIAL 
+
+
+12.  Monroe,  R.  R.  Final  Report.  Contract  DA-I8-IO8-CMJL1- 
+5596.  Effects  of  L/sergic  Acid  and  its  Derivatives  on  Rhinencephalic 
+Electrograms.  May  1959.  UNCLASSIFIED  Report.  . 
+
+13.  Heath,  R.  G.  (Ed.).  Studies  in  Schizophrenia.  Harvard 
+University  Press.  1954. 
+
+14.  Heath,  R.  G.  Correlation  of  Electrical  Recordings  From 
+Cortical  and  Subcortical  Regions  of  the  Brain  With  Abnormal  Behavior  in 
+Human  Subjects.  Confinia  Neurol.  18,  305  (1958). 
+
+15.  Monroe,  R.  R.,  Heath,  R.  G.,  and  Llewellyn,  R.  C. 
+Correlation  of  Rhinencephalic  Electrograms  With  Behavior  ;•  A  Study  on  Humans 
+Under  the  Influence  of  LSD  and  Mescaline.  EEG  &  Clin,  Neurophyaiol.  9_, 
+623-642  (1957).  ‘ 
+
+16.  Isbell,  H.  Pharmacologic  Properties  and  Psychotogenic 
+Effects  of  Some  Lysergic  Acid  Derivatives.  Personal  communication  to 
+Sandoz  Laboratories,  Hanover,  N.  J.  UNCLASSIFIED  Communication. 
+
+17.  Horita,  A.  Contract  DA-18-108-CML-6364,  Studies  on 
+p-phenylisopropylhydrazine,  a  Potent  and  Long  Acting  Monoamine  Oxidase 
+Inhibitor.  Undated.  UNCLASSIFIED  Report. 
+
+18.  Horita,  A.,  and  Parker,  R.  G.  Comparison  of  Monoamine 
+Oxidase  Inhibitory  Effects  of  Iproniazid  and  Its  Phenyl  Congener.  Proc.  Soc. 
+Exptl.  Biol.,  N.  Y.  99,  617-619  (1958). 
+
+19.  Wilkens,  B.  Contract  DA- 18- 108-405-CML-49.  Clinical 
+Response  to  Two  New  K  Agents.  Undated.  UNCLASSIFIED  Report. 
+
+20.  Goodman,  A.  I.,  and  Clark,  B.  J.  The  Effect  of  BOL- 148 
+on  the  Action  of  LSD- 25  in  Man.  (In  Publication).  UNCLASSIFIED  Report. 
+
+21.  Bertino,  J.  R.  ,  Klee,  G.  D.  ,  and  Weintraub,  W.  Effects  of 
+Certain  Vitamins  and  Histamines  on  the  LSD  Psychoses.  J.  Men.  Sc.  1 05, 
+1095-1099  (1959). 
+
+22.  Report  of  the  Ad  Hoc  Study  Group  on  Psychochemical  Agents. 
+PBC  206/1.  Office  of  the  Asst  Secty  of  Defense,  R&D,  Washington  25,  D.  C. 
+November  1955. 
+
+
+CONFIDENTIAL 
+
+
+48 
+
+
+CONFIDENTIAL 
+
+
+(C)  APPENDIX 
+
+TWO  PERSONAL  REACTIONS  TO  EA  1729  (C) 
+
+
+(Dose;  lOO/xg/kg) 
+
+1.  (U).  I  experienced  a  multitude  of  strange,  unusual  sensations  impinging 
+
+upon  me  from  every  quarter.  Visually,  new  bizarre  colors  and  shapes  flashed 
+across  my  visual  field.  My  hearing  was  changed.  Sometimes  things  seemed 
+to  be  louder,  sometimes  softer,  and  at  times  they  seemed  to  come  from  a 
+distance  when  actually  they  did  not.  At  times  my  voice  sounded  as  if  it  were 
+not  my  own.  The  outer  world  was  seen  in  separate,  divided,  jagged  units, 
+units  that  at  times  seemed  to  overlap,  divide,  and  move  independently.  Things 
+would  often  seem  to  jiggle  as  I  walked.  My  body  parts  did  not  seem  to  be  in  the 
+familiar  relationship.  I  had  to  concentrate  to  be  sure  that  my  legs  were  there. 
+
+It  was  a  repeated  surprise  to  find  that  1  was  able  to  stand  up.  My  hands  felt 
+icy  and  different;  my  sense  of  touch  was  not  as  good  as  usual,  and  rubbing  my 
+hands  together  gave  me  little  feeling.  Swallowing  a  drink  of  water  revealed 
+quite  well  this  inability  to  perceive  accurate  relationships  between  my  body 
+parts,  for  it  felt  as  if  the  water  was  going  down  in  a  right,  left,  halting, 
+circuitous  fashion,  and  that  at  any  moment  it  would  decide  that  it  could  not 
+go  down  at  all,  not  because  of  any  feeling  of  nausea;  but  because  it  seemed 
+as  though  the  water  was  getting  lost  and  would  have  to  come  back.  Waves  of 
+empty,  icy,  unfamiliar  feelings  gave  me  a  feeling  of  bodily  tottering  in  oceanic 
+waves.  Each  time  a  wave  hit  me,  I  would  have  to  try  to  redefine  my  relationship 
+to  space.  These  bodily  sensations  seemed  to  have  an  anticipatory  relationship 
+to  a  sensation  of  blindness  that  overtook  me  from  behind  and  to  the  aide.  As 
+I  looked  to  the  side,  I  could  see  but  felt  as  if  I  wouldn't  be  able  to.  I  was 
+continuously  being  surprised  by  my  capacity  to  function.  I  felt  as  if  I  could 
+hardly  talk,  and  yet  when  I  put  in  the  effort,  I  could.  I  felt  like  I  would  be 
+very  ataxic,  but  really  was  not.  I  felt  that  time  was  going  much  slower  than 
+it  really  was.  ' 
+
+The  more  commonplace  and  usual  things  1  could  see,  hear,  and  do, 
+the  better  I  felt.  .  To  talk,  walk,  and  listen  to  others  talk  was  anxiety- 
+relieving.  To  be  alone  with  my  eyes  shut  was  most  disturbing.  I  began  to 
+worry  that  possibly  this  experience  was  not  going  to  be  just  temporary.  When 
+I  began  coming  out  of  the  reaction,  wonderful  feelings  were  connected  with 
+seeing,  touching,  and  being  close  to  the  common,  usual,  and  familiar  things. 
+Whether  or  not  these  things  were  good,  pleasant,  or  distasteful  had  little 
+bearing.  As  long  as  they  were  familiar,  they  were  highly  reassuring. 
+
+
+CONFIDENTIAL 
+
+
+49 
+
+
+UNCLASSIFIED 
+
+
+II.  (U)  The  first  symptoms  began  to  appear  in  15  to  20  minutes  after 
+taking  the  drug.  The  first  thing  I  noticed  was  a  heavy  feeling  in  my  arms  and 
+legs.  I  felt  as  if  I  were  glued  to  the  chair  in  which  I  was  seated.  Faces 
+appeared  to  have  a  reddish  glow.  The  walls  began  to  move  back  and  forth 
+in  about  three  or  four  planes.  Everything  was  in  technicolor,  so  to  speak, 
+and  each  color  was  in  its  own  separate  dimension. 
+
+At  about  this  time,  I  noticed  that  time  began  to  stand  still.  My 
+mind  was  racing  ahead  many,  many  hours,  while  those  around  me  were 
+living  in  minutes,  This  was  the  most  confusing  of  the  experiences  I  felt. 
+Time  had  no  meaning.  I  could  not  relate  experience  with  time,  nor  could  I 
+concentrate  on  any  one  thing  long  enough  to  accomplish  anything  that  I  tried 
+to  do. 
+
+
+I  would  start  to  write  something  down  and  forget  what  it  was 
+before  I  could  lift  my  pencil.  So  many  things,  sights,  and  sounds  entered  my 
+mind  in  a  second  that  it  was  extremely  difficult  to  maintain  a  continuous 
+train  of  thought. 
+
+When  I  would  close  my  eyes,  I  witnessed  the  moat  beautiful 
+display  of  designs  and  colors  1  have  ever  seen.  When  my  eyes  opened,  they 
+disappeared.  I  also  experienced  a  sensation  of  leaving  this  world  that  can 
+only  be  described  as  just  not  being  here.  In  these  out-of-the-world  flights, 
+
+1  would  live  for  weeks,  it  seemed,  and  yet,  when  I  returned,  only  a  matter  of 
+seconds  would  have  elapsed  from  the  time  I  left. 
+
+I  actually  thought  days  and  nights  were  passing  and  that  they  had 
+slipped  us  a  larger  dose  than  the  others.  I  felt  depressed  for  short  periods 
+and  then  extremely  elated.  All  this  over  nothing.  After  awhile  I  noticed 
+that  the  flights  were  becoming  less  frequent  and  that  the  periods  of  rationality 
+were  increasing.  .Finally,  after  about  eight  hours,  all  of  the  symptoms  were 
+just  about  gone.  Under  combat  conditions  I  could  not  have  performed  my 
+mission. 
+
+
+UNCLASSIFIED 
+
+
+Appendix 
+
+
+50 
+
+
+UNCLASSIFIED 
+
+
+DISTRIBUTIOM  LIST  NO.  19 
+
+
+Copies  made:  128 
+
+
+1 
+
+2-6 
+
+7-10 
+
+11 
+
+12  -  13 
+
+14 
+
+15 
+
+16 
+
+17 
+
+18 
+
+19 
+
+20 
+21 
+
+22  -  24 
+25  -  26 
+■  27 
+
+28  -  29 
+
+30 
+
+31 
+
+32 
+
+33 
+
+34  -  35 
+
+36 
+
+37 
+
+
+Mall  and  File  Record  Center,  CBDL  (Record  Copy) 
+
+CRDL  Library,  CRDL 
+
+Publications  Branch,  Technical  Information  Division 
+
+Director  of  Medical  Research,  CRDL 
+
+Chief,  Clinical  Research  Division,  CRDL 
+
+Aerospace  Medicine  Division  (AFCS6-11.4) ,  Directorate  of  Professional 
+Services,  Office  of  the  Surgeon  General,  Headquarters  USAF, 
+Washington  25,  D.  C. 
+
+Aerospace  Technical  Intelligence  Center,  Attn:  AFClN-4E2a, 
+Wright-Patterson  Air  Force  Base,  Ohio 
+
+Air  Force  Intelligence  Center  (AFCIN-3W4) ,  Department  of  the  Air 
+Force,  Washington  25,  D.  C. 
+
+Air  Force  Missile  Test  Center,  Ground  Safety  Office,  Attn;  MTBS, 
+Patrick  Air  Force  Base,  Florida 
+
+Bureau  of  Yards  and  Docks,  Department  of  the  Navy,  Washington  25, 
+
+D.  C. ,  Attn:  Code  D-440C 
+
+BW-CW  Division,  Office,  Atomic,  Biological  and  Chemical  Warfare, 
+ODDB&E,  Room.3E  1071,  The  Pentagon,  Washington  25,  D.  C. 
+
+Chemical  Corps  Liaison  Officer,  U.S.A.  Combat  Development  Experi¬ 
+mentation  Center,  Fort  Ord,  California 
+
+Chief,  Bureau  of  Medicine  &  Surgery,  Special  Weapons  Defense  Division 
+(Code  74),  Department  of. the  Navy,  Washington  15,  D.  C. 
+
+Chief,  Bureau  of  Ships  (Code  333),  Department  of  the  Navy, 
+
+Washington  25,  D.  C. 
+
+Chief,  Bureau  of  Ships  (Code  362),  Department  of  the  Navy, 
+
+Washington  25,  D.  C, 
+
+Chief,  Bureau  of  Supplies  and  Accounts  (Wl) ,  Department  of  the  Navy, 
+Room  1418  T-3  Building,  Washington  25,  D.  C. 
+
+Chief  Chemical  Officer,  Departpient  of  the  Army,  Washington  25,  D.  C. 
+
+Chief,  Combat  Materiel  Division,  Office,  Chief  of  Research  and 
+Development,  Department  of  the  Army,  Washington  25,  D.  C. 
+
+Chief,  Develo]»nentB  Division,  Medical  Section,  U.  S.  Continental 
+Army  Command,  Fort  Monroe,  Virginia 
+
+Chief,  Human  Factors  Division,  Directorate  of  Research  and  Technology, 
+DCS/Development,  Headquarters  USAF,  Washington  25,  D.  C. 
+
+Chief,  Life  Sciences  Division,  Army  Research  Office,  Office  of  the 
+Chief  of  Research  and  Development,  Room  3D442,  The  Pentagon, 
+Washington  25,  D.  C. 
+
+Chief  of  Naval  Operations,  Op-922G,  The  Pentagon,  Washington  25, 
+
+D.  C. 
+
+Chief,  Preventive  Medicine  Division,  Office  of  the  Surgeon  General, 
+Department  of  the  Army,  Washington  25,  D.  C. 
+
+Commandant  of  the  Marine  Corps,  Headquarters,  U.  S.  Marine  Corps, 
+Washington  25,  D.  C. 
+
+
+UNCLASSIFIED 
+
+
+UNCLASSIFIED 
+
+
+DISTRIBUTION  LIST  NO.  19  (Contd.) 
+
+38  Commandant,  USA  Command  &  General  Staff  College,  Attn:  Archives, 
+
+Fort  Leavenworth,  Kansas 
+
+39  >  40  Commander,  U.  S.  Naval  Missile  Center,  Point  Mugu,'  California, 
+
+Attn:  Technical  Library 
+
+41  Commander,  U.  S.  Naval  Ordnance  Laboratory,  White  Oak,  Silver  Spring, 
+
+Maryland,  Attn;  Technical  Library 
+
+42  Commander,  Wright  Air  Development  Division,  Attn;  WWRDNP-2, 
+
+W^right-Patterson  Air  Force  Base,  Ohio 
+
+43  Commander,  Wright  Air  Development  Division,  Attn:  WWRDMP-3, 
+
+Wrlght-Patterson  Air  Force  Base,  Ohio 
+44  -  45  Commanding  General,  Attn:  Technical  Library,  Building  313, 
+
+Aberdeen  Proving  Ground,  Md. 
+
+46  Commanding  General,  HQ  QM  Research  &  Engineering  Command, 
+
+Attn:  Chief,  Special  Weapons  Protection  Branch,  Chemicals  & 
+Plastics  Division,  QM  Research  &  Engineering  Center,  U.  S.  Army, 
+Natick,  Massachusetts 
+
+47  Commanding  General,  U.S.A.  Chemical  Corps' Research  6t  Development 
+
+Conunand,  Washington  25,  D.  C. 
+
+48  Commanding  General,  U.S.A.  Medical  Research  &  Development  Command, 
+
+Attn;  Major  David  N.  Dalton,  Washington  25,  D.  C. 
+
+49  Commanding  General,  U.S.A.  Medical  Research  &  Development  Command, 
+
+Main  Navy  Building,  Washington  25,  D.  C. 
+
+50  Commanding  General,  U.  S.  Continental  Army  Command,  ATTN:  DCSMD 
+
+(MGP) ,  Fort  Monroe ,  Virginia  j 
+
+51  Commanding  Officer  and  Director  (Code  L3i),  U.  S.  Naval  Civil 
+
+Engineering  Laboratory,  Port  Hueneme,  California 
+
+52  Commanding  Officer  &  Director  (Code  222A) ,  U.  S.  Naval  Radiological 
+
+Defense  Laboratory,  San  Francisco  24,  California 
+
+53  Commanding  Officer,  Naval  Medical  Field  Research  Laboratory, 
+
+Camp  Lejeune,  North  Carolina,  Attn;  Library 
+
+54  Commanding  Officer,  Plcatinny  Arsenal,  Attn:  0rdbb-VS3,  Dover, 
+
+New  Jersey 
+
+55  Commanding  Officer  U.S.A.  Environmental  Hygiene  Agency,  Building 
+
+1235,  Army  Chemical  Center,  Md. 
+
+56  -  57  Commanding  Officer,  U.S.A.  Chemical  Corps  Biological  Laboratories, 
+
+Attn:  Technical  Information  Division,  Tech  Library,  Fort  Detrlck, 
+Frederick,  Md. 
+
+58  Commanding  Officer,  U.S.A.  Chemical  Corps  Engineering  Command, 
+
+Attn:  Chief  Engineer,  Army  Chemical  Center,  Md. 
+
+59  Commanding  Officer,  U.  S.  A.  Chemical  Corps  Proving  Ground, 
+
+Attn:  Chief,  CW  Operations  Division,  Dugway,  Utah 
+
+60  Commanding  Officer,  U.  S.  A.  Chemical  Corps  Proving  Ground, 
+
+Attn:  Technical  Library,  Dugway,  Utah 
+
+61  Commanding  Officer,  U  S.A.  Chemical  Corps  Training  Command, 
+
+Fort  McClellan,  Alabama 
+
+
+UNCLASSIFIED 
+
+
+UNCLASSIFIED 
+
+
+62 
+
+63 
+
+64 
+
+65 
+
+66  -  67 
+68 
+
+69  -  70 
+
+71 
+
+72 
+
+n  -  74 
+
+73 
+
+76 
+
+77 
+
+78 
+
+79  -  84 
+
+85 
+
+86 
+
+87 
+
+88 
+
+89 
+
+90 
+
+91  -  98 
+
+
+DISTRIBUTION  LIST  NO.  19  (Contd.) 
+
+Commanding  Officer,  U.S.A.  Medical  Research  &  Nutrition  Laboratory, 
+Fltzslmons  General  Hospital,  Denver  30,  Colorado 
+Commanding  Officer,  D.  S.  Army  Ordnance,  Frankford  Arsenal, 
+
+Attn:  Medical  Director,  Philadelphia  37,  Pennsylvania 
+Commanding  Officer,  U.S.A.  Transportation  Research  Command, 
+
+Attn:  Research  Reference  Center,  Fort  Eustls,  Virginia 
+Commanding  Officer,  U.  S.  Naval  Unit,  Building  51,  Army  Chemical 
+Center,  Md. 
+
+Deputy  IG  for  Safety,  AFCNS-M,  Rlrtland  Air  Force  Base,  New  Mexico 
+Director,  Air  University  Library,  Attn:  AUL-8879,  Maxwell  Air 
+Force  Base,  Alabama 
+
+The  Director,  Armed  Forces  Institute  of  Pathology,  Attn:  Chief, 
+Radiation  Pathology  Branch,  Washington  25,  D.  C. 
+
+Director,  Ballistic  Research  Laboratories,  Attn:  ORDB6-BBL-T, 
+Aberdeen  Proving  Ground,  Md. 
+
+Director,  Marine  Corps  Landing  Force  Development  Center,  Marine 
+Corps  Schools,  Quantlco,  Virginia 
+
+Director,  Restricted  Weapons  Defense  Division,  U.  S.  Naval  Schools 
+Command,  Treasure  Island,  San  Francisco  30,  California 
+Director,  U.S.A.  CBR  Weapons  Orientation  Course,  Dugway  Proving 
+Ground,  Dugway,  Utah 
+
+Director,  U.S.A.  Chemical  Corps  Operations  Research  Group, 
+
+Building  483,  Army  Chemical  Center,  Md. 
+
+Director,  USAF  Project  RAND,  Via:  Air  Force  Liaison  Office,  The 
+RAND  Corporation,  1700  Main  Street,  Santa  Monica,  California, 
+
+Attn:  Library 
+
+Director,  U.  S.  Naval  Research  Laboratory,  Washington  25,  D.  C. , 
+Attn:  Code  1071 
+
+Major  R.  R.  Doddridge,  Canadian  Army  Technical  Representative, 
+Building  330,  Ainny  Chemical  Center,  Md. 
+
+Headquarters,  Ordnance  Ammunition  Command,  U.  S.  Army, 
+
+Attn:  ORDLY-S,  Joliet,  Illinois 
+Headquarters,  Strategic  Air  Command,  Attn;  SUP3.1,  Offutt  Air 
+Force  Base,  Nebraska  '  - 
+
+Headouarters ,  Strategic  Air  Command,  Attn;  DINC,  Offutt  Air  Force 
+Bas^,  Nebraska 
+
+Headquarters  Tactical  Air  Command,  Langley  Air  Force  Base,  Virginia, 
+Attn:  TMEM-AM 
+
+Headquarters  Tactical  Air  Command,  Langley  Air  Force  Base,  Virginia, 
+Attn;  TOOT-T 
+
+Headquarters  Tactical  Air  Command,  Langley  Air  Force  Base,  Virginia, 
+Attn;  TPL-RQD 
+
+Mr.  Ronald  Holmes,  Defense  Research  Staff/XW,  British  Embassy, 
+
+3100  Massachusetts  Avenue,  N.  W. ,  Washington  8,  D.  C. 
+
+
+UNCLASSIFIED 
+
+
+99 
+
+100 
+
+101 
+
+102 
+
+103 
+
+104 
+
+105 
+
+106 
+
+107 
+
+108 
+
+109 
+
+110 
+
+111  -  112 
+113  -  114 
+
+115 
+
+116 
+
+117 
+
+118 
+
+119  -  128 
+
+
+SECRET 
+
+DISTRIBOTIfMI  LIST  NO.  19  (Contd.) 
+
+Medical  Information  &  Intelligence  Agency,  U.  S.  Army  Medical 
+Service,  Attn:  Director,  Washington  25,  D.  C. 
+
+Office  of  the  Chief  Chemical  Officer,  Attn:  Chief,  Safety  Branch, 
+Department  of  the  Army,  Washington  25,  D.  C. 
+
+Office  Chief  of  Ordnance,  Department  of  the  Army,  Attn:  OBDFA-T, 
+Washington  25,  D.  C. 
+
+Office  Chief  of  Ordnance,  Department  of  the  Army,  Attn:  0SD6U-5A, 
+Washington  25,  D.  C. 
+
+Office  of  the  Senior  Standardization  Representative,  U  S. A.  Standardl 
+zatlon  Group,  Canada,  c/o  Directorate  of  Weapons  &  Development, 
+Canadian  Army  Headquarters,  Ottawa, Canada 
+
+Office  of  the  Surgeon  (MCD) ,  Headquarters,  Air  Materiel  Command, 
+Wright -Patters on  Air  Force  Base,  Ohio 
+
+Operations  Research  Office,  The  Johns  Hopkins  University,  Attn: 
+Document  Control  Office,  6935  Arlington  Road,  Bethesda  14,  Md. 
+
+Post  Surgeon,  Rocky  Mountain  Arsenal,  Denver  30,  Colorado 
+
+President,  U.S.A.  Chemical  Corps  Board,  Building  483,  Army  Chemical 
+Center,  Md. 
+
+School  of  Aviation  Medicine,  USAF,  Attn;  SAMLIBR,  Brooks  Air  Force 
+Base,  Texas 
+
+Senior  Army  Representative,  Department  of  Health,  Education  & 
+
+Welfare,  Room  2078  South  Building,  Washington  25,  D.  C. 
+
+Senior  Standardization  Representative,  U.S.A.  Standardization  Group- 
+UK,  Attn:  Chemical  Representative,  Box  65,  USN  100,  FPO,  New  York, 
+N.  Y. 
+
+Technical  Library,  Room  G-2B,  Office  of  Civil  and  Defense  Mobiliza¬ 
+tion,  Atth;  Director,  Technical  Library,  Battle  Creek,  Michigan 
+
+3415th  Technical  School,  USAF  (TORF) ,  Lowry  Technical  Training 
+Center  (ATC) ,  Lowry  Air  Force  Base  30,  Colorado 
+
+U.  S.  Army  Chemical  Corps  Advisory  Council,  Building  330,  Army 
+Chemical  Center,  Md, 
+
+U.  S.  CONARC  Liaison  Officer,  Building  330,  Army  Chemical  Center,  Md. 
+
+Walter  Reed  Army  Institute  of  Research,  Walter  Reed  Army  Medical 
+Center,  Washington  12,  D.  C. 
+
+British  Liaison  Officer,  Building  3(30,  Array  Chemical  Center,  Md. 
+
+Commander,  Armed  Services  Technical  Information  Agency,  Attn:  TIPCR, 
+Arlington  Hall  Station,  Arlington  12,  Virginia 
+
+
+SECRET 
+
+
+CONFIDENTIAL 
+
+
+I  AU _ Acceation  No._. _ 
+
+I  Clinical  Reaearch  Division.  U.  S,  Army  Chemical 
+I  Research  and  Development  Laboratories,  Army 
+'  Chemical  Center,  Maryland 
+I  CI.INICAL  INVESTIGATION  OF  EA  1729  (U)  - 
+I  Van  M.  Sim 
+
+CRDLR  3074,  June  1961 
+I  Project  eC08-02-022.  SECRET  REPORT 
+
+
+- 1 
+
+CONFIDENTIAL  | 
+
+1.  LSD25,' clinical  | 
+
+studies  I 
+
+2.  LSD 25,  animal  1 
+
+studies 
+
+3.  LSD25.  field  tests  ' 
+
+
+IC)  liSD25  has  been  studied  extensively  in  animals 
+and  in  humans  as  a  possible  incapacitating  CW 
+compound.  Clinical,  physiological,  and 
+psychiatric  studies  have  shown  that  this  drug 
+psychologically  incapacitates  man  at  a  very 
+low  dose. 
+
+
+4.  LSD25,  biological 
+activity 
+
+5.  Incapacitating  agents, 
+L.SD25 
+
+
+AD _ _ Accession  No. 
+
+Clinical  Research  Division,  U.  S.  Army  Chemical 
+Research  and  Development  Laboratories,  Army 
+Chemical  Center,  Maryland 
+CLINICAL  INVESTIGATION  OF  EA  1729  (U)  - 
+Van  M.  Sim 
+
+CRDLR  3074,  June  1961 
+
+Project  4C0ti-02-f)22.  SECRET  REPORT 
+
+
+CONFIDENTIAL 
+
+CONFIDENTIAL 
+
+1.  LSD25.  clinical 
+studios 
+
+2.  LSD25,  animal 
+studios 
+
+3.  LSD25,  field  test 
+
+
+(C)  JjSD25  has  been  studied  extensively  in  animals 
+and  in  humans  as  a  possible  Incapacitating  CW 
+compound.  Clinical,  physiological,  and 
+psychiatric  studies  have  shown  that  this  drug 
+psychologically  incapacitates  man  at  a  very 
+low  dose. 
+
+
+4.  LSD25,  biological 
+activity 
+
+5. -  Incapacitating  agents, 
+
+LSD25 
+
+
+AD _ Accession  No. _ 
+
+Clinical  Research  Division,  U.  S.  Army  Chemical 
+Research  and  Dc vcloptncnl  Laboratories,  Army 
+Chemical  Center,  Maryland 
+CLINICAL  INVESTIGATION  OF  EA  1729  (U)  - 
+Van  M.  Sim 
+
+CRDI  R  3074  Tim«  19f,l 
+Project  4C0H-02-022,  SECRET  REPORT 
+
+
+CONFIDENTIAL  | 
+
+- 1 
+
+CONFIDENTIAL  1 
+
+1.  JjSD25.  clinical  I 
+
+stud’cc  '  j 
+
+2.  LSD25,  animal  I 
+
+studies  I 
+
+3.  LSDZ5,  field  test  | 
+
+
+(C)  LSD25  has  been  studied  extensively  in  animals 
+and  in  humans  as  a  possible  incapacitating  CW 
+compound.  Clinical,  physiological,  and 
+psychiatric  studies  have  shown  that  this  drug 
+psychologically  incapacitates  man  at  a  very 
+low  dose. 
+
+
+4.  LSD25,  biological 
+activity 
+
+5.  Incapacitating  agents, 
+LSD  25 
+
+
+CONFIDENTIALj 
+
+
+CONFIDENTIAL 
+
+

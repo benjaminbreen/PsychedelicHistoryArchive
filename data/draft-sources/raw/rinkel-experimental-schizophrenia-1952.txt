@@ -1,0 +1,45 @@
+[Bibliographic verification capture, not the article text — this source is external-only.
+The Journal of Nervous and Mental Disease/AJP full-text pages (psychiatryonline.org,
+PubMed) returned Cloudflare/cookie-gate blocks to automated fetch (HTTP 403, confirmed
+by both curl and WebFetch), so no exact-text quotation was obtainable and none is used
+in the draft record. Citation fields below are independently confirmed via the Crossref
+API, a structured bibliographic source, not a paraphrase.]
+
+Source fetched: https://api.crossref.org/works/10.1176/ajp.108.8.572
+Fetched: 2026-08-15
+Method: curl -sL (HTTP 200), raw JSON response
+
+Relevant fields from the Crossref work record:
+  DOI: 10.1176/ajp.108.8.572
+  type: journal-article
+  title: EXPERIMENTAL SCHIZOPHRENIA-LIKE SYMPTOMS
+  container-title: American Journal of Psychiatry
+  short-container-title: AJP
+  publisher: American Psychiatric Association Publishing
+  volume: 108
+  issue: 8
+  page: 572-578
+  published-print: 1952-02
+  authors:
+    MAX RINKEL — The Department of Psychiatry, Harvard Medical School, and the Boston
+      Psychopathic Hospital
+    H. JACKSON DESHON — The Department of Psychiatry, Harvard Medical School, and the
+      Boston Psychopathic Hospital
+    ROBERT W. HYDE — The Department of Psychiatry, Harvard Medical School, and the
+      Boston Psychopathic Hospital
+    HARRY C. SOLOMON — The Department of Psychiatry, Harvard Medical School, and the
+      Boston Psychopathic Hospital
+  is-referenced-by-count: 79
+
+Attempted full-text access points (all blocked to automated fetch):
+  https://pubmed.ncbi.nlm.nih.gov/14903182/ — HTTP 403 (cookie-consent gate)
+  https://psychiatryonline.org/doi/10.1176/ajp.108.8.572 — HTTP 403 (Cloudflare)
+
+Secondary confirmation (WebSearch snippet, not independently fetched): the study
+administered small doses of d-LSD tartrate to normal subjects aged 19-48 and to
+schizophrenic, depressive, and paranoid inpatients at Boston Psychopathic Hospital, and
+reported that the induced symptoms — disturbances of thought and speech, altered affect,
+perceptual change, hallucinations, delusions, depersonalization — resembled the clinical
+picture of schizophrenia. This is one of the earliest American "model psychosis" LSD
+papers and the Rinkel/Hyde group's first major publication in the Boston Psychopathic
+Hospital LSD program.

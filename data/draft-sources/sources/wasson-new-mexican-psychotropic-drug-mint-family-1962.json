@@ -1,0 +1,72 @@
+{
+  "slug": "wasson-new-mexican-psychotropic-drug-mint-family-1962",
+  "title": "A New Mexican Psychotropic Drug from the Mint Family",
+  "shortTitle": "A New Mexican Psychotropic Drug",
+  "author": "R. Gordon Wasson",
+  "creators": [
+    {
+      "name": "R. Gordon Wasson",
+      "role": "author"
+    }
+  ],
+  "year": 1962,
+  "displayDate": "1962",
+  "type": "Academic Article",
+  "medium": "Text",
+  "era": "1950-1970",
+  "region": "Oaxaca, Mexico",
+  "language": "English",
+  "substances": [
+    "Salvia divinorum"
+  ],
+  "people": [
+    "R. Gordon Wasson",
+    "Albert Hofmann",
+    "Carl Epling",
+    "Augustina Borja"
+  ],
+  "tags": [
+    "salvia-divinorum",
+    "mazatec",
+    "oaxaca",
+    "ethnobotany",
+    "hojas-de-la-pastora",
+    "botanical-museum-leaflets"
+  ],
+  "summary": "The first scientific identification of Salvia divinorum, published in Harvard's Botanical Museum Leaflets. Wasson reports ingesting the Mazatec 'leaves of the Shepherdess' at two ceremonies in Oaxaca in 1961-62, attended on the second occasion by Albert Hofmann and his wife.",
+  "excerpt": "\"The effect of the leaves came sooner than would have been the case with the mushrooms, was less sweeping, and lasted a shorter time... dancing colors in elaborate, three-dimensional designs.\"",
+  "citation": "Wasson, R. Gordon. \"A New Mexican Psychotropic Drug from the Mint Family.\" Botanical Museum Leaflets, Harvard University 20, no. 3 (1962): 77-84.",
+  "rights": "In copyright (Botanical Museum Leaflets, Harvard University, 1962); renewal status not verified. Treated as protected per project policy for material published after 1930.",
+  "sourceUrl": "https://www.biodiversitylibrary.org/part/168538",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "_[This 1962 article remains in copyright. Per project policy for post-1930 material, no substantial transcript is reproduced; only a short, verified quotation follows. See sourceUrl for the full article via the Biodiversity Heritage Library.]_\n\n\"On Wednesday, July 12, 1961, I ate the 'hojas de la Pastora' and experienced their effects. I was in Ayautla... The effect of the leaves came sooner than would have been the case with the mushrooms, was less sweeping, and lasted a shorter time. There was not the slightest doubt about the effect... dancing colors in elaborate, three-dimensional designs.\"",
+  "wordCount": 93,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research-agent-bucket-J",
+    "proposedOn": "2026-08-15",
+    "bucket": "J",
+    "rationale": "The founding document for Salvia divinorum as a subject of Western study, and the only Salvia candidate in this bucket's brief with a freely locatable full text to verify a quotation against; the two later candidates (Johnson 1939, Hofmann's 1962 field collection) are covered by this article or are not independently locatable in full text.",
+    "textSource": {
+      "url": "https://archive.org/download/biostor-160832/biostor-160832_djvu.txt",
+      "kind": "other",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/wasson-new-mexican-psychotropic-drug-mint-family-1962.txt",
+      "scope": "OCR text of the complete 1962 article, consulted via a Biostor mirror (on archive.org) of the Biodiversity Heritage Library scan, solely to verify the short quotation used here. The full text is not reproduced, per copyright."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "The underlying OCR (archive.org/Biostor mirror of the BHL scan) is heavily garbled throughout, with frequent letter/digit and ligature substitution errors. The one sentence quoted in transcript/excerpt was checked by hand against this OCR and against the surrounding context to confirm wording; the rest of the raw file has not been cleaned and should not be treated as reliable.",
+      "uncertainReadings": [
+        "most of the raw OCR file beyond the words actually quoted — see notes"
+      ]
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

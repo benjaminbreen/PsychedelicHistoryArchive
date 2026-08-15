@@ -1,0 +1,80 @@
+{
+  "slug": "francisco-hernandez-ximenez-ololiuhqui-1615",
+  "title": "De la yerva que llaman Ololiuhqui",
+  "shortTitle": "On the Herb Called Ololiuhqui",
+  "author": "Francisco Hernández",
+  "creators": [
+    {
+      "name": "Francisco Hernández",
+      "role": "author"
+    },
+    {
+      "name": "Francisco Ximénez",
+      "role": "translator"
+    }
+  ],
+  "year": 1615,
+  "displayDate": "1615",
+  "type": "Book",
+  "medium": "Text",
+  "era": "Pre-1800",
+  "region": "Mexico",
+  "language": "Spanish",
+  "contentLanguage": "Spanish",
+  "substances": [
+    "Ololiuhqui"
+  ],
+  "people": [
+    "Francisco Hernández",
+    "Francisco Ximénez"
+  ],
+  "tags": [
+    "ololiuhqui",
+    "morning-glory",
+    "hernandez",
+    "colonial-natural-history",
+    "aztec-medicine",
+    "divination"
+  ],
+  "summary": "Chapter 14 of Francisco Ximénez's 1615 Spanish redaction of Hernández's natural history, describing ololiuhqui. Ximénez gives the plant's Nahuatl name cohuaxihuitl ('serpent herb'), its medicinal uses, and records that priests ate it to commune with the devil and see a thousand phantasms.",
+  "excerpt": "\"...comían desta planta para tornarse locos, y para ver mil fantasmas que se les representavan\" (\"...they ate of this plant to go mad, and to see the thousand phantasms that appeared before them\").",
+  "citation": "Hernández, Francisco. Quatro libros. De la naturaleza, y virtudes de las plantas, y animales que están recibidos en el uso de medicina en la Nueva España, y la methodo, y correccion, y preparacion, que para administrallas se requiere, con lo que el doctor Francisco Hernández escrivió en lengua latina. Translated and abridged by Francisco Ximénez. Mexico: Casa de la viuda de Diego López Dávalos, 1615. Book 2, ch. 14, \"De la yerva que llaman Ololiuhqui.\"",
+  "rights": "Public domain (published before 1930).",
+  "sourceUrl": "https://archive.org/details/quatrolibrosdela00hern",
+  "accessType": "hosted",
+  "hostingStatus": "transcript_only",
+  "readerMode": "transcript",
+  "transcript": "### Cap. XIIII. De la yerva que llaman Ololiuhqui, que quiere decir planta de hojas redondas.\n\nEs la ololiuhqui, que otros llaman cohuaxihuitl, que quiere dezir yerva de serpientes, la qual es una yerva retorzida que lleva las hojas tenues, verdes, de figura de coraçón; tiene los tallos redondos, tenues y delgados; las flores blancas, larguillas, casi como redondas, y muy semejantes al culantro, de donde le vino el nombre; tiene las raýzes delgadas como hebras; es caliente esta planta en el quarto grado; cura el mal de Francia; mitiga los dolores nacidos de frío; resuelve las ventosedades y las hinchazones. El polvo de la raýz, mezclado con trementina, expele el frío, y es gran remedio para los huessos quebrados y desconcertados, y para las caderas relaxadas de las mugeres; también sirve la simiente en la medezina, porque molida y bevida, o puesta en la cabeça, cura las enfermedades de los ojos; y también bevida provoca a luxuria; es _[frase dudosa: \"es defa yes mepr moli uor\"]_ y de temperatura ácida y muy caliente. Antiguamente los sacerdotes de los ýdolos, que querían tratar con el demonio y tener respuestas de sus dudas, comían desta planta para tornarse locos, y para ver mil fantasmas que se les representavan; y _[frase dudosa: \"y ponía de late en loqual\"]_, no dexa de ser esta planta al _[lectura dudosa: \"Solano\"]_ maniaco de _[lectura dudosa: \"Dioscórides\"]_; no será gran yerro dexar de dezir aquí dónde nace, pues importara muy poco que esta yerva no se escriviera aquí, ni aunque los españoles la conocieran.",
+  "translationLanguage": "English",
+  "translationProvider": "llm",
+  "translationNote": "Machine-assisted translation from the original 1615 Spanish; not yet checked by a human reader against the source. Passages the transcript itself flags as uncertain are carried into the translation with the same bracketed caveats.",
+  "translationText": "### Chapter 14. On the herb they call Ololiuhqui, which means 'plant of round leaves.'\n\nOloliuhqui, which others call cohuaxihuitl, meaning 'serpent herb,' is a twisting herb bearing thin, green, heart-shaped leaves; its stems are round, slender, and thin; its flowers are white, elongated, almost round, much like coriander, whence it took its name; its roots are thin as threads. This plant is hot in the fourth degree; it cures the French disease [syphilis]; it eases pains born of cold; it relieves flatulence and swelling. The powdered root, mixed with turpentine, expels cold, and is a great remedy for broken and dislocated bones, and for women's strained hips; the seed is also used in medicine, for, ground and drunk, or applied to the head, it cures ailments of the eyes; and drunk it also provokes lust; it is _[uncertain: \"of such-and-such flavor\"]_ and of an acidic and very hot temperament. Formerly the priests of the idols, who wished to commune with the devil and receive answers to their doubts, ate of this plant to go mad, and to see the thousand phantasms that appeared before them; and _[uncertain clause]_, this plant is nothing other than the maniacal _[uncertain: \"Solanum\"]_ of _[uncertain: \"Dioscorides\"]_. It will be no great error to omit saying here where it grows, since it would matter very little whether this herb were written of here at all, even if the Spaniards knew it.",
+  "wordCount": 258,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket E: Mesoamerican mushrooms and morning glory, 1915-1962)",
+    "proposedOn": "2026-08-15",
+    "rationale": "The earliest printed Spanish-language natural-historical account of ololiuhqui, predating and textually independent of Sahagún's Nahuatl-Spanish Florentine Codex material already in the archive. It is also, concretely, the primary text Schultes himself cites and quotes from (lib. 2, cap. 14) in the 1941 Rivea corymbosa monograph already proposed in this bucket, so hosting it lets a reader check Schultes's source directly.",
+    "textSource": {
+      "url": "https://archive.org/download/quatrolibrosdela00hern/quatrolibrosdela00hern_djvu.txt",
+      "kind": "internet-archive-djvu",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/francisco-hernandez-ximenez-ololiuhqui-1615.txt",
+      "scope": "Book 2, chapter 14 (\"De la yerva que llaman Ololiuhqui\"), the complete chapter, corresponding to raw file lines 8190-8226."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "medium",
+      "notes": "Hand-corrected from very rough OCR of 17th-century Spanish black-letter type, which the mechanical slicing pass could not clean on its own. Long-s, u/v, and common letter-substitution errors were resolved by eye; a running head ('Del Libro Segundo, 75') and a printer's ornament that the OCR rendered as a line of random symbols were removed as page furniture; the word 'trementina,' split by a page break, was rejoined. Several short phrases could not be confidently reconstructed and are left bracketed in place in both the transcript and the translation rather than guessed at; see uncertainReadings. A hand check against the archive.org page images (not just the OCR layer) is needed before this transcript can be trusted for direct quotation. Grounding re-checked with scripts/check_draft_fuzzy.mjs: mean best-window similarity to the raw scan is 72%, consistent with heavy black-letter OCR damage rather than invention. The exact-match fidelity score of 0% is an artefact of that damage. Worth a hand-check against the printed 1615 edition before quotation.",
+      "uncertainReadings": [
+        "\"es defa yes mepr moli uor\" (a short description of the plant's flavor; sense unclear)",
+        "\"y ponía de late en loqual\" (transition clause before the Dioscorides comparison; word order/reading unclear)",
+        "\"forano maniaco de dioico\" (tentatively read as \"Solano maniaco de Dioscórides,\" i.e. a comparison to the Solanum maniacum of Dioscorides, but not certain)"
+      ]
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15. Distinct from the archive's existing Sahagún/Durán teonanácatl material and Ruiz de Alarcón's ololiuhqui treatise: this is Hernández's own natural-historical entry, redacted into Spanish by Ximénez, independent of those chroniclers.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

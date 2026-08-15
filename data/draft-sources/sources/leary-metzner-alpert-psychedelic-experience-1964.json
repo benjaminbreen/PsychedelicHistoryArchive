@@ -1,0 +1,79 @@
+{
+  "slug": "leary-metzner-alpert-psychedelic-experience-1964",
+  "title": "The Psychedelic Experience: A Manual Based on the Tibetan Book of the Dead",
+  "shortTitle": "The Psychedelic Experience",
+  "author": "Timothy Leary, Ralph Metzner, and Richard Alpert",
+  "creators": [
+    {
+      "name": "Timothy Leary",
+      "role": "author"
+    },
+    {
+      "name": "Ralph Metzner",
+      "role": "author"
+    },
+    {
+      "name": "Richard Alpert",
+      "role": "author"
+    }
+  ],
+  "year": 1964,
+  "displayDate": "1964",
+  "type": "Book",
+  "medium": "Text",
+  "era": "1950-1970",
+  "region": "United States",
+  "language": "English",
+  "substances": [
+    "LSD",
+    "Psilocybin",
+    "Mescaline",
+    "DMT"
+  ],
+  "people": [
+    "Timothy Leary",
+    "Ralph Metzner",
+    "Richard Alpert"
+  ],
+  "tags": [
+    "millbrook",
+    "tibetan-book-of-the-dead",
+    "set-and-setting",
+    "session-guide",
+    "psychedelic-religion",
+    "1964"
+  ],
+  "summary": "Leary, Metzner and Alpert recast the Tibetan Book of the Dead as a manual for LSD, psilocybin and mescaline sessions. The book sets out 'set and setting' as the determinant of what a session becomes.",
+  "excerpt": "Of course, the drug dose does not produce the transcendent experience. It merely acts as a chemical key - it opens the mind, frees the nervous system of its ordinary patterns and structures. The nature of the experience depends almost entirely on set and setting. Set denotes the preparation of the individual, including his personality structure and his mood at the time.",
+  "citation": "Timothy Leary, Ralph Metzner, and Richard Alpert, The Psychedelic Experience: A Manual Based on the Tibetan Book of the Dead (New Hyde Park, N.Y.: University Books, 1964).",
+  "rights": "In copyright (published 1964, still in print). A public-domain-labeled scan circulates on Internet Archive under a non-restricted upload, but the text itself remains under copyright; not cleared for full republication here.",
+  "sourceUrl": "https://archive.org/details/ThePsychedelicExperienceAManualBasedOnTheTibetanBookOfTheDead",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "",
+  "wordCount": 0,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket H: counterculture in print, 1963-1975)",
+    "proposedOn": "2026-08-15",
+    "rationale": "The most influential nonclinical guidebook of the movement's early years and the origin point of 'set and setting' as movement vocabulary; written by the same three editors behind The Psychedelic Review, it belongs alongside that journal as the two central print artifacts of the Leary-Metzner-Alpert circle immediately after Harvard. It was the most widely used nonclinical guide to psychedelic sessions through the late 1960s.",
+    "textSource": {
+      "url": "https://archive.org/download/ThePsychedelicExperienceAManualBasedOnTheTibetanBookOfTheDead/The%20Psychedelic%20Experience%20A%20Manual%20Based%20on%20the%20Tibetan%20Book%20of%20the%20Dead_djvu.txt",
+      "kind": "internet-archive-djvu",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/leary-metzner-alpert-psychedelic-experience-1964.txt",
+      "scope": "Full OCR/HTML-to-text conversion of the book (33,000+ words; a separate, formally cataloged Internet Archive copy at identifier psychedelicexper0000lear is lending-restricted, but this earlier community-uploaded transcription is unrestricted). Kept in raw/ for provenance; only a short passage on 'set and setting' is quoted in the record per copyright rules."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "medium",
+      "notes": "Text was originally translated to HTML by a named volunteer transcriber (credited on the page itself) rather than produced by raw OCR, so it is generally clean, but has not been independently checked against a physical copy of the 1964 first edition.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

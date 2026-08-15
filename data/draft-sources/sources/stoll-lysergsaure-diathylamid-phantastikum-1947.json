@@ -1,0 +1,68 @@
+{
+  "slug": "stoll-lysergsaure-diathylamid-phantastikum-1947",
+  "title": "Lysergsäure-diäthylamid, ein Phantastikum aus der Mutterkorngruppe",
+  "shortTitle": "LSD, a Phantasticum from the Ergot Group",
+  "author": "Werner A. Stoll",
+  "creators": [
+    {
+      "name": "Werner A. Stoll",
+      "role": "author"
+    }
+  ],
+  "year": 1947,
+  "displayDate": "1947",
+  "type": "Academic Article",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "Switzerland",
+  "language": "German",
+  "substances": [
+    "LSD"
+  ],
+  "people": [
+    "Werner A. Stoll",
+    "Albert Hofmann",
+    "Arthur Stoll"
+  ],
+  "tags": [
+    "lsd",
+    "psychiatry",
+    "model-psychosis",
+    "sandoz",
+    "self-experimentation",
+    "burgholzli"
+  ],
+  "summary": "Werner Stoll's first systematic clinical study of LSD, examining sixteen healthy volunteers and six schizophrenic patients, plus Stoll's own self-experiment. Published in 1947 following Hofmann's 1943 discovery at Sandoz, it established key vocabulary for psychiatric LSD research.",
+  "excerpt": "",
+  "citation": "Werner A. Stoll, \"Lysergsäure-diäthylamid, ein Phantastikum aus der Mutterkorngruppe,\" Schweizer Archiv für Neurologie und Psychiatrie 60 (1947): 279–323.",
+  "rights": "In copyright (Switzerland; author d. 1969). No US Government interest.",
+  "sourceUrl": "https://www.erowid.org/references/refs_view.php?ID=1460",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "transcript": "",
+  "wordCount": 0,
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "research agent (bucket F: LSD/mescaline in psychiatry, 1943-1962)",
+    "proposedOn": "2026-08-15",
+    "rationale": "This is the first published human LSD study, the direct precedent for the entire 1950s-60s psychiatric LSD literature the archive already documents (Frenquel/LSD-25 1955, psychoanalysis-and-LSD 1957). Anchors that later material to its origin point.",
+    "textSource": {
+      "url": "https://www.thieme-connect.de/products/ejournals/abstract/10.1055/a-2282-6399",
+      "kind": "other",
+      "fetchedOn": "2026-08-15",
+      "rawFile": "raw/stoll-lysergsaure-diathylamid-phantastikum-1947.txt",
+      "scope": "Bibliographic metadata only (author, title, journal, volume, pages, year), cross-checked against an independent WebSearch citation snippet. No full text located or fetched; article predates DOI indexing and is not digitized on any platform I could reach."
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "No transcript hosted or attempted. Bibliographic facts (title, journal, volume LX/60, pages 279-323, year 1947) confirmed from two independent sources but the article itself was never read in full by this agent.",
+      "uncertainReadings": []
+    },
+    "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
+    "reviewStatus": "unreviewed",
+    "reviewNote": "",
+    "importedOn": "2026-08-15"
+  }
+}

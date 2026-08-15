@@ -1,0 +1,12 @@
+{
+  "slug": "francisco-hernandez-ximenez-ololiuhqui-1615",
+  "kind": "document_page",
+  "caption": "Opening of \"Cap. XIIII, De la yerva que llaman Ololiuhqui,\" from the 1615 Ximénez abridgment of Hernández's Quatro libros.",
+  "alt": "Page of small-format 17th-century Spanish black-letter-style print, with the heading CAP.XIIII.DE LA YERVA QVE LLAMAN OLOLIVHQVI partway down the page, followed by the chapter's opening lines.",
+  "credit": "Internet Archive / Casa de la viuda de Diego López Dávalos (Mexico, 1615)",
+  "licence": "Public domain",
+  "sourceUrl": "https://archive.org/details/quatrolibrosdela00hern",
+  "fileUrl": "https://archive.org/download/quatrolibrosdela00hern/page/n171_w800.jpg",
+  "fetchedOn": "2026-08-15",
+  "note": "This is the actual leaf (n171 of the scan) where Book 2, chapter 14 begins, matching the excerpted passage in the draft (\"Es la ololiuhqui, q otros llama cohuaxihuitl...\"). Found by parsing the item's djvu.xml for the OCR text of chapter 13 (Mecaxuchitl) running into chapter 14 (Ololiuhqui); no printed folio number is visible on this leaf, but it is bracketed by numbered pages 77 and 78 in the same gathering. Item: quatrolibrosdela00hern."
+}

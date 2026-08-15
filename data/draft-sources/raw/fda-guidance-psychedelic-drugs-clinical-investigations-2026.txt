@@ -1,0 +1,750 @@
+ Psychedelic Drugs:
+ Considerations for
+Clinical Investigations
+  Guidance for Industry
+
+
+
+
+     U.S. Department of Health and Human Services
+             Food and Drug Administration
+    Center for Drug Evaluation and Research (CDER)
+
+                      July 2026
+                   Clinical/Medical
+ Psychedelic Drugs:
+ Considerations for
+Clinical Investigations
+  Guidance for Industry
+                        Additional copies are available from:
+
+                            Division of Drug Information
+                      Center for Drug Evaluation and Research
+                           Food and Drug Administration
+                       Phone: 855-543-3784 or 301-796-3400
+                           Email: druginfo@fda.hhs.gov
+  https://www.fda.gov/drugs/guidance-compliance-regulatory-information/guidances-drugs
+
+
+
+
+           U.S. Department of Health and Human Services
+                   Food and Drug Administration
+          Center for Drug Evaluation and Research (CDER)
+
+                                    July 2026
+                                 Clinical/Medical
+                                                Contains Nonbinding Recommendations
+
+
+                                                            TABLE OF CONTENTS
+
+I.            INTRODUCTION............................................................................................................. 1
+II.           BACKGROUND ............................................................................................................... 1
+III.          DISCUSSION .................................................................................................................... 2
+     A.       Chemistry, Manufacturing, and Controls ................................................................................... 2
+     B.       Nonclinical ...................................................................................................................................... 4
+     C.       Clinical Pharmacology................................................................................................................... 5
+     D.       Abuse Potential Assessment .......................................................................................................... 6
+     E.       Clinical ............................................................................................................................................ 9
+          1. Trial Design ..................................................................................................................................... 9
+          2. Safety Considerations .................................................................................................................... 11
+                                Contains Nonbinding Recommendations
+
+
+                                Psychedelic Drugs:
+                      Considerations for Clinical Investigations
+                              Guidance for Industry1
+
+
+This guidance represents the current thinking of the Food and Drug Administration (FDA or Agency) on
+this topic. It does not establish any rights for any person and is not binding on FDA or the public. You
+can use an alternative approach if it satisfies the requirements of the applicable statutes and regulations.
+To discuss an alternative approach, contact the FDA staff responsible for this guidance as listed on the
+title page.
+
+
+
+
+I.      INTRODUCTION
+
+The U.S. Food and Drug Administration (FDA or Agency) is issuing this guidance to provide
+general considerations to sponsors developing psychedelic drugs for the treatment of medical
+conditions (e.g., psychiatric disorders, substance use disorders). For the purposes of this
+guidance, the term psychedelic drug is used as shorthand to include classic psychedelics, typically
+understood to be 5-HT2A receptor agonists such as psilocybin and lysergic acid diethylamide
+(LSD), as well as entactogens or empathogens such as 3,4-methylenedioxymethamphetamine
+(MDMA). The regulatory concepts discussed in this guidance may also apply to other related
+products that can cause perceptual disturbances and alterations in consciousness.
+
+In general, FDA’s guidance documents do not establish legally enforceable responsibilities.
+Instead, guidances describe the Agency’s current thinking on a topic and should be viewed only
+as recommendations, unless specific regulatory or statutory requirements are cited. The use of
+the word should in Agency guidances means that something is suggested or recommended, but
+not required.
+
+
+II.     BACKGROUND
+
+In recent years, interest in the therapeutic potential of psychedelic drugs has been increasing.
+Drug development programs for psychedelic drugs are subject to the same regulations and same
+evidentiary standards for approval as other drug development programs. However, designing
+clinical studies to evaluate the safety and effectiveness of these products presents a number of
+unique challenges. Psychedelic drugs can cause intense perceptual disturbances and alterations in
+consciousness that can last for several hours or days. Some drug development programs
+incorporate a psychological or behavioral intervention. Investigators hypothesize that
+psychedelic drugs have both rapid-onset and long-term benefits after only one or a few doses.
+1
+  This guidance has been prepared by the Division of Psychiatry in the Center for Drug Evaluation and Research at
+the Food and Drug Administration.
+
+
+
+                                                        1
+                                Contains Nonbinding Recommendations
+
+
+These and other unusual characteristics should be considered when designing clinical studies so
+that the results of those studies can provide reliable data on efficacy and safety.
+
+Because this is an emerging area of drug development, there is limited experience with the
+design of drug development programs that may support approval of psychedelic drugs. Rather
+than providing specific recommendations on study design, this guidance will present
+foundational constructs that all sponsors studying the therapeutic potential of psychedelic drugs,
+including sponsors without commercial drug development as primary interest (e.g., academic
+researchers), should consider. Sponsors are encouraged to request meetings with FDA for advice
+on a specific drug development program. 2
+
+This guidance applies to clinical trials that will be conducted under an investigational new drug
+application (IND), including clinical trials conducted under a research IND that are not intended
+to support marketing applications. The principles in this guidance are intended to support the
+ethical conduct of clinical trials as well as to ensure the integrity of the trial and the reliability of
+the results.
+
+
+III.       DISCUSSION
+
+Below, we outline general considerations, by discipline, for drug development programs
+evaluating the therapeutic potential of psychedelic drugs. The Agency is open to discussing
+various approaches to address these considerations; sponsors should engage divisions early in the
+drug development process.
+
+           A.      Chemistry, Manufacturing, and Controls
+
+Sponsors must provide sufficient chemistry, manufacturing, and controls information to ensure
+proper identification, quality, purity, and strength of the investigational drug substance and drug
+product. 3 This is true for all phases of clinical trials.
+
+       •   Chemistry data submitted by a sponsor to FDA may be proprietary. In general, sponsors
+           interested in conducting a clinical investigation with psychedelic drugs under an IND
+           must either submit their own information or incorporate information previously submitted
+           by a person other than the sponsor when the sponsor has a written statement that
+           authorizes the right of reference for such information. 4
+
+
+
+2
+  See the draft guidance for industry Formal Meetings Between the FDA and Sponsor or Applicants of PDUFA
+Products (September 2023). When final, this guidance will represent the FDA’s current thinking on this topic. For
+the most recent version of a guidance, check the FDA guidance web page at https://www.fda.gov/regulatory-
+information/search-fda-guidance-documents.
+3
+    See 21 CFR 312.23(a)(7).
+4
+    See 21 CFR 312.23(b).
+
+
+
+                                                         2
+                                   Contains Nonbinding Recommendations
+
+
+       •   If using plant material, algae, macroscopic fungi, or a combination of these, the
+           investigational product may be considered a botanical, as that term is defined in the
+           guidance for industry Botanical Drug Development (December 2016). 5
+
+       •   Although some psychedelic drugs are derived from plants or fungi, drug products that are
+           genetically modified; produced by fermentation of yeast, bacteria, or plant cells; or highly
+           purified substances from naturally occurring sources are not considered botanicals for
+           purposes of this document and the guidance for industry Botanical Drug Development.
+
+       •   Drugs must be manufactured in compliance with current good manufacturing practice
+           (CGMP) under section 501(a)(2)(b) of the Federal Food, Drug, and Cosmetic Act (FD&C
+           Act). For most drug products manufactured in support of phase 1 studies, manufacturers
+           should follow the recommendations in the guidance for industry CGMP for Phase 1
+           Investigational Drugs (July 2008). Certain drug products manufactured in support of
+           phase 1 studies and drug products manufactured in support of phase 2 studies and beyond
+           must comply with applicable CGMP regulations in 21 CFR part 211. 6,7 If the drug under
+           investigation is part of a combination product, the applicant may be subject to additional
+           regulations such as 21 CFR parts 820 and 4. 8 Initial studies in which subjects are enrolled
+           to measure the effectiveness of a drug for a particular indication or indications are
+           generally considered phase 2 studies; 9 therefore, the drug product used in those phase 2
+           studies must be manufactured in accordance with CGMP requirements. 10 Each phase of
+           the investigation requires sufficient information to ensure identification, quality, purity,
+           and strength of the investigational drug substance and drug product. 11 Investigators and
+           sponsors are encouraged to refer to the guidances for industry INDs for Phase 2 and
+           Phase 3 Studies: Chemistry, Manufacturing, and Controls Information (May 2003) and
+           Content and Format of INDs for Phase 1 Studies of Drugs, Including Well-
+           Characterized, Therapeutic, Biotechnology-Derived Products (October 2000). 12
+
+
+
+
+5
+ We update guidances periodically. For the most recent version of a guidance, check the FDA guidance web page
+athttps://www.fda.gov/regulatory-information/search-fda-guidance-documents.
+6
+    See 21 CFR 210.2(c).
+7
+    See 21 CFR part 211.
+8
+    See 21 CFR part 4 and 21 CFR part 820.
+9
+    See 21 CFR 312.21(b).
+10
+     See 21 CFR 210.2(c).
+11
+     See 21 CFR 312.23(a)(7)(i).
+12
+  For more general information about the IND process, see https://www.fda.gov/drugs/types-
+applications/investigational-new-drug-ind-application.
+
+
+
+                                                       3
+                                    Contains Nonbinding Recommendations
+
+
+            B.       Nonclinical
+
+The nonclinical program for psychedelic drugs should follow recommendations outlined in the
+ICH guidance for industry M3(R2) Nonclinical Safety Studies for the Conduct of Human Clinical
+Trials and Marketing Authorization for Pharmaceuticals (January 2010). 13 However, the
+following considerations may be unique to psychedelic drugs given that some development
+programs may rely on prior human experience to support safety of an initial IND:
+
+       •    An IND must include adequate information about pharmacological and toxicological
+            studies of the drug on the basis of which the sponsor has concluded it is reasonably safe
+            to conduct the proposed clinical investigations. 14 Therefore, psychedelic drugs without a
+            history of adequate clinical exposure should not be tested in humans until safety has been
+            established in nonclinical studies. The FDA encourages submission of data from new
+            approach methodologies where appropriate as outlined in the draft guidance for industry
+            General Considerations for the Use of New Approach Methodologies in Drug
+            Development (March 2026). 15
+
+       •    When adequate human exposure and information are available for a given psychedelic
+            drug from previously conducted clinical studies and no serious safety concerns were
+            identified, it may be reasonable for clinical studies to be initiated under an IND in the
+            absence of standard animal toxicology testing. 16
+
+       •    The need for and type of nonclinical studies to support further drug development after
+            initial clinical studies will be determined by the extent of available nonclinical and
+            clinical safety information. Sponsors should plan to conduct nonclinical studies to
+            support further drug development after initiation of the IND unless the sponsor provides
+            adequate data from the published scientific and medical literature. 17
+
+       •    If repeat dosing is expected, nonclinical studies to support chronic or repeated
+            intermittent dosing should be provided. 18 Sponsors should determine the most
+            appropriate dosing paradigm (e.g., dosing intervals) in the repeat-dose toxicity studies to
+
+13
+     We encourage the use of new approach methodologies in place of animal testing where appropriate.
+14
+     21 CFR 312.23(a)(8).
+15
+     When final, this guidance will represent the FDA’s current thinking on this topic.
+16
+  See 21 CFR 312, 314, and 601 (for information about the requirements for an IND, a new drug application, or a
+biologics license application).
+17
+  See 21 CFR 312, 314, and 601 (for information about the requirements for an IND, a new drug application, or a
+biologics license application).
+18
+  See 21 CFR 312.23(a)(8) (providing information on requirements in INDs. The regulation specifies that “[t]he
+kind, duration, and scope of animal and other tests required [to conduct the proposed clinical investigation] varies
+with the duration and nature of the proposed clinical investigations.”).
+
+
+
+                                                             4
+                                  Contains Nonbinding Recommendations
+
+
+           support their intended clinical studies. The number and types of nonclinical studies to
+           support approval of a marketing application will largely depend on the treatment
+           paradigm.
+
+       •   For psychedelic drugs with serotonin (5-HT) activity, the 5-HT2B receptor subtype has
+           been linked to heart valvulopathy in humans; 19 therefore, sponsors should assess
+           functional activity at the 5-HT2B receptor subtype. If a psychedelic drug is shown to be an
+           agonist at 5-HT2B receptors, a thorough microscopic evaluation of the heart should be
+           conducted to assess for potential heart valve thickening in both rodent and nonrodent
+           repeat-dose toxicity studies, including sectioning of all heart valves. We encourage the
+           consideration of nonanimal-based evaluation of the risk of valvulopathy (e.g., validated
+           quantitative structure–activity relationship (QSAR) models), as supportive or
+           complementary data, provided that adequate validation information on the novel
+           approaches used are included with the application.
+
+           C.       Clinical Pharmacology
+
+Pharmacokinetics and/or pharmacodynamics of psychedelic drugs should be adequately
+characterized both in vitro and in vivo. Sponsors should also consider the potential impact of the
+following clinical pharmacology aspects when developing psychedelic drugs:
+
+       •   Sponsors should evaluate the effect of a high-fat meal on the pharmacokinetics of an oral
+           psychedelic drug early in development to inform clinical study design and potential
+           labeling.
+
+       •   Sponsors should evaluate potential impact of intrinsic and other extrinsic factors on the
+           pharmacokinetics of the psychedelic drug to inform inclusion and exclusion criteria,
+           prohibited concomitant medications for clinical studies, and potential labeling. 20,21
+
+       •   Long-term exposure to drugs that have 5-HT2B agonism may induce cardiac valve
+           stiffening. Currently, FDA recommends that sponsors exclude subjects with preexisting
+           valvulopathy or pulmonary hypertension from multiple-dose studies of drugs with this
+           mechanism until this risk can be better characterized.
+
+       •   Sponsors should consider the impact of pharmacodynamic and pharmacokinetic
+           interactions on interpretability of efficacy data and on subject safety. Although safety
+           risks should be mitigated by prohibiting certain concomitant medications, interpretability
+           concerns for other medications may be managed by a variety of means (e.g., excluding
+
+
+ Hutcheson, JD, V Setola, BL Roth, and WD Merryman, 2011, Serotonin Receptors and Heart Valve Disease – It
+19
+
+Was Meant 2B, Pharmacol Ther, 132(2):146–157.
+20
+     See the ICH guidance for industry M12 Drug Interaction Studies (August 2024).
+21
+  See the guidance for industry Evaluation of Gastric pH-Dependent Drug Interactions With Acid-Reducing Agents:
+Study Design, Data Analysis, and Clinical Implications (March 2023).
+
+
+
+                                                          5
+                                Contains Nonbinding Recommendations
+
+
+         concomitant administration, stratifying analyses by class of comedication). Although
+         more research is needed, potential interactions to consider include, but are not limited to,
+         the following:
+
+         – Use of selective serotonin reuptake inhibitors, serotonin/norepinephrine reuptake
+           inhibitors, or monoamine oxidase inhibitors for 3 weeks or more may reduce the
+           subjective effects of psychedelic drugs. 22
+
+         – Use of tricyclic antidepressants or lithium for 3 weeks or more may potentiate the
+           subjective effects of psychedelic drugs, creating a potential psychiatric safety
+           concern. Use of selective serotonin reuptake inhibitors, serotonin/norepinephrine
+           reuptake inhibitors, or monoamine oxidase inhibitors for less than 3 weeks may also
+           potentiate the subjective effects of psychedelic drugs. 23
+
+         – Use of monoamine oxidase inhibitors in combination with MDMA or other
+           amphetamine-based psychedelic drugs can produce a life-threatening hypertensive
+           crisis.
+
+     •   Sponsors should evaluate the pharmacokinetics of a psychedelic drug in patients with
+         impaired renal function and patients with impaired hepatic function to provide dose
+         adjustment recommendations and inform labeling. 24,25
+
+         D.      Abuse Potential Assessment
+
+The assessment of the abuse potential of a drug product under development is generally
+conducted as a component of its safety evaluation. New drug products that are assessed for abuse
+potential include those that are active on the central nervous system. For general information on
+how to conduct the abuse potential evaluation, including recommended methodologies and what
+studies should be included as part of the new drug application submission, see the guidance for
+industry Assessment of Abuse Potential of Drugs (January 2017). The following considerations
+apply for psychedelic drugs being developed as new drug products:
+
+     •   Psychedelic drugs act on the central nervous system, produce psychoactive effects (e.g.,
+         mood or cognitive changes, hallucinations), and need to be evaluated for abuse potential
+
+22
+  Bonson KR, JW Buckholtz, DL Murphy, 1996, Chronic Administration of Serotonergic Antidepressants
+Attenuates the Subjective Effects of LSD in Humans, Neuropsychopharmacology, 14:425–436.
+23
+  Bonson KR and DL Murphy, 1996, Alterations in Responses to LSD in Humans Associated With Chronic
+Administration of Tricyclic Antidepressants, Monoamine Oxidase Inhibitors or Lithium, Behav Brain Res, 3(1-
+2):229–233.
+24
+  See the guidance for industry Pharmacokinetics in Patients with Impaired Hepatic Function: Study, Design, Data
+Analysis, and Impact on Dosing and Labeling (May 2003).
+25
+  See the guidance for industry Pharmacokinetics in Patients with Impaired Renal Function – Study, Design, Data
+Analysis, and Impact on Dosing (March 2024).
+
+
+
+                                                       6
+                                     Contains Nonbinding Recommendations
+
+
+             during drug development. 26 Data from the abuse potential assessment and a proposal for
+             drug scheduling under the Controlled Substances Act are required to be included in a new
+             drug application submission. 27 Many psychedelic drugs are Schedule I substances under
+             the Controlled Substances Act 28 because they have a high potential for abuse and do not
+             have a currently accepted medical use in treatment in the United States. 29 Should a
+             psychedelic drug that is a Schedule I controlled substance receive FDA approval as a
+             drug product, the abuse potential assessment would assist in determining an appropriate
+             rescheduling action under the Controlled Substances Act.
+
+       •     For psychedelic drugs that are Schedule I controlled substances, activities associated with
+             investigations under an IND must comply with the Controlled Substances Act, and
+             applicable implementing regulations adopted by the Drug Enforcement Administration
+             (DEA), relating to research, manufacturing, importation/exportation, handling, and
+             storage requirements for a Schedule I drug. 30 Sponsors may contact DEA to discuss and
+             ensure compliance with all applicable DEA requirements.
+
+       •     Some psychedelic drugs have already been well-characterized in preclinical
+             investigations published in the scientific literature. The need for a sponsor to conduct new
+             abuse-related animal studies (such as drug discrimination) with a specific psychedelic
+             drug will depend on an FDA evaluation of the design and quality of published animal
+             studies that will be referenced by the sponsor. Self-administration and conditioned place
+             preference studies are not usually required for psychedelic drugs because they typically
+             do not produce positive signals in those studies.
+
+       •     A human abuse potential study should generally be conducted when a drug has shown
+             abuse-related signals in animal and/or human studies. However, a human abuse potential
+             study may not be scientifically necessary for certain psychedelic drugs to support the
+             abuse potential assessment in a new drug application when the subjective effects
+             predictive of abuse are well-characterized from extensive clinical studies and robust
+             epidemiological data exist to demonstrate that individuals are using the psychedelic drug
+             for abuse purposes. Sponsors are encouraged to reach out to FDA during the IND stage if
+             they believe there is sufficient existing data that the human abuse potential is already
+             well-characterized.
+
+
+26
+     See 21 CFR 314.50(d)(5)(vii).
+27
+     Ibid.
+28
+     See 21 CFR 1308.11.
+29
+  Schedule I drugs and substances, as defined under the Controlled Substances Act, are those with high potential for
+abuse and have no currently accepted medical use in treatment in the United States. Once a drug is approved by
+FDA, and therefore found to have a currently accepted medical use, it will be placed within schedule II-V as
+determined by the relative abuse potential of the drug and the relative degree to which it induces psychological or
+physical dependence (21 U.S.C. 812(b)).
+30
+     See 21 CFR part 1301.
+
+
+
+                                                         7
+                               Contains Nonbinding Recommendations
+
+
+       •   An adverse event (AE) for purposes of IND safety reporting means any untoward
+           medical occurrence associated with the use of a drug in humans, whether or not
+           considered drug related. 31 Some expected psychoactive effects such as euphoria,
+           hallucinations and other perceptual distortions, and alterations in cognition should also be
+           recorded as AEs for psychedelic drugs given their association with abuse potential, even
+           if subjects do not describe these effects as adverse.
+
+       •   An evaluation of psychoactive effects that occur during clinical studies should be
+           obtained through the inclusion of validated clinical outcome assessments and through
+           monitoring AEs associated with abuse potential. AEs associated with abuse potential are
+           monitored and reported as a safety concern even if they are hypothesized to be associated
+           with the therapeutic response. 32 Thus, for psychedelic drugs, investigators and session
+           monitors should be trained to identify and document all central nervous system effects,
+           including the expected psychoactive effects. For more information about procedures for
+           monitoring and assessing AEs associated with abuse potential, refer to section V.B of the
+           guidance for industry Assessment of Abuse Potential of Drugs.
+
+       •   An assessment of the potential for physical dependence with a psychedelic drug may be
+           appropriate as part of the abuse potential assessment depending on the proposed
+           conditions of use for which the drug is being studied (e.g., repeated intermittent use
+           versus prolonged continuous use).
+
+       •   It is generally recommended that abuse-related studies should be conducted only after the
+           final therapeutic dose range is determined, which typically occurs when phase 2 clinical
+           studies are completed. Sponsors or investigators should submit proposed protocols to the
+           Agency for review and comment before conducting these abuse-related studies.
+
+       •   An evaluation of available epidemiological data is another critical component of an abuse
+           potential assessment for a psychedelic drug already known to be used for recreational or
+           federally unapproved medical purposes. Thus, applicants should provide as part of their
+           new drug application an analysis of the scope of abuse and associated harms, based on a
+           systematic review of the published literature and other available epidemiological data
+           sources.
+
+       •   Sponsors or investigators may also submit computer modeling of abuse potential based
+           on chemical structure/molecular target/mechanism of action to the Agency for review. 33
+
+       •   Sponsors are encouraged to discuss their plans for an abuse potential assessment with
+           FDA early in the IND stage of drug development and request (through the primary
+
+
+31
+     21 CFR 312.32(a).
+32
+     21 CFR 312.32(c).
+
+ See the draft guidance for industry General Considerations for the Use of New Approach Methodologies in Drug
+33
+
+Development.
+
+
+                                                      8
+                                  Contains Nonbinding Recommendations
+
+
+           review division) review and comment on these plans from the Controlled Substance Staff
+           in the Center for Drug Evaluation and Research.
+
+           E.      Clinical
+
+To establish a drug’s effectiveness, it is essential to distinguish the effect of the drug “from other
+influences, such as spontaneous change in the course of the disease, placebo effect, or biased
+observation.” 34 This is the basis for the statutory requirement that a new drug approval be based
+on adequate and well-controlled investigation(s), as well as the basis for FDA’s regulations
+describing the characteristics of an adequate and well-controlled investigation. 35 Designing an
+adequate and well-controlled clinical investigation of psychedelic drugs can be challenging for
+sponsors given the often intense perceptual changes induced by the drugs. This increases the
+potential for bias due to functional unblinding of patients, therapists, monitors, or raters.
+Functional unblinding can lead to expectation bias in the patients who experience perceptual
+disturbances, or in those who observe them, which may lead to an expectation that the participant
+will experience clinical benefit; alternatively, those who receive a placebo and do not experience
+or observe a perceptual change may expect that the participant will not benefit.
+
+           1.      Trial Design
+
+       •   Given concerns for functional unblinding, the use of a traditional placebo as a control can
+           be problematic for assessing efficacy even though it provides better contextualization for
+           safety findings. Alternatives to an inert placebo (e.g., lower doses of a psychedelic, other
+           psychoactive drugs that mimic some aspects of the subjective experience associated with
+           psychedelic drugs) may be considered as well. The Agency encourages the consideration
+           of innovative approaches for control groups. In general, controls should be closely
+           matched to the treatment group for clinically relevant variables and clinical care. Study
+           results should be strongly persuasive and robust across study endpoints to overcome
+           biases that may be introduced by functional unblinding.
+
+       •   Clinical trial design proposals should be discussed with the review division before the
+           initiation of a study.
+
+       •   There are a number of approaches that can help minimize bias on the part of the subjects,
+           observers, and analysts of the data that may be applicable to trials with psychedelic drugs.
+
+           – Sponsors should incorporate the use of central raters blinded to treatment allocation
+             and visit number.
+
+           – For randomized clinical trials, the use of a blinding questionnaire for both subjects
+             and investigators/observers/raters (i.e., asking each whether they think the subject
+             received active drug or placebo with a Likert scale to characterize certainty of the
+
+34
+     See section 505(d) of the FD&C Act; 21 CFR 314.126.
+35
+     See 21 CFR 314.126(b)(2).
+
+
+
+                                                           9
+                         Contains Nonbinding Recommendations
+
+
+       guess) can be helpful to evaluate the impact of functional unblinding. This may also
+       be helpful in a trial using a range of doses.
+
+    – An expectancy evaluation questionnaire (i.e., assessing subjects’ expectations about
+      potential drug effects) pre-randomization and at the end of treatment to improve data
+      interpretability despite functional unblinding should be considered.
+
+•   Although it has been hypothesized that one or a few doses of a psychedelic drug will
+    produce lasting therapeutic benefit, many of the conditions that these drugs are purported
+    to treat typically persist for months or years. Therefore, sponsors should plan to evaluate
+    the durability of response for their drug product and the safety and efficacy of repeat
+    dosing.
+
+    – Before an initial application for a product intended for the treatment of a chronic
+      illness such as post-traumatic stress disorder or major depressive disorder, sponsors
+      should evaluate with a double-blind design the effect of treatment at 12 weeks.
+
+    – Sponsors should continue to follow subjects beyond the Week 12 endpoint to monitor
+      for symptom recurrence or, potentially, the need for repeat dosing.
+
+    – The most informative clinical trial design would incorporate blinded long-term
+      follow-up (typically 12 months) with prespecified criteria for retreatment. These
+      criteria should take into account symptom ratings as well as whether the participant
+      seeks additional treatment outside the study.
+
+    – If data suggest that readministration on a regularly scheduled basis is warranted, the
+      recommended interdose interval for maintenance of effect should be studied; it may
+      be reasonable to conduct studies of specific maintenance treatment paradigms in the
+      postmarketing period.
+
+•   Sponsors should plan to characterize the dose-response relationship for both safety and
+    efficacy early in the drug development program.
+
+•   Complementary trial designs across phases 2 and 3 could address different challenges in
+    psychedelic drug development. For example, a trial using a low, middle, and high dose
+    without a placebo could be paired with a placebo-controlled trial. The trial without a
+    placebo could provide information about dose-response with less risk of functional
+    unblinding. Although the placebo-controlled trial may raise concerns for bias related to
+    functional unblinding, it will allow for better characterization of safety signals.
+
+•   The clinical trial population should be reasonably representative of the population in
+    which the product is intended to be used; however, enrolling individuals with prior
+    psychedelic drug exposure raises the possibility of expectation bias given that
+    participants who have prior experience with psychedelic drugs are more likely to
+    recognize their subjective effects (i.e., leading to functional unblinding) and anticipate a
+    treatment benefit. It is reasonable to include some individuals with prior experience with
+
+
+
+                                             10
+                                  Contains Nonbinding Recommendations
+
+
+           psychedelic drugs; however, they should not be overrepresented in the trial population
+           and randomization should be stratified based on prior psychedelic drug usage.
+
+       •   Although the FDA does not address inclusion and exclusion criteria in this guidance, we
+           advise that the included population be representative of the population intended to receive
+           the treatment. Trials should not unnecessarily exclude subjects who have certain health
+           characteristics (e.g., age, treatment history, concurrent treatments, pregnancy) if these
+           groups are intended to receive the treatment post-approval, but they should be
+           appropriately stratified. Excluded populations may not be described in the approved
+           indication in prescribing information. 36
+
+       •   Many of the psychedelic drug development programs involve administration of the
+           investigational product and engaging in psychological support or psychotherapy either
+           while the subject is experiencing the acute effects of the drug or in a separate session.
+           This additional variable both complicates the assessment of effectiveness and presents a
+           challenge for any future product labeling.
+
+           – As of the publication date of this guidance, the contribution of the psychotherapy
+             component to any efficacy observed with psychedelic drug treatment has not been
+             characterized. A factorial design may be useful for characterizing the separate
+             contributions of drug and psychotherapy to any observed treatment response.
+
+           – The therapist monitoring the session can usually deduce the treatment assignment by
+             observing the subject’s behavior; thus, their knowledge of the treatment could bias
+             the delivery of subsequent therapy. One option for managing this bias within the
+             clinical trial could be to ensure that the in-session monitor is not involved in post-
+             session psychotherapy.
+
+           – Sponsors should describe their planned treatment paradigm, including whether drug
+             administration will be paired with psychological support or psychotherapy, and
+             provide a rationale for the chosen model. Sponsors should also describe any trial
+             design elements intended to reduce potential bias or to quantify the contribution of
+             psychotherapy to the overall treatment effect. The treatment paradigm used in the
+             trials may be described in product labeling.
+
+           2.      Safety Considerations
+
+FDA may place a study under an IND on clinical hold if it finds, among other reasons, that
+human subjects are or would be exposed to an unreasonable and significant risk of illness or
+injury. 37 Subjects receiving active treatment with psychedelic drugs may remain in a vulnerable
+state for several hours or longer. Given this concern, and so that subjects are not placed at an
+unreasonable and significant risk of illness or injury, the Agency expects safety monitoring to
+include the following:
+
+36
+     See generally 21 CFR 201.57(c)(2).
+37
+     21 CFR 312.42.
+
+
+                                                   11
+                                Contains Nonbinding Recommendations
+
+
+
+     •   Observation by two monitors for the duration of the treatment session.
+
+         – A health care provider with graduate-level professional training and clinical
+           experience in psychotherapy, licensed to practice independently, serving as the lead
+           monitor.
+
+         – An assistant monitor with a nursing or bachelor’s degree and at least 1 year of
+           clinical experience in a licensed mental health care setting.
+
+     •   If the lead monitor is not a physician, availability of a licensed on-call physician able to
+         reach the clinical site within 15 minutes in the event of a medical emergency.
+
+     •   The informed consent should clearly describe that subjects may experience changes in
+         perception, cognition, and judgment that persist for many hours, as well as increased
+         vulnerability and suggestibility during the treatment session.
+
+     •   The incidence, duration, and severity of all central nervous system effects, including
+         expected psychedelic effects (e.g., euphoria, hallucinations and other perceptual
+         distortions, alterations in cognition, and changes in mood) should be identified and
+         documented throughout the session, regardless of whether the experience is characterized
+         as positive, favorable, or neutral, or whether the effects align with what is expected from
+         the investigational drug. It is important to characterize onset and resolution of
+         psychedelic and other subjective effects.
+
+     •   For drugs with a history of human use, sponsors should conduct a systematic review of
+         the literature to identify AEs associated with recreational or unapproved use of the drug
+         to identify potential safety issues. AEs known to occur in the context of illicit use should
+         be treated as predefined adverse events of special interest and assessed systematically in
+         the drug development program.
+
+     •   Sponsors should plan to provide a quantitative and qualitative assessment of the drug
+         effects, including effects on orientation to time and place, thought and perception, and
+         subjective effects across time that could inform recommendations for monitoring, safety
+         of discharge, and impact on driving. Sponsors should consider including a formal driving
+         study in their drug development plan. 38
+
+     •   For drugs that have been shown to have functional activity at the 5-HT2B receptor,
+         baseline and follow-up echocardiograms to assess valve structure and function and
+         pulmonary artery pressures should be included in the study for drugs that are to be
+         chronically administered. As of the publication of this guidance, the dosing paradigm for
+         psychedelic drugs has yet to be established; therefore, it is not clear whether this advice
+
+38
+  See the guidance for industry Evaluating Drug Effects on the Ability to Operate a Motor Vehicle (November
+2017).
+
+
+
+                                                       12
+                                    Contains Nonbinding Recommendations
+
+
+           will be relevant to psychedelic drugs. Nonetheless, patients with preexisting valvulopathy
+           or pulmonary hypertension should be excluded until the cardiac risk has been
+           characterized. Recommendations for when and how to assess QT interval and blood
+           pressure can be found in the guidance for industry E14 Clinical Evaluation of QT/QTc
+           Interval Prolongation and Proarrhythmic Potential for Non-Antiarrhythmic Drugs
+           (October 2005) and the draft guidance for industry Assessment of Pressor Effects of
+           Drugs (February 2022). 39
+
+       •   Sponsors should address how AEs or serious risks are mitigated during the clinical
+           studies and if similar strategies can or should be implemented postmarketing.
+
+       •   Sponsors should consider risk mitigation strategies to mitigate the risk of nonmedical use,
+           accidental exposure, and overdose for both patients and nonpatients. Sponsors should
+           also consider if gaps exist in the health care system regarding safe use. 40
+
+       •   Given the risks of alteration in mental status and/or impairment in judgement and
+           decision-making following psychedelic drug administration, the Agency anticipates that
+           additional assessments of safety may be needed in the postmarketing setting when a
+           larger population will be exposed to these products. Sponsors should consider the
+           potential need for a risk evaluation and mitigation strategy or additional safety studies
+           that may be required in the postmarketing setting when preparing and submitting a
+           marketing application.
+
+       •   FDA may consider the public health effects of the drug as part of the overall benefit-risk
+           assessment. Public health effects of the drug include its potential effect on risks that are
+           related to nonmedical use, substance use disorder, accidental exposure, and overdose for
+           patients and the broader population.
+
+
+
+
+39
+     When final, this guidance will represent the FDA’s current thinking on this topic.
+40
+  See the draft guidance for industry REMS Logic Model: A Framework to Link Program Design With Assessment
+(May 2024). When final, this guidance will represent the FDA’s current thinking on this topic.
+
+
+
+                                                            13
+
