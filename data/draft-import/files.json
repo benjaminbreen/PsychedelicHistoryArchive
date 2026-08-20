@@ -372,6 +372,18 @@
     "checksum": "18b27db2cd0ebb5fa58089f8b95e24a00412bbeb4f4c39f5ae50a8037da5963c"
   },
   {
+    "id": "83601f7e-63dd-5ad3-ad52-d813b27ee282",
+    "document_id": "181892b6-871e-5f13-9e83-2df41eed911e",
+    "page_id": null,
+    "kind": "cover_image",
+    "storage_path": "documents/181892b6-871e-5f13-9e83-2df41eed911e/images/kleps-boo-hoo-bible-guide-session-1971/cover.jpg",
+    "mime_type": "image/jpeg",
+    "byte_size": 61820,
+    "width": null,
+    "height": null,
+    "checksum": "ea5c09ca89f090b145927a33889d666be8b3646107af93cc4e7aa5ed31f4373c"
+  },
+  {
     "id": "99cc7d79-280d-5873-84d4-b8eebe0e03a0",
     "document_id": "f7351073-f18f-55a0-a12d-49e57de6d299",
     "page_id": null,

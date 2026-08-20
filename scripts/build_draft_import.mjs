@@ -116,7 +116,9 @@ for (const file of fs.readdirSync(sourcesDir).filter((f) => f.endsWith(".json"))
     cover_image_path: coverPath,
     thumbnail_path: coverPath,
     is_featured: false,
-    status: publish ? "published" : "draft",
+    // `draft.publish: false` keeps a record in the CMS but off the public site — used for
+    // sources superseded by something better already in the archive.
+    status: publish && draft.draft?.publish !== false ? "published" : "draft",
     published_at: null,
     content_language: draft.contentLanguage || null,
     translation_language: draft.translationLanguage || null,

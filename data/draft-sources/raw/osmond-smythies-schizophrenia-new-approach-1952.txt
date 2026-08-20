@@ -1,36 +1,522 @@
-Source fetched: https://www.cambridge.org/core/journals/journal-of-mental-science/article/abs/schizophrenia-a-new-approach/8298D2CF421A5D0D9F4A689AED993318
-Fetched: 2026-08-15
-Method: curl -sL (HTTP 200)
-DOI (via Crossref, doi.org/10.1192/bjp.98.411.309 resolves to this URL): 10.1192/bjp.98.411.309
+Source fetched: https://archive.org/details/bj-psych_1952-04_98_411 (Internet Archive, British Journal of Psychiatry archive of Journal of Mental Science)
+Original: Journal of Mental Science, vol. 98, no. 411 (April 1952), pp. 309-316
+Fetched: 2026-08-20
+Method: curl download of djvu.txt full-text OCR of the whole issue, then sliced to the article's page range
 
-Citation metadata (from Crossref API, api.crossref.org/works/10.1192/bjp.98.411.309):
-Title: Schizophrenia: A New Approach
-Authors: Humphry Osmond; John Smythies
-Journal: Journal of Mental Science (short-container-title: J. ment. sci)
-Published-print: 1952-04
-Volume: 98, Issue: 411, Pages: 309-315
-Publisher: Royal College of Psychiatrists
+Full OCR text of Osmond and Smythies's article, pp. 309-315 (plus the first line of p. 316, the start of the next article).
+======================================================================
 
-Verbatim opening paragraphs, extracted from the <meta name="citation_abstract"> tag on
-the fetched Cambridge Core landing page (this is the article's actual opening text, not a
-separate abstract — Journal of Mental Science articles of this era did not carry abstracts,
-so Cambridge Core's system used the first paragraphs instead):
 
-"Mr. Gladstone, with that candour which a great Statesman can afford, once said,
-"Government is a rough business, and the results are most unsatisfactory." Unfortunately
-no great psychiatrist has described the present state of our knowledge and treatment of
-schizophrenia in an equally robust phrase; but surely, "rough business and unsatisfactory
-results" would not be an unfair summing up? We have now known of this illness for nearly
-half a century, and yet our understanding of it is slight and our useful information
-scanty. This is not because we have been idle, but because our efforts have been poorly
-rewarded. Thousands of papers are written every decade; tens of thousands of observations
-are made; there is no lack of opportunity for studying patients when about one hospital
-bed in five in this country is occupied by a schizophrenic, yet we are still entirely
-ignorant of the cause of this disease."
 
-Full text is paywalled beyond this point (Cambridge Core, subscription required). Article
-first proposes the "M-substance" hypothesis: that schizophrenia may involve an abnormal
-adrenaline metabolite structurally close to mescaline, given the phenomenological overlap
-between acute mescaline intoxication and acute schizophrenic episodes. This paper is the
-starting point of the Osmond–Smythies–Hoffer adrenochrome/transmethylation research
-program pursued at Saskatchewan through the 1950s.
+SCHIZOPHRENIA: A NEW APPROACH. 
+
+
+By Humpury Osmonp, M.R.C.S., D.P.M., 
+and 
+
+
+Joun SmyTuHiers, M.B., B.Ch. 
+From the National Hospital, Queen Square, W.C.1. 
+
+
+INTRODUCTION. 
+
+
+Mr. Gladstone, with that candour which a great Statesman can afford, once 
+said, ‘‘ Government is a rough business, and the results are most unsatisfactory.”’ 
+Unfortunately no great psychiatrist has described the present state of our know- 
+ledge and treatment of schizophrenia in an equally robust phrase; but surely, 
+“rough business and unsatisfactory results ’’ would not be an unfair summing 
+up? 
+
+We have now known of this illness for nearly half a century, and yet our under- 
+standing of it is slight and our useful information scanty. This is not because 
+we have been idle, but because our efforts have been poorly rewarded. Thousands 
+of papers are written every decade; tens of thousands of observations are made ; 
+there is no lack of opportunity for studying patients when about one hospital bed 
+in five in this country is occupied by a schizophrenic, yet we are still entirely 
+ignorant of the cause of this disease. There are, it is true, numerous theories, but 
+none is generally accepted. We have one form of treatment, deep insulin, which 
+produces remission of symptoms in some cases and what seems to be a cure in 
+others, but even the value of this treatment is hotly disputed. Because deep 
+insulin is a purely empirical procedure the psychiatrist is always tempted to become 
+preoccupied with details of technique so that he forgets, or at least becomes less 
+aware of our fundamental ignorance. 
+
+
+THE PRESENT SITUATION. 
+
+
+Since Bleuler (1), over forty years ago, defined schizophrenia in his great mono- 
+graph, and advanced the hypothesis that it was a metabolic disorder with mani- 
+festations in the psyche, the bodily functions of schizophrenics have been studied 
+intensively, but these investigations have not, with few exceptions, been illu- 
+minating, and where some abnormality has been found this can usually be accounted 
+for by the poor condition of the patients. This is no place to catalogue the extra- 
+ordinary efforts of nearly two generations of research workers, but an observer is 
+astonished by the ill-rewarded zeal and activity. No stone has been left unturned ; 
+indeed showers of stones seem to have been thrown up indiscriminately. From 
+Bellak’s (2) extensive survey it is clear that not everyone agrees with Bleuler that - 
+schizophrenia is a metabolic disorder. The psychoanalysts hold with more or less 
+tenacity that the illness is largely psychogenic. In their view, so far as an un- 
+initiated person can summarize it, the schizophrenic, unable to adjust to difficulties 
+occurring in very early childhood, retires into a fantasy world when confronted 
+with some insupportable situation later in life. Between these polar opposites 
+there is plenty of scope for theorizing, and there has been no lack of it. Nutritional 
+disorders, head injury, infections including syphilis and tuberculosis, hereditary 
+and various endocrine deficiencies have all been implicated, and either in concert 
+or separately have their supporters. 
+
+
+TREATMENTS. 
+
+
+Where causation is obscure, treatment is usually varied. In this illness it 
+extends from the highly intensive and often non-verbal psychotherapy used by 
+Rosen, through more formal psychoanalysis, to a whole range of physical therapies 
+including electrical and insulin shock, freezing and over-heating, increased oxygen 
+intake and nitrogen inhalations. Psychosurgery is also used, and at the other end 
+
+
+XCVIII. 20 
+
+
+310 SCHIZOPHRENIA ! A NEW APPROACH, fApril, 
+
+
+of the scale are those who believe in custodial care and eugenic advice. Insulin 
+shock alone has received some measure of general approval, but even here there is 
+no agreement as to how it works, and some disagreement about whether it works. 
+
+
+THE FUTURE. 
+
+Future campaigns planned include sociological studies, special psychoanalytic 
+techniques, refined shock therapies, more accurate surgery, and fuller endocrino- 
+logical and biochemical investigations. Gjessing’s (3) scheme 1s an example of 
+the type of prolonged study from every angle which it is hoped will solve the 
+problem. He suggests that a group of schizophrenics should be studied in every 
+conceivable way for an indefinite period ; at the end of some long time he believes 
+something valuable will emerge: but are these hopes justified ? The body is 
+prodigal in its chemical syntheses, and an experiment of this sort might go on 
+indefinitely, bringing nothing but discouragement. The toxic substance, if toxic 
+substance there is, may not be easily identifiable because its effects may be largely 
+psychic and there may be only slight physical disturbances in animals. It is 
+difficult to be sure when a guinea-pig is deluded. A substance whose most impor- 
+tant properties were only discoverable by human experiment would remain long 
+hidden until someone happened to know what he was looking for, which no one at 
+present does. 
+
+A New APPROACH. 
+
+It is possible, however, to approach the illness from another direction. Suppose 
+that we start with the signs and symptoms and natural history of schizophrenia 
+and ask ourselves how these could be produced, refusing to be diverted by the 
+existing schools of thought. 
+
+There are no constant physical findings, but Hoskins (4), who has had a unique 
+opportunity to study the illness, agrees with many others that disorder of the 
+adreno-sympathetic system is one of the most constant features. Mott (5) some 
+years ago observed some peculiarity in the adrenal medulla in schizophrenics, but 
+he became more interested in the gonads and the matter seems to have been 
+dropped. Early in the illness physical symptoms of anxiety are often found, but 
+these die out as the illness progresses. It is as well to emphasize that the majority 
+of authorities are agreed that there is no physical pathology known in schizophrenia. 
+
+The psychic symptoms are disturbances of association, thought, mood, and 
+behaviour without dementia. Delusions and hallucinations occur frequently, and 
+disturbances of bodily function lumped together as catatonia are important. The 
+illness may sweep down in a few hours or may be very insidious. It may last a 
+few days or a whole lifetime. Acute onset is usually considered a good prognostic 
+sign, but it is not a certain one. An early response to treatment is also looked on 
+as a good augury, but people who have been degraded lunatics for years have been 
+known to recover long after treatment has failed. Now that schizophrenics are 
+surviving longer than in the past, more cases are being seen in which the illness 
+has died out in late middle age, leaving behind a socially crippled person who is not, 
+however, a schizophrenic. 
+
+There is evidence that shy, shut-in people are more liable to schizophrenia 
+than outgoing folk, but this is disputed, and some psychiatrists maintain that the 
+“ shut-inness ’’ is just an early stage of the illness. What is certain is that people 
+who apparently enjoyed excellent physical and mental health have been struck 
+down by it. Most doctors agree that long thin people are more likely to develop 
+it than short fat people. 
+
+No age is exempt, but the first attack usually occurs in young adulthood. 
+Psychological investigation has yielded little except that clever and stupid people 
+are equally affected. 
+
+Its association with difficulties in early life is uncertain and by no means proved ; 
+it is often hard to decide when the illness began, because the childhood disturbances 
+may only be early symptoms. Psychoanalytic evidence is vitiated by the lack of 
+an objective standard due to the paucity of published analyses of normal people. 
+We have therefore no sure means of telling whether the schizophrenic usually has 
+a more unhappy childhood than the non-schizophrenic, but it is certainly not 
+unknown for schizophrenics to have histories which suggest a happy and contented 
+childhood. 
+
+We must therefore account for a situation in which a person of any age, but 
+usually a young’ adult, in response to stress or with little evidence of it, becomes 
+
+
+ 1952.] BY H. OSMOND, M.R.C.S., AND J. SMYTHIES, M.B. 311 
+
+
+slowly and insidiously, or with overwhelming speed and accompanied by acute 
+confusion, subjected to disturbances of association, changes in affect, thought 
+disorder, hallucinations and delusions and catatonic symptoms to such an extent 
+that life outside a mental hospital becomes impossible. The sick person, on the 
+other hand, may never even need to visit a doctor but may simply appear odd ana 
+eccentric. The illness may terminate quickly either with or without medical aid, 
+or may be completely resistant to any form of treatment and continue for years 
+without any pathognomonic physical changes being demonstrable. It must be 
+influenced by a wide variety of treatments, such as psychoanalysis, deep insulin, 
+metrazol, E.C.T., thyroid therapy and leucotomy. Occasionally events such as a 
+severe physical illness or a psychic or physical shock may affect it favourably. 
+It must be possible for the patient to recover after years of illness without measur- 
+able evidence of intellectual impairment, and to appear remarkably normal in 
+spite of a long period of incarceration. The illness should bear some understandable 
+relationship to the manic-depressive disorders, and not infrequently be indistin- 
+* guishable from them at an early stage. It would be in keeping with our present 
+knowledge if an inherited constitutional basis could be provided for its occurrence. 
+
+
+THE SYNTHETIC ILENESS. 
+
+
+The first question that one asks is whether any known substance could produce 
+results of this sort ; not merely confusion with secondary delusions, but a disturbed 
+mental state which could be mistaken for schizophrenia. It has been known for 
+over fifty years that mescaline, the alkaloid extracted from the peyotl—A nhelonium 
+Lewinii, an American cactus—produces symptoms almost identical with schizo- 
+
+-phrenia, including catatonia and thought disorder. The symptoms differ in 
+different subjects, but not more markedly than different cases of schizophrenia 
+differ. No account of the effect of altering the dosage of mescaline in the same 
+subject has come to our notice, so that it is impossible to decide whether the 
+difference in symptoms is due to differences in rates of absorption, or the ratio of 
+body weight to dose, or to other factors. It has been taken for years by psychia- 
+trists who wish to experience schizophrenic symptoms and to investigate synaesthesia. 
+From time to time investigators have mentioned that it is unfortunate that more is 
+not known about it. Kliiver (6) in America and Eric Guttmann (7) in this country 
+drew attention to our ignorance on this subject and to its importance respectively ; 
+but are we really so ignorant ? The formula of mescaline has been known for at 
+least twenty-five years, and probably much longer. It had not, however, been 
+published in a psychiatric paper for many years until Mayer-Gross’s recent lecture 
+(8).. Unfortunately in this paper the formula was misprinted, and in addition the 
+structural diagram was so arranged that its most remarkable quality was obscured. 
+Organic chemists have, of course, known its biochemical affinities for many years, 
+but they have rarely been interested in its psychological properties. 
+
+There are many other hallucinogenic drugs, but none has either such striking 
+properties or such a simple chemical constitution as mescaline. It would therefore 
+be an excellent candidate for a schizophrenic agent, if there were any likelihood 
+of its appearing in the body. 
+
+Before discussing this question it is necessary to examine a widely held view 
+whose most recent proponent is Mayer-Gross. To quote his own words: ‘“ The 
+symptoms of mescaline intoxication have been compared to those of schizophrenia, 
+but it is much more the strangeness experienced by the patient suffering from 
+schizophrenia and the difficulties of describing what is happening in the two condi- 
+tions which is similar. Many typical schizophrenic symptoms, especially in sub- 
+acute and chronic states, are never seen in mescaline intoxication. Early psychotic 
+phenomena in acute schizophrenia show certain analogues, especially in the field of 
+hallucinations and other sense abnormalities’’ (8). Surely, in trying to lump 
+together acute and chronic scdizophrenic reactions and compare them with the 
+laboratory observations of trained psychiatrists taking mescaline voluntarily, 
+Mayer-Gross is comparing two innately different situations. It is highly unlikely 
+that the unheralded schizophrenic psychosis of indefinite duration in an unprepared 
+victim, and the experiences of a voluntary mescal taker who knows what to expect 
+and how long his ordeal will last, would be exactly similar. The remarkable thing 
+is that these acute reactions have so much in common. In the accompanying 
+table it will be seen that mescaline reproduces every single major symptom of acute 
+schizophrenia, although not always to the same degree. 
+
+
+= a a rte 
+
+
+312 SCHIZOPHRENIA : A NEW APPROACH, [April, 
+
+
+TaBLE I.—A Comparison between the Psychological Effects of Mescaline 
+and the Symptoms of Acute Schizophrenia. 
+
+
+\ ‘Mescalin. Acute schizophrenia. 
+Ce esta —w— 
+; Hallucina- : Hallucina- 
+5 Illusions. . 
+Tlusions. AS S tions. 
+1. Sensory disorders : ; 
+@: Nision —. : ; ; sO xX : xo Exoxe 
+b. Hearing . é j : BG x ‘ De NOx 
+c. Body image . é é XXX -—— : Sole — 
+d. Smell and taste : : YOO HOOK ; XX NOK 
+A e. Skin sense : 3 : pee — : XxX — 
+f. Temperature . E : xox = : NOK = 
+g. Synaesthesia . d A XKX — ? -—— 
+2. Motor disorders : 
+a. Catatonia : : : OX : KOK 
+3. Behaviour disorder . 
+a. Negativism . 3 5: XOX ; 30;0.4 
+‘7 b. Withdrawal . c 3 XX : El S096 
+(big doses) 
+c. Antisocial violence . : Reported a: Sa 
+4. Thought disorder : 
+a. Pressure : ‘ : XxX : 2 O.< 
+b. Disturbed association 7 LOOX : 3O:84 
+‘ c. Blocking b : : Do XXX 
+d. Substitution of primitive 
+thinking in the form of 
+visual images for con- ; 
+‘ ceptual thought . ; BROKEN: : XOKOX. 
+e. Neologisms . ; : aK ' XX 
+5. Disorders of interpreiation ¢ 
+aes a. Ideas of influence . ; SOx : XXX 
+i b. Paranoid ideas ; XXX EKO 
+c. Heightened significance of 
+objects : : : Xxx : XX 
+6. Delusions é 5 ¢ ‘ OK : TOR 
+(time factor) 
+7. Splitting é : : ; EK : BOCK 
+(time factor) 
+_8. Depervsonalization (a) : ; XX P 5X 
+Derealization (b) 4 : XXX : Wrek 
+g. Mood disorders : 
+" a. Fear and terror . ‘ SRK : SKK 
+b. Depression ; : : X ; x 
+c. Indifference and apathy . XX : exon 
+(time factor) 
+d. Manicsymptoms . : ox ; x 
+e. Euphoria : : - SOK 4 xx 
+f. Schizoid humour. : xx : XxX 
+10. Insight . ¢ 5 : . Sometimes absent . Sometimes present 
+
+
+(time factor) 
+
+
+o, does not occur. x, occurs. xx, marked when it occurs but not al 
+xxx, marked and frequent. —, not relevant. TOS agi 
+We have actually noted in our six subjects all these effects of mescaline except 1(b 
+reported by Rouhier (15) and Tayleur-Stockings (16) and 3 (c) reported by Hey a y 
+
+
+sf 
+; 
+\ 
+
+
+1952. | BY H. OSMOND, M.R.C.S., AND J. SMYTHIES, M.B. B18 
+
+
+Subacute and chronic schizophrenia cannot be compared legitimately with 
+acute mescaline poisoning, but should be compared with chronic mescaline intoxica- 
+tion. Very little seems to be known about this condition, and one of the few 
+references to it known is quoted in Mayer-Gross’s lecture. It reads: “‘ The use of | 
+the drug was, and probably still is, a problem to the Christian Missionaries who 
+insist that its regular intake leads to increasing laziness and impairment of will- 
+power.” Surely a lay person might describe a chronic schizophrenic in such a 
+phrase ? May it not be that to use his own words, “‘ the strangeness experienced 
+by the patient suffering from schizophrenia and the difficulties of describing what 
+is happening in the two conditions ”’ constitute an essential similarity ? Language 
+is not designed to depict the weird world of the mescaline taker and the schizophrenic. 
+Only very rarely is the latter willing or able to describe his experiences coherently. 
+When he does, as in Henning’s (9) astonishing book The Witnesses, the world 
+which he describes is more like that of the mescaline taker than any other. 
+
+The objection that all the symptoms of schizophrenia are not found in acute 
+mescaline poisoning is not valid. So far as one can judge from the little evidence 
+available, the effects of mescaline vary as much as but not more than the symptoms 
+of schizophrenia, which unhappily for psychia‘rists allows a wide range of variability. 
+
+To return to the chemical constitution of mescaline, which is— 
+
+
+O CH, CH,.CH,.NH, 
+O CH, 
+
+
+O.CH, 
+it is a fairly simple compound, and those with biochemical knowledge will realize 
+that it is not very dissimilar from adrenaline. This observation was made by one 
+of us in June, 1950, with the assistance of Dr. Julian Redmill, then a medical 
+student at St. George’s Hospital. The adrenergic qualities of mescaline and many 
+similar drugs were investigated by Dr. J. Harley-Mason, M.A., F.R.LC., University 
+Demonstrator in Organic Chemistry at Cambridge. He has been good enough to 
+allow the following biochemical observations on this aspect of the subject to be 
+published. 
+BIocHEMICAL NOTE, 
+
+
+He writes: ‘It is extremely probable that the final stage in the biogenesis of 
+adrenaline (II) is a transmethylation of nor-adrenaline (I), the methyl group arising 
+from methionine or choline. 
+
+CH.OH.CH,.NH, CH.OH.CH,.NH.CH, 
+—_ 
+OH +CH,— OH 
+
+
+OH OH 
+ile Ine 
+
+
+It is just possible that a pathological disordering of its transmethylation mechanism 
+might lead to methylation o1 one or both of its phenolic hydroxyl groups instead 
+of its amino group, leading to the formation of (III) and (IV). Methylation of 
+phenolic hydroxyl groups in the animal body is of rare occurrence, but a significant 
+case has been reported recently by Maclagon and Wilkinson (10). It is particularly 
+interesting to note that out of a series of phenylethylamine derivatives tested by 
+Noteboom (11), 3.4-dimethoxyphenylethylamine (V) was the most potent in 
+producing catatonia in animals, and that this substance 
+
+
+@H.OH.CH,: NH, CH.OH.CH,.NH, 
+
+
+IUOe IY 
+
+
+314 SCHIZOPHRENIA : A NEW APPROACH, [April, 
+
+
+differs frons (IV) only in the absence of its side chain hydroxyl group. It is however 
+doubtful, in view of the relatively high dosage of (V) required to produce a catatonic 
+effect, whether enough of a compound such as (IV) could be elaborated in the body 
+to produce mental symptoms, having regard to the normal capacity for adrenalin 
+production. It may be, however, that in chronic intoxication smaller amounts 
+would be effective. : 
+
+“ The extremely high activity of lysergic acid diethylamide is remarkable, the 
+dosage level of 30-50 mgm. being one-tenth the amount of adrenalin or thyroxin 
+required to produce an observable response. The compound bears no relationship 
+to any substance at present known to occur in the animal body and the mechanism 
+of its action is wholly obscure.”’ 
+
+Surely it is significant that a single biochemical failure could occur in the stress 
+mechanism and produce these dangerous toxins, one of which is already known to 
+be a powerful catatonic agent ? Mescaline itself is not, of course, the toxic agent 
+in schizophrenia. It is not nearly active enough, and the adrenals could not 
+possibly make 500 mgm. or more daily, which would be necessary to produce 
+symptoms. It is, however, thought that mescaline itself is non-toxic, and that the 
+toxic agent in mescalism is a breakdown product. 
+
+We therefore suggest that schizophrenia is due to a specific disorder of the 
+adrenals in which a failure of metabolism occurs and a mescaline-like compound or 
+compounds are produced, which for convenience we shall refer to as “‘ M substance.” 
+The striking implications of the relationship between the bizarre Mexican cactus 
+drug and the common hormone have, so far as we know, never been recorded 
+before. Psychiatrists appear to have been unaware of its biochemical structure, 
+biochemists to have been uninterested in its production of an artificial psychosis. 
+The close clinical connections between schizophrenia, anxiety states and stress 
+have been known for a long time, and the process involved may be that in certain 
+people when the adrenals are overworked (due perhaps to an inherited latent fault 
+as Kallman has suggested) (12) the process of methylation becomes disturbed and 
+highly toxic substances are produced. This M substance, once produced, would 
+naturally set up a vicious circle, since one of the prominent features of both the 
+mescal ‘‘ psychosis ”’ and of many cases of schizophrenia is the stress and terror 
+experienced by the victim. There is already a certain amount of evidence for the 
+presence of such an agent (13). This hypothesis could also account for the somatic 
+manifestations of schizophrenia—the excessive adrenocortical activity perhaps 
+generated by Vogt’s mechanism, the vascular changes, the disturbances of carbo- 
+hydrate metabolism, the overloading of the detoxicating mechanisms of the liver, 
+and the pigmentation (melanin and adrenaline metabolism are linked). 
+
+The result of these endogenous disturbances in sensation, feeling and thought 
+upon the sick person would depend on the age of onset, the rate at which M-substance 
+is produced, the patient’s previous personality and special mode of reaction to 
+M-substance, and the cultural setting in which the illness occurs. These variables 
+allow for the enormous range of different reactions such as is actually observed in 
+schizophrenia, which could thus appear to have many and various “ precipitating 
+causes. 
+
+Similarly, many forms of treatment could be expected to alleviate the condition 
+to some extent—acute physical illnesses with their general metabolic upset : 
+psychotherapy, where the attempt made to help the patient adapt to his strange 
+new environment might serve to break the vicious circle by alleviating the stress 
+experienced and thus depressing the production of M-substance; leucotomy 
+which might break the circle at the level of cerebral reaction to stress ; and lastly 
+and most significantly the only generally accepted treatment, insulin, is itself an 
+anti-adrenaline agent. Further, since it is known that mescaline produces its effects 
+by interfering with the glucose metabolism of the brain, the beneficial effects of 
+insulin treatment may be produced, not so much by the comas, as by the large 
+amount of glucose that is forced into the bodily metabolism. It is of interest that 
+Mayer-Gross (14) reports that high doses of glucose raising the blood sugar above 
+200 mgm, inhibit the action of lysergic acid (LSD. 25). 
+
+Many of the results of schizophrenia have little to do directly with disturbances 
+of brain function, but depend on factors which are, in the anthropological sense, 
+cultural. The isolation and dislike which the patient experiences in our com- 
+munity forces him to retreat into his private world. The schizophrenic regresses 
+because, faced with an incomprehensible change in his external and interna! sur- 
+
+
+Rees 
+
+
+. 1952. | “BY H. OSMOND, M.R.C.S., AND J. SMYTHIES, M.B. 315 
+
+
+/ 
+
+
+roundings, his painfully learned patterns of behaviour suddenly become useless 
+and he is left isolated and enmeshed in his own fantasies and the phantasmagoria 
+produced by M-substance. He is literally and not figuratively out of touch with 
+his environment. In societies different from our own the results of this universal 
+metabolic abnormality (the production of M-substance) may be socially beneficial 
+to the individual. For instance the Shamans in Siberia and the Mystics in Tibet 
+are in fact leaders of society though undoubtedly having schizophrenic experiences. © 
+
+
+DISCUSSION. 
+
+
+It is easy enough to speculate about an illness which has been the subject of so 
+much investigation and remains so barren in established aetiology, but the first 
+essential for any directed programme of research is a hypothesis based on fact, 
+otherwise observation hardly progresses beyond the stage of cataloguing. It 
+seems to us that the advantage of this new approach lies in its combination of the 
+clinical and the biochemical, which allows one to substitute a definite plan of 
+campaign in place of the present state of speculation about unknown substances. 
+Mescaline is the simplest agent producing a schizophrenic-like psychosis, and the 
+only one that closely resembles a substance found naturally in the body. The 
+proper course of action to test this hypothesis is clear. It would consist in the 
+pharmacological investigation of mescaline, its breakdown products, and the range 
+of compounds between it and adrenaline (especially 3.4-dimethoxyphenylethyl- 
+amine), and the attempt would have to be made to isolate these substances from 
+the body-fluids of acute schizophrenics. Once these investigations have been 
+done our hypothesis will either join the large number of plausible theories which 
+have failed to stand up to the test of experiment and are now to be found on the 
+scrap-heap of psychiatry in the pages of old journals, or the cause of schizophrenia 
+will be known. 
+
+SUMMARY. 
+
+
+After a brief survey of the present state of our knowledge regarding schizophrenia 
+we have drawn attention to the close biochemical relationship between adrenaline 
+and mescaline. This, taken in conjunction with the clinical relationship between 
+acute mescaline intoxication and acute schizophrenia, and between the latter condi- 
+tion and stress, appears to us to be significant. The clinical and biochemical 
+implications of this are discussed. 
+
+
+REFERENCES. 
+
+
+) BLEULER, E., Dementia Praecox, 1950. New York. 
+
+) BerakK, L., Dementia Praecox, 1947. New York. ; 
+
+3) Gyessinc, R., article in D. Richter (ed.), Perspectives in Neuropsychiatry, 1950. 
+London. (Pp. 217-29.) 
+
+4) Hoskins, R., Biology of Schizophrenia, 1946. New York. 
+
+5) HenpDERSON and GILLESPIE, Text-book of Psychiatry, 1950. London. (P. 297.) 
+
+6) Kitver, H., Chapter X in Studies in Personality, 1942. New York. 
+

@@ -61,6 +61,8 @@
     "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15.",
     "reviewStatus": "unreviewed",
     "reviewNote": "",
-    "importedOn": "2026-08-15"
+    "importedOn": "2026-08-15",
+    "publish": false,
+    "publishNote": "Four short administrative notices; the 1918 House hearings cover the suppression campaign far better."
   }
 }

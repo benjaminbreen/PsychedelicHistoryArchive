@@ -1,41 +1,5 @@
 [
   {
-    "id": "02c8abe0-e66b-5ccd-9460-4a19f97f1619",
-    "document_id": "6955253f-5e18-5059-bfab-6a74f9dc911c",
-    "repository_name": "openlibrary.org",
-    "institution_name": "",
-    "url": "https://openlibrary.org/works/OL7701712W/On_Aztec_botanical_names",
-    "access_label": "Full text at the publisher or host",
-    "stable_identifier": "https://openlibrary.org/works/OL7701712W/On_Aztec_botanical_names",
-    "rights_note": "Public domain (published before 1930).",
-    "is_primary": true,
-    "last_checked_at": null
-  },
-  {
-    "id": "2398e431-d417-55b8-a15d-d6c4771bc768",
-    "document_id": "190a56af-fdad-5dec-908d-f151a6ec60a1",
-    "repository_name": "doi.org",
-    "institution_name": "",
-    "url": "https://doi.org/10.1097/00005053-196001000-00005",
-    "access_label": "Full text at the publisher or host",
-    "stable_identifier": "https://doi.org/10.1097/00005053-196001000-00005",
-    "rights_note": "In copyright (Wolters Kluwer / Ovid). No US Government interest — Cohen wrote in his VA capacity but this is a journal publication, not a VA report.",
-    "is_primary": true,
-    "last_checked_at": null
-  },
-  {
-    "id": "6bda84c0-d58a-55b7-b0c6-649b20ee5c42",
-    "document_id": "006306a2-abc1-5d20-afba-1aee3818051e",
-    "repository_name": "thecrimson.com",
-    "institution_name": "",
-    "url": "https://www.thecrimson.com/article/1963/7/9/psilocybin-senate-race-highlight-harvard-year/",
-    "access_label": "Full text at the publisher or host",
-    "stable_identifier": "https://www.thecrimson.com/article/1963/7/9/psilocybin-senate-race-highlight-harvard-year/",
-    "rights_note": "In copyright, The Harvard Crimson. Freely readable on the paper's own website; not cleared for full republication here.",
-    "is_primary": true,
-    "last_checked_at": null
-  },
-  {
     "id": "d28693f0-3ae3-5158-bfb4-c77b9fa4cf39",
     "document_id": "1b3fca93-d145-5e0d-8673-8326d5f12224",
     "repository_name": "the Internet Archive scan",
@@ -43,7 +7,7 @@
     "url": "https://archive.org/details/EtnologiskaStudier09",
     "access_label": "Full text at the publisher or host",
     "stable_identifier": "https://archive.org/details/EtnologiskaStudier09",
-    "rights_note": "In copyright (published 1939). Full text digitized and hosted by the Internet Archive; used here only as a short verified excerpt per this project's pre-1930 hosting rule.",
+    "rights_note": "In copyright. Published 1939 in Sweden; still under copyright at home in 1996, so restored in the US by the URAA regardless of any US renewal history. Rights held by the Göteborgs Etnografiska Museum / Ethnologiska Studier. Excerpt of about 1,460 words -- Johnson's eyewitness account of the July 16, 1938 curing ceremony at Huautla de Jiménez and his description of the mushroom species used by Mazatec brujos -- reproduced for teaching and research under fair use; the full article remains with the publisher.",
     "is_primary": true,
     "last_checked_at": null
   },
@@ -55,7 +19,7 @@
     "url": "https://okneoac.org/bhb/how-to-guide-a-session",
     "access_label": "Full text at the publisher or host",
     "stable_identifier": "https://okneoac.org/bhb/how-to-guide-a-session",
-    "rights_note": "In copyright, Art Kleps estate / Neo-American Church. Freely republished on the church's own current website (okneoac.org); not cleared for full republication here.",
+    "rights_note": "In copyright, Art Kleps estate / Neo-American Church. Published 1971, within the 1964-1977 window for which the Copyright Renewal Act of 1992 made renewal automatic; it remains under copyright through the full term regardless of whether any renewal was ever filed. Freely republished in full on the church's own current website (okneoac.org). Excerpt of about 1,400 words -- roughly the first half of the chapter -- reproduced here for teaching and research under fair use; the full chapter remains available at the source link.",
     "is_primary": true,
     "last_checked_at": null
   },
@@ -67,7 +31,7 @@
     "url": "https://archive.org/details/ThePsychedelicExperienceAManualBasedOnTheTibetanBookOfTheDead",
     "access_label": "Full text at the publisher or host",
     "stable_identifier": "https://archive.org/details/ThePsychedelicExperienceAManualBasedOnTheTibetanBookOfTheDead",
-    "rights_note": "In copyright (published 1964, still in print). A public-domain-labeled scan circulates on Internet Archive under a non-restricted upload, but the text itself remains under copyright; not cleared for full republication here.",
+    "rights_note": "In copyright. Published 1964, one year after the close of the 1923-1963 window that required renewal filing to keep a work in copyright; the Copyright Renewal Act of 1992 made renewal automatic for everything published 1964-1977, so this book remains under copyright through the full term regardless of whether a renewal was ever filed. Excerpt of about 1,700 words -- the 'set and setting' passages -- reproduced for teaching and research under fair use; the full text remains with the rights holders.",
     "is_primary": true,
     "last_checked_at": null
   },
@@ -91,19 +55,7 @@
     "url": "https://www.cambridge.org/core/journals/journal-of-mental-science/article/abs/schizophrenia-a-new-approach/8298D2CF421A5D0D9F4A689AED993318",
     "access_label": "Full text at the publisher or host",
     "stable_identifier": "https://www.cambridge.org/core/journals/journal-of-mental-science/article/abs/schizophrenia-a-new-approach/8298D2CF421A5D0D9F4A689AED993318",
-    "rights_note": "In copyright (Royal College of Psychiatrists / Cambridge University Press). No US Government interest.",
-    "is_primary": true,
-    "last_checked_at": null
-  },
-  {
-    "id": "f5fdfdcc-7e2c-5371-950e-5b9601dbddb3",
-    "document_id": "e308070d-8824-53c9-a521-47be4d755f22",
-    "repository_name": "maps.org",
-    "institution_name": "",
-    "url": "https://maps.org/research-archive/psychedelicreview/v1n1/psychreview01.pdf",
-    "access_label": "Full text at the publisher or host",
-    "stable_identifier": "https://maps.org/research-archive/psychedelicreview/v1n1/psychreview01.pdf",
-    "rights_note": "In copyright (published 1963, renewal status unresearched). Digitized and freely hosted by the Multidisciplinary Association for Psychedelic Studies (MAPS) research archive; underlying text rights not cleared for republication.",
+    "rights_note": "In copyright. Published April 1952 in the UK; still under copyright at home in 1996, so restored in the US by the URAA regardless of any US renewal history. Rights held by the Royal College of Psychiatrists / Cambridge University Press. Excerpt of about 1,600 words -- the article's core argument, biochemical note, hypothesis, and discussion -- reproduced for teaching and research under fair use; the full article remains with the publisher.",
     "is_primary": true,
     "last_checked_at": null
   },
@@ -120,18 +72,6 @@
     "last_checked_at": null
   },
   {
-    "id": "9c242c7a-1b29-5cc3-ac2a-b56dbc6c5865",
-    "document_id": "b22d24dd-1f7f-5cf7-b088-219f2b89fe56",
-    "repository_name": "samorini.it",
-    "institution_name": "",
-    "url": "https://www.samorini.it/doc1/alt_aut/sz/schultes-a-contribution-to-our-knowledge-of-rivea-corymbosa.pdf",
-    "access_label": "Full text at the publisher or host",
-    "stable_identifier": "https://www.samorini.it/doc1/alt_aut/sz/schultes-a-contribution-to-our-knowledge-of-rivea-corymbosa.pdf",
-    "rights_note": "In copyright (published 1941). A scan is hosted publicly by samorini.it; used here only as a short verified excerpt per this project's pre-1930 hosting rule.",
-    "is_primary": true,
-    "last_checked_at": null
-  },
-  {
     "id": "d4ec1e43-5035-56df-8eb9-35c7340ae2f7",
     "document_id": "c159dc50-53b9-56e8-99d8-2afe7c4a9ad6",
     "repository_name": "the Internet Archive scan",
@@ -144,18 +84,6 @@
     "last_checked_at": null
   },
   {
-    "id": "0f1a917d-173d-57c5-a004-8ab5d148c00d",
-    "document_id": "c053c75d-37c5-5bd2-a050-5acde0b81672",
-    "repository_name": "doi.org",
-    "institution_name": "",
-    "url": "https://doi.org/10.1176/ajp.108.8.572",
-    "access_label": "Full text at the publisher or host",
-    "stable_identifier": "https://doi.org/10.1176/ajp.108.8.572",
-    "rights_note": "In copyright (American Psychiatric Association Publishing). No US Government interest.",
-    "is_primary": true,
-    "last_checked_at": null
-  },
-  {
     "id": "556929e6-9c4b-5937-9eb4-17ceed8d915b",
     "document_id": "3909571c-9825-5c71-94c2-759529b2db56",
     "repository_name": "the Internet Archive scan",
@@ -163,7 +91,7 @@
     "url": "https://archive.org/details/SanFranciscoOracleVol.1No.7D.D.TeoliJr.A.C.1",
     "access_label": "Full text at the publisher or host",
     "stable_identifier": "https://archive.org/details/SanFranciscoOracleVol.1No.7D.D.TeoliJr.A.C.1",
-    "rights_note": "In copyright (published 1967; rights holder(s) not identified by the digitizing institutions). Scanned copies held by Letterform Archive and by an independent Internet Archive contributor 'for purposes of education and research'; not cleared for full republication here.",
+    "rights_note": "In copyright. Published February 1967, within the 1964-1977 window for which the Copyright Renewal Act of 1992 made renewal automatic; this issue of the Oracle remains under copyright through the full term regardless of whether any renewal was ever filed for it. Excerpt of about 1,100 words -- a continuous run of the conversation's opening -- reproduced for teaching and research under fair use; the full transcript remains with the rights holders.",
     "is_primary": true,
     "last_checked_at": null
   },
@@ -187,7 +115,7 @@
     "url": "https://www.biodiversitylibrary.org/part/168538",
     "access_label": "Full text at the publisher or host",
     "stable_identifier": "https://www.biodiversitylibrary.org/part/168538",
-    "rights_note": "In copyright (Botanical Museum Leaflets, Harvard University, 1962); renewal status not verified. Treated as protected per project policy for material published after 1930.",
+    "rights_note": "Copyright status not established. Botanical Museum Leaflets was a Harvard institutional serial, and the 1941 issue in this archive was verified unrenewed, but a renewal for the 1962 volume would have been filed in 1990 and the Copyright Office's post-1978 records are only searchable through a JavaScript interface that could not be queried here. Treated as in copyright: roughly 1,000 words are reproduced for teaching and research under fair use, and the full article remains with the publisher.",
     "is_primary": true,
     "last_checked_at": null
   }

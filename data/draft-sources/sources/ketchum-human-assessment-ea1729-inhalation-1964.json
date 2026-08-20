@@ -75,6 +75,8 @@
     "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15. Companion document to, not a duplicate of, sim-clinical-investigation-ea1729-1961 proposed alongside it.",
     "reviewStatus": "unreviewed",
     "reviewNote": "",
-    "importedOn": "2026-08-15"
+    "importedOn": "2026-08-15",
+    "publish": false,
+    "publishNote": "Superseded by sim-clinical-investigation-ea1729-1961, which covers the same Edgewood programme at greater length."
   }
 }

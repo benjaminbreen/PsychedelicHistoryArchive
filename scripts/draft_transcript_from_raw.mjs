@@ -93,8 +93,14 @@ function clean(text) {
     .replace(/^\s*\d{1,4}\s*$/gm, "")
     .replace(/^\s*[A-Z][A-Z .,'-]{6,}\s+\d{1,4}\s*$/gm, "")
     .replace(/^\s*\d{1,4}\s+[A-Z][A-Z .,'-]{6,}\s*$/gm, "")
-    // hyphenation across a line break
-    .replace(/(\w)-\n(\w)/g, "$1$2")
+    // Hyphenation across a line break (tolerating a trailing OCR space before the newline).
+    // Always rejoin without the hyphen. A dictionary test — keep the hyphen when both halves
+    // are words — sounds better and is much worse: across these scans it would keep a spurious
+    // hyphen in 300+ ordinary broken words (avail-able, how-ever, Govern-ment) to rescue about
+    // one real compound. Fix the rare broken compound by hand instead.
+    .replace(/(\w)-[ \t]*\n(\w)/g, "$1$2")
+    // some scans render the line-break hyphen as a stray not-sign (soft-hyphen OCR artifact)
+    .replace(/(\w)¬ ?\n(\w)/g, "$1$2")
     // single newline inside a paragraph becomes a space; blank lines stay
     .replace(/([^\n])\n(?![\n\s])/g, "$1 ")
     .replace(/[ \t]{2,}/g, " ")

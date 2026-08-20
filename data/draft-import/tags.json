@@ -1281,6 +1281,13 @@
     "tag_type": "topic"
   },
   {
+    "id": "b97fde93-dd46-5a5c-9cfd-e3bb33337081",
+    "slug": "fair-use-excerpt",
+    "name": "Fair Use Excerpt",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
     "id": "7499929f-83ac-5996-a09d-bc7bc3d3c6e3",
     "slug": "banisterine",
     "name": "Banisterine",
@@ -1781,6 +1788,13 @@
     "id": "e6f22abf-8875-59e7-88e4-221c955a32a6",
     "slug": "little-magazine",
     "name": "Little Magazine",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8b06dbe6-e2ae-50be-8da5-26a5ae732c52",
+    "slug": "public-domain",
+    "name": "Public Domain",
     "description": "",
     "tag_type": "topic"
   },

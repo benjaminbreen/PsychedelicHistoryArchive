@@ -78,6 +78,8 @@
     "duplicateCheck": "Confirmed absent from the 51 live archive records as of 2026-08-15. Distinct from the archive's existing 1977 MKULTRA joint hearing (different committee, different session, different witnesses excerpted).",
     "reviewStatus": "unreviewed",
     "reviewNote": "",
-    "importedOn": "2026-08-15"
+    "importedOn": "2026-08-15",
+    "publish": false,
+    "publishNote": "Overlaps the August 1977 joint MKULTRA hearing already in the archive."
   }
 }

@@ -1,1 +1,1956 @@
-mushrooms continued to be obscured from the world until the late 1930's when they were once again brought to the attention of the scientific community. Fig. 1. Dr. Blas Pablo Reko Drawn by E.W. Smith In the second decade of this century, Austrian Blas Pablo Reko (1919), a physician with an interest in ethnobotany, learned that some groups of Indians living in the Mexican state of Oaxaca were still using psychoptic mushrooms in secret ceremonies perhaps involving ancient rites. These rites were performed apparently for the purpose of divinatory healing. Reko published his findings in a journal entitled El M&eacute;xico Antiguo . Reko subsequently discussed this discovery with his colleagues, who paid little attention to his mushroomic theories and showed no interest in pursuing this information on the supposititious use of inebriating mushrooms by the Indians of Mesoam&eacute;rica. Reko wrote that teonan&aacute;catl was "Div. g&eacute;neros de hongos, especialmente un hongo negro que crece sobre esti&eacute;rcol y produce efectos narc&oacute;ticos." ["Various genera of mushrooms, especially a black mushroom that grows on dung and produces psychotropic effects"]. Reko (1923) later wrote to Dr. J. N. Rose of the United States National Herbarium that "I see in your description of Lophorphora (peyote) that Dr. Safford believes this plant to be the ` teonan&aacute;catl ' of Sahag&uacute;n which is surely wrong. It is actually as Sahag&uacute;n states, a fungus which grows on dung heaps and which is still used under the same old name by the Indians of the Sierra Juarez in Oaxaca in their religious feasts." Safford's last defender, Huntington Cairns (1929), became the last person to expound the Safford theory. B. P. Reko's cousin, Victor A. Reko (1928), published the first objection to Safford's claims. It appeared in a book written years later in 1936. Below is an excerpt describing the effects of the mushrooms taken from that book entitled Magische Gifte: Rausche und Bet&auml;ubungsmittel der Neuen Welt (" Magical Poisons: inebrients and Narcotics of the New World "): "The nanacates are poisonous mushrooms which have nothing to do with peyote. It is known from olden times that their use induces intoxication, states of ecstacy and mental aberrations, but, notwithstanding the dangers attendant upon their use, people everywhere they grow take advantage of their intox
+Source fetched: https://books.google.com/books?id=phNQAAAAYAAJ (Google Books, digitized from University of Illinois at Urbana-Champaign)
+Original: El México Antiguo, vol. 1, no. 5 (December 1919), pp. 113-157
+Fetched: 2026-08-20
+Method: curl download of Google Books full-view PDF (public domain, pre-1930), then pdftotext -layout
+
+Full OCR text of Reko's article, pp. 113-157, as it appears in the scanned volume.
+======================================================================
+
+     DE LOS NOMBRES BOTANICOS AZTECAS
+                      (TOMADO DE LA OBRA INEDITA
+
+    " SINONIMIA VULGAR Y CIENTIFICA DE LA FLORA OAXAQUEÑA")
+                                    POR EL
+
+
+
+
+                  DR . BLAS PABLO REKO
+
+    Después de la identificación científica de los nombres vulgares, toma se-
+gundo lugar de importancia en una sinonimia la etimología de ellos . Desde
+luego puedo libertarme de la tarea de analizar los nombres tomados de la
+lengua española, supuesto que ya existen obras que tratan ampliamente de
+este asunto, como el Diccionario botánico de Miguel Colmeiro. Sin embar-
+go, no hay que desatender del todo a estos nombres, porque algunas veces
+pueden ser traducciones de voces indígenas, como "Gigantón” de "Aca-
+hual," " Cabeza de viejo" de " Tetazo," " Floripondio" de " Toloache, " o
+en otros casos, son nombres estropeados de la ciencia, como "Pericón” de
+"Hypericum, " " Bombilla" de "Bougainvillea, " " Astronómica" de " La-
+gerstroemia. " En la mayoría de los casos, los nombres netamente españoles
+se entienden desde luego en su aplicación, teniéndose conocimiento personal
+de la planta en cuestión. Por cierto, un nombre como "Tatahueso " se com-
+prende sólo después de haber visto el corte de un helecho arborescente, que
+imita la configuración y dureza de un hueso. Después de la conquista, mu-
+chos nombres españoles fueron aplicados a plantas mexicanas por su seme-
+janza a plantas europeas, como " Ciruelo" al género Spondias, " Membrillo"
+al género Cotoneaster, y viceversa, nombres indígenas fueron otorgados por
+la misma razón a plantas introducidas por los españoles, como "Tlapatl "
+a la" Higuerilla, " ''Xonacatl" a la " Cebolla." Interesantes en este respec-
+toson nombres mexicanos, como " Tecpan" (tecu-pantli, bandera real) para
+designar la planta sudafricana "Bandera española" (Kniphofia alooides ) ,
+y " Tehuizle " ( teo- izquitl) para designar las semillas negras perfectamente
+redondas y de igual tamaño, del género Sapindus, las cuales los frailes usa
+bancomo cuentas de rosario, pues por su significación demuestran claramen-
+te su origen post-colombino .
+     La llegada de los españoles motivó también un gran intercambio de vo
+ces indígenas. De las islas Antillas trajeron muchas palabras tainas (cari
+bes) que todavía tienen una propagación muy extensa en la América tropi-
+cal, llevaron muchos nombres mexicanos hasta América del Sur, y de allí
+  114                     DR. BLAS PABLO REKO
+
+
+introdujeron voces indígenas, como " Canchalagua" (arauca, cancha - laguen :
+remedio contra el dolor del costado, una enfermedad epidémica de los siglos
+pasados, ahora aparentemente extinta) hasta México. Este intercambio ex-
+tenso hace hoy día muy difícil averiguar si acaso existían muchos de los
+nombres caribes ya de antemano en el continente, una opinión que parece
+ser corroborada por la existencia de nombres geográficos, indudablemente
+caribes , en Centro y Sudamérica, desde antes de la llegada de los españo-
+les. La riqueza extraordinaria de la tierra caliente en nombres caribes , y la
+falta casi absoluta de otros nombres indígenas en esta zona, me hacen incli-
+nar a la creencia de que efectivamente pueden ser, a lo menos en parte, nom-
+bres precolombinos. Por cierto, Sahagún, el primer autor que hace relación
+de plantas mexicanas, menciona sólo unas tantas palabras caribes (maíz, ma-
+guey, tuna, batata), pero debe tenerse en cuenta que las plantas de que se
+осира -en gran parte herencia del tesoro medicinal de los Chichimecas-
+'son casi todas de la Mesa central . También la obra del Dr. Francisco Her-
+nández, quien residió en México desde 1570-1575, contiene relativamente
+pocos nombres caribes, tal vez porque su estancia en la tierra caliente era
+muy pasajera y sus conocimientos de la flora de esa zona bastante defec-
+tuosos .
+    Entre las lenguas indígenas es sin duda la más importante la mexicana
+(nahuatl) . Ninguna otra lengua del Continente puede compararse con ella
+en riqueza de nombres botánicos conservados hasta nuestros tiempos . En
+muchos respectos, pero principalmente por su eufonía, se asemeja a la len-
+gua helénica, y en facilidad de componer nuevas palabras por simple yuxta-
+posición tiene rival solamente en las lenguas teutónicas. Es de admirarse
+del acierto y de la precisión con que expresa siempre lo más característico
+de una planta; en este respecto supera mucho a nuestra nomenclatura cientí-
+fica. En numerosos casos precisan la misma cualidad del vegetal como la
+ciencia. Por ejemplo, " aguatope" (ahua-topochtic, estambres blancos) bot.
+" Calliandra" (estambres hermosos) , " chepiche " (chipi-chin , vejiguita, go-
+tita)bot."Porophyllum" (hoja con poros), "cuachepil" (cuau-chipilli, apén-
+dice inflado, vejiga de árbol) bot. " Diphysa" (vejiga doble), " tenamazton"
+(te-ma -maztli se llaman las tres piedras que sostienen al comal) bot. " Tri-
+           "
+
+coccae, como se llama también la familia de las Euphorbiáceas, caracteri-
+zada por tres coccos en cada fruto. Algunos nombres sorprenden por la agu-
+deza de observación, como el nombre "cuitla-xochitl" (flor bastarda), nom-
+bre azteca de la" Santa Catarina" (Euphorbia pulcherrima), cuyas brácteas ,
+ de un vivísimo color rojo, son comúnmente tomadas por flores . CUANDO SE
+ TRATA DE UNA PLANTA QUE PRODUCE UN FRUTO , CAMOTE , TALLO , ETC. , COMES-
+ TIBLE -SIEMPRE LO MÁS INTERESANTE PARA EL HOMBRE PRIMITIVO , SU
+                    DE LOS NOMBRES BOTÁNICOS AZTECAS                      115
+
+
+NOMBRE SE REFIERE CON TODA SEGURIDAD A ESTE PRODUCTO, Y TODA LA
+PLANTA RECIBE ENTONCES DE ÉL SU NOMBRE. Una planta, cuyo tallo es co-
+mestible, se llama " quelite " ( quil-itl, tallo comestible) ; si posee una raíz
+comestible se llama "camote" (ca-motli, fécula)." Zapote, " "amate, " " oji-
+te, " " capulín," etc., son nombres de frutas aplicados a toda la planta.
+    La etimología de estos nombres antiguos sirve de gran apoyo en la iden-
+tificación de las Plantae Hernandezii, una obra monumental, la cual, hundida
+en el olvido de muchos siglos , está esperando todavía su reivindicación final.
+En este respecto ayudan los nombres aztecas conservados hasta hoy por el
+vulgo, aunque no hay que olvidar que muchos de ellos ya han cambiado de
+aplicación . El " toloache" de hoy (Datura strammonium) era originalmente el
+" floripondio " (Datura suaveolens),como atestigua su etimología (toloa, incli-
+narse, chin o zin , sufijo de reverencia: flor péndula). " Huexote" (hue, gran-
+de, xotl o e-xotl, legumbre) fue originalmente aplicado a las vainas largas
+de Tecoma viminalis, pero más tarde transferido también al sauz por su
+gran semejanza a este árbol, que tiene también común predilección para
+lugares cerca de agua corriente. Por supuesto, para esta tarea de identificar
+las plantas de Hernández, Sahagún y otros autores antiguos, es un requisito
+absoluto, además de poseer conocimientos etimológicos y posiblemente me-
+dicinales, tener mucha familiaridad con la flora mexicana, para evitar gra-
+ves equivocaciones, como sucede con mucha frecuencia al Sr. Lic. Cecilio
+A. Robelo , cuya obra Diccionario de Aztequismos, " en otros respectos ex-
+celente, me sirvió de mucho apoyo y estímulo en mi presente trabajo .
+     Los nombres indígenas de plantas y animales pertenecen a las reliquias
+más antiguas de una raza, y un estudio comparativo de ellos en todo el mun-
+do sería capaz de abrir una perspectiva muy lejana y allende las tradiciones
+mitológicas respecto de migraciones prehistóricas y del origen de ciertas es-
+pecies cultivadas. Nombres como "kumara," con que se designa en Sud-
+américa la batata (Ipomoea batata) y al mismo tiempo en Nueva Zelandia
+a otra especie muy afín (Ipomoea chrysorrhiza), y el nombre "toloache,"
+que coincide con el nombre chino "tolo-wan" para la misma planta (Datura
+strammonium), pueden indicar comunicaciones transpacíficas . También el
+estudio de nombres geográficos, con tanta frecuencia derivados de nombres
+botánicos, puede echar mucha luz sobre este asunto. Por ejemplo, la etimo-
+logía de los nombres gentilicios en la lengua mexicana siempre derivados
+de nombres geográficos- "Mexica," "Xicalanca, " " Olmeca," " Tlapane-
+ca" (todos tribus de los Chichimeca y derivados de eca ( tl) , viento, espíritu ,
+alma i.e., poblador de un lugar, donde hay mi-xitl (tabaco) , xi-calli (jícara),
+olli (hule), tla-patli (tlapatl) , respectivamente todos productos de la tierra
+caliente, parece confirmar el cuento de Sahagún respecto de peregrinaciones
+  116                        DR. BLAS PABLO REKO
+
+de los chichimeca hacia la costa del Golfo y tal vez hasta la América Cen-
+tral, como comprueba la existencia de nombres geográficos y botánicos azte-
+cas en Guatemala, Nicaragua y Costarrica. Es muy curioso que también la
+Isla de Cuba recibió probablemente su nombre de una especie de tabaco, lla-
+mado "cohoba" en la extinta lengua taina.
+     De interés especial son los nombres de plantas cultivadas , porque suelen
+ser de una antigüedad remotísima. La enorme importancia del maíz en la
+vida económica del indio hace comprender el relativamente gran número de
+nombres aplicados a cada parte de este utilísimo cereal.
+     Los nombres especiales aplicados a las diversas partes de la planta de
+maíz, son :
+mi-ahuatl ( muchos estambres), espiga de maíz .
+xil-otl o xol-otl (cosa bulbiforme ) , mazorca tierna con su envoltura.
+xilo -zontli ( cabellos del jilote) , barba de elote .
+el-otl (cilindro de granos) , mazorca madura sin su envoltura.
+ol-ott ( cilindro) , eje de maíz , sin los granos.
+toto-moztli ( fécula, pasto de pájaros? ) , envoltura de la mazorca, totomozle .
+mi-lti ( cosa pastosa), grano tierno de maíz .
+tla-olli ( bolita del suelo), grano de maíz .
+zen-tli o zin-tli ( grano) , grano de maíz .
+caca-huatl (ca-calli, cuervo , hu-atl, grano grande: piñón negro), maíz morado.
+o-huatl ( grano para el camino) , viático, consistiendo de maíz .
+toto- panitl (bandera de pájaros? ) , caña de maíz.
+po-po- yatl (popotl, cosa blanda; yatl, cosa nauseosa), maíz podrido .
+iz-quitl ( envoltura blanca) , grano de maíz tostado, izquite .
+tex-tli (polvo ) , harina de maíz.
+pi-nolli ( pi-chahuac, delgado; no-lli, deriv. de noch- tli, carne, tuna) , harina.
+     Por cierto, no existe nombre especial para designar toda la planta, cual
+deriva su nombre, según la regla indicada arriba, del producto comestible,
+el grano de maíz, que lleva los nombres milli , tlaolli, y zentli o zintli . Milli
+designa el grano verde, como se verá más adelante, tla-olli significa: cosa
+redonda, bolita del suelo. El nombre zen-tli es sin duda el más antiguo . Su
+nombre es idéntico con el número uno, representado en el jeroglífico por un
+grano de maíz, y forma también parte del número 20 , zem-poalli ( zen-pa-
+hualli : zen - tli , grano de maíz ; pan - tli, bandera, serie ; hu - alli, muy grande :
+serie grande de granos de maíz, que en la mazorca actualmente tiene más o
+menos este número) , constituyendo al mismo tiempo la base del sistema nu-
+mérico, que es, como consta, vigesimal . El radical zen debe ser, por este mo-
+tivo, de una antigüedad tan enorme, que fácilmente es abolengo de razas
+muy anteriores , y no parece pura casualidad, que el mismo radical con el
+                      DE LOS NOMBRES BOTÁNICOS AZTECAS                            117
+
+
+mismo sentido vuelve en casi todas las lenguas indo-germánicas : lat. semen ,
+esp. semilla, alem. samen, ingl. seed, sueco säd, etc. Ceres es la deificación
+del grano en latín, y su nombre en griego, Zea, fue escogido por Linneo pa-
+ra designar el maíz en la ciencia. Por una coincidencia muy singular se lla-
+ma también en zapoteca la espiga de maíz zea o zehea .
+     El estudio de lenguas indígenas nos pone en íntimo contacto con la psi-
+cología de estas razas, puede revelarnos su parentesco y, en última instan-
+cia, comprobar una dirección primordial del espíritu en toda la humanidad.
+Entre más penetro en el estudio etimológico de la lengua nahuatl, más me
+admiro de sus analogías con una y otra de las lenguas indo-germánicas, de
+modo que me inclino más y más a creer en el parentesco de estas lenguas,
+una opinión también expresada por el Sr. Mendoza en sus estudios compa-
+rativos entre el Sánscrito y el Naguatl.
+
+             Introducción a la terminología botánica azteca.
+     El siguiente cuadro sinóptico, cuya examinación estudiosa será de mu-
+cho provecho para el mejor entendimiento de la terminología botánica azte-
+ca, tratará de establecer una ley de transición fonética .
+     (NOTA GRAMATICAL . Qy ctienen el mismo sonido de k, hu corres-
+ponde al w inglés, x ( pronunciado como la sh inglesa) se halla actualmente
+cambiado en j ( solamente en xochitl se pronuncia como s). LL se pronuncia
+como I simple, tz de los autores puede tener el sonido de cho de z , y no es
+en cada caso posible hacer la distinción (chin- tli o zin- tli , pichahuac o pi-
+zahuac) . La terminación tli, lli o tl corresponde a nuestro artículo y es un
+sufijo análogo al artículo pospuesto de las lenguas escandinavicas (land-et :
+la tierra, tla-tl o tla-lli) . Algunos de los sonidos de la lengua mexicana son
+variables y se hallan actualmente modificados . Así laose conmuta en a (ca-
+motl en ca-matl, zon-tli en zan-tli) o con más frecuencia, en u (olli en ulli,
+tolli en tulli) , laiene (mizquitl en mezquitl, ilitl en elitl, chipilli en chepi-
+lli). La ch ante el artículo se cambia en zy se queda finalmente eliminado :
+pach-tli , paz-tli , pa- tli . Todas estas modificaciones fonéticas son casi siem-
+pre acompañadas de una ligera alteración del sentido . En algunos casos exis-
+te una tendencia marcada de abreviar un radical en composición hasta un
+grado casi inconcebible : cuau-itl , cuau- , сиа- , са , со-, с-, ( cua-xiotl, ca-
+pullin , co-yolli , c-oyametl) ; chapeluac : cha-piztli , ch-ayotli .
+             pach- tli (paz- tli), pa- tl ( i ) , pa- lli
+             poch- tli (poz- tli) , po- tl ( i ) , po- lli
+             pich- tli (piz- tli) , pitl, petl, pi- lli .
+pach- tli : paztle, heno ; pa- tli : hierba seca, droga ; pa- lli : droga de color, tinta.
+poch- tli : cosa fofa, sin resistencia (poch- otl, copo de algodón , to- to-poch-tli,
+  118                            DR. BLAS PABLO REKO
+
+    totopoztle, cosa fofa redonda); po- tl, cosa fofa, (po-potl (i), popote ; cha-
+    po-potl, chapopote, cosa blanda que se hincha); po- lli, cosa blanda, gu-
+     sano, (cha- pullin , gusano espinoso , ca- pullin , gusano de árbol) .
+pich- tli : piztle, cosa delgada, elongada, (xic-cal-piz- tli, jícaraelongada); pe- tl :
+    cosa aguzada, cumbre (te- petl, cumbre de piedra); pi- lli, cosa elongada,
+     apéndice (chi-pi- lli, apéndice inflado, chepil).
+El radical en todas estas palabras significa una cosa blanda, delgada.
+
+             mach- tli (maz- tli) , ma- tl(i), ma- lli
+             moch- tli (moz- tli) , mo- tl ( i) , mo- lli
+             mich-tli (miz-tli) , mitl, metl, mi- lli .
+mach- tli : cosa suave, lecho (a- ma- maztli , lecho del agua (Rumex) , te-ma-
+     maztli , lecho de piedras para el comal, tenamaztle ) ; ma- tl, cosa suave,
+    fécula, (a- matl, fécula de agua, xic- ca- matl, jícama, camote de ombligo) ,
+    ma- lli, cosa suave, trenza, cosa torcida, (mal-acatl, caña torcida) .
+mochtli: cosa blanda, fécula, (cuau- moch- tli, guamuche, fécula de árbol) .
+    mo-tl (i) , fécula, (ca-mo- tli, camote, fécula de árbol) ; mo- lli, cosa pastosa,
+    salsa, (a- mo-lli, pasta para el agua, jabón) .
+mich- tli : cosa suave, gato (ca- ca- miz- tli, gato negro, cacomiztle ) ; mi- tlo me-
+     tl, cosa blanda, fibra de maguey, (me- catl, caña de fibra, me-xochitl, flor
+     de hilo) ; mi- lli, cosa tierna, grano tierno de maíz, baya; (za-za- milli, za-
+     zamil, baya pegajosa ; mil-to- matl, miltomate, tomate de baya).
+El radical en estas palabras significa una cosa blanda, pastosa.
+
+              nach- tli (naz- tli), na- tl, na- lli
+              noch- tli (noz - tli), no - tl, no- lli
+              nech- tli (nez- tli) , ne- tl, ni- lli
+nach- tli : cosa blanda, carne ; na- tl, carne, (na-na- catl, caña de carne, hongo,
+     na-na- hu- atl, piñón de carne, bubón), na- lli, carne, alimento (zaca- nalli ,
+     zacate comestible) .
+noch-tli : carne, alimento, tuna, (xoco- noch-tli, tuna agria) ; no- tl, tuna, fruta
+    espinosa ; (xo- notl, jonote, fruto espinoso bulbiforme) ; no- lli, cosablanda;
+    (tla- no- lli, tuna del suelo, caca blanda; tla-noqui- loni, cosa con que se
+    hace la caca blanda, laxativo) ; pi- nolli, alimento pequeño, harina .
+nech- tli : ne- tl, carne (ne- ne-pilli, apéndice de carne, lengua; ne-netl, natura
+    de la mujer); ni- lli.
+El radical significa carne.
+
+             ach- tli (az- tli) , a- tl, e - tl, a- lli
+             och- tli (oz- tli) , o - tl, o- lli
+             ich- tli (iz- tli) , i tl, e- tl, i-lli
+                      DE LOS NOMBRES BOTÁNICOS AZTECAS                        119
+
+
+ach- tli: cosa redonda, grano, (hu- achtli, grano grande, piñón); a-tl, grano;
+     (hu-atl, grano grande, piñon ; ca -ca-huatl, piñón negro, cacao; zau-atl,
+    grano pegajoso, eczema); a-lli, grano (zau- alli, sarna, zau- al- etl, fri-
+    jol manchado) .
+och tli: cosa redonda?, o- tl, cosa redonda, (ol- otl, cosa redonda), o-lli, cosa re-
+     donda, pelota, (tla-olli, bolita del suelo, grano de maíz) .
+ich-tli: copo de maguey, fibra (ich-catl, caña dealgodón), iztle ; i- tl o e- tl, gra-
+     no, frijol , (e- xotl, legumbre de frijol), i-lli o e-lli, grano (el-otl, cosa
+    redonda con granos, elote. )
+El radical significa cosa redonda.
+             cach- tli (caz- tli), catl, ca- lli
+             coch- tli (coz- tli), cotl, co -lli
+             quech - tli (quez- tli) , quitl, qui- lli
+caz- tli: casilla, compartimiento, escalerilla (cax- tla- tla-pan (tli) , flor trepa-
+     dora); catl, tubo, caña, (a-catl, carrizo) ; ca- lli, casco, ( xic-calli, casco
+     con ombligo, jícara) .
+coch-tli: envoltura, capa, (coz- tli, chile); cotl , tubo, (a-co-cotl, tubo de
+    agua) ; co-lli, envoltura, (cuitla- x- colli, envoltura de mierda, tripas) .
+quech-tli: cuello, tubo, ( quez-alli ( quez-hualli?) , quilla gigantesca, quezal) .
+     quitl, tubo, tallo, ( qui-otl, tallo redondo, quiote de maguey ) ; qui-lli,
+    tallo; ( quil-itl, tallo comestible, verdura).
+El radical significa una cosa que envuelve, una envoltura .
+
+             chach- tli (chaz- tli) , chatl, cha- lli
+             choch- tli (choz- tli), chotl , cho- lli
+             chich- tli (chiz- tli) , chitl, chi- lli
+chach-tli : cosa áspera; chatl, cosa áspera, hueso ; ( cha- calli, casco áspero ,
+    dehueso, cangrejo) ; cha- lli, hueso (cuau- chal- atl, grano de hueso (duro)
+     de árbol) .
+choch- tli : ? , chotl y cholli, hueso? (chol- ol- lan, entre las osamentas? Cholula)
+     cho- chol- oqui , cosa áspera, dura .
+chich-tli : cosa inflada, vejiga; chitl, vejiga (chichi- hualli , vejiga gigantesca,
+    teta); chi- lli , vejiga, chile ; a- chiotl, vejiga redonda cerca del agua; chi-
+    pilli, legumbre inflada; chi-chinoa , ampollar, tostar.
+El radical significa una cosa inflada.
+
+             xach- tli , xatl, xa- lli
+             xoch- tli , xotl, xo - lli
+             xich- tli , xitl, xi- lli
+xach- tli , xatl ?, xalli, arena (xal- ocotl, pino arenoso).
+   120                          DR. BLAS PABLO REKO
+
+
+xoch-tli, xotl : tubérculo, brote, bulbo (xo- n -acatl, caña de bulbo) ; xo- lli, bul-
+     bo , (xol- otl, bulbo redondo).
+xich- tli, xitl : tubérculo, (mi-xitl, muchos tubérculos, tabaco mije); xi- lli
+     cosa bulbiforme, (xil- otl, jilote de maíz) .
+El radical significa tubérculo .
+
+             zach- tli (zaz- tli ) , zatl, za- lli
+             zoch- tli ( zoz- tli), zotl, zo- lli
+             zich- tli (ziz- tli) , zitl, zi- lli
+zach- tli , zatl, zalli : cosa pegajosa, (za- zal- ic, pegajoso ) ; za- potli, jalea.
+zoch-tli, zotl, zolli : suciedad, jugo, (chil- pan- tla-zolli , chilpan de jugo le-
+     choso) .
+zich-tli , zitl, zilli: cosa pegajosa ? ( zaca- zilli, zacate pegajoso ? ) .
+El radical significa cosa pegajosa.
+    Modificaciones análogas son yotl, yolli : cascabel; yetl, yelli, cosa nau-
+     seosa ; tletl, fuego, tlilli, hulla ; totl, tolli, bolita, etc.
+
+             tlach- tli ( tlaz-tli), tlatl, tla lli
+             tlech- tli ( tlez- tli) , tletl , tlilli
+tlach- tli (tlaz- tli) : cosa que estalla, pólvora, ( tlaz-can, el que estalla, palo
+     quebradizo; Fraxinus en latín tiene la misma etimología) .
+tlatl: pólvora, cosa que estalla, (tla- tla-chin, cosa que estalla, las cápsulas
+     explosivas de Hura crepitans ; tla-patli, remedio que estalla, las cáp-
+     sulas loculicidas de Datura strammonium) .
+tlalli: tierra, (tlal- que- quez- alli, quezal, cañón gigantesco de la tierra, Achi-
+     llea millefolium) .
+tlech -tli (tlez- tli) : rayo ?
+tletl: fuego , cosa que arde, (tle-tlatia, cosa que arde como fuego, Comocla-
+      dia molissima) .
+tlilli: humo, hollín, color negro .
+      El radical significa pólvora .
+Como se comprende, en todos los ejemplos citados la forma arcaica ch- tli se
+cambia primeramente en z- tli y tiene marcada tendencia de eliminar final-
+mente el silbante .
+
+
+                    Raíces y partes subterráneas del tallo .
+cuitla-x- colli, ( cuitla, mierda, x= ?, colli, modificación de cotli, tubo : tubo
+     de mierda, tripas) , raíces entretejidas .
+   mich-cuitla-xcolli , (michin , pescado : tripas de pescado) , raíz medicinal in-
+     determinada .
+                    DE LOS NOMBRES BOTÁNICOS AZTECAS                        121
+
+
+
+  tuzan- cuitla-xcolli , ( tuzan , topo, tuza: tripas de tuza) , raíz medicinal in-
+    determinada .
+ca-motli, (deriv . de cuau-mochtli, fécula de árbol, a distinción del simple
+    mochtli , que es la fécula de maíz), raíz tuberosa, tubérculo, camote
+    (Ipomoea batata ) .
+  cua-camotli , (cua-huitl, árbol: camote de árbol), cuacamote (Manihot uti-
+    lissima) , planta casi arbórea.
+  chayo-camotli, (chayotli , calabaza espinosa, chayote: camote de chayote),
+     chayocamote (Sechium edule) .
+ca-zotl, (deriv. de camo-zotli, camote de leche, para distinguirle del camote
+    de agua (Pachyrrhizus palmatus) , como se distingue el chilpan-zolli
+    (Lobelia) por su jugo lechoso del simple chilpantli ( Pentstemon) , jíca-
+    ma de leche (Pachyrrhizus angulatus) .
+xi-camatl, (xic-tli, ombligo, ca-matl, modificación de ca-motl: camote de
+    ombligo) , jícama de agua (Pachyrrhizus palmatus).
+  xicamit- ic , ( semejante a la jícama), jicamite (Dahlia variabilis) .
+zi-matl, ( deriv . de zin-matl?, fécula de maíz, o contracción de zihua-matl?,
+    camote hembra, infundibuliforme), jícama, zimate (Pachyrrhizus pal-
+    matus) .
+  zi-zimat-ic , (semejante a la zimate (Clitoria?) .
+  tol-zimatl, (tolli, bolita; tule: zimate de bolita o de tule), flor de Santiago
+      (Sprekelia formosissima), planta ornamental con tubérculo comestible.
+tol- li o tul- li, (cosa redonda, bolita), tubérculo de la juncia avellanada
+     (Cyperus esculentus), de donde recibió su nombre toda la planta.
+   chin-tulli , (chin-tli, culo, rabo : tubérculo truncado) , chintule (Cyperus
+      articulatus) , rizoma aromático, usado en el peinado.
+xotl (cosa entumecida, tumor), bulbo. Comparese xol-otl, cosa bulbiforme,
+    jolote , xolo-chin , joloche, puro de los indios, cua-xolotl, jolote de la sel-
+    va, (se refiere al apéndice bulbiforme del guajolote macho, cerca de su
+    pico), a-xolotl, jolote del agua, axolote. No es también la forma que to-
+    ma i-xitl, pie, en composición. De igual modo se sirve la ciencia del
+    concepto "pie," para designar las intumescencias del tallo subterráneo :
+    pachypus , oedipus, platypus .
+  xo-n -acatl, (a-catl, caña: caña de bulbo), cebolla.
+
+
+                           Tallo y sus apéndices.
+cua-huitl, ( coatl, cosa escamosa, con costra o corteza, culebra; hue- tl , cosa
+    grande: cosa grande con corteza, o culebra gigantesca), árbol
+xi-huitl, (xitl, modificación de xotl, tumor, brote ; huetl, cosa grande: brote
+  122                        DR. BLAS PABLO REKO
+
+
+    grande), hierba. Es curioso que la palabra " hierba " tiene semejante
+    etimología. Compárese " hervir," que significa bullir, brotar.
+quil-itl, (deriv. de qui-tl, cañón, quilla, modificación de quech-tli, tubo, cue-
+    llo. Compárese quech-hualli, quilla gigantesca, quetzal, ave notable por
+    sus timoneras enormes), tallo comestible, col, quelite. Es notable que
+    también la palabra " col" recibe su etimología de "caulo," tubo .
+Qui-otl, (quitl, cañón, tallo, -otl, cosa redonda: tallo redondo), tallo comes-
+    tible del maguey, quiote.
+catl o cotl, ( modificación de quitl, caño, tubo, tallo), caña.
+   a-catl, (atl, agua: caña de agua), carrizo, caña.
+   za-catl , (za-uctli o za-cutli , pegamento : caña pegajosa [por sus aristas
+     híspidas] ) , zacate.
+   o-tatl, (otl, camino; caña para el camino, báculo), otate (Arthrostyli-
+    dium racemiflorum).
+  me-catl , (metl, cosa pastosa, blanda, sin resistencia : caña flexible), bejuco.
+  ich-catl, (ich- tli, fibra, algodón: caña de algodón),algodonero (Gossypium
+    hirsutum) .
+  nana-catl, ( na-natl, carne. (Compárese nana- huatl, piñón de carne, bul-
+    bo) : caña de carne), hongo, nanacate.
+a-co-cotl, (atl, agua, cotl, modificación de catl, tubo: tallo hueco de agua),
+    acocote (Arracacia purpurea) .
+  xal- acotl, (xalli, arena: acocote arenoso), jalocote (Prionosciadum mexica-
+    num).
+  a-ma-mal-acotl, (malli, cosa torcida: caña torcida de agua), camalote
+    Eichhornia azurea) .
+tla-cotl, (tlach-tli, suelo limpio para el juego de pelota: caña para el suelo
+     limpio, escoba), mata .
+   tlaco-xilo-xochitl, (xil-otl, mazorca tierna de maíz, jilote: flor de jilote de
+     mata (Calliandra grandiflora), para distinguirla de la del árbol cuaи-
+     xilo-xochitl (Bombax mexicanum).
+   tlaco -zazalic, (za-zal-ic, pegajoso: vara pegajosa), tlacopatl (Aristolochia
+     odoratissima).
+te -pontli (tronco corto), tronco corto .
+    te-pon-aztli, (tambor hecho de un tronco ahuecado), palo de teponaztli
+     (Bursera spec.)
+   toch-tepontli , (toch-tli, conejo : tronco corto de conejo), hierba loca (Oxy-
+     tropis!).
+hu- iztli , (hu- e, grande , iz- tli , cosa puntiaguda, obsidiana: púa grande), espina.
+   huiz-cama-challi, (camatl, boca, chal- li , hueso : cama-challi, hueso de bo-
+     ca, quijada: quijada espinosa), cuernitos, cornizuelo (Acacia cornigera).
+                          DE LOS NOMBRES BOTÁNICOS AZTECAS                  123
+
+                                                                 1
+  huiz-huil-aca-ton, (huil-acatl, corneta, ton-tli, diminutivo : cornetita es-
+    pinosa), tlalayote (Gonolobus reticulatus) . El fruto espinoso de esta
+    planta tiene forma de una trompeta.
+zontli, ( cabello) , hoja.
+  zayolli-zan , (zayolii, mosca : hoja de mosca) , zayolizan (Buddlea) .
+  topo-zan , ( to-poch- tic, blanco : hoja blanca), topozan (Buddlea) . Ellado
+     inferior de la hoja es blanquecino .
+  ich-za-zan- acatl, ( ich- tli , algodón, acatl, caña: caña de hoja de algodón) .
+    Yzazanac (Onoseris onoseroides) . La parte inferior de la hoja y todo
+    el tallo es cubierto de un vello blanco, espeso.
+  ol-ca- ca-zan , (olli, cosa redonda; ca-ca, apócope de ca-cal- otl, cuervo
+     (compárese ca-ca-huatl) : hoja negra y redonda), raíz de China
+     (Smilax rotundifolium) . Tiene las hojas redondas y de un verde muy
+     obscuro .
+
+
+                                       Flor.
+
+xo - chitl, (xotl, brote, bulbo, pimpollo, chitl, vejiga: pimpollo inflado ) , bo-
+     tón , flor, rosa .
+  tlaco-xochitl, (tla-cotl, vara: flor tubiforme) , tlacosuchil ( Bouvardia ) .
+  meca-xochitl, (mecatl, bejuco, mecate : flor funicular) , cordoncillo (Pe-
+    peromia) .
+  cuau -xochitl, (cua-huitl, árbol : flor del árbol) , heno (Tillandsia recur-
+     vata) , planta epifítica.
+  elo -xochitl , (el-otl, elote, mazorca tierna con su envoltura ; flor de elote) ,
+    elosuchil (Magnolia dealbata) . La flor posee una envoltura semejante
+     a la del elote .
+chichi - hual-xochitl , (chi-chi-hualli, vejiga gigantesca, mama, chiche : flor
+    de chiche) , copa de oro (Solandra grandiflora) . La flor, antes de abrir-
+    se, imita la forma de una teta de mujer.
+pantli (bandera), flor de figura de una bandera.
+  chil-pantli, (chil-li, chile, color de chile: flor como bandera roja), chilpan
+    (Pentstemon).
+  tec-pantli, (te-uctli o te-cutli príncipe: bandera real),bandera real, tecpan
+    (Kniphofia alooides) .
+comitl, (jarro , corona de papel, que usaban los antiguos mexicanos en sus
+     fiestas), flor como corona o jarro .
+  ca-comitl, ( catl, caña (compárese ca-malotl, caña retorcida) : corona, ja-
+    rro de caña), cacomite (Tigridia pavonia) .
+ahuatl, (espina fina y blanda) , ahuate, estambre .
+  124                      DR. BLAS PABLO REKO
+
+
+  mi-ahuatl, (mi-ec, muchos ; muchos estambres), espiga de maíz.
+  ahua-topochtic, ( to-poch-tic, blanco : estambres blancos) , aguatope(Inga
+    spuria)
+
+                                    Frutos .
+
+ach-tli, (pepita), pepita.
+   a-ca-hual-achtli, ( a-cahualli, cesación de aguas: pepita que se produce
+     a tiempo de la cesación de aguas), acualaxte (Cayaponia racemosa).
+  pat-achtli, ( patla-huac, grande: pepita grande), pataxte, (originalmente
+     aplicado al género Tribroma, ahora también a Luhea speciosa) .
+etl, deriv. de ach-tli, pepita), frijol , haba .
+hu-achtli, (hu-e, grande: pepita grande), piñón .
+   cuau-ayo-huachtli, (cuahuitl, árbol , a-yotl, calabaza : piñón de calabaza
+     de árbol), piñón (Jatropha curcas, también Cassia fistuloides).
+hu -atl, (deriv . de hu-achtli, piñón) , piñón .
+   ca-ca-huatl, (ca-cal-otl, cuervo (compárese cal-atl, agua negra) : piñón
+     negro) , cacao, también el maíz morado tenía este nombre .
+   tlal-cacahuatl, (tlalli, suelo : cacao del suelo), cacahuate (Arachis hypo-
+      gaea)
+ahuacatl (testículo), aguacate (Persea gratissima). Es más probable, que el
+     testículo recibió su nombre del fruto aguacate. Entonces su etimología '
+     podría ser : a-hual-cuahuitl, (atl deriv . de achtli, piñón, hualli, gigan-
+     tesco : árbol del piñón gigantesco) .
+yotl, (cascabel), nuez .
+  yo-yotl, (cascabel), codo de fraile (Thevetia yoyotli). Los huesos triangu-
+    lares de los frutos, amarrados a las piernas, servían de cascabeles.
+a-yotl, (atl, agua: cascabel de agua), calabaza .
+  chilac-ayotli, (chil-ac, semejante al chile, liso: calabaza lisa), chilacayote
+    (Cucurbita ficifolia) .
+  ch - ayotli, (chapeluac, espinoso : calabaza espinosa), chayote (Sechium
+    edule).
+  tamal- ayotli , (tamalli, cosa gorda: calabaza gorda), tamala (Cucurbita
+    maxima) .
+  tlal-ayotli, (tlalli, suelo, calabaza del suelo, humilde), tlalayote (Gono-
+     lobus pedunculatus) .
+  zon-ayotli, (zon-tli, cabello: calabaza cabelluda), estropajo ( Luffa cylin-
+    drica) .
+co-yolli, (cuahuitl, árbol, (comparese co-palli, barniz de árbol), yolli, mo-
+    dificación de yotl, cascabel: cascabel de árbol) , nuez, coyol .
+                     DE LOS NOMBRES BOTÁNICOS AZTECAS                       125
+
+
+  cuau- coyolli , (cuahuitl, árbol: coyol de árbol, para distinguirle de los
+     coyoles que se producen en hierbas), guacoyul (Acrocomia mexicana) .
+  xoco-coyolli, (xococ, agrio : coyol agrio), jocoyol (Begonia).
+chil-li, (modificación de chitl, cosa inflada, vejiga,(compárese xo-chitl) , chile .
+  cuau-chilli, (cuahuitl, árbol : chile de árbol), palo de hule (Castilloa) . El
+     fruto de este árbol tiene el color de chile .
+chi-otl, (chitl , vejiga, otl, cosa redonda: vejiga redonda), fruto inflado.
+  a-chiotl , (atl, agua: vejiga que se produce cerca del agua), achiote (Bixa
+    orellana) . El fruto es una cápsula blanda, inflada.
+chi-pilli, (chitl, vejiga, pilli, deriv . de piztli, cosa elongada, apéndice: apén-
+    dice inflado) , legumbre inflado, chipil (Crotalaria) .
+  cuau-chipilli, (cuahuitl, árbol : chepil de árbol), cuachepil (Diphysa robi-
+    nioides ) . Chípil se llama también al niño enfermo "a causa de ser su
+    madre preñada." Esta enfermedad consiste en un meteorismo, la barri-
+    ga se encuentra aventada como un tambor.
+    Compárese también chi-apam (entre los ríos crecidos) , chi-an-zo-zolli
+    (suciedad que se hincha en el agua. Las semillas de chía se hinchan
+    en el agua, como también las de membrillo y linaza) .
+a-matl, (atl, agua, matl, deriv. de mochtli, fécula: fécula de agua), higo ,
+  amate ; te-xcal-amatl , (te-xcalli, piedra cocida, volcánica: amate de co-
+     lor del tezcal), tezcalamate (Ficus petiolaris) .
+to- matl , (tolli, bola, cosa redonda, (compárese to-cimatl, zimate de bola) ,
+     matl, fécula : fécula de bola), tomate.
+mil-li, ( deriv . de mitl o metl, cosa pastosa), baya, grano tierno de maíz .
+  mil-tomatl, (tomate de baya), miltomate (Lycopersicum esculentum var.
+     cerasiforme ) ..
+  za-za-milli, ( za-uctli, pegamento: baya pegajosa), zazamil (Cordia alba) .
+noch-tli, (carne. Su modificación es na-natl, carne) , tuna. Originalmente
+    se aplicaba este nombre probablemente a las especies con carne roja.
+  xo-notl, (xotl, bulbo, notl, modificación de nochtli: tuna bulbiforme), jo-
+    note (Triumfetta o Heliocarpus) , El fruto es espinoso como la tuna.
+iz-quitl, (iz-ta-c, blanco, quitl, envoltura: maíz tostado y reventado, que
+     forma una capa blanca), grano comestible, izquite.
+   ama-izquitl, ( a-matl, higo : grano comestible de higo), amezquite (Ficus
+     tecolutensis) . Produce un higo comestible .
+  mi-izquitl, (mi-ec, muchos : muchos granos comestibles), mezquite (Pro-
+     sopis juliflora) . El legumbre contiene muchos granos comestibles.
+  teo-izquitl, (teotl, dios : grano de dios) , tehuiztle (Sapindus). Las semillas
+     son usadas para rosarios.
+       126                       DR. BLAS PABLO REKO
+
+
+    piz-tli, (deriv . de pich-tli, cosa aguzada, elongada), pizle (semilla de Vite-
+         llaria mammosa) . Las semillas largas son fusiformes .
+       xical-piztli, (xi- calli, jícara : jícara elongada, a distinción de la jícara que
+         es redonda) , jicalpeztle (Cucurbita chata? ) .
+1
+    xi-calli , (xic-tli, ombligo, cal-li, casco : casco con ombligo [compárese xi-
+         tomatl, tomate con ombligo] ) , jícara (casco de diversas calabazas) .
+    te-comatl, (tetl, piedra, cabeza, co-matl, casco: casco de la cabeza), tecomate
+         Crescentia spec. div.). El casco de esta fruta es usado para cubrir la
+         cabeza entre los indios .
+       tecoma-yac, (ya-c, nauseoso : capsula nauseosa [compárese ya-utli, cosa
+         nauseosa, narcotica] ) , tacamaca (Icica copal) .
+    tlach - tli o tlaz- tli, cosa que revienta, capsula dehiscente:
+      pa- tlachtli , (patlahuac, grande, tlachtli, capsula dehiscente: pataxte
+        (Luhea speciosa) .
+      Cuau- tla-tla-chin, (cuahuitl, árbol, tla- tlatl, cosa que revienta , chin, sufijo
+        de reverencia: cohete de árbol). Cápsulas explosivas de Hura crepi-
+         tans .
+      tla-patli , (tlatl, cosa que revienta, patli, remedio: remedio de la capsula
+        dehiscente (Datura strammonium) .
+    te-colotl, ( tetl, piedra, cabeza, col-otl, envoltura redonda: cabeza redonda)
+         cápsula redonda.
+      huiz-teco-xochitl, (huiztli, espina; flor de la cápsula espinosa), atlazonpi-
+         llin (Hibiscus pentacarpus ?) .
+    tol-olotl, ( tolli, bolita, ol- otl, cosa redonda : bolita esférica) , fruto duro,
+        redondo .
+
+      cuau- tololotl, (bolita de árbol) , cuatololote (Phyllanthus distichus) .
+    pa-tolli, (patla-huac, grande, tolli, bolita: bolita grande), patol (semillas
+         de Erythrina spec. div.) usado en ciertos juegos .
+      patol-olotl, (ol-otl, cosa redonda: patol redondo, a distinción del patol
+        que tiene forma de frijol), patololote (Pimenta officinalis ) .
+    xotl, (bulbo, tumor), legumbre, vaina.
+      e-xotl, (etl, frijol: legumbre de frijol) , ejote (Phaseolus vulgaris) .
+      hue-xotl , (hue, grande: legumbre, vaina grande), huejote (Tecoma vimi-
+        nalis) . El mismo nombre fue también aplicado al sauz, por su gran se-
+        mejanza a este palo , que también crece a las orillas de los ríos .
+      xo-necuilli, (necuilli, torcido: legumbre torcido), jinicuil (Inga spec. div. )
+      tlil-xo -chitl. (En mi opinión , la forma original era tlil-xo-xochitl, (flor de
+        la vaina negra), supuesto que no la flor, sino la vainilla es negra), vai-
+        nilla ( Vanilla) .
+    xitl, (modificación de xott, tumor, bulbo, brote), tubérculo .
+                     DE LOS NOMBRES BOTÁNICOS AZTECAS                      127
+
+
+  o-xitl, ( olli, cosa redonda: tubérculo redondo ) , ojite ( Brosimum alicas-
+    trum) . Fruto comestible, como castaño.
+   El nombre del aceite oxitl, notable descubrimiento de la diosa Zapotla-
+    tenan, es probablemente una modificación del nombre axi, aceite medi-
+    cinal extraído de unos gusanos que viven en árboles del género Spon-
+    dias y Bursera.
+  mi-xitl, (mi-ec, muchos: muchos tubérculos) , mije, cierta clase de tabaco
+    malo (Nicotiana mexicana var. rubriflora) . Es probable que el nombre
+    mixitl fue originalmente aplicado a otra clase de tabaco. A lo menos ,
+    la etimología de esta palabra es muy sugestiva de una legumbre en
+    forma de collar, como la del género Sophora, cuya semilla es intoxican-
+    te y tal vez fue usada como tabaco rapé a semejanza de la cohoba
+     (Piptadenia peregrina) . Consúltese a W. E. Safford, Identity of Coho-
+    ba, the narcotic snuff of ancient Haiti) .
+xil-otl, (modificación de xol-otl, cosa bulbiforme, jolote), mazorca tierna
+    con su envoltura, jilote.
+  cuau-xilotl , ( mazorca de árbol), guajilote (Parmentiera edulis) . El fruto
+     asemeja a una mazorca y es comestible.
+  tepe-xilotl, ( te-petl, monte : mazorca del monte), tepejilote (Chamaedorea
+    tepejilote) . Produce una mazorca con envoltura muy semejante a la
+     del maíz . Es comestible .
+xo- cotl, ( xotl, tubérculo, cotl, envoltura: tubérculo con envoltura?) fruto
+    agrio, ciruela (Spondias spec. div. ) .
+  te-xocotl, ( tetl, cabeza, piedra: ciruela como cabezuela), tejocote (Cratae-
+    gus spec. div. ) .
+  xoco-huiztli , (huiztli, éspiná : ciruela con espinas) , jocoiztle (Karatas plu-
+    mieri) . El fruto contiene muchos cristales punzantes de ácido oxálico .
+    Compárese zoya-huiztli (palma de espinas) .
+za-potli, (za-uctli, pegamento , potli, deriv . de poch-tli, cosa fofa : cosa fofa
+    y pegajosa, jalea) , jalea, zapote, fruto dulce.
+  chic-zapotl, (chic-tli, chicle : zapote de chicle), chico zapote (Achras) .
+  cuau-zapotl, (jalea de árbol), chirimoya (Anona cherimolia) .
+  cochi-zapotl, ( cochi, dormir: zapote dormilón), zapote blanco (Casimi-
+    roa) .
+  te-zon-żapotl, ( te-zontli, cabeza : zapote cabezudo) , tezonzapote (Lucuma).
+  me-zon -zapotl, (me-zontli, cabeza de maguey: zapote cabelludo), mezonza-
+    pote (Licania pachypus) .
+  totol-cuitla-zapotl, (totolin , guajolote , gallina; cuitla, estiércol : zapote
+     de estiércol de guajolote), zapote negro (Diospyrus) .
+zon-tli, ( cabello, apócope de te-zontli, cabeza), cabezuela .
+   128                         DR. BLAS PABLO REKO
+
+
+  zon-c-oliuqui, (ol- iuqui, redondo: cabezuela redonda), zongolica (Astro-
+    nium zongolica). Se refiere al fruto de este árbol, una nueva especie
+     muy importante, encontrada por el autor.
+   huau-zontli, (hu-autli, bledo : cabezuela de bledo), huauzonte (Chenopo-
+     dium) .
+ol- li, (modificación de otl, cosa redonda), bolita .
+   tla- olli, ( tlach- tli o tlalli, suelo, tierra), bolita del suelo (para distinguirla
+      de las del árbol), tlaolli, grano de maíz .
+   pat-olli, (patla-huac, grande : bolita grande), patol (Erythrina spec. div.) .
+  pich-olli, (pich-huac, pequeño : bolita pequeña), pichol ( Vitis acapulcensis) .
+
+                               Productos Vegetales .
+ich- tli, (copo de hilo) , algodón . Iz- tli, (copo de maguey) , es una modificación .
+  ich-catl, (caña de algodón ) , algodonero ( Gossypium hirsutum) . Este pa-
+     rece la única especie indígena de México.
+   ich -zoyatl, (palma de fibra) , ixhuatl, isuate (Brahea dulcis). También el
+     nombre " izote" (yuca) es una forma estropeada del isuate.
+  ich-peyotl, (peyote de algodón) , ixpule (Verbesina mollis) . La planta está
+     cubierta de un vello fino .
+poch- otl , (cosa fofa, vello), pochote (Ceiba pallida) .Esta especie produce la
+     mejor clase. Pochote se llama también el producto de la ceiba (Ceiba
+     pentandra), del "cojón de toro " (Cochlospermum hibiscoides) y de
+     Ochroma lagopus .
+chic- tli, (cosa pegajosa, chicle (Achras zapote) . "Chicle blanco " se llama un
+     producto de la " Mala mujer " ( Jatropha urens) .
+  tepe-chicle , (te-petl, cumbre : chicle montés) . Producto de la raíz de una
+     hierba desconocida .
+zacu -tli o zauc-tli, (cosa pegajosa), zaucle (producto de diferentes orquídeas,
+     sacado de los pseudo-bulbos). La palabra parece una modificación de
+     chic - tli.
+
+  coz-zauctli, (coz- tic, semejante al chile amarillo, zaucle amarillo), cozauqui
+     ( Cattleya citrina) .
+oc- tli o uc- tli (vino, aguamiel ) .
+  poli-uctli, (poliu- qui, descompuesto: vino descompuesto) . Esta parece la
+     forma original de la palabra "pulque."
+     za- uctli, ne-uctli, chic- tli parecen formas compuestas de uctli.
+ne-uctli o ne-cutli, (néctar, miel) .
+  neuctli-xihuitl, (hierba de miel), neuctixihuitl (Lippia dulcis).
+  neuc -xochitl, (flor de miel), rosadillo (Jacquinia aurantiaca).
+                      DE LOS NOMBRES BOTÁNICOS AZTECAS                        129
+
+
+oxi u oxi- tl, (modificación de axi, aceite) , aceite de trementina, inventado
+     por la diosa Zapotlatenan.
+zotl o zolli, (cosa vieja, suciedad). Jugo sucio, lechoso.
+  oco-zotl, (jugo de ocote), trementina.
+  xochi-ocozotl, (trementina de flor), liquidambar (Liquidambar styracifluum).
+  o-zotl, (otl, camino: suciedad del camino, lodo), palo de ozote (Ipomoea
+     murucoides) . Contiene un jugo lechoso que ensucia.
+  tla-zolli, (tlach- tli o tlalli, suelo : suciedad del suelo, mugre), jugo lechoso.
+  chilpan- tlazolli, (chilpantli, bandera roja: flor de bandera roja, con jugo
+     lechoso) , chilpantlazolli (Lobelia spec. div). Contiene un jugo lechoso.
+  chil -tlazotl, (chilli, chile: jugo lechoso de color de chile), chicalote (Arge-
+    mone mexicana). Contiene un jugo amarillo.
+olli, ( cosa redonda, pelota), hule (Castilloa elastica) .
+   ol- cuahuitl, (palo depelota),palo de hule (Castilloa elastica).
+molli, (deriv . de moch- tli, fécula), pasta, condimento. "Molle" es también
+      nombre aplicado al "palo de Perú" (Schinus molle), cuyo fruto sirve de
+     condimento.
+  tle-molli, (tletl, fuego : salsapicante),clemole (Tagetes patula) . La flor tie-
+     ne el color de clemole, una salsa compuesta de chile con tomate. Tam-
+     bién produce una tinta de este color.
+a-molli, (atl, agua, molli, deriv. de moch-tli, cosa pastosa : pasta para el agua) ,
+    jabón. El jabón mexicano era puramente vegetal, sacado de plantas que
+    contienen el glucoside saponina .
+  quil- amolli, (quil- itl, quelite: amole de quelite), quilamole, hierba china
+    (Phytolacca decandra) .
+  chichic-amolli , (chi-chi-c , amargo: amole amargo), chichicamole (Apo-
+    danthera galeottii) . Fruto sumamente amargo.
+  y-amolli, ( ya-c, nauseoso : amole nauseoso) , yamole (Sapindus saponaria).
+moch-tli, (fécula, cosa pastosa), fécula.
+  cuau- mochtli , (fécula de árbol) , guamúchil (Pithecolobium dulce) . Las
+     semillas están cubiertas de un arillo blanco comestible.
+pi-nolli, ( pi-zahuac, delgado, diminuto, nolli, modificación de noch- tli, car-
+     ne: polvo de carne) , harina.
+  cuau-pinolli , (harina de árbol), cuapinol (Hymenaea courbari) . Las le-
+    gumbres están rellenas de una harina dulce como Orozuz.
+atl, (agua) , agua.
+  co-atl, (coa- tl, culebra: agua de culebra), coate (Eysenhardtia amorphoi-
+    des). La madera produce en el agua una inflorescencia.
+  cal- atl, (ca- cal- otl, cuervo : agua de cuervo), calate, calatole (cal- atolli) ,
+    (Calatola mexicana). La nuez produce en el agua un color negro.
+  130                       DR. BLAS PABLO REKO
+
+
+  texo- atl, (te- xotl, vitriolo de cobre: agua de vitriolo de cobre), tezhuate
+    (Pleromia?) . El tezhuate de hoy es Micania microcarpa, pero su fruto
+    no produce color azul en el agua.
+palli, (modificación de pach- tli, pazle, heno, hierba seca), droga, tintura;
+    tinta.
+  tla-palli, (tlalli, tierra : color de tierra), almagre.
+  rochi-palli, (color de flor), mirasol (Cosmos sulphureus) . La flor produce
+    un color anaranjado (papel de girasol).
+  xochi-paltic, (semejante al xochipalli), rosadillo (Jacquinia aurantiaca)
+  co-palli, (cuauhuitl, árbol (compárese co-yolli, cascabel de palo) : color ,
+    tintura, barniz de palo) , copal .
+  cuitla-copalli, ( cuitla, estiércol : copal de estiércol), copal (Bursera ga-
+    leottiana) .
+   te-copal-cuahuitl pizahuac, (tetl, piedra, pizahuac, pequeño: palo de copal
+     montés con hojas pequeñas ), copal (Bursera gracilis).
+patli, (modificación de pach- tli, heno, hierba seca), droga, remedio.
+   tla- patli, ( remedio que revienta) .
+    Al vasto número de plantas medicinales, conocidas de los antiguos Mexi-
+canos, correspondería una obra especial. Sin embargo, séame permitido di-
+bujar aquí en rasgos generales un pequeño cuadro de la medicina azteca,
+dada la escasez de estudios sobre este asunto.
+    De las grandes plagas que afectan a la humanidad, eran con seguridad
+conocidas :
+    El tabardillo, cuyo nombre azteca era matlal-zahuatl ( ma- tlalli, color
+azul , za- huatl, grano pegajoso, pápula : mancha azul), nombre que corres-
+ponde perfectamente a nuestra terminología moderna: spotted fever,
+Flecktyphus, typhus exanthematicus, taches bleues, tabardillo pintado, etc.
+Todos estos términos se refieren a las manchas características de esta enfer-
+medad. El nombre cocoliztli, también usado para la misma enfermedad, no
+designa en verdad alguna enfermedad en particular, sino una epidemia
+mortífera en general. En las fiestas del terrible dios COCOL-ZIN (co-coloa ,
+envolver, enroscar, zin o chin , sufijo de reverencia (compárese cuau-temoc-
+zin) : el dios que enrosca, tal vez una deificación de la Boa constrictor), los
+indios de Toluca "estrujaban a la víctima retorciéndola con cordeles pues-
+tos a manera de red, y dentro de ellos la oprimían tanto, que por las mayas
+de la red salían los huesos de los brazos y pies, y derramaban la sangre de-
+lante del ídolo " (Sahagún) . Este sacrificio tan particular se llamaba cocol-
+iztli (degollación por constricción) , y su nombre fue aplicado metafórica-
+mente a cualquiera peste mortífera con que una deidad implacable azotaba
+a la raza, pero en particular a la sífilis , que todavía lleva el nombre "coco
+                    DE LOS NOMBRES BOTÁNICOS AZTECAS                         131
+
+
+luche" en las costas de Oaxaca. Poco se sabe de los remedios, por supuesto             4
+
+
+
+
+inútiles, que usaban los aztecas contra este terrible azote. El vulgo usa mu-
+cho la yerba del tabardillo (Piqueria trinerva), y los indios de Oaxaca po-
+nen su fe en el potonxihuite (Cestrum lanatum).
+    La sífilis , cuyo nombre azteca, según mis investigaciones, debe ser
+identificado con xiotl ( xi- tl, brote, tumor, otl, cosa redonda: tubérculo, pá-
+pula). Todas las obras que mencionan el xiotl siguen el ejemplo de los pri-
+meros autores y lo traducen con "lepra," una enfermedad que en los siglos
+pasados fue constantemente confundida con la sífilis. Ni la historia ni las
+tradiciones dan la más mínima indicación de que en el Continente de América
+hubiese una epidemia leprosa, a semejanza de las que existían en Europa du-
+rante los siglos medios. Sin embargo, creo que la lepra, antiquísima enfer-
+medad oriunda de los países tropicales, existía aquí, pero ya a punto de
+extinguirse, antes de la era histórica. El primer autor que aseguraba con
+todo énfasis que la sífilis era una enfermedad indígena de México, y tenía
+aquísu propio nombre azteca-aunque no lo da, desgraciadamente-, eranada
+menos que el Dr. Francisco Hernández, el gran proto-médico de la Nueva
+España. Tampoco Fr. Ximénez estaba muy seguro de su identificación de la
+palabra xiotl, pues habla en el párrafo sobre el llamado Ecapatli (Cuatro li-
+bros de la naturaleza, México, 1615.) de "aquella manera de lepra que los
+indios llaman xiotl. "   Todos los remedios que los aztecas usaban contra el
+xiotl, eran antisifilíticos. Del gran número de remedios contra esta enfer-
+medad menciono aquí solamente al xio patli (remedio contra el xiotl) , que
+pude identificar con la Urera caracasana, planta que hasta hoy día es muy
+preconizada por los indios de la Sierra de Juárez contra la sífilis; a el xio-
+totina o xio- totonqui (que ablanda, mitiga el xiotl?), una compuesta muy
+afín a la izazanaca, cuya última planta pude identificar como Onoseris ono-
+seroides , y el eca-patli (remedio rayado : en el jeroglífico ecatl, viento, fue re-
+presentado por rayas negras), que he determinado como Cassia alata . Esta
+y dos otras leguminosas, llamadas palanca- patli (remedio contra úlceras) ,
+de las que una se llamaba también xiu- quilitl ( xio- quilitl?), Indigofera anil ,
+la otra también zizimatic (semejante al zimate, jícama), Clitoria?, parecen
+contener el mismo principio activo, el ácido crisofánico, muy eficaz en el tra-
+tamiento de enfermedades cutáneas. El"coztic palancapatli " (remedio ama-
+rillo contra la úlcera) es la zarzaparrilla (Smilax ornata). Conocido es que
+los primeros remedios antisifilíticos, el guayacán y la zarzaparrilla, proce-
+dieron de América, y el indio más salvaje conoce hierbas que él preconiza
+contra la sífilis. Entre las plantas que yo conocí en mis diversas expedicio-
+nes, menciono la cáscara de un "guayacán" (Calliandra spec?) de otro
+" guayacán" (Dalbergia granadillo?) y principalmente la "cáscara amarga "
+  132                        DR. BLAS PABLO REKO
+
+
+(Picramnia pistaciaefolia, nueva especie encontrada por el autor), como bas-
+tante eficaces en el tratamiento de la sífilis entre los indios. Hay que advertir
+que los indios ya están a tal grado inmunizados contra esta enfermedad, que
+les afecta muy ligeramente, y se curan fácilmente con sus hierbas, mientras
+la raza blanca necesita remedios más heroicos, circunstancia que da tam-
+bién testimonio de la gran antigüedad de la sífilis en América .
+      La disentería, cuyo nombre azteca era tlaelli ( tlal-li, suelo, tierra ; yel-
+li, cosa nauseosa: caca del suelo, para distinguirle de otros hedores , como por
+ejemplo coa-yelli. Puede ser que elli sea modificación de ez- tli, sangre : cá-
+maras de sangre). Sus remedios , llamados tlael-patli, eran diversas hierbas ,
+pertenecientes a las compuestas. La ipecacuana, aunque existen especies afi-
+nes en México, era desconocida .
+    La tisis, cuyo nombre no recuerdo, era conocida. El cólera, peste bu-
+bónica, viruela, fiebre amarilla, son enfermedades introducidas después de
+la conquista. El origen del rinoscleroma, que existe endémicamente en el
+Sur de México, es muy dudoso.
+    El "dolor del costado," una enfermedad contagiosa, ahora desconoci-
+da, que causó horrible mortandad durante los siglos medios en Europa y
+América, era probablemente de origen americano . Por lo menos, el remedio
+soberano contra esta enfermedad, la"canchalagua" (Erythraea stricta) , lle-
+va nombre araucano (cancha- lahuen: remedio contra el dolor del costado) .
+Por curioso anoto aquí, que durante mi estancia en el Valle de Uzumacin
+(Chinantla) , me informaron que esta enfermedad todavía existía en esas
+comarcas y era causante de algunos fallecimientos. Bernal Díaz del Castillo
+refiere que los españoles perdieron mucha gente por esta peste en sus pri-
+meros desembarques en México .
+     Si la malaria existía ya en tiempos precolombinos, no es del todo segu-
+ro, aunque probable. El nombre a- tona- huiztli, que da Molina a los calo-
+fríos , significa sencillamente : calentura. De los primeros autores solamente
+Bernal Díaz menciona vagamente esta enfermedad en relación de la famosa
+expedición a Honduras. Pero puede ser que los mismos españoles trajeran
+la enfermedad . Esta es la opinión del Dr. Otto Effertz, quien se funda en
+la poca resistencia de los indios contra esta enfermedad, señal de su relati-
+vamente reciente introducción. La raza blanca no sufre mucho por el palu-
+dismo en México, que se quita fácilmente con una dosis de quinina, mien-
+tras para el indio es frecuentemente una enfermedad mortal. Solamente la
+forma africana, que existe en algunas zonas del litoral, donde hubo negros,
+es perniciosa para los blancos .
+    De las enfermedades venéreas eran todas ya del conocimiento de los
+mexicanos . Distinguían ellos dos clases de bubones, una muy sucia, que
+                      DE LOS NOMBRES BOTÁNICOS AZTECAS                         133
+
+
+llamaban tla (z ) caca-nanahuatl (tlazca , EL QUE REVIENTA, nana-huatl, PIÑÓN
+DE CARNE : BUBÓN QUE REVIENTA) , oriundo de un chancro blando, y otra de
+"menos pesadumbre " y dolores "arraigados en los huesos " (Sahagún),
+llamado tecpil-nanahuatl (tectli, PIEDRA CORTANTE, pilli, COSA DELGADA,
+ELONGADA: BUBÓN DURO , PEQUEÑO) , proviniendo de un chancro duro. ¡ QUÉ
+DEFINICIÓN MÁS CLARA QUIEREN USTEDES EN UNA SOLA PALABRA, Y QUIẾN
+SE NEGARA A ADMITIR QUE LA TERMINOLOGÍA AZTECA, SI NO SUPERA, NO CE
+DE EN NADA A NUESTRA NOMENCLATURA CIENTÍFICA !
+    Su remedio principal para esta enfermedad, el nanahua-patli (na-natl ,
+carne, hu-atl, piñón: piñón de carne, bubón, patli, remedio), Solidago mexi-
+cana, fue muy preconizado por Fr. Ximénez contra el 'mal francés o napo-
+litano" y afirma el autor en el mismo artículo, que " esta enfermedad de
+bubas salió destas yndias occidentales, y de aquí se estendió y comunicó
+por diferentes provincias y Reynos del mundo, pues acerca desta gente tie-
+ne esta enfermedad nombre propio y natural, y antiguo, lo que no tienen
+las otras enfermedades o muy pocas ."
+     Tenían la curiosa creencia de que una mujer que pasaba sobre la flor del
+cuitla-xochitl (Euphorbia pulcherrima) , recibía una enfermedad del clítoris ,
+que llaman hasta hoy día también "cuitlasuchil " (bartholinitis) , que era
+nada más que un bonito pretexto para explicar el origen de una gonorrea.
+Seguramente el.jugo lechoso de esta planta, muy común en los jardines de
+los indios, sugestionaba esta patraña.
+     ¡Nihil novum in muudo !
+     De otras enfermedades cutáneas menciono la sarna, zahuatl (zauc- tli,
+pegamento, (hu)atl, grano: grano pegajoso, eczema), la horquilla y las afec-
+ciones causadas por un sinnúmero de insectos y arácnidos ponzoñosos, como
+el jején, que transmite el "mal de pinto' y una conjunctivitis contagiosa,
+la chinche picuda (pinacatl) , el piojo (iztac ma-xolitl) , la pulga (tec-pin) ,
+el zancudo (mo-yotl) , el moyocuil (moy-ocuillin ) que produce una myiasis
+cutánea, el arador (yoli zahuatl) , la conchuda, el pinolillo, el tlalaje (tlal- arin),
+lachintatlahua (chin-tlatlau- atl, grano colorado del culo). El chachayanaliztli
+(chachayana, hender, romper algo: enfermedad de grietas) , una enfermedad
+en que todo el cuerpo se abre de grietas, no puede ser el "mal de pinto," co-
+mo se aseguraba, sino es probablemente la ictiosis, de cuya rara enfermedad
+pude observar dos casos en el pueblo de Santo Domingo, cerca de Mitla .
+    De las otras aflicciones , comunes a toda la humanidad, y de sus reme-
+dios entre los antiguos mexicanos , bastará un corto resumen.
+     Mientras nuestros actuales médicos comienzan una curación formal con
+una purga, los antiguos mexicanos acostumbraban a iniciarla con una san-
+gría, pero no usaban el tratamiento favorito de los barberos de la Edad Me
+   134                        DR. BLAS PABLO REKO
+
+dia, la venosección, sino provocaban una hemorragia de la nariz por el polvo
+de la cebadilla (zo-zoyat- ic, semejante a una palmilla), Stenanthium frigidum.
+Para restañar un exceso de esta hemorragia se servían de otro polvo, sacado
+de la raíz del tlaco- xochitl (tla-cotl, vara, tubo: tubiflora), Bouvardia triphy-
+lla. Este era probablemente el secreto del famoso Doctor Indio de Vallado-
+lid, de quien Carlos María Bustamante cuenta que 'humilló el orgullo del
+protomedicato de México " con esta demostración .
+    No hay que olvidar un remedio auxiliar de mucha importancia entre los
+indios, el bañode vapor, temaz- calli (te- maz- tli , lecho de piedra, baño, cal- li,
+casa). Para aumentar el efecto del baño usaban diversas hierbas medicina-
+les, llamadas temazcal-xihuitl. Entre los zapotecos de Yalalag encontré en
+mucho uso la "hierba del temazcal" (Rhus terebinthaefolia) . Este baño se
+usaba principalmente en el tratamiento del reuma, de la sífilis y como pre-
+parativo del parto. No cabe duda que el temazcal es un agente muy pode-
+roso en estos casos, y personalmente pude convencerme que puede aliviar,
+aunque lentamente, la sífilis entre los indios, sin otro auxiliar, y se entiende
+así, tomando en cuenta que todos nuestros remedios antisifilíticos son sudo-
+ríficos poderosos .
+     A los niños de teta que se enfermaban a consecuencia del nuevo emba-
+razo de sus madres, llamaban chi-pilli (niño inflado), nombre que todavía
+subsiste , y a este estado dieron el nombre chipilli-huiztli (estado de ser in-
+flado: meteorismo) . La etimología explica la clase de aflicción .
+    Entre el gran número de remedios aztecas cito los representantes más
+importantes de cada grupo:
+Remedios contra lacalentura, a- tonal-huiz- patli (a - tonal-huiz- tli, calentura) :
+  chatal huic (chal- at- ic: cha-lli, hueso, a - tl, grano, -ic, semejante : semejante
+    al grano óseo, duro, chalate (Caesalpinia spec. div.) . Las semillas duras
+    de Cassia grandis o C. moschata .
+  to- tonca-xihuitl (to- tonqui, caliente, xihuitl, hierba comestible). Las ho-
+     jas de Cassia alata .
+  iztic- patli (izt-ic, puntiagudo: remedio puntiagudo (por las hojas incisas) .
+     La raíz de Geranium hernandezii .
+  tonal-xochitl (tonalli, sol, calor; flor contra calentura) . Pithecoctenium
+    spec. div.
+  hue-hue-zontecoma patli (hue, grande, zon- tecomatl, cabeza : remedio de la
+    cabeza grande) . El rizoma de Campsis radicans.
+Purgantes laxativos, tla- noqui-loni-patli ( tla- noch- tli, tuna del suelo, caca
+    blanda, tla- noqui-loni, cosa con que se hace la caca blanda) :
+  tla- noqui-loni (laxativo) . La raíz de Conyza filaginoides.
+  tla- noqui- loni ca- camot-ic (ca- camot- ic, semejante al camote) . Rizoma de
+    Ipomoea stans .
+                       DE LOS NOMBRES BOTÁNICOS AZTECAS                     135
+
+
+   pi-piz-ahuac (delgado, se refiere a la raíz) . Raíz de Perezia adnata.
+Purgantes drásticos: a-pizal-patli (a- pizalli, agua delgada) :
+   tlallan- tlacua- cluitlapilli (tlallan , subterráneo, tlacua-chin, tlacuache,
+     cuitla- pilli, cola: cola subterránea de tlacuache) . Rizoma de Exogo-
+     nium purga.
+   a-ma-maz-tli (atl, agua, maz-tli, lecho: lecho del agua. La planta crece a
+     la orilla del agua y en el fondo de zanjas). Raíz del ruibarbo (Rumex
+     patientia).
+   cuau-ayo-huachtli (cua -huitl, árbol, ayo huach- tli, piñón de calabaza). Pi-
+     ñones purgantes de Jatropha curcas, Hura crepitans y Cassia fistuloides .
+Remedios contra la diarrea, a-pizal-patli (a-pizalli, agua delgada, diarrea) :
+  a-pizal patli (remedio contra diarrea). Raíz de Eupatorium spec. ?
+  tec patli (remedio contra cortaduras) . La raíz de Viguiera excelsa?
+Eméticos, neix- tlazol-patli ( neix-tli, ceniza, tla-zolli, suciedad del suelo: su-
+    ciedad cenicienta):
+  neix- tlazol-patli: Raíz de Ipomoea emetica.
+  me -xochitl (metl, fibra de maguey, flor de hilo). Las hojas de Hamelia
+     patens ?
+Cardíacos, yolo-patli (yol- otl, corazón) :
+   yolo -patli, la raíz de Milla biflora .
+   yol-miquiliz-patli (yolotl, corazón, miquil-iztli, muerte: muerte de cora-
+     zón , síncope) . Stenolobium stans?
+Diuréticos, a-xix-patli (a -xix- tli, meados, orines ) :
+  a xix-patli : el zumo de Vitis acapulcensis .
+   axo coponi (cosa con que se saca la orina) Gaultheria spec.
+   axix-pa- tlacotl (pa-tlahuac, grande, tla-cotl, mata: mata grandediurética) .
+    La raíz de Senecio spec. ?
+Oxitóxicos , zihua-patli (zi-huatl, mujer: remedio paramujeres) .
+  zihua -patli: diferentes especies de Montanoa y Calea hypoleuca.
+Antirreumáticos, coazihuiz-patli (coa- cihuiz-tli reuma):
+  coazihuiz -patli: Pinguicula?
+  to-tonca-patli (to- tonqui, caliente: remedio caliente). Mentzelia conzatti .
+Antídotos contra mordeduras de víboras, coa-patli (co-atl, culebra):
+  tlaco-patli (tla-cotl, vara: remedio en forma de vara). Aristolochia spec. div.
+Estornutatorios, zonpil- iz -patli (zon-pil- iz- tli, catarro : remedio que produce
+     catarro):
+  zo-zoyat-ic (semejante a una palmilla). Stenanthium frigidum, Sabadilla
+     officinalis .
+Remedios contra catarro, zonpiliz-patli :
+  zonpilihuiz- patli: Cedronella spec.?
+  136                         DR. BLAS PABLO REKO
+
+Remedios contra apostemas, tla-panqui-patli (tla-panqui, cosa con que se
+    hace algo blando, supurativo) :
+  tlapanqui-patli: Claytonia perfoliata .
+Remedios contra la tos, tla- tla-ziz-patli (tla- tla- ziz- tli, tos) :
+  tlatlaziz - patli : una labiata indeterminada.
+Eupépticos , Amargos, chichic patli (chichic, amargo) :
+  chichic-patli : especies de Conyza, Arracacia y Vitis tiliacea.
+  zaca-chichic (zacate amargo) . Calea zacachichi .
+Cáusticos, tle patli ( tletl, fuego):
+  tle-patli : Plumbago scandens.
+Remedios contra úlceras, palanca-patli (pal- anqui, podrido) :
+  coz coz- tic palanca-patli (remedio amarillo contra úlceras) , Smilax ornata.
+Emenagogos, zihua-patli (remedio para mujeres) :
+  cococ- a- quilitl (quelite picante cerca del agua) , Adenophyllum coccineum.
+Narcóticos, yautli (cosa nauseosa, narcótica) :
+  yau- tli : Tagetes lucida, cuau- yautli : Piper longum?
+  pi-yotli (pi - yautli, yautli , pequeño) peyote, Anhalonium spec. div. , piule,
+     Ipomoea sidaefolia.
+  yetl (cosa nauseosa) tabaco, Nicotiana spec. div.
+  cuau- yetl: Wigandia caracasana?
+  tla-patli (etimología obscura) : Datura spec. div .
+  quimich-patli (remedio contra ratones) , Senecio canicida .
+  yau-a-patli : Richardsonia scabra.
+  ololiuqui (ol- oliuqui : redondo) , semillas de Ipomoea sidaefolia.
+  tla-patli ( tla (z ) -patli, remedio que revienta. Se refiere a las cápsulas locu-
+    licidas) , Datura strammonium .
+
+
+     TERMINOS REFERENTES A LAS DIVERSAS CUALIDADES
+                                  DE PLANTAS .
+
+                                      Colores .
+
+    izta-c ( iztatl , sal : semejante a sal) , blanco como sal :
+         iztac-zihuatl (mujer blanca), forma elíptica de zihua-patli ( reme-
+        dio para mujeres) . Montanoa tomentosa .
+    omitt (hueso), blanco como hueso :
+         omi-xochitl (flor blanca), Polianthes tuberosa.
+         omi-quilitl (quelite blanco), Piper sanctum .
+    to-poch-tic (tostado), blanqueado como totopozle :
+                 DE LOS NOMBRES BOTÁNICOS AZTECAS                      137
+
+
+    topo-zontli (hoja blanca), topozan, Buddlea americana.
+    ahua-topochtic ( estambres blancos), aguatopo, Inga spec .
+izquitl (grano tostado de maíz), blanco como maíz tostado :
+     izqui-xochitl (flor, rosa blanca), Bourreria huanita.
+tla-zolli (cosa vieja) , cano:
+    te- tla-zolli (cabeza cana), cabeza de viejo, Pilocereus tetazo.
+next- ic (nex-tli, ceniza), ceniciento:
+    nex-tlal- patli (remedio blanco de la tierra) , Psoralea spec.
+    te-nex-tlacotl (te-nextli, cal, tlacotl, vara: vara cenicienta), Spi-
+    lanthes spec . ?
+te-zontli (tezonte, piedra volcánica), rojo obscuro como tezonte:
+     te-zon-patli (remedio de color rojo obscuro) . El rizoma rojo de As-
+     clepias jamesii .
+     te-zon-zapotl (zapote colorado),mamey, Vitellaria mammosa.
+te-xcalli (piedra cocida, lava), color pardo de tezcal :
+    te-xcal-amatl (higo de color de tezcal) , tezcalamate, Ficus pe-
+    tiolaris.
+(tla-tlauqui (tla-huitl, cinabrio, bermellón: semejante al bermellón) ,
+    colorado, rosado :
+    tla- tlauca- patli (remedio rosado), Geranium alchimilloides .
+    tla-tlauqui coanenepilli (coa-nene-pilli, lengua de culebra), Passi-
+    flora ciliata .
+    huilo-rochitl ( flor cinabrio), Plumeria purpurea.
+    a-huil- otl (baya colorada cerca del agua) , Vitex mollis .
+    huil-aca-piz-rochitl(flor de corneta bermeja),Ipomoea coccinea var .
+tla-palli (tierra colorada, almagre), colorado como almagre :
+     tlapalli cacalo-xochitl (flor de cuervo colorado), Plumeria rubra.
+    tlapal-izqui-xochitl (rosa blanca [con manchas de color]) , Befaria
+    discolor .
+
+    tlapal-huau- quilitl (quelite colorado), Iresine latifolia var .
+chil-tic (chi-lli, chile : semejante al chile), rojo como chile :
+     cuau -chilli (chile de árbol), Castilloa elastica. Tiene frutos rojos .
+     chil-pantli (bandera roja), Pentstemon spec. div.
+    chil-ozotl (jugo amarillo), Argemone mexicana .
+cha-calli (cangrejo), colorado como cangrejo:
+     chacal-xochitl (flor de cangrejo), Caesalpinia pulcherrima.
+     chacal-piztle (pizle de cangrejo), Citharexylum spec. ?
+xochi-palli (color de flor) , anaranjado como la flor de Cosmus sul-
+    phureus.
+    xochi-pal-tic (semejante al xochipalli), Jacquinia aurantiaca.
+138                      DR. BLAS PABLO REKO
+
+ ez-tli (sangre), color de sangre :
+      ez-patli ( sangredrago) , Croton spec. ?
+      ez- cuahuitl ( palo de sangre) , Croton gossypiifolium .
+ camo-pal-tic (semejante al color del camote morado de Ipomoea batata.
+ ma-tlalli (tierra azul), azul:
+      matlal-iztic (semejante al matlalli), Commelina spec. div .
+      matlal-cuauhuitl (árbol azul, por sus flores), Guajacum spec. div.
+ mo-huitli (color azul), azul obscuro de Jacobinia mohintli .
+ te-xotli (piedra de tubérculos), vitriolo azul :
+      texo-atl (agua de vitriolo azul), Miconia y Pleromia spec. div.
+ хо-хоиqui ( xo -huitl, modificación de xi-huitl, verdura; semejante a la
+     verdura) :
+      coa-xoxouqui (culebra verde), Ipomoea sidaefolia.
+ quil-tic (semejante al quelite) , verde :
+      quil-ahuacatl (aguacate de corteza verde), Persea gratissima .
+ tlil-tic ( tlilli, hulla), negro como hulla:
+      tlil-potonqui (hierba negra, hedionda) , Eryngium spec .
+ ca-cal-otl (cuervo), negro como cuervo :
+      cacalo-xochitl (flor de cuervo, negro), Plumeria rubra var. atro-
+      purpurea .
+      cal-atolli ( atole negro), Calatola mexicana.
+       te-cal-atl ( agua negra del monte), Mucuna spec.
+       ca-ca- huatl ( piñón negro), Theobroma cacao.
+ coz- tic (semejante al chile amarillo coz-tli) , amarillo:
+      coz -tomatl (tomate amarillo), Physalis coztomatl.
+      coz-zauctli ( orquídea amarilla) , Cattleya citrina.
+      te-coz-zauqui (piedra amarilla) , ocre .
+      co-coztic-palanca-patli ( remedio amarillo contra úlceras), Smilax
+      ornata .
+
+ tla-cuilolli (cosa pintada), pintado:
+      tla-cuilol-cuahuitl (palo pintado [de rayas rojas y negras]), Bursera.
+ zahual tic (zahuatl, sarna, semejante a la sarna), manchado :
+      zahual-etl (frijol pintado), Phaseolus multiflorus .
+ ecatl (aire, representado en los jeroglíficos por rayas negras), rayado:
+      eca- patli (remedio rayado), Cassia alata.
+
+                                Tamaño .
+
+ patl-ahuac, grande:
+      copal cuahuitl patlahuac : Rhus copallinus .
+                 DE LOS NOMBRES BOTÁNICOS AZTECAS                    139
+
+
+     pat-olli (bolita grande) , Erythrina coralloides .
+pich- ahuac o piz- ahuac, delgado, pequeño :
+     zihua- patli pizahuac: Stevia viscida?
+     pi- yotli ( pi- yautli, yautli pequeño), peyote, Anhalonium spec. div .
+     pich-olli ( bolita pequeña), Vitis acapulcensis .
+hue, grande:
+     a-hue- huetl ( el muy grande cercadel agua), Taxodium mucronatum .
+     huey- nacaztli ( oreja grande) , Cymbopetalum penduliflorum .
+hu - alli , gigantesco:
+     aca hualli (caña gigantesca), Helianthus tuberosus .
+     chichihual xochitl (chi- chi- hualli, vejiga gigantesca, chiche de mu-
+     jer: flor de teta), Solandra grandiflora.
+tam-ahuac, gordo:
+    tamahuac tlaco- patli : Aristolochia fragrantissima.
+     tamal- ayotl (calabaza gorda), Cucurbita maxima.
+chin-tli; diminutivo; sufijo de reverencia:
+     chipi-chin (gotitas), Porophyllum coloratum.
+
+                                Figura.
+
+ol-oliuqui (olli, pelota, bolita) , redondo:
+     ol- oliuqui : semillas redondas de Ipomoea sidaefolia .
+tolonqui (tolli, tubérculo, bolita), redondo :
+     tolonca patli (remedio redondo), Ipomoea jalapa.
+iz- tic, puntiagudo:
+      iztic -patli , Geranium hernandezii.
+      iztic- mecatl , Ipomoea coccinea var.
+co- col- tic, retorcido:
+     tlal- cocoltic (planta retorcida del suelo), Chamaesyce maculata.
+malli (trenza, cosa torcida) , torcido :
+    mal- acatl ( caña torcida) , Costus spicatus .
+     mal-aca-xochitl (flor del huso), Zinnia pauciflora.
+nacaztli ( oreja) , anguloso: ( na-caztli, envoltura de carne) .
+     na- nacaz- e ( el que tiene ángulos) , Bidens tetragona.
+quez- alli (quech-hualli , quilla gigantesca), penacho, plumero :
+     tlal- quezalli (penacho del suelo), Achillea millefolium .
+nopal-xochi-quezalli (penacho de la flor de nopal), Epyphyllum phyllan-
+     thoides .
+   140                      DR. BLAS PABLO REKO
+
+
+                                Consistencia.
+chal-tic (challi, hueso ) , duro como hueso, ebúrneo :
+     cuau-cha-chal-atl (grano duro de árbol. Se refiere a las semillas duras
+        o a la madera dura), Caesalpinia spec .
+poch-ahuac, fofo :
+     poch- otl (copo de algodón), Ceiba pallida.
+     za-potl (cosa fofa, pegajosa: jalea), zapote.
+     po-potl (cosa fofa), Arundinella hispida .
+huaqui , seco :
+     huac-xochitl (flor seca), Jacquinia aurantiaca .
+     huac-chin ? (fruta seca), huaje, Leucaena esculenta.
+
+                                  Números.
+
+ze ( n) (zen-tli, un grano de maíz), uno.
+zem-po-alli (zen-pa-hualli , serie grande de granos de maíz ) , veinte :
+      zempoal-xochitl (flor compuesta), Tagetes spec. div.
+mi-ec, muchos ; mi-xitl (muchos tubérculos), cierta clase de tabaco.
+      mi-ahuatl (muchos estambres), espiga de maíz.
+      mi-izquitl (muchos granos comestibles ) , mezquite, Prosopis juliflora.
+nahui , cuatro :
+     nau-te-poztec (cuadrangular) , capitaneja, Verbesina capitaneja .
+
+                               Sabor y olor.
+zap-elic (semejante al zapote) , dulce :
+     zopelic-xihuitl (hierba dulce), Lippia dulcis .
+ne-uctli (néctar, miel) .
+     necu-a-metl (maguey de miel), Agave speс ?
+     neuc-xochitl (flor de miel), Jacquinia aurantiaca.
+chi-chic, amargo :
+     cuau-chichic (palo amargoso) , Garrya, Picramnia, Castela spec. div.
+cococ, picante :
+     cococ-a-quilitl ( quelite amargo cerca del agua), Adenophyllum coccineum.
+tlan-ec , oloroso :
+     tlanec-pa-quilitl ( quelite del remedio oloroso) , Piper sanctum.
+poton-qui, hediondo :
+    poton-xihuitl (hierba hedionda) , Cestrum lanatum .
+ya-c, nauseoso : (yatl o yetl, cosa nauseosa, yautli, narcótico.)
+    izta-hu-yall (sal nauseosa) , estafiate, Artemisia mexicana .
+                        DE LOS NOMBRES BOTÁNICOS AZTECAS                    141
+
+
+      tecoma-yac (cabezuela nauseosa) , tacamaca, Icica copal .
+      ya-molli (amole nauseoso), yamole, Namole, Phytolacca, Sapindus .
+      yau-tli (cosa narcotica), Tagetes lucida.
+           cuau-yautli: Piper longum?
+          pi-yautli ( yautli pequeño) , pesote .
+     yelli (modificación de yetl) , hedor :
+          coa-yelli (hedor de culebra), Eryngium foetidum .
+     ye-rochitl (flor de tabaco), Cattleya citrina .
+
+                                       Superficie.
+
+chil- ac (semejante al chile) , liso :
+     chilac-ayotl (calabaza lisa), Cucurbita ficifolia.
+chapel-uac, espinoso :
+      cha-piztli ( fruto espinoso), Pereskiopsis chapiztle .
+     ch-ayotl (calabaza espinosa) , Sechium edule .
+xalli ( arena) , arenoso:
+     xal-tomatl (tomate arenoso), Saraja jaltomata.
+chichica ( lo que pica, deriv . de chic-tli?, pegamento) , urente :
+     chichic-aztli ( semilla urente?), Urtica spec. div .
+     chica- l-otl ( cosa redonda, espinosa), Argemone mexicana.
+huiztli ( espina) , espinoso :
+     huiz- toma - chin (tomate espinoso), Solanum hernandezii.
+za-zalic ( glutinoso), pegajoso :
+     zazamilli ( baya glutinosa) , Cordia alba.
+tla-chi-coni (cosa con que se raspa) áspero :
+     tla-chiconi (asperón), Curatella americana.
+     tla-chichinoa (raspadora) , Tournefortia mexicana .
+pa-pa-coni (cosa con que se acaricia, deriv. de paztli, musgo) , acariciador .
+      papiconi : Gnaphalium canescens .
+ich- tli ( algodón) , velloso :
+     ich-a- tle-patli (remedio cáustico, velloso, cerca del agua), Asclepias
+          spec .
+tletl ( fuego ) , cáustico :
+     tle- tlatia (lo que causa ardor) , tetlate (Comocladia mollissima) .
+
+                                      Habitación.
+
+tlalli (suelo ) , cerca del suelo :
+     tlal-zimatl (zimatl humilde), Desmodium orbiculare ?
+  142                           DR. BLAS PABLO REKO
+
+     tlal- izqui-xochitl (rosa blanca del suelo), Milla biflora.
+     tlal-cacalo-xochitl ( cacalosuchil del suelo), Macrosiphonia hypoleuca .
+te-petl ( cerro) , montés :
+     tepe- izqui-xochitl (rosa blanca montés), Cordia gerascanthoides .            1
+
+     tepe-xilotl ( jilote montés) , Chamaedorea tepejilote.
+atl (agua) , cerca del agua:
+     a-huehuetl ( el coloso cerca del agua) , Taxodium mucronatum .
+     a- cuilotl (el multicolor cerca del agua), Philadelphus spec. div.
+     En seguida ofrezco al lector un catálogo de los nombres botánicos azte-
+cas contenidos en esta sinonimia, su significación etimológica y su identi-
+ficación científica .
+ACAHUAL ......... aca- hualli (a- catl, caña , hu-alli, muy grande, gigantesco :
+                    caña gigantesca). Gigantón (Div. espec. de Helianthus,
+                        Tithonia) .
+AÇUYO ........ a-cuey- e ( atl, agua, cueyatl, rana, e, que tiene : planta cer-
+                        ca del agua y tiene ranas) . Planta higrófila (Piper
+                        sanctum) .
+ACHIOTE ....... a- chiotl (atl , agua, chi-otl, vejiga: vejiga cerca del agua) .
+                        Planta que crece cerca del agua y produce unas cápsulas
+                        infladas . (Bixa orellana) .
+AGUACATE ....a-huac- atl, testículo: palo de testículos, por laforma de sus
+                        frutos (Persea gratissima) . Me parece más probable, que
+                        el testículo recibió su nombre del fruto de este árbol .
+AGUATOPE ..... ahua- topochtic (ahuatl, estambre, topochtic, blanco como
+                        totopozle : estambres blancos) . Se refiere a la hermosa
+                        aureola de estambres blancos de este árbol (Inga spec.
+                        div. ) . Un género muy afín lleva el nombre científico Ca-
+                        lliandra, que significa "hermosos estambres ."
+AHUEHUETE .... a-huehuetl ( atl, agua, hue-huetl, cosa muy grande: el colo-
+                 so cerca del agua) . Arbol gigante, que crece cerca del
+                        curso de un río (Taxodium mucronatum) .
+AHUEJOTE .... a-hue- xotl ( atl, agua, hue, grande, xotl, tubérculo, bulbo,
+                  legumbre : legumbre grande cerca del agua). Arbol que
+                  crece a las orillas de los ríos yposee unas lineales, 15 cm.
+                  largas (Tecoma viminalis) . También el sauz lleva este
+                  nombre por su grande semejanza a este árbol.
+AHUILOTE ...... a-huilotl (atl, agua, huil-otl, cosa de color bermejo : fruta
+                        bermeja cerca del agua) . La planta produce unas bayas
+                        comestibles de color bermejo (Vitex mollis) .
+                     DE LOS NOMBRES BOTÁNICOS AZTECAS                       143
+
+AILE ..
+               ... a-ilitl (atl, agua, ilitl, aliso : aliso cerca del agua) . "Palo
+                    de águila" parece una corrupción de "Aile " (Alnus acu-
+                    minata) . El "Aile del monte" es Alnus jorullensis .
+AMATE ..      ... a- matl ( atl, agua , matl o motl, deriv. de moch- tli, fécula :
+                    fécula de agua, o cerca del agua) . Higo comestible (Ficus
+                    tecolutensis y generalmente Ficus) .
+AMEZQUITE .... am- izquitl (amatl, higo, iz-quitl, grano comestible: higo
+                    comestible ) . Los frutos de este árbol tienen el tamaño de
+                   un grano de maíz (Ficus tecolutensis) .
+AMOLE        ..a-molli ( atl, agua, molli, cosa pastosa: pasta para el agua,
+                  jabón). Todos los amoles contienen saponina. Hay mu-
+                  chas plantas saponíferas .
+ANACAHUITE .... a- na- cuahuitl (atl, agua, natl, carne, cosa comestible,
+                   cuahuitl, árbol : árbol de bayas comestibles) . Algunas
+                   Cordias producen frutoscomestibles(Cordiagerascanthus) .
+AQUALAXTE ..... a-hual- achtli (a-hualli, aguas grandes, ach-tli, grano :
+                 grano de las grandes aguas) . Las bayas de la planta se
+                   producen al tiempo de las lluvias (Cayaponia racemosa) .
+ AYACAHUITE .... aya-cuahuitl ( ayatl, sonajilla, cuahuitl, árbol: árbol de
+                 las sonajillas) . Los conos de los pinos asemejan a este
+                 juguete (Pinus ayacahuite) .
+AYOCOTE ...... ayo- cotl (modificación de aya-catl, caña de sonajillas) . Se
+                 refiere a la legumbre seca, que suena cuando es sacudida
+                   (Phaseolus multiflorus var . ) .
+AZUCHE ........ a- xochitl ( atl, agua, xochitl, flor: flor como vaso de agua) .
+                   Una flor grande, que se llama también "Jarro de oro"
+                   (Erblichia odorata) . Florece en la estación seca .
+BIZNAGA....... huiz- nahuac (hu- iztli, espina, nahuac, alrededor: rodeado
+                 de espinas) . Cactáceas de los géneros Echinocactus y
+                 Mammillaria. La palabra española Biznaga, derivada de
+                   la lengua árabe, designa la pastinaca (Pastinaca sativa) .
+CACAHUANANO..cacahua-nantli ( caca- huatl, cacao, nantli, madre : madre
+                de cacao) . Este nombre se da a plantas que sirven de
+                abrigo y protección por su sombra a los sementeros de
+                cacao (Gliricidia sepium) .
+CACAHUAPATLI..cacahua-patli (caca-huatl, cacao, patli , remedio : remedio
+                de cacao) . Desconocida la planta, no se puede dar la
+                   aplicación del nombre.
+  144                        DR. BLAS PABLO REKO
+
+CACAHUATE .... tlal- cacahuatl ( tlalli , tierra , caca-huatl, cacao : cacao de la
+                   tierra) . Las semillas de esta planta maduran bajo del
+                 suelo . (Arachis hypogaea) .
+CACAHUATÓN ... cacahua-tontli (caca- huatl, cacao, tontli, diminutivo : cacao
+                 chico) . Desconocida la planta, no se puede dar la apli-
+                   cación del nombre .
+CACALOSÚCHIL ... cacalo-xochitl(cacal-otl, cuervo, xochitl, flor: flor del cuer-
+                   vo, flor negra) . El nombre se refiere a una variedad casi
+                   negra, y por este motivo muy estimada, de Plumeria pur-
+                   purea. Más tarde este nombre fue aplicado a todas espe-
+                    cies de Plumeria .
+CACOMITE ...... ca- comitl ( catl, caña, comitl, corona de papel que los azte-
+                  cas usaban en sus fiestas, jarro: corona, jarro de caña) .
+                   El nombre se refiere a la hermosa corola de esta planta ,
+                   que imita una corona o un jarro (Tigridia pavonis) .
+CAMOTE ......... ca- motli (cuahuitl, árbol, motli, deriv. de mochtli , fécula :
+                    fécula de árbol, para distinguirla de la del maíz) . Apli-
+                   cado a tubérculos comestibles , especialmente a la Ipomoea
+                   batata.
+
+CAPULÍN ....... ca-polli (cuahuitl, árbol , polli, deriv . de pochtli, cosa blan-
+                  da, gusano : gusano de árbol) . Fruta de Prunus capuli .
+CASAHUATE .... cuau-zahuatl (cuahuitl, árbol, za-huatl, grano pegajoso,
+                  sarna: palo sarnoso) . La corteza de este árbol parece tu-
+                  pida de lobanillos ( Ipomoea murucuoides ) .
+CASCALOTE ..... caz-calotl ( caztli, casilla, escalerilla, cal-otl, cuervo , cosa
+                  negra : escalerilla de tinta negra) . El fruto es una legum-
+                  bre torcida, como una escalerilla , y sirve para teñir de
+                  negro . ( Caesalpinia coriaria) .
+CIDRACAYOTE .. Véase CHILACAYOTE .
+COATE ......... co- atl (coatl, culebra, atl, agua: agua de culebra) . El leño
+                  de este árbol transmite al agua una fluorescencia seme-
+                jante a la opalescencia de las culebras (Eysenhardtia
+                 polystachya) .
+COCOLMECA .... cocol- mecatl ( colli, envoltura, coraza, me-catl, bejuco: be-
+                 juco de coraza) . El enorme rizoma de este bejuco parece
+                 una coraza de corcho grueso (Dioscorea remotiflora) . Es
+                    la Testudinaria cocolmeca de Procop .
+COPAL ..... ... co-palli (cuahuitl, árbol, palli, droga, tintura, barniz :
+                   barniz de árbol) . Resina de varios árboles pertenecientes
+                    a las Burseraceas, Anacardiaceas y Leguminosas..
+                     DE LOS NOMBRES BOTÁNICOS AZTECAS                          145
+
+
+COPALCHI ...... copal- chichic (co-palli, copal, chichic, amargo: copal amar-
+                  go) . La corteza de esta planta contiene una resina muy
+                  amarga, por cuya razón le dan también el nombre " Qui-
+                  na" (Croton niveus seu pseudo-quina) .
+COPALJOCOTE ... copal-xocotl (co-palli, copal, xocotl, ciruela: ciruela de co-
+                     pal) . El fruto resinoso de Cyrtocarpa procera .
+COQUELITE ... Véase CozQUELITE .
+COYOL ......... co- yolli ( cuahuitl, árbol, yolli, cascabel : cascabel de árbol ) .
+                    Nuez del " Coquito" (Acrocomia mexicana) .
+COYOTOMATE ... coyo- tomatl (coyotl, coyote, tomatl, tomate: tomate coyu-
+                    che) . Tomate de color de coyote (Physalis nicandroides) .
+COZQUEIITE .... coz- quilitl (coztli , chile , quilitl, quelite: quelite color de chi-
+                     le) . Las flores rojas de este árbol son comidas como ver-
+                 dura. (Erythrina coralloides) .
+CUACAMOTE .... cuau- camotli ( cuahuitl, árbol, ca-motli, camote: camote de
+                 árbol) . Esta planta llega a ser arbórea (Manihot utilissi-
+                 ma y M. aipi) .
+CUACHALALA.... cuau- chal- alatl ( cuahuitl, árbol, challi, hueso, alatl , cosa
+                 que escurre, resbala, vuela: fruto coriáceo, volante de
+                 árbol). Las semillas aladas de Juliania adstringens , y las
+                    sámaras aladas de Rajania subsamarata .
+CUACHEPIL..... cuau- chipilli ( cuahuitl, árbol, chi-pilli, cosa elongada e in-
+                 flada: chepil de árbol) . Las legumbres infladas de Diphy-
+                    sa robinioides .
+CUACHILOTE .... Véase CUAJILOTE .
+CUACOYUL ...... cua- coyolli ( cuahuitl, árbol, co-yolli, cascabel, nuez: nuez
+                  de árbol) . Las nueces de la palma Attalea cohune.
+CUAJILOTE ..... cuau-xilotl (cuahuitl, árbol, xilotl, cosa bulbiforme, mazor-
+                  ca: mazorca, jilote de árbol) . Las frutas de Parmentiera
+                    edulis .
+CUAJINICUIL .... cuau- xo-necuilli (cuahuitl, árbol, xotl, bulbo, legumbre, ne-
+                   cuilli, torcido: legumbres torcidas de palo) . Las legum-
+                   bres comestibles de Inga jinicuil .
+CUAJIOTE ... ..cuau- xiotl ( cuahuitl, árbol, xiotl, lepra, sífilis: palo leproso) .
+                 La corteza de este árbol parece tupida de lobanillos. (Bur-
+                    sera spec. div . )
+CUAMÚCHIL .... cuau- mochtli (cuahuitl, árbol, mochtli, fécula: fécula de ár-
+                    bol) . Las semillas de este árbol están envueltas de un ari-
+                    llo blanco y comestible. (Pithecolobium dulce) .
+  146                          DR. BLAS PABLO REKO
+
+CUANACAZTLE..cuau- nacaztli (cuahuitl, árbol , na- caztli, oreja, orejade palo).
+                 El fruto imita la forma de una oreja. (Enterolobium cy-
+                 clocarpum) .
+CUAPINOL ......cua- pinolli ( cuahuitl, árbol, pi-nolli, carne, cosa comesti-
+                 ble diminuta, harina: harina de árbol) . Las semillas de
+                 este palo están envueltas con una harina dulce. (Hyme-
+                   naea courbaril ) .
+CUATOMATE .... coa- tomatl ( coatl, culebra, tomatl, tomate: tomate de cule-
+                 bra) . La fruta de Lycopersicum esculentum var. cera-
+                   siforme .
+CUAULOTE ..... cuau- olotl (cuahuitl, árbol, olotl, cilindro, olote: olote de
+                 árbol) . Los frutos muriculados de este árbol tienen la fi-
+                   gura y aspereza de un olote pequeño. (Cuazumaulmifolia).
+CUAUTOLOLOTL.cuau- tololotl ( cuahuitl, árbol , tol-olotl, bolita: bolita de ár-
+                   bol) . Frutos esféricos de Phyllanthus distichus.
+CUITLACOCHE..cuitla- cochtli (cuitlatl, mierda, cochtli (coztli) , envoltura ,
+                chile : chile bastardo). El micelio parasitico de Claviceps
+                   purpurea .
+
+CUYULUTZI ..... coyol- ozotl ( co-yolli , nuez , o- zotl, lodo, jugo lechoso: nuez
+                  de jugo lechoso) . Cápsulas resino-lechosas de Icica copal .
+CHACALPEZLE..chacal- piztli (cha-calli, casco de hueso, cangrejo, piztli, co
+                sa aguzada, elongada: pepita de cangrejo) . Los frutos
+                    rojos y comestibles de Citharexylum spec. ?
+CHAHUIZTLE .... chia- huiztli ( chia , cosa que se hincha en el agua, huiztli,
+                   espina: espina que se hincha en el agua), tizón de Pucci-
+                  nia, spec. div .
+CHAPULÍN ...... cha-pollin (cha-peloac , espinoso, pollin, cosa pastosa, gusa-
+                   no : gusano espinoso, pues tiene las patas armadas de púas).
+                   Desconocida la planta, no se puede dar la aplicación del
+                   nombre .
+CHAYOCAMOTE..chayo- camotli (cha- yotli, chayote, ca- motli, camote: camote
+                 de chayote) . El rizoma comestible de Sechium edule.
+CHAYOTE ...... cha- yotli (cha-peloac, espinoso , ayotli, calabaza: calabaza
+                 espinosa) . El fruto espinoso de Sechium edule. Existe
+                 una variedad sin espinas .
+CHEPICHE ...... chipi- chin (chi-pitl, vejiguita, glándula, chin, diminutivo :
+                   vejiguita, glándula pequeña) . Las hojas de esta hierba
+                   poseen puntos translúcidos . (Porophyllum coloratum).
+                     DE LOS NOMBRES BOTÁNICOS AZTECAS                     147
+
+
+CHEPIL ....... chi-pilli ( chitl, vejiga, cosa inflada, pilli , cosa elongada,
+                   apéndice: apéndice inflado). Las legumbres infladas de
+                   Crotalaria spec. div .
+CHÍA .......... chi-a-n ( chía, lo que se hincha en el agua, -n, en). Las se-
+                  millas de la Chía (Salvia hispanica y Spec. div.) se hin-
+                   chan en el agua, como las del membrillo y de la mostaza .
+CHICALITO ...... chica- l-itl (chica, meter adentro, picar, -itl, sufijo nomina-
+                   tivo: cosa espinosa) . Palma espinosa. Comparese CHI-
+                   CALOTE.
+
+
+CHICALOTE ..... chica- l- otl ( chica, picar, espinar, otl, cosa redonda : cosa
+                 redonda quepica).Hierba espinosa.(Argemone mexicana.)
+CHICHICAZTLE..chichica-ztli (chi-chica, picar, iztli, sufijo nominał: cosa que
+                  pica) . Ortiga. (Urtica mexicana).
+CHICOZAPOTE ... chic-zapotl (chictli, chicle , za-potl, jalea, zapote: zapote de
+                  chicle) . Achras sapote .
+CHIJOL ....... chi-xo - lli (chi-tl, cosa hinchada, xo-lli, modificación de zotl-
+                  bulbo, legumbre: legumbre hinchada) . Las legumbres
+                  están hinchadas alrededor de las semillas. (Erythrina co-
+                   ralloides) .
+CHICHICAMOLE..chichic-amolli (chichic, amargo, a-molli, jabón: jabón amar-
+                 go) . Los frutos saponíferos de esta planta son sumamen-
+                   te amargos. (Apodanthera galeottii.)
+CHILACAYOTE..chilac-ayotl (chil-ac , liso como chile, ayotl, calabaza: ca-
+                   labaza lisa) . Las calabazas lisas de Cucurbita ficifolia y
+                   de la planta introducida Citrullus vulgaris var. pasteca.
+CHILAMATE .... chil-amatl ( chilli, chile color rojo, amatl, higo: amate). Fi-
+                   cus petiolaris .
+CHILCOZTE ..... chil- coztli (chilli, chile, coz- tli, envoltura, vaina: vaina de
+                  chile) . F. Ximénez dice que se llama así por el color de
+                   azafrán que suele dar a los potajes y guisados (Capsi-
+                   cum annuum longum) .
+CHILE ......... chilli (chi-lli, cosa inflada, vejiga). Las vainas de Capsicum.
+CHIHUACLE ..... chil-huaqui (chilli, chile huaqui, seco: chile seco) . Fruto
+                   de Capsicum annuum grossum .
+CHILMECATE .... chil-mecatl (chilli, chile, me- catl, bejuco: bejuco de chile) .
+                   La corteza de esta planta tiene sabor picante y sirve de
+                   condimento en lugar de chile. Se llama también "palo
+                   de chile . " (Drimys winteri.)
+  148                           DR. BLAS PABLO REKO
+
+
+CHILPATE ...... chil-patli (chilli, chile, patli, remedio: remedio de chile).
+                      Planta medicinal que contiene un jugo sumamente irri-
+                      tante, originando ataques de tos, estornudos e hinchazón
+                      de la conjunctiva por el simple acercamiento a la planta .
+                   (Croton spec. indeterm .)
+CHILTEPIN ..... chil- tecpin (chilli, chile, tec-pin, pulga) . Chile muy peque-
+                    ño, pero muy picante. (Capsicum annuum cerasiforme) .
+CHILTIPIQUIN ... chil-tepo -chin (chilli , chile, tepontli, tronco corto, chaparro,
+                      chin-tli, culo, rabo: chile de rabo chaparro) . Chile peque-
+                      ño, de un centímetro de largo, oblongo.(Capsicum frutes-
+                      cens .)
+(CHILE) CHIN-
+  CUAYO ....... chin-cuau-yo (chin- tli, culo, rabo, cuau-yo, arbolado, erec-
+                      to: chile erecto). Chile mira al cielo, chile mirasol. (Cap-
+                  sicum annuum violaceum? )
+CHINTULE ...... chin -tolli (chin-tli, rabo, tolli, bolita, tule : tule de rabo) .
+                      Esta especie de " tule " (Cyperus odoratus) tiene el rizo-
+                 ma truncado en lugar de la bolita del tule comestible. (Су-
+                 perus esculentus. )
+ELITE .........il-itl (el radical en il-itl, aliso, el-otl, mazorca con su en-
+                 voltura , al- atl, cosa que vuela, parece designar una cosa
+                  alada) . Las sámaras aladas de Betula y Alnus . Aile,
+                      aliso, Alnus, elder (inglés), Erle (alemán) parecen tener
+                      la misma etimología.
+ELOSÚCHIL ..... elo- xochitl (el-otl , mazorca con su envoltura, xo-chitl, flor :
+                  flor aliforme, flor de elote). La flor, cuando tierna, está
+                  cubierta de una envoltura a semejanza de la del elote.
+                  •
+
+
+
+                  (Magnolia dealbata. )
+ΕΡΑΖΟΤΕ ....... epa-zotl ( epatl, zorrillo, zotl, suciedad: hedor de zorrillo ) .
+                Hierba hedionda que, sin embargo, sirve de condimento .
+ESTACAHUITE..iztac- cuahuitl (iztac , blanco, cuahuitl, árbol : palo blanco) .
+                 Las ramas de este árbol tienen color blanquecino. ( Co-
+                      nocarpus erecta . )
+EJOTE ........ e-xotl (etl, frijol, xotl, bulbo, legumbre: legumbre de fri-
+                      jol) . Xo- es también la forma que toma i-xitl, pie , en com-
+                      posiciones .   Es de notar que " Schote" (silicua) y
+    .
+                      "Schuh" (calzado) en alemán, " button," " pod" y
+                      "ped-al" en inglés tienen la misma relación .
+GIOTILLO ... Véase JIOTILLO .
+GITOMATE ..... Véase JITOMATE .
+                      DE LOS NOMBRES BOTÁNICOS AZTECAS                          149
+
+
+GUACHICHI .. ..cuau- chichic ( cuahuitl, árbol , chichic, amargo: palo amar-
+                      go) . La cáscara de este árbol es muy amarga. (Garrya
+                      mexicana . )
+GUAJE ......... Véase HUAJE .
+GUACOYUL ..... Véase CUACOYUL .
+GUAJILOTE ..... Véase CUAJILOTE .
+GUAMUCHE .     Véase HUAMUCHE .
+HUAMUCHE        Véase CUAMÚCHIL .
+                ..
+
+
+
+
+HUAUCHAL..... cuau-challi (cuahuitl, árbol, challi, hueso : hueso de árbol) .
+                      El nombre se refiere tal vez al fruto, que es una cápsula
+                      dura como hueso. (Matayba scrobiculata.)
+HULE .......... olli (olli , deriv. de otl, cosa redonda, pelota ; ol-cuahuitl :
+                      palo de pelota). Producto de Castilloa elastica .
+IZOTE ....      ... iz-zotl ( iz- tli , fibra, zotl, contracción de zoyatl, palma: pal-
+                      ma de fibra) . Yucca treculeana y otras especies .
+IZHUATE ....... iz-zoyatl ( iz-tli , deriv. de ich- tli , algodón, fibra, zoyatl ,
+                   palma: palmade fibra) . Brahea dulcis, palma de sombrero .
+IXPULE ........ iz- piyotl ( iztli o ichtli , algodón , pi- yotl, peyote, narcótico :
+                    peyote velloso) . Planta vellosa. (Verbesina mollis . )
+IXTLE , IZTLE ... ichtli ( ich-tli, algodón , fibra). Fibra de maguey.
+HUAJE .....     huaxin (huac-chin ?: huaqui, seco, chin , sufijo de reverencia:
+             ......
+
+
+
+
+                  fruta seca? ) . El nombre se refiere con toda seguridad al
+                  fruto, pues es comestible. (Leucaena esculenta) .
+JALOCOTE ...... xal- ocott (xalli, arena, ocotl, pino, ocote: pino arenoso) . Se
+                   refiere a la corteza de este pino. (Pinus teocote.)
+JALTOMATE .... xal- tomatt ( xalli, arena, to-matl, tomate: tomate arenoso) .
+                    La fruta tiene una superficie áspera. (Saraja jaltomate. )
+JICALPEZTLI .... xical-piztli (xi-calli, jícara, piztli, cosa elongada), jícara
+                      oblonga. De esta clase de calabazas se hacen jícaras que
+                      tienen figura oblonga, para diferenciarlas de las jícaras
+                      comunes, que son redondas. (Cucurbita chata? )
+JICAMA ........ xi- camatl (xic-tli , ombligo , ca-matl , modificación de ca-
+                      motl, camote, camote de ombligo). Este camote tiene un
+                      ombligo en el punto de inserción . (Pachyrrhizus palmatus
+                      y P. angulatus .)
+JICAMITE ...... xicamitic (xi-camit-ic, semejante a la jícama). Camote co-
+                      mestible de Dahlia variabilis .
+JIOTILLO ....... xiott (xi- otl, tubérculo redondo) . El fruto comestible, del
+                      tamaño de una ciruela, de Escontria cheotilla .
+  150                       DR. BLAS PABLO REKO
+
+
+JÍCARA ....... xi-calli ( xic-tli, ombligo, calli, casco, cáscara: casco con
+                 ombligo) . Calabaza redonda que sirve en lugar de vaso.
+                 (Crescentia cujete.)
+JINICUIL ...     Véase CUAJINICUIL .
+JITOMATE ...... xi- tomatt (xic-tli, ombligo, to-matl, tomate : tomatede om-
+                  bligo) . El fruto de Lycopersicum esculentum.
+JOCOIZTE ....... xoco- iztli (xocotl, ciruela, iztli, fibra de maguey, la planta
+                   misma de maguey: maguey de ciruela) . Fruta agria del
+                 tamaño de una ciruela. (Karatas plumieri.)
+JONOTE ....... xo-notl (xotl, tubérculo, bulbo, notl, deriv. de noch-tli,
+                 carne, cosa comestible: tubérculo comestible). Los frutos
+                 comestibles de diversas especies de Heliocarpus, Trium.
+                 fetta y Muntingia.
+JUQUELITE .... xiu-quilitl (xihuitl, hierba, cosa verde, azul, quil-itl , que-
+                   litl : quelite de tinta verde, azul.) Planta tintórea que
+                   usan los mijes para teñir su ropa de un color verde obscu-
+                   ro. (Eupatorium leucocephalum.)
+JUMETE ........ xo- metl (xotl, tubérculo, pie, metl, cosa pastosa, planta cra-
+                  sicaula como maguey: maguey de pies) . La flor de esta
+                  planta crasicaula tiene flores que imitan un pie o calzado,
+                  por cuyo motivo recibió su nombre científico Pedilanthus .
+MACUIL ........ macuil- cuahuitl ( macuilli, cinco , una mano, cuahuitl, ár-
+                  bol: árbol de manitas) . Las hojas de este árbol tienen
+                  cinco hojuelas que imitan a una mano. (Tabebuia spec.
+                   div. )
+MALAGA , MA-
+  LANGA ...... mal- acatl (malli, cosa blanda, trenza, cosa torcida, a- catl,
+                 caña : caña crasicaula.) El "tarabundi" (Xanthosoma) .
+MACAHUITE .... ama-cuahuitl (amatl, higo, cuahuitl, árbol: árbol de higo) .
+                   Div. spec. de Ficus .
+MESOCOTE ..... maza- rocotl ( mazatl, venado, xocotl, ciruela : ciruela de
+                  venado). El fruto es un pasto favorito del venado. (Mas-
+                  cagnia seleriana.)
+MEZQUITE ...... mizquitl ( mi- ec, muchos, izquitl, grano, semilla: muchas se-
+                                               ،
+
+
+                   millas) . F. Ximénez dice: 'tiene unas vainillas pendien-
+                   tes que son buenas para comer, largas, dulces y de agra-
+                   dable sabor , y llenas de granillos, de donde al árbol se le
+                   puso el nombre ." (Prosopis dulcis .)
+                    DE LOS NOMBRES BOTÁNICOS AZTECAS                    151
+
+
+MILTOMATE .... mil- tomatl (milli, grano tierno, baya, to-matl, tomate: to-
+                 mate baya) . Tomate del tamaño de una cereza. (Lycoper-
+                 sicum cerasiforme.)
+MOLLE ........ molli ( mo-lli, deriv. de mochtli, cosa pastosa, salsa, condi-
+                   mento) .   Los frutos de este árbol sirven de condimento .
+                   (Schinus molle .)
+MUCHITE      .... Véase CUAMÚCHIL .
+MUICLE ........ mo-huitli, color azul. La hierba da al agua un color azul .
+                   (Jacobinia mohintli.)
+MALACATE ..... mal- acatl, caña torcida, huso. El tronco de este árbol pre-
+                 senta espinas muy curiosas: alrededor de una espina lar-
+                 ga central se encuentran rodetes de espinas secundarias
+                 en diferentes niveles. (Xylosma spec.?)
+MALACATILLO .. malacate pequeño. El nombre se refiere a la forma de la
+                 flor. (Zinnia pauciflora.)
+MEZONZAPOTE..mezon-zapott (me-zontli, cabeza de maguey, la corona de
+                 hojas que se queda después de cortado y raspado el ma-
+                 guey, en forma de caput Medusae; za potl, zapote : za-
+                   pote cabelludo). La fruta, después de haberse quitado la
+                   pulpa, deja una figura cabelluda. (Licania platypus.)
+NACAZLE ....... Véase CUANACAZLE .
+NANACATE ..... nana- catl (na-natl, carne, catl, caño, caña: caña de carne,
+                 hongo) . Div. géneros de hongos, especialmente un hongo
+                 negro que crece sobre estiércol y produce efectos narcó-
+                   ticos .
+NANCHE ....... nan-chin (na-natl, carne, chin, diminutivo: pedacito de
+                 carne) . La fruta parece un pedacito de carne. (Malpighia
+                   yBunchosia.)
+NOPAL .   ....
+                 no-palli (notl, deriv. de noch- tli, carne, tuna, palli, droga
+                   colorante, tinta : tinta de tuna, color de carne) . Frutas
+                   de div. Opuntias .
+NOPOTAPEZTE..nau-tepoztic? cuadrangular. Desconocida la planta, no se
+               puede dar la explicación correspondiente .
+NAMOLE . ..... ya- molli (yac , cosa nauseosa, a- molli, jabón: jabón nau-
+                   seoso ) . Los frutos saponíferos de Sapindus saponaria y
+                   de Phytolacca decandra.
+OCOTE..... ... o-cotl ( otl, camino, cotl, tubo, vara: vara para el camino,
+                 tea) . Laleña resinosa sirve en lugar de vela. (Pinus spec.)
+  152                       DR . BLAS PABLO REKO
+
+
+OITE.......... oxitl, deriv. de ol-xitl? (olli, cosa redonda, xitl, modifica-
+                 ción de xotl, tubérculo : tubérculo redondo). Los frutos ,
+                    redondos , del tamaño de una avellana, son comestibles .
+                    (Brosimum alicastrum . )
+OJOCHE ........ oxo- chin (o-xotl, tubérculo redondo, chin, diminutivo: tu-
+                    bérculos redondos, pequeños) . (Brosimum alicastrum. )
+OLOLUC ........ ol-oliuqui, redondo . Se refiere a las semillas redondas , del
+                  tamaño de lentejas, de Ipomoea sidaefolia, que los brujos
+                  usan para producir un estado semejante al sonambulis .
+                  mo . No contienen un principio narcótico.
+OLOTILLO ..... olote pequeño. La inflorescencia de esta arácea recuerda
+                    la figura de un olote (Spathiphyllum helicoides ) .
+OTATE ........ o-tatl (o-catl ?, caña para el camino. Tal vez se hizo esta
+                 modificación para distinguirla de o-cotl) . Los mexicanos
+                 usaban el otate para báculos de camino . (Arthrostyli-
+                    dium racemosum . )
+OYAMEL ....... oya-metl ( ahuatl, espina fina, metl, cosa blanda: espinas
+                 blandas) . Pinabete (Abies religiosa) . Compárese c-oya-
+                 metl (cuau- oyametl) , puerco , ahua-yo-coyametl (puer-
+                 co de espinas blandas) , huiz- o-coyametl ( puerco de espi-
+                 nas duras) .
+OCOZOTE ...... oco -zotl ( ocotl, pino, zotl, suciedad, jugo : resina de ocote) .
+                 Producto de Liquidambar styracifluum.
+PATAXTE ...... pa- tlachtli (patlahuac, grande, tlachtli ( tlaztli ) , cosa que
+                 revienta : grande cápsula que revienta) . Las grandes cáp-
+                    sulas loculicidas de Luhea speciosa.
+PAPACONI ...... papa- coni, cosa con que se hace cariño. Toda la planta es-
+                  tá cubierta de un velo suave. (Gnaphalium.)
+PAPACHOTE .     pa-pach-otl (pachtli o paztli, musgo, cosa blanda, otl, co-
+                  sa redonda: copo de vello. Modificación de pochotl). Es-
+                  cobillas blandas de Arundinella hispida. (Véase POPOTE. )
+PAPALOMETL.... papalo- metl (pa-palotl, mariposa, metl, maguey: maguey de
+                    mariposa) . Hechtia tehuacana ?
+PATALOLOTL....pa- tololotl (patlahuac, grande, tololotl, bolita: bolita gran-
+                  de) . Los frutos redondos de Pimienta officinalis.
+PAZLE ......... pachtli 6 paztli, musgo. Usnea barbata.
+PICHOL ........ pich olli (pichahuac, delgado, pequeño , olli, cosa redonda ,
+                  pelota: pelotita) . Las parras silvestres. ( Vitis acapulcensis).
+                     DE LOS NOMBRES BOTÁNICOS AZTECAS                    153
+
+
+PIULE ......... pi- yotli (deriv. de pi- yautli, yautli pequeño ; yautli, cosa
+                     nauseosa, narcótica. Compárese tlal-yac, tierra nauseo-
+                     sa, vitriolo verde, sulfato de hierro). Las semillas peque-
+                     ñas de Ipomoea sidaefolia, que usan los"piuleros " para
+                  producir un estado hipnótico.
+PIPIZAHUAC .... pi-pichahuac , delgado : La raíz delgada de Perezia adnata.
+POCHOTE ...... poch- otl ( pochtli, vello, cosa fofa, otl, cosa redonda: copo
+                  de vello, algodón) . La seda vegetal, producto del "po-
+                     chote" (Ceiba pallida) , de la " ceiba " ( Ceiba pentan-
+                     dra) , del " cojón de toro" (Cochlospermum hibiscoides)
+                 y de Ochroma lagopus .
+PONGOLOTE .... pon-colotl (te-pontli, chaparro, col-otl, envoltura, bolsa:
+                     bolsa truncada, chaparra). Las cápsulas, llenas de un ve-
+                     llo, del "cojón de toro." ( Cochlospermum hibiscoides).
+POPOTE ..   ....
+                   popotl (po-potl, deriv. de poch-tli, cosa fofa). Plumeros de
+                    Arundinella hispida.
+POTONXIHUITE..poton-xihuitl (potonqui, hediondo, xihuitl, hierba: hierba
+                     hedionda. Planta que exhala un olor desagradable. ( Ces-
+                     trum lanatum) .
+Pozor......... po-zolli ( pochahuac o pozahuac, fofo , zolli, suciedad: polvo
+                     fofo) . La parte inferior de las hojas está cubierta de un
+                     polvo ligero de cera. (Calathea spec. nov. encontrada
+                    por el autor.)
+QUELITE....... quilitl ( quil-itl, desinencia de quilli, cañón , tubo, tallo. )
+                     Tallos comestibles , verdura en general .
+QUINTONIL .... quil- tonilli ( quil-itl, quelite, tonilli, calentado, tostado :
+                     quelite seco) . Plantas de aspecto seco, "amor seco" de
+                    los géneros Amarantus y Gomphrena.
+SOTOL.             Véase ZoTOL.
+
+SOCOYOL....... xoco-yolli (xococ , agrio, yolli, cascabel, nuez: nuez agria) .
+                  Las " acederas" contienen ácido oxálico. Oxalis, Lotoxа-
+                  lis, Ionoxalis spec. div.
+SÚCHIL ........ xochitl (xotl, tubérculo, botón , chitl, cosa inflada, vejiga :
+                  botón inflado , botón de flor, flor, rosa) . Nombre aplica-
+                    do particularmente al género Plumeria.
+SUCHICAHUE..xochi- cuahuitl (xochitl, flor, rosa, cuahuitl, árbol : palo de
+               rosa) . El " palo de rosa" (Cordia gerascanthus) de flores
+                    muy fragrantes. Todavía superior en fragancia a la ro-
+                    sa, es la flor de Cordia gerascanthoides .
+  154                        DR. BLAS PABLO REKO
+
+
+TACAMACA .... tecoma- yac (te- comatl, cabeza, cabezuela, yac, nauseoso :
+                   cabezuela nauseosa). Las cápsulas resinosas de Bursera
+                   spec. ?
+TAMALOTE        .tamal- otl ( ta-malli, cosa gorda, otl, cosa redonda: tamal
+                   redondo ) . Tal vez se refiere al rizoma de esta Zingibe-
+                                                                       :
+                   rácea (Renealmia jalapensis) .
+TECOMATE .... tecomatl (tetl, cosa dura, piedra, comatl, cazuela: cazuela
+                  dura, tecomate) . Los frutos redondos de este árbol sirven
+                   para cazuelas (Crescentia cujete).
+TECPAN ........ tec-pantli ( teuctli, señor, amo, pantli, bandera: bandera
+                   real). La planta llamada también "bandera española"
+                   (Kniphofia alooide). Planta introducida de Africa del Sur.
+TEHUIZOTE..... teo- izotl ( teotl, dios , izotl, izote, palma loca: palma de
+                 dios) . La base blanca y acucharada de sus hojas sirve
+                   para la preparación de coronas muy originales, en las
+                   fiestas eclesiásticas . ( Nolina spec. div.)
+TEHUIZTLE..... teo- izquitl (teotl, dios, iz- quitl, grano, pepita: pepita de
+                   dios) . Las semillas , negras y perfectamente redondas, sir-
+                   ven para la fabricación de rosarios. "Palo de cuentas."
+                   (Sapindus saponaria) .
+TEJOCOTE ...... te-xocotl (tetl, piedra, cosa dura, xocotl, fruto agrio: fruto
+                   agrio y duro) . Las frutas de Crataegus mexicana.
+TEMPIZLE O
+
+TEMPIZQUIZTLE.tenpil- izquitl? ( ten-pilli, apéndice del labio, una piedra que
+                 se pusieron los indios en el labio inferior; izquitl, pepita:
+                 pepita de tenpilli). La fruta de Bumelia laete-virens .
+TEPEHUAJE .... tepe- huaxin (tepetl, monte, huaxin, huaje: huaje del monte).
+                   Lysiloma acapulcensis .
+TEPEJILOTE .... tepe-xilotl ( tepetl, monte , xilotl, mazorca con su envoltura:
+                   mazorca del monte). El fruto está compuesto a manera
+                   de una mazorca y envuelto en una capa. Es comestible .
+                   (Chamaedorea tepejilote.)
+TEPESINTE .      tep -zintli (tepetl, sierra, monte, zintli, maíz : maíz del mon-
+                   te). Una variedad de maíz. (Zea mays.)
+TETAZO O
+
+TETECHO....... te- tlazolli (tetl, piedra, cabeza, tla-zolli, cosa vieja: cabeza
+                   vieja) . Una clase de órganos, que lleva también el nom-
+                   bre " cabeza de viejo." (Pilocereus tetazo.)
+                    DE LOS NOMBRES BOTÁNICOS AZTECAS                       155
+
+
+TETLATE, TATA-
+TIL O TATATIAN . tle- tlatia (tletl, fuego, tlatia, lo que arde: fuego que arde).
+                   Laplanta contiene un jugo cáustico que abrasa y deja una
+                   mancha negra como la del lápiz infernal. (Comocladia
+                 spec.)
+TEZHUATE ..... texo- atl ( te-xotl, vitriolo azul, atl, agua: agua azul). Plan-
+                ta tintórea. ( Miconia microcarpa, Pleroma spec.)
+TEZONZAPOTE..tezon-zapotl (te-zontli, piedra volcánica, tezonte, za-potl ,
+                    zapote: zapote de color del tezonte). Es el Mamey colo-
+                    rado . ( Vitellaria mammosa. )
+TIANGUISPEPE-
+  FLA ......... tianquiz- pepetla ( tianquiztli, mercado, pe- petla, petate, al-
+                  fombra: alfombra del mercado) . La hierba cubre como
+                  una alfombra el suelo. (Alternathera achyrantha.)
+TLACHICHINOA... tla- chichinoa, lo que tuesta, hace algo áspero. Planta de
+                  hojas muy ásperas. (Tournefortia mexicana.)
+TLACHICÓN..... tla-chiquoni, cosa con que se hace algo áspero, asperón.
+                 Las hojas de este árbol son tan ásperas que sirven para
+                    pulir. ( Curatella americana.)
+TLAHUITOL ... tla- hui- tolli ( tla- huitl, cinabrio, tolli, bolita : bolitas ber-
+                 mejas) . No conozco las semillas de este árbal, si acaso
+                  tienen este color. (Acacia riparia.)
+TLALAYOTE .... tlal- ayotl ( tlalli, tierra, a- yotli, calabaza: calabaza humil-
+                  de) . Los frutos de Gonolobus spec. div. , que parecen
+                    calabacitas .
+TLAPATE ...... tla-patli (tlatl, deriv. de tlach- tli, cosa que revienta, patli,
+                    remedio: remedio del fruto dehiscente) . Las cápsulas
+                    dehiscentes de Datura strammonium .
+TLAPACOYE .... tlapaco- yetl (tlapa-co, lo que se lava, yetl, tabaco: tabaco
+                 que se lava). Nombre interesantísimo en el estudio de los
+                   diversos nombres de tabaco, pues indica que fuera del
+                   tabaco que se lava para su fermentación (Nicotiana me-
+                   xicana, rústica y tal vez otra especie. Nicotiana tabacum
+                    es una especie introducida), hubo untabaco de otra clase,
+                   muy probablemente un tabaco rapé, a semejanza de la
+                   "cohoba" (Cuba?)de las Antillas (Piptadenia peregrina),
+                    cuyas semillas intoxicantes, molidas a polvo, fueron
+                    inhaladas por la nariz por medio de un cañuto. Esta cla-
+                    se de tabaco y la costumbre de su uso, que todavía sub-
+                    siste en Haití, tenían seguramente una propagación muy
+   156                       DR. BLAS PABLO REKO
+
+
+                    extensa en todo el Continente. Puede ser que eu México
+                    usaran otras semillas intoxicantes, por lo menos, el nom-
+                     bre del tabaco " mije" (mi-xitl, muchos tubérculos) sugie-
+                     re mucho una legumbre en forma de collar, como la de
+                     Sophora, cuyas semillas, efectivamente, son intoxicantes.
+TOLOACHE......... toloa- chin (toloa , el que se dobla, inclina, chin , sufijo de
+                     reverencia: flor péndula). Originalmente la flor que lla-
+                    man hoy " Floripondio" (Datura suaveolens) . Hoy se
+                   usa para Datura strammonium.
+TOLONCHICHI .... tolon - chichic (tolonqui , redondo, chichic, amargo: baya
+                   amarga) . Las frutas amargas de Solanum nigrum.
+TOMATE........ to- matl (tolli, bolita, matl, deriv. de machtli, cosa blanda,
+                   pastosa: bolita pastosa) . Fruto de div. spec. de Lycoper-
+                    sicum, Physalis y otras solanáceas. Hoy día: Lycoper-
+                     sicum esculentum .
+TOTOLOTL ..... to- tol- otl, bolita. La planta tiene frutos de la forma de bo-
+                    litas. (Phyllanthus distichus .) " Totoloque " se llamaba
+                    el juego de bolitos de los aztecas.
+TOPOZAN O TE-
+  POZAN ...... topo-zontli (topoch- tic, blanco, zontli, cabello , hoja: hoja
+                blanca). El lado inferior de sus hojas es de un color blan-
+                quecino . (Buddlea americana.)
+TOTOPOZTLE..totopochtic, semejante al totopoztle , blanco como totopoztle .
+                    Arbol cubierto de flores blancas. (Miconia microcarpa. )
+TULASÚCHIL ... tol a-xochiti ( tolli, tubérculo, bola, atl , agua, xochitl, flor :
+                    flor cerca del agua, con tubérculo). Se refiere al rizoma
+                    de Stenolobium stans .
+TULE.......... tolli, cosa redonda, bolita. Se refiere al tubérculo comesti-
+                 ble, del tamaño de una avellana, de Cyperus edulis .
+XÍCAMA........ Véase JíCAMA.
+XICAMITL ..      Véase JICAMITE .
+XIQUITE ..... Véase JIQUELITE .
+YOLOSÚCHIL ... yolo- xochitl (yol- otl, corazón , xochitl, flor : flor de corazón) .
+                 La flor, antes de abrirse, tiene la figura de un corazón .
+                 (Talauma, Magnolia spec. div.)
+YOYOTL........ yo-yotli (modificación de yau-yautli , muy narcótico) . Las
+                    semillas sumamente venenosas de Thevetia yecotli, que
+                    los indios traían colgadas de las piernas para hacer ruido
+                    unas con otras .
+                      DE LOS NOMBRES BOTÁNICOS AZTECAS                          157
+
+
+ZACATE ........ za- catl (za- zalic, pegajoso, catl, caña: caña pegajosa) . El
+                     nombre se refiere a las aristas hispidas de muchas gramí-
+                    neas .
+ZACATLAZCALE.zaca - tla-acalli (zacatl, zacate , tla-xcalli , pan : pan de zacate).
+               El color de esta planta sin hojas se expende en forma de
+                     panecillos. ( Cuscuta americana . )
+ZAZAMIL ....... za-za-milli (za- zalic, glutinoso, milli, baya : baya glutinosa).
+                     Las bayas glutinosas de Cordia alba .
+ZAUCLE....... zauc- tli, pegamento. De los pseudo-bulbos de algunas or-
+                   quídeas se saca un pegamento . ( Cranichis, Bletia spec.)
+ZANATE ........ za- natl (za- zalic, pegajoso, natl, carne : carne pegajosa ,
+                     piojo pegadizo; fig., una molestia que no se puede quitar) .
+                     Los indios aborrecen mucho este palo, que además de no
+                     servir para nada, sirve de escondrijo a animales nocivos .
+                     (Verbenacea ? )
+ZOMPANTLI.... zon- pantli (zontli , cabeza, pantli, hilera: hilera de cráneos) .
+                La legumbre imita la forma de un zompantli. ( Erythri-
+ZONGOLICA ,
+                naspec.)
+SANGOLICA .... zon- coliuqui ( zontli , hoja, coliuqui, torcido: hoja tortuosa) .
+                     Se refiere a la forma de las hojas de este árbol. ( Astro-
+                     nium zongolica, spec. nov. descubierta para la ciencia
+                     por el autor. )*
+ZOPILOTE ...... zopilo- zontecoma- cuahuitl (zopilotl, zopilote , zon-tecomatl,
+                     cabeza, cuahuitl, árbol: árbol de la cabeza del zopilote) .
+                     Se entiende este nombre sólo viendo los frutos grandes
+                     con sus pedúnculos gruesos y encorvados en la fronda del
+                     palo. A cierta distancia parecen cabezas de pájaros
+                     grandes . ( Swietenia mahagoni . )
+ZOTOL ....... zo- tolli (zoyatl, palma, tolli, tule: tule de palma). La plan-
+                     ta presenta un aspecto intermedio entre palma y tule.
+ZOYAMICHE,
+                     (Dasylirion . )
+   YAVICHE .... zoya- huiztli (zoyatl, palma, huizt- ic, espinoso: palma espi-
+                  nosa. Hermosa palma de abanico . Acanthorrhiza aculeata.)
+ZOYATL........ zo- yatl ( deriv . de za-huatl, piñón pegajoso ) . Se refiere ori-
+                 ginalmente a los dátiles de la palma Brahea dulcis . Com-
+                 párese IZHUATL ( iz- zoatl, palma de fibra . )
+    *) Me vi obligado a protestar enérgicamente contra los procedimientos poco escru-
+pulosos d 1 Sr. C. Conzetti, y tengo que insistir en el retiro del nombre específico, que
+dió el Sr. S. F. Blake a esta planta (Astronium conzattii. ) Igual queja tengo contra
+las nuevas especies, encontradas por el autor, de Sophora, Brosimum y Pithecolobium

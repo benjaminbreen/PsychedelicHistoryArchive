@@ -1,45 +1,984 @@
-[Bibliographic verification capture, not the article text — this source is external-only.
-The Journal of Nervous and Mental Disease/AJP full-text pages (psychiatryonline.org,
-PubMed) returned Cloudflare/cookie-gate blocks to automated fetch (HTTP 403, confirmed
-by both curl and WebFetch), so no exact-text quotation was obtainable and none is used
-in the draft record. Citation fields below are independently confirmed via the Crossref
-API, a structured bibliographic source, not a paraphrase.]
+[Full text of Max Rinkel, H. Jackson DeShon, Robert W. Hyde, and Harry C. Solomon,
+"Experimental Schizophrenia-Like Symptoms," American Journal of Psychiatry 108, no. 8
+(February 1952): 572-578, as published. Fetched via curl from the Internet Archive's OCR
+of the scanned issue (sim_american-journal-of-psychiatry_1952-02_108_8), and cross-checked
+against the archive.org page images for the article's leaves (n25-n31) to correct OCR
+errors, since the raw OCR of this two-column layout is heavily garbled in places
+(interleaved columns, misread ligatures, running heads mid-paragraph). The cleaned
+transcript used in the record's `transcript` field was built by reading those page images
+directly; this file preserves the underlying OCR text as fetched.
 
-Source fetched: https://api.crossref.org/works/10.1176/ajp.108.8.572
-Fetched: 2026-08-15
-Method: curl -sL (HTTP 200), raw JSON response
+Source: https://archive.org/download/sim_american-journal-of-psychiatry_1952-02_108_8/sim_american-journal-of-psychiatry_1952-02_108_8_djvu.txt
+Fetched: 2026-08-20 via curl -sL
+Page images: https://archive.org/download/sim_american-journal-of-psychiatry_1952-02_108_8/page/n25_w800.jpg through n31_w800.jpg]
 
-Relevant fields from the Crossref work record:
-  DOI: 10.1176/ajp.108.8.572
-  type: journal-article
-  title: EXPERIMENTAL SCHIZOPHRENIA-LIKE SYMPTOMS
-  container-title: American Journal of Psychiatry
-  short-container-title: AJP
-  publisher: American Psychiatric Association Publishing
-  volume: 108
-  issue: 8
-  page: 572-578
-  published-print: 1952-02
-  authors:
-    MAX RINKEL — The Department of Psychiatry, Harvard Medical School, and the Boston
-      Psychopathic Hospital
-    H. JACKSON DESHON — The Department of Psychiatry, Harvard Medical School, and the
-      Boston Psychopathic Hospital
-    ROBERT W. HYDE — The Department of Psychiatry, Harvard Medical School, and the
-      Boston Psychopathic Hospital
-    HARRY C. SOLOMON — The Department of Psychiatry, Harvard Medical School, and the
-      Boston Psychopathic Hospital
-  is-referenced-by-count: 79
 
-Attempted full-text access points (all blocked to automated fetch):
-  https://pubmed.ncbi.nlm.nih.gov/14903182/ — HTTP 403 (cookie-consent gate)
-  https://psychiatryonline.org/doi/10.1176/ajp.108.8.572 — HTTP 403 (Cloudflare)
 
-Secondary confirmation (WebSearch snippet, not independently fetched): the study
-administered small doses of d-LSD tartrate to normal subjects aged 19-48 and to
-schizophrenic, depressive, and paranoid inpatients at Boston Psychopathic Hospital, and
-reported that the induced symptoms — disturbances of thought and speech, altered affect,
-perceptual change, hallucinations, delusions, depersonalization — resembled the clinical
-picture of schizophrenia. This is one of the earliest American "model psychosis" LSD
-papers and the Rinkel/Hyde group's first major publication in the Boston Psychopathic
-Hospital LSD program.
+EXPERIMENTAL SCHIZOPHRENIA-LIKE SYMPTOMS ' 
+MAX RINKEL, M.D., H. JACKSON DeSHON, M.D., ROBERT W. HYDE, M.D., 
+
+
+AND 
+
+
+HARRY C. SOLOMON, M.D. 
+
+
+Boston, 
+
+
+The nature and cause of the major psy 
+choses are still unknown. Repeated attempts 
+have been made to reproduce experimentally 
+psychotic symptoms in the hope to uncover 
+their psycho-physiological relationship. In 
+1886, Schmiedeberg succeeded in producing 
+cataleptic phenomena in rabbits by the use 
+of ethyl-urethan. In 1904, Peters(11) dis 
+covered the cataleptic action of bulbocap- 
+nine; Baruk and de Jong(1t, 9, 10) investi- 
+gated this, as well as many related chemicals, 
+more extensively and demonstrated the cata- 
+tonic effect upon man and animals. With the 
+discovery of new chemicals and chemical 
+compounds, new tools are made available to 
+the psychiatrist to investigate psychoses ex- 
+perimentally, and a new branch, experimen- 
+tal psychiatry, is emerging. The experimental 
+psychiatrist has the advantage of knowing 
+the one factor, in the causation of psychotic 
+symptoms, the chemical that was adminis- 
+tered to the patient and started the chain of 
+reactions. The psychopathological genesis, 
+however, of the psychotic phenomena will 
+best be investigated by methods of the inter- 
+
+
+1 Read at the 107th annual meeting of The Ameri- 
+can Psychiatric Association, Cincinnati, Ohio, May 
+7-11, 1981. 
+
+From the Department of Psychiatry, Harvard 
+Medical School, and the Boston Psychopathic Hos 
+pital; Dr. Harry C. Solomon, Director. 
+
+Aided by a grant from the McCurdy Company, 
+Rochester, New York. 
+
+
+COOH 
+
+
+CH, 
+
+
+sycl latry Of 
+xperimentally at present 
+alkaloid 
+known in its crude form as peyote for hun- 
+
+
+dreds of years, though only in the past few 
+
+
+are outstanding: mescaline, an 
+
+
+years chemically synthetized, and d-lysergic 
+tartrate (L.S.D.), a mem- 
+ber of the ergot group. Although these chem- 
+different in 
+
+
+acid diethylamide 
+
+
+their chemical 
+structure, in their effect upon normal subjects 
+and psychotic patients they show i 
+
+
+1 
+cais are quite 
+
+
+great simi- 
+larities with reg 
+
+chotic symptoms. The schizogenic effect of 
+mescaline has been reported in a number of 
+recently 
+
+
+articies, most 
+
+
+mental and 
+Paul H. Hoch(8). Our 
+
+
+essentially with the description of the 
+
+
+ot d-lysergic acid diethylamide _ tartrate 
+(L.S.D.) upe individuals 
+
+
+who, subsequent to the administration of this 
+
+
+effect 
+and temale 
+
+cnemical, respont 
+
+
+led with the production of 
+psychotic-schizophrenic-like phenomena. 
+
+
+Chemistry and Pharmacology, 
+
+
+, which stands for the German Ly- 
+Didthylamid, is the abbreviation 
+
+used for the diethylamid tartrate of lysergic 
+according to A. Stoll, A. Hof- 
+mann, and F. Troxler(17), is diastereomer 
+} 
+
+
+acid which, 
+
+
+ut not structurally isomeric with isolysergic 
+
+
+acid as seen in the accompanying formula. 
+
+
+Hooc H 
+
+
+: 
+\ 
+\ 
+| 
+paper is ncerned 
+H 
+\ \ 
+C—E ( CH; 
+HC N—CH H¢ N—CH 
+C——-CH CH 
+Cc CH, ( CH, 
+HC H¢ ( 
+CH CH NH 
+S72 
+
+
+1952 M. RINKEL, H. J. 
+
+
+DESHON, R. W. HYDE AND H. C. SOLOMON 573 
+
+
+It is water soluble and administered orally. 
+Pharmacologically L.S.D. belongs in the 
+group of the ergonovine substances. It has 
+a definite effect upon the in situ uterus of the 
+rabbit, and causes peculiar states of motor 
+rigidity similar to the catatonic phenomena 
+in the dog and cat as seen with bulbocapnine 
+(19). In our own experiments we noted an 
+especially strong physiological reaction in a 
+29-year-old very sensitive white girl who was 
+menstruating at the time. She complained of 
+most violent abdominal constrictions, which 
+may have been caused by vehement uterine 
+contractions. The peculiar psychological ef- 
+fect, seen as excitation in experimental ani- 
+mals, was first observed and described by the 
+chemist, A. Hofmann. In his laboratory 
+notes of April 4, 1943, he remarked that, 
+while working with L.S.D., he noticed in 
+himself a peculiar restlessness associated 
+with slight dizziness. He had to interrupt 
+his work and went home to rest. While at 
+home, he felt as if intoxicated, a condition 
+characterized by an extremely stimulated 
+phantasy. After darkening his room, for the 
+daylight bothered him very much, he had a 
+most wonderful experience. Phantastic im- 
+ages of most extraordinary plasticity and in- 
+tensive kaleidoscopic coloring passed before 
+him. This state of intoxication lasted about 
+2 hours. 
+
+
+Literature 
+
+
+Following this discovery a number of au- 
+thors investigated the effect of L.S.D. in 
+self-experiments, on normal subjects, and on 
+psychotics. W. A. Stoll(18), who first syste- 
+matically investigated the psychological phe- 
+nomena of L.S.D., confirmed Hofmann’s ex- 
+periences and reported as the most striking 
+psychological findings disturbances in per- 
+ception that led to hallucinations, acceleration 
+of thinking, slight dimming of consciousness, 
+but maintenance of judgment. He regarded 
+the psychotic condition as an acute exogenous 
+reaction type and pathologically as dienceph- 
+alosis. Condreau(4) confirmed most of 
+
+
+Stoll’s findings, but reported that in his ex- 
+periments the subjects’ consciousness was not 
+disturbed aside from the feeling of intoxica- 
+tion. He added that the subjects maintained 
+their capacity of self-criticism, but showed 
+increased distractibility and were less able 
+
+
+to concentrate. The basic theme of thought 
+remained unchanged, and the changes in feel- 
+ing tone he felt to be merely an intensifica- 
+tion of the previous underlying mood. He 
+added as a new observation forced laughing 
+and one instance of athetoid movements as 
+suggestive of involvement of the diencepha- 
+lon, thus contributing to W. A. Stoll’s origi- 
+nal conception. A. M. Becker(2) essentially 
+confirmed the observations of Stoll and Hof- 
+mann and emphasized the astounding pro- 
+duction of psychosis-like syndromes follow- 
+ing the administration of mere “traces” of a 
+chemical substance. He believes the psycho- 
+logical manifestations are the result of two 
+different basic disturbances: affectivity and 
+impulsivity on the one hand, and intention- 
+ality on the other. The most striking con- 
+trasts among his observations were manic- 
+hyperkinetic and inhibited. depersonalized 
+manifestations. In contrast to Stoll, who 
+termed L.S.D. a “Phantasticum,” Becker 
+suggested the designation of “Psychoticum” 
+for L.S.D. Umberto de Giacomo(6, 7), of 
+Italy, in his experiments with rather large 
+amounts of L.S.D. (300 to 500 gamma) ob- 
+served in his patients catatonic-like phenom- 
+ena, which were similar to those produced 
+by bulbocapnine. M. Rinkel(12) and Victor 
+H. Vogel(18) reported their experiences 
+with diethylamide of lysergic acid, adding 
+as new observations paranoic trends and, in 
+contrast to previous publications, slowing of 
+thinking and poverty of thought. Bush and 
+Johnson(3) used L.S.D. as an aid in psy- 
+chotherapy, and reported that their psychotic 
+patients responded with an increase in ac- 
+tivity and greater verbalization of psychopa- 
+thology. They noted occasional short periods 
+of confusion and disorientation, and occa- 
+sional transitory visual hallucinations. Most 
+of their patients showed some degree of eu- 
+phoria. 
+
+
+Method and Procedure 
+
+
+In our own experiments, L.S.D. was given 
+17 times to 15 normal adult volunteers, stu- 
+dents, nurses, and doctors, in the 19-48 age 
+range, and, as freshly prepared solution, to 
+some psychotics: dementia praecox and 
+manic-depressive, depressive type. The ob- 
+servations on the psychotic patients are still 
+in progress and will be published later. The 
+
+
+: 
+— 
+
+ae 
+4 
+
+‘ 
+
+} 
+
+Jin 
+
+3 
+
+i 
+2 
+
+
+574 EXPERIMENTAL SCHIZOPHRENIA-LIKE SYMPTOMS [Feb 
+
+
+normal subjects, who were kept without 
+breakfast, received L.S.D. in doses ranging 
+irom 20 to go gamma p. ©0., in most cases 
+one gamma per kilogram body weight, while 
+the psychotics were given 3 gamma per kilo- 
+gram body weight. This increased dosage for 
+psychotics was chosen on the basis of the 
+unanimous reports in the literature that psy- 
+chotic patients were particularly resistant to 
+the effect of L.S.D. The subjects were kept 
+under continuous observation by at least one 
+of the authors for the first 5 hours and, on 
+occasions, tape recordings of the subject's 
+productions were made. The subjects re- 
+mained under observation the same day at 
+the hospital, and were seen again the follow- 
+ing day. The main emphasis in our observa- 
+tions was on the clinical psychiatric picture. 
+Routine neurological and circulatory system 
+examinations were not done, but signs oc- 
+curring in these areas were noted, if ob- 
+served, In g of the experiments, electroen- 
+cephalograms at or near 2 hours after L.S.D. 
+were taken, and Rorschach tests were given 
+to 5 normal subjects and concrete-abstract 
+thinking tests to 2 subjects during the height 
+of the L.S.D. reaction. Controls of EEGs 
+and psychological tests were done while the 
+subjects were in their normal mental state. 
+
+
+Results 
+
+
+1. Disturbances of Thought and Speech. 
+The most prominent psychological changes 
+observed were those in thinking and speech. 
+They were present in all our experiments. 
+There was no cloudiness of consciousness, 
+no intellectual weakness, but most frequently 
+we observed difficulty in the power of ex- 
+pression. The subjects became more and 
+more slowed down, poverty of thought be- 
+came apparent, and the flow of speech be- 
+came increasingly diminished and blocked. 
+(me subject, a middle-aged depressed pa- 
+tient, went into a complete stupor. In another 
+instance occurred unwillingness to speak, a 
+symptom similar to the negativism of the 
+schizophrenic. Hesitancy, indecision, and im- 
+pairment of abstract thinking were fre 
+quently present; also looseness of thought 
+and actual disconnection with increased dis- 
+tractibility were common observations. As 
+in schizophrenic patients, some of the sub- 
+
+
+spontaneity, irrelevance, pedantic imitation, 
+and subjectively aut tic speech. In one in 
+stance, we had the impression of the forma 
+tio neologism .cceleration of thought 
+with fligl t of idea ciated with rhyming 
+and punning; garrulity and loquacity of the 
+hypomat type were seen in a cyclothymik 
+
+
+medical student within 45 minutes after the 
+
+
+administration of L.S.D. In general, the ef- 
+
+
+fects appeared within 30-45 minutes after 
+the oral administration of L.S.D., and dis- 
+appeared gradually after 3-4 hours, 
+
+A tand A 1.—Clear-cut blunting 
+ot aftect nd Spi ness, as often seen 
+in schizophrenic patients, were outstanding 
+These symptoms frequently led to feelings 
+
+
+of indifference and unreality with disturb- 
+
+
+ances in body image Che subjects experi 
+enced hostilit nd resentment, and on rare 
+occasions ambivalence. The phenomena oc- 
+curred about 15 minutes after the adminis- 
+
+
+tration of L.S.D.; feelings of indifference 
+and blunting tended to be protracted; sus- 
+piciousness, hostility, and resentment were 
+always more transient. Changes in mood 
+were twofold: euphoria and depression, 
+which occurred in about equal number. Eu- 
+phoria was either of the shallow elation type 
+with silliness, as seen in the hebephrenic, or, 
+in a cyclothymic subject, of the jovial and 
+infectious type, as found in hypomanic and 
+manic states. Depression was combined with 
+dependency, indecision, insecurity, passivity, 
+and feelings of being “lost.’”’ In no instance 
+did we observe the happy and dreamy feeling 
+of ecstasy as it has been described by other 
+10 experimented with L.S.D., mes- 
+caline, and other similar chemicals 
+Usually within 40 min- 
+utes after the intake of L.S.D. disturb- 
+I 
+
+
+ANCES ¢ f percepti n were observed. hose of 
+
+
+visual perception were most common and 
+] isional type. The subjects 
+would see rippling or wavy lines on the wall 
+that might evolve into geometrical pattern, 
+or be associated with color such as yellow, 
+orange, or pink. In some instances, subjects 
+aw a thermostat on the wall as a crucifix 
+
+
+but fully realized that the experience was an 
+
+
+illusion. None of the subjects, however, had 
+the feeling of seeing si inething of extraor- 
+
+
+jects exhibited such phenomena as lack of : 
+| 
+Ne 
+3 
+| 
+_ dinary beauty, as it was stated in early re- S 
+
+
+1952] M. RINKEL, H. J. DESHON, R. 
+
+
+W. HYDE AND H. C. SOLOMON 
+
+
+ports on L.S.D., or as it may occur under 
+the influence of mescaline. 
+
+fre- 
+quently ; the subjects experiencing a metallic 
+or “funny” taste or heavy tongue. 
+
+
+Gustatory disturbances occurred 
+
+
+Auditory perception was changed only in 
+a few instances. The subject would hear a 
+sound that was either near or distant, and in 
+
+
+one instance of a depressed patient, the noise 
+of a typewriter in an adjoining room was per- 
+ceived as music, seemingly beautiful music. 
+
+
+The sense of time was disturbed in 11 out 
+of 17 experiments. It was characterized by 
+the feeling of time accelerated or retarded. 
+
+IV. Hallucinations and Delusions.—Dis- 
+turbarices in perception, in a complex way, 
+often lead to hallucinations and delusions. 
+A vivid phantasy, a pseudohallucination or 
+illusion, in the process of mental dissociation, 
+may ultimately appear as a real object out- 
+side the subject and thus constitute a real 
+hallucination. By a similar process, changes 
+in auditory perception, combined with exist- 
+ing suspiciousness, may lead to ideas of ref- 
+erence and delusions of persecution. It may 
+be stated that hallucinations, predominant 
+under the influence of most phantastica, sub- 
+sequent to the injection o1 L.S.D. were 
+rather meager and never showed the quality 
+of an extraordinarily beautiful or threaten- 
+ing experience. The occasional visual hallu- 
+cinations consisted mainly of formed images, 
+which occasionally were preceded by crude 
+flashes of light. Perhaps the above-men- 
+tioned disturbances of taste perception should 
+be mentioned here as gustatory hallucina- 
+tions. In only one instance we noticed an 
+auditory hallucination, which consisted in 
+hearing bells, although there were none any- 
+where around. Haptic hallucinations were 
+experienced by two subjects. One male sub- 
+ject had the rather vivid feeling of his trou- 
+sers being wet from urine, and one female 
+schizoid patient was convinced that she lost 
+urine and wet her slacks and the bed. She 
+actually, later on, did wet the bed, and it may 
+be possible that her hallucination was stimu- 
+lated by autonomic excitation of the bladder 
+mechanism. Morbid ideas were common; 
+they included ideas of reference and ideas 
+of influence. One female volunteer became 
+quite paranoic and was still disturbed the fol- 
+lowing day. Major delusions, ideas of gran- 
+
+
+deur or persecution, as seen in the delusional 
+states of the paranoic or paraphrenic, were 
+not observed. That may be due, perhaps, to 
+the fact that in our experiments on normal 
+volunteers we used only relatively small 
+amounts of L.S.D. 
+
+V. Depersonalization.—Alteration of per- 
+sonality occurred rather frequently. Those 
+changes consisted mainly in the subject’s feel- 
+ing that his legs were either extraordinarily 
+long or heavy; in one psychotic patient the 
+feeling was that the leg between ankle and 
+hip had disappeared entirely. Most common 
+was the feeling of unreality as regard to the 
+subject, himself, and the outer world. Though 
+these phenomena were of minor magnitude, 
+they, too, indicate symptoms particularly ob- 
+served in the schizophrenic patient. In no 
+instance were we able to elicit experiences 
+of synesthesias, as frequently seen in mes- 
+caline intoxications. 
+
+VI. Behavior—The most and _ striking 
+change consisted in underactivity, associated 
+with lack of spontaneity and initiative. One 
+schizoid-depressed patient went into a state 
+of catatonia; another one became stuporous. 
+A female schizophrenic patient, who had re- 
+ceived 3 gamma/kg. body weight of L.S.D., 
+became agitated ; after an initial state of in- 
+ertia, she suddenly stood up and went through 
+many and various motions. She knelt down, 
+kissing the wall, the floor, the examining 
+table, and progressively became more and 
+more excited. She tore off her clothes and 
+became noisy to such an extent that the ex- 
+periment had to be terminated by the intra- 
+venous injection of 0.5 g. of sodium amytal. 
+In our normal subjects, overactivity or in- 
+appropriate behavior was rarely noted, but 
+psychomotor manifestations, such as smiling, 
+giggling, and laughing, more often appropri- 
+ate than inappropriate, were frequently ob- 
+served. This was particularly so in a student 
+of cyclothymic personality make-up. 
+
+VIL. Jntellect—In our normal subjects, 
+intellectual functions were never disturbed. 
+The subjects were aware of what they were 
+doing at every moment of the experiment. 
+Their memory also never became disturbed ; 
+each one was able to give, in a written re- 
+port, a description of all the experiences he 
+went through. Also, the psychotic patients 
+did not show any particular memory defect. 
+
+
+3 
+575 
+fe 
+é 
+j 
+| 
+3 
+* 
+Hing a 
+
+
+79 EXPERIMENTAL SCHIZO! 
+
+
+Patients whose verbal expression becany 
+slowed down and finally completely cease 
+as in the case of stupor or catatonia, were 
+able the following morning, under sodium 
+amytal or d-desoxy-ephedrine, to recall their 
+thoughts or personal experiences of the day 
+before under the influence of L.S.D. 
+
+VILL. Autonomic Nervous System—All 
+normal subjects and also the psychotic pa- 
+tients had numerous subjective complaints 
+and symptoms. Since they mostly belong in 
+the group of disturbances of the autonomic 
+nervous system, they are best described here. 
+The most common symptom was change in 
+appetite, which more often was decreased, 
+and associated with nausea, than increased. 
+Complaints of headiness, giddiness, faint- 
+ness, tremulousness, and shaking were fre- 
+quently expressed. The subjects complained 
+of chilliness and coolness of whole or part of 
+the body, lump and “funny” feelings in ab- 
+domen, constriction with oppression in chest 
+and precordial discomfort, violent cramps 
+and constriction in the abdomen in a pa- 
+tient who just happened to menstruate. Ob- 
+jectively observed were flushing, sweating, 
+shivering, and shivering with goosepimples. 
+Tachypnoea, salivation, pallor, sighing, and 
+urgency of micturation were scattered ob- 
+servations. Changes in pulse rate and blood 
+pressure were of minor magnitude and ob- 
+served only occasionally. Involuntary smil- 
+ing, giggling, or laughing were considered in 
+the nature of “risus sardonicus’” where the 
+subject described these phenomena as occur- 
+ring without or against his will. One subject 
+stated that in a smile he felt as if his facial 
+muscles were like plastic wax being moved 
+by some inexorable force. Pupils were often 
+maximally dilated. 
+
+Gross disturbances of the cerebrospinal 
+nervous system were not observed, except in 
+some instances “dysarthria,” which consisted 
+of a transient stumbling over words and was 
+never marked. 
+
+IX. were 
+taken in 9 experiments at about the height 
+of L.S.D. reaction, and compared with the 
+I.EG of the same subject in his normal state. 
+In general, the EEG changes were only 
+
+
+slight. Principal changes occurred in the 
+alpha rhythm, which was characteristically 
+increased in rate from 1-3 cycles per second. 
+
+
+HRENIA-LIKE SYMPTOMS [Feb 
+
+
+n one case, an individual who was very r 
+laxed, a slowing of about 2 cycles per second 
+was observed. Hyperventilation showed a 
+diminished responsiveness and may be due 
+to the subject’s reduced cooperation. 
+
+Psychological Tests. 
+
+A. Rorschach.—Controlled Rorschach tests 
+were given to 5 subjects at the height of 
+L..5.D. reaction. All tests given during 
+L..5.D. reaction showed abnormalities prin- 
+
+
+cipally of the schizophrenic or paranoic 
+
+
+type. There was noticed autistic thinking 
+with decreased organization, contamination 
+responses, and lack of logical thinking, also 
+
+
+negativism and diminished emotional inhi- 
+bition indicating anxiety, depression, and ag- 
+gression. One Rorschach test revealed a 
+moderately schizophrenic picture with au- 
+tistic thinking and withdrawal. 
+
+B. Concrete-Abstract Thinking.—The tests 
+consisted in employing proverbs and aphor- 
+isms and recording the subject’s reaction. On 
+the wh le, the results, especially the wide 
+range of responses in abstraction and over- 
+generalized and tangential thinking, were 
+similar to those obtained in schizophrenic 
+patients. 
+
+
+DISCUSSION 
+
+
+The common denominator in all our ex- 
+periments with L.S.D. on normal subjects is 
+a profound transformation and alteration of 
+the psychic state of the individual, as it is 
+1 common factor in all psychotic states. The 
+various mental phenomena that we have re- 
+ported were brought about by mere traces 
+(1:1,000,000g/kg. weight) of a chemical, 
+d-lysergic acid diethylamide tartrate. The 
+mental phenomena show similarities to symp- 
+toms that occur in actual psychoses. We 
+noticed, predominantly, changes similar to 
+those seen in schizophrenic patients. The 
+subjects exhibited preeminently difficulties 
+in thinking, which became retarded, blocked, 
+autistic, and disconnected. The affect was 
+shallow or there was clear-cut blunting. 
+leelings of indifference and unreality with 
+suspiciousness, hostility, and resentment also 
+approximated schizophrenic phenomena. 
+Hallucinations and delusional disturbances 
+though present were much less prominent or 
+striking, but together with the manifestation 
+
+
+. 
+> 
+o 
+| 
+
+
+1952] M. 
+
+
+RINKEL, H. J. 
+
+
+DESHON, R. W. HYDE AND H. C. 
+
+
+SOLOMON 577 
+
+
+of depersonalization were most reminiscent 
+of schizophrenic dissociation. 
+
+To a much lesser degree were there simi- 
+larities to the confusional states. Gross cloud- 
+ing of consciousness was absent in our ex- 
+periments, but illusional misinterpretations 
+were not infrequently observed. 
+
+A few cases showed similarities to the 
+manic-depressive states, with changes in 
+mood of euphoria or depression. However, 
+only in one cyclothymic-pyknic subject the 
+intensity was of a hypomanic or manic state. 
+
+Delusions of grandiose or persecutory na- 
+ture, familiar in the paranoic psychoses, were 
+not seen. 
+
+We mention the similarities of the ex- 
+perimental phenomena to actual psychotic 
+states in order to caution against fallacies 
+that may occur in the interpretation of ex- 
+perimental psychotic disturbances. The same 
+caution that is warranted in the application 
+of an animal experiment to a pathological 
+condition in man is needed in the application 
+of the psychiatric experiment to natural psy- 
+chosis. Our experiments have brought to 
+light the fact that, in a short space of time, 
+under the influence of a mere trace of a 
+chemical agent in normal subjects, a variety 
+of mental symptoms occur that are similar 
+to natural psychoses, and that in psychotic 
+patients an accentuation of existing, or elici- 
+tation of latent, schizophrenic phenomena 
+takes place. It may be possible to assume that 
+fundamentally the mechanism of origin of 
+natural and experimental psychotic phenom- 
+ena is a similar one: a chemical agent that 
+pathologically stimulates selectively various 
+higher, especially perceptive, brain centers 
+with the result of hallucinatory and delu- 
+sional experiences. H. J. DeShon, M. Rinkel, 
+and H. C. Solomon(5) have already pointed 
+out that the clinical effects of L.S.D. imply 
+such an involvement of the higher and highest 
+centers of the central nervous system, and 
+perhaps of lower levels of the nervous system 
+as well, 
+
+Many authors assume that chemical endog- 
+enous substances are the cause of schizo- 
+phrenic psychosis. We must bear in mind 
+that, in addition to d-lysergic acid, a great 
+variety of seemingly unrelated chemical 
+substances are capable of producing transi- 
+
+
+tory psychotic-like symptoms. Although ob- 
+servations are still too few to allow the for- 
+mulation of a well-founded scientific theory 
+as to the chemical origination of psychotic 
+symptoms, we strongly believe that this 
+branch of experimental psychiatry is pro- 
+gressing in the right direction, and may 
+some day provide an answer to the most per- 
+plexing problems in psychiatry. 
+
+
+SUMMARY 
+
+
+1. The effects of minute amounts of d- 
+lysergic acid diethylamide tartrate (L.S.D.) 
+on normal subjects, with an age range of 
+19-48 years, and some psychotic patients of 
+the schizophrenic, depressive, and paranoic 
+type are reported. 
+
+2. Psychotic phenomena and _ alterations 
+of the autonomic nervous system were ob- 
+served. The psychotic phenomena were pre- 
+dominantly schizophrenia-like symptoms that 
+were manifested in disturbances of thought 
+and speech; changes in affect and mood; 
+perception ; production of hallucinations and 
+delusions ; depersonalization and changes in 
+behavior. The basic intelligence was not 
+reduced. 
+
+3. Electroencephalographic examinations 
+at the height of the L.S.D. reaction revealed 
+only slight changes, principally increased 
+alpha rhythm, except in one case where there 
+occurred a slowing of about 2 cycles per 
+second. 
+
+4. Rorschach tests showed abnormalities 
+principally of the schizophrenic or paranoic 
+type. Concrete-abstract thinking tests also, 
+on the whole, showed responses similar to 
+those obtained in schizophrenic patients. 
+
+5. No scientific theory for the origination 
+of the natural psychotic phenomena or psy- 
+choses is being advanced, but the belief is 
+expressed that experimental psychiatry pro- 
+gresses in the right direction. 
+
+
+Credits 
+
+
+Our preparation of L.S.D. was supplied, 
+in ampules containing 1 mg. substance, by 
+courtesy of Professor E. Rothlin, Director 
+of the Pharmacological Laboratories of San- 
+doz Chemical Company, Inc., Basel, Switzer- 
+land. 
+
+
+7 
+| 
+% 
+| 
+; i 
+: 
+f 
+
+
+BIBLIOGRAPHY 
+
+
+1. Baruk, H. Psychiatrie. Medicale, Physiol 
+gique et Experimental. Masson et Cie. Paris (VI) 
+1938 
+
+2. Becker, A. M. Zar Psyche path logie der 
+sergsaure-Diathylamid-wirkung (On the p 
+pathology of the effect of lysergic acid diethyla 
+mide). Wien. Ztschr. Nervenh. 2: 402, 1 
+
+3. Bush, Anthony K., and Johnson, Warren (¢ 
+L.S.D. 25 as an aid in psychotherapy. Dis. Nerv 
+Syst. 11: 241, Aug. 1950 
+
+4. Condrau, Gion. Klinishche Erfahrungen ar 
+(seisteskranken mit Lysergsaure-Diathylamid (Clin 
+ical experiences in mental patients with lysergic 
+acid-diethylamide ) Fjnar Munksgaard, Copen 
+hagen, 24:9, 
+
+5. DeShon, H. J., et al. Mental changes experi 
+mentally produced by L.S.D. Unpublished artick 
+
+6. Giacomo de, U Données biologiques sur lac 
+tion psychopharmacologique de la diéthylamide de 
+acide lysergique (Biological data on the p 
+pathological action of Lysergic acid diethylamide ) 
+Paper read at the Symposium on “Chimie cerebrale” 
+of the International Congress of Psychiatry, Paris, 
+Sept. 18-27, 1950. 
+
+7. Giacomo de, U. La catatonia sperimentale 
+Schizofrenie, 4: 195, 1934-1035 
+
+8. Hoch, Paul H. Experimentally produced psy 
+choses. Am. J. Psychiat., 107: 607, Feb, 1951. 
+
+9g. Jong de, H. Die experimentelle Katatonie als 
+viellach vorkommende Reaktionsform des Zentral 
+nervensystems (Experimental catatonia, as a fre 
+quent reaction type of the central nervous system). 
+Ztschr, ges, Neur. Psychiat., 139: 468, 1932. 
+
+10. Jong de, H., et Baruk, H. La catonie ex- 
+perimentale par la Bulbocapnine. Paris: Masson et 
+Cie, 1930 
+
+11. Peters, F. Pharmacologische Untersuch- 
+ungen uber Corydalisalkaloide (Pharmacological in 
+
+
+EXPERIMENTAL SCHIZOPHRI 
+
+
+| 
+578 N A - 11 YMPTOMS | Feb. 
+vestigation of lalisalkaloids). Arch f eri 
+ment. Pat wie, 130, May 1904 
+ic of the American Psychiatric Ass 
+Id at the Annual Meeting of the A.P.A Bae > 
+May 1 n Detroit. J. Clin. Experiment. Psy . 
+chop Jan. 1951 (Van Ophuijsen Memorial 
+2 it symposium on “Chimie cere : 
+f rt W Id Congress f Psy hiatry, Paris, 
+: Sept. 18-27, 195 Printed in “Les comptes-rendus i 
+du Congrés.” 
+deberg, O. Cher die pharmacologischen 
+Wirkungen und die therapeutische Anwendung ein re 
+ger Carbamin Sdure-Fster On the pharmacolo- 
+# ical effect ! therapeut pplication of me of i 
+the esters of the Carbamin acid Arch. ft. Experi ; : 
+ment. Pathologie und Pharmakologie, 20: 203, 188 
+14. Stael | } patho! der 
+Zw ind Mitte crankuns Psychopa 
+t! ot the a Cast ol the dier epl ak n). : 
+we irch. Neurol. und Psychiat. §3: 374, 1944 > 
+15. Stoll, A. Les Alcaloides de L’Ergot (The ; 
+ilkaloids of ergot). Experientia 1: 250, 1945 
+I Stoll, A., and Hofmann, A. Partialsynthese 
+i von Alkaloiden vom Typus des Ergobasins (Par- 
+tial thesis of alkaloids of the type of the ergo- ; 
+ba ). Helv. Chim. Acta, 26: 044, 1043 
+H 
+3 17. Stoll, A., et al. Ueber die Isomerie von Ly- : 
+rgsaure und Isolysergsiure (On the isomery of vs 
+lvserei d and isolysergic acid) Helv. Chim 
+Acta, 32 (No. 2): 506, 1949 ee 
+1&8. Stoll, W \. Lysergsaure-didthylamid, ein 
+Phantasticum aus der Mutter-korngruppe. (Lyser 
+acid diethylamide, a phantasticon of the ergot : 
+: group Schweizer Arch. Neurol. und Psychiat., ae 
+60:1, 1947 
+19. Vogel, H. Victor. Discussional remark to 
+Hoch’s papel (ref. 8). 
+j 
+
