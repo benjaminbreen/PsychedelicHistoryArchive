@@ -167,16 +167,25 @@ export type SourceCreator = {
   role: string;
 };
 
-export type TranscriptSectionKind = "overview" | "transcript" | "note";
+export type TranscriptSectionKind = "overview" | "source_note" | "transcript" | "historical_context" | "note";
 
 export type TranscriptSection = {
   id?: string;
   heading: string;
   kind: TranscriptSectionKind;
+  attribution?: TranscriptSectionAttribution;
   body?: string;
   bodyFormat?: "plain" | "markdown";
   position?: number;
   paragraphs: string[];
+};
+
+export type TranscriptSectionAttribution = {
+  authorName?: string;
+  authorSlug?: string;
+  authorImage?: string;
+  writtenAt?: string;
+  updatedAt?: string;
 };
 
 export type SourceFigure = {

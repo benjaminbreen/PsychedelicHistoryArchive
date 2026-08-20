@@ -379,6 +379,27 @@ create table if not exists document_citation_links (
   unique (document_id, normalized_citation, bibliography_item_id)
 );
 
+create table if not exists source_issue_reports (
+  id uuid primary key default gen_random_uuid(),
+  document_id uuid references documents(id) on delete set null,
+  source_slug text not null,
+  source_title text not null,
+  issue_type text not null,
+  location text,
+  description text not null,
+  suggested_fix text,
+  reporter_name text,
+  reporter_email text,
+  page_url text,
+  status text not null default 'new',
+  admin_note text,
+  resolved_at timestamptz,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now(),
+  check (issue_type in ('typo_ocr', 'metadata_error', 'factual_concern', 'broken_link', 'citation_problem', 'rights_access', 'other')),
+  check (status in ('new', 'triaged', 'needs_review', 'fixed', 'dismissed'))
+);
+
 create table if not exists biography_bibliography_items (
   biography_profile_id uuid references biography_profiles(id) on delete cascade,
   bibliography_item_id uuid references bibliography_items(id) on delete cascade,
@@ -564,6 +585,9 @@ create index if not exists bibliography_item_eras_era_idx on bibliography_item_e
 create index if not exists bibliography_item_documents_document_idx on bibliography_item_documents(document_id);
 create index if not exists bibliography_item_aliases_alias_idx on bibliography_item_aliases(normalized_alias);
 create index if not exists document_citation_links_document_idx on document_citation_links(document_id, status);
+create index if not exists source_issue_reports_status_idx on source_issue_reports(status, created_at desc);
+create index if not exists source_issue_reports_document_idx on source_issue_reports(document_id, status);
+create index if not exists source_issue_reports_slug_idx on source_issue_reports(source_slug, status);
 create index if not exists biography_bibliography_items_profile_idx on biography_bibliography_items(biography_profile_id, relationship_type, position);
 create index if not exists biography_bibliography_items_item_idx on biography_bibliography_items(bibliography_item_id);
 create index if not exists search_chunks_document_idx on search_chunks(document_id, chunk_kind);
@@ -628,6 +652,7 @@ grant all privileges on bibliography_item_eras to service_role;
 grant all privileges on bibliography_item_documents to service_role;
 grant all privileges on bibliography_item_aliases to service_role;
 grant all privileges on document_citation_links to service_role;
+grant all privileges on source_issue_reports to service_role;
 grant all privileges on biography_bibliography_items to service_role;
 grant all privileges on search_chunks to service_role;
 grant all privileges on document_tags to service_role;
@@ -658,6 +683,7 @@ alter table bibliography_item_eras enable row level security;
 alter table bibliography_item_documents enable row level security;
 alter table bibliography_item_aliases enable row level security;
 alter table document_citation_links enable row level security;
+alter table source_issue_reports enable row level security;
 alter table biography_bibliography_items enable row level security;
 alter table search_chunks enable row level security;
 alter table document_tags enable row level security;

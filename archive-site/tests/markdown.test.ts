@@ -24,12 +24,24 @@ test("parseMarkdown assigns unique heading IDs and parses figure rows", () => {
   assert.deepEqual(figureRow, { type: "figure-row", tokens: ["one", "two"] });
 });
 
+test("parseMarkdown treats five-hash lines as headings", () => {
+  const parsed = parseMarkdown("##### First paragraph, on certain herbs that intoxicate\n\nThere is an herb.");
+
+  assert.deepEqual(parsed.blocks[0], {
+    type: "heading",
+    depth: 5,
+    id: "section-first-paragraph-on-certain-herbs-that-intoxicate",
+    text: "First paragraph, on certain herbs that intoxicate",
+  });
+});
+
 test("extractMarkdownToc mirrors rendered heading IDs and notes", () => {
-  const toc = extractMarkdownToc("## Context\n\n### Context\n\n[^a]: A note.");
+  const toc = extractMarkdownToc("## Context\n\n### Context\n\n##### Details\n\n[^a]: A note.");
 
   assert.deepEqual(toc, [
     { id: "section-context", label: "Context" },
     { id: "section-context-2", label: "Context" },
+    { id: "section-details", label: "Details" },
     { id: "section-notes", label: "Notes" },
   ]);
 });

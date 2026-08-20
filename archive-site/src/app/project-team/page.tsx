@@ -81,8 +81,10 @@ function PastContributors({ people, title }: { people: ProjectPerson[]; title: s
       </div>
       <ul className="grid gap-x-8 gap-y-2 rounded-md border border-archive-line bg-archive-surface p-5 text-sm sm:grid-cols-2">
         {people.map((person) => (
-          <li className="border-b border-archive-line/70 pb-2 last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0" key={person.slug}>
+          <li className="project-contributor-row scroll-mt-28 rounded-sm border-b border-archive-line/70 p-2 transition last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0" id={person.slug} key={person.slug}>
             <span className="font-semibold text-archive-ink">{person.name}</span>
+            <span className="ml-2 text-xs font-semibold text-archive-muted">{person.roleTitle}</span>
+            {shouldShowBio(person.bio) && <p className="project-contributor-bio mt-2 hidden text-sm leading-6 text-archive-muted">{person.bio}</p>}
           </li>
         ))}
       </ul>
@@ -122,7 +124,7 @@ function PersonCard({ person }: { person: ProjectPerson }) {
     </>
   );
 
-  const className = "focus-ring group grid scroll-mt-28 gap-4 rounded-md border border-archive-line bg-archive-surface p-4 shadow-sm transition hover:border-archive-violet/35 sm:grid-cols-[8.25rem_minmax(0,1fr)]";
+  const className = "project-person-card focus-ring group grid scroll-mt-28 gap-4 rounded-md border border-archive-line bg-archive-surface p-4 shadow-sm transition hover:border-archive-violet/35 sm:grid-cols-[8.25rem_minmax(0,1fr)]";
 
   if (person.profileUrl) {
     return (

@@ -32,7 +32,7 @@ export function MarkdownSectionEditor({
   const [format, setFormat] = useState(bodyFormat || "markdown");
   const [text, setText] = useState(body ?? "");
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
-  const isNote = sectionType === "note";
+  const isNote = sectionType === "note" || sectionType === "source_note" || sectionType === "historical_context";
 
   function applyMarkdown(marker: "*" | "**") {
     const textarea = textareaRef.current;

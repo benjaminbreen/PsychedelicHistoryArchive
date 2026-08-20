@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { biographyProfiles } from "@/lib/biographies";
 import { getAdminSupabaseClient, isAdminEnabled, isSchemaShapeError } from "@/lib/admin-cms";
+import { isSourceIssueStatus } from "@/lib/source-issue-reports";
 import { biographyProfileToRow } from "@/lib/supabase-biographies";
 
 function requireAdminClient() {
@@ -1233,6 +1234,33 @@ export async function deleteDocumentFigure(formData: FormData) {
 
   await logRevision("document_figures", figureId, documentId, before, null, "Deleted figure record");
   revalidateSourcePaths(readString(formData, "slug"), documentId);
+}
+
+export async function updateSourceIssueReportStatus(formData: FormData) {
+  const supabase = requireAdminClient();
+  const id = readString(formData, "id");
+  const status = readString(formData, "status");
+  if (!id || !isSourceIssueStatus(status)) throw new Error("Missing source issue report status.");
+
+  const before = await fetchRow("source_issue_reports", id);
+  const payload = {
+    status,
+    admin_note: readNullableString(formData, "admin_note"),
+    resolved_at: status === "fixed" || status === "dismissed" ? new Date().toISOString() : null,
+    updated_at: new Date().toISOString(),
+  };
+
+  const { data, error } = await supabase
+    .from("source_issue_reports")
+    .update(payload)
+    .eq("id", id)
+    .select("id, document_id, source_slug")
+    .single();
+
+  if (error) throw adminSchemaError(error, "source issue reports", "scripts/supabase_source_issue_reports_schema.sql");
+  await logRevision("source_issue_reports", id, data.document_id, before, payload, `Set source issue report status to ${status}`);
+  revalidatePath("/admin/qa");
+  if (data.source_slug) revalidatePath(`/archive/${data.source_slug}`);
 }
 
 async function fetchRow(table: string, id: string) {

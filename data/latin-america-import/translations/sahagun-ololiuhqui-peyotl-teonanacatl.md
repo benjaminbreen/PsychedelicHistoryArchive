@@ -1,0 +1,15 @@
+#### Chapter VII, Concerning All Herbs
+
+##### First paragraph, on certain herbs that intoxicate
+
+There is an herb called _cóatl xoxouhqui_, and it produces a seed called _ololiuhqui_ or _cóatl xoxouhqui_. This seed intoxicates and drives people out of their senses. It is given in drinks to harm those whom one wishes ill, and those who eat it seem to see visions and frightening things. Sorcerers, and those who hate someone, give it to people in food or drink in order to harm them. This herb, and its seed, are medicinal for gout when ground and placed on the place where the gout is.
+
+There is another herb, like earth truffles, called _péyotl_. It is white. It grows toward the north. Those who eat or drink it see visions, frightening ones or laughing ones. This intoxication lasts two or three days, and then passes off. It is common food among the Chichimecas, sustaining them and giving them courage to fight and to feel neither fear, thirst, nor hunger. They say it keeps them from every danger.
+
+There is another herb called _tlápatl_. It is like a shrub. It produces little heads without spines, like lemons. They have a green rind. It has rather broad leaves and white flowers. Its seed is black and foul-smelling, and it takes away the appetite of those who eat it. It intoxicates and drives them permanently out of their senses. This seed is good against gout when the painful place is rubbed with it. Its smell is also harmful, like the seed itself. Here they use an adage against the proud and presumptuous: they say that such people eat this herb, and another herb called _míxitl_. It means that they are mad, as if they had eaten these herbs.
+
+There are other herbs of this sort called _tzitzintlápatl_. They are so called because they have spiny little heads. They have the same operations as the one just described.
+
+There is another herb called _míxitl_. It is small and trailing. It is green and has seed. It is good against gout when ground and placed where the pain is. It is neither edible nor drinkable. It provokes vomiting. It tightens the throat and the tongue. It provokes thirst. It splits the tongue; and if it is eaten or drunk, it gives neither bad odor nor bad taste, but then it takes away all the body's strength. If the person who eats it has his eyes open, he cannot close them again; and if he has them closed, he cannot open them again. If he is standing upright, he can no longer bend or lower himself. He loses speech. Wine works against this herb.
+
+There are some little mushrooms in this land called _teonanácatl_. They grow under hay, in fields or open plains. They are round and have a somewhat tall, slender, round stem. Eaten, they are of bad taste. They harm the throat and intoxicate. They are medicinal against fevers and gout. Only two or three should be eaten. Those who eat them see visions and feel heart-sickness, and they see visions sometimes frightening and sometimes laughable. Those who eat many of them are stirred to lust, and even a few may do this. And wild, mischievous young men are said to have eaten _nanácatl_.

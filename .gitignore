@@ -42,3 +42,6 @@ tmp/
 
 # Generated from data/draft-sources by scripts/build_draft_import.mjs; images are copies
 data/draft-import/images/
+
+# Upstream originals the served PDFs were derived from — large and re-downloadable
+data/*/source-downloads/

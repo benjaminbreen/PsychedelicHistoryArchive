@@ -44,7 +44,7 @@ import {
   type ReaderTabId,
   type ReaderTocItem,
 } from "@/lib/source-reader";
-import type { ArchiveSource, CollectionItemSummary, SourceFile, SourceLineBox, SourcePage, SourcePageLine } from "@/lib/types";
+import type { ArchiveSource, CollectionItemSummary, SourceFile, SourceLineBox, SourcePage, SourcePageLine, TranscriptSection } from "@/lib/types";
 
 type SourceReaderTabsProps = {
   source: ArchiveSource;
@@ -64,12 +64,27 @@ export function SourceReaderTabs({ source, transcript }: SourceReaderTabsProps) 
     const params = new URLSearchParams(window.location.search);
     if ((params.has("page") || params.has("line")) && tabs.some((tab) => tab.id === "original")) {
       setActiveTab("original");
+      return;
     }
+    const view = params.get("view");
+    if (isReaderTabId(view) && tabs.some((tab) => tab.id === view)) {
+      setActiveTab(view);
+    }
+  }, [tabs]);
+
+  const handleTabChange = useCallback((tab: ReaderTabId) => {
+    setActiveTab(tab);
+    updateReaderViewUrl(tab, tabs[0]?.id);
+  }, [tabs]);
+
+  const handleOpenOriginalPage = useCallback((page: SourcePage) => {
+    setActiveTab("original");
+    updateReaderPageUrl("original", tabs[0]?.id, page);
   }, [tabs]);
 
   return (
     <div data-source-reader-tab={visibleActiveTab}>
-      <ReaderTabNav activeTab={visibleActiveTab} onTabChange={setActiveTab} tabs={tabs} toc={toc} />
+      <ReaderTabNav activeTab={visibleActiveTab} onTabChange={handleTabChange} tabs={tabs} toc={toc} />
 
       {visibleActiveTab === "overview" && (
         <CollectionOverview source={source} />
@@ -109,14 +124,50 @@ export function SourceReaderTabs({ source, transcript }: SourceReaderTabsProps) 
         </>
       )}
 
+      {visibleActiveTab === "historicalContext" && (
+        <section className="mt-6 max-w-[49rem]">
+          <HistoricalContextReader source={source} />
+        </section>
+      )}
+
       {visibleActiveTab === "original" && <OriginalSourceViewer pages={pages} source={source} transcript={transcript} />}
       {visibleActiveTab === "sourcePdf" && <OriginalPdfSourceViewer source={source} />}
 
       {visibleActiveTab === "details" && (
-        <SourceDetails source={source} pages={pages} />
+        <SourceDetails onOpenOriginalPage={handleOpenOriginalPage} source={source} pages={pages} />
       )}
     </div>
   );
+}
+
+function isReaderTabId(value: string | null): value is ReaderTabId {
+  return value === "overview" || value === "transcript" || value === "historicalContext" || value === "translation" || value === "original" || value === "sourcePdf" || value === "details";
+}
+
+function updateReaderViewUrl(tab: ReaderTabId, defaultTab?: ReaderTabId) {
+  if (typeof window === "undefined") return;
+  const url = new URL(window.location.href);
+  if (tab === defaultTab) {
+    url.searchParams.delete("view");
+  } else {
+    url.searchParams.set("view", tab);
+  }
+  url.searchParams.delete("page");
+  url.searchParams.delete("line");
+  window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
+}
+
+function updateReaderPageUrl(tab: ReaderTabId, defaultTab: ReaderTabId | undefined, page: SourcePage) {
+  if (typeof window === "undefined") return;
+  const url = new URL(window.location.href);
+  if (tab === defaultTab) {
+    url.searchParams.delete("view");
+  } else {
+    url.searchParams.set("view", tab);
+  }
+  url.searchParams.set("page", pageAnchorValue(page));
+  url.searchParams.delete("line");
+  window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
 }
 
 function ReaderTabNav({ activeTab, onTabChange, tabs, toc }: { activeTab: ReaderTabId; onTabChange: (tab: ReaderTabId) => void; tabs: ReaderTab[]; toc: ReaderTocItem[] }) {
@@ -223,13 +274,16 @@ function ReaderNotice({ actionLabel, children, icon, onAction }: { actionLabel?:
 }
 
 function TranscriptReader({ source, transcript }: { source: ArchiveSource; transcript: string[] }) {
-  const sections = source.transcriptSections?.length
-    ? source.transcriptSections
+  const sourceNote = source.transcriptSections?.find((section) => section.kind === "source_note");
+  const transcriptSections = source.transcriptSections?.filter((section) => section.kind === "transcript") ?? [];
+  const sections = transcriptSections.length
+    ? transcriptSections
     : [{ heading: "Transcript", kind: "transcript" as const, paragraphs: transcript }];
   const overviewFigure = source.figures?.find((figure) => figure.position === "before_overview");
 
   return (
     <div className="space-y-9">
+      <SourceReaderIntro sourceNote={sourceNote} />
       {sections.map((section, index) => {
         const isNote = section.kind === "note";
         const isMediaTranscript = section.kind === "transcript" && isMediaSource(source);
@@ -249,6 +303,8 @@ function TranscriptReader({ source, transcript }: { source: ArchiveSource; trans
                 {(section.paragraphs.length ? section.paragraphs : section.body ? [section.body] : []).map((paragraph, paragraphIndex) => (
                   isMediaTranscript ? (
                     <MediaTranscriptPlainParagraph key={`${paragraphIndex}-${paragraph.slice(0, 24)}`} text={paragraph} />
+                  ) : isLineNumberedTranscriptBlock(paragraph) ? (
+                    <p className="source-lineated-transcript" key={`${paragraphIndex}-${paragraph.slice(0, 24)}`}>{paragraph}</p>
                   ) : (
                     <p key={`${paragraphIndex}-${paragraph.slice(0, 24)}`}>{paragraph}</p>
                   )
@@ -260,6 +316,166 @@ function TranscriptReader({ source, transcript }: { source: ArchiveSource; trans
       })}
     </div>
   );
+}
+
+function SourceReaderIntro({ sourceNote }: { sourceNote?: TranscriptSection }) {
+  if (!sourceNote) return null;
+
+  return (
+    <div className="source-reader-intro">
+      <SourceNote section={sourceNote} />
+      <FishDivider />
+    </div>
+  );
+}
+
+function SourceNote({ section }: { section: TranscriptSection }) {
+  if (section.body) {
+    if (section.bodyFormat === "markdown") {
+      return <MarkdownContent className="source-reader-note source-markdown" markdown={section.body} />;
+    }
+
+    return (
+      <div className="source-reader-note">
+        {splitParagraphs(section.body).map((paragraph) => <p key={paragraph.slice(0, 48)}>{paragraph}</p>)}
+      </div>
+    );
+  }
+
+  if (!section.paragraphs.length) return null;
+  return (
+    <div className="source-reader-note">
+      {section.paragraphs.map((paragraph) => <p key={paragraph.slice(0, 48)}>{paragraph}</p>)}
+    </div>
+  );
+}
+
+function SourcePageThumbnailStrip({ onOpenPage, pages }: { onOpenPage: (page: SourcePage) => void; pages: SourcePage[] }) {
+  const rowRef = useRef<HTMLDivElement>(null);
+  if (!pages.length) return null;
+
+  function scroll(direction: -1 | 1) {
+    rowRef.current?.scrollBy({
+      behavior: "smooth",
+      left: direction * Math.max(260, rowRef.current.clientWidth * 0.72)
+    });
+  }
+
+  return (
+    <div className="source-page-thumbnail-strip" aria-label="Original source pages">
+      <button aria-label="Scroll page thumbnails backward" className="source-page-thumbnail-scroll-button" onClick={() => scroll(-1)} type="button">
+        <ChevronLeft className="h-4 w-4" />
+      </button>
+      <div className="source-page-thumbnail-row" ref={rowRef}>
+        {pages.map((page) => (
+          <button className="source-page-thumbnail-button" key={page.id} onClick={() => onOpenPage(page)} type="button">
+            <ArchiveImage alt={`Open original PDF to page ${page.pageNumber || page.label}`} className="source-page-thumbnail-frame" imageClassName="object-cover object-top" src={page.thumbnailPath || page.imagePath || ""} />
+            <span>Page {page.pageNumber || page.label}</span>
+          </button>
+        ))}
+      </div>
+      <button aria-label="Scroll page thumbnails forward" className="source-page-thumbnail-scroll-button" onClick={() => scroll(1)} type="button">
+        <ChevronRight className="h-4 w-4" />
+      </button>
+    </div>
+  );
+}
+
+function FishDivider() {
+  return (
+    <div className="source-fish-divider" aria-hidden="true">
+      <span />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img alt="" src="/images/footer-fish-mark.png" />
+      <span />
+    </div>
+  );
+}
+
+function HistoricalContextReader({ source }: { source: ArchiveSource }) {
+  const sections = source.transcriptSections?.filter((section) => section.kind === "historical_context") ?? [];
+  if (!sections.length) return null;
+
+  return (
+    <div className="space-y-8">
+      {sections.map((section, index) => (
+        <section key={`${section.heading}-${index}`}>
+          <h2 className="source-transcript-heading" id={readerSectionId(section.heading)}>{section.heading}</h2>
+          <HistoricalContextByline section={section} />
+          {section.body && section.bodyFormat === "markdown" ? (
+            <MarkdownContent citationLinks={source.citationLinks} className="source-context-body source-markdown mt-5 space-y-5 text-archive-ink" figures={source.figures} markdown={section.body} />
+          ) : (
+            <div className="source-context-body mt-5 space-y-5 text-archive-ink">
+              {(section.paragraphs.length ? section.paragraphs : section.body ? [section.body] : []).map((paragraph) => (
+                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+              ))}
+            </div>
+          )}
+        </section>
+      ))}
+    </div>
+  );
+}
+
+function HistoricalContextByline({ section }: { section: TranscriptSection }) {
+  const attribution = section.attribution;
+  if (!attribution?.authorName) return null;
+
+  const authorHref = attribution.authorSlug ? `/project-team#${attribution.authorSlug}` : undefined;
+  const avatar = (
+    <span className="source-context-byline-avatar">
+      {attribution.authorImage ? (
+        <ArchiveImage alt="" className="source-context-byline-avatar-image" imageClassName="source-context-byline-avatar-img object-top" src={attribution.authorImage} />
+      ) : (
+        <span className="source-context-byline-initials">{initials(attribution.authorName)}</span>
+      )}
+    </span>
+  );
+  const authorName = <span className="source-context-byline-name">{attribution.authorName}</span>;
+
+  return (
+    <div className="source-context-byline">
+      {authorHref ? (
+        <Link aria-label={`View ${attribution.authorName} on the project team page`} className="source-context-byline-author" href={authorHref}>
+          {avatar}
+          <span>By {authorName}</span>
+        </Link>
+      ) : (
+        <span className="source-context-byline-author">
+          {avatar}
+          <span>By {authorName}</span>
+        </span>
+      )}
+      {attribution.writtenAt && <span>Written on {attribution.writtenAt}</span>}
+      {attribution.updatedAt && <span>Last updated on {attribution.updatedAt}</span>}
+    </div>
+  );
+}
+
+function getThumbnailPages(source: ArchiveSource) {
+  return (source.pages ?? [])
+    .filter((page) => page.thumbnailPath)
+    .sort((a, b) => (a.pageNumber ?? 0) - (b.pageNumber ?? 0));
+}
+
+function splitParagraphs(value: string) {
+  return value.split(/\n{2,}/).map((paragraph) => paragraph.trim()).filter(Boolean);
+}
+
+function initials(name: string) {
+  return name
+    .split(/\s+/)
+    .map((part) => part[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("");
+}
+
+function isLineNumberedTranscriptBlock(text: string) {
+  const lines = text.split(/\r?\n/).filter((line) => line.trim());
+  if (lines.length < 3) return false;
+  const numberedLines = lines.filter((line) => /^\d+\s+\S/.test(line.trim())).length;
+  return numberedLines >= 3 && numberedLines / lines.length >= 0.45;
 }
 
 function MediaTranscriptPlainParagraph({ text }: { text: string }) {
@@ -462,7 +678,35 @@ function OriginalSourceViewer({ pages, source, transcript }: { pages: SourcePage
     return <MediaSourceViewer file={mediaFile} source={source} type="video" />;
   }
 
+  if (!pages.some((page) => page.imagePath) && source.sourceUrl !== "#") {
+    return <ExternalSourceViewer source={source} />;
+  }
+
   return <PageImageSourceViewer pages={pages} source={source} transcript={transcript} />;
+}
+
+function ExternalSourceViewer({ source }: { source: ArchiveSource }) {
+  return (
+    <section className="mt-5 rounded-md border border-archive-line bg-archive-surface p-5 shadow-[0_12px_32px_rgb(var(--archive-shadow)/0.06)]">
+      <div className="flex items-start gap-3">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-archive-lavender2 text-archive-violet">
+          <ExternalLink className="h-5 w-5" />
+        </span>
+        <div>
+          <h2 className="source-serif-heading">Original source</h2>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-archive-muted">
+            The archive hosts OCR text and page thumbnails for this record. Open the holding repository to inspect or download the complete source file.
+          </p>
+        </div>
+      </div>
+      <div className="mt-5">
+        <Link className="focus-ring inline-flex items-center gap-2 rounded-md border border-archive-line px-3 py-2 text-sm font-medium hover:bg-archive-lavender2" href={source.sourceUrl}>
+          <ExternalLink className="h-4 w-4" />
+          Source site
+        </Link>
+      </div>
+    </section>
+  );
 }
 
 function OriginalPdfSourceViewer({ source }: { source: ArchiveSource }) {
@@ -472,6 +716,16 @@ function OriginalPdfSourceViewer({ source }: { source: ArchiveSource }) {
 }
 
 function PdfSourceViewer({ file, source }: { file: SourceFile; source: ArchiveSource }) {
+  const [pageNumber, setPageNumber] = useState<number>();
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const page = Number(new URLSearchParams(window.location.search).get("page"));
+    setPageNumber(Number.isFinite(page) && page > 0 ? page : undefined);
+  }, []);
+
+  const iframeUrl = pageNumber ? `${file.url}#page=${pageNumber}` : file.url;
+
   return (
     <section className="mt-5 overflow-hidden rounded-md border border-archive-line bg-archive-surface shadow-[0_12px_32px_rgb(var(--archive-shadow)/0.06)]">
       <div className="flex flex-wrap items-center gap-3 border-b border-archive-line bg-white px-4 py-3 text-sm">
@@ -492,7 +746,7 @@ function PdfSourceViewer({ file, source }: { file: SourceFile; source: ArchiveSo
           )}
         </div>
       </div>
-      <iframe className="h-[72vh] min-h-[26rem] w-full bg-archive-paper sm:min-h-[42rem]" src={file.url} title={`${source.title} PDF`} />
+      <iframe className="h-[72vh] min-h-[26rem] w-full bg-archive-paper sm:min-h-[42rem]" src={iframeUrl} title={`${source.title} PDF`} />
     </section>
   );
 }
@@ -1034,62 +1288,84 @@ function DetailPanel({ children, title }: { children: React.ReactNode; title: st
   );
 }
 
-function SourceDetails({ pages, source }: { pages: SourcePage[]; source: ArchiveSource }) {
+function SourceDetails({ onOpenOriginalPage, pages, source }: { onOpenOriginalPage: (page: SourcePage) => void; pages: SourcePage[]; source: ArchiveSource }) {
+  const thumbnailPages = getThumbnailPages(source);
+
   if (source.sourceKind === "collection") {
     return (
-      <section className="mt-6 grid gap-4 md:grid-cols-2">
-        <DetailPanel title="Collection">
-          <DetailRow label="Citation" value={source.citation} />
-          <DetailRow label="Archive ID" value={source.id} />
-          <DetailRow label="Items" value={`${source.collectionItemCount ?? source.collectionItems?.length ?? 0}`} />
-          <DetailRow label="Date range" value={source.displayDate} />
-        </DetailPanel>
-        <DetailPanel title="Access">
-          <DetailRow label="Reader" value="Collection overview" />
-          <DetailRow label="Item records" value="Open each item for transcript, original source, and item-level details." />
-          <DetailRow label="Rights" value={source.rights} />
-        </DetailPanel>
-      </section>
+      <div className="mt-6 space-y-4">
+        <section className="grid gap-4 md:grid-cols-2">
+          <DetailPanel title="Collection">
+            <DetailRow label="Citation" value={source.citation} />
+            <DetailRow label="Archive ID" value={source.id} />
+            <DetailRow label="Items" value={`${source.collectionItemCount ?? source.collectionItems?.length ?? 0}`} />
+            <DetailRow label="Date range" value={source.displayDate} />
+          </DetailPanel>
+          <DetailPanel title="Access">
+            <DetailRow label="Reader" value="Collection overview" />
+            <DetailRow label="Item records" value="Open each item for transcript, original source, and item-level details." />
+            <DetailRow label="Rights" value={source.rights} />
+          </DetailPanel>
+        </section>
+      </div>
     );
   }
 
   if (isSiteEntry(source)) {
     return (
-      <section className="mt-6 grid gap-4 md:grid-cols-2">
-        <DetailPanel title="Site Entry">
-          <DetailRow label="Citation" value={source.citation} />
-          <DetailRow label="Archive ID" value={source.id} />
-          <DetailRow label="Date range" value={source.displayDate} />
-          <DetailRow label="Region" value={source.region} />
-        </DetailPanel>
-        <DetailPanel title="Evidence">
-          <DetailRow label="Entry type" value="Project-authored archaeological site writeup" />
-          <DetailRow label="Evidence" value={siteEvidenceLabel(source)} />
-          <DetailRow label="Substances" value={source.substances?.length ? source.substances.join(", ") : "See entry text"} />
-          <DetailRow label="Rights" value={source.rights} />
-        </DetailPanel>
-      </section>
+      <div className="mt-6 space-y-4">
+        <section className="grid gap-4 md:grid-cols-2">
+          <DetailPanel title="Site Entry">
+            <DetailRow label="Citation" value={source.citation} />
+            <DetailRow label="Archive ID" value={source.id} />
+            <DetailRow label="Date range" value={source.displayDate} />
+            <DetailRow label="Region" value={source.region} />
+          </DetailPanel>
+          <DetailPanel title="Evidence">
+            <DetailRow label="Entry type" value="Project-authored archaeological site writeup" />
+            <DetailRow label="Evidence" value={siteEvidenceLabel(source)} />
+            <DetailRow label="Substances" value={source.substances?.length ? source.substances.join(", ") : "See entry text"} />
+            <DetailRow label="Rights" value={source.rights} />
+          </DetailPanel>
+        </section>
+      </div>
     );
   }
 
   return (
-    <section className="mt-6 grid gap-4 md:grid-cols-2">
-      <DetailPanel title="Citation">
-        <DetailRow label="Citation" value={source.citation} />
-        <DetailRow label="Archive ID" value={source.id} />
-        <DetailRow label="Rights" value={source.rights} />
-        <DetailRow label="Language" value={source.language} />
-      </DetailPanel>
-      <DetailPanel title="Original Files">
-        <DetailRow label="Hosting" value={source.hostingStatus.replaceAll("_", " ")} />
-        <DetailRow label="Pages" value={pages.length ? `${pages.length} page${pages.length === 1 ? "" : "s"}` : "Not ingested"} />
-        <DetailRow label="Line OCR" value={pages.some((page) => page.lines.length) ? "Available" : "Pending"} />
-        {source.sourceUrl !== "#" && (
-          <Link className="focus-ring mt-4 inline-flex items-center gap-2 rounded-sm text-sm font-semibold text-archive-violet" href={source.sourceUrl}>
-            Source link <ExternalLink className="h-3.5 w-3.5" />
-          </Link>
-        )}
-      </DetailPanel>
+    <div className="mt-6 space-y-4">
+      <section className="grid gap-4 md:grid-cols-2">
+        <DetailPanel title="Citation">
+          <DetailRow label="Citation" value={source.citation} />
+          <DetailRow label="Archive ID" value={source.id} />
+          <DetailRow label="Rights" value={source.rights} />
+          <DetailRow label="Language" value={source.language} />
+        </DetailPanel>
+        <DetailPanel title="Original Files">
+          <DetailRow label="Hosting" value={source.hostingStatus.replaceAll("_", " ")} />
+          <DetailRow label="Pages" value={pages.length ? `${pages.length} page${pages.length === 1 ? "" : "s"}` : "Not ingested"} />
+          <DetailRow label="Line OCR" value={pages.some((page) => page.lines.length) ? "Available" : "Pending"} />
+          {source.sourceUrl !== "#" && (
+            <Link className="focus-ring mt-4 inline-flex items-center gap-2 rounded-sm text-sm font-semibold text-archive-violet" href={source.sourceUrl}>
+              Source link <ExternalLink className="h-3.5 w-3.5" />
+            </Link>
+          )}
+        </DetailPanel>
+      </section>
+      <DetailPageThumbnails onOpenOriginalPage={onOpenOriginalPage} pages={thumbnailPages} />
+    </div>
+  );
+}
+
+function DetailPageThumbnails({ onOpenOriginalPage, pages }: { onOpenOriginalPage: (page: SourcePage) => void; pages: SourcePage[] }) {
+  if (!pages.length) return null;
+
+  return (
+    <section className="rounded-md border border-archive-line bg-archive-surface p-5">
+      <h2 className="source-serif-heading">Page Thumbnails</h2>
+      <div className="mt-4">
+        <SourcePageThumbnailStrip onOpenPage={onOpenOriginalPage} pages={pages} />
+      </div>
     </section>
   );
 }

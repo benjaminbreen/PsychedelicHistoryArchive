@@ -334,5 +334,17 @@
     "width": null,
     "height": null,
     "checksum": "c5c49d625d84bcddad9240ed7344be02ec3b445f2320743767f92912b10cf2e0"
+  },
+  {
+    "id": "7ea70040-8754-5317-ac35-3156fa04fd11",
+    "document_id": "0435259b-5ae7-514a-857f-fa8dcf61750e",
+    "page_id": null,
+    "kind": "original_pdf",
+    "storage_path": "documents/0435259b-5ae7-514a-857f-fa8dcf61750e/pdfs/psychoanalysis1957/1957_de_alvarez_do_toledo_1583_1.pdf",
+    "mime_type": "application/pdf",
+    "byte_size": 4130956,
+    "width": null,
+    "height": null,
+    "checksum": "70a6580edbd5368d50e65732abaf025b781e961e70cb35ab80357bf4f022d889"
   }
 ]

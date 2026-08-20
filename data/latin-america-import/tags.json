@@ -7,11 +7,12 @@
     "tag_type": "era"
   },
   {
-    "id": "85775a4c-9075-5ad1-9e01-db31667bfc6a",
+    "id": "5373ff75-9d0b-503d-aa14-53666afed175",
     "slug": "1970-2000",
     "name": "1970-2000",
-    "description": "",
-    "tag_type": "era"
+    "description": null,
+    "tag_type": "era",
+    "status": "published"
   },
   {
     "id": "a85c8695-8500-5428-afdf-feaae8f01b1d",
@@ -70,7 +71,7 @@
     "tag_type": "topic"
   },
   {
-    "id": "4f0322e9-fad0-5781-b010-d9c7dbf2448a",
+    "id": "64bd93cc-3667-5c1c-97d9-b921aa8f9b0f",
     "slug": "book-excerpt",
     "name": "Book excerpt",
     "description": "",
@@ -119,6 +120,13 @@
     "tag_type": "genre"
   },
   {
+    "id": "ad8871d1-3148-5181-b05f-f0653cb90c4c",
+    "slug": "datura",
+    "name": "Datura",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
     "id": "c4108fff-85a1-5918-9146-9bff87fac7df",
     "slug": "dmt",
     "name": "DMT",
@@ -140,7 +148,7 @@
     "tag_type": "topic"
   },
   {
-    "id": "21a1954e-84fc-5ea1-b016-26c7549da752",
+    "id": "5d3a8701-5210-5b80-8167-b3c37d82c5bb",
     "slug": "ethnobotany",
     "name": "Ethnobotany",
     "description": "",
@@ -157,6 +165,13 @@
     "id": "1de25bbd-d9f6-5ba8-b545-34f71c7eabb1",
     "slug": "ethnopharmacology",
     "name": "Ethnopharmacology",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d2ed4518-a7ce-5204-a857-01112270c9f7",
+    "slug": "florentine-codex",
+    "name": "Florentine Codex",
     "description": "",
     "tag_type": "topic"
   },
@@ -189,11 +204,12 @@
     "tag_type": "substance"
   },
   {
-    "id": "fbe38f2c-8902-500f-bcb3-739e16bd16f5",
+    "id": "c4107c5b-6e1d-5583-bf29-a1f473ca2306",
     "slug": "human-experiments",
     "name": "Human experiments",
-    "description": "",
-    "tag_type": "topic"
+    "description": null,
+    "tag_type": "topic",
+    "status": "published"
   },
   {
     "id": "8b0f1b2d-94b2-5aaf-9faf-1918dfac03aa",
@@ -210,7 +226,7 @@
     "tag_type": "region"
   },
   {
-    "id": "21761841-24f8-5bf0-bd8e-a3e5d76aeb93",
+    "id": "61577b9d-a2f7-5498-8580-b13180527ba6",
     "slug": "indigenous-knowledge",
     "name": "Indigenous knowledge",
     "description": "",
@@ -231,7 +247,7 @@
     "tag_type": "topic"
   },
   {
-    "id": "34b1ce28-8f9b-5118-a2ff-6c0ccfae4f29",
+    "id": "5189115d-0a5f-572d-8dd7-becc48daf5cc",
     "slug": "latin-america",
     "name": "Latin America",
     "description": "",
@@ -241,6 +257,13 @@
     "id": "1e0a30cf-7157-5672-bf32-aed25419b3ad",
     "slug": "materia-medica",
     "name": "Materia medica",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "c3aec49d-a5e6-5286-82c5-146fdaa7c03a",
+    "slug": "medicine",
+    "name": "Medicine",
     "description": "",
     "tag_type": "topic"
   },
@@ -259,11 +282,25 @@
     "tag_type": "substance"
   },
   {
+    "id": "9d1d5fcd-79a9-55aa-ba42-59a15c80aea6",
+    "slug": "mexico",
+    "name": "Mexico",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
     "id": "44c6a08e-b4e6-5994-8c0b-3c5ba1522fdb",
     "slug": "micronesia",
     "name": "Micronesia",
     "description": "",
     "tag_type": "topic"
+  },
+  {
+    "id": "9ad7c9f2-0351-547e-bbcb-fa21180674ff",
+    "slug": "new-spain",
+    "name": "New Spain",
+    "description": "",
+    "tag_type": "region"
   },
   {
     "id": "8e784baa-a648-5b89-bdcc-5ace6edfe8a6",
@@ -273,9 +310,23 @@
     "tag_type": "region"
   },
   {
+    "id": "7071ae20-1505-570e-aed1-f9efbb66bde7",
+    "slug": "ololiuhqui",
+    "name": "Ololiuhqui",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
     "id": "a818fa2a-6cdd-5b2a-b39e-37dada422411",
     "slug": "opium",
     "name": "Opium",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "a28dcfa3-65e0-5e19-86d2-399e6b8152df",
+    "slug": "peyote",
+    "name": "Peyote",
     "description": "",
     "tag_type": "substance"
   },
@@ -315,11 +366,32 @@
     "tag_type": "topic"
   },
   {
-    "id": "e30c6af8-7739-52de-95c0-c5857e2d8d33",
+    "id": "070dd9eb-4d7a-5793-b141-cc38101f8afd",
     "slug": "pre-1800",
     "name": "Pre-1800",
     "description": "",
     "tag_type": "era"
+  },
+  {
+    "id": "75be90ed-1f25-57a3-9168-1c5c2a1f0a25",
+    "slug": "psilocybin",
+    "name": "Psilocybin",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "b2cb87db-d8c3-573c-ab1f-2bada89a7249",
+    "slug": "psychoactive-plants",
+    "name": "Psychoactive plants",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "db393577-f521-5ed6-914f-b2014d1f1f19",
+    "slug": "religion",
+    "name": "Religion",
+    "description": "",
+    "tag_type": "topic"
   },
   {
     "id": "0bd72ccf-ed98-53c6-9d95-eb0cf421bb8b",
@@ -332,6 +404,20 @@
     "id": "1ada7008-34a2-5ad8-a51d-d8c31bf9d753",
     "slug": "south-america",
     "name": "South America",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d199c958-439b-54f3-9684-77668fa725c5",
+    "slug": "teonanacatl",
+    "name": "Teonanácatl",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "fc820f28-8258-5bae-9568-95598fa6f667",
+    "slug": "tlatelolco",
+    "name": "Tlatelolco",
     "description": "",
     "tag_type": "topic"
   },
@@ -376,5 +462,396 @@
     "name": "Yomanê",
     "description": "",
     "tag_type": "topic"
+  },
+  {
+    "id": "a5fa7520-308a-5e2a-adf2-f0fd6ef114c1",
+    "slug": "1800-1950",
+    "name": "1800-1950",
+    "description": "",
+    "tag_type": "era"
+  },
+  {
+    "id": "4030ef78-ee93-57ee-af70-a13b647c1fea",
+    "slug": "colonial-mexico",
+    "name": "Colonial Mexico",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "069b9cf0-7fee-5d21-9c2d-c5b5b4deedd3",
+    "slug": "divination",
+    "name": "Divination",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "7199742e-982c-592d-ba03-ff241b2721c7",
+    "slug": "orinoquia",
+    "name": "Orinoquia",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "1ef177a1-6999-5d31-bcd5-0cf7df370a4a",
+    "slug": "niopo",
+    "name": "Niopo",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "0d4526ff-b898-54ac-8a59-480acc82ecc1",
+    "slug": "yopo",
+    "name": "Yopo",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "da480fec-b9e4-502e-9b03-1ea126170302",
+    "slug": "parica",
+    "name": "Paricá",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "5b2d4254-38be-51b4-a1f0-af2c9d6f6138",
+    "slug": "field-science",
+    "name": "Field science",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "2b4d53d4-ddf0-5165-8204-51245bb3092d",
+    "slug": "coronation",
+    "name": "Coronation",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8278456c-0684-54cb-bf83-9bb2b75daca2",
+    "slug": "ecuador",
+    "name": "Ecuador",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "c0e0c3e5-1bb8-5171-b329-459457b7f86d",
+    "slug": "geography",
+    "name": "Geography",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "c635e549-8d90-5c3e-ab01-adc3b8df4103",
+    "slug": "mushrooms",
+    "name": "Mushrooms",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "4e9c36b5-f169-5845-b1e0-adc55cac11af",
+    "slug": "ritual",
+    "name": "Ritual",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "99541e5f-6a21-5c70-8067-6034c81093a6",
+    "slug": "visionary-experience",
+    "name": "Visionary experience",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "5bac1404-4ffe-5f63-84ed-4492ee6b799e",
+    "slug": "amanita-muscaria",
+    "name": "Amanita muscaria",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "26c0f07c-884d-5004-89eb-ae71fbbbc37a",
+    "slug": "fly-agaric",
+    "name": "Fly agaric",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "06fbbab6-eba7-5292-8ccf-02abb0331b9b",
+    "slug": "kamchatka",
+    "name": "Kamchatka",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "001d7209-cc6e-5bd7-900c-a5126304acff",
+    "slug": "koryak",
+    "name": "Koryak",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "7b19ab32-9a3e-5238-8423-c107aa7dac02",
+    "slug": "mura",
+    "name": "Mura",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "0ce3abf8-2739-5b5d-b360-31f907f3a32d",
+    "slug": "natural-history",
+    "name": "Natural history",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4bf66cd1-5c32-51da-80cd-afa787bdf100",
+    "slug": "siberia",
+    "name": "Siberia",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "a3bb0884-752f-55fb-90c5-d0265106886c",
+    "slug": "travel-writing",
+    "name": "Travel writing",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8f8f1429-c113-5893-9dd9-efd875c35a7a",
+    "slug": "pre-500",
+    "name": "Pre-500 CE",
+    "description": "",
+    "tag_type": "era"
+  },
+  {
+    "id": "51a53ea5-1c06-5aac-9ecb-a264902f577c",
+    "slug": "soma",
+    "name": "Soma",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "44475026-17b1-579c-be32-1be20526a46b",
+    "slug": "ancient-india",
+    "name": "Ancient India",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "ffb34a24-4f70-540d-89b7-19743a86efd8",
+    "slug": "south-asia",
+    "name": "South Asia",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "968674b6-1f0f-55ad-b3ed-f84cda6ad6f0",
+    "slug": "vedic-ritual",
+    "name": "Vedic ritual",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d8f279db-5515-55c5-bf8e-ab220f588ebe",
+    "slug": "vedic-texts",
+    "name": "Vedic texts",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "577c7dae-996d-5fa7-a4fc-bebdfe6b4815",
+    "slug": "sanskrit",
+    "name": "Sanskrit",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "22cdf30a-4509-5171-bfff-b4e084e6c834",
+    "slug": "contested-identification",
+    "name": "Contested identification",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "5ed52f73-b39c-5da0-bc04-8f6c707400ed",
+    "slug": "1800-1850",
+    "name": "1800-1850",
+    "description": "",
+    "tag_type": "era"
+  },
+  {
+    "id": "7aa4f22a-eef0-5838-b187-3467958b08a6",
+    "slug": "1850-1900",
+    "name": "1850-1900",
+    "description": "",
+    "tag_type": "era"
+  },
+  {
+    "id": "47368669-5f62-500d-90f2-935b82e912f0",
+    "slug": "europe",
+    "name": "Europe",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "c2bbff51-91bf-5e3f-ba6a-c3108e6f9e7e",
+    "slug": "france",
+    "name": "France",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "7144f25b-edf6-57ce-b1e1-beb977214e79",
+    "slug": "germany",
+    "name": "Germany",
+    "description": "",
+    "tag_type": "region"
+  },
+  {
+    "id": "66caa9d8-327c-5fc2-a3c7-5095e819270f",
+    "slug": "hashish",
+    "name": "Hashish",
+    "description": "",
+    "tag_type": "substance"
+  },
+  {
+    "id": "06b8ac92-a0f2-5c5c-b7dc-bf7d82bda3ed",
+    "slug": "psychiatry",
+    "name": "Psychiatry",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "d59966d6-8380-5d0c-b010-e599097eb67d",
+    "slug": "self-experiment",
+    "name": "Self-experiment",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "4dfbcd11-268d-57a7-a580-2308c21e1b3b",
+    "slug": "french-psychiatry",
+    "name": "French psychiatry",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8d37902c-2636-51bb-8212-0e87003732a8",
+    "slug": "comparative-pharmacology",
+    "name": "Comparative pharmacology",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "8acc0608-232b-5e6b-a2a4-d91facab0332",
+    "slug": "german-natural-history",
+    "name": "German natural history",
+    "description": "",
+    "tag_type": "topic"
+  },
+  {
+    "id": "a5392957-62ea-545e-be29-32aa53006192",
+    "slug": "united-states",
+    "name": "United States",
+    "tag_type": "region",
+    "description": null,
+    "status": "published"
+  },
+  {
+    "id": "8ab8931c-2390-5b73-8124-bf6835871b26",
+    "slug": "washington-dc",
+    "name": "Washington, D.C.",
+    "tag_type": "region",
+    "description": null,
+    "status": "published"
+  },
+  {
+    "id": "525ab146-1753-57ac-bad8-4a26798e9600",
+    "slug": "mkultra",
+    "name": "MKULTRA",
+    "tag_type": "topic",
+    "description": null,
+    "status": "published"
+  },
+  {
+    "id": "55b3a2e7-495b-5cbc-b3b9-a85663b6de26",
+    "slug": "cia",
+    "name": "CIA",
+    "tag_type": "topic",
+    "description": null,
+    "status": "published"
+  },
+  {
+    "id": "f5277511-b159-5e29-9b44-d0db101e86a1",
+    "slug": "lsd",
+    "name": "LSD",
+    "tag_type": "substance",
+    "description": null,
+    "status": "published"
+  },
+  {
+    "id": "852abb2c-d096-53b2-8b7f-055d79941e18",
+    "slug": "government-research",
+    "name": "Government Research",
+    "tag_type": "topic",
+    "description": null,
+    "status": "published"
+  },
+  {
+    "id": "2a04cc4a-5c03-5ec0-99e3-63bbec8685b2",
+    "slug": "intelligence",
+    "name": "Intelligence",
+    "tag_type": "topic",
+    "description": null,
+    "status": "published"
+  },
+  {
+    "id": "14f8d2b6-e388-5c56-9938-bfca943790c4",
+    "slug": "clinical",
+    "name": "Clinical",
+    "tag_type": "topic",
+    "description": null,
+    "status": "published"
+  },
+  {
+    "id": "326a4b04-960a-591e-8813-140fb54531d6",
+    "slug": "law",
+    "name": "Law",
+    "tag_type": "topic",
+    "description": null,
+    "status": "published"
+  },
+  {
+    "id": "a0d148b4-d0e1-5d6e-8353-b169ea23220f",
+    "slug": "research-ethics",
+    "name": "Research ethics",
+    "tag_type": "topic",
+    "description": null,
+    "status": "published"
+  },
+  {
+    "id": "34c638ba-3dde-59f0-9555-285cf14651c2",
+    "slug": "congressional-investigation",
+    "name": "Congressional investigation",
+    "tag_type": "topic",
+    "description": null,
+    "status": "published"
+  },
+  {
+    "id": "eac113da-ce04-5433-a57b-1b6d9e323dc9",
+    "slug": "declassified-files",
+    "name": "Declassified files",
+    "tag_type": "topic",
+    "description": null,
+    "status": "published"
+  },
+  {
+    "id": "e510fbae-0a0b-53c7-b4dd-8eb483104828",
+    "slug": "cold-war",
+    "name": "Cold War",
+    "tag_type": "topic",
+    "description": null,
+    "status": "published"
   }
 ]

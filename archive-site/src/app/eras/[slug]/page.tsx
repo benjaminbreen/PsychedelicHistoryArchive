@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { MarkdownContent } from "@/components/markdown-content";
 import { SourceImage } from "@/components/source-image";
 import { Chip } from "@/components/ui/chip";
 import {
@@ -102,7 +103,7 @@ export default async function EraDetailPage({
       </section>
 
       <main className="container-page py-10">
-        <div className="grid gap-9 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
+        <div className="grid gap-9 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.95fr)]">
           {/* LEFT: sources */}
           <section
             aria-labelledby="era-sources-heading"
@@ -130,11 +131,11 @@ export default async function EraDetailPage({
                   return (
                     <li key={source.id}>
                       <Link
-                        className="grid grid-cols-[3.6rem_minmax(0,1fr)_auto] gap-4 px-6 py-4 transition hover:bg-archive-lavender2/55"
+                        className="grid grid-cols-[4.5rem_minmax(0,1fr)_auto] gap-5 px-6 py-4 transition hover:bg-archive-lavender2/55"
                         href={`/archive/${source.slug}`}
                       >
                         <SourceImage
-                          className="aspect-[3/4] h-[4.6rem] w-[3.6rem]"
+                          className="aspect-[3/4] h-[5.7rem] w-[4.5rem]"
                           source={source}
                         />
                         <div className="min-w-0">
@@ -193,19 +194,15 @@ export default async function EraDetailPage({
                   className="font-display text-[1rem] font-normal uppercase tracking-[0.08em] text-archive-ink"
                   id="era-essay-heading"
                 >
-                  A historian&rsquo;s overview
+                  Historical overview
                 </h2>
-                <span className="text-[0.84rem] text-archive-muted">
-                  {era.essay && era.essay.length > 0 ? estimateReadTime(era.essay) : "In preparation"}
-                </span>
               </header>
               <div className="px-6 py-6">
                 {era.essay && era.essay.length > 0 ? (
-                  <div className="era-essay-body">
-                    {era.essay.map((paragraph, index) => (
-                      <p key={index}>{paragraph}</p>
-                    ))}
-                  </div>
+                  <MarkdownContent
+                    className="era-essay-body"
+                    markdown={era.essay.join("\n\n")}
+                  />
                 ) : (
                   <p className="font-serif text-[0.96rem] italic leading-6 text-archive-muted">
                     A contextual essay for this era is in preparation. In the
@@ -363,10 +360,4 @@ function EraStat({ label, value }: { label: string; value: number }) {
       </span>
     </div>
   );
-}
-
-function estimateReadTime(paragraphs: string[]) {
-  const words = paragraphs.reduce((total, paragraph) => total + paragraph.split(/\s+/).length, 0);
-  const minutes = Math.max(1, Math.round(words / 220));
-  return `${minutes} min read`;
 }

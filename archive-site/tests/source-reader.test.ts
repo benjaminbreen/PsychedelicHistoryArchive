@@ -33,6 +33,21 @@ test("buildReaderTabs prioritizes translations before transcripts and originals"
   ]);
 });
 
+test("buildReaderTabs labels a translated source transcript by its original language", () => {
+  const source = makeSource({
+    contentLanguage: "Spanish",
+    language: "Spanish",
+    translationText: "## Translation\n\nTranslated text.",
+  });
+
+  assert.deepEqual(buildReaderTabs(source, ["Texto original."]).map((tab) => tab.label), [
+    "Translation",
+    "Original Spanish",
+    "Original source",
+    "Details",
+  ]);
+});
+
 test("getOriginalMode prefers PDFs for academic articles without page images", () => {
   const source = makeSource({
     files: [{ id: "pdf", kind: "original_pdf", url: "/file.pdf", mimeType: "application/pdf" }],

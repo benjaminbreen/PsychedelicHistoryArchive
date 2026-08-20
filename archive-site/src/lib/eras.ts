@@ -161,7 +161,7 @@ export const ERAS: EraDefinition[] = [
     longDescription:
       "Humphry Davy's 1800 nitrous oxide experiments at the Pneumatic Institution opened a new genre: the first-person introspective drug report. Within a generation Coleridge, De Quincey, and Moreau de Tours had made opium and hashish into subjects of serious literary and clinical writing.",
     tagline:
-      "The half-century that learned to write seriously about altered states.",
+      "Opium, nitrous oxide, and the observing self.",
     yearStart: 1801,
     yearEnd: 1850,
     icon: "nitrous-oxide",

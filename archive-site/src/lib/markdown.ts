@@ -85,7 +85,7 @@ export function parseBlocks(markdown: string): MarkdownBlock[] {
       continue;
     }
 
-    const heading = trimmed.match(/^(#{1,4})\s+(.+)$/);
+    const heading = trimmed.match(/^(#{1,6})\s+(.+)$/);
     if (heading) {
       const text = heading[2].trim();
       blocks.push({ type: "heading", depth: heading[1].length, id: uniqueHeadingId(text, headingCounts), text });
@@ -122,7 +122,7 @@ export function parseBlocks(markdown: string): MarkdownBlock[] {
       const current = lines[index] ?? "";
       const currentTrimmed = current.trim();
       if (!currentTrimmed) break;
-      if (/^```/.test(currentTrimmed) || /^#{1,4}\s+/.test(currentTrimmed) || /^>\s?/.test(currentTrimmed)) break;
+      if (/^```/.test(currentTrimmed) || /^#{1,6}\s+/.test(currentTrimmed) || /^>\s?/.test(currentTrimmed)) break;
       if (/^{{\s*(?:figure|figure-row|figures|gallery|footnotes)(?::|\s*}})/i.test(currentTrimmed)) break;
       if (/^[-*]\s+/.test(currentTrimmed) || /^\d+\.\s+/.test(currentTrimmed)) break;
       paragraphLines.push(currentTrimmed);
@@ -180,7 +180,7 @@ export function extractMarkdownToc(markdown: string): MarkdownTocItem[] {
   const headingCounts = new Map<string, number>();
   const toc: MarkdownTocItem[] = [];
 
-  for (const match of markdown.matchAll(/^(#{2,4})\s+(.+)$/gm)) {
+  for (const match of markdown.matchAll(/^(#{2,6})\s+(.+)$/gm)) {
     const label = stripInlineMarkdown(match[2].trim());
     if (!label) continue;
     toc.push({ id: uniqueHeadingId(label, headingCounts), label });

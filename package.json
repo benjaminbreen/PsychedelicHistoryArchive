@@ -5,6 +5,8 @@
     "upload:squarespace": "node scripts/upload_squarespace_to_supabase.mjs --import-dir data/squarespace-import",
     "upload:nitrous-ether": "node scripts/upload_squarespace_to_supabase.mjs --import-dir data/nitrous-ether-import",
     "upload:latin-america": "node scripts/upload_squarespace_to_supabase.mjs --import-dir data/latin-america-import",
+    "pdf:thumbnails": "node scripts/generate_pdf_page_thumbnails.mjs",
+    "pdf:thumbnails:squarespace": "node scripts/generate_pdf_page_thumbnails.mjs --import-dir data/squarespace-import",
     "topics:seed": "node scripts/seed_topics_from_tags.mjs",
     "qa:sources": "python3 scripts/archive_qa.py",
     "qa:citations": "python3 scripts/build_citation_links.py",

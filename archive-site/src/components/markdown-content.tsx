@@ -320,7 +320,7 @@ function FigureLightbox({ figures, initialIndex, onClose }: { figures: SourceFig
 
 function parseInline(text: string, footnoteMap = new Map<string, Footnote>(), options: InlineParseOptions = {}): ReactNode[] {
   const nodes: ReactNode[] = [];
-  const pattern = /(`[^`]+`|\*\*[^*]+\*\*|\*[^*]+\*|\[\^([^\]]+)\]|\[[^\]]+\]\(([^)\s]+)\))/g;
+  const pattern = /(`[^`]+`|\*\*[^*]+\*\*|__[^_]+__|\*[^*]+\*|_[^_\n]+_|\[\^([^\]]+)\]|\[[^\]]+\]\(([^)\s]+)\))/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
   let index = 0;
@@ -334,9 +334,9 @@ function parseInline(text: string, footnoteMap = new Map<string, Footnote>(), op
 
     if (token.startsWith("`")) {
       nodes.push(<code className="rounded bg-archive-paper px-1 py-0.5 font-mono text-[0.9em]" key={key}>{token.slice(1, -1)}</code>);
-    } else if (token.startsWith("**")) {
+    } else if (token.startsWith("**") || token.startsWith("__")) {
       nodes.push(<strong key={key}>{parseInline(token.slice(2, -2), footnoteMap, options)}</strong>);
-    } else if (token.startsWith("*")) {
+    } else if (token.startsWith("*") || token.startsWith("_")) {
       nodes.push(<em key={key}>{parseInline(token.slice(1, -1), footnoteMap, options)}</em>);
     } else if (token.startsWith("[^")) {
       const footnoteKey = token.slice(2, -1).trim();

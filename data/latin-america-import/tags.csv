@@ -1,55 +1,121 @@
-id,slug,name,description,tag_type
-ebf523b3-0542-5ca7-ae9a-5a9167fb4710,1950-1970,1950-1970,,era
-85775a4c-9075-5ad1-9e01-db31667bfc6a,1970-2000,1970-2000,,era
-a85c8695-8500-5428-afdf-feaae8f01b1d,5-meo-dmt,5-MeO-DMT,,topic
-5cd303e8-1e90-50e3-8fd0-0ab71f1ea387,academic-article,Academic article,,genre
-56d8407e-b5ec-5a27-ace8-8504649a7b01,amazonia,Amazonia,,topic
-e23bdaab-c3de-5e44-adc1-011e6f2212e6,arrow-poison,Arrow poison,,topic
-ffc687e3-50af-5cdd-93cc-00bd6ea553e6,ayahuasca,Ayahuasca,,topic
-8017c607-ef2e-59f7-9387-69c5d989e3a6,bangue,Bangue,,topic
-e5431e1d-b1c3-567b-814a-73fd40830abe,banisteriopsis-caapi,Banisteriopsis caapi,,topic
-bbaffae3-7903-5433-82d9-bafbd24fadb9,bhang,Bhang,,topic
-4f0322e9-fad0-5781-b010-d9c7dbf2448a,book-excerpt,Book excerpt,,genre
-c68fb2a9-456c-5342-8cd8-06816d64e6e2,brazil,Brazil,,topic
-260337a9-5101-554c-b356-ea16440e7915,caapi,Caapi,,topic
-9c19e28e-055b-5f59-b2ec-7e8e6f59236e,cannabis,Cannabis,,topic
-b7c983a4-1584-5792-8e73-fd443d632e0b,chile,Chile,,topic
-28e39c26-01e3-5535-b960-93b9399118dd,colombia,Colombia,,topic
-8cda3b9d-2a2c-5295-8c26-562d7f906c53,conference-paper,Conference paper,,genre
-c4108fff-85a1-5918-9146-9bff87fac7df,dmt,DMT,,topic
-f6a4122f-3bcd-5014-b71c-4bf51dde5b02,early-modern-medicine,Early modern medicine,,topic
-0c0d77fe-42ec-51ac-aca4-c01619acaef6,epena,Epená,,topic
-21a1954e-84fc-5ea1-b016-26c7549da752,ethnobotany,Ethnobotany,,topic
-cf871d42-cfef-5f07-8ca0-a97eab475b74,ethnography,Ethnography,,topic
-1de25bbd-d9f6-5ba8-b545-34f71c7eabb1,ethnopharmacology,Ethnopharmacology,,topic
-ed48d557-9002-599f-9aca-797c385fe009,goa,Goa,,topic
-a1a411fe-5f11-54da-bfc8-f988ab0d78c6,harmala-alkaloids,Harmala alkaloids,,topic
-c4344995-4e86-5143-af45-62c43c4357b1,harmaline,Harmaline,,topic
-c3106b82-f8ec-5618-81c4-a72278d569f6,harmine,Harmine,,substance
-fbe38f2c-8902-500f-bcb3-739e16bd16f5,human-experiments,Human experiments,,topic
-8b0f1b2d-94b2-5aaf-9faf-1918dfac03aa,india,India,,topic
-c4d76809-f927-5537-a205-874b6ad1fc0b,indian-ocean,Indian Ocean,,region
-21761841-24f8-5bf0-bd8e-a3e5d76aeb93,indigenous-knowledge,Indigenous knowledge,,topic
-8ca8e43b-dc28-593c-9945-22f599bcba1f,kava,Kava,,topic
-89047ecd-b8fe-59ca-b43b-1d0dce278700,kavalactones,Kavalactones,,topic
-34b1ce28-8f9b-5118-a2ff-6c0ccfae4f29,latin-america,Latin America,,region
-1e0a30cf-7157-5672-bf32-aed25419b3ad,materia-medica,Materia medica,,topic
-7bce32ff-5ee9-5d4a-ba42-2c4fa07ad4e6,melanesia,Melanesia,,topic
-753e2b23-dd35-52d9-b747-a4e253a891c4,mescaline,Mescaline,,substance
-44c6a08e-b4e6-5994-8c0b-3c5ba1522fdb,micronesia,Micronesia,,topic
-8e784baa-a648-5b89-bdcc-5ace6edfe8a6,oceania,Oceania,,region
-a818fa2a-6cdd-5b2a-b39e-37dada422411,opium,Opium,,substance
-fdb67866-fca7-5ec2-bf66-365f883d16f0,pharmacology,Pharmacology,,topic
-775d8e6d-3b8c-5568-9cea-3972c0ab4290,phytochemistry,Phytochemistry,,topic
-744824b6-f6c8-55e4-b110-403828a77c11,piper-methysticum,Piper methysticum,,topic
-a6042e18-b5a5-5abc-be83-1c7e02fa2608,polynesia,Polynesia,,topic
-81ddedb7-079e-557d-b7de-ca7a3dc24fac,portuguese-empire,Portuguese Empire,,topic
-e30c6af8-7739-52de-95c0-c5857e2d8d33,pre-1800,Pre-1800,,era
-0bd72ccf-ed98-53c6-9d95-eb0cf421bb8b,roraima,Roraima,,topic
-1ada7008-34a2-5ad8-a51d-d8c31bf9d753,south-america,South America,,topic
-f539934c-0763-514b-a618-c77e5ee567df,tukano,Tukano,,topic
-51caadb8-6949-5591-ad6d-559e7371327b,vaupes,Vaupés,,topic
-a1e19e70-3184-5f58-9883-77d8d0074a60,virola,Virola,,topic
-74d6fdd6-613b-5c50-9895-1568fd26f45d,virola-theiodora,Virola theiodora,,topic
-f155b06a-c48b-5fa1-83eb-4876ab575f59,yaje,Yajé,,topic
-841a5138-276d-5699-914c-aa3f101c757e,yomane,Yomanê,,topic
+id,slug,name,description,tag_type,status
+ebf523b3-0542-5ca7-ae9a-5a9167fb4710,1950-1970,1950-1970,,era,
+5373ff75-9d0b-503d-aa14-53666afed175,1970-2000,1970-2000,,era,published
+a85c8695-8500-5428-afdf-feaae8f01b1d,5-meo-dmt,5-MeO-DMT,,topic,
+5cd303e8-1e90-50e3-8fd0-0ab71f1ea387,academic-article,Academic article,,genre,
+56d8407e-b5ec-5a27-ace8-8504649a7b01,amazonia,Amazonia,,topic,
+e23bdaab-c3de-5e44-adc1-011e6f2212e6,arrow-poison,Arrow poison,,topic,
+ffc687e3-50af-5cdd-93cc-00bd6ea553e6,ayahuasca,Ayahuasca,,topic,
+8017c607-ef2e-59f7-9387-69c5d989e3a6,bangue,Bangue,,topic,
+e5431e1d-b1c3-567b-814a-73fd40830abe,banisteriopsis-caapi,Banisteriopsis caapi,,topic,
+bbaffae3-7903-5433-82d9-bafbd24fadb9,bhang,Bhang,,topic,
+64bd93cc-3667-5c1c-97d9-b921aa8f9b0f,book-excerpt,Book excerpt,,genre,
+c68fb2a9-456c-5342-8cd8-06816d64e6e2,brazil,Brazil,,topic,
+260337a9-5101-554c-b356-ea16440e7915,caapi,Caapi,,topic,
+9c19e28e-055b-5f59-b2ec-7e8e6f59236e,cannabis,Cannabis,,topic,
+b7c983a4-1584-5792-8e73-fd443d632e0b,chile,Chile,,topic,
+28e39c26-01e3-5535-b960-93b9399118dd,colombia,Colombia,,topic,
+8cda3b9d-2a2c-5295-8c26-562d7f906c53,conference-paper,Conference paper,,genre,
+ad8871d1-3148-5181-b05f-f0653cb90c4c,datura,Datura,,substance,
+c4108fff-85a1-5918-9146-9bff87fac7df,dmt,DMT,,topic,
+f6a4122f-3bcd-5014-b71c-4bf51dde5b02,early-modern-medicine,Early modern medicine,,topic,
+0c0d77fe-42ec-51ac-aca4-c01619acaef6,epena,Epená,,topic,
+5d3a8701-5210-5b80-8167-b3c37d82c5bb,ethnobotany,Ethnobotany,,topic,
+cf871d42-cfef-5f07-8ca0-a97eab475b74,ethnography,Ethnography,,topic,
+1de25bbd-d9f6-5ba8-b545-34f71c7eabb1,ethnopharmacology,Ethnopharmacology,,topic,
+d2ed4518-a7ce-5204-a857-01112270c9f7,florentine-codex,Florentine Codex,,topic,
+ed48d557-9002-599f-9aca-797c385fe009,goa,Goa,,topic,
+a1a411fe-5f11-54da-bfc8-f988ab0d78c6,harmala-alkaloids,Harmala alkaloids,,topic,
+c4344995-4e86-5143-af45-62c43c4357b1,harmaline,Harmaline,,topic,
+c3106b82-f8ec-5618-81c4-a72278d569f6,harmine,Harmine,,substance,
+c4107c5b-6e1d-5583-bf29-a1f473ca2306,human-experiments,Human experiments,,topic,published
+8b0f1b2d-94b2-5aaf-9faf-1918dfac03aa,india,India,,topic,
+c4d76809-f927-5537-a205-874b6ad1fc0b,indian-ocean,Indian Ocean,,region,
+61577b9d-a2f7-5498-8580-b13180527ba6,indigenous-knowledge,Indigenous knowledge,,topic,
+8ca8e43b-dc28-593c-9945-22f599bcba1f,kava,Kava,,topic,
+89047ecd-b8fe-59ca-b43b-1d0dce278700,kavalactones,Kavalactones,,topic,
+5189115d-0a5f-572d-8dd7-becc48daf5cc,latin-america,Latin America,,region,
+1e0a30cf-7157-5672-bf32-aed25419b3ad,materia-medica,Materia medica,,topic,
+c3aec49d-a5e6-5286-82c5-146fdaa7c03a,medicine,Medicine,,topic,
+7bce32ff-5ee9-5d4a-ba42-2c4fa07ad4e6,melanesia,Melanesia,,topic,
+753e2b23-dd35-52d9-b747-a4e253a891c4,mescaline,Mescaline,,substance,
+9d1d5fcd-79a9-55aa-ba42-59a15c80aea6,mexico,Mexico,,region,
+44c6a08e-b4e6-5994-8c0b-3c5ba1522fdb,micronesia,Micronesia,,topic,
+9ad7c9f2-0351-547e-bbcb-fa21180674ff,new-spain,New Spain,,region,
+8e784baa-a648-5b89-bdcc-5ace6edfe8a6,oceania,Oceania,,region,
+7071ae20-1505-570e-aed1-f9efbb66bde7,ololiuhqui,Ololiuhqui,,substance,
+a818fa2a-6cdd-5b2a-b39e-37dada422411,opium,Opium,,substance,
+a28dcfa3-65e0-5e19-86d2-399e6b8152df,peyote,Peyote,,substance,
+fdb67866-fca7-5ec2-bf66-365f883d16f0,pharmacology,Pharmacology,,topic,
+775d8e6d-3b8c-5568-9cea-3972c0ab4290,phytochemistry,Phytochemistry,,topic,
+744824b6-f6c8-55e4-b110-403828a77c11,piper-methysticum,Piper methysticum,,topic,
+a6042e18-b5a5-5abc-be83-1c7e02fa2608,polynesia,Polynesia,,topic,
+81ddedb7-079e-557d-b7de-ca7a3dc24fac,portuguese-empire,Portuguese Empire,,topic,
+070dd9eb-4d7a-5793-b141-cc38101f8afd,pre-1800,Pre-1800,,era,
+75be90ed-1f25-57a3-9168-1c5c2a1f0a25,psilocybin,Psilocybin,,substance,
+b2cb87db-d8c3-573c-ab1f-2bada89a7249,psychoactive-plants,Psychoactive plants,,topic,
+db393577-f521-5ed6-914f-b2014d1f1f19,religion,Religion,,topic,
+0bd72ccf-ed98-53c6-9d95-eb0cf421bb8b,roraima,Roraima,,topic,
+1ada7008-34a2-5ad8-a51d-d8c31bf9d753,south-america,South America,,topic,
+d199c958-439b-54f3-9684-77668fa725c5,teonanacatl,Teonanácatl,,substance,
+fc820f28-8258-5bae-9568-95598fa6f667,tlatelolco,Tlatelolco,,topic,
+f539934c-0763-514b-a618-c77e5ee567df,tukano,Tukano,,topic,
+51caadb8-6949-5591-ad6d-559e7371327b,vaupes,Vaupés,,topic,
+a1e19e70-3184-5f58-9883-77d8d0074a60,virola,Virola,,topic,
+74d6fdd6-613b-5c50-9895-1568fd26f45d,virola-theiodora,Virola theiodora,,topic,
+f155b06a-c48b-5fa1-83eb-4876ab575f59,yaje,Yajé,,topic,
+841a5138-276d-5699-914c-aa3f101c757e,yomane,Yomanê,,topic,
+a5fa7520-308a-5e2a-adf2-f0fd6ef114c1,1800-1950,1800-1950,,era,
+4030ef78-ee93-57ee-af70-a13b647c1fea,colonial-mexico,Colonial Mexico,,topic,
+069b9cf0-7fee-5d21-9c2d-c5b5b4deedd3,divination,Divination,,topic,
+7199742e-982c-592d-ba03-ff241b2721c7,orinoquia,Orinoquia,,region,
+1ef177a1-6999-5d31-bcd5-0cf7df370a4a,niopo,Niopo,,substance,
+0d4526ff-b898-54ac-8a59-480acc82ecc1,yopo,Yopo,,substance,
+da480fec-b9e4-502e-9b03-1ea126170302,parica,Paricá,,substance,
+5b2d4254-38be-51b4-a1f0-af2c9d6f6138,field-science,Field science,,topic,
+2b4d53d4-ddf0-5165-8204-51245bb3092d,coronation,Coronation,,topic,
+8278456c-0684-54cb-bf83-9bb2b75daca2,ecuador,Ecuador,,region,
+c0e0c3e5-1bb8-5171-b329-459457b7f86d,geography,Geography,,topic,
+c635e549-8d90-5c3e-ab01-adc3b8df4103,mushrooms,Mushrooms,,substance,
+4e9c36b5-f169-5845-b1e0-adc55cac11af,ritual,Ritual,,topic,
+99541e5f-6a21-5c70-8067-6034c81093a6,visionary-experience,Visionary experience,,topic,
+5bac1404-4ffe-5f63-84ed-4492ee6b799e,amanita-muscaria,Amanita muscaria,,substance,
+26c0f07c-884d-5004-89eb-ae71fbbbc37a,fly-agaric,Fly agaric,,substance,
+06fbbab6-eba7-5292-8ccf-02abb0331b9b,kamchatka,Kamchatka,,region,
+001d7209-cc6e-5bd7-900c-a5126304acff,koryak,Koryak,,topic,
+7b19ab32-9a3e-5238-8423-c107aa7dac02,mura,Mura,,topic,
+0ce3abf8-2739-5b5d-b360-31f907f3a32d,natural-history,Natural history,,topic,
+4bf66cd1-5c32-51da-80cd-afa787bdf100,siberia,Siberia,,region,
+a3bb0884-752f-55fb-90c5-d0265106886c,travel-writing,Travel writing,,topic,
+8f8f1429-c113-5893-9dd9-efd875c35a7a,pre-500,Pre-500 CE,,era,
+51a53ea5-1c06-5aac-9ecb-a264902f577c,soma,Soma,,substance,
+44475026-17b1-579c-be32-1be20526a46b,ancient-india,Ancient India,,region,
+ffb34a24-4f70-540d-89b7-19743a86efd8,south-asia,South Asia,,region,
+968674b6-1f0f-55ad-b3ed-f84cda6ad6f0,vedic-ritual,Vedic ritual,,topic,
+d8f279db-5515-55c5-bf8e-ab220f588ebe,vedic-texts,Vedic texts,,topic,
+577c7dae-996d-5fa7-a4fc-bebdfe6b4815,sanskrit,Sanskrit,,topic,
+22cdf30a-4509-5171-bfff-b4e084e6c834,contested-identification,Contested identification,,topic,
+5ed52f73-b39c-5da0-bc04-8f6c707400ed,1800-1850,1800-1850,,era,
+7aa4f22a-eef0-5838-b187-3467958b08a6,1850-1900,1850-1900,,era,
+47368669-5f62-500d-90f2-935b82e912f0,europe,Europe,,region,
+c2bbff51-91bf-5e3f-ba6a-c3108e6f9e7e,france,France,,region,
+7144f25b-edf6-57ce-b1e1-beb977214e79,germany,Germany,,region,
+66caa9d8-327c-5fc2-a3c7-5095e819270f,hashish,Hashish,,substance,
+06b8ac92-a0f2-5c5c-b7dc-bf7d82bda3ed,psychiatry,Psychiatry,,topic,
+d59966d6-8380-5d0c-b010-e599097eb67d,self-experiment,Self-experiment,,topic,
+4dfbcd11-268d-57a7-a580-2308c21e1b3b,french-psychiatry,French psychiatry,,topic,
+8d37902c-2636-51bb-8212-0e87003732a8,comparative-pharmacology,Comparative pharmacology,,topic,
+8acc0608-232b-5e6b-a2a4-d91facab0332,german-natural-history,German natural history,,topic,
+a5392957-62ea-545e-be29-32aa53006192,united-states,United States,,region,published
+8ab8931c-2390-5b73-8124-bf6835871b26,washington-dc,"Washington, D.C.",,region,published
+525ab146-1753-57ac-bad8-4a26798e9600,mkultra,MKULTRA,,topic,published
+55b3a2e7-495b-5cbc-b3b9-a85663b6de26,cia,CIA,,topic,published
+f5277511-b159-5e29-9b44-d0db101e86a1,lsd,LSD,,substance,published
+852abb2c-d096-53b2-8b7f-055d79941e18,government-research,Government Research,,topic,published
+2a04cc4a-5c03-5ec0-99e3-63bbec8685b2,intelligence,Intelligence,,topic,published
+14f8d2b6-e388-5c56-9938-bfca943790c4,clinical,Clinical,,topic,published
+326a4b04-960a-591e-8813-140fb54531d6,law,Law,,topic,published
+a0d148b4-d0e1-5d6e-8353-b169ea23220f,research-ethics,Research ethics,,topic,published
+34c638ba-3dde-59f0-9555-285cf14651c2,congressional-investigation,Congressional investigation,,topic,published
+eac113da-ce04-5433-a57b-1b6d9e323dc9,declassified-files,Declassified files,,topic,published
+e510fbae-0a0b-53c7-b4dd-8eb483104828,cold-war,Cold War,,topic,published

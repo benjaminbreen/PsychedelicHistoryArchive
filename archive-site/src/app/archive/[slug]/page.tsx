@@ -1,27 +1,30 @@
 import type { Metadata as NextMetadata } from "next";
 import { notFound, redirect } from "next/navigation";
-import { ArrowLeft, BookOpen, ChevronDown } from "lucide-react";
+import { ArrowLeft, BookOpen, ChevronDown, MessageSquareWarning } from "lucide-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { canonicalizePersonName, isDisplayableBiographyName, slugifyPersonName } from "@/lib/biographies";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { SourceActions } from "@/components/source-actions";
+import { CitationCopyControl, SourceActions } from "@/components/source-actions";
 import { SourceImage } from "@/components/source-image";
 import { SourceReaderTabs } from "@/components/source-reader-tabs";
 import { Chip } from "@/components/ui/chip";
 import { eraHref, getEraForYear } from "@/lib/eras";
 import { getRelatedSources, topicHref, type RelatedSource } from "@/lib/internal-links";
 import { JsonLd, SITE_NAME, buildBreadcrumbJsonLd, buildSourceJsonLd, canonicalPath, seoDescription, sourceImageMetadata } from "@/lib/seo";
+import { SOURCE_ISSUE_TYPE_OPTIONS } from "@/lib/source-issue-reports";
 import { getArchiveSourceDetailFromSupabase, listArchiveSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { isPdfFile, isSiteEntry, siteEvidenceLabel } from "@/lib/source-reader";
 import { getSourceTitleParts } from "@/lib/source-title";
 import type { ArchiveSource } from "@/lib/types";
+import { submitSourceIssueReport } from "./actions";
 
 export const dynamic = "force-dynamic";
 
 type SourcePageProps = {
   params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ report?: string }>;
 };
 
 export async function generateMetadata({ params }: SourcePageProps): Promise<NextMetadata> {
@@ -71,8 +74,10 @@ export async function generateMetadata({ params }: SourcePageProps): Promise<Nex
   };
 }
 
-export default async function SourcePage({ params }: SourcePageProps) {
+export default async function SourcePage({ params, searchParams }: SourcePageProps) {
   const { slug } = await params;
+  const paramsValue = await searchParams;
+  const reportStatus = normalizeReportStatus(paramsValue?.report);
   if (slug === "chavin-de-huantar-vilca-snuff") redirect("/archive/chavin-de-huantar");
   const [source, sources] = await Promise.all([
     getArchiveSourceDetailFromSupabase(slug),
@@ -98,7 +103,7 @@ export default async function SourcePage({ params }: SourcePageProps) {
     return (
       <>
         <JsonLd data={structuredData} />
-        <HostedSourcePage relatedSources={relatedSources} source={source} />
+        <HostedSourcePage relatedSources={relatedSources} reportStatus={reportStatus} source={source} />
       </>
     );
   }
@@ -177,6 +182,7 @@ export default async function SourcePage({ params }: SourcePageProps) {
                 This record preserves the source metadata and citation context while directing readers to the holding repository for access to the original object.
               </p>
             </section>
+            <SourceIssueReportPanel reportStatus={reportStatus} source={source} />
           </div>
 
           <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
@@ -196,19 +202,20 @@ export default async function SourcePage({ params }: SourcePageProps) {
 
             <SourceDetailsCard
               primaryDetails={[
-                { label: "Citation", value: source.citation },
+                { label: "Citation", value: source.citation, action: <CitationCopyControl citation={source.citation} source={source} /> },
                 { label: "Access", value: isExternal ? "Hosted externally" : "Hosted by archive" }
               ]}
               secondaryDetails={[
                 { label: "Archive ID", value: source.id },
                 { label: "Rights", value: source.rights }
               ]}
-              title="Source details"
+              title="Source info"
             >
               <SourceActions
                 citation={source.citation}
                 pdfUrl={pdfFile?.url}
                 shareTitle={titleParts.subtitle ? `${titleParts.title}: ${titleParts.subtitle}` : titleParts.title}
+                source={source}
                 sourceUrl={source.sourceUrl}
                 viewLabel="View external source"
               />
@@ -222,7 +229,7 @@ export default async function SourcePage({ params }: SourcePageProps) {
   );
 }
 
-function HostedSourcePage({ relatedSources, source }: { relatedSources: RelatedSource[]; source: ArchiveSource }) {
+function HostedSourcePage({ relatedSources, reportStatus, source }: { relatedSources: RelatedSource[]; reportStatus: ReportStatus; source: ArchiveSource }) {
   const transcript = getTranscriptPreview(source);
   const titleParts = getSourceTitleParts(source);
   const pdfFile = getPdfFile(source);
@@ -311,7 +318,7 @@ function HostedSourcePage({ relatedSources, source }: { relatedSources: RelatedS
             <SourceDetailsCard
               primaryDetails={[
                 { label: siteEntry ? "Entry author" : "Creators", value: siteEntry ? entryAuthorLabel(source) : formatCreators(source) },
-                { label: "Citation", value: source.citation }
+                { label: "Citation", value: source.citation, action: <CitationCopyControl citation={source.citation} source={source} /> }
               ]}
               secondaryDetails={[
                 { label: "Archive ID", value: `T-1800-1950-${source.id.slice(0, 3).toUpperCase()}` },
@@ -322,18 +329,20 @@ function HostedSourcePage({ relatedSources, source }: { relatedSources: RelatedS
                 { label: "Rights", value: source.rights },
                 { label: "Abstract", value: source.summary }
               ]}
-              title={siteEntry ? "Entry details" : "Source details"}
+              title={siteEntry ? "Entry info" : "Source info"}
             >
               <SourceActions
                 citation={source.citation}
                 pdfUrl={pdfFile?.url}
                 shareTitle={titleParts.subtitle ? `${titleParts.title}: ${titleParts.subtitle}` : titleParts.title}
+                source={source}
                 sourceUrl={siteEntry ? undefined : source.sourceUrl}
               />
             </SourceDetailsCard>
             <RelatedSourcesCard sources={relatedSources} />
           </aside>
         </div>
+        <SourceIssueReportPanel reportStatus={reportStatus} source={source} />
         </div>
       </main>
       <SiteFooter />
@@ -343,6 +352,125 @@ function HostedSourcePage({ relatedSources, source }: { relatedSources: RelatedS
 
 function getPdfFile(source: ArchiveSource) {
   return source.files?.find(isPdfFile);
+}
+
+type ReportStatus = "submitted" | "invalid" | "unavailable" | "not-found" | "error" | null;
+
+function SourceIssueReportPanel({ reportStatus, source }: { reportStatus: ReportStatus; source: ArchiveSource }) {
+  const shouldOpen = Boolean(reportStatus);
+
+  return (
+    <section className="mt-8 rounded-md border border-archive-line bg-archive-surface p-4 shadow-[0_8px_22px_rgb(var(--archive-shadow)/0.04)]" id="source-issue-report">
+      <details open={shouldOpen}>
+        <summary className="focus-ring flex cursor-pointer list-none items-start gap-3 rounded-sm text-left [&::-webkit-details-marker]:hidden">
+          <MessageSquareWarning className="mt-0.5 h-5 w-5 shrink-0 text-archive-violet" />
+          <span>
+            <span className="block font-semibold">Spotted a typo, factual error, broken link, or other concern?</span>
+            <span className="mt-1 block text-sm leading-6 text-archive-muted">
+              Report an issue with this source. Reports go to the archive QA dashboard for editorial review.
+            </span>
+          </span>
+          <ChevronDown className="ml-auto mt-1 h-4 w-4 shrink-0 text-archive-muted" />
+        </summary>
+        <div className="mt-4 border-t border-archive-line pt-4">
+          <ReportStatusMessage status={reportStatus} />
+          <form action={submitSourceIssueReport} className="grid gap-4 text-sm">
+            <input name="source_id" type="hidden" defaultValue={source.id} />
+            <input name="source_slug" type="hidden" defaultValue={source.slug} />
+            <div className="hidden" aria-hidden="true">
+              <label>
+                Website
+                <input autoComplete="off" name="website" tabIndex={-1} />
+              </label>
+            </div>
+            <div className="grid gap-4 md:grid-cols-[16rem_minmax(0,1fr)]">
+              <label className="grid gap-1.5">
+                <span className="font-semibold">Issue type</span>
+                <select className="focus-ring rounded-md border border-archive-line bg-archive-paper px-3 py-2" name="issue_type">
+                  {SOURCE_ISSUE_TYPE_OPTIONS.map((option) => (
+                    <option key={option.value} value={option.value}>{option.label}</option>
+                  ))}
+                </select>
+              </label>
+              <label className="grid gap-1.5">
+                <span className="font-semibold">Location</span>
+                <input
+                  className="focus-ring rounded-md border border-archive-line bg-archive-paper px-3 py-2"
+                  maxLength={300}
+                  name="location"
+                  placeholder="Page, section, timestamp, or short quote"
+                />
+              </label>
+            </div>
+            <label className="grid gap-1.5">
+              <span className="font-semibold">What should we review?</span>
+              <textarea
+                className="focus-ring min-h-28 rounded-md border border-archive-line bg-archive-paper px-3 py-2 leading-6"
+                maxLength={4000}
+                name="description"
+                placeholder="Describe the typo, factual issue, missing context, broken link, or other concern."
+                required
+              />
+            </label>
+            <label className="grid gap-1.5">
+              <span className="font-semibold">Suggested correction <span className="font-normal text-archive-muted">(optional)</span></span>
+              <textarea
+                className="focus-ring min-h-20 rounded-md border border-archive-line bg-archive-paper px-3 py-2 leading-6"
+                maxLength={1500}
+                name="suggested_fix"
+                placeholder="If you know the correction, add it here."
+              />
+            </label>
+            <div className="grid gap-4 md:grid-cols-2">
+              <label className="grid gap-1.5">
+                <span className="font-semibold">Name <span className="font-normal text-archive-muted">(optional)</span></span>
+                <input className="focus-ring rounded-md border border-archive-line bg-archive-paper px-3 py-2" maxLength={120} name="reporter_name" />
+              </label>
+              <label className="grid gap-1.5">
+                <span className="font-semibold">Email <span className="font-normal text-archive-muted">(optional)</span></span>
+                <input className="focus-ring rounded-md border border-archive-line bg-archive-paper px-3 py-2" maxLength={180} name="reporter_email" type="email" />
+              </label>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <button className="focus-ring rounded-md border border-archive-violet bg-archive-violet px-4 py-2 font-semibold text-white hover:bg-archive-violetDark" type="submit">
+                Submit report
+              </button>
+              <p className="text-xs leading-5 text-archive-muted">
+                We use your email only if follow-up would help resolve the issue.
+              </p>
+            </div>
+          </form>
+        </div>
+      </details>
+    </section>
+  );
+}
+
+function ReportStatusMessage({ status }: { status: ReportStatus }) {
+  if (!status) return null;
+
+  const messages: Record<Exclude<ReportStatus, null>, string> = {
+    submitted: "Thanks. Your report has been sent to the archive QA queue.",
+    invalid: "Please include a little more detail before submitting the report.",
+    unavailable: "Issue reporting is not fully configured yet. Try again after the source issue report schema has been applied.",
+    "not-found": "We could not verify this source before saving the report.",
+    error: "Something went wrong while saving the report.",
+  };
+
+  return (
+    <div className={`mb-4 rounded-md border px-3 py-2 text-sm ${
+      status === "submitted"
+        ? "border-green-200 bg-green-50 text-green-800"
+        : "border-amber-200 bg-amber-50 text-amber-900"
+    }`}>
+      {messages[status]}
+    </div>
+  );
+}
+
+function normalizeReportStatus(value: string | undefined): ReportStatus {
+  if (value === "submitted" || value === "invalid" || value === "unavailable" || value === "not-found" || value === "error") return value;
+  return null;
 }
 
 function siteRegionLabel(source: ArchiveSource) {
@@ -418,6 +546,7 @@ function tagTone(tag: string) {
 
 type DetailItem = {
   label: string;
+  action?: ReactNode;
   value: string;
 };
 
@@ -433,28 +562,41 @@ function SourceDetailsCard({
   title: string;
 }) {
   const visibleSecondaryDetails = secondaryDetails.filter((detail) => detail.value);
+  const detailsToggleId = `${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-full-details`;
 
   return (
-    <div className="overflow-hidden rounded-lg border border-archive-line bg-archive-surface shadow-[0_10px_28px_rgb(var(--archive-shadow)/0.04)]">
-      <div className="p-4">
-        <h2 className="source-serif-heading">{title}</h2>
-        <dl className="mt-5 space-y-3 text-sm">
-          {primaryDetails.map((detail) => (
-            <Detail label={detail.label} value={detail.value} key={detail.label} />
-          ))}
-        </dl>
-        {visibleSecondaryDetails.length > 0 && (
-          <details className="group mt-3 border-t border-archive-line pt-3">
-            <summary className="focus-ring flex cursor-pointer list-none items-center justify-between rounded-sm py-1 text-xs font-semibold uppercase tracking-[0.08em] text-archive-violet transition hover:text-archive-violetDark [&::-webkit-details-marker]:hidden">
-              <span>Full details</span>
-              <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
-            </summary>
-            <dl className="mt-3 space-y-3 text-sm">
-              {visibleSecondaryDetails.map((detail) => (
-                <Detail label={detail.label} value={detail.value} key={detail.label} />
+    <div className="rounded-lg border border-archive-line bg-archive-surface shadow-[0_10px_28px_rgb(var(--archive-shadow)/0.04)]">
+      <div className="p-4 pb-3">
+        {visibleSecondaryDetails.length > 0 ? (
+          <div className="grid gap-3">
+            <input className="peer sr-only" id={detailsToggleId} type="checkbox" />
+            <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3 peer-checked:[&_svg]:rotate-180">
+              <h2 className="source-serif-heading">{title}</h2>
+              <label className="focus-ring flex cursor-pointer items-center gap-1.5 rounded-sm py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-archive-violet transition hover:text-archive-violetDark" htmlFor={detailsToggleId}>
+                <span>Full details</span>
+                <ChevronDown className="h-4 w-4 transition-transform" />
+              </label>
+            </div>
+            <dl className="space-y-2.5 text-sm">
+              {primaryDetails.map((detail) => (
+                <Detail action={detail.action} label={detail.label} value={detail.value} key={detail.label} />
               ))}
             </dl>
-          </details>
+            <dl className="-mt-1 hidden space-y-2.5 border-t border-archive-line/80 pt-2.5 text-sm peer-checked:block">
+              {visibleSecondaryDetails.map((detail) => (
+                <Detail action={detail.action} label={detail.label} value={detail.value} key={detail.label} />
+              ))}
+            </dl>
+          </div>
+        ) : (
+          <>
+            <h2 className="source-serif-heading">{title}</h2>
+            <dl className="mt-4 space-y-2.5 text-sm">
+              {primaryDetails.map((detail) => (
+                <Detail action={detail.action} label={detail.label} value={detail.value} key={detail.label} />
+              ))}
+            </dl>
+          </>
         )}
       </div>
       {children}
@@ -462,11 +604,14 @@ function SourceDetailsCard({
   );
 }
 
-function Detail({ label, value }: { label: string; value: string }) {
+function Detail({ action, label, value }: { action?: ReactNode; label: string; value: string }) {
   return (
-    <div className="grid grid-cols-[5.4rem_minmax(0,1fr)] gap-3 border-b border-archive-line/80 pb-3 last:border-b-0">
+    <div className="grid grid-cols-[5.4rem_minmax(0,1fr)] gap-3 border-b border-archive-line/80 pb-2.5 last:border-b-0">
       <dt className="text-[13px] font-semibold text-archive-ink">{label}</dt>
-      <dd className="min-w-0 [overflow-wrap:anywhere] text-[13px] leading-5 text-archive-muted">{value}</dd>
+      <dd className="min-w-0 [overflow-wrap:anywhere] text-[13px] leading-5 text-archive-muted">
+        {value}
+        {action}
+      </dd>
     </div>
   );
 }

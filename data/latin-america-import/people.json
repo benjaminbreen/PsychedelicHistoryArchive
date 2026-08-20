@@ -9,6 +9,15 @@
     "bio": "American chemist and psychopharmacologist whose work ranged from industrial chemistry to psychoactive phenethylamines, tryptamines, and ethnobotanical pharmacology."
   },
   {
+    "id": "1ad91181-a4aa-5c61-a470-f2cfb511e460",
+    "slug": "bernardino-de-sahagun",
+    "name": "Bernardino de Sahagún",
+    "sort_name": "Sahagún, Bernardino de",
+    "birth_year": 1499,
+    "death_year": 1590,
+    "bio": "Franciscan friar, missionary, linguist, and compiler of the Florentine Codex, produced with Nahua collaborators in sixteenth-century New Spain."
+  },
+  {
     "id": "b1e43ba6-ac03-58d0-9249-5bca9ee24edd",
     "slug": "claudio-naranjo",
     "name": "Claudio Naranjo",
@@ -52,5 +61,203 @@
     "birth_year": 1928,
     "death_year": null,
     "bio": "Brazilian botanist associated with INPA, known for taxonomic work on Amazonian plants including Virola."
+  },
+  {
+    "id": "3e077676-4988-52b8-8b56-b8ed9c982d96",
+    "slug": "pedro-ponce-de-leon",
+    "name": "Pedro Ponce de León",
+    "sort_name": "Ponce de León, Pedro",
+    "birth_year": 1546,
+    "death_year": 1628,
+    "bio": "Spanish secular priest in New Spain whose brief anti-idolatry treatise recorded Indigenous ritual practices, divination, and uses of ololiuhqui and peyote."
+  },
+  {
+    "id": "ea91920b-374f-5324-b113-ae06c56b9843",
+    "slug": "hernando-ruiz-de-alarcon",
+    "name": "Hernando Ruiz de Alarcón",
+    "sort_name": "Ruiz de Alarcón, Hernando",
+    "birth_year": null,
+    "death_year": null,
+    "bio": "Seventeenth-century Mexican ecclesiastical judge and priest whose 1629 treatise on Indigenous ritual practice includes extended passages on ololiuhqui, peyote, healing, and divination."
+  },
+  {
+    "id": "f0057e03-8bbe-5150-aa6e-afc3279e007b",
+    "slug": "jacinto-de-la-serna",
+    "name": "Jacinto de la Serna",
+    "sort_name": "Serna, Jacinto de la",
+    "birth_year": null,
+    "death_year": null,
+    "bio": "Seventeenth-century Mexican priest and author of the Manual de ministros de indios, a guide for clergy that catalogued Indigenous rites, healing practices, and colonial anti-idolatry concerns."
+  },
+  {
+    "id": "b97f64d0-ca9f-5e6a-8e0d-3390b8f4abc4",
+    "slug": "nicolas-leon",
+    "name": "Nicolás León",
+    "sort_name": "León, Nicolás",
+    "birth_year": 1859,
+    "death_year": 1929,
+    "bio": "Mexican physician, historian, bibliographer, and editor associated with the Museo Nacional, where he published colonial anti-idolatry texts in the 1890s."
+  },
+  {
+    "id": "91d63543-6329-57df-a9a7-57d10c658e08",
+    "slug": "richard-spruce",
+    "name": "Richard Spruce",
+    "sort_name": "Spruce, Richard",
+    "birth_year": 1817,
+    "death_year": 1893,
+    "bio": "English botanist whose Amazon and Andes fieldwork produced foundational nineteenth-century descriptions of caapi, niopo, and other Indigenous psychoactive plant preparations."
+  },
+  {
+    "id": "f35995fc-4f41-5fd2-af7f-313cb3c10290",
+    "slug": "alfred-russel-wallace",
+    "name": "Alfred Russel Wallace",
+    "sort_name": "Wallace, Alfred Russel",
+    "birth_year": 1823,
+    "death_year": 1913,
+    "bio": "English naturalist and editor of Richard Spruce's Notes of a Botanist on the Amazon and Andes."
+  },
+  {
+    "id": "e5075690-d521-55ba-b79c-f7a4557885b3",
+    "slug": "diego-duran",
+    "name": "Diego Durán",
+    "sort_name": "Durán, Diego",
+    "birth_year": 1537,
+    "death_year": 1588,
+    "bio": "Dominican friar and historian of New Spain whose Historia de las Indias de Nueva España preserved Nahua historical traditions, ritual descriptions, and colonial interpretations of Mexica ceremonial life."
+  },
+  {
+    "id": "537af2d3-556c-5831-85c9-b3b137d8b493",
+    "slug": "jose-fernando-ramirez",
+    "name": "José F. Ramírez",
+    "sort_name": "Ramírez, José F.",
+    "birth_year": 1804,
+    "death_year": 1871,
+    "bio": "Mexican historian, bibliographer, and editor who prepared the 1867 publication of Diego Durán's Historia with notes and illustrations."
+  },
+  {
+    "id": "0c0a940e-f0c3-556f-a506-71f0f4993650",
+    "slug": "manuel-villavicencio",
+    "name": "Manuel Villavicencio",
+    "sort_name": "Villavicencio, Manuel",
+    "birth_year": null,
+    "death_year": null,
+    "bio": "Ecuadorian physician and geographer whose 1858 Geografía de la República del Ecuador includes a notable Spanish account of ayahuasca use in eastern Ecuador and a first-person description of its effects."
+  },
+  {
+    "id": "bf1d44d4-f040-5255-b691-75ce4365b9e7",
+    "slug": "alexander-von-humboldt",
+    "name": "Alexander von Humboldt",
+    "sort_name": "Humboldt, Alexander von",
+    "birth_year": 1769,
+    "death_year": 1859,
+    "bio": "Prussian naturalist, geographer, and explorer whose American travel writings shaped nineteenth-century science and included early descriptions of Orinoco niopo."
+  },
+  {
+    "id": "f9831bae-51cc-5f29-a139-7dfa30bafd6d",
+    "slug": "aime-bonpland",
+    "name": "Aimé Bonpland",
+    "sort_name": "Bonpland, Aimé",
+    "birth_year": 1773,
+    "death_year": 1858,
+    "bio": "French botanist and explorer who traveled with Alexander von Humboldt in Spanish America and co-authored the Personal Narrative."
+  },
+  {
+    "id": "45d75997-8d9f-52b8-a4ec-a348af1904a0",
+    "slug": "helen-maria-williams",
+    "name": "Helen Maria Williams",
+    "sort_name": "Williams, Helen Maria",
+    "birth_year": 1761,
+    "death_year": 1827,
+    "bio": "English writer, translator, and political commentator who translated Humboldt and Bonpland's Personal Narrative into English."
+  },
+  {
+    "id": "95f91a1c-0877-52af-afb7-3cd28936325a",
+    "slug": "johann-baptist-von-spix",
+    "name": "Johann Baptist von Spix",
+    "sort_name": "Spix, Johann Baptist von",
+    "birth_year": 1781,
+    "death_year": 1826,
+    "bio": "Bavarian zoologist and explorer who traveled in Brazil from 1817 to 1820 and co-authored Reise in Brasilien."
+  },
+  {
+    "id": "8f7bdad7-cab6-57fa-8427-1a73294fc05a",
+    "slug": "carl-friedrich-philipp-von-martius",
+    "name": "Carl Friedrich Philipp von Martius",
+    "sort_name": "Martius, Carl Friedrich Philipp von",
+    "birth_year": 1794,
+    "death_year": 1868,
+    "bio": "Bavarian botanist and explorer whose Brazilian fieldwork and publications became central to nineteenth-century Amazonian natural history."
+  },
+  {
+    "id": "37fbe4bd-8ae2-51d4-8344-7b9c909f8f19",
+    "slug": "georg-heinrich-von-langsdorff",
+    "name": "Georg Heinrich von Langsdorff",
+    "sort_name": "Langsdorff, Georg Heinrich von",
+    "birth_year": 1774,
+    "death_year": 1852,
+    "bio": "German-Russian naturalist and explorer whose voyage writings included observations from Kamchatka, Russian America, and Brazil."
+  },
+  {
+    "id": "70fc8d2c-e0ef-50b6-b176-0e36f85a721e",
+    "slug": "ralph-t-h-griffith",
+    "name": "Ralph T. H. Griffith",
+    "sort_name": "Griffith, Ralph T. H.",
+    "birth_year": 1826,
+    "death_year": 1906,
+    "bio": "British Indologist, educator, and translator whose late nineteenth-century English renderings of the Vedas made Sanskrit texts widely available to Anglophone readers."
+  },
+  {
+    "id": "e58f2c37-a6c6-5f64-bc7a-5fc864dd2ffe",
+    "slug": "jacques-joseph-moreau",
+    "name": "Jacques-Joseph Moreau",
+    "sort_name": "Moreau, Jacques-Joseph",
+    "birth_year": 1804,
+    "death_year": 1884,
+    "bio": "French psychiatrist, often called Moreau de Tours, whose 1845 Du hachisch et de l'aliénation mentale made hashish central to a clinical theory of drug-induced delirium and mental illness."
+  },
+  {
+    "id": "2fe95d12-0fb5-5070-89dd-b5270b0d152c",
+    "slug": "ernst-von-bibra",
+    "name": "Ernst von Bibra",
+    "sort_name": "Bibra, Ernst von",
+    "birth_year": 1806,
+    "death_year": 1878,
+    "bio": "German naturalist and chemist whose Die narkotischen Genussmittel und der Mensch surveyed intoxicants comparatively through botany, chemistry, travel accounts, and self-experiment."
+  },
+  {
+    "id": "513f7438-a83a-5596-807b-be36a4566f90",
+    "slug": "edward-m-kennedy",
+    "name": "Edward M. Kennedy",
+    "sort_name": "Kennedy, Edward M.",
+    "birth_year": 1932,
+    "death_year": 2009,
+    "bio": "U.S. senator from Massachusetts whose health subcommittee helped investigate CIA drug testing and human-subjects research in the 1970s."
+  },
+  {
+    "id": "0979e2c5-b7d0-5c1d-a8cd-d43606e40062",
+    "slug": "daniel-k-inouye",
+    "name": "Daniel K. Inouye",
+    "sort_name": "Inouye, Daniel K.",
+    "birth_year": 1924,
+    "death_year": 2012,
+    "bio": "U.S. senator from Hawaii and chair of the Senate Select Committee on Intelligence during the 1977 MKULTRA hearing."
+  },
+  {
+    "id": "8ea65452-8cc0-5ccf-a633-6bf7f8b6e585",
+    "slug": "frank-church",
+    "name": "Frank Church",
+    "sort_name": "Church, Frank",
+    "birth_year": 1924,
+    "death_year": 1984,
+    "bio": "U.S. senator from Idaho who chaired the Senate Select Committee to Study Governmental Operations with Respect to Intelligence Activities, commonly known as the Church Committee."
+  },
+  {
+    "id": "c145ef8c-3f16-5a4a-841a-2846f6167ba1",
+    "slug": "nelson-a-rockefeller",
+    "name": "Nelson A. Rockefeller",
+    "sort_name": "Rockefeller, Nelson A.",
+    "birth_year": 1908,
+    "death_year": 1979,
+    "bio": "Vice president of the United States and chair of the 1975 Commission on CIA Activities within the United States."
   }
 ]

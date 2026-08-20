@@ -1,8 +1,10 @@
-import { AlertTriangle, CheckCircle2, ExternalLink, FileWarning, ListChecks, RefreshCw, Search, Wrench } from "lucide-react";
+import { AlertTriangle, CheckCircle2, ExternalLink, FileWarning, ListChecks, MessageSquareWarning, RefreshCw, Search, Wrench } from "lucide-react";
 import fs from "node:fs";
 import path from "node:path";
 import Link from "next/link";
 import type React from "react";
+import { updateSourceIssueReportStatus } from "@/app/admin/actions";
+import { listSourceIssueReports, sourceIssueTypeLabel, type SourceIssueReport, type SourceIssueReportResult, type SourceIssueStatus } from "@/lib/source-issue-reports";
 
 export const dynamic = "force-dynamic";
 
@@ -53,6 +55,7 @@ export default async function AdminQaPage() {
   const quality = readQaReport(REPORT_FILES.quality);
   const actionable = readQaReport(REPORT_FILES.actionable);
   const citations = readCitationReport(REPORT_FILES.citations);
+  const userReports = await listSourceIssueReports();
   const sourceIndex = buildSourceIndex();
   const generatedAt = getReportTimestamp(REPORT_FILES.quality);
 
@@ -79,12 +82,15 @@ export default async function AdminQaPage() {
     <div className="space-y-6">
       <PageHeader generatedAt={generatedAt} />
 
-      <section className="grid gap-3 md:grid-cols-4">
-        <SummaryCard icon={<FileWarning className="h-5 w-5" />} label="Total Issues" value={quality.issues_total} />
+      <section className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+        <SummaryCard icon={<MessageSquareWarning className="h-5 w-5" />} label="New User Reports" tone={countNewUserReports(userReports) > 0 ? "high" : "default"} value={countNewUserReports(userReports)} />
+        <SummaryCard icon={<FileWarning className="h-5 w-5" />} label="Script Findings" value={quality.issues_total} />
         <SummaryCard icon={<AlertTriangle className="h-5 w-5" />} label="High" tone="high" value={quality.issues_by_severity.high} />
         <SummaryCard icon={<Wrench className="h-5 w-5" />} label="Editorial Cleanup" value={quality.issues_by_track.editorial_cleanup ?? 0} />
         <SummaryCard icon={<ListChecks className="h-5 w-5" />} label="Metadata Review" value={quality.issues_by_track.metadata_review ?? 0} />
       </section>
+
+      <UserReportedIssues result={userReports} />
 
       <section className="grid gap-5 xl:grid-cols-[1.2fr_0.8fr]">
         <ActionableQueue issues={actionable.issues} sourceIndex={sourceIndex} />
@@ -103,7 +109,7 @@ function PageHeader({ generatedAt }: { generatedAt: string | null }) {
       <div>
         <h2 className="text-2xl font-semibold">Source QA</h2>
         <p className="mt-1 text-sm text-archive-muted">
-          File-backed dashboard for the latest archive source QA reports.
+          Human source reports and automated checks for archive source cleanup.
         </p>
         <p className="mt-2 text-xs text-archive-muted">
           Last generated: {generatedAt ?? "not found"}
@@ -113,7 +119,7 @@ function PageHeader({ generatedAt }: { generatedAt: string | null }) {
         <div className="flex items-center gap-2">
           <RefreshCw className="h-4 w-4" />
           <span>
-            Refresh data with <code className="rounded bg-archive-paper px-1.5 py-0.5">npm run qa:sources</code> and{" "}
+            Refresh automated checks with <code className="rounded bg-archive-paper px-1.5 py-0.5">npm run qa:sources</code> and{" "}
             <code className="rounded bg-archive-paper px-1.5 py-0.5">npm run qa:citations</code>
           </span>
         </div>
@@ -144,6 +150,109 @@ function SummaryCard({
   );
 }
 
+function UserReportedIssues({ result }: { result: SourceIssueReportResult }) {
+  const reports = [...result.reports].sort(sortUserReports);
+  const openReports = reports.filter((report) => report.status !== "fixed" && report.status !== "dismissed");
+  const visibleReports = openReports.length ? openReports : reports.slice(0, 6);
+
+  return (
+    <section className="overflow-hidden rounded-md border border-archive-line bg-archive-surface shadow-sm">
+      <div className="border-b border-archive-line px-4 py-3">
+        <div className="flex items-center gap-2">
+          <MessageSquareWarning className="h-5 w-5 text-archive-violet" />
+          <h3 className="font-semibold">User Reported Issues</h3>
+        </div>
+        <p className="mt-1 text-sm text-archive-muted">
+          Reader-submitted typos, factual concerns, broken links, rights questions, and other source-specific reports.
+        </p>
+      </div>
+      {result.status === "not_installed" && (
+        <div className="border-b border-archive-line bg-archive-warning/40 px-4 py-3 text-sm text-archive-muted">
+          Apply <code className="rounded bg-archive-paper px-1.5 py-0.5">scripts/supabase_source_issue_reports_schema.sql</code> in Supabase to enable public issue reports.
+        </div>
+      )}
+      {result.status === "unavailable" && (
+        <div className="border-b border-archive-line bg-archive-warning/40 px-4 py-3 text-sm text-archive-muted">
+          User reports require <code className="rounded bg-archive-paper px-1.5 py-0.5">SUPABASE_URL</code> and <code className="rounded bg-archive-paper px-1.5 py-0.5">SUPABASE_SERVICE_ROLE_KEY</code> on the server.
+        </div>
+      )}
+      <div className="divide-y divide-archive-line">
+        {visibleReports.map((report) => <UserReportRow key={report.id} report={report} />)}
+        {result.status === "available" && !reports.length && (
+          <div className="flex items-center gap-2 p-5 text-sm text-archive-muted">
+            <CheckCircle2 className="h-5 w-5 text-archive-violet" />
+            No reader-submitted source reports yet.
+          </div>
+        )}
+        {openReports.length === 0 && reports.length > visibleReports.length && (
+          <div className="px-4 py-3 text-sm text-archive-muted">
+            Showing the latest {visibleReports.length.toLocaleString()} resolved reports.
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function UserReportRow({ report }: { report: SourceIssueReport }) {
+  return (
+    <article className="p-4 hover:bg-archive-warm-hover/55">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-start">
+        <StatusBadge status={report.status} />
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <h4 className="font-semibold">{report.source_title || report.source_slug}</h4>
+            <code className="rounded bg-archive-paper px-1.5 py-0.5 text-xs text-archive-muted">{sourceIssueTypeLabel(report.issue_type)}</code>
+          </div>
+          <div className="mt-1 text-xs text-archive-muted">
+            Reported {formatDateTime(report.created_at)} · <span className="font-mono">{report.source_slug}</span>
+          </div>
+          {report.location && (
+            <p className="mt-2 text-sm">
+              <span className="font-semibold">Location:</span> {report.location}
+            </p>
+          )}
+          <p className="mt-2 text-sm leading-6 text-archive-muted">{report.description}</p>
+          {report.suggested_fix && (
+            <p className="mt-2 text-sm leading-6">
+              <span className="font-semibold">Suggested correction:</span> {report.suggested_fix}
+            </p>
+          )}
+          {(report.reporter_name || report.reporter_email) && (
+            <p className="mt-2 text-xs text-archive-muted">
+              Reporter: {report.reporter_name || "Anonymous"}{report.reporter_email ? ` · ${report.reporter_email}` : ""}
+            </p>
+          )}
+          <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
+            <Link className="focus-ring rounded border border-archive-line px-2 py-1 hover:bg-archive-lavender2" href={`/admin/sources/${report.document_id || report.source_slug}`}>
+              Edit source
+            </Link>
+            <Link className="focus-ring rounded border border-archive-line px-2 py-1 hover:bg-archive-lavender2" href={`/archive/${report.source_slug}`}>
+              Public source
+            </Link>
+            <IssueStatusButton id={report.id} label="Triaged" status="triaged" />
+            <IssueStatusButton id={report.id} label="Needs review" status="needs_review" />
+            <IssueStatusButton id={report.id} label="Fixed" status="fixed" />
+            <IssueStatusButton id={report.id} label="Dismiss" status="dismissed" />
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function IssueStatusButton({ id, label, status }: { id: string; label: string; status: SourceIssueStatus }) {
+  return (
+    <form action={updateSourceIssueReportStatus}>
+      <input name="id" type="hidden" defaultValue={id} />
+      <input name="status" type="hidden" defaultValue={status} />
+      <button className="focus-ring rounded border border-archive-line px-2 py-1 font-semibold hover:bg-archive-lavender2" type="submit">
+        {label}
+      </button>
+    </form>
+  );
+}
+
 function ActionableQueue({
   issues,
   sourceIndex
@@ -158,9 +267,9 @@ function ActionableQueue({
       <div className="border-b border-archive-line px-4 py-3">
         <div className="flex items-center gap-2">
           <ListChecks className="h-5 w-5 text-archive-violet" />
-          <h3 className="font-semibold">Actionable Queue</h3>
+          <h3 className="font-semibold">Automated Check Queue</h3>
         </div>
-        <p className="mt-1 text-sm text-archive-muted">Capped report for the next practical cleanup pass.</p>
+        <p className="mt-1 text-sm text-archive-muted">Capped script report for the next practical cleanup pass.</p>
       </div>
 
       <div className="divide-y divide-archive-line">
@@ -276,8 +385,8 @@ function Metric({ label, value }: { label: string; value: number }) {
 function ReportSummary({ report }: { report: QaReport }) {
   return (
     <>
-      <SummaryList title="Issue Kinds" values={report.issues_by_kind} />
-      <SummaryList title="Top Sources" values={report.top_sources} />
+      <SummaryList title="Script Finding Kinds" values={report.issues_by_kind} />
+      <SummaryList title="Top Script Sources" values={report.top_sources} />
       <SummaryList title="Import Dirs" values={report.issues_by_import_dir} />
     </>
   );
@@ -311,6 +420,39 @@ function SeverityBadge({ severity }: { severity: IssueSeverity }) {
       {severity}
     </span>
   );
+}
+
+function StatusBadge({ status }: { status: SourceIssueStatus }) {
+  const classes = {
+    new: "border-red-200 bg-red-50 text-red-700",
+    triaged: "border-archive-line bg-archive-lavender2 text-archive-violet",
+    needs_review: "border-amber-200 bg-amber-50 text-amber-800",
+    fixed: "border-green-200 bg-green-50 text-green-800",
+    dismissed: "border-archive-line bg-archive-paper text-archive-muted",
+  }[status];
+
+  return (
+    <span className={`inline-flex shrink-0 rounded-full border px-2.5 py-1 text-xs font-semibold capitalize ${classes}`}>
+      {formatLabel(status)}
+    </span>
+  );
+}
+
+function countNewUserReports(result: SourceIssueReportResult) {
+  return result.reports.filter((report) => report.status === "new").length;
+}
+
+function sortUserReports(a: SourceIssueReport, b: SourceIssueReport) {
+  const aOpen = a.status === "fixed" || a.status === "dismissed" ? 1 : 0;
+  const bOpen = b.status === "fixed" || b.status === "dismissed" ? 1 : 0;
+  return aOpen - bOpen || Date.parse(b.created_at) - Date.parse(a.created_at);
+}
+
+function formatDateTime(value: string) {
+  return new Date(value).toLocaleString("en-US", {
+    dateStyle: "medium",
+    timeStyle: "short"
+  });
 }
 
 function readQaReport(parts: string[]): QaReport | null {

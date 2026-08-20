@@ -22,6 +22,7 @@ export type WorkbenchTask = {
   track: WorkbenchTrack;
   href: string;
   secondaryHref?: string;
+  links?: Array<{ label: string; href: string; external?: boolean }>;
   meta: Array<{ label: string; value: string }>;
 };
 
@@ -174,6 +175,12 @@ export function buildBiographyTasks(candidates: BiographyStubCandidate[]): Workb
         ? `/admin/biographies/new?name=${encodeURIComponent(candidate.name)}&slug=${encodeURIComponent(candidate.slug)}&years=${encodeURIComponent(candidate.years)}`
         : `/admin/biographies/${candidate.slug}`,
       secondaryHref: `/biographies/${candidate.slug}`,
+      links: [
+        { label: "Public page", href: `/biographies/${candidate.slug}` },
+        { label: "Linked sources", href: `/archive?people=${encodeURIComponent(candidate.name)}` },
+        { label: "Wikipedia search", href: candidate.wikipediaSearchUrl, external: true },
+        { label: "Wikidata search", href: candidate.wikidataSearchUrl, external: true },
+      ],
       meta: [
         { label: "Sources", value: String(candidate.sourceCount) },
         { label: "Years", value: candidate.years },
@@ -203,6 +210,7 @@ export function buildBibliographyTasks(items: BibliographyItem[]): WorkbenchTask
       track: "bibliography" as const,
       href: `/admin/bibliography/${item.id}`,
       secondaryHref: `/further-reading/${item.slug}`,
+      links: [{ label: "Public page", href: `/further-reading/${item.slug}` }],
       meta: [
         { label: "Year", value: item.year ? String(item.year) : "n.d." },
         { label: "Type", value: item.itemType.replaceAll("_", " ") },
@@ -223,6 +231,7 @@ function buildCitationTasks(report: CitationReport | null): WorkbenchTask[] {
     track: "citations",
     href: `/admin/sources/${report.source_slug}#citation-review`,
     secondaryHref: "/admin/qa",
+    links: [{ label: "QA report", href: "/admin/qa" }],
     meta: [
       { label: "Found", value: String(report.inline_citation_count) },
       { label: "Linked", value: String(report.auto_linked_count) },
@@ -240,6 +249,7 @@ function buildSourceQaTasks(report: QaReport | null): WorkbenchTask[] {
     track: "source_qa",
     href: `/admin/sources/${issue.slug}`,
     secondaryHref: "/admin/qa",
+    links: [{ label: "QA report", href: "/admin/qa" }],
     meta: [
       { label: "Kind", value: issue.kind.replaceAll("_", " ") },
       { label: "Field", value: issue.field || "record" },
