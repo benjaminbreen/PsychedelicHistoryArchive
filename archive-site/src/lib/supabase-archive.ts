@@ -361,7 +361,7 @@ const DOCUMENT_SELECT = `
   thumbnail_path,
   is_featured,
   published_at,
-  pages(*, page_lines(*)),
+  pages(id, page_number, label, readable_image_path, thumbnail_image_path, image_width, image_height, language, ocr_confidence, transcription_status, transcription_reviewed_by, transcription_reviewed_at, transcription_note, page_lines(*)),
   files(id, storage_path, kind, mime_type, byte_size),
   document_sections(id, position, heading, section_type, body, body_format),
   document_figures(id, position, image_path, alt_text, caption, placement, section_id, token, credit),
@@ -426,7 +426,7 @@ const LEGACY_DOCUMENT_SELECT = `
   thumbnail_path,
   is_featured,
   published_at,
-  pages(*, page_lines(*)),
+  pages(id, page_number, label, readable_image_path, thumbnail_image_path),
   files(id, storage_path, kind, mime_type, byte_size),
   document_tags(tags(name, tag_type)),
   document_people(role, people(name))
@@ -714,7 +714,36 @@ export async function getArchiveSourceDetailFromSupabase(slug: string) {
   if (!data) return undefined;
   const document = data as unknown as DocumentRow;
   document.document_citation_links = await getDocumentCitationLinks(document.id);
+  await attachPageTextIfNeeded(supabase, document);
   return documentToArchiveSource(document);
+}
+
+/**
+ * Page OCR text is the bulk of a long document — the Church Committee report carries 2MB of it
+ * across 672 pages — and for most sources it is dead weight: the reader shows curated
+ * document_sections, and nothing in the page view renders page.ocr_text. So the main query
+ * leaves it out and we fetch it back only for the documents that have no curated transcript,
+ * where it is the only text there is.
+ */
+async function attachPageTextIfNeeded(supabase: NonNullable<ReturnType<typeof getSupabaseClient>>, document: DocumentRow) {
+  if (!document.pages?.length) return;
+
+  const hasCuratedTranscript = document.document_sections?.some(
+    (section) => sectionKind(section.section_type || section.heading || "") === "transcript" && section.body?.trim()
+  );
+  if (hasCuratedTranscript) return;
+
+  try {
+    const { data, error } = await withSupabaseTimeout(
+      supabase.from("pages").select("id, ocr_text").eq("document_id", document.id),
+      `Supabase page text query for ${document.slug}`
+    );
+    if (error || !data) return;
+    const textById = new Map((data as Array<{ id: string; ocr_text: string | null }>).map((row) => [row.id, row.ocr_text]));
+    for (const page of document.pages) page.ocr_text = textById.get(page.id) ?? null;
+  } catch (queryError) {
+    console.warn("Supabase page text query failed; transcript may be incomplete.", errorMessage(queryError));
+  }
 }
 
 export async function getArchiveSourceReaderPayloadFromSupabase(slug: string) {
@@ -1133,13 +1162,15 @@ function mapDocumentSections(sections: DocumentSectionRow[] = []): TranscriptSec
   return [...sections]
     .sort((a, b) => (a.position ?? 0) - (b.position ?? 0))
     .map((section) => {
-      const body = section.body?.trim() ?? "";
+      const parsed = parseSectionBody(section.body?.trim() ?? "");
+      const body = parsed.body;
       if (!body) return undefined;
       const bodyFormat = section.body_format === "markdown" ? "markdown" : "plain";
       return {
         id: section.id,
         heading: section.heading || "Transcript",
         kind: sectionKind(section.section_type || section.heading || "Transcript"),
+        attribution: parsed.attribution,
         body,
         bodyFormat,
         position: section.position ?? undefined,
@@ -1147,6 +1178,36 @@ function mapDocumentSections(sections: DocumentSectionRow[] = []): TranscriptSec
       };
     })
     .filter(Boolean) as TranscriptSection[];
+}
+
+function parseSectionBody(rawBody: string): Pick<TranscriptSection, "attribution" | "body"> {
+  if (!rawBody.startsWith("---")) return { body: rawBody };
+
+  const match = rawBody.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
+  if (!match) return { body: rawBody };
+
+  const metadata = Object.fromEntries(
+    match[1]
+      .split(/\r?\n/)
+      .map((line) => line.match(/^([A-Za-z_][A-Za-z0-9_-]*)\s*:\s*(.*)$/))
+      .filter(Boolean)
+      .map((lineMatch) => {
+        const [, key, value] = lineMatch as RegExpMatchArray;
+        return [key.trim(), value.trim().replace(/^["']|["']$/g, "")];
+      })
+      .filter(([, value]) => value)
+  );
+
+  return {
+    attribution: {
+      authorName: metadata.author || metadata.author_name,
+      authorSlug: metadata.author_slug,
+      authorImage: metadata.author_image,
+      writtenAt: metadata.written_at || metadata.written_on,
+      updatedAt: metadata.updated_at || metadata.last_updated_at
+    },
+    body: match[2].trim()
+  };
 }
 
 function mapDocumentFigures(figures: DocumentFigureRow[] = []): SourceFigure[] {
@@ -1362,7 +1423,9 @@ function buildTranscriptSections(transcript: string): TranscriptSection[] {
 
   function flushParagraph() {
     if (!current || !paragraphBuffer.length) return;
-    const paragraph = paragraphBuffer.join(" ").replace(/\s+/g, " ").trim();
+    const paragraph = shouldPreserveTranscriptLineBreaks(paragraphBuffer)
+      ? paragraphBuffer.join("\n").trim()
+      : paragraphBuffer.join(" ").replace(/\s+/g, " ").trim();
     if (paragraph) current.paragraphs.push(paragraph);
     paragraphBuffer = [];
   }
@@ -1398,6 +1461,12 @@ function buildTranscriptSections(transcript: string): TranscriptSection[] {
   return sections.filter((section) => section.paragraphs.length);
 }
 
+function shouldPreserveTranscriptLineBreaks(lines: string[]) {
+  if (lines.length < 3) return false;
+  const numberedLines = lines.filter((line) => /^\d+\s+\S/.test(line.trim())).length;
+  return numberedLines >= 3 && numberedLines / lines.length >= 0.45;
+}
+
 function normalizeTranscriptHeading(value: string) {
   const normalized = value.replace(/\s+/g, " ").trim().toLowerCase();
   if (normalized === "historical overview") return "Historical Overview";
@@ -1409,7 +1478,9 @@ function normalizeTranscriptHeading(value: string) {
 
 function sectionKind(heading: string): TranscriptSection["kind"] {
   const normalized = heading.replace(/\s+/g, " ").trim().toLowerCase();
+  if (normalized === "source_note" || normalized === "source note" || normalized === "source intro" || normalized === "intro") return "source_note";
   if (normalized === "overview" || normalized === "historical overview") return "overview";
+  if (normalized === "historical_context" || normalized === "historical context" || normalized === "context") return "historical_context";
   if (normalized === "transcript" || normalized === "transcription") return "transcript";
   return "note";
 }
