@@ -19,288 +19,282 @@ This report caps OCR findings and prioritizes issues that are likely to affect p
 - Title: LSD: Lettvin vs Leary
 - Excerpt: AAPB online access provided by GBH and the Library of Congress. Transcript PDF rights status pending review; contact the archive before republication.
 
-#### `eighth-colloquy-bangue` / `placeholder_or_review_note`
+#### `airfa-amendments-1994-public-law-103-344` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/latin-america-import`
-- Field: `pages[Portuguese text].ocr_text`
-- Title: Eighth Colloquy: Bangue
-- Excerpt: Garcia de Orta, Colóquio octavo: Do Bangue Source: Garcia da Orta, Colóquios dos simples e drogas da India, ed. Conde de Ficalho (Lisboa: Imprensa Nacional, 1891), vol. 1, pp. 95-101. This is a nineteenth-century critical edition of the Portuguese text first printed in Goa in 1563. ## Colóquio octavo do Bangue ### Interlocutores Ruano, Orta, Antónia ### Rua...
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: American Indian Religious Freedom Act Amendments of 1994 (Public Law 103-344)
+- Excerpt: [10, 20]
 
-#### `a-pluralistic-mystic` / `placeholder_or_review_note`
-
-- Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `editorial_note`
-- Title: A Pluralistic Mystic
-- Excerpt: Imported from local nitrous oxide/ether corpus manifest; metadata needs review before publication.
-
-#### `a-pluralistic-universe` / `placeholder_or_review_note`
+#### `army-ig-report-lsd-volunteers-1976` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `editorial_note`
-- Title: A Pluralistic Universe
-- Excerpt: Imported from local nitrous oxide/ether corpus manifest; metadata needs review before publication.
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Use of Volunteers in Chemical Agent Research
+- Excerpt: [10, 20]
 
-#### `a-pluralistic-universe` / `reader_mode_mismatch`
-
-- Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `reader_mode`
-- Title: A Pluralistic Universe
-- Excerpt: Book has 74725 OCR words, no sections, and reader_mode=(blank).
-- Suggestion: Confirm whether this should be PDF/page-reader first rather than a giant transcript-only text layer.
-
-#### `anaesthetics-antient-and-modern-an-historical-sketch-of-anaesthesia` / `placeholder_or_review_note`
+#### `blas-pablo-reko-nombres-botanicos-aztecas-1919` / `placeholder_or_review_note`
 
 - Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `editorial_note`
-- Title: Anaesthetics Antient and Modern: An Historical Sketch of Anaesthesia
-- Excerpt: Imported from local nitrous oxide/ether corpus manifest; metadata needs review before publication.
+- Import: `data/draft-import`
+- Field: `document_sections[Transcript]`
+- Title: De los nombres botánicos aztecas
+- Excerpt: _[El México Antiguo published this piece as an excerpt from Reko's then-unpublished dictionary "Sinonimia vulgar y científica de la flora oaxaqueña." The full article runs some forty-five pages: a general essay on Nahuatl plant-name etymology, then an alphabetical catalogue of several hundred entries.]_ _[Reproduced below: the opening of that essay, a short...
 
-#### `anaesthetics-antient-and-modern-an-historical-sketch-of-anaesthesia` / `reader_mode_mismatch`
-
-- Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `reader_mode`
-- Title: Anaesthetics Antient and Modern: An Historical Sketch of Anaesthesia
-- Excerpt: Book has 14463 OCR words, no sections, and reader_mode=(blank).
-- Suggestion: Confirm whether this should be PDF/page-reader first rather than a giant transcript-only text layer.
-
-#### `pluriverse-an-essay-in-the-philosophy-of-pluralism` / `placeholder_or_review_note`
+#### `blas-pablo-reko-nombres-botanicos-aztecas-1919` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `editorial_note`
-- Title: Pluriverse: An Essay in the Philosophy of Pluralism
-- Excerpt: Imported from local nitrous oxide/ether corpus manifest; metadata needs review before publication.
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: De los nombres botánicos aztecas
+- Excerpt: [10, 20]
 
-#### `pluriverse-an-essay-in-the-philosophy-of-pluralism` / `placeholder_or_review_note`
-
-- Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `pages[Full text].ocr_text`
-- Title: Pluriverse: An Essay in the Philosophy of Pluralism
-- Excerpt: Title: Pluriverse: An Essay in the Philosophy of Pluralism Author: Benjamin Paul Blood Year: 1920 Source: https://archive.org/download/cu31924029019003/cu31924029019003_djvu.txt Corpus note: Blood's late full exposition, with retrospective claims about the 1860 anesthetic insight and its philosophical consequences. CORNELL UNIVERSITY LIBRARY ATE DUE PHOJQ&t...
-
-#### `pluriverse-an-essay-in-the-philosophy-of-pluralism` / `reader_mode_mismatch`
+#### `bogoras-chukchee-fly-agaric` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `reader_mode`
-- Title: Pluriverse: An Essay in the Philosophy of Pluralism
-- Excerpt: Book has 81921 OCR words, no sections, and reader_mode=(blank).
-- Suggestion: Confirm whether this should be PDF/page-reader first rather than a giant transcript-only text layer.
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: The Chukchee: Religion — Intoxicants
+- Excerpt: [10, 20]
 
-#### `researches-chemical-and-philosophical-chiefly-concerning-nitrous-oxide` / `placeholder_or_review_note`
-
-- Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `editorial_note`
-- Title: Researches, Chemical and Philosophical; Chiefly Concerning Nitrous Oxide
-- Excerpt: Imported from local nitrous oxide/ether corpus manifest; metadata needs review before publication.
-
-#### `researches-chemical-and-philosophical-chiefly-concerning-nitrous-oxide` / `reader_mode_mismatch`
+#### `bogoras-koryak-texts-fly-agaric-song` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `reader_mode`
-- Title: Researches, Chemical and Philosophical; Chiefly Concerning Nitrous Oxide
-- Excerpt: Academic Article has 95602 OCR words, no sections, and reader_mode=(blank).
-- Suggestion: Confirm whether this should be PDF/page-reader first rather than a giant transcript-only text layer.
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Koryak Texts
+- Excerpt: [10, 20]
 
-#### `review-of-the-anaesthetic-revelation-and-the-gist-of-philosophy` / `placeholder_or_review_note`
-
-- Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `editorial_note`
-- Title: Review of The Anaesthetic Revelation and the Gist of Philosophy
-- Excerpt: Imported from local nitrous oxide/ether corpus manifest; metadata needs review before publication.
-
-#### `subjective-effects-of-nitrous-oxide` / `placeholder_or_review_note`
+#### `church-of-the-holy-light-of-the-queen-v-mukasey-2009` / `oversized_single_transcript_section`
 
 - Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `editorial_note`
-- Title: Subjective Effects of Nitrous Oxide
-- Excerpt: Imported from local nitrous oxide/ether corpus manifest; metadata needs review before publication.
+- Import: `data/draft-import`
+- Field: `document_sections`
+- Title: Church of the Holy Light of the Queen v. Mukasey
+- Excerpt: 5319 words in one section
+- Suggestion: Split into reader sections so the table of contents is useful.
 
-#### `the-anaesthetic-revelation-and-the-gist-of-philosophy` / `placeholder_or_review_note`
-
-- Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `editorial_note`
-- Title: The Anaesthetic Revelation and the Gist of Philosophy
-- Excerpt: Imported from local nitrous oxide/ether corpus manifest; metadata needs review before publication.
-
-#### `the-anaesthetic-revelation-and-the-gist-of-philosophy` / `reader_mode_mismatch`
+#### `church-of-the-holy-light-of-the-queen-v-mukasey-2009` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `reader_mode`
-- Title: The Anaesthetic Revelation and the Gist of Philosophy
-- Excerpt: Book has 13541 OCR words, no sections, and reader_mode=(blank).
-- Suggestion: Confirm whether this should be PDF/page-reader first rather than a giant transcript-only text layer.
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Church of the Holy Light of the Queen v. Mukasey
+- Excerpt: [10, 20]
 
-#### `the-varieties-of-religious-experience` / `placeholder_or_review_note`
-
-- Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `editorial_note`
-- Title: The Varieties of Religious Experience
-- Excerpt: Imported from local nitrous oxide/ether corpus manifest; metadata needs review before publication.
-
-#### `the-varieties-of-religious-experience` / `reader_mode_mismatch`
+#### `cia-gottlieb-ssci-testimony-1975` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `reader_mode`
-- Title: The Varieties of Religious Experience
-- Excerpt: Book has 186408 OCR words, no sections, and reader_mode=(blank).
-- Suggestion: Confirm whether this should be PDF/page-reader first rather than a giant transcript-only text layer.
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Testimony of Sidney Gottlieb before the Senate Select Committee on Intelligence Activities
+- Excerpt: [10, 20]
 
-#### `the-will-to-believe-and-other-essays-in-popular-philosophy` / `placeholder_or_review_note`
-
-- Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `editorial_note`
-- Title: The Will to Believe and Other Essays in Popular Philosophy
-- Excerpt: Imported from local nitrous oxide/ether corpus manifest; metadata needs review before publication.
-
-#### `the-will-to-believe-and-other-essays-in-popular-philosophy` / `reader_mode_mismatch`
+#### `cia-ig-report-mkultra-1963` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/nitrous-ether-import`
-- Field: `reader_mode`
-- Title: The Will to Believe and Other Essays in Popular Philosophy
-- Excerpt: Book has 101476 OCR words, no sections, and reader_mode=(blank).
-- Suggestion: Confirm whether this should be PDF/page-reader first rather than a giant transcript-only text layer.
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Report of Inspection of MKULTRA
+- Excerpt: [10, 20]
 
-#### `pic-bulletin-32` / `placeholder_or_review_note`
-
-- Severity: `medium`
-- Import: `data/pib-import`
-- Field: `rights_statement`
-- Title: PIC Bulletin 32
-- Excerpt: Rights status pending review. Contact the archive before republication.
-
-#### `pic-bulletin-33` / `placeholder_or_review_note`
+#### `cia-rd-testing-behavioral-drugs-1975-memo` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/pib-import`
-- Field: `rights_statement`
-- Title: PIC Bulletin 33
-- Excerpt: Rights status pending review. Contact the archive before republication.
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: CIA R&D and Testing of Behavioral Drugs
+- Excerpt: [10, 20]
 
-#### `pic-bulletin-34` / `placeholder_or_review_note`
-
-- Severity: `medium`
-- Import: `data/pib-import`
-- Field: `rights_statement`
-- Title: PIC Bulletin 34
-- Excerpt: Rights status pending review. Contact the archive before republication.
-
-#### `1600-test-yEWgi` / `missing_required_metadata`
+#### `clement-alexandria-exhortation-eleusinian-mysteries` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/squarespace-import`
-- Field: `citation`
-- Title: 1600 test
-- Excerpt: (blank)
-- Suggestion: Fill `citation`.
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Exhortation to the Greeks (Chapter II, on the Eleusinian and Related Mysteries)
+- Excerpt: [10, 20]
 
-#### `1600-test-yEWgi` / `missing_required_metadata`
-
-- Severity: `medium`
-- Import: `data/squarespace-import`
-- Field: `summary`
-- Title: 1600 test
-- Excerpt: (blank)
-- Suggestion: Fill `summary`.
-
-#### `1600-test-yEWgi` / `not_published`
+#### `cohen-lsd-side-effects-complications-1960` / `oversized_single_transcript_section`
 
 - Severity: `medium`
-- Import: `data/squarespace-import`
+- Import: `data/draft-import`
+- Field: `document_sections`
+- Title: Lysergic Acid Diethylamide: Side Effects and Complications
+- Excerpt: 5660 words in one section
+- Suggestion: Split into reader sections so the table of contents is useful.
+
+#### `cohen-lsd-side-effects-complications-1960` / `section_position_gap`
+
+- Severity: `medium`
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Lysergic Acid Diethylamide: Side Effects and Complications
+- Excerpt: [10, 20]
+
+#### `commissioner-indian-affairs-peyote-reports-1913-1916` / `not_published`
+
+- Severity: `medium`
+- Import: `data/draft-import`
 - Field: `status`
-- Title: 1600 test
+- Title: Peyote in the Annual Reports of the Commissioner of Indian Affairs, 1913-1916
 - Excerpt: draft
 
-#### `1600-test-yEWgi` / `placeholder_or_review_note`
+#### `commissioner-indian-affairs-peyote-reports-1913-1916` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/squarespace-import`
-- Field: `editorial_note`
-- Title: 1600 test
-- Excerpt: Imported from Squarespace WordPress export; needs metadata review.
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Peyote in the Annual Reports of the Commissioner of Indian Affairs, 1913-1916
+- Excerpt: [10, 20]
 
-#### `1600-test-yEWgi` / `placeholder_or_review_note`
-
-- Severity: `medium`
-- Import: `data/squarespace-import`
-- Field: `rights_statement`
-- Title: 1600 test
-- Excerpt: Needs rights review before republication.
-
-#### `1955-experimental-compound-mer-17-frenquel-and-lsd-25` / `placeholder_or_review_note`
+#### `cooke-seven-sisters-sleep-amanita` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/squarespace-import`
-- Field: `editorial_note`
-- Title: “Experimental Compound MER 17 (Frenquel) and LSD-25”
-- Excerpt: Imported from Squarespace WordPress export; needs metadata review.
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: The Seven Sisters of Sleep: Popular History of the Seven Prevailing Narcotics of the World
+- Excerpt: [10, 20]
 
-#### `1955-experimental-compound-mer-17-frenquel-and-lsd-25` / `placeholder_or_review_note`
-
-- Severity: `medium`
-- Import: `data/squarespace-import`
-- Field: `rights_statement`
-- Title: “Experimental Compound MER 17 (Frenquel) and LSD-25”
-- Excerpt: Needs rights review before republication.
-
-#### `1955-experimental-compound-mer-17-frenquel-and-lsd-25` / `transcript_source_needs_sections`
+#### `dixon-anhalonium-lewinii-alkaloids-1899` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/squarespace-import`
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: The Physiological Action of the Alkaloids Derived from Anhalonium Lewinii
+- Excerpt: [10, 20]
+
+#### `ellis-mescal-divine-plant-1902` / `section_position_gap`
+
+- Severity: `medium`
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Mescal: A Study of a Divine Plant
+- Excerpt: [10, 20]
+
+#### `employment-division-v-smith-1990` / `oversized_single_transcript_section`
+
+- Severity: `medium`
+- Import: `data/draft-import`
 - Field: `document_sections`
-- Title: “Experimental Compound MER 17 (Frenquel) and LSD-25”
-- Excerpt: 4338 OCR words available in pages.ocr_text.
-- Suggestion: Generate transcript sections from pages.ocr_text so the reader has a useful table of contents.
+- Title: Employment Division, Department of Human Resources of Oregon v. Smith
+- Excerpt: 6053 words in one section
+- Suggestion: Split into reader sections so the table of contents is useful.
 
-#### `1965-allen-ginsberg-talks-to-joe-k-adams-about-his-first-lsd-trip` / `placeholder_or_review_note`
-
-- Severity: `medium`
-- Import: `data/squarespace-import`
-- Field: `editorial_note`
-- Title: Allen Ginsberg DIScusses lsd with dr. Joe K. Adams
-- Excerpt: Imported from Squarespace WordPress export; needs metadata review.
-
-#### `1965-allen-ginsberg-talks-to-joe-k-adams-about-his-first-lsd-trip` / `placeholder_or_review_note`
+#### `employment-division-v-smith-1990` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/squarespace-import`
-- Field: `rights_statement`
-- Title: Allen Ginsberg DIScusses lsd with dr. Joe K. Adams
-- Excerpt: Needs rights review before republication.
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Employment Division, Department of Human Resources of Oregon v. Smith
+- Excerpt: [10, 20]
 
-#### `1965-allen-ginsberg-talks-to-joe-k-adams-about-his-first-lsd-trip` / `transcript_source_needs_sections`
+#### `fbi-timothy-leary-escape-interview-1974` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/squarespace-import`
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: FBI Interview of Timothy Leary on His 1970 Prison Escape and the Brotherhood of Eternal Love
+- Excerpt: [10, 20]
+
+#### `fda-guidance-psychedelic-drugs-clinical-investigations-2026` / `section_position_gap`
+
+- Severity: `medium`
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Psychedelic Drugs: Considerations for Clinical Investigations (Guidance for Industry)
+- Excerpt: [10, 20]
+
+#### `fischer-cardenas-yage-thesis-1923` / `placeholder_or_review_note`
+
+- Severity: `medium`
+- Import: `data/draft-import`
+- Field: `document_sections[Transcript]`
+- Title: Estudio sobre el principio activo del Yagé
+- Excerpt: ### Introducción Los Indios salvajes de las llanuras del Caquetá y el Putumayo, hacia el Sur de la República, toman, para procurarse un estado de embriaguez particular, la decocción y la maceración de una planta denominada el Yagé, a la cual atribuyen propiedades maravillosas confirmadas por la tradición de distintas tribus. Relaciones de personas serias e...
+
+#### `fischer-cardenas-yage-thesis-1923` / `section_position_gap`
+
+- Severity: `medium`
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Estudio sobre el principio activo del Yagé
+- Excerpt: [10, 20]
+
+#### `francisco-hernandez-ximenez-ololiuhqui-1615` / `section_position_gap`
+
+- Severity: `medium`
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: De la yerva que llaman Ololiuhqui
+- Excerpt: [10, 20]
+
+#### `gonzales-v-o-centro-2006` / `oversized_single_transcript_section`
+
+- Severity: `medium`
+- Import: `data/draft-import`
 - Field: `document_sections`
-- Title: Allen Ginsberg DIScusses lsd with dr. Joe K. Adams
-- Excerpt: 2987 OCR words available in pages.ocr_text.
-- Suggestion: Generate transcript sections from pages.ocr_text so the reader has a useful table of contents.
+- Title: Gonzales v. O Centro Espirita Beneficente Uniao do Vegetal
+- Excerpt: 5414 words in one section
+- Suggestion: Split into reader sections so the table of contents is useful.
 
-#### `1966-sidney-cohens-ucla-speech-on-psychedelics` / `placeholder_or_review_note`
+#### `gonzales-v-o-centro-2006` / `section_position_gap`
 
 - Severity: `medium`
-- Import: `data/squarespace-import`
-- Field: `editorial_note`
-- Title: Sidney Cohen’s UCLA Speech on Psychedelics
-- Excerpt: Imported from Squarespace WordPress export; needs metadata review.
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Gonzales v. O Centro Espirita Beneficente Uniao do Vegetal
+- Excerpt: [10, 20]
+
+#### `griffon-du-bellay-le-gabon-iboga-1865` / `section_position_gap`
+
+- Severity: `medium`
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Le Gabon (Deuxième partie)
+- Excerpt: [10, 20]
+
+#### `grinspoon-v-dea-1987` / `section_position_gap`
+
+- Severity: `medium`
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Grinspoon v. Drug Enforcement Administration
+- Excerpt: [10, 20]
+
+#### `harvard-crimson-psilocybin-1963` / `section_position_gap`
+
+- Severity: `medium`
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: Psilocybin, Senate Race Highlight Harvard Year
+- Excerpt: [10, 20]
+
+#### `homeric-hymn-to-demeter-evelyn-white-1914` / `oversized_single_transcript_section`
+
+- Severity: `medium`
+- Import: `data/draft-import`
+- Field: `document_sections`
+- Title: The Homeric Hymn to Demeter
+- Excerpt: 5153 words in one section
+- Suggestion: Split into reader sections so the table of contents is useful.
+
+#### `homeric-hymn-to-demeter-evelyn-white-1914` / `section_position_gap`
+
+- Severity: `medium`
+- Import: `data/draft-import`
+- Field: `document_sections.position`
+- Title: The Homeric Hymn to Demeter
+- Excerpt: [10, 20]
+
+#### `human-drug-testing-by-the-cia-1977-hearing` / `not_published`
+
+- Severity: `medium`
+- Import: `data/draft-import`
+- Field: `status`
+- Title: Human Drug Testing by the CIA, 1977
+- Excerpt: draft
 
 ### Editorial Cleanup
 
@@ -331,110 +325,110 @@ This report caps OCR findings and prioritizes issues that are likely to affect p
 - Excerpt: - Miller, Melanie J., Juan Albarracin-Jordan, Christine Moore, and Jose M. Capriles. "Chemical evidence for the use of multiple psychotropic plants in a 1,000-year-old ritual bundle from South America." *Proceedings of the National Academy of Sciences* 116, no. 23 (2019): 11207-11212. [doi:10.1073/pnas.1902174116]( PubMed: [PMID 31061128]( PMCID: PMC6561276...
 - Suggestion: Review OCR/transcription around this passage.
 
-#### `eighth-colloquy-bangue` / `text_stray_ocr_punctuation`
+#### `airfa-amendments-1994-public-law-103-344` / `text_stray_ocr_punctuation`
 
 - Severity: `medium`
-- Import: `data/latin-america-import`
-- Field: `pages[Portuguese text].ocr_text`
-- Title: Eighth Colloquy: Bangue
-- Excerpt: Si, da casca do fruto da palmeira, do que ao diante faremos mençam, e também no Balagate fazem cordas da casca de huma raiz de huma arvore muito grande; e pêra falar comvosco a verdade também as fazem de linho alcanave, que ha lá muito, e no Decam e em Bengala; e mais eu vi lá linho do nosso, de que fazemos as nossas camizas, e todo este linho e o linho alc...
+- Import: `data/draft-import`
+- Field: `document_sections[Source note]`
+- Title: American Indian Religious Freedom Act Amendments of 1994 (Public Law 103-344)
+- Excerpt: _Transcribed for the archive from govinfo.gov. One reading is doubtful in the scan and is marked in the text._
 - Suggestion: Review OCR/transcription around this passage.
 
-#### `psychotropic-properties-of-the-harmala-alkaloids` / `text_digit_letter_noise`
+#### `airfa-amendments-1994-public-law-103-344` / `text_stray_ocr_punctuation`
 
 - Severity: `medium`
-- Import: `data/latin-america-import`
-- Field: `pages[Full text].ocr_text`
-- Title: Psychotropic Properties of the Harmala Alkaloids
-- Excerpt: Of much interest is the recent discovery of substances closely related to the harmala alkaloids in animals. One of these is adrenoglomerulotropine, a hormone of the, pineal body, the chemical identity of which has been indicated as 2, 3, 4, 9-tetrahydro-6-methoxy-1-methyl-1Hpyrido (3, 4, 6) indole (5). This substance is identical to 6-methoxytetrahydroharma...
+- Import: `data/draft-import`
+- Field: `document_sections[Transcript]`
+- Title: American Indian Religious Freedom Act Amendments of 1994 (Public Law 103-344)
+- Excerpt: transportation, including, but not limited to, denial of otherwise applicable benefits under public assistance programs. "(2) This section does not prohibit such reasonable regulation and registration by the Drug Enforcement Administration of those persons who cultivate, harvest, or distribute peyote as may be consistent with the purposes of this Act. "(3)...
 - Suggestion: Review OCR/transcription around this passage.
 
-#### `psychotropic-properties-of-the-harmala-alkaloids` / `text_digit_letter_noise`
+#### `army-ig-report-lsd-volunteers-1976` / `text_stray_ocr_punctuation`
 
 - Severity: `medium`
-- Import: `data/latin-america-import`
-- Field: `pages[Full text].ocr_text`
-- Title: Psychotropic Properties of the Harmala Alkaloids
-- Excerpt: (11) Naranjo, C. and A.- Shulgin. Hallucinogenic properties of a pineal metabolite: 6methoxytetrahydroharman. Science. In press.
+- Import: `data/draft-import`
+- Field: `document_sections[Transcript]`
+- Title: Use of Volunteers in Chemical Agent Research
+- Excerpt: All available evidence indicated that with one exception, which will be discussed under the chapter on intelligence testing, only volunteer subjects were used for the chemical drug or agent experiments by Army investigators. Moreover, the great majority of the volunteers signed formal volunteer agreements, prior to participation in experiments. These facts...
 - Suggestion: Review OCR/transcription around this passage.
 
-#### `psychotropic-properties-of-the-harmala-alkaloids` / `text_mixed_case_word`
+#### `blas-pablo-reko-nombres-botanicos-aztecas-1919` / `text_stray_ocr_punctuation`
 
 - Severity: `medium`
-- Import: `data/latin-america-import`
-- Field: `pages[Full text].ocr_text`
-- Title: Psychotropic Properties of the Harmala Alkaloids
-- Excerpt: (5) Farrel, G. and W. M. McIsaac, "Adrenoglomerulotropin." Arch. Biochem. Biophys., 94: 44&-5", 1961.
+- Import: `data/draft-import`
+- Field: `document_sections[Source note]`
+- Title: De los nombres botánicos aztecas
+- Excerpt: _Transcribed for the archive from books.google.com._
 - Suggestion: Review OCR/transcription around this passage.
 
-#### `psychotropic-properties-of-the-harmala-alkaloids` / `text_mixed_case_word`
+#### `blas-pablo-reko-nombres-botanicos-aztecas-1919` / `text_stray_ocr_punctuation`
 
 - Severity: `medium`
-- Import: `data/latin-america-import`
-- Field: `pages[Full text].ocr_text`
-- Title: Psychotropic Properties of the Harmala Alkaloids
-- Excerpt: (6) McIsaac, W. M. "Formation of 1-methyl-6-methoxy-1,2,3-tetmhydro-2-carboline under physiological conditions." Biochem. Biophys. Acta 52: 607-609, 1961.
+- Import: `data/draft-import`
+- Field: `document_sections[Transcript]`
+- Title: De los nombres botánicos aztecas
+- Excerpt: Entre las lenguas indígenas es sin duda la más importante la mexicana (nahuatl). Ninguna otra lengua del Continente puede compararse con ella en riqueza de nombres botánicos conservados hasta nuestros tiempos. En muchos respectos, pero principalmente por su eufonía, se asemeja a la lengua helénica, y en facilidad de componer nuevas palabras por simple yuxta...
 - Suggestion: Review OCR/transcription around this passage.
 
-#### `psychotropic-properties-of-the-harmala-alkaloids` / `text_mixed_case_word`
+#### `blas-pablo-reko-nombres-botanicos-aztecas-1919` / `text_stray_ocr_punctuation`
 
 - Severity: `medium`
-- Import: `data/latin-america-import`
-- Field: `pages[Full text].ocr_text`
-- Title: Psychotropic Properties of the Harmala Alkaloids
-- Excerpt: (9) McIsaac, W. M., P. A. Khairallah and I. H. Page. "10-methoxyharmalan, a potent serotonin antagoinist which affects conditioned behaviour." Science 134, 674-675, 1961.
+- Import: `data/draft-import`
+- Field: `document_sections[Transcript]`
+- Title: De los nombres botánicos aztecas
+- Excerpt: Narcóticos, yautli (cosa nauseosa, narcótica): yau-tli: Tagetes lucida, cuau-yautli: Piper longum? pi-yotli (pi-yautli, yautli, pequeño) peyote, Anhalonium spec. div., piule, Ipomoea sidaefolia. yetl (cosa nauseosa) tabaco, Nicotiana spec. div. cuau-yetl: Wigandia caracasana? tla-patli (etimología obscura): Datura spec. div. quimich-patli (remedio contra ra...
 - Suggestion: Review OCR/transcription around this passage.
 
-#### `the-narcotic-pepper-the-chemistry-and-pharmacology-of-piper-methysticum-and-related-species` / `text_broken_hyphen`
+#### `blas-pablo-reko-nombres-botanicos-aztecas-1919` / `text_stray_ocr_punctuation`
 
 - Severity: `medium`
-- Import: `data/latin-america-import`
-- Field: `pages[Full text].ocr_text`
-- Title: The Narcotic Pepper: The Chemistry and Pharmacology of Piper methysticum and Related Species
-- Excerpt: The first substance isolated from Piper methysticum was methysticin (II), also known as kavatin, kavahin, and kanakin. The chemical name for methysticin can follow emphasis either upon the heterocyclic nature of the pyrone ring or upon the aliphatic acid nature of the lactone system. In the former aspect, the IUPAC has recommended the name 5,6-dihydro-4-met...
+- Import: `data/draft-import`
+- Field: `document_sections[Transcript]`
+- Title: De los nombres botánicos aztecas
+- Excerpt: _[Narcotics, yautli ("nauseating thing," narcotic): yautli, Tagetes lucida... piyotli, peyote, Anhalonium species, and piule, Ipomoea sidaefolia... yetl, tobacco... tlapatli, Datura species... ololiuqui ("round thing"), seeds of Ipomoea sidaefolia... tlapatli, Datura stramonium.]_
 - Suggestion: Review OCR/transcription around this passage.
 
-#### `the-narcotic-pepper-the-chemistry-and-pharmacology-of-piper-methysticum-and-related-species` / `text_broken_hyphen`
+#### `blas-pablo-reko-nombres-botanicos-aztecas-1919` / `text_stray_ocr_punctuation`
 
 - Severity: `medium`
-- Import: `data/latin-america-import`
-- Field: `pages[Full text].ocr_text`
-- Title: The Narcotic Pepper: The Chemistry and Pharmacology of Piper methysticum and Related Species
-- Excerpt: of the methoxy- group of methysticin with an ethoxy group (ethysticin) seems to provide an active material that has been studied in man (v.i.).
+- Import: `data/draft-import`
+- Field: `document_sections[Transcript]`
+- Title: De los nombres botánicos aztecas
+- Excerpt: NANACATE ..... nana-catl (na-natl, carne, catl, caño, caña: caña de carne, hongo). Div. géneros de hongos, especialmente un hongo negro que crece sobre estiércol y produce efectos narcóticos.
 - Suggestion: Review OCR/transcription around this passage.
 
-#### `the-narcotic-pepper-the-chemistry-and-pharmacology-of-piper-methysticum-and-related-species` / `text_broken_hyphen`
+#### `bogoras-chukchee-fly-agaric` / `text_stray_ocr_punctuation`
 
 - Severity: `medium`
-- Import: `data/latin-america-import`
-- Field: `pages[Full text].ocr_text`
-- Title: The Narcotic Pepper: The Chemistry and Pharmacology of Piper methysticum and Related Species
-- Excerpt: On the contrary, clinical reports that might suggest potential medical virtue of either the plant extracts themselves or of the isolated individual components as chemical entities, are almost unknown. The main effort in this latter direction has been the exploration of the Kava-kava principles as possible anti-epileptics. The administration of the crude roo...
+- Import: `data/draft-import`
+- Field: `document_sections[Source note]`
+- Title: The Chukchee: Religion — Intoxicants
+- Excerpt: _Transcribed for the archive from az.lib.ru. The 'Intoxicants' section of the chapter on food and stimulants, plus the fly-agaric passage from the chapter on animism in part two._
 - Suggestion: Review OCR/transcription around this passage.
 
-#### `the-narcotic-pepper-the-chemistry-and-pharmacology-of-piper-methysticum-and-related-species` / `text_broken_hyphen`
+#### `bogoras-chukchee-fly-agaric` / `text_stray_ocr_punctuation`
 
 - Severity: `medium`
-- Import: `data/latin-america-import`
-- Field: `pages[Full text].ocr_text`
-- Title: The Narcotic Pepper: The Chemistry and Pharmacology of Piper methysticum and Related Species
-- Excerpt: Acute studies of dl-methysticin (II) and the pharmacologically promising homologue dl-ethysticin (532-Riker, XXIII) have been reported. At single dosages of 800 mg there was little if any activity noted. "No significant changes of blood-pressure, pulse rate, grip- strength, hand steadiness, or pupil size occurred. The subjective responses were equally divid...
+- Import: `data/draft-import`
+- Field: `document_sections[Transcript]`
+- Title: The Chukchee: Religion — Intoxicants
+- Excerpt: Thus, for instance, the intoxicating mushrooms of the species fly-agaric are a "separate tribe" (ya'nřa-va'rat). They are very strong, and when growing up they lift upon their soft heads the heavy trunks of trees, and split them in two. A mushroom of this species grows through the heart of a stone and breaks it into minute fragments. Mushrooms appear to int...
 - Suggestion: Review OCR/transcription around this passage.
 
-#### `the-narcotic-pepper-the-chemistry-and-pharmacology-of-piper-methysticum-and-related-species` / `text_broken_hyphen`
+#### `bogoras-koryak-texts-fly-agaric-song` / `text_stray_ocr_punctuation`
 
 - Severity: `medium`
-- Import: `data/latin-america-import`
-- Field: `pages[Full text].ocr_text`
-- Title: The Narcotic Pepper: The Chemistry and Pharmacology of Piper methysticum and Related Species
-- Excerpt: A number of the compounds that have been described as comprising the Piper methysticum plant are known from other areas of the botanical world. 11-Methoxy- yangonine (X), mentioned above as a minor component of the Kava-kava root, had previously been observed as a component of the Brazilian Rosewood Aniba firmula . One of the earliest compounds isolated fro...
+- Import: `data/draft-import`
+- Field: `document_sections[Transcript]`
+- Title: Koryak Texts
+- Excerpt: _[Technical discussion of dialect boundaries, twenty pages of linguistic notes, and a full roster of narrators are omitted. Named narrators include: Basile (Maritime Koryak, Pallan), Nicholas Vilkhin (Jochelson's interpreter, Kamenskoye), Anne (Koryak woman, Kamenskoye), Aqan'kau' (Maritime Chukchee, Anadyr mouth), Maria (Koryak woman, Qare'nm), Andrew (Mar...
 - Suggestion: Review OCR/transcription around this passage.
 
-#### `virola-theiodora-como-alucinogena-e-toxica` / `text_broken_hyphen`
+#### `bogoras-koryak-texts-fly-agaric-song` / `text_stray_ocr_punctuation`
 
 - Severity: `medium`
-- Import: `data/latin-america-import`
-- Field: `pages[Full text].ocr_text`
-- Title: Virola theiodora como alucinógena e tóxica
-- Excerpt: Schultes (1970) reconhece pelo menos Agurell et alii (1969) analisando duas três espécies de Viro/a como as mais procu- amostras de rapé de procedência e modo de radas pelos índios : V. theiodora no Brasil e preparo diferentes, verificaram que a concen- Venezuela, V. ca/ophylla Warb e V. calophylloi- tração de alcalóides no rapé baixa de 1/10 em dea Markf....
+- Import: `data/draft-import`
+- Field: `document_sections[Transcript]`
+- Title: Koryak Texts
+- Excerpt: _[Two further songs, not part of the numbered tale-collection, are appended.]_ These two songs were written down from the phonographic records of Mr. Jochelson (No. 2 and No. 7 on his list). The first is in Koryak of Kamenskoye; the second is Chukchee in grammar and phonetics, and Koryak in vocabulary. It was obtained from an old Reindeer Chukchee of Parapo...
 - Suggestion: Review OCR/transcription around this passage.

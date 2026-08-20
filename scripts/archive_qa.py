@@ -289,7 +289,13 @@ def check_sections(
             issue(issues, "medium", "missing_section_heading", import_dir, doc, field, row)
         if row.get("body_format") == "markdown" and not body.strip():
             issue(issues, "high", "empty_section_body", import_dir, doc, field, "")
-        if heading.lower() in {"gold standard transcript", "source note", "editorial note"}:
+        # A generic heading matters when it leaks internal vocabulary into the reader. It does
+        # not when it simply names its own typed section: the reader renders a source_note by
+        # its type and never prints the heading, so heading "Source note" on section_type
+        # "source_note" is consistent metadata, not a leak.
+        section_type = str(row.get("section_type") or "").strip().lower()
+        generic_heading = heading.lower() in {"gold standard transcript", "source note", "editorial note"}
+        if generic_heading and heading.lower().replace(" ", "_") != section_type:
             issue(issues, "high", "internal_or_generic_section_heading", import_dir, doc, field, heading)
         detect_text_issues(issues, import_dir, doc, field, body, long_text=True)
 
