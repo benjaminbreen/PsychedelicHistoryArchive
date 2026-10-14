@@ -6,14 +6,15 @@ import { ButtonLink } from "@/components/ui/button";
 import { SearchBar } from "@/components/ui/search-bar";
 import { Chip } from "@/components/ui/chip";
 import { SourceImage } from "@/components/source-image";
+import { FeaturedSources, type FeaturedSourceCard } from "@/components/featured-sources";
 import { BrowsePills, EraBand, MediumTiles } from "@/components/browse-controls";
 import { HomeHeroImage } from "@/components/home-hero-image";
 import { SectionHeading } from "@/components/section-heading";
 import { getFacetCounts } from "@/lib/archive-query";
-import { ERAS, countSourcesInEra, eraHref } from "@/lib/eras";
+import { ERAS, countSourcesInEra, eraHref, getEraForYear } from "@/lib/eras";
 import { listArchiveSourceSummariesFromSupabase, listCollectionSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { getSourceTitleParts } from "@/lib/source-title";
-import type { FacetOption } from "@/lib/types";
+import type { ArchiveSource, FacetOption } from "@/lib/types";
 
 export const revalidate = 3600;
 
@@ -26,8 +27,7 @@ export default async function HomePage() {
   const eraFacets = eraRangeFacets(sources);
   const mediumFacets = browseTypeFacets(facetCounts.types);
   const featuredCollectionSources = collections.slice(0, 4);
-  const featured = sources.find((source) => source.slug === "mead-lsd-memo") ?? sources.find((source) => source.featured) ?? sources[0];
-  const supportingSources = sources.filter((source) => source.id !== featured.id).slice(0, 4);
+  const featuredPool = featuredSourcePool(sources);
   const recentSources = [...sources].sort((a, b) => b.year - a.year).slice(0, 5);
 
   return (
@@ -77,32 +77,7 @@ export default async function HomePage() {
         <section className="container-page pb-5 pt-8">
           <div className="border-b border-archive-line pb-6">
             <SectionHeading eyebrow="Featured sources" actionHref="/archive" actionLabel="View all sources" />
-            <div className="grid gap-3 md:grid-cols-3 xl:grid-cols-4">
-              {[featured, ...supportingSources.slice(0, 3)].map((source) => (
-                <Link
-                  className="featured-source-card focus-ring group grid min-h-[8.5rem] grid-cols-[6.25rem_minmax(0,1fr)] gap-4 rounded-md border border-[rgb(var(--archive-warm-line))] p-3 transition hover:border-archive-violet/45 hover:bg-[rgb(var(--archive-warm-hover))]"
-                  href={`/archive/${source.slug}`}
-                  key={source.id}
-                >
-                  <SourceImage
-                    className="featured-source-image aspect-[4/5] h-[8rem] w-full border-[rgb(var(--archive-warm-line))] opacity-[0.94] transition group-hover:opacity-100"
-                    imageClassName={source.imageTone === "portrait" ? "object-top" : undefined}
-                    source={source}
-                  />
-                  <span className="min-w-0">
-                    <span className="display-label block text-[0.8rem] text-archive-olive">
-                      {source.type}, {source.displayDate}
-                    </span>
-                    <span className="mt-2 block font-serif text-[1.03rem] font-semibold leading-snug text-archive-ink group-hover:text-archive-violetDark">
-                      {getSourceTitleParts(source).title}
-                    </span>
-                    <span className="featured-source-summary mt-1.5 text-[0.92rem] leading-5 text-archive-muted">
-                      {source.summary || source.author}
-                    </span>
-                  </span>
-                </Link>
-              ))}
-            </div>
+            <FeaturedSources pool={featuredPool} />
           </div>
         </section>
 
@@ -223,4 +198,23 @@ function browseTypeFacets(counts: Record<string, number>): FacetOption[] {
       href: bucket.href
     }))
     .filter((facet) => facet.count > 0);
+}
+
+// Editors flag home page picks in the CMS; until there are enough, top up with sources that have images.
+function featuredSourcePool(sources: ArchiveSource[]): FeaturedSourceCard[] {
+  const picks = sources.filter((source) => source.featured);
+  const pool = picks.length >= 4 ? picks : [...picks, ...sources.filter((source) => !source.featured && source.imagePath)].slice(0, 20);
+  return pool.map((source) => ({
+    id: source.id,
+    slug: source.slug,
+    type: source.type,
+    displayDate: source.displayDate,
+    title: getSourceTitleParts(source).title,
+    summary: source.summary,
+    author: source.author,
+    imagePath: source.imagePath,
+    imageAlt: source.imageAlt,
+    imageTone: source.imageTone,
+    eraSlug: getEraForYear(source.year)?.slug ?? "undated"
+  }));
 }

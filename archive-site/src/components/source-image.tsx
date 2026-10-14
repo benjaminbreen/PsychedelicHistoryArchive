@@ -4,7 +4,7 @@ import { SourceThumbnail } from "@/components/source-thumbnail";
 import type { ArchiveSource } from "@/lib/types";
 
 type SourceImageProps = {
-  source: ArchiveSource;
+  source: Pick<ArchiveSource, "title" | "imagePath" | "imageAlt" | "imageTone">;
   className?: string;
   imageClassName?: string;
 };
