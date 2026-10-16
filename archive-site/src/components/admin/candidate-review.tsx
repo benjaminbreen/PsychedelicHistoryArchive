@@ -5,7 +5,8 @@ import { ExternalLink, Undo2, ChevronLeft, ChevronRight } from "lucide-react";
 import { recordCandidateDecision } from "@/app/admin/candidates/actions";
 import { NO_REASONS, WHY_TAGS, type Candidate, type CandidateBatchSummary, type CandidateDecision, type CandidateDecisionValue } from "@/lib/corpus-candidate-types";
 
-type Draft = { reasons: string[]; why: string[]; note: string };
+type Draft = { reasons: string[]; why: string[]; note: string; dateWrong: boolean; year: string };
+const EMPTY: Draft = { reasons: [], why: [], note: "", dateWrong: false, year: "" };
 const REASON_KEYS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 const LABELS: Record<string, string> = { add: "Add", maybe: "Maybe", no: "No" };
 
@@ -19,6 +20,7 @@ export function CandidateReview({ batch, batches, candidates, initialDecisions }
   const [history, setHistory] = useState<number[]>([]);
   const [pending, startTransition] = useTransition();
   const noteRef = useRef<HTMLTextAreaElement>(null);
+  const yearRef = useRef<HTMLInputElement>(null);
   const card = candidates[index];
 
   const go = useCallback((next: number) => {
@@ -31,12 +33,13 @@ export function CandidateReview({ batch, batches, candidates, initialDecisions }
   const decide = useCallback((value: CandidateDecisionValue, target = index, payload = draft) => {
     const item = candidates[target];
     if (!item) return;
-    const record: CandidateDecision = { candidate_id: item.candidate_id, batch, decision: value, reasons: payload.reasons, why: payload.why, note: payload.note, decided_at: new Date().toISOString(), editor: "", lane: item.lane, rank: item.rank };
+    const corrections = payload.dateWrong || payload.year ? { date_wrong: true, year: payload.year ? Number(payload.year) : null } : undefined;
+    const record: CandidateDecision = { candidate_id: item.candidate_id, batch, decision: value, reasons: payload.reasons, why: payload.why, note: payload.note, corrections, decided_at: new Date().toISOString(), editor: "", lane: item.lane, rank: item.rank };
     const nextDecisions = { ...decisions };
     if (value === "clear") delete nextDecisions[item.candidate_id]; else nextDecisions[item.candidate_id] = record;
     setDecisions(nextDecisions);
     startTransition(async () => {
-      try { await recordCandidateDecision({ batch, candidateId: item.candidate_id, decision: value, reasons: payload.reasons, why: payload.why, note: payload.note }); }
+      try { await recordCandidateDecision({ batch, candidateId: item.candidate_id, decision: value, reasons: payload.reasons, why: payload.why, note: payload.note, corrections }); }
       catch (e) { setDecisions(decisions); setError(e instanceof Error ? e.message : "The decision was not saved."); }
     });
     if (value !== "clear") {
@@ -47,7 +50,7 @@ export function CandidateReview({ batch, batches, candidates, initialDecisions }
       setIndex(to);
       setDraft(draftFor(candidates[to], nextDecisions));
     } else {
-      setDraft({ reasons: [], why: [], note: "" });
+      setDraft(EMPTY);
     }
   }, [batch, candidates, decisions, draft, index]);
 
@@ -57,8 +60,8 @@ export function CandidateReview({ batch, batches, candidates, initialDecisions }
     setHistory(h => h.slice(0, -1));
     const previous = decisions[candidates[last].candidate_id];
     setIndex(last);
-    decide("clear", last, { reasons: [], why: [], note: "" });
-    setDraft(previous ? { reasons: previous.reasons, why: previous.why, note: previous.note } : { reasons: [], why: [], note: "" });
+    decide("clear", last, EMPTY);
+    setDraft(previous ? fromDecision(previous) : EMPTY);
   }, [candidates, decide, decisions, history]);
 
   const toggle = (field: "reasons" | "why", key: string) => setDraft(d => ({ ...d, [field]: d[field].includes(key) ? d[field].filter(k => k !== key) : [...d[field], key] }));
@@ -78,6 +81,7 @@ export function CandidateReview({ batch, batches, candidates, initialDecisions }
       else if (key === "arrowright" || key === "j") go(index + 1);
       else if (key === "arrowleft" || key === "k") go(index - 1);
       else if (key === "/") { event.preventDefault(); noteRef.current?.focus(); }
+      else if (key === "d") { setDraft(d => ({ ...d, dateWrong: !d.dateWrong })); requestAnimationFrame(() => yearRef.current?.focus()); }
       else if (REASON_KEYS.includes(key) && NO_REASONS[REASON_KEYS.indexOf(key)]) toggle("reasons", NO_REASONS[REASON_KEYS.indexOf(key)].key);
       else return;
       event.preventDefault();
@@ -123,7 +127,7 @@ export function CandidateReview({ batch, batches, candidates, initialDecisions }
         </div>
 
         <h2 className="cms-cand-title">{card.title || <span className="cms-cand-untitled">Untitled · {card.identifier}</span>}</h2>
-        <p className="cms-cand-meta">{[card.creator, card.year || card.date || "Undated", card.language, card.collection, card.page && `p. ${card.page}`].filter(Boolean).join(" · ")}{card.source_url && <> · <a href={card.source_url} target="_blank" rel="noreferrer">Open source <ExternalLink size={12} /></a></>}</p>
+        <p className="cms-cand-meta">{[card.creator, decided?.corrections?.year ? `${decided.corrections.year} (listed ${card.year || "undated"})` : card.year || card.date || "Undated", card.language, card.collection, card.page && `p. ${card.page}`].filter(Boolean).join(" · ")}{card.source_url && <> · <a href={card.source_url} target="_blank" rel="noreferrer">Open source <ExternalLink size={12} /></a></>}</p>
         {card.llm?.pitch && <p className="cms-cand-pitch">{card.llm.pitch}</p>}
 
         <div className="cms-cand-chips">
@@ -155,6 +159,10 @@ export function CandidateReview({ batch, batches, candidates, initialDecisions }
           </div>
           <fieldset className="cms-cand-tags"><legend>Why not</legend>{NO_REASONS.map((reason, i) => <button key={reason.key} title={reason.help} aria-pressed={draft.reasons.includes(reason.key)} onClick={() => toggle("reasons", reason.key)}>{REASON_KEYS[i] && <kbd>{REASON_KEYS[i]}</kbd>}{reason.label}</button>)}</fieldset>
           <fieldset className="cms-cand-tags"><legend>Why it’s worth having</legend>{WHY_TAGS.map(tag => <button key={tag.key} aria-pressed={draft.why.includes(tag.key)} onClick={() => toggle("why", tag.key)}>{tag.label}</button>)}</fieldset>
+          <fieldset className="cms-cand-tags cms-cand-meta-fix"><legend>Metadata (separate from the decision)</legend>
+            <button aria-pressed={draft.dateWrong} onClick={() => setDraft(d => ({ ...d, dateWrong: !d.dateWrong }))}><kbd>D</kbd>Date wrong</button>
+            {draft.dateWrong && <input ref={yearRef} aria-label="Correct year" inputMode="numeric" placeholder={`Correct year (listed ${card.year || "undated"})`} value={draft.year} onChange={e => setDraft(d => ({ ...d, year: e.target.value.replace(/\D/g, "").slice(0, 4) }))} onKeyDown={e => { if (e.key === "Enter") (e.target as HTMLInputElement).blur(); }} />}
+          </fieldset>
           <label>Note <kbd>/</kbd><textarea ref={noteRef} rows={2} value={draft.note} onChange={e => setDraft(d => ({ ...d, note: e.target.value }))} placeholder="Optional: what makes this interesting, or what went wrong" /></label>
           {error && <p className="cms-error">{error}</p>}
           <p className="cms-field-help">Tag reasons first, then decide; the next unreviewed card opens. Arrow keys or J/K move between cards.</p>
@@ -171,7 +179,11 @@ export function CandidateReview({ batch, batches, candidates, initialDecisions }
 
 function draftFor(card: Candidate | undefined, decisions: Record<string, CandidateDecision>): Draft {
   const d = card && decisions[card.candidate_id];
-  return d ? { reasons: d.reasons, why: d.why, note: d.note } : { reasons: [], why: [], note: "" };
+  return d ? fromDecision(d) : EMPTY;
+}
+
+function fromDecision(d: CandidateDecision): Draft {
+  return { reasons: d.reasons, why: d.why, note: d.note, dateWrong: !!d.corrections?.date_wrong, year: d.corrections?.year ? String(d.corrections.year) : "" };
 }
 
 function Highlighted({ text, terms }: { text: string; terms: string[] }) {

@@ -93,6 +93,15 @@ an optional note.
 | `secondary` | Later scholarship about a source rather than the source itself | Ranker; may point to a bibliography item instead |
 | `other` | See the note | |
 
+**Metadata corrections are separate from the decision.** A wrong catalogue
+date is not a reason to reject. Press **D** ("Date wrong") and optionally type
+the correct year. This is stored as `corrections: {date_wrong, year}` on the
+decision line. Training, stratification and nominations should prefer
+`corrections.year` over `snapshot.year`. The `date_wrong` rate per collection
+also tells us whose catalogue dates not to trust: the first card in the local
+batch was a Ladies' Home Journal issue listed as 1889 that is really from the
+1960s–70s.
+
 `add` and `maybe` take optional **why** tags: `first_person`, `ethnographic`,
 `policy`, `clinical`, `literary`, `visual`, `unusual_language`,
 `unusual_period`. These tell us which kinds of source are worth targeting next.

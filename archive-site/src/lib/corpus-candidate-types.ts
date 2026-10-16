@@ -32,6 +32,9 @@ export type Candidate = {
   llm: { kind?: string; pitch?: string; substances?: string[]; ocr_quality?: string; archive_fit?: number } | null;
 };
 
+// Metadata fixes noted during review; independent of whether the source is worth adding.
+export type CandidateCorrections = { date_wrong?: boolean; year?: number | null };
+
 export type CandidateDecision = {
   candidate_id: string;
   batch: string;
@@ -39,6 +42,7 @@ export type CandidateDecision = {
   reasons: string[];
   why: string[];
   note: string;
+  corrections?: CandidateCorrections;
   decided_at: string;
   editor: string;
   lane?: string;
