@@ -25,26 +25,40 @@ Files:
 
 ## 1. How the filter works
 
+- **Scope (Ben, 2026-10-16).** Opium, kava, coca/cocaine and generic
+  intoxication are not searched at all: they are not psychedelic, and in the
+  first review they produced mostly passing mentions. Cannabis counts only when
+  the passage evokes a psychedelic-like state. A mention such as "inebriated by
+  hashish" is not a hit.
 - **Strong terms** always count as a hit. Examples: peyote/peyotl/Anhalonium,
-  mescaline, haschisch/hachisch/hasheesh, dawamesk, cannabis indica/chanvre
-  indien, bhang, ayahuasca/yagé/caapi, harmaline, cohoba/yopo, teonanácatl,
-  psilocybin, fly agaric/Fliegenpilz, ololiuqui, LSD/lysergic, psychotomimetic,
-  MKULTRA, ibogaine, kava-kava/yangona, Jimson weed/toloache, haoma,
+  mescaline, ayahuasca/yagé/caapi, harmaline, cohoba/yopo, teonanácatl,
+  psilocybin, fly agaric/Fliegenpilz, ololiuqui, LSD-25/lysergic,
+  psychotomimetic, MKULTRA, ibogaine, Jimson weed/toloache, haoma,
   "anaesthetic revelation", éthéromanie, and Davy-style phrasing such as
   "breathed the nitrous oxide".
-- **Weak terms** count only when a strong or context term appears within about
-  60 words. Examples: ether, opium/laudanum, nitrous oxide and laughing gas on
-  their own (mostly dental adverts), datura (often the Latin participle),
-  generic mushroom, hemp, soma, ergot.
-  - Weak terms marked `needs = "strong"` are rescued only by a strong term. These
-    are intoxication/ivresse/Rausch, chloroform, belladonna/henbane,
-    cocaine and snuff, all of which are usually metaphorical or routine medicine.
-- **Context terms** never count on their own. They cover visionary-experience
-  language: visions, hallucination, ecstasy/extase/Verzückung, ineffable,
-  cosmic consciousness, depersonalisation, dreams/rêves/Träume, exhilaration.
+- **Weak terms** count only when a rescuing term appears within about 60 words.
+  By default that is any strong or context term. A `rescued_by` list narrows it:
+  - **Cannabis** (haschisch/hachisch/hasheesh, dawamesk, cannabis indica, bhang,
+    marijuana, hemp) is rescued only by visionary language: visions,
+    hallucination, ecstasy, depersonalisation, time distortion. Dreams,
+    exhilaration and intoxication do not count.
+  - **Generic plant words** (mushroom, datura, soma, ergot, mescal, Banisteria)
+    are rescued by a strong term or visionary language.
+  - **Nitrous oxide, laughing gas and "ether inhalation"** (under, inhaled or
+    took ether) are also rescued by dreams and exhilaration.
+  - **Bare "LSD"** is rescued by drug vocabulary such as heroin, marihuana or
+    narcotic, so that undated Congressional Record pages still match while OCR
+    noise does not.
+- **`needs = "strong"`.** These terms are rescued only by a strong term:
+  - bare "ether", which is mostly poetry and physics
+  - chloroform, belladonna/henbane and snuff, which are routine medicine
+- **Context terms** never count on their own. They cover visions/hallucination,
+  ecstasy/mystical states, altered perception/self, exhilaration,
+  dreams/reverie, and drug vocabulary (which rescues LSD only).
 - **Date guards.** `min_year` and `require_year` stop modern coinages from
   matching older homographs:
-  - LSD and psychedelic before 1940
+  - LSD and psychedelic before 1940. Newspaper rows with an empty date column
+    take their year from the page identifier (`sn…_1888-06-14…`, `ST/1876/…`).
   - mescaline before 1890; earlier hits are OCR for "Muscatine"
   - "L.S.D." meaning pounds, shillings and pence
 - **Windows.** Each hit gets a window of about 300 words. Nearby hits merge into
@@ -71,6 +85,12 @@ Vocabulary seeds came from the archive's own texts: `nitrous oxide:ether/`,
 paricá) and `data/squarespace-import/body-text/`.
 
 ## 2. Local test (2026-10-16, free)
+
+> **After the first review** (23 decisions: 1 add, 2 maybe, 20 no, 13 of them
+> passing mentions), opium, kava, coca and generic intoxication were removed,
+> cannabis was restricted to visionary contexts, and bare ether and LSD were
+> tightened. The same 20 shards now give **296 windows from 244 documents**,
+> down from 1,139. The tables below are from the earlier term list.
 
 **Input.** `~/Code/CommonCorpusSample/culture/*.parquet`: 20 random Common
 Corpus shards, Open Culture rows only. That is 248,596 documents, 1.18 B words,

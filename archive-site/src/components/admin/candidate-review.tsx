@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useEffect, useMemo, useRef, useState, useTransition } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ExternalLink, Undo2, ChevronLeft, ChevronRight } from "lucide-react";
 import { recordCandidateDecision } from "@/app/admin/candidates/actions";
@@ -9,6 +9,10 @@ type Draft = { reasons: string[]; why: string[]; note: string; dateWrong: boolea
 const EMPTY: Draft = { reasons: [], why: [], note: "", dateWrong: false, year: "" };
 const REASON_KEYS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 const LABELS: Record<string, string> = { add: "Add", maybe: "Maybe", no: "No" };
+type SaveInput = Parameters<typeof recordCandidateDecision>[0];
+// A decision waiting to reach the server. Kept in localStorage so a stopped dev
+// server or a closed tab never loses review work; it is retried until it lands.
+type Outgoing = { id: string; input: SaveInput; record: CandidateDecision };
 
 export function CandidateReview({ batch, batches, candidates, initialDecisions }: { batch: string; batches: CandidateBatchSummary[]; candidates: Candidate[]; initialDecisions: Record<string, CandidateDecision> }) {
   const router = useRouter();
@@ -18,16 +22,60 @@ export function CandidateReview({ batch, batches, candidates, initialDecisions }
   const [draft, setDraft] = useState<Draft>(() => draftFor(candidates[firstOpen], initialDecisions));
   const [error, setError] = useState("");
   const [history, setHistory] = useState<number[]>([]);
-  const [pending, startTransition] = useTransition();
+  const [outbox, setOutbox] = useState<Outgoing[]>([]);
+  const outboxRef = useRef<Outgoing[]>([]);
+  const flushing = useRef(false);
   const noteRef = useRef<HTMLTextAreaElement>(null);
   const yearRef = useRef<HTMLInputElement>(null);
   const card = candidates[index];
+  const outboxKey = `phs-candidate-outbox:${batch}`;
+
+  const updateOutbox = useCallback((next: Outgoing[]) => {
+    outboxRef.current = next;
+    setOutbox(next);
+    try { if (next.length) localStorage.setItem(outboxKey, JSON.stringify(next)); else localStorage.removeItem(outboxKey); } catch { /* storage unavailable: the banner still warns */ }
+  }, [outboxKey]);
+
+  const flush = useCallback(async () => {
+    if (flushing.current) return;
+    flushing.current = true;
+    try {
+      while (outboxRef.current.length) {
+        const item = outboxRef.current[0];
+        try { await recordCandidateDecision(item.input); }
+        catch (e) { setError(e instanceof Error ? e.message : String(e)); return; }
+        updateOutbox(outboxRef.current.filter(o => o.id !== item.id));
+        setError("");
+      }
+    } finally { flushing.current = false; }
+  }, [updateOutbox]);
+
+  // Restore decisions that never reached the server, then keep retrying while any remain.
+  useEffect(() => {
+    let saved: Outgoing[] = [];
+    try { saved = JSON.parse(localStorage.getItem(outboxKey) || "[]"); } catch { saved = []; }
+    if (!saved.length) return;
+    setDecisions(current => {
+      const next = { ...current };
+      for (const o of saved) { if (o.record.decision === "clear") delete next[o.record.candidate_id]; else next[o.record.candidate_id] = o.record; }
+      return next;
+    });
+    updateOutbox(saved);
+  }, [outboxKey, updateOutbox]);
+
+  useEffect(() => {
+    if (!outbox.length) return;
+    void flush();
+    const timer = window.setInterval(() => void flush(), 5000);
+    const warn = (event: BeforeUnloadEvent) => event.preventDefault();
+    window.addEventListener("beforeunload", warn);
+    return () => { window.clearInterval(timer); window.removeEventListener("beforeunload", warn); };
+  }, [outbox.length, flush]);
 
   const go = useCallback((next: number) => {
     const clamped = Math.min(candidates.length - 1, Math.max(0, next));
     setIndex(clamped);
     setDraft(draftFor(candidates[clamped], decisions));
-    setError("");
   }, [candidates, decisions]);
 
   const decide = useCallback((value: CandidateDecisionValue, target = index, payload = draft) => {
@@ -38,10 +86,9 @@ export function CandidateReview({ batch, batches, candidates, initialDecisions }
     const nextDecisions = { ...decisions };
     if (value === "clear") delete nextDecisions[item.candidate_id]; else nextDecisions[item.candidate_id] = record;
     setDecisions(nextDecisions);
-    startTransition(async () => {
-      try { await recordCandidateDecision({ batch, candidateId: item.candidate_id, decision: value, reasons: payload.reasons, why: payload.why, note: payload.note, corrections }); }
-      catch (e) { setDecisions(decisions); setError(e instanceof Error ? e.message : "The decision was not saved."); }
-    });
+    const input: SaveInput = { batch, candidateId: item.candidate_id, decision: value, reasons: payload.reasons, why: payload.why, note: payload.note, corrections };
+    updateOutbox([...outboxRef.current, { id: `${item.candidate_id}:${record.decided_at}`, input, record }]);
+    void flush();
     if (value !== "clear") {
       setHistory(h => [...h, target]);
       const after = candidates.findIndex((c, i) => i > target && !nextDecisions[c.candidate_id]);
@@ -52,7 +99,7 @@ export function CandidateReview({ batch, batches, candidates, initialDecisions }
     } else {
       setDraft(EMPTY);
     }
-  }, [batch, candidates, decisions, draft, index]);
+  }, [batch, candidates, decisions, draft, flush, index, updateOutbox]);
 
   const undo = useCallback(() => {
     const last = history[history.length - 1];
@@ -101,8 +148,10 @@ export function CandidateReview({ batch, batches, candidates, initialDecisions }
 
   if (!card) return <div className="cms-card">This batch is empty.</div>;
   const decided = decisions[card.candidate_id];
+  const unsaved = new Set(outbox.map(o => o.record.candidate_id));
 
   return <div className="cms-cand">
+    {outbox.length > 0 && <div className="cms-cand-unsaved" role="alert"><strong>{outbox.length} {outbox.length === 1 ? "decision is" : "decisions are"} not saved yet.</strong> {error ? "The workspace server isn’t responding. " : "Saving… "}They’re kept in this browser and save automatically once the server is back. If this persists, restart the dev server and reload this page.{error && <span className="cms-cand-unsaved-detail"> ({error})</span>}</div>}
     <div className="cms-heading">
       <div><h1>Candidates</h1><p>Common Corpus scan · {stats.done} of {candidates.length} reviewed · {stats.add} add · {stats.maybe} maybe · {stats.no} no</p></div>
       <label className="cms-cand-batch">Batch<select value={batch} onChange={e => router.push(`/admin/candidates?batch=${encodeURIComponent(e.target.value)}`)}>{batches.map(b => <option key={b.batch} value={b.batch}>{b.batch} ({b.n}{b.scoring ? `, ${b.scoring}` : ""})</option>)}</select></label>
@@ -111,7 +160,7 @@ export function CandidateReview({ batch, batches, candidates, initialDecisions }
     <div className="cms-cand-grid">
       <aside className="cms-cand-queue" aria-label="Queue">
         {candidates.map((c, i) => { const d = decisions[c.candidate_id]; return <button key={c.candidate_id} className={`cms-cand-item${i === index ? " current" : ""}`} onClick={() => go(i)} aria-current={i === index ? "true" : undefined}>
-          <span className={`cms-cand-dot ${d?.decision || "open"}`} aria-label={d ? LABELS[d.decision] : "Not reviewed"} />
+          <span className={`cms-cand-dot ${d?.decision || "open"}${unsaved.has(c.candidate_id) ? " unsaved" : ""}`} aria-label={d ? `${LABELS[d.decision]}${unsaved.has(c.candidate_id) ? ", not saved yet" : ""}` : "Not reviewed"} />
           <span className="cms-cand-item-title">{c.title || c.identifier}</span>
           <span className="cms-cand-item-meta">{c.year || "n.d."}</span>
         </button>; })}
@@ -152,10 +201,10 @@ export function CandidateReview({ batch, batches, candidates, initialDecisions }
 
         <div className="cms-cand-decide">
           <div className="cms-cand-buttons">
-            <button className="cms-primary" onClick={() => decide("add")} disabled={pending}>Add <kbd>A</kbd></button>
-            <button onClick={() => decide("maybe")} disabled={pending}>Maybe <kbd>M</kbd></button>
-            <button onClick={() => decide("no")} disabled={pending}>No <kbd>N</kbd></button>
-            <button className="cms-quiet" onClick={undo} disabled={!history.length || pending}><Undo2 size={15} /> Undo <kbd>Z</kbd></button>
+            <button className="cms-primary" onClick={() => decide("add")}>Add <kbd>A</kbd></button>
+            <button onClick={() => decide("maybe")}>Maybe <kbd>M</kbd></button>
+            <button onClick={() => decide("no")}>No <kbd>N</kbd></button>
+            <button className="cms-quiet" onClick={undo} disabled={!history.length}><Undo2 size={15} /> Undo <kbd>Z</kbd></button>
           </div>
           <fieldset className="cms-cand-tags"><legend>Why not</legend>{NO_REASONS.map((reason, i) => <button key={reason.key} title={reason.help} aria-pressed={draft.reasons.includes(reason.key)} onClick={() => toggle("reasons", reason.key)}>{REASON_KEYS[i] && <kbd>{REASON_KEYS[i]}</kbd>}{reason.label}</button>)}</fieldset>
           <fieldset className="cms-cand-tags"><legend>Why it’s worth having</legend>{WHY_TAGS.map(tag => <button key={tag.key} aria-pressed={draft.why.includes(tag.key)} onClick={() => toggle("why", tag.key)}>{tag.label}</button>)}</fieldset>
@@ -164,7 +213,6 @@ export function CandidateReview({ batch, batches, candidates, initialDecisions }
             {draft.dateWrong && <input ref={yearRef} aria-label="Correct year" inputMode="numeric" placeholder={`Correct year (listed ${card.year || "undated"})`} value={draft.year} onChange={e => setDraft(d => ({ ...d, year: e.target.value.replace(/\D/g, "").slice(0, 4) }))} onKeyDown={e => { if (e.key === "Enter") (e.target as HTMLInputElement).blur(); }} />}
           </fieldset>
           <label>Note <kbd>/</kbd><textarea ref={noteRef} rows={2} value={draft.note} onChange={e => setDraft(d => ({ ...d, note: e.target.value }))} placeholder="Optional: what makes this interesting, or what went wrong" /></label>
-          {error && <p className="cms-error">{error}</p>}
           <p className="cms-field-help">Tag reasons first, then decide; the next unreviewed card opens. Arrow keys or J/K move between cards.</p>
         </div>
 

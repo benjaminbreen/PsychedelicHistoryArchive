@@ -84,16 +84,21 @@ class Term:
     min_year: int | None = None
     require_year: bool = False
     needs: str = "any"  # weak terms: "any" (strong or context nearby) or "strong"
+    rescued_by: tuple[str, ...] | None = None  # weak terms: only these context labels (and "strong") rescue it
 
 
 def load_terms(path: Path) -> tuple[list[Term], dict]:
     data = tomllib.loads(path.read_text(encoding="utf-8"))
     terms = []
+    rescuers = {t["label"] for t in data["term"] if t["tier"] == "context"} | {"strong"}
     for i, t in enumerate(data["term"]):
         if t["tier"] not in {"strong", "weak", "context"}:
             raise ValueError(f"bad tier for {t['label']}: {t['tier']}")
         if t.get("needs", "any") not in {"any", "strong"}:
             raise ValueError(f"bad needs for {t['label']}: {t['needs']}")
+        unknown = set(t.get("rescued_by", [])) - rescuers
+        if unknown:
+            raise ValueError(f"rescued_by for {t['label']} names unknown context labels: {sorted(unknown)}")
         terms.append(
             Term(
                 idx=i,
@@ -105,6 +110,7 @@ def load_terms(path: Path) -> tuple[list[Term], dict]:
                 min_year=t.get("min_year"),
                 require_year=bool(t.get("require_year", False)),
                 needs=t.get("needs", "any"),
+                rescued_by=tuple(t["rescued_by"]) if "rescued_by" in t else None,
             )
         )
     return terms, data.get("settings", {})
@@ -214,6 +220,19 @@ def build_re2(terms: list[Term], tier: str, chunk: int = 60) -> list[str]:
 # ---------------------------------------------------------------------------
 
 
+# Newspaper page ids carry their date even when the date column is empty:
+# Chronicling America "sn85038614_1888-06-14_1_3_2", Papers Past "ST/1876/ST_18760731/...".
+ID_YEAR_RE = re.compile(r"^(?:sn|[a-z]{1,3})\d{6,}_(1[5-9]\d{2}|20[0-2]\d)-\d{2}-\d{2}|^[A-Z]{2,6}/(1[5-9]\d{2}|20[0-2]\d)/|^[A-Z]{2,6}_(1[5-9]\d{2}|20[0-2]\d)(?:\.parquet)?$")
+
+
+def identifier_year(*values) -> int | None:
+    for v in values:
+        m = ID_YEAR_RE.search(str(v or ""))
+        if m:
+            return int(next(g for g in m.groups() if g))
+    return None
+
+
 def row_year(value) -> int | None:
     if value is None:
         return None
@@ -247,7 +266,7 @@ def scan_text(text: str, year: int | None, matcher: Matcher, settings: dict) -> 
     if not matches:
         return [], 0
 
-    anchors = {
+    anchors: dict = {
         "any": [s for s, _, t, _ in matches if t.tier in ("strong", "context")],
         "strong": [s for s, _, t, _ in matches if t.tier == "strong"],
     }
@@ -256,7 +275,14 @@ def scan_text(text: str, year: int | None, matcher: Matcher, settings: dict) -> 
         if t.tier == "strong":
             hits.append((s, e, t, surf))
         elif t.tier == "weak":
-            near = anchors[t.needs]
+            if t.rescued_by is not None:
+                if t.rescued_by not in anchors:
+                    allowed = set(t.rescued_by)
+                    anchors[t.rescued_by] = [s2 for s2, _, t2, _ in matches
+                                             if (t2.tier == "strong" and "strong" in allowed) or (t2.tier == "context" and t2.label in allowed)]
+                near = anchors[t.rescued_by]
+            else:
+                near = anchors[t.needs]
             k = bisect.bisect_left(near, s - prox)
             if k < len(near) and near[k] <= e + prox:
                 hits.append((s, e, t, surf))
@@ -380,7 +406,7 @@ def process_file(local_path: str, meta: dict, out_dir: str, where: str | None) -
             for row in batch.to_pylist():
                 stats["prefiltered_rows"] += 1
                 text = row.pop("text") or ""
-                year = row_year(row.get("date"))
+                year = row_year(row.get("date")) or identifier_year(row.get("identifier"), Path(rel).name)
                 wins, total = scan_text(text, year, matcher, settings)
                 if not wins:
                     continue
