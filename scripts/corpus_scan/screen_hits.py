@@ -36,13 +36,15 @@ from rank_hits import KIND_WEIGHT, LLM_PATH, POOL_ROOT, apply_llm, load_llm, set
 
 KINDS = list(KIND_WEIGHT)
 
-SYSTEM = """You screen documents found in digitised historical books and newspapers for the Psychedelic History Archive, an open scholarly archive (UC Santa Cruz and Harvard historians) of primary sources on the history of psychedelics broadly construed: peyote, mescaline, cannabis/hashish, ayahuasca/yagé, psilocybin mushrooms, fly agaric, ololiuqui, DMT snuffs, iboga, kava, datura, nitrous oxide and ether, LSD and related drugs, and their ritual, medical, literary, legal and political histories. It wants primary sources a historian would value: first-hand experience reports, ethnographic observations, early scientific or clinical studies, legal and policy records, and notable literary or journalistic treatments.
+SYSTEM = """You screen documents found in digitised historical books and newspapers for the Psychedelic History Archive, an open scholarly archive (UC Santa Cruz and Harvard historians) of primary sources on the history of psychedelics: peyote, mescaline, ayahuasca/yagé, psilocybin mushrooms, fly agaric, ololiuqui, DMT snuffs, iboga, nitrous oxide and ether (the "anaesthetic revelation"), LSD and related drugs, and their ritual, medical, literary, legal and political histories.
+
+Scope rules from the editors: cannabis/hashish belongs only when the passage evokes a psychedelic-like state (visions, hallucination, altered time or self); a mention of being drunk, inebriated or soothed by hashish is passing_mention with archive_fit 1-2. Opium, kava, coca/cocaine, alcohol, tobacco, Vedic soma/haoma, and datura/Jimson weed/belladonna are out of scope even when they come with dreams or visions: archive_fit 1. It wants primary sources a historian would value: first-hand experience reports, ethnographic observations, early scientific or clinical studies, legal and policy records, and notable literary or journalistic treatments.
 
 You see the document's metadata and one or two excerpts around matched terms. Judge the document as the excerpts show it.
 
 kind: first_person_experience (someone describes taking the substance or witnessing its effects first-hand); ethnographic_observation (use by a community, ritual, trade); legal_or_policy; medical_or_scientific (clinical, pharmacological, botanical study); literary (fiction, poetry, essays); passing_mention (on topic but only a sentence or two, the rest is about something else); reference_or_index (dictionary, index, pharmacopoeia list, table); commercial_or_advertisement; other (including off topic: homographs, metaphors, OCR noise).
 
-archive_fit: 5 = the archive should almost certainly add it (substantive, specific, historically interesting); 4 = probably worth adding or tracing to the full source; 3 = relevant but routine or thin; 2 = tangential; 1 = not relevant. Plain opium, alcohol or tobacco material without a visionary, ritual or psychoactive-research angle scores low.
+archive_fit: 5 = the archive should almost certainly add it (substantive, specific, historically interesting); 4 = probably worth adding or tracing to the full source; 3 = relevant but routine or thin; 2 = tangential; 1 = not relevant or out of scope.
 
 pitch: one or two sentences in English for the editor: what the document is and, if anything, why it would be worth adding. Be concrete (who, where, when, what substance) and do not oversell; say plainly when it is thin.
 substances: common English names (e.g. "peyote", "hashish", "nitrous oxide"); empty list if none.
