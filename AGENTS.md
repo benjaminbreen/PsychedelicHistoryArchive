@@ -80,6 +80,7 @@ Current implemented app routes in `archive-site/src/app`:
 - `/admin/bibliography` via `src/app/admin/bibliography/page.tsx` - local/private CMS bibliography list.
 - `/admin/bibliography/[id]` via `src/app/admin/bibliography/[id]/page.tsx` - local/private CMS bibliography editor.
 - `/admin/qa` via `src/app/admin/qa/page.tsx` - local/private file-backed QA dashboard.
+- `/admin/candidates` via `src/app/admin/candidates/page.tsx` - local/private file-backed review queue for Common Corpus scan candidates (`data/corpus-scan/`; see `docs/corpus-scan/candidate-review.md`).
 
 Routes handled as archive filters rather than standalone pages:
 

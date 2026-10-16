@@ -4,3 +4,4 @@ pyarrow==26.0.0
 huggingface-hub==2.2.0
 hf-xet==1.7.0
 google-re2==1.1.20251105
+numpy>=2.0
