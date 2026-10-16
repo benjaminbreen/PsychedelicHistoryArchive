@@ -18,6 +18,7 @@ Files:
 | `scripts/corpus_scan/summarize_hits.py` | Counts per term, collection and decade, plus a random sample for review |
 | `scripts/corpus_scan/run_cloud.sh` | One-command cloud run with pinned dataset SHAs, results tarball and auto-shutdown |
 | `scripts/corpus_scan/requirements.txt` | Pinned Python dependencies |
+| `scripts/corpus_scan/embed_hits.py`, `build_seeds.py`, `rank_hits.py`, `screen_hits.py`, `export_review.py` | Post-scan pipeline (section 6); shared helpers in `postscan_common.py`, dependencies in `requirements-post.txt` |
 | `docs/corpus-scan/local-test-2026-10-16-sample.md` | Local test tables and 50 random hits |
 
 ---
@@ -319,6 +320,71 @@ aws ec2 terminate-instances --instance-ids i-...   # once the copy is verified
 ```
 
 ## 6. After the scan
+
+### 6.0 Commands
+
+The scripts are in `scripts/corpus_scan/` and need only numpy beyond the
+standard library (`requirements-post.txt`). They read `OPENROUTER_API_KEY`
+from the environment or from `~/Code/Historical Forecasting/.env.local`, and
+never print it. Every paid step is resumable and keeps a spend ledger with a
+`--cap` in dollars.
+
+```bash
+RUN=data/corpus-scan/runs/us-pd-newspapers   # one or more scan_parquet.py run dirs
+python scripts/corpus_scan/embed_hits.py $RUN                 # -> $RUN/emb/ (dedup.tsv.gz, shard-*.npy, spend.json)
+python scripts/corpus_scan/build_seeds.py                     # -> data/corpus-scan/seeds/ (seeds.jsonl + shards)
+python scripts/corpus_scan/rank_hits.py $RUN --top 4000 --per-category 500
+python scripts/corpus_scan/screen_hits.py $RUN --limit 50     # spot-check these first
+python scripts/corpus_scan/screen_hits.py $RUN                # then the rest
+python scripts/corpus_scan/export_review.py $RUN              # -> $RUN/review.html, review.csv
+```
+
+To rank several datasets together, pass every run dir to `embed_hits.py` with
+one `--out`, and the same dirs plus `--emb` to `rank_hits.py`.
+
+What each step does beyond the plan below:
+
+- `embed_hits.py` keeps the first window of each duplicate group and records
+  every hit's canonical id in `dedup.tsv.gz`; `rank_hits.py` turns that into
+  `n_copies`, a rough measure of how widely a story was reprinted.
+- `build_seeds.py` uses transcript sections only. Editorial notes
+  (`source_note`, `overview`, `historical_context`, `note`) are left out, since
+  modern prose pulls the ranking toward modern prose; `--include-editorial`
+  puts them back. Each source contributes at most 60 chunks, spaced evenly.
+  Categories come from keyword rules over title, document type, tags and
+  genre (`CATEGORY_RULES`), so a seed can sit in several.
+- `rank_hits.py` writes `ranked.jsonl.gz` (best window per document, every
+  document) and `candidates.jsonl` (top `--top` overall plus top
+  `--per-category` per seed category, with `picked_by`). Each row also has
+  `sim_max`, the nearest seed's title, and `likely_in_archive` when the nearest
+  seed is at least 0.92 similar. It prints a score histogram and a knee
+  estimate.
+- `screen_hits.py` sends one excerpt per request with reasoning off and a
+  strict JSON schema; output is appended to `screened.jsonl`.
+- `export_review.py` links identifiers to Chronicling America (loc.gov),
+  Gallica, Internet Archive, BNE Digital, Papers Past, ANNO, Gutenberg,
+  Wikisource and the Deutsche Digitale Bibliothek.
+
+**Local test (2026-10-16).** On the 1,139-window local run (section 2):
+
+- Embedding all 1,139 hits used 634 k tokens (about 560 per window) and cost
+  $0.006. At that rate 1 M windows would be about $5.6, somewhat above the
+  estimate below.
+- There were 910 seeds from 109 archive texts, costing $0.004.
+- Ranking gave 921 documents. Scores ran from 0.27 to 0.80, with the knee at
+  rank 79 (score 0.65).
+- Screening the top 300 with Luna cost $0.051, about $0.00017 per item. At that
+  rate 5,000 items would be about $0.85.
+  - Verdicts: 2 at fit 5, 104 at fit 4, 121 at fit 3, 42 at fit 2, 31 at fit 1.
+  - The mean ranking score rose only from 0.60 (fit 1) to 0.65 (fit 4) and 0.70
+    (fit 5). Within the top 300, embedding rank separates relevance only
+    weakly, so screen generously rather than cutting at the knee.
+- The export had 106 items at fit ≥ 4, and all 106 had a source link.
+- The two fit-5 items were a 1900 Spanish formulary entry on peyote among the
+  Kiowa, and Sahagún on Teochichimeca peyote and mushroom use in the 1829
+  Bustamante edition.
+
+The total paid cost of the test was about $0.06.
 
 ### 6.1 Embed the hits
 
