@@ -6,7 +6,9 @@ Contract: docs/corpus-scan/candidate-review.md §2-§5. Steps:
 1. Score every candidate as rank_hits.py does (embedding relevance, LLM kind,
    novelty, feasibility).
 2. Join data/corpus-scan/decisions.jsonl (latest line per candidate; a
-   "clear" line removes it) to them.
+   "clear" line removes it) to them. Reviewer year corrections
+   (`corrections.year`, §4) replace catalogue and snapshot years for
+   stratification; a reported wrong date is metadata, never a label.
    A decided candidate missing from the current runs falls back to its
    snapshot: the best excerpt is embedded (cached under
    data/corpus-scan/decision_emb/) and the snapshot scores are used.
@@ -43,7 +45,7 @@ import numpy as np
 import candidates as C
 import ranker_model as M
 from postscan_common import embed_to_shards, load_shards
-from rank_hits import live_decisions, score_candidates, set_priority, write_pool
+from rank_hits import apply_year_corrections, live_decisions, score_candidates, set_priority, write_pool
 
 MODEL_ROOT = C.CANDIDATE_ROOT / "models"
 FEATS = M.SCORE_FEATURES
@@ -71,6 +73,16 @@ def rate_table(rows: list[dict], key) -> list[str]:
     return out
 
 
+def date_wrong_table(rows: list[dict]) -> list[str]:
+    by = collections.defaultdict(lambda: [0, 0])
+    for r in rows:
+        k = (r.get("snapshot") or {}).get("collection") or "?"
+        by[k][0] += 1
+        by[k][1] += bool((r.get("corrections") or {}).get("date_wrong"))
+    return [f"  {k:34s} {w:3d}/{n:<4d} ({w / n:5.1%})" for k, (n, w) in sorted(by.items(), key=lambda kv: -kv[1][1]) if w]\
+        or ["  none reported"]
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("runs", nargs="+", type=Path, help="scan_parquet.py output dirs")
@@ -92,6 +104,7 @@ def main() -> int:
 
     emb_dirs = args.emb or [r / "emb" for r in args.runs]
     cands, V = score_candidates(args.runs, emb_dirs, args.seeds, junk_mode=args.junk_mode)
+    apply_year_corrections(cands, args.decisions_root)
     idx = {c["candidate_id"]: i for i, c in enumerate(cands)}
     decisions = live_decisions(args.decisions_root)
     print(f"{len(cands):,} candidates, {len(decisions):,} decisions", flush=True)
@@ -139,6 +152,7 @@ def main() -> int:
         "add-rate by lane:", *rate_table(rows, lambda r: r.get("lane") or "?"),
         "add-rate by batch and lane:", *rate_table(rows, lambda r: f"{r.get('batch')} / {r.get('lane') or '?'}"),
         f"reject reasons: {dict(reasons.most_common())}",
+        "date reported wrong, by collection (metadata only; not a label):", *date_wrong_table(rows),
         f"why tags: {dict(why.most_common())}",
         f"model_p {'ACTIVE' if use_model else f'not used yet (needs {args.min_decisions} decisions; --force to override)'}",
     ]

@@ -414,6 +414,10 @@ python scripts/corpus_scan/train_ranker.py $RUN --batch model-2 --n 50
 - Saves `data/corpus-scan/models/<stamp>.npz` and `.json`.
 - Below 100 decisions it writes the batch with the formula priority and keeps
   `model_p_shadow` for comparison. `--force` overrides this.
+- Reviewer date corrections (`corrections.year`, from the D key) replace the
+  catalogue and snapshot years for queue stratification, and are kept across
+  later decisions. A reported wrong date never counts as a label. The report
+  lists the date-wrong rate by collection.
 
 **Local test (2026-10-16).** On the 1,139-window local run (section 2):
 

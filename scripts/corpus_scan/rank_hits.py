@@ -103,9 +103,59 @@ def load_seeds(seed_dir: Path) -> tuple[np.ndarray, np.ndarray, list[dict]]:
     return S[~junk].astype(np.float32), S[junk].astype(np.float32), good_meta
 
 
+def load_corrections(root: Path = C.CANDIDATE_ROOT) -> dict[str, dict]:
+    """Latest `corrections` per candidate (candidate-review.md §4).
+
+    Corrections are metadata, not part of the decision: a later line without
+    corrections (or a "clear") does not undo an earlier reported wrong date.
+    """
+    out: dict[str, dict] = {}
+    p = root / "decisions.jsonl"
+    if p.exists():
+        for d in read_jsonl(p):
+            if d.get("corrections"):
+                out[d["candidate_id"]] = d["corrections"]
+    return out
+
+
+def corrected_year(corr: dict | None, year):
+    """corrections.year wins; a date_wrong without a year makes the year unknown."""
+    if not corr:
+        return year
+    if corr.get("year") is not None:
+        return int(corr["year"])
+    return None if corr.get("date_wrong") else year
+
+
 def live_decisions(root: Path = C.CANDIDATE_ROOT) -> dict[str, dict]:
-    """Latest decision per candidate, with "clear" lines removing it (as /admin/candidates does)."""
-    return {k: d for k, d in C.load_decisions(root).items() if d.get("decision") != "clear"}
+    """Latest decision per candidate, with "clear" lines removing it (as /admin/candidates does).
+
+    Snapshot years are replaced by corrections.year, so stratification counts
+    the right decade. A reported wrong date never changes the label.
+    """
+    corr = load_corrections(root)
+    out = {}
+    for k, d in C.load_decisions(root).items():
+        if d.get("decision") == "clear":
+            continue
+        if k in corr and "snapshot" in d:
+            d = {**d, "corrections": corr[k],
+                 "snapshot": {**d["snapshot"], "year": corrected_year(corr[k], d["snapshot"].get("year"))}}
+        out[k] = d
+    return out
+
+
+def apply_year_corrections(cands: list[dict], root: Path = C.CANDIDATE_ROOT) -> int:
+    """Use reviewers' corrected years on candidates (keeps the catalogue year)."""
+    corr = load_corrections(root)
+    n = 0
+    for c in cands:
+        if c["candidate_id"] in corr:
+            c["catalogue_year"] = c.get("year")
+            c["year"] = corrected_year(corr[c["candidate_id"]], c.get("year"))
+            c["date_wrong"] = bool(corr[c["candidate_id"]].get("date_wrong"))
+            n += 1
+    return n
 
 
 def load_llm(path: Path = LLM_PATH) -> dict[str, dict]:
@@ -219,6 +269,7 @@ def main() -> int:
     emb_dirs = args.emb or [r / "emb" for r in args.runs]
     cands, _ = score_candidates(args.runs, emb_dirs, args.seeds, in_archive_sim=args.in_archive_sim,
                                 junk_mode=args.junk_mode)
+    n_corr = apply_year_corrections(cands)
     pool = write_pool(args.batch, cands)
     rel = np.array([c["scores"]["relevance"] for c in cands])
     pri = np.array([c["scores"]["priority"] for c in cands])
@@ -227,7 +278,7 @@ def main() -> int:
     print(f"{sum(c['reprints']['count'] > 1 for c in cands)} reprint clusters, "
           f"{sum(any(f['type'] == 'in_archive' for f in c['novelty_flags']) for c in cands)} flagged in_archive, "
           f"{sum(any(f['type'] == 'canonical' for f in c['novelty_flags']) for c in cands)} canonical, "
-          f"{sum(c['llm'] is not None for c in cands)} with LLM labels")
+          f"{sum(c['llm'] is not None for c in cands)} with LLM labels, {n_corr} with reviewer year corrections")
     if not args.no_batch:
         decisions = live_decisions()
         queue = C.build_queue(cands, decisions, n=args.n, explore_frac=args.explore_frac)
