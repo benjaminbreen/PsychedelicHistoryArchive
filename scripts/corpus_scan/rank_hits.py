@@ -103,6 +103,11 @@ def load_seeds(seed_dir: Path) -> tuple[np.ndarray, np.ndarray, list[dict]]:
     return S[~junk].astype(np.float32), S[junk].astype(np.float32), good_meta
 
 
+def live_decisions(root: Path = C.CANDIDATE_ROOT) -> dict[str, dict]:
+    """Latest decision per candidate, with "clear" lines removing it (as /admin/candidates does)."""
+    return {k: d for k, d in C.load_decisions(root).items() if d.get("decision") != "clear"}
+
+
 def load_llm(path: Path = LLM_PATH) -> dict[str, dict]:
     return {r["candidate_id"]: r["llm"] for r in read_jsonl(path)} if path.exists() else {}
 
@@ -224,7 +229,7 @@ def main() -> int:
           f"{sum(any(f['type'] == 'canonical' for f in c['novelty_flags']) for c in cands)} canonical, "
           f"{sum(c['llm'] is not None for c in cands)} with LLM labels")
     if not args.no_batch:
-        decisions = C.load_decisions()
+        decisions = live_decisions()
         queue = C.build_queue(cands, decisions, n=args.n, explore_frac=args.explore_frac)
         out = C.write_batch(args.batch, queue, {
             "source_runs": [str(r) for r in args.runs], "scoring": "embedding",

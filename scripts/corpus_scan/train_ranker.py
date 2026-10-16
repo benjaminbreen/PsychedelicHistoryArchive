@@ -5,7 +5,8 @@ Contract: docs/corpus-scan/candidate-review.md §2-§5. Steps:
 
 1. Score every candidate as rank_hits.py does (embedding relevance, LLM kind,
    novelty, feasibility).
-2. Join data/corpus-scan/decisions.jsonl (latest line per candidate) to them.
+2. Join data/corpus-scan/decisions.jsonl (latest line per candidate; a
+   "clear" line removes it) to them.
    A decided candidate missing from the current runs falls back to its
    snapshot: the best excerpt is embedded (cached under
    data/corpus-scan/decision_emb/) and the snapshot scores are used.
@@ -42,7 +43,7 @@ import numpy as np
 import candidates as C
 import ranker_model as M
 from postscan_common import embed_to_shards, load_shards
-from rank_hits import score_candidates, set_priority, write_pool
+from rank_hits import live_decisions, score_candidates, set_priority, write_pool
 
 MODEL_ROOT = C.CANDIDATE_ROOT / "models"
 FEATS = M.SCORE_FEATURES
@@ -92,7 +93,7 @@ def main() -> int:
     emb_dirs = args.emb or [r / "emb" for r in args.runs]
     cands, V = score_candidates(args.runs, emb_dirs, args.seeds, junk_mode=args.junk_mode)
     idx = {c["candidate_id"]: i for i, c in enumerate(cands)}
-    decisions = C.load_decisions(args.decisions_root)
+    decisions = live_decisions(args.decisions_root)
     print(f"{len(cands):,} candidates, {len(decisions):,} decisions", flush=True)
     if not decisions:
         raise SystemExit("no decisions yet; review a batch in /admin/candidates first")
