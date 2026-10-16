@@ -509,6 +509,21 @@ python scripts/corpus_scan/train_ranker.py $RUN --batch model-2 --n 50
 
 ### 6.3 Screen the top few thousand with `openai/gpt-6-luna`
 
+> **Calibration (2026-10-16, Ben's 123 local decisions).** The prompt in
+> `screen_hits.py` now encodes the editors' scope:
+> - **In scope:** the altered state, ritual and Indigenous use, and how the
+>   substances circulated, including commerce and moral panics.
+> - **Out of scope:** anaesthesia practice, botany, toxicology, chemistry and
+>   secondary summaries. The exception is first-hand experience under nitrous
+>   oxide or ether.
+>
+> In batch 2, reviewing only cards rated **archive_fit ≥ 3** meant 39 of 100
+> cards and still caught all 14 add/maybe decisions. The earlier prompt needed
+> 58 cards for the same result. On batch 1, which did not shape the prompt,
+> cards rated ≥ 3 caught 3 of 3 keeps in 9 cards. **Review cards rated 3 and
+> above; skip 1–2,** apart from a small explore sample. All Luna calls so far
+> cost $0.10.
+
 - **Settings.** Run via OpenRouter with reasoning off and a structured-output
   JSON schema.
 - **Schema fields:**

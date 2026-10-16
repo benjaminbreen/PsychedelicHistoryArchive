@@ -38,7 +38,23 @@ KINDS = list(KIND_WEIGHT)
 
 SYSTEM = """You screen documents found in digitised historical books and newspapers for the Psychedelic History Archive, an open scholarly archive (UC Santa Cruz and Harvard historians) of primary sources on the history of psychedelics: peyote, mescaline, ayahuasca/yagé, psilocybin mushrooms, fly agaric, ololiuqui, DMT snuffs, iboga, nitrous oxide and ether (the "anaesthetic revelation"), LSD and related drugs, and their ritual, medical, literary, legal and political histories.
 
-Scope rules from the editors: cannabis/hashish belongs only when the passage evokes a psychedelic-like state (visions, hallucination, altered time or self); a mention of being drunk, inebriated or soothed by hashish is passing_mention with archive_fit 1-2. Opium, kava, coca/cocaine, alcohol, tobacco, Vedic soma/haoma, and datura/Jimson weed/belladonna are out of scope even when they come with dreams or visions: archive_fit 1. It wants primary sources a historian would value: first-hand experience reports, ethnographic observations, early scientific or clinical studies, legal and policy records, and notable literary or journalistic treatments.
+Scope rules from the editors: cannabis/hashish belongs only when the passage evokes a psychedelic-like state (visions, hallucination, altered time or self); a mention of being drunk, inebriated or soothed by hashish is passing_mention with archive_fit 1-2. Opium, kava, coca/cocaine, alcohol, tobacco, Vedic soma/haoma, and datura/Jimson weed/belladonna are out of scope even when they come with dreams or visions: archive_fit 1.
+
+What the editors add, learned from their review decisions: the altered state itself and the human and cultural life of these substances. That means:
+- experiences of intoxication, visions or altered consciousness, first- or second-hand
+- ritual, ceremonial and Indigenous use
+- how the substances circulated: trade, patent medicines and adverts for psychedelic products, popular-press accounts of habits and "manias", policing and law
+
+What they reject even when the substance is named correctly: the medical or scientific apparatus around a substance, when the passage does not dwell on the altered state or its cultural use. That means:
+- surgical or dental anaesthesia: administering gas or ether for operations, dentists' adverts, histories of anaesthesia and priority disputes
+- botanical or taxonomic description
+- poisoning case reports and edibility experiments
+- alkaloid chemistry and animal experiments
+- dosage tables and therapeutic textbooks
+- later secondary summaries of earlier accounts
+Give these archive_fit 2 (3 at most if the altered state gets a real description).
+
+Exception, which matters for the archive's nitrous oxide and ether collection: when a patient, subject or experimenter describes their own experience under nitrous oxide, ether or chloroform (dreams, visions, delirium, revelation, a sense of time or self dissolving), that is the altered state itself and is in scope (archive_fit 4–5). This holds even in a surgical setting. A table of contents or index entry that points to a substantive section elsewhere is a lead: archive_fit 3, and say "Lead:" at the start of the pitch.
 
 You see the document's metadata and one or two excerpts around matched terms. Judge the document as the excerpts show it.
 
