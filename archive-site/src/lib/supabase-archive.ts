@@ -964,7 +964,6 @@ function isSchemaShapeError(message = "") {
 }
 
 function documentToArchiveSource(document: DocumentRow): ArchiveSource {
-  const correction = SOURCE_METADATA_CORRECTIONS[document.slug];
   const tags = unique(
     document.document_tags
       ?.map((item) => {
@@ -978,7 +977,7 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
       ?.map((item) => firstRelated(item.people)?.name)
       .filter(Boolean) as string[] | undefined
   );
-  const publicPeople = correction?.people ?? people.filter(isPublicPersonName);
+  const publicPeople = people.filter(isPublicPersonName);
   const substances = unique(
     [
       ...(document.document_tags
@@ -992,12 +991,11 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
   const files = mapFiles(document.files);
   const rawTranscript = pages.map((page) => page.ocrText).filter(Boolean).join("\n\n");
   const imagePath = document.thumbnail_path || document.cover_image_path || firstImagePath(document.files);
-  const title = correction?.title ?? document.title;
+  const title = document.title;
   const year = document.date_start ?? yearFromDisplayDate(document.display_date) ?? 0;
   const parsedCreators = parseCreatorsFromTranscript(rawTranscript);
   const relationCreators = creatorsFromRelations(document.document_people);
-  const correctedCreators = correction?.people?.map((name) => ({ name, role: "speaker" })) ?? [];
-  const creators = uniqueCreators([...correctedCreators, ...parsedCreators, ...relationCreators]).filter((creator) => isPublicPersonName(creator.name));
+  const creators = uniqueCreators([...parsedCreators, ...relationCreators]).filter((creator) => isPublicPersonName(creator.name));
   const authorNames = creators
     .filter((creator) => ["author", "speaker", "recordist"].includes(creator.role))
     .map((creator) => creator.name);
@@ -1250,13 +1248,6 @@ function mapCitationLinks(rows: DocumentCitationLinkRow[] = []): SourceCitationL
     })
     .filter(Boolean) as SourceCitationLink[];
 }
-
-const SOURCE_METADATA_CORRECTIONS: Record<string, { title?: string; people?: string[] }> = {
-  "1965-allen-ginsberg-talks-to-joe-k-adams-about-his-first-lsd-trip": {
-    title: "Allen Ginsberg Discusses LSD with Dr. Joe K. Adams",
-    people: ["Allen Ginsberg", "Joe K. Adams"]
-  }
-};
 
 function firstImagePath(files?: DocumentRow["files"]) {
   return files?.find((file) => file.storage_path && file.kind === "cover_image")?.storage_path ?? "";

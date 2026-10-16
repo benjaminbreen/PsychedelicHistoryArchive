@@ -1,5 +1,5 @@
 import type { Metadata as NextMetadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { ArrowLeft, BookOpen, ChevronDown, MessageSquareWarning } from "lucide-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -16,6 +16,7 @@ import { JsonLd, SITE_NAME, buildBreadcrumbJsonLd, buildSourceJsonLd, canonicalP
 import { SOURCE_ISSUE_TYPE_OPTIONS } from "@/lib/source-issue-reports";
 import { getArchiveSourceDetailFromSupabase, listArchiveSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { isPdfFile, isSiteEntry, siteEvidenceLabel } from "@/lib/source-reader";
+import { LEGACY_SOURCE_SLUGS } from "@/lib/legacy-slugs";
 import { getSourceTitleParts } from "@/lib/source-title";
 import type { ArchiveSource } from "@/lib/types";
 import { submitSourceIssueReport } from "./actions";
@@ -78,7 +79,7 @@ export default async function SourcePage({ params, searchParams }: SourcePagePro
   const { slug } = await params;
   const paramsValue = await searchParams;
   const reportStatus = normalizeReportStatus(paramsValue?.report);
-  if (slug === "chavin-de-huantar-vilca-snuff") redirect("/archive/chavin-de-huantar");
+  if (LEGACY_SOURCE_SLUGS[slug]) permanentRedirect(`/archive/${LEGACY_SOURCE_SLUGS[slug]}`);
   const [source, sources] = await Promise.all([
     getArchiveSourceDetailFromSupabase(slug),
     listArchiveSourceSummariesFromSupabase()

@@ -1,0 +1,509 @@
+# Raw OCR: Lewin, "Ueber Anhalonium Lewinii," Archiv f. exp. Path. u. Pharmakol. 24 (1888): 401-411
+# Source scan: https://zenodo.org/records/1428356 (article.pdf, CC0; Springer scan, DOI 10.1007/BF01923627)
+# OCR: tesseract 'deu' run locally on 300 dpi renders of all 11 PDF pages, fetched 2026-10-15. Uncorrected.
+
+=== PDF page 1 ===
+XXVOo.
+
+Ueber Anhalonium Lewinii.
+
+Von
+Dr. L. Lewin,
+
+Docent an der Universität Berlin.
+
+Ich habe bereits mehrfach darauf hingewiesen, dass der grössere
+Theil der Pflanzen, die im Laufe der Jahrtausende ohne jede ex-
+perimentelle Basis, vielmehr nur durch eine Art von Instinet von
+den uneivilisirten Völkern der Erde als Heilmittel, Genussmittel und
+Gifte aufgefunden worden sind, gebraucht wurden und noch gebraucht
+werden, eine gewisse Gewähr für ihre Wirksamkeit durch diese em-
+pirische Grundlage darbieten; denn sobald man mit unseren modernen
+Hülfsmitteln der Untersuchung Nachprüfungen solcher Stoffe vornahm,
+ergab sich meistens eine Bestätigung des Erwarteten. Wir haben
+keine Vorstellung davon, wie solche Kenntniss seitens der Völker
+gewonnen wurde. Livingstone!) bemerkte schon, als er vom
+Kombigift sprach: „It is diffieult to conceive by what sort of ex-
+periments the properties of these poisons, known for generations,
+were proved. Probably the animal instinets, which have become so
+obtuse by eivilization, that children in England eat the berries of
+the deadly nightshade (Atropa Belladonna) without suspieion, were
+in the early uneivilized: state much more keen....... In like
+manner, the earlier portions of the human family may have had
+their instinets as to plants, more highly developed than any of their
+descendants — if indeed much more knowledge than we usually sup-
+pose be not the effeet of direct revelation from above.“
+
+Wie dem auch sei — die Nachforsehung nach solehen Stoffen
+verspricht meistens Erfolg und deswegen unternahm ich es 'gern,
+eine Droge, welche die Firma Parke, Davis '& Co. aus Mexiko
+erhalten hatte, und mir.bei meiner Anwesenheit in Amerika zu über-
+
+1) D. and Ch. Livingstone, Narrative of an expedition to the Zambesi.
+London 1865. Chap. XXII. p. 467.
+=== PDF page 2 ===
+402 XXVIL Lewis
+
+geben so freundlich war, zu untersuchen. Die Droge, deren Stand-
+ort gebeim gehalten wird, soll in der Heimath als Muscale
+Buttons bezeichnet und als ein narkotisches Genussmittel ver-
+kauft und gebraucht werden. Die in Amerika angestellte bota-
+nische Untersuchung ergab nur, dass dieselbe zu den Cacteen gehöre.
+Nähere Einordnung in ein Genus war dort nicht möglich. Nach
+meiner Rückkehr wandte ich mich an Hrn. Hennings vom hiesigen
+botanischen Museum und diesem gelang es, wie später mir selbst, in
+der Droge Blüthen zu finden, die nunmehr eine genaue Bestimmung
+ermöglichten. Es ergab sich, dass man ein Anhalonium vor sich
+habe, und zwar eine neue, dem Anhalonium Williamsii nahestehende
+Species. Mittlerweile hatte ich in dieser Pflanze ganz eigenthüm-
+liche Wirkungen erkannt und Herr Hennings erwies mir aus diesem
+Grunde die Ehre, wofür ich ihm hiermit danke, diese Art mit meinem
+Namen zu belegen. !)
+
+Es gesellt sich diese neue Art als siebente zu den bereits be-
+kannten sechs Anhalonien hinzu. Dass dieselbe so lange unbekannt
+geblieben ist, kann gerade bei Anhalonium nicht Wunder nehmen.
+Denn diese bewohnen die höchsten Felsengebirge und sitzen an schwer
+zugänglichen Kalkfelsenvorsprüngen, wo sie tief mit ihren langen,
+rübenförmigen Wurzeln eindringen. ?) Diese Melocacteengattung unter- _
+scheidet sich auf Grundlage ihrer natürlichen Standortsverhältnisse,
+wie schon Lemaire angab, von allen anderen Cacteen. Denn diese
+gedeihen in unseren Culturen, selbst im Norden ziemlich gut, während
+die Anhalonien allein schlecht anschlagen.
+
+Historisches und Allgemeines über Cacteen.
+
+In den alten medieinischen Schriften geschieht der Caeteen keine
+Erwähnung. Plinius?) erwähnt wohl der Wortes Cactus, als einer
+Pflanze, die in Sieilien wächst, Stengel besitzt, die gleich von der
+Wurzel an auf der Erde kriechen, und Blätter, die breit und dornig
+sind. Die Stengel hiessen „Cacti“ und wurden, wenn auch alt, zu
+Speisen genommen. An den Samen hinge ein wollartiger Körper,
+Pappus genannt; würde dieser und die äussere Kelchhülle fortge-
+nommen, so fände man ein zartes, dem Gipfelmark der Palmen ähn-
+liches Fleisch. Wahrscheinlich handelt es sich hier um irgend ein
+
+1) Berichte des botanischen Vereins in Berlin. Sitzung vom 10. Fehr. 1888.
+
+2) C.F.Förster’s Handbuch der Cacteenkunde. Herausgegeben von Th.
+Rümpler. Leipzig 1886. S. 235.
+
+3) Naturgeschichte. Herausgeg. von G. C. Wittstein. Leipzig 1881. IV. Bd.
+Kap. 21. 8.103.
+=== PDF page 3 ===
+Ueber Anhalonium Lewinii. 403
+
+Carduus, dessen genauere Deutung bis jetzt nicht gelungen ist.!) In
+einem Corollar des Hermolaus zum Dioscorides?) wird die
+Meinung ausgesprochen, dass das, was Letzterer?) „Axos‘ nennt und
+wovon seiner Ansicht nach „Pappi recentes periculum afferunt“ nichts
+Anderes als Caetus sei. Indessen liegt gar kein Anhalt für eine
+solche Deutung vor.
+
+Die Caeteen sind, wenngleich wahrscheinlich seit Jahrtausenden
+bei amerikanischen Völkern bekannt und von ihnen gebraucht, doch
+literarisch als ganz moderne Pflanzen anzusehen. Im Jahre 1790
+führte Wildenow in der Species plantarum 29 Arten derselben
+auf und schon im Jahre 1846 waren über 800 Arten in die Gewächs-
+häuser eingezogen. Aber heute noch sind wir weit davon entfernt,
+in der Kenntniss dieser Gewächsfamilie zu einem gewissen Abschluss
+gekommen zu sein, vorzüglich wegen ihrer grossen Verbreitungssphäre
+über ungefähr 95 Breitengrade. ?)
+
+In weit höherem Grade als die botanische Erforschung derselben
+steht aber die medieinische und chemische zurück. Hier ist fast
+nichts gethan und ein weites Feld der Forschung liegt hier noch
+unbearbeitet vor.
+
+Buchner) hat vor langen Jahren den Milchsaft einiger Cacteen
+(Mamillaria eirrhifera, Cereus flagelliformis, Cereus speciosissimus)
+untersucht und neben Eiweiss und Schleim noch verschiedene pflanzen-
+saure Kalkverbindungen gefunden. Ausser dieser in medieinischer
+Beziehung belanglosen Untersuchung habe ich nur die Erwähnung
+einiger chemischer Versuche bei Descourtilz®) gefunden. In der
+Peireseia lychnidiflora (Caetus fimbriatus) fand er einen harzartigen,
+gummösen, geruchlosen Saft, der neben Eiweiss und Extractivstoffen
+ein sehr flüchtiges und nauseoses Prineip erkennen lässt, wenn es
+der Wärme ausgesetzt wird.?) Von Peirescia aculeata®) giebt er
+Aehnliches nicht an. Dagegen fand er in dem Saft von Cereus gran-
+diflorus®) ein an der Luft fest werdendes, geruchloses, scharfes
+Gummiharz und ein sehr flüchtiges Prineip. Die Früchte von Cereus
+
+1) Wittsteinl.c.
+
+2) Commentat. ab Egnatio Veneto, Venetis 1516; Hermolai Barbari Corol-
+larii Libri V, Lib. IV. DCLXXXXV. p. 81.
+
+3) Liber VI. Caput XL. fol. CXXV.
+
+4) Förster l.c.
+
+5) Archiv der Pharmacie. XLIX. Bd. 8. 220.
+
+6) Flore pittoresque et medicale des Antilles, Paris 1821.
+
+7) Vol. V. p. 160.
+
+8) Vol.IV. p. 292.
+
+9) Vol.1. p. 277.
+=== PDF page 4 ===
+404: XXVI. Lewis
+
+triangularis !) besitzen einen schleimig-zuckerigen Stoff, Aepfelsäure
+und Farbstoff.
+
+. Mit diesen kaum oberflächlichen Angaben ist — wenn ich von
+der mehr technischen Untersuchung einiger Cactusfarbstoffe absehe
+— das chemische Material über Oacteen erschöpft. Es nimmt dies
+um so mehr Wunder, als Cacteen bei zahlreichen Volksstämmen als
+ein unentbebrliches Nahrungs- und Genussmittel und vereinzelt auch,
+zumal auf den Antillen als Medicament gebraucht werden.
+
+Die saftreichen Stämme vieler Cacteen sind in. wasserarmen
+Gegenden Thieren und Menschen eine nicht versiegbare Quelle der
+Erfrischung.?) Pferde und Maulthiere lecken begierig aus den. mit
+ihren Hufen angeschlagenen Cactuswunden den Saft. Der milde
+weisse Saft von Echinocaetus Wislizeni dient dem durch die Cactus-
+wüsten Wandernden zum Durststillen. Die Flachsprossen der
+Öpuntien werden nach gehöriger Zubereitung von Indianern und
+Weissen genossen. Die Samen von Echinocaet. Wislizeni liefern
+geröstet und zerstampft eine schmackhafte Grütze und eignen sich
+auch zur Brodbereitung. Caetusfrüchte werden viel gegessen,
+so z. B. diejenigen von Cereus giganteus von den Indianern von
+Arizona und Südealifornien. Däraus stell! man den als sehr be-
+rauschend bekannten „Tiswein‘“ dar.. Auch Cereus Thurberi (mex.
+Pitahaya) wird gebraucht. Das Gleiche gilt von den Früchten von
+Opuntia Engelmannii, eamanchica, Raffnesguii u. s. w., die als in-
+dianische Feigen, Tunas, bekannt sind. Auch in Unteritalien, Griechen-
+land, Spanien stellen Früchte von Opuntien eine beliebte Speise dar.
+Diejenigen von Peireseia aculeata werden in Westindien sehr ge-
+braucht. Diese Angaben liessen sich noch durch viele andere Arten
+vermehren, die als Nahrungs-, resp. als Genussmittel gebraucht
+werden.
+
+Mediecinisch wird die Frucht und das Blatt von Caetus
+Opuntia, letzteres gedörrt oder gebraten und mit Milch zerstossen,
+als das beste Emolliens für die Reifung von Geschwüren ‚auf den
+Antillen angesehen. Bei acuten Ophthalmien werden auf die Lider
+Kataplasmen aus der gekochten Pulpa gemacht. Auch die Früchte
+von Cereus triangularis dienen als Demulgens, während diejenigen
+von Peireseia aculeata zur Darstellung von zertheilenden, antisyphi-
+litischen und hustenlindernden Tisanen gebraucht werden.
+
+Von der oben angegebenen Regel, dass die Milchsäfte der Cac-
+teen ziemlich indifferente, geniessbare, schleimige Flüssigkeiten dar-
+
+1) Vol. VII. p. 287.
+2) Nach Förster, Cacteenkunde. Einleitung. Kap. 2.
+=== PDF page 5 ===
+Ueber Anhalonium Lewini. 405
+
+stellen, giebt es aber mehrere Ausnahmen. Bei einigen Species, nicht
+nur bei den Üereastreae, ist derselbe scharf und nähert sich in seiner
+Einwirkung auf lebendes thierisches Gewebe den Säften der Euphor-
+biaceen. Verwechselungen von Euphorbiaceen und Cacteen bezüglich
+toxischer Einwirkung sind aber oft vorgekommen. Ich hebe z. B.
+die aus nicht weit zurückliegender Zeit stammende Angabe hervor, !)
+nach welcher das Gift der Annagos der Dassangebirge (nördlich von
+Dahome) von einer Cactee herstamme. Dies ist aber nach der bei-
+gegebenen Beschreibung und auf Grund der Thatsache, dass in diesem
+Theile von Afrika Cacteen nicht vorkommen, als falsch anzusehen.
+Es handelt sich eben um eine Euphorbiacee,
+
+Am geringsten scharf scheint der ein wenig sauer reagirende
+Saft von Cereus flagelliformis zu wirken. Er wird in Westindien
+mit Syrupus gummosus und Rieinusöl als Anthelmintieum Kindern
+und Erwachsenen gereicht und auf Wunden zur Vertreibung von
+Würmern applieirt.?) Aehnlich wirkt der Saft von Opuntia retieulata.
+Dagegen benutzt man den Saft von Cactus pentagonus äusserlich zur
+Zerstörung von Warzen und als Enthaarungsmittel.3) Noch ener-
+gischere Wirkungen werden von Cereus grandiflorus mitgetheilt. Der
+Saft ruft, wenn er längere Zeit mit der Haut in Berührung ist, un-
+erträgliches Jucken, Erosionen und Pusteln hervor. Verbrennt man
+den Saft in einem Zimmer, so entsteht bei dessen Insassen Niesen,
+Coryza, Angina und selbst Hämoptod. Gekaut ruft er die Empfindung
+des Brennens und Uebelsein hervor. Wird er in zu grossen Mengen
+in den Magen eingeführt, so entsteht übermässiges Erbrechen, schmerz-
+hafte Dysenterie und andere Erscheinungen, die als Folgen entzünd-
+licher Reizung des Intestinaltractus anzusehen sind. Trotzdem ist
+dieses Mittel als wurmtreibendes sehr angesehen, kann aber nur mit
+Gummi und Syrup verabfolgt werden.
+
+Schliesslich wäre noch der überaus scharf und brennend wir-
+kende Saft von Peireseia lychnidiflora (Cactus fimbriatus) zu er-
+wähnen. Obwohl derselbe von Laien, Quacksalbern und Markt-
+schreiern auf den Antillen als wassertreibend und abführend gebraucht
+
+wird, so wart Descourtilz doch vor dessen Verwendung, da
+gerade dieser Cactus in seiner kaustisehen, die Gewebe in Phlegmone
+versetzenden, blasenerzeugenden Wirkung den Euphorbiaceen gleich-
+steht.
+
+1) John Duncan, Travels in Western Africa. London 1847. Vol.U.
+p. 193.
+
+2) Descourtilz, 1.c. Tom.I. p. 285.
+
+3) Ibidem. Tom.I. p. 281.
+=== PDF page 6 ===
+406 XXVI. Lewis
+
+Hiermit ist das, was bisher über die pharmakologische, resp.
+toxische Einwirkung der Cacteen bekannt war, soweit ich die Lite-
+ratur daraufhin durchforscht habe, erschöpft. Davon wesentlich Ab-
+weichendes bieten nun die folgenden Angaben dar, die ich als vorläufige
+betrachte und veröffentliche. Der volle Abschluss der Untersuchung
+wird sich erst in einiger Zeit ermöglichen lassen und behalte ich mir
+ausdrücklich bis dahin die weitere Bearbeitung dieses Gegenstandes vor.
+
+Vorläufiges über das chemische Verhalten von
+Anhalonium Lewinü.
+
+Ich habe für die Darstellung einer reinen Substanz eine ganze
+Reihe von Untersuchungsmethoden (Fällung des wässrigen Auszuges
+mit Blei, auch mit Gerbsäure, Phosphorwolframsäure u: s. w.) ange-
+wandt, ohne genügende verwerthbare Quantitäten von reinem Material
+zu erhalten. Der wässrige Auszug ist gelblichbraun, stark sehleimig,
+riecht wenig und schmeckt intensiv und nachhaltig bitter. Er ist
+frei von Gerbsäure und giebt mit den gewöhnlichen Alkaloidreagen-
+tien Niederschläge.
+
+Folgende Verfahren führen zur Gewinnung wirksamer Stoffe:
+
+1. Man schüttelt den wässrigen, unter Alkalisirung hergestellten
+Auszug der Droge mit Aether und verdunstet den letzteren.
+
+2. Die gepulverte Droge wird mit Petroleumäther am Rückfluss-
+‘kühler extrahirt und alsdann mit Alkohol erschöpft. Das alkoho-
+lische Extraet wird mit Wasser versetzt, filtrirt und bei niederer
+Temperatur fast bis zur Syrupconsistenz abgedampft, alkalisch ge-
+macht und mit Essigäther geschüttelt.
+
+3. Man extrahirt die Droge mit saurem Alkohol in der Wärme,
+schüttelt das Extract mit Wasser und Kohle, filtrirt, engt bis zur
+Syrupconsistenz ein, macht alkalisch, schüttelt mit immer frischen
+Mengen Aether und destillirt aus den vereinigten Auszügen den
+Aether ab.
+
+Man erhält so .bei jeder dieser Verfahrungsweisen eine gelbliche,
+anfangs syrupöse, später zäh und trocken werdende, alkalisch rea-
+girende, eigenartig riechende Masse, die sich in Wasser etwas löst
+und auf Zusatz von Säuren leicht in Lösung geht. Nach Verdampfen
+einer solchen, z. B. schwefelsauren Lösung bleiben nadelförmige Kıy-
+stalle zurück, die sich leicht in Wasser lösen und sich gegen Reagen-
+tien so verhalten, wie ich es gleich angeben werde.
+
+Die basische syrupöse Substanz will ich vorläufig als Anha-
+lonin bezeichnen. Eine eingehendere Charakterisirung deiselben,
+=== PDF page 7 ===
+Ueber Anhalonium Lewinii. 4.07
+
+sowie ihrer Salze werde ich geben, sobald ich mehr davon dar-
+gestellt habe.
+
+Die folgenden Angaben gewann ich durch Prüfung einer krystal-
+linischen Masse, die sich am Boden der Mischflasche fand, in wel-
+cher ich das alkoholische Extract anfangs in schwefelsaurer Lösung
+mit Aether geschüttelt hatte. Ich einigte sie durch Waschen mit
+kaltem absoluten Alkohol.
+
+Die Krystalle sind farblos oder leicht gelb getönt, nadelförmig.
+Sie sind in kaltem Wasser ziemlich gut, leichter in warmem löslich.
+Diese Lösungen reagiren neutral und drehen die Polarisationsebene
+richt. In kaltem absolutem Alkohol sind sie fast unslöslich, warmer
+Alkohol löst sie nach einiger Zeit auf. Aether nimmt aus saurer
+Lösung derselben nur sehr wenig, mehr aus alkalischer auf, ebenso
+Essigäther. Alkalisiren der wässrigen Lösung färbt diese gelb, An-
+säuern macht sie wieder farblos.
+
+Die Krystalle verbrennen mit leuchtender Flamme unter starkem
+Aufblähen leicht, unter Auftreten eines starken Horngeruchs. Stiek-
+stoff lässt sich durch die Probe von Lassaigne leicht darin nach-
+weisen. Betupft man auch nur eine Spur derselben auf einem Tiegel-
+deckel mit Schwefelsäure, welcher etwas Salpetersäure zugesetzt ist,
+so entsteht alsbald eine schöne, intensive Permanganatfarbe, die nach
+einiger Zeit in Gelb übergeht. Ebenso zeigen schon ganz geringe
+Mengen derselben die Glykosidreaction. Nach dem Kochen ihrer
+wässrigen Lösungen mit verdünnten Säuren wird Kupfer in alka-
+lischer Lösung energisch reducirt. Das Verhalten dieses Salzes in
+saurer Lösung gegen einige Reagentien lässt das auf nächster Seite
+folgende Diagramm erkennen,
+
+Wirkung des Anhalonium Lewinü und des Anhalonin.
+
+Schon die ersten Versuche, die ich mit eoncentrirten Decocten
+an Kalt- und Warmblütern anstellte, zeigten die unerwartete, über-
+raschende Thatsache, dass es sich hier um eine ganz ausserordent-
+lich giftige Substanz handle.
+
+Spritzt man Fröschen auch nur einige Tropfen eines solchen
+wässrigen Auszuges unter die Haut, so erhält das Thier fast un-
+mittelbar nach dem Herausziehen der Nadel ein anderes Aussehen.
+Seine Weichen fallen ein oder werden eingezogen. Da, wo eben
+noch die Bauchhaut in bekannter Rundung sich nach beiden Seiten
+hin hervorwölbte, befinden sich jetzt tiefe Höhlen. Das Rückgrat
+springt als scharf begrenzte Leiste eigenthümlich hervor. Das Thier
+=== PDF page 8 ===
+408 XXVIL Lewis
+
+, end Phosphor-
+Bajoc- Pilrin- a wolfram-| Gerbsäure | Platinehlorid
+säure
+
+nach einigem
+Schütteln
+
+gelb, kry-|braunroth,| weiss . .
+Niederschlag: braunzoth, stallinisch krystal- krystal- gelblich-weiss, braunrothe
+YP werdend | linisch linisch amorp garbenarlig
+aggregirte
+Krystalle
+In Alkohol | löslich arten löslich | unlöslich | leicht löslich löslich
+löslich ;
+beim Er-
+air leicht wärmen leicht . BER ch
+Aether löslich löskiel, wird die | löslich leicht löslich löslich
+| Lösung
+blutroth
+im Deber- |jm Ueber-| im Ueber-
+2 . schuss vonjschuss von RT, Kal: RER
+Säure beim Er- Salzsiure | Salzsäure unlöslich | unlöslich löslich
+löslich löslich löslich
+mit Opa-
+Ammoniak | löslich löslich löslick lescenz löslich löslich
+löslich
+Ueberschuss : 2:
+des Fällungs-| unlöslich | unlöslich | — | gun | Meilweise | unloslich
+mittels öslie öslie
+
+bekommt hierdurch ein mumifieirtes Aussehen. Gleichzeitig mit dieser
+Veränderung oder unmittelbar, nachdem sie aufgetreten, hebt sich
+der Frosch auf seinen vier Extremitäten, die ebenfalls plötzlich eigen-
+artig dünn und mager erscheinen, in die Höhe, bleibt so eine Weile,
+wie ein vierfüssiges Thier, unbeweglich stehen und kriecht dann in
+derselben Haltung herum. Nach 5—10 Minuten, manchmal schon
+früher schwindet dieser Zustand, das Thier hockt wieder, wenn auch
+noch collabirt aussehend, in normaler Stellung und nach einer wei-
+teren Zeit ist sein Aussehen und seine Haltung wieder normal. Diese
+geschilderten Veränderungen traten bei den vielen Versuchen, die
+ich anstellte, fast immer ein. Es scheint sich hierbei um einen acut
+auftretenden Muskelkrampf (Zwerchfell, Bauchmuskeln u. s. w.) zu
+handeln. Nachdem dieser Krampfzustand beseitigt ist, dauert es je
+nach der Wirksamkeit des angewandten Präparates verschieden lange
+Zeit bis zum Auftreten einer gesteigerten Reflexerregbarkeit. Ganz
+=== PDF page 9 ===
+Ueber Anhalonium Lewinü. 409
+
+analog wie nach Vergiftung mit Strychnin zuckt dann der Frosch
+bei der leisesten Berührung zusammen, spreizt die Zehen und spannt
+die Schwimmhäute, so weit es überhaupt angeht, aus. Dieses Sta-
+dium dauert verschieden lange Zeit an. Waren die Dosen klein,
+so kann es 5—8 Tage beobachtet werden. Meistens steigert sich
+dieser Zustand jedoch zu solcher Höhe, dass auf jeden äusseren,
+auch noch so unbedeutenden Reiz ein typischer Reflextetanus auf-
+tritt, bei dem der Kopf hintenüber gezogen wird, so dass der Thier-
+körper bogenartig concav gespannt und bretthart erscheint. Nur bei
+leiehter Vergiftung sah ich die Thiere nach einem solchen Tetanus
+wieder ihre normale Haltung einnehmen; meistens verharrten sie in
+der Lage, die sie während des Tetanus eingenommen hatten.
+
+Es ist mir hierbei manchmal die ganz besondere Widerstands-
+fähigkeit der Thiere gegen die ziemlich häufig hervorgerufenen Krampf-
+insulte aufgefallen. In einigen Versuchen trat jedoch der Tod schnell
+ein, nachdem die Reflexerregbarkeit immer mehr und mehr abge-
+nommen hatte.
+
+Auch nach der Köpfung des Thieres lässt sich der Tetanus a
+Körper noch hervorrufen. In einer grossen Reihe von Versuchen
+hörte diese Möglichkeit auf, wenn ich unterhalb des fünften Wirbels
+das Rückenmark durchschnitt — in anderen traf dies aber nicht zu.
+Vorgängige Durchtrennung des Plexus iliacus einer Seite bewirkte,
+dass das entsprechende Bein an dem Krampfe nicht theilnahm. Die
+Frequenz der Herzaetion habe ich durch das Gift nicht beeinflusst
+gesehen.
+
+Ganz übereinstimmende Wirkungen beobachtete ich durch Ein-
+spritzung des in Wasser gelösten alkoholischen Extraetes und anderer
+zum Theil oben schon angegebener Präparate.
+
+Dureh subeutane Einführung des Anhalonin in klarer,
+farbloser oder gelblicher, saurer, wässriger Lösung erreichte ich bei
+Fröschen ebenfalls den primären Zustand des Eingefallenseins, sowie
+das Stadium erhöhter Reflexerregbarkeit und tetanischer Krämpfe.
+
+Tauben, denen 1-2 Pravaz’sche Spritzen des concentrirten
+wässrigen, mit Kohle erwärmten und geschüttelten sauren Auszuges
+der Pflanze subeutan beigebracht wurden, beginnen wenige Minuten
+später zu erbrechen. Selten habe ich krampfhafteres und anhalten-
+deres Erbrechen bei Tauben beobachtet. In den Intervallen zwischen
+den einzelnen Brechanfällen werden die Flügel zeitweilig mit kurzem
+Rucke gespreizt. Das Thier hockt nieder mit angelegten oder aus-
+gespreizten Flügeln. Bei einer Erschütterung, die den Käfig trifft,
+zuckt es zusammen. Nach 12 Minuten schlägt es krampfhaft mit
+=== PDF page 10 ===
+410 XXVIL Lewis
+
+den Flügeln, fällt um, streekt die Läufe von sich, sperrt den Schnabel
+auf, während der Kopf hintenüber gezogen wird. Dieser erste Krampf-
+anfall geht vorüber, aber die Taube kann sich nicht wieder auf-
+richten und geht, nachdem sich die Anfälle noch mehrfach wieder-
+holt haben, in diesem, aber auch in einem krampffreien Intervall zu
+Grunde.
+
+Bei der Section zeigte sich Stillstand des Herzens in Diastole,
+an den Vorhöfen nur leichtes Flimmern, das bald sistirte.
+
+War die Dosis des Giftes nicht gross genug, so zeigt sich ausser
+Erbrechen kein weiteres Vergiftungssymptom. Ich habe manche
+Tauben 6—10 mal an verschiedenen Tagen vergiftet, ohne eine andere
+als Breehwirkung zu beobachten.
+
+Auch mit dem schwefelsauren Anhalonin konnte ich nach sub-
+eutaner Anwendung Brechwirkung erzielen. Mir standen bisher nicht
+grössere Mengen zur Verfügung, so dass ich nicht angeben kann, ob
+nicht dureh solche auch tetanische Krämpfe hervorgerufen werden
+können. Eine junge Taube sah ich durch diese Substanz ca. 6 Stunden
+nach der Vergiftnng unter narkotischen Symptomen zu Grunde gehen,
+die mit leichten von Zeit zu Zeit auftretenden Krampfbewegungen des
+Kopfes gepaart waren.
+
+Bei Kaninchen erhielt ich durch rein wässrige Extracte, die
+zu 12 g in den Magen gebracht wurden, ferner dureh wässrige Lö-
+sungen alkoholischer Extracte, die subeutan zu 2—3 Pravaz’schen
+Spritzen zugeführt wurden, auch durch andere Präparate Vergiftungs-
+bilder, die sich in nichts von denjenigen unterscheiden, die man
+durch Beibringung von Strychnin oder auch Brucin erzeugen kann.
+Die Wirkung vom Magen aus ist eine viel langsamere, als nach
+Einspritzung in das Unterhautzellgewebe. Bei einem Kaninchen trat
+sie erst nach 4 Stunden auf. Das Thier zeigte Zittern überall, so-
+weit man den Körper überblicken konnte. In dem Moment aber,
+wo ich es aus dem Käfig nehmen wollte, bekam es einen typischen
+Reflextetanus. Die Extremitäten werden gestreekt und der Kopf in
+den Nacken gezogen. Der Anfall geht vorüber. Das Thier nimmt
+wieder seine hockende Stellung ein. Die Athmung ist sehr frequent.
+Die Vorderpfoten gleiten aus, der Kopf fällt auf den Boden. Bald
+folgt indess ein zweiter Anfall, dem das Thier unterliegt. Das Herz
+pulsirt noch nach dem Athmungsstillstande ziemlich lebhaft.
+
+Das alkalisch gemachte, eingedickte Aetherextract des alkoho-
+lischen Auszuges der Pflanze schüttelte ich mit Petroleumäther, ver-
+Jagte diesen, löste den leicht gelben Rückstand in angesäuertem
+Wasser und injieirte die Masse einem Kaninchen. Hier trat der
+=== PDF page 11 ===
+Ueber Anhalonium Lewinii. 411
+
+Tetanus schon nach 12 Minuten ein. Das zitternde Thier hob sich
+auf seinen Pfoten starr in die Höhe, bekam Tetanus und ging nach
+dem dritten Anfalle zu Grunde.
+
+Somit wäre zum ersten Male dargethan, dass eine
+Cactee ausserordentlich heftige allgemeine Giftwir-
+kungen besitzt. Es wird sich nun darum handeln, die Chemie
+dieses Anhalonium weiter aufzuklären und alsdann an die Uhnter-
+suchung zunächst anderer Anhalonien zu gehen. Zu erforschen ist
+aber auch, in welcher Weise, für welche Zwecke und in welchem
+Umfang diese „Museale Buttons“ als Genussmittel gebraucht werden.
+Ich hoffe in nicht zu langer Zeit hierüber Aufklärungen, geben zu
+können.
+
