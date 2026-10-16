@@ -18,7 +18,7 @@ Files:
 | `scripts/corpus_scan/summarize_hits.py` | Counts per term, collection and decade, plus a random sample for review |
 | `scripts/corpus_scan/run_cloud.sh` | One-command cloud run with pinned dataset SHAs, results tarball and auto-shutdown |
 | `scripts/corpus_scan/requirements.txt` | Pinned Python dependencies |
-| `scripts/corpus_scan/embed_hits.py`, `build_seeds.py`, `rank_hits.py`, `screen_hits.py`, `export_review.py` | Post-scan pipeline (section 6); shared helpers in `postscan_common.py`, dependencies in `requirements-post.txt` |
+| `scripts/corpus_scan/embed_hits.py`, `build_seeds.py`, `rank_hits.py`, `screen_hits.py`, `train_ranker.py` | Post-scan pipeline (section 6 and `candidate-review.md`); helpers in `postscan_common.py`, `ranker_model.py` and `candidates.py`; dependencies in `requirements-post.txt` |
 | `docs/corpus-scan/local-test-2026-10-16-sample.md` | Local test tables and 50 random hits |
 
 ---
@@ -323,68 +323,111 @@ aws ec2 terminate-instances --instance-ids i-...   # once the copy is verified
 
 ### 6.0 Commands
 
-The scripts are in `scripts/corpus_scan/` and need only numpy beyond the
-standard library (`requirements-post.txt`). They read `OPENROUTER_API_KEY`
-from the environment or from `~/Code/Historical Forecasting/.env.local`, and
-never print it. Every paid step is resumable and keeps a spend ledger with a
-`--cap` in dollars.
+Since 2026-10-16 the unit of review is the document, and review happens in
+`/admin/candidates`. The design, scores and file contract are in
+`candidate-review.md`; sections 6.1–6.4 below are the original plan, kept
+for its reasoning. The scripts are in `scripts/corpus_scan/`. They need only
+numpy beyond the standard library (`requirements-post.txt`), and import the
+shared candidate code from `candidates.py`.
+
+They read `OPENROUTER_API_KEY` from the environment or from
+`~/Code/Historical Forecasting/.env.local`, and never print it. Every paid
+step can resume and keeps a spend ledger with a `--cap` in dollars.
 
 ```bash
 RUN=data/corpus-scan/runs/us-pd-newspapers   # one or more scan_parquet.py run dirs
-python scripts/corpus_scan/embed_hits.py $RUN                 # -> $RUN/emb/ (dedup.tsv.gz, shard-*.npy, spend.json)
-python scripts/corpus_scan/build_seeds.py                     # -> data/corpus-scan/seeds/ (seeds.jsonl + shards)
-python scripts/corpus_scan/rank_hits.py $RUN --top 4000 --per-category 500
-python scripts/corpus_scan/screen_hits.py $RUN --limit 50     # spot-check these first
-python scripts/corpus_scan/screen_hits.py $RUN                # then the rest
-python scripts/corpus_scan/export_review.py $RUN              # -> $RUN/review.html, review.csv
+python scripts/corpus_scan/embed_hits.py $RUN                    # -> $RUN/emb/ (dedup.tsv.gz, shard-*.npy)
+python scripts/corpus_scan/build_seeds.py --junk-run $RUN        # -> data/corpus-scan/seeds/
+python scripts/corpus_scan/rank_hits.py $RUN --batch embed-1 --no-batch   # score the pool only
+python scripts/corpus_scan/screen_hits.py --pool embed-1 --top 3000       # Luna labels -> data/corpus-scan/llm.jsonl
+python scripts/corpus_scan/rank_hits.py $RUN --batch embed-1 --n 50       # re-rank with the labels; write a batch
+# review in /admin/candidates; after each ~50 decisions:
+python scripts/corpus_scan/train_ranker.py $RUN --batch model-2 --n 50
 ```
 
-To rank several datasets together, pass every run dir to `embed_hits.py` with
-one `--out`, and the same dirs plus `--emb` to `rank_hits.py`.
+**`embed_hits.py`**
 
-What each step does beyond the plan below:
+- Embeds one window per exact or near-exact duplicate group.
+- Records every hit's canonical copy in `dedup.tsv.gz`, so duplicates share
+  a vector.
+- Document-level reprint clustering is done separately, by
+  `candidates.cluster_reprints`.
 
-- `embed_hits.py` keeps the first window of each duplicate group and records
-  every hit's canonical id in `dedup.tsv.gz`; `rank_hits.py` turns that into
-  `n_copies`, a rough measure of how widely a story was reprinted.
-- `build_seeds.py` uses transcript sections only. Editorial notes
-  (`source_note`, `overview`, `historical_context`, `note`) are left out, since
-  modern prose pulls the ranking toward modern prose; `--include-editorial`
-  puts them back. Each source contributes at most 60 chunks, spaced evenly.
-  Categories come from keyword rules over title, document type, tags and
-  genre (`CATEGORY_RULES`), so a seed can sit in several.
-- `rank_hits.py` writes `ranked.jsonl.gz` (best window per document, every
-  document) and `candidates.jsonl` (top `--top` overall plus top
-  `--per-category` per seed category, with `picked_by`). Each row also has
-  `sim_max`, the nearest seed's title, and `likely_in_archive` when the nearest
-  seed is at least 0.92 similar. It prints a score histogram and a knee
-  estimate.
-- `screen_hits.py` sends one excerpt per request with reasoning off and a
-  strict JSON schema; output is appended to `screened.jsonl`.
-- `export_review.py` links identifiers to Chronicling America (loc.gov),
-  Gallica, Internet Archive, BNE Digital, Papers Past, ANNO, Gutenberg,
-  Wikisource and the Deutsche Digitale Bibliothek.
+**`build_seeds.py`**
+
+- Uses transcript sections only, since modern editorial prose would pull the
+  ranking toward modern prose. `--include-editorial` puts editorial notes back.
+- Caps each source at 60 chunks, spaced evenly.
+- Tags seeds with rough categories by keyword rule.
+- Adds junk seeds (category `junk`), taken in this order:
+  1. `no` decisions with reason `reference_or_index` or `advertisement`
+  2. Luna `reference_or_index` and `commercial_or_advertisement` labels with
+     fit ≤ 2
+  3. the hits with the highest `digit_frac`, from `--junk-run`
+
+  Rebuild seeds as decisions accumulate.
+
+**`rank_hits.py`**
+
+- Calls `candidates.build_candidates` to group hits into documents.
+- For each candidate's best window:
+  - `sim_seed` is the mean top-5 cosine to the archive seeds.
+  - `sim_junk` is the mean top-3 cosine to the junk seeds.
+  - `relevance` is `sim_seed - max(0, sim_junk - sim_seed)`, rescaled to 0–1
+    with fixed bounds.
+- `--junk-mode subtract` gives the spec's plain `sim_seed - sim_junk`.
+  - On the local test, scored against Luna's fit ≥ 4 verdicts with the hits
+    used as junk seeds excluded, plain subtraction did worse (AUC 0.55) than
+    `sim_seed` alone (0.67) or the hinge (0.67). Bootstrap relevance scored
+    0.61.
+  - The likely reason is that junk seeds are OCR'd historical text too, so
+    subtracting them also penalises "looks like an old scan".
+- `kind` and `feasibility` stay at their bootstrap values until a Luna label
+  exists.
+- `novelty` adds an embedding check: a window at least 0.92 similar to an
+  archive seed is flagged `in_archive`.
+- Writes the full scored pool to `data/corpus-scan/pool/<batch>.jsonl.gz`,
+  which includes `nearest_seed` and `embedding_hit_id`. It also writes the
+  batch through `candidates.write_batch`.
+
+**`screen_hits.py`**
+
+- Labels one document per request (metadata plus up to two excerpts). The
+  output schema matches the `llm` field: kind, pitch, substances,
+  ocr_quality, archive_fit.
+- Appends labels to `data/corpus-scan/llm.jsonl`, keyed by `candidate_id`,
+  then updates the pool or batch file it screened.
+- The kind weights are in `rank_hits.KIND_WEIGHT`.
+- OCR quality scales `feasibility`: good × 1, fair × 0.8, poor × 0.4.
+
+**`train_ranker.py`**
+
+- Joins `decisions.jsonl` to the current candidates.
+- A decided candidate that is missing from the current runs falls back to its
+  snapshot: the snapshot excerpt is embedded and cached.
+- Fits logistic regression (`ranker_model.py`, numpy) on a 16-dimensional PCA
+  of the embedding plus relevance, kind and feasibility. Novelty is left out.
+- Reports:
+  - 5-fold held-out AUC for add vs no, beside the formula priority's AUC
+  - add-rate by lane and by batch × lane
+  - reject reasons and why tags
+- Saves `data/corpus-scan/models/<stamp>.npz` and `.json`.
+- Below 100 decisions it writes the batch with the formula priority and keeps
+  `model_p_shadow` for comparison. `--force` overrides this.
 
 **Local test (2026-10-16).** On the 1,139-window local run (section 2):
 
-- Embedding all 1,139 hits used 634 k tokens (about 560 per window) and cost
-  $0.006. At that rate 1 M windows would be about $5.6, somewhat above the
-  estimate below.
-- There were 910 seeds from 109 archive texts, costing $0.004.
-- Ranking gave 921 documents. Scores ran from 0.27 to 0.80, with the knee at
-  rank 79 (score 0.65).
-- Screening the top 300 with Luna cost $0.051, about $0.00017 per item. At that
-  rate 5,000 items would be about $0.85.
-  - Verdicts: 2 at fit 5, 104 at fit 4, 121 at fit 3, 42 at fit 2, 31 at fit 1.
-  - The mean ranking score rose only from 0.60 (fit 1) to 0.65 (fit 4) and 0.70
-    (fit 5). Within the top 300, embedding rank separates relevance only
-    weakly, so screen generously rather than cutting at the knee.
-- The export had 106 items at fit ≥ 4, and all 106 had a source link.
-- The two fit-5 items were a 1900 Spanish formulary entry on peyote among the
-  Kiowa, and Sahagún on Teochichimeca peyote and mushroom use in the 1829
-  Bustamante edition.
-
-The total paid cost of the test was about $0.06.
+- **Embedding:** all 1,139 windows used 634 k tokens (about 560 per window) and
+  cost $0.006. At that rate 1 M windows would be about $5.6.
+- **Seeds:** 910 archive seeds plus about 50 junk seeds, costing $0.005.
+- **Pool:** 913 candidates, with 2 reprint clusters and 34 flagged canonical.
+- **Screening:** the top 300 cost $0.057 with Luna, about $0.00019 each. At
+  that rate 3,000 would be about $0.57.
+- **`train_ranker.py`:** run on 161 synthetic decisions made from Luna's
+  labels, it worked end to end, including the snapshot fallback. Its AUCs
+  (0.95 against 0.93 for the formula) are inflated, because `kind` comes from
+  the same labels. The real test is Ben's decisions.
+- **Total test spend:** about $0.13, including the first version.
 
 ### 6.1 Embed the hits
 

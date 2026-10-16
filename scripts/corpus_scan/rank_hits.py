@@ -1,30 +1,42 @@
 #!/usr/bin/env python3
-"""Rank embedded scan hits by similarity to the archive seed passages.
+"""Score scan candidates with embeddings and write a review batch.
 
-For each canonical (deduplicated) hit window:
-  sim_top5   mean of its 5 highest cosine similarities to the seeds
-  score      sim_top5 + --strong-bonus per distinct strong term (up to 3)
-             - --digit-penalty when digit_frac > --digit-threshold
-             (indexes, price lists, tables)
-  cat_<c>    the same, using the mean top-3 within one seed category
-             (experience, ethnography, policy, pharmacology)
+Contract: docs/corpus-scan/candidate-review.md. Candidates (one per document,
+reprints clustered) come from candidates.build_candidates. This script
+replaces the bootstrap relevance with an embedding one:
 
-Only the best window per source document is kept. The candidate list for
-screening is the top --top documents overall plus the top --per-category in
-each category, so first-person accounts are not swamped by medicine.
+  sim_seed   mean of the top-5 cosines between a window and the archive seeds
+  sim_junk   mean of the top-3 cosines to junk seeds (indexes, lists, adverts)
+  relevance  rescaled contrast of the document's best window, where contrast is
+             --junk-mode hinge (default): sim_seed - max(0, sim_junk - sim_seed)
+             --junk-mode subtract:        sim_seed - sim_junk
 
-Writes to <emb dir>/.. (the run dir) by default:
-  ranked.jsonl.gz    every document's best window, best first
-  candidates.jsonl   the screening set, with picked_by
-and prints a score histogram with an estimated knee.
+Why hinge: junk seeds are themselves OCR'd historical text, so plain
+subtraction also penalises "looks like a 19th-century scan". Against Luna's
+fit >= 4 verdicts on the local test (278 items, junk-seed hits excluded),
+AUC was 0.666 for sim_seed alone, 0.550 for subtract and 0.671 for hinge;
+bootstrap relevance was 0.610.
 
-  python rank_hits.py /tmp/cs-local --top 300 --per-category 75
+kind and feasibility stay bootstrap until screen_hits.py labels a candidate
+(labels are read from data/corpus-scan/llm.jsonl). novelty is the bootstrap
+title/canonical check plus an embedding check: a window at least
+--in-archive-sim similar to one archive seed is flagged in_archive.
+
+  priority = relevance × kind^0.7 × novelty^0.5 × feasibility^0.3
+  (with a model from train_ranker.py: priority = model_p × novelty^0.5)
+
+Writes:
+  data/corpus-scan/pool/<batch>.jsonl.gz      every scored candidate, best first,
+                                              plus the hit_id of its embedding window
+  data/corpus-scan/candidates/<batch>/        the review batch (candidates.write_batch)
+
+  python rank_hits.py /tmp/cs-local --batch local-embed-2026-10-16 --n 100
 """
 
 from __future__ import annotations
 
 import argparse
-import collections
+import datetime as dt
 import gzip
 import json
 import sys
@@ -32,10 +44,24 @@ from pathlib import Path
 
 import numpy as np
 
-from postscan_common import doc_key, iter_hits, load_shards, read_jsonl, write_jsonl
+import candidates as C
+from postscan_common import load_shards, read_jsonl, write_jsonl
 
-REPO = Path(__file__).resolve().parents[2]
-CATS = ["experience", "ethnography", "policy", "pharmacology"]
+POOL_ROOT = C.CANDIDATE_ROOT / "pool"
+LLM_PATH = C.CANDIDATE_ROOT / "llm.jsonl"
+
+# Luna kind -> `kind` score (candidate-review.md §2)
+KIND_WEIGHT = {
+    "first_person_experience": 1.0, "ethnographic_observation": 0.9, "legal_or_policy": 0.8,
+    "medical_or_scientific": 0.7, "literary": 0.6, "other": 0.4, "passing_mention": 0.2,
+    "reference_or_index": 0.05, "commercial_or_advertisement": 0.05,
+}
+OCR_FACTOR = {"good": 1.0, "fair": 0.8, "poor": 0.4}
+
+# relevance = clip((contrast - lo) / (hi - lo)). Fixed, not per-run, so scores stay comparable
+# across batches. Set from the 2026-10-16 local test: hinge contrast ran from about 0.3 (lists,
+# adverts, homographs) to 0.8 (close matches to archive texts); subtract from -0.1 to 0.35.
+REL_RANGE = {"hinge": (0.30, 0.75), "subtract": (-0.05, 0.35)}
 
 
 def topk_mean(sims: np.ndarray, k: int) -> np.ndarray:
@@ -45,155 +71,170 @@ def topk_mean(sims: np.ndarray, k: int) -> np.ndarray:
     return np.partition(sims, -k, axis=1)[:, -k:].mean(axis=1)
 
 
-def knee(values: np.ndarray) -> int:
-    """Index of the knee of a descending curve (max distance below the chord)."""
-    n = len(values)
-    if n < 3:
-        return n
-    x = np.linspace(0, 1, n)
-    y = (values - values[-1]) / max(1e-9, values[0] - values[-1])
-    return int(np.argmax((1 - x) - y)) + 1
+def load_vectors(emb_dirs: list[Path]) -> tuple[dict[str, int], np.ndarray]:
+    """hit_id -> row, including duplicates resolved through dedup.tsv.gz."""
+    ids, mats = [], []
+    for d in emb_dirs:
+        i, X = load_shards(d)
+        ids += i
+        mats.append(X)
+    X = np.vstack(mats) if mats else np.zeros((0, 1024), np.float16)
+    pos = {h: n for n, h in enumerate(ids)}
+    for d in emb_dirs:
+        p = d / "dedup.tsv.gz"
+        if p.exists():
+            with gzip.open(p, "rt") as fh:
+                next(fh)
+                for line in fh:
+                    hid, canon, _ = line.rstrip("\n").split("\t")
+                    if hid not in pos and canon in pos:
+                        pos[hid] = pos[canon]
+    return pos, X
 
 
-def histogram(values: np.ndarray, bins: int = 20, width: int = 50) -> str:
-    counts, edges = np.histogram(values, bins=bins)
+def load_seeds(seed_dir: Path) -> tuple[np.ndarray, np.ndarray, list[dict]]:
+    """(archive seed vectors, junk seed vectors, archive seed metadata)."""
+    ids, S = load_shards(seed_dir)
+    meta = {s["seed_id"]: s for s in read_jsonl(seed_dir / "seeds.jsonl")}
+    keep = [n for n, i in enumerate(ids) if i in meta]  # shards can hold seeds dropped by a rebuild
+    ids, S = [ids[n] for n in keep], S[keep]
+    junk = np.array(["junk" in meta.get(i, {}).get("categories", []) for i in ids], dtype=bool)
+    good_meta = [meta.get(i, {}) for i, j in zip(ids, junk) if not j]
+    return S[~junk].astype(np.float32), S[junk].astype(np.float32), good_meta
+
+
+def load_llm(path: Path = LLM_PATH) -> dict[str, dict]:
+    return {r["candidate_id"]: r["llm"] for r in read_jsonl(path)} if path.exists() else {}
+
+
+def apply_llm(c: dict, llm: dict | None) -> None:
+    """Fill c['llm'] and let it set `kind` and adjust `feasibility`."""
+    s = c["scores"]
+    s.setdefault("kind_bootstrap", s["kind"])
+    s.setdefault("feasibility_bootstrap", s["feasibility"])
+    c["llm"] = llm
+    if llm:
+        s["kind"] = KIND_WEIGHT.get(llm.get("kind"), 0.4)
+        s["feasibility"] = round(max(0.05, s["feasibility_bootstrap"] * OCR_FACTOR.get(llm.get("ocr_quality"), 1.0)), 3)
+    else:
+        s["kind"], s["feasibility"] = s["kind_bootstrap"], s["feasibility_bootstrap"]
+
+
+def set_priority(c: dict) -> None:
+    s = c["scores"]
+    if s.get("model_p") is not None:
+        s["priority"] = round(s["model_p"] * s["novelty"] ** 0.5, 4)
+    else:
+        s["priority"] = round(s["relevance"] * s["kind"] ** 0.7 * s["novelty"] ** 0.5 * s["feasibility"] ** 0.3, 4)
+
+
+def score_candidates(runs: list[Path], emb_dirs: list[Path], seed_dir: Path, *, k: int = 5, junk_k: int = 3,
+                     in_archive_sim: float = 0.92, junk_mode: str = "hinge") -> tuple[list[dict], np.ndarray]:
+    """Build and score candidates. Returns (candidates, embedding matrix aligned to them)."""
+    cands = C.build_candidates(runs)
+    pos, H = load_vectors(emb_dirs)
+    S, J, seed_meta = load_seeds(seed_dir)
+    if not len(S):
+        raise SystemExit(f"no archive seed embeddings in {seed_dir}; run build_seeds.py")
+    llm = load_llm()
+    vecs = np.zeros((len(cands), H.shape[1] if len(H) else 1024), np.float32)
+    kept = []
+    n_missing = 0
+    for c in cands:
+        wins = [w for w in c.pop("_windows") if w["hit_id"] in pos]
+        c["scores"] = C.bootstrap_scores({**c, "_windows": wins or [{"strong_terms": {}}]})
+        c["scores"]["relevance_terms"] = c["scores"]["relevance"]
+        if not wins:
+            n_missing += 1
+            continue
+        W = H[[pos[w["hit_id"]] for w in wins]].astype(np.float32)
+        sims = W @ S.T
+        sim_seed = topk_mean(sims, k)
+        sim_junk = topk_mean(W @ J.T, junk_k) if len(J) else np.zeros(len(W), np.float32)
+        contrast = sim_seed - sim_junk if junk_mode == "subtract" else sim_seed - np.maximum(0, sim_junk - sim_seed)
+        lo, hi = REL_RANGE[junk_mode]
+        b = int(np.argmax(contrast))
+        near = int(np.argmax(sims[b]))
+        s = c["scores"]
+        s.update(relevance=round(float(np.clip((contrast[b] - lo) / (hi - lo), 0.05, 1.0)), 3),
+                 sim_seed=round(float(sim_seed[b]), 4), sim_junk=round(float(sim_junk[b]), 4))
+        smax = float(sims.max())
+        if smax >= in_archive_sim:
+            j = int(np.unravel_index(np.argmax(sims), sims.shape)[1])
+            c["novelty_flags"].append({"type": "in_archive", "method": "embedding", "similarity": round(smax, 3),
+                                       "match": seed_meta[j].get("title") or seed_meta[j].get("doc", "")})
+            s["novelty"] = min(s["novelty"], 0.15)
+        c["nearest_seed"] = {"title": seed_meta[near].get("title") or seed_meta[near].get("doc", ""),
+                             "similarity": round(float(sims[b, near]), 3)}
+        c["embedding_hit_id"] = wins[b]["hit_id"]
+        # best embedding window first on the card
+        c["excerpts"].sort(key=lambda e: e["hit_id"] != c["embedding_hit_id"])
+        if c["excerpts"][0]["hit_id"] != c["embedding_hit_id"]:
+            w = wins[b]
+            c["excerpts"].insert(0, {"hit_id": w["hit_id"], "text": w["window"], "digit_frac": w.get("digit_frac", 0.0),
+                                     "highlights": sorted({f for t in ("strong_terms", "weak_terms", "context_terms")
+                                                           for fs in w[t].values() for f in fs}, key=len, reverse=True)})
+            c["excerpts"] = c["excerpts"][:4]
+        apply_llm(c, llm.get(c["candidate_id"]))
+        set_priority(c)
+        vecs[len(kept)] = W[b]
+        kept.append(c)
+    if n_missing:
+        print(f"warning: {n_missing:,} candidates have no embedded window; skipped (run embed_hits.py)", flush=True)
+    return kept, vecs[: len(kept)]
+
+
+def write_pool(name: str, cands: list[dict]) -> Path:
+    POOL_ROOT.mkdir(parents=True, exist_ok=True)
+    path = POOL_ROOT / f"{name}.jsonl.gz"
+    write_jsonl(path, sorted(cands, key=lambda c: -c["scores"]["priority"]), gz=True)
+    return path
+
+
+def histogram(values: np.ndarray, bins: int = 10, width: int = 40) -> str:
+    counts, edges = np.histogram(values, bins=bins, range=(0, 1))
     top = max(1, counts.max())
-    return "\n".join(f"  {edges[i]:.3f}–{edges[i + 1]:.3f} {counts[i]:7d} {'#' * int(width * counts[i] / top)}"
+    return "\n".join(f"  {edges[i]:.1f}–{edges[i + 1]:.1f} {counts[i]:7d} {'#' * int(width * counts[i] / top)}"
                      for i in range(bins))
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("runs", nargs="+", help="scan_parquet.py output dirs (for hit metadata)")
-    ap.add_argument("--emb", help="hit embedding dir (default: <first run>/emb)")
-    ap.add_argument("--seeds", default=str(REPO / "data" / "corpus-scan" / "seeds"))
-    ap.add_argument("--out", help="output dir (default: first run dir)")
-    ap.add_argument("--k", type=int, default=5, help="top-k seeds averaged for the overall score")
-    ap.add_argument("--cat-k", type=int, default=3, help="top-k seeds averaged within a category")
-    ap.add_argument("--strong-bonus", type=float, default=0.01)
-    ap.add_argument("--digit-threshold", type=float, default=0.12)
-    ap.add_argument("--digit-penalty", type=float, default=0.05)
-    ap.add_argument("--top", type=int, default=4000, help="overall candidates for screening")
-    ap.add_argument("--per-category", type=int, default=500, help="extra candidates per seed category")
-    ap.add_argument("--keep-text", type=int, default=50000,
-                    help="keep window text in ranked.jsonl.gz for this many top documents")
-    ap.add_argument("--already-in-archive", type=float, default=0.92,
-                    help="flag hits whose nearest seed is at least this similar")
+    ap.add_argument("runs", nargs="+", type=Path, help="scan_parquet.py output dirs")
+    ap.add_argument("--emb", action="append", type=Path, help="hit embedding dir(s) (default: <run>/emb for each run)")
+    ap.add_argument("--seeds", type=Path, default=C.CANDIDATE_ROOT / "seeds")
+    ap.add_argument("--batch", default=f"embed-{dt.date.today().isoformat()}")
+    ap.add_argument("--n", type=int, default=100, help="cards in the review batch")
+    ap.add_argument("--explore-frac", type=float, default=0.2)
+    ap.add_argument("--no-batch", action="store_true", help="write the pool only")
+    ap.add_argument("--in-archive-sim", type=float, default=0.92)
+    ap.add_argument("--junk-mode", choices=["hinge", "subtract"], default="hinge")
     args = ap.parse_args()
 
-    run0 = Path(args.runs[0])
-    emb_dir = Path(args.emb or run0 / "emb")
-    out = Path(args.out or run0)
-    hit_ids, H = load_shards(emb_dir)
-    seed_ids, S = load_shards(Path(args.seeds))
-    if not len(hit_ids) or not len(seed_ids):
-        raise SystemExit("no hit or seed embeddings found; run embed_hits.py and build_seeds.py first")
-    seeds = {s["seed_id"]: s for s in read_jsonl(Path(args.seeds) / "seeds.jsonl")}
-    seed_meta = [seeds.get(i, {}) for i in seed_ids]
-    cat_idx = {c: np.array([j for j, s in enumerate(seed_meta) if c in s.get("categories", [])]) for c in CATS}
-    print(f"{len(hit_ids):,} hit vectors, {len(seed_ids):,} seed vectors "
-          f"({', '.join(f'{c} {len(v)}' for c, v in cat_idx.items())})", flush=True)
-
-    copies = collections.Counter()
-    dedup = emb_dir / "dedup.tsv.gz"
-    if dedup.exists():
-        with gzip.open(dedup, "rt") as fh:
-            next(fh)
-            for line in fh:
-                copies[line.split("\t", 2)[1]] += 1
-
-    pos = {h: i for i, h in enumerate(hit_ids)}
-
-    St = S.astype(np.float32).T
-    n = len(hit_ids)
-    sim5 = np.zeros(n, np.float32)
-    simmax = np.zeros(n, np.float32)
-    nearest = np.zeros(n, np.int64)
-    cat = {c: np.zeros(n, np.float32) for c in CATS}
-    for a in range(0, n, 8192):
-        sims = H[a : a + 8192].astype(np.float32) @ St
-        sim5[a : a + 8192] = topk_mean(sims, args.k)
-        nearest[a : a + 8192] = sims.argmax(axis=1)
-        simmax[a : a + 8192] = sims.max(axis=1)
-        for c, idx in cat_idx.items():
-            if len(idx):
-                cat[c][a : a + 8192] = topk_mean(sims[:, idx], args.cat_k)
-
-    def adjust(base: float, h: dict) -> float:
-        bonus = args.strong_bonus * min(3, len(h.get("strong_terms") or {}))
-        pen = args.digit_penalty if (h.get("digit_frac") or 0) > args.digit_threshold else 0.0
-        return base + bonus - pen
-
-    def hits():
-        for r in args.runs:
-            yield from iter_hits(Path(r))
-
-    # Pass 1: best window per document, keeping only small tuples in memory.
-    best: dict[str, tuple[float, int]] = {}
-    n_windows = collections.Counter()
-    found = 0
-    for h in hits():
-        i = pos.get(h["hit_id"])
-        if i is None:
-            continue  # a duplicate, or not embedded yet
-        found += 1
-        k = doc_key(h)
-        n_windows[k] += 1
-        sc = adjust(float(sim5[i]), h)
-        if k not in best or sc > best[k][0]:
-            best[k] = (sc, i)
-    if found < n:
-        print(f"warning: {n - found:,} embedded hits not found in the run dirs; skipped", flush=True)
-    order = sorted(best.values(), key=lambda t: -t[0])
-    rank = {i: r for r, (_, i) in enumerate(order)}
-
-    # Pass 2: full records for the winners; window text only for the top --keep-text.
-    docs: list[dict | None] = [None] * len(order)
-    for h in hits():
-        i = pos.get(h["hit_id"])
-        r = rank.get(i) if i is not None else None
-        if r is None or docs[r] is not None:
-            continue
-        rec = dict(h)
-        if r >= args.keep_text:
-            rec.pop("window", None)
-        rec.update(
-            score=round(order[r][0], 4),
-            sim_top5=round(float(sim5[i]), 4),
-            sim_max=round(float(simmax[i]), 4),
-            nearest_seed=seed_ids[nearest[i]],
-            nearest_seed_title=seed_meta[nearest[i]].get("title", ""),
-            likely_in_archive=bool(simmax[i] >= args.already_in_archive),
-            n_copies=copies.get(h["hit_id"], 1),
-            doc_windows_embedded=n_windows[doc_key(h)],
-            **{f"cat_{c}": round(adjust(float(cat[c][i]), h), 4) for c in CATS if len(cat_idx[c])},
-        )
-        docs[r] = rec
-    scores = np.array([r["score"] for r in docs])
-    write_jsonl(out / "ranked.jsonl.gz", docs, gz=True)
-
-    picked: dict[str, dict] = {}
-    for r in docs[: args.top]:
-        picked.setdefault(r["hit_id"], {**r, "picked_by": []})["picked_by"].append("overall")
-    for c in CATS:
-        if not len(cat_idx[c]):
-            continue
-        for r in sorted(docs[: args.keep_text], key=lambda r: -r[f"cat_{c}"])[: args.per_category]:
-            picked.setdefault(r["hit_id"], {**r, "picked_by": []})["picked_by"].append(c)
-    cands = sorted(picked.values(), key=lambda r: -r["score"])
-    write_jsonl(out / "candidates.jsonl", cands)
-
-    kn = knee(scores)
-    print(f"{len(docs):,} documents (best window each) from {n:,} windows")
-    print(f"score histogram:\n{histogram(scores)}")
-    print(f"knee at rank {kn:,} (score {scores[kn - 1]:.3f}); "
-          f"top-{args.top} cut at {scores[min(args.top, len(scores)) - 1]:.3f}")
-    print(f"{len(cands):,} candidates -> {out / 'candidates.jsonl'} "
-          f"({sum(r['likely_in_archive'] for r in cands)} likely already in the archive)")
-    print("\ntop 15:")
-    for r in docs[:15]:
-        print(f"  {r['score']:.3f} {r.get('year') or '----'} {r['collection'][:18]:18s} "
-              f"{(r.get('title') or r['identifier'])[:50]:50s} ~ {r['nearest_seed_title'][:30]}")
+    emb_dirs = args.emb or [r / "emb" for r in args.runs]
+    cands, _ = score_candidates(args.runs, emb_dirs, args.seeds, in_archive_sim=args.in_archive_sim,
+                                junk_mode=args.junk_mode)
+    pool = write_pool(args.batch, cands)
+    rel = np.array([c["scores"]["relevance"] for c in cands])
+    pri = np.array([c["scores"]["priority"] for c in cands])
+    print(f"{len(cands):,} candidates -> {pool}")
+    print(f"relevance:\n{histogram(rel)}\npriority:\n{histogram(pri)}")
+    print(f"{sum(c['reprints']['count'] > 1 for c in cands)} reprint clusters, "
+          f"{sum(any(f['type'] == 'in_archive' for f in c['novelty_flags']) for c in cands)} flagged in_archive, "
+          f"{sum(any(f['type'] == 'canonical' for f in c['novelty_flags']) for c in cands)} canonical, "
+          f"{sum(c['llm'] is not None for c in cands)} with LLM labels")
+    if not args.no_batch:
+        decisions = C.load_decisions()
+        queue = C.build_queue(cands, decisions, n=args.n, explore_frac=args.explore_frac)
+        out = C.write_batch(args.batch, queue, {
+            "source_runs": [str(r) for r in args.runs], "scoring": "embedding",
+            "notes": f"relevance = top-5 seed cosine, junk contrast {args.junk_mode}; {len(cands):,} in pool {pool.name}"})
+        print(f"batch of {len(queue)} ({sum(c['lane'] == 'explore' for c in queue)} explore) -> {out}")
+    print("\ntop 12 by priority:")
+    for c in sorted(cands, key=lambda c: -c["scores"]["priority"])[:12]:
+        s = c["scores"]
+        print(f"  {s['priority']:.3f} rel {s['relevance']:.2f} kind {s['kind']:.2f} nov {s['novelty']:.2f} "
+              f"{c.get('year') or '----'} {c['collection'][:16]:16s} {(c.get('title') or c['identifier'])[:48]}")
     return 0
 
 

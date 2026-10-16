@@ -9,6 +9,14 @@ Seeds are ~300-word chunks of texts already in the archive:
   - latin-american-psychedelic-research/texts/*.txt
   - data/squarespace-import/body-text/*.txt
 
+Junk seeds (category "junk") stand for what the ranking should push down:
+indexes, materia medica and price lists, adverts. They come from, in order:
+"no" decisions in data/corpus-scan/decisions.jsonl with reason
+reference_or_index or advertisement (the snapshot excerpt); candidates that
+screen_hits.py labelled reference_or_index or commercial_or_advertisement
+with archive_fit <= 2 (best excerpt, from data/corpus-scan/pool/); and hits with digit_frac >= --junk-digit-frac, from the --junk-run scan dirs.
+rank_hits.py subtracts each hit's similarity to them from its relevance.
+
 Each seed is tagged with zero or more categories (experience, ethnography,
 policy, pharmacology) by keyword rules over its title, document type, tags and
 genre, so rank_hits.py can take the top-k per category and stop medicine from
@@ -33,7 +41,7 @@ import re
 import sys
 from pathlib import Path
 
-from postscan_common import embed_to_shards, write_jsonl
+from postscan_common import embed_to_shards, iter_hits, read_jsonl, write_jsonl
 
 REPO = Path(__file__).resolve().parents[2]
 
@@ -162,6 +170,38 @@ def collect_sources(include_editorial: bool) -> list[dict]:
     return sources
 
 
+JUNK_REASONS = {"reference_or_index", "advertisement"}
+JUNK_KINDS = {"reference_or_index", "commercial_or_advertisement"}
+
+
+def junk_seeds(runs: list[str], decisions: Path, digit_frac: float, limit: int) -> list[dict]:
+    """(source, doc, text) rows for junk seeds, strongest evidence first."""
+    out: list[dict] = []
+    if decisions.exists():
+        latest = {d["candidate_id"]: d for d in read_jsonl(decisions)}
+        for d in latest.values():
+            text = (d.get("snapshot") or {}).get("best_excerpt") or ""
+            if d.get("decision") == "no" and JUNK_REASONS & set(d.get("reasons") or []) and text:
+                out.append({"source": "junk:decision", "doc": d["candidate_id"], "text": text})
+    labelled, heuristic = [], []
+    llm_path = REPO / "data" / "corpus-scan" / "llm.jsonl"
+    if llm_path.exists():
+        bad = {r["candidate_id"] for r in read_jsonl(llm_path)
+               if r["llm"].get("kind") in JUNK_KINDS and (r["llm"].get("archive_fit") or 5) <= 2}
+        for pool in sorted((REPO / "data" / "corpus-scan" / "pool").glob("*.jsonl.gz")):
+            for c in read_jsonl(pool):
+                if c["candidate_id"] in bad and c.get("excerpts"):
+                    bad.discard(c["candidate_id"])
+                    labelled.append({"source": "junk:llm", "doc": c["candidate_id"], "text": c["excerpts"][0]["text"]})
+    for run in runs:
+        for h in iter_hits(Path(run)):
+            if (h.get("digit_frac") or 0) >= digit_frac:
+                heuristic.append({"source": "junk:digit_frac", "doc": h["hit_id"], "text": h["window"],
+                                  "digit_frac": h["digit_frac"]})
+    heuristic.sort(key=lambda r: -r.pop("digit_frac"))
+    return (out + labelled + heuristic)[:limit]
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", default=str(REPO / "data" / "corpus-scan" / "seeds"))
@@ -169,6 +209,10 @@ def main() -> int:
     ap.add_argument("--max-chunks-per-doc", type=int, default=60)
     ap.add_argument("--include-editorial", action="store_true")
     ap.add_argument("--cap", type=float, default=1.0)
+    ap.add_argument("--junk-run", action="append", default=[], help="scan run dir to draw junk seeds from (repeatable)")
+    ap.add_argument("--decisions", default=str(REPO / "data" / "corpus-scan" / "decisions.jsonl"))
+    ap.add_argument("--junk-digit-frac", type=float, default=0.25)
+    ap.add_argument("--junk-max", type=int, default=400)
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
@@ -183,6 +227,14 @@ def main() -> int:
             seeds.append({"seed_id": f"{src['source']}:{src['doc']}:{i}:{h[:6]}", "source": src["source"],
                           "doc": src["doc"], "title": src["title"], "categories": cats,
                           "words": len(chunk.split()), "text": chunk})
+
+    for j in junk_seeds(args.junk_run, Path(args.decisions), args.junk_digit_frac, args.junk_max):
+        h = hashlib.sha1(" ".join(j["text"].lower().split()).encode()).hexdigest()[:16]
+        if h in seen:
+            continue
+        seen.add(h)
+        seeds.append({"seed_id": f"{j['source']}:{j['doc']}:{h[:6]}", "source": j["source"], "doc": j["doc"],
+                      "title": "", "categories": ["junk"], "words": len(j["text"].split()), "text": j["text"]})
 
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
