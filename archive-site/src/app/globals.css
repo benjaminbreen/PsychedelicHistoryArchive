@@ -1960,3 +1960,18 @@ a {
     }
   }
 }
+
+/* Printed page boundaries inside transcripts and translations, e.g. "[p. 12]". */
+.source-page-marker {
+  margin: 1.4em 0 0.6em;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(var(--archive-faint));
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.source-page-marker::after { content: ""; flex: 1; height: 1px; background: rgb(var(--archive-line)); }

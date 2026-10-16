@@ -119,6 +119,9 @@ function MarkdownBlock({ block, figures, footnoteMap, inlineOptions, transcriptF
 }
 
 function MarkdownParagraph({ footnoteMap, inlineOptions, text }: { footnoteMap: Map<string, Footnote>; inlineOptions?: InlineParseOptions; text: string }) {
+  // A line such as "[p. 12]" or "[scan 7]" marks where a printed page begins.
+  const pageMarker = text.trim().match(/^\[((?:p\.|scan) [^\]]{1,12})\]$/);
+  if (pageMarker) return <p className="source-page-marker" aria-label={pageMarker[1]}>{pageMarker[1]}</p>;
   const sidenotes: Footnote[] = [];
   return (
     <p>

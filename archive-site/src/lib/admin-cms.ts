@@ -5,7 +5,7 @@ const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 export const isAdminEnabled =
   process.env.ADMIN_DISABLED !== "true" &&
-  (process.env.NODE_ENV === "development" || process.env.ADMIN_LOCAL_ENABLED === "true");
+  (process.env.NODE_ENV === "development" || process.env.ADMIN_LOCAL_ENABLED === "true" || process.env.CMS_ENABLED === "true");
 
 export const isAdminWritable = Boolean(supabaseUrl && serviceRoleKey);
 

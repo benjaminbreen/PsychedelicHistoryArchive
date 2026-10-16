@@ -19,6 +19,7 @@ export type SourceType =
   | "Material Artifact"
   | "Patient Report"
   | "Medical Report"
+  | "Government Report"
   | "Audio/Video"
   | "Film"
   | "Field Notes"

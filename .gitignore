@@ -5,6 +5,7 @@
 
 # Dependencies
 node_modules/
+.cms-local/
 .pnpm-store/
 
 # Builds and caches

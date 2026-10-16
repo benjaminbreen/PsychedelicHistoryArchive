@@ -5,7 +5,7 @@ import type { AccessType, ArchiveSource, CollectionItemSummary, HostingStatus, R
 import fs from "node:fs";
 import path from "node:path";
 
-type DocumentRow = {
+export type DocumentRow = {
   id: string;
   slug: string;
   title: string;
@@ -42,6 +42,7 @@ type DocumentRow = {
   thumbnail_path: string | null;
   is_featured: boolean | null;
   published_at: string | null;
+  editorial_status?: string | null;
   pages?: PageRow[];
   files?: FileRow[];
   document_sections?: DocumentSectionRow[];
@@ -361,6 +362,7 @@ const DOCUMENT_SELECT = `
   thumbnail_path,
   is_featured,
   published_at,
+  editorial_status,
   pages(id, page_number, label, readable_image_path, thumbnail_image_path, image_width, image_height, language, ocr_confidence, transcription_status, transcription_reviewed_by, transcription_reviewed_at, transcription_note, page_lines(*)),
   files(id, storage_path, kind, mime_type, byte_size),
   document_sections(id, position, heading, section_type, body, body_format),
@@ -399,6 +401,7 @@ const DOCUMENT_SUMMARY_SELECT = `
   thumbnail_path,
   is_featured,
   published_at,
+  editorial_status,
   document_tags(tags(name, tag_type)),
   document_people(role, people(name))
 `;
@@ -497,6 +500,7 @@ const COLLECTION_SELECT = `
       access_type,
       hosting_status,
       published_at,
+      editorial_status,
       pages(id),
       files(id, storage_path, kind, mime_type, byte_size),
       document_tags(tags(name, tag_type)),
@@ -963,7 +967,7 @@ function isSchemaShapeError(message = "") {
   );
 }
 
-function documentToArchiveSource(document: DocumentRow): ArchiveSource {
+export function documentToArchiveSource(document: DocumentRow): ArchiveSource {
   const tags = unique(
     document.document_tags
       ?.map((item) => {
@@ -993,7 +997,7 @@ function documentToArchiveSource(document: DocumentRow): ArchiveSource {
   const imagePath = document.thumbnail_path || document.cover_image_path || firstImagePath(document.files);
   const title = document.title;
   const year = document.date_start ?? yearFromDisplayDate(document.display_date) ?? 0;
-  const parsedCreators = parseCreatorsFromTranscript(rawTranscript);
+  const parsedCreators = document.editorial_status === "published" ? [] : parseCreatorsFromTranscript(rawTranscript);
   const relationCreators = creatorsFromRelations(document.document_people);
   const creators = uniqueCreators([...parsedCreators, ...relationCreators]).filter((creator) => isPublicPersonName(creator.name));
   const authorNames = creators

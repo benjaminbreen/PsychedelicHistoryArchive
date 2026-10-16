@@ -66,7 +66,7 @@ test("buildDisplayPages creates a fallback page from transcript text", () => {
   assert.equal(pages[0].lines[0].index, 1);
 });
 
-test("buildReaderToc uses transcript section headings", () => {
+test("buildReaderToc keeps editorial notes out of the transcript navigation", () => {
   const source = makeSource({
     transcriptSections: [
       { heading: "Opening Note", kind: "note", paragraphs: [] },
@@ -75,7 +75,6 @@ test("buildReaderToc uses transcript section headings", () => {
   });
 
   assert.deepEqual(buildReaderToc(source, "transcript", []), [
-    { id: "section-opening-note", label: "Opening Note" },
     { id: "section-transcript", label: "Transcript" },
   ]);
 });

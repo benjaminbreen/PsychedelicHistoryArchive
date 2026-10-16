@@ -273,7 +273,7 @@ function ReaderNotice({ actionLabel, children, icon, onAction }: { actionLabel?:
   );
 }
 
-function TranscriptReader({ source, transcript }: { source: ArchiveSource; transcript: string[] }) {
+export function TranscriptReader({ source, transcript, hideSourceNote = false }: { source: ArchiveSource; transcript: string[]; hideSourceNote?: boolean }) {
   const sourceNote = source.transcriptSections?.find((section) => section.kind === "source_note");
   const transcriptSections = source.transcriptSections?.filter((section) => section.kind === "transcript") ?? [];
   const sections = transcriptSections.length
@@ -283,7 +283,7 @@ function TranscriptReader({ source, transcript }: { source: ArchiveSource; trans
 
   return (
     <div className="space-y-9">
-      <SourceReaderIntro sourceNote={sourceNote} />
+      {!hideSourceNote && <SourceReaderIntro sourceNote={sourceNote} />}
       {sections.map((section, index) => {
         const isNote = section.kind === "note";
         const isMediaTranscript = section.kind === "transcript" && isMediaSource(source);
@@ -417,7 +417,7 @@ function HistoricalContextReader({ source }: { source: ArchiveSource }) {
   );
 }
 
-function HistoricalContextByline({ section }: { section: TranscriptSection }) {
+export function HistoricalContextByline({ section }: { section: TranscriptSection }) {
   const attribution = section.attribution;
   if (!attribution?.authorName) return null;
 
@@ -505,7 +505,7 @@ function isLikelySpeakerLabel(label: string) {
   return /^[A-Z][\p{L}\p{M}.'’ -]*(?:\s+[A-Z][\p{L}\p{M}.'’ -]*)*$/u.test(withoutColon);
 }
 
-function TranslationReader({ source }: { source: ArchiveSource }) {
+export function TranslationReader({ source }: { source: ArchiveSource }) {
   const translation = source.translationText?.trim() || "";
 
   return (
@@ -521,7 +521,7 @@ function TranslationReader({ source }: { source: ArchiveSource }) {
   );
 }
 
-function CollectionOverview({ source }: { source: ArchiveSource }) {
+export function CollectionOverview({ source }: { source: ArchiveSource }) {
   const items = source.collectionItems ?? [];
   const visibleItems = items.slice(0, 100);
   const overviewText = getCollectionOverviewText(source);
@@ -685,7 +685,7 @@ function OriginalSourceViewer({ pages, source, transcript }: { pages: SourcePage
   return <PageImageSourceViewer pages={pages} source={source} transcript={transcript} />;
 }
 
-function ExternalSourceViewer({ source }: { source: ArchiveSource }) {
+export function ExternalSourceViewer({ source }: { source: ArchiveSource }) {
   return (
     <section className="mt-5 rounded-md border border-archive-line bg-archive-surface p-5 shadow-[0_12px_32px_rgb(var(--archive-shadow)/0.06)]">
       <div className="flex items-start gap-3">
@@ -715,7 +715,7 @@ function OriginalPdfSourceViewer({ source }: { source: ArchiveSource }) {
   return <PdfSourceViewer file={pdfFile} source={source} />;
 }
 
-function PdfSourceViewer({ file, source }: { file: SourceFile; source: ArchiveSource }) {
+export function PdfSourceViewer({ file, source }: { file: SourceFile; source: ArchiveSource }) {
   const [pageNumber, setPageNumber] = useState<number>();
 
   useEffect(() => {
@@ -751,7 +751,7 @@ function PdfSourceViewer({ file, source }: { file: SourceFile; source: ArchiveSo
   );
 }
 
-function MediaSourceViewer({ file, source, type }: { file?: SourceFile; source: ArchiveSource; type: "audio" | "video" }) {
+export function MediaSourceViewer({ file, source, type }: { file?: SourceFile; source: ArchiveSource; type: "audio" | "video" }) {
   const embedUrl = toEmbedUrl(source.mediaEmbedUrl || (!file && source.sourceUrl !== "#" ? source.sourceUrl : undefined));
   const isVideo = type === "video";
 

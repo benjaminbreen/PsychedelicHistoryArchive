@@ -1,0 +1,5 @@
+import Link from "next/link";
+import { BookOpen, Users, Tags } from "lucide-react";
+export default function SitePages() {
+  return <><div className="cms-heading"><div><h1>Site pages</h1><p>Supporting material for readers of the archive.</p></div></div><div style={{ display: "grid", gap: 18, maxWidth: 850 }}>{[{ href: "/admin/biographies", title: "People", text: "Biographical profiles and links to their sources.", icon: Users }, { href: "/admin/topics", title: "Topics", text: "Introductions that bring related sources together.", icon: Tags }, { href: "/admin/bibliography", title: "Further reading", text: "Books, articles, and citations for readers who want to go further.", icon: BookOpen }].map(({ href, title, text, icon: Icon }) => <Link className="cms-card" style={{ display: "flex", gap: 20, alignItems: "center" }} key={href} href={href}><Icon size={22} color="rgb(var(--archive-violet))" /><div><h2 style={{ fontFamily: "var(--font-source-serif)", fontSize: 24 }}>{title}</h2><p className="cms-field-help">{text}</p></div><span style={{ marginLeft: "auto" }}>→</span></Link>)}</div></>;
+}
