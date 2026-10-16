@@ -1,0 +1,61 @@
+{
+  "slug": "newspaper-sn86063790-1916-05-25",
+  "title": "Untitled newspaper item, 1916-05-25 (Chronicling America sn86063790, page 4)",
+  "author": "Unknown",
+  "year": 1916,
+  "displayDate": "1916",
+  "type": "Newspaper Article",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "To be determined",
+  "language": "English",
+  "substances": [
+    "Peyote"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "A 1916 newspaper report on Utah State chemist Herman Harms’s investigation of peyote use among Ute Indians in the Uinta Basin, including Saturday-night religious services at Randlett, Utah. It describes reported exhilaration, abnormal dreams, stupor, and the practice’s spread, though in a strongly condemnatory frame.",
+  "excerpt": "Peyote constitutes the anea roots and dried blossoms of a small cactus plant that grows in the southwestern section of the United States.",
+  "citation": "*Untitled newspaper item, 1916-05-25 (Chronicling America sn86063790, page 4)*, 1916, US-PD-Newspapers (Common Corpus) sn86063790_1916-05-25_1_4_1.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "https://chroniclingamerica.loc.gov/lccn/sn86063790/1916-05-25/ed-1/seq-4/",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-16",
+    "bucket": "corpus-scan-review",
+    "rationale": "A 1916 newspaper report on Utah State chemist Herman Harms’s investigation of peyote use among Ute Indians in the Uinta Basin, including Saturday-night religious services at Randlett, Utah. It describes reported exhilaration, abnormal dreams, stupor, and the practice’s spread, though in a strongly condemnatory frame.",
+    "textSource": {
+      "url": "https://chroniclingamerica.loc.gov/lccn/sn86063790/1916-05-25/ed-1/seq-4/",
+      "kind": "chronicling-america",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: good. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "us-pd-newspapers:sn86063790_1916-05-25_1_4_1",
+      "decision": "add",
+      "decided_at": "2026-10-16T21:38:21.179Z",
+      "why": [],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "US-PD-Newspapers",
+      "identifier": "sn86063790_1916-05-25_1_4_1",
+      "archive_fit": 5,
+      "kind": "ethnographic_observation",
+      "scan_excerpt": "made by Herman Harms, Utah State chemist. So seriously does Mr. Harms regard the menace of the weed that he recommends that the next legislature take proper steps to include the plant in the list of prohibited narcotics. Peyote constitutes the anea roots and dried blossoms of a small cactus plant that grows in the southwestern section of the United States. Some of it grows in Utah, notably in the Uinta basin. Ute Indians, many of them, are habitual users of peyote and some include it in certain forms of their religious ceremonies. \"At the present time,\" Chemist Harms says in his report to the governor of Utah, \"the Ute Indians hold their 'peyote service' every Saturday night until Sunday morning at Randlette, Utah, and from all accounts this evil habit is growing at a rapid rate with decidedly demoralizing effects on these people.\" The growth of the use of peyote among the Indians and the subsequent effect upon them attracted the attention of some of the white residents of the Uinta basin, including Senator Don B. Colton. He called the attention of Gov. Spry to the matter and the governor ordered an immediate and thorough investigation. Peyote is something new in the way of narcotics, as Mr. Harms found out during the investigation. Here is a cactus plant, common enough in the Western States, that contains juices as powerful as opium or morphine. Both the roots and blossoms of the plant are chewed by the Indians after the manner in which Peruvians derive the effects of cocaine from chewing cocoa leaves. The blossoms are more delectable in the eyes of the victims of the habit than the roots. At first peyote causes a great state of mental exhilaration and excitement. Then it deadens the senses, produces abnormal dreams, is demoralizing,"
+    }
+  }
+}

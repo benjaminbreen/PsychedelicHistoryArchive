@@ -1,0 +1,61 @@
+{
+  "slug": "marin-y-sancho-formulario-medicamentos-modernos-complemento-farmacopea-formulari",
+  "title": "Formulario de medicamentos modernos Complemento á la Farmacopea formulario universal que contiene medicamentos modernos...",
+  "author": "Marin y Sancho, Francisco  // Melgosa Olaechea, Miguel  //",
+  "year": 1900,
+  "displayDate": "1900",
+  "type": "Book",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "To be determined",
+  "language": "Spanish",
+  "substances": [
+    "Peyote"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "A 1900 Spanish pharmaceutical formulary entry on Anhalonium (peyote/mescal buttons) describes Indigenous nighttime religious use and vivid, kaleidoscopic visions, drawing on medical experimenters’ reports. The substantial account of effects and ceremony makes this a strong archive candidate.",
+  "excerpt": "el Sur.",
+  "citation": "Marin y Sancho, Francisco  // Melgosa Olaechea, Miguel  //, *Formulario de medicamentos modernos Complemento á la Farmacopea formulario universal que contiene medicamentos modernos...*, 1900, Spanish-PD-Books (Common Corpus) 0000206628_5.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-16",
+    "bucket": "corpus-scan-review",
+    "rationale": "A 1900 Spanish pharmaceutical formulary entry on Anhalonium (peyote/mescal buttons) describes Indigenous nighttime religious use and vivid, kaleidoscopic visions, drawing on medical experimenters’ reports. The substantial account of effects and ceremony makes this a strong archive candidate.",
+    "textSource": {
+      "url": "",
+      "kind": "other",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: fair. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "spanish-pd-books:0000206628",
+      "decision": "add",
+      "decided_at": "2026-10-16T21:22:57.415Z",
+      "why": [],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "Spanish-PD-Books",
+      "identifier": "0000206628_5",
+      "archive_fit": 5,
+      "kind": "medical_or_scientific",
+      "scan_excerpt": "del Sur. Pildoras de anemonina. (F. V. M. F.) Anemonina, 0,10gm.P. e.mpl. La corteza. Regaliz en polvo, 0,20 — Pr. terap. Febricina, por sus propiedades y aplicaciones antifebrífugas. Se dice de esta sustancia que es de una inocuidad completa, pudién­ dose administrar sin inconvenien­ te, á grandes dosis, á niños y an­ cianos. Es fácilmente eliminada por las ori­ nas coloreándolas en rojo hasta en las lesiones del riñón. Ejerce acción sobre la médula y él cerebro, produciendo sedación en los centros de la sensibilidad y del movimiento. Su acción sobre la cir­ culación es manifiesta; es un se­ dante del aparato cardiovascular, comprobado por la disminución del pulso y de la temperatura. Dosis: 10 gramos diarios para un adulto, administrados por pequeñas fracciones de hora en hora. reas. Se funde á 85° y á mayor tem­ peratura se volatiliza sin descompo­ nerse. Se disuelve en el alcohol y el éter, coloreándose ligeramente de amarillo. VA clorhidrato cristaliza de su solución acuosa en agujas de color blanco muy puro, sabor amargo, y que se disuelven en el agua caliente y en el alcohol. Obra aumentando la excitabilidad de los reflejos; está sin hacerse el es­ tudio terapéutico de este alcaloide. Anhalonio. MESCAL BUTTONS Angostura verdadera (F.-F. ü„ t T, pág 252.) Licor de ¡tiigustura, concentrado. (F. licit . 1S0S.) Corteza de angostura en polvo número 40, 500 gm. Alcohol (20 por 100), 1.250 c.c., ó c. a. Humedézcase el polvo con 250 centí­ metros cúbicos de alcohol; coloqúe­ se en un lixiviado!cerrado, y déje­ se permanecer así durante tres días; lixivíese con el alcohol res­ tante, añadido en diez porciones iguales, con intervalos de doce ho­ ras; continúese la lixiviación con más alcohol, hasta que el producto mida 1.000 centímetros cúbicos. Dosis. I)e 2 á 4 gramos. Anhalonina. Alcaloide separado"
+    }
+  }
+}

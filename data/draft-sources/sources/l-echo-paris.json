@@ -1,0 +1,61 @@
+{
+  "slug": "l-echo-paris",
+  "title": "L'écho de Paris",
+  "author": "Unknown",
+  "year": null,
+  "displayDate": "Undated",
+  "type": "Newspaper Article",
+  "medium": "Text",
+  "era": "",
+  "region": "To be determined",
+  "language": "French",
+  "substances": [
+    "Peyote"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "A Paris newspaper advertisement for Peyote Tramni, marketed as a scientifically dosed remedy that boosts energy, relieves fatigue, and treats nervous ailments. It documents the commercial promotion and claims made for a peyote preparation, though it offers no account of its effects from a user's perspective.",
+  "excerpt": "82-16 et la suite les catalogues H des nouveaux modèles 1933 Insonores - Bâtis incassables toutes pièces Parkerisées et L'ste de ses 125 agents Woodstock, France et Colonies ÉLECTRIQUE - STANDARD - PORTABLE Le PEYOTE est une plante connue depuis longtemps par les naturels du Mexique et dont la Faculté nous ia révélé les propriétés merveilleuses.",
+  "citation": "*L'écho de Paris*, n.d., Europeana (Common Corpus) http://data.theeuropeanlibrary.org/BibliographicResource/3000114908742 http://www.theeuropeanlibrary.org/tel4/newspapers/issue/3000114908742 http://www.theeuropeanlibrary.org/tel4/newspapers/issue/fullscreen/3000114908742 http://gallica.bnf.fr/ark:/12148/bpt6k814809v/f1.thumbnail_4.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "http://data.theeuropeanlibrary.org/BibliographicResource/3000114908742",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "needs-work",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-16",
+    "bucket": "corpus-scan-review",
+    "rationale": "Editor marked this maybe in corpus-scan review. A Paris newspaper advertisement for Peyote Tramni, marketed as a scientifically dosed remedy that boosts energy, relieves fatigue, and treats nervous ailments. It documents the commercial promotion and claims made for a peyote preparation, though it offers no account of its effects from a user's perspective.",
+    "textSource": {
+      "url": "http://data.theeuropeanlibrary.org/BibliographicResource/3000114908742",
+      "kind": "europeana",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: fair. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "europeana:http://data.theeuropeanlibrary.org/BibliographicResource/3000114908742 http://www.theeuropeanlibrary.org/tel4/newspapers/issue/3000114908742 http://www.theeuropeanlibrary.org/tel4/newspapers/issue/fullscreen/3000114908742 http://gallica.bnf.fr/ark:/12148/bpt6k814809v/f1.thumbnail_4",
+      "decision": "maybe",
+      "decided_at": "2026-10-16T21:32:21.458Z",
+      "why": [],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "Europeana",
+      "identifier": "http://data.theeuropeanlibrary.org/BibliographicResource/3000114908742 http://www.theeuropeanlibrary.org/tel4/newspapers/issue/3000114908742 http://www.theeuropeanlibrary.org/tel4/newspapers/issue/fullscreen/3000114908742 http://gallica.bnf.fr/ark:/12148/bpt6k814809v/f1.thumbnail_4",
+      "archive_fit": 4,
+      "kind": "commercial_or_advertisement",
+      "scan_excerpt": "Nous allons nous battre contre le chômage, a dit M. Glynn-Jones. secrétaire général du camp des mi neurs de St-Athans, en prenant le prince de Galles comme géhéral en chef, et I e Conseil du Service Social. corne état-major. L'organisation na tionale créée pour mettre fin aux taudis est le'moyen le plus sage, le plus efficace pour remettre en ac tion les roues de la machine-com merciale et induslriëlle. » Les - Anglais se rendent compte d'ailleurs que le pouls. de l'univers s'est mis partout à battre plus vite : « dictature en Europe, despotisme aux Etats-Unis, aventures en Orient. La jeunesse veut du neuf. Demandez à WODDSTOCK BO, r. Tasfbouf PARIS (9 e ) Trinité 82-16 et la suite les catalogues H des nouveaux modèles 1933 Insonores - Bâtis incassables toutes pièces Parkerisées et L'ste de ses 125 agents Woodstock, France et Colonies ÉLECTRIQUE - STANDARD - PORTABLE Le PEYOTE est une plante connue depuis longtemps par les naturels du Mexique et dont la Faculté nous ia révélé les propriétés merveilleuses. . les Savants sont unanimes à considé rer le PEYOTE Tranuti comme le plus prodigieux générateur d'énergie; provo quant la suractivité de toutes les fonctions, 'abolissant la fatigue et donnant une sensation âe viHité/deforcejd'ardeur aux plus Déprimés. , Le PEYOTE Tramni est la seule préparation de . ce genre dont le dosage scientifique soit ef ficace. Il est le seul spécifique souverain des af fections nerveuses et seul il doit être utilisé pour retrouver promptement la santé et la joie de vivre, ifc Le PEYOTE Tramni «e vend sous forme de dragées faci- _ les à prendre ; le tube 20 frs dans toutes les pharmacies. \" TRAM Ml loi». 5 PL. B LAN CH E • PARIS ! PEYOTE 55ET60 RUE RAMBUTÊAU 129 AvsLEDRU-ROlLIH PARI CATALOGUE GRATUIT EXPÉDITION"
+    }
+  }
+}

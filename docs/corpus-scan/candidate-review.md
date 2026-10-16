@@ -168,7 +168,7 @@ re-scans, re-ranking and deleted batches.
 | `screen_hits.py` | side session | Luna labels → `llm` and the `kind` score, for the top few thousand documents |
 | `train_ranker.py` | side session | Fits `model_p` from `decisions.jsonl`; reports held-out AUC and add-rate by lane; re-ranks the next batch |
 | `/admin/candidates` | here | Review queue: keyboard-driven, appends to `decisions.jsonl` |
-| `nominate.py` | later | Turns `add` decisions into `data/draft-sources/sources/<slug>.json` stubs (`draft.status: "proposed"`, `proposedBy: "corpus-scan"`, `rationale` from the note and pitch), ready for completion |
+| `nominate.py` | here | Turns add/maybe decisions into `data/draft-sources/sources/<slug>.json`. Add becomes `proposed`; maybe, or a lead to trace, becomes `needs-work`. Fields the scan cannot know (region, sometimes year) are left blank or set to "To be determined" for the validator to flag. Cannabis-only candidates go to `data/corpus-scan/nominations-held.jsonl` instead. Re-runs only rewrite its own drafts |
 
 ## 7. Calibration before the cloud run
 

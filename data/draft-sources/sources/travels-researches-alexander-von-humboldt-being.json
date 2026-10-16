@@ -1,0 +1,63 @@
+{
+  "slug": "travels-researches-alexander-von-humboldt-being",
+  "title": "The travels and researches of Alexander von Humboldt; being a condensed narrative of his journeys in the equinoctial regions of America, and in Asiatic Russia:--together with analyses of his more important investigations",
+  "author": "Unknown",
+  "year": null,
+  "displayDate": "Undated",
+  "type": "Book",
+  "medium": "Text",
+  "era": "",
+  "region": "To be determined",
+  "language": "English",
+  "substances": [
+    "DMT snuffs"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "Alexander von Humboldt’s account of Otomacs at Uruana on the Orinoco describes inhaling powder made from Acacia niopo pods, which caused intoxication bordering on madness for several days and was associated in the report with violent acts. This is a substantive historical observation of Indigenous use and the reported effects of a DMT-containing snuff.",
+  "excerpt": "amlet is inhabited by the Otomacs, one of the rudest of the American tribes.",
+  "citation": "*The travels and researches of Alexander von Humboldt; being a condensed narrative of his journeys in the equinoctial regions of America, and in Asiatic Russia:--together with analyses of his more important investigations*, n.d., US-PD-Books (Common Corpus) travelsresearche00humb_1_11.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "https://archive.org/details/travelsresearche00humb_1",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-16",
+    "bucket": "corpus-scan-review",
+    "rationale": "Alexander von Humboldt’s account of Otomacs at Uruana on the Orinoco describes inhaling powder made from Acacia niopo pods, which caused intoxication bordering on madness for several days and was associated in the report with violent acts. This is a substantive historical observation of Indigenous use and the reported effects of a DMT-containing snuff.",
+    "textSource": {
+      "url": "https://archive.org/details/travelsresearche00humb_1",
+      "kind": "internet-archive",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: fair. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "us-pd-books:travelsresearche00humb_1",
+      "decision": "add",
+      "decided_at": "2026-10-16T21:20:19.636Z",
+      "why": [],
+      "reasons": [
+        "bad_ocr"
+      ],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "US-PD-Books",
+      "identifier": "travelsresearche00humb_1_11",
+      "archive_fit": 5,
+      "kind": "ethnographic_observation",
+      "scan_excerpt": "hamlet is inhabited by the Otomacs, one of the rudest of the American tribes. These Indians swallow quantities of earth for the purpose of allaying hunger. When the waters are low they live on fish and turtles; but when the rivers swell, and it becomes difficult to procure that food, they eat daily a large portion of clay. The travellers found in taeir huts heaps of it in the form of balls, piled up in pyramids three or four feet high. This substance is fine and unctuous, of a yellowish-gray colour, containing silica and alumina, with three or four per cent. of lime. Being a restless and turbulent people, with unbridled pas- sions and excessively given to intoxication, the little village of Uruana is more difficult to govern than any of the other missions. By inhaling at the nose wn 4 the powder obtained from the pods of the Acacia niopo they throw themselves into a state of intoxi- cation bordering on madness, that lasts several days, . during which dreadful murders are committed. The - a a ci PROGRESS DOWN THE ORINOCO. 945 most vindictive cover the nail of the thumb with the curare poison, the slightest scratch being thus suffi- cient to produce death. When this crime is per- petrated at night they throw the body into the river. “Every time,” said the monk, “that I see the wo- men fetch water from a part of the shore to which they do not usually go for it, 1 suspect that a murder has been committed in my mission.” __ On the 7th June the travellers took leave of Father Ramon Bueno, whom Humboldt eulogizes as. the only one of ten missionaries of Guiana whom they had seen who appeared to be attentive to any thing that regarded the natives."
+    }
+  }
+}

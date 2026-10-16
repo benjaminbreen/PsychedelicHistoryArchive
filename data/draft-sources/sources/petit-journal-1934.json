@@ -1,0 +1,61 @@
+{
+  "slug": "petit-journal-1934",
+  "title": "Le Petit journal",
+  "author": "Unknown",
+  "year": 1934,
+  "displayDate": "1934",
+  "type": "Newspaper Article",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "To be determined",
+  "language": "French",
+  "substances": [
+    "Peyote"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "A 1934 French newspaper advertisement promotes Peyote-Tramni tablets as a remedy for nervousness, depression, and neurasthenia, promising euphoria, well-being, and heightened vitality. Its claims make this a useful example of peyote’s commercial circulation in France.",
+  "excerpt": "POUR 20 FRANCS Vous aurez des Dragées au PeyoteTramni agréables, faciles à prendre èt en peu de temps vous obtiendrez un système nerveux bien équilibré qui vous donnera là joie de -, vivre une vie calme et saine.",
+  "citation": "*Le Petit journal*, 1934, French-PD-Newspapers (Common Corpus) bpt6k633590d_4.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "https://gallica.bnf.fr/ark:/12148/bpt6k633590d",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-16",
+    "bucket": "corpus-scan-review",
+    "rationale": "A 1934 French newspaper advertisement promotes Peyote-Tramni tablets as a remedy for nervousness, depression, and neurasthenia, promising euphoria, well-being, and heightened vitality. Its claims make this a useful example of peyote’s commercial circulation in France.",
+    "textSource": {
+      "url": "https://gallica.bnf.fr/ark:/12148/bpt6k633590d",
+      "kind": "gallica",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: fair. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "french-pd-newspapers:bpt6k633590d",
+      "decision": "add",
+      "decided_at": "2026-10-16T21:38:38.958Z",
+      "why": [],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "French-PD-Newspapers",
+      "identifier": "bpt6k633590d_4",
+      "archive_fit": 4,
+      "kind": "commercial_or_advertisement",
+      "scan_excerpt": "giène mentale pour le bonheur de l'hu manité souffrante. Ici, le professeur A. Lapôtre me fait lire les éloges des docteurs R. Jean et J. Joly sur les guérlsons qu'il a obtenues par la suggestion, ainsi que les nombreuses let tres de sa clientèle. Et Je quittai ce sa vant, fortement convaincu de l'efficacité de sa science. A. Lapôtre, directeur de l'Ecole prati que de suggestion, 92, boulevard Diderot, Paris. Téléphone : Dorlan 47-72. POUR 20 FRANCS Vous aurez des Dragées au PeyoteTramni agréables, faciles à prendre èt en peu de temps vous obtiendrez un système nerveux bien équilibré qui vous donnera là joie de -, vivre une vie calme et saine. Nerveux, déprimés, neurasthéniques I prenez du PeyoteTramni qui est la véritable, sève de votre vie et dont l'action à la fois toni que et sédative sur toutes vos cellules nerveuses semble tenir du miracle ! Une cure de Peyote-Tramni provoque une exaltation de toutes les facultés une prodigieuse sensation de bien-être, de \"plénitude et de. vitalité débordante qui efface toute trace de fatigue et sou lève l'homme au-dessus de lui-même. Peyote-Tramni ne donne pas decoup.de fouet et n'a rien de commun avec ces excitants traditionnels qui font souvent payer leur dopping un peu cher. Labor. 5, pce Blanche, Paris et ttes pharm. 20 ir."
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "catalogue-plantes-naturelles-cette-province-celles",
+  "title": "Catalogue des plantes naturelles à cette province , & de celles qu'on y cultive le plus communément, avec l'indication du sol où elles croissent, du temps de leur floraison, & de la couleur de leurs fleurs ; ouvrage rédigé pour servir aux cours publics de l'Académie de Dijon. Première [-seconde] partie.. Partie 2",
+  "author": "Unknown",
+  "year": null,
+  "displayDate": "Undated",
+  "type": "Book",
+  "medium": "Text",
+  "era": "",
+  "region": "To be determined",
+  "language": "French",
+  "substances": [
+    "Amanita muscaria"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "A French botanical catalogue entry describes fly agaric as poisonous and notes that people in Kamchatka make an intoxicating drink from it, alongside brief medicinal claims. The cultural-use mention is relevant but thin within a botanical reference work.",
+  "excerpt": "inn.",
+  "citation": "*Catalogue des plantes naturelles à cette province , & de celles qu'on y cultive le plus communément, avec l'indication du sol où elles croissent, du temps de leur floraison, & de la couleur de leurs fleurs ; ouvrage rédigé pour servir aux cours publics de l'Académie de Dijon. Première [-seconde] partie.. Partie 2*, n.d., French-PD-Books (Common Corpus) bpt6k6529080s_8.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "https://gallica.bnf.fr/ark:/12148/bpt6k6529080s",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-16",
+    "bucket": "corpus-scan-review",
+    "rationale": "A French botanical catalogue entry describes fly agaric as poisonous and notes that people in Kamchatka make an intoxicating drink from it, alongside brief medicinal claims. The cultural-use mention is relevant but thin within a botanical reference work.",
+    "textSource": {
+      "url": "https://gallica.bnf.fr/ark:/12148/bpt6k6529080s",
+      "kind": "gallica",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: good. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "french-pd-books:bpt6k6529080s",
+      "decision": "add",
+      "decided_at": "2026-10-16T21:22:04.169Z",
+      "why": [],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "French-PD-Books",
+      "identifier": "bpt6k6529080s_8",
+      "archive_fit": 3,
+      "kind": "medical_or_scientific",
+      "scan_excerpt": "Linn. Bolet couleur de feu, ou Amadouvier. Après avoir enlevé l'écorce & la partie la plus extérieure de ce Bolet, on le fait cuire dans une lessive de cendres, ensuite on le bat & on le séche : c'est la préparation de l'amadou. Il faut le choisir jeune; car en vieillissant, il devient aussi dur que le bois. La Chirurgie fait un grand usage de cette plante, connue plus communément sous le nom d'Agaric : on se contente de la battre à coups de marteau, après l'avoir voir dépouillée de son écorce, & de la faire sécher sans la lessiver. On préfère, celle qui croît sur le Chêne, & qui conséquemment semblerait devoir être astringente : on croit cependant qu'elle n'agit que par la compression que plusieurs couches, mises l'une sur l'autre, produisent sur l'arête ; elle réussit néanmoins dans les hémorrhagies du nez. On se sert encore de cet Agaric pour la teinture. Les Lapons le substituent au Moxa des Chinois, pour émousser les parties affectées de rhumatisme & de goutte. AGARICUS lenticularis. Linn. Agaric chanterelle, Gérylle. Il est d'une odeur & d'une saveur assez agréable, cependant un peu acre. Il paraît que l'on peut, sans crainte, le manger cuit dans du bouillon de viande. AGARICUS muscarius. Linn. Agaric moucheté. Ce Champignon est très-venimeux pour les hommes, & même pour les animaux, quoiqu'il paraisse plutôt jeter les mouches dans la stupeur, que les faire périr. Le principal remède est d'abord l'émétique, & surtout le vitriol blanc, ensuite, à ce qu'on prétend, l'éther. Malgré ses qualités pernicieuses, on en fait, dans le Kamtchatka, une liqueur enivrante. M. Whiffing l'a fait prendre intérieurement séché & réduit en poudre, à la dose d'un scrupule, contre les goitres, la paralysie, quelques tumeurs encystées, un ulcère, où cette plante paraît avoir eu quelque succès. Tous"
+    }
+  }
+}

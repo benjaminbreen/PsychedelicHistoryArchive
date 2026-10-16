@@ -1,0 +1,66 @@
+{
+  "slug": "saltus-pomps-satan-1907",
+  "title": "The pomps of Satan",
+  "author": "Saltus, Edgar",
+  "year": 1907,
+  "displayDate": "1907",
+  "type": "Book",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "To be determined",
+  "language": "English",
+  "substances": [
+    "Hashish",
+    "Opium",
+    "Peyote"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "Edgar Saltus’s 1907 essay discusses drug-induced visions, contrasting De Quincey’s laudanum hallucinations with hashish and mescal. Its account of mescal among the Tarahumari—described as a sacred plant used in rites to bring visions—is a substantive, if partly second-hand, cultural lead.",
+  "excerpt": "In addition to haschish and opium other ladders have been used.",
+  "citation": "Saltus, Edgar, *The pomps of Satan*, 1907, English-PD (Common Corpus) cu31924022254621_3.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "https://archive.org/details/cu31924022254621",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-16",
+    "bucket": "corpus-scan-review",
+    "rationale": "Edgar Saltus’s 1907 essay discusses drug-induced visions, contrasting De Quincey’s laudanum hallucinations with hashish and mescal. Its account of mescal among the Tarahumari—described as a sacred plant used in rites to bring visions—is a substantive, if partly second-hand, cultural lead.",
+    "textSource": {
+      "url": "https://archive.org/details/cu31924022254621",
+      "kind": "internet-archive",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: fair. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "canonical: De Quincey, Confessions of an English Opium-Eater",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "english-pd:cu31924022254621",
+      "decision": "add",
+      "decided_at": "2026-10-16T12:16:20.364Z",
+      "why": [
+        "ethnographic",
+        "literary"
+      ],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "English-PD",
+      "identifier": "cu31924022254621_3",
+      "archive_fit": 4,
+      "kind": "literary",
+      "scan_excerpt": "recitals of the genesis and metamorphosis of the supernal, the chronicles of the forgotten relations of nature and man. Another was De Quincey. In the hallucinations of the glass of \" laudanum negus, warm, without sugar,\" which he used for ascent, there were infinite cavalcades, the undulations of tumults, the catas- [86] THE QUEST OF PARADISE trophes of mighty dramas, choruses of passion, trep- idations of innumerable fugitives, tempests of fea- tures, forms, and farewells, shuttled by sudden lambiencies, by the consonance of citterns and clavichords, by iEolian intonations, by revelations of power and beauty, by pomps and glories, until a vault, opening in the zenith of the far blue sky, showed a shaft of light that ran up for ever through millennia, through aeons ; and up that shaft his spirit mounted, mounted ever farther yet, until peace slept upon him as dawn upon the sea. In addition to haschish and opium other ladders have been used. Among them mescal is citable — not the agave preparation, but a plant which yields a substance brown and bitter, and of which the effects resemble Indian hemp. Mescal is much' in vogue among the Tarahumari, a tribe of Mexican Indians, to whom the plant is a god, approachable only after fastidious rites, the body perfumed with cophal, the heart entirely de- vout. And no wonder. For, properly placated, the god conducts the worshipper to a series of visions in which he is beckoned into Paradise and then shown out — provided he has absorbed the proper dose. That dose we have personally lacked the oppor- tunity to absorb, but if we may believe everything we hear — and we are always most anxious to — [87] THE POMPS OF SATAN Mr Havelock Ellis has. With it he encountered a vast field of"
+    }
+  }
+}
