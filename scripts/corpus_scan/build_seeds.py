@@ -186,8 +186,9 @@ def junk_seeds(runs: list[str], decisions: Path, digit_frac: float, limit: int) 
     labelled, heuristic = [], []
     llm_path = REPO / "data" / "corpus-scan" / "llm.jsonl"
     if llm_path.exists():
-        bad = {r["candidate_id"] for r in read_jsonl(llm_path)
-               if r["llm"].get("kind") in JUNK_KINDS and (r["llm"].get("archive_fit") or 5) <= 2}
+        latest = {r["candidate_id"]: r["llm"] for r in read_jsonl(llm_path)}  # latest label wins
+        bad = {k for k, llm in latest.items()
+               if llm.get("kind") in JUNK_KINDS and (llm.get("archive_fit") or 5) <= 2}
         for pool in sorted((REPO / "data" / "corpus-scan" / "pool").glob("*.jsonl.gz")):
             for c in read_jsonl(pool):
                 if c["candidate_id"] in bad and c.get("excerpts"):

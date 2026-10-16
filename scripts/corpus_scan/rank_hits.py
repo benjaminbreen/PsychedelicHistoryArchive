@@ -31,7 +31,9 @@ title/canonical check plus an embedding check: a window at least
 Writes:
   data/corpus-scan/pool/<batch>.jsonl.gz      every scored candidate, best first,
                                               plus the hit_id of its embedding window
-  data/corpus-scan/candidates/<batch>/        the review batch (candidates.write_batch)
+  data/corpus-scan/candidates/<batch>/        the review batch (build_queue below, then
+                                              candidates.write_batch); Luna fit <= 2 cards
+                                              are kept out of the exploit lane
 
   python rank_hits.py /tmp/cs-local --batch local-embed-2026-10-16 --n 100
 """
@@ -234,6 +236,63 @@ def set_priority(c: dict) -> None:
     s["priority"] = round(p * s["novelty"] ** 0.5, 4)
 
 
+def luna_skip(c: dict) -> bool:
+    """Luna rated it archive_fit <= 2: kept out of the exploit lane by default."""
+    fit = (c.get("llm") or {}).get("archive_fit")
+    return fit is not None and fit <= 2
+
+
+def build_queue(cands: list[dict], decisions: dict[str, dict], n: int = 100, explore_frac: float = 0.2,
+                seed: int = 1) -> list[dict]:
+    """candidates.build_queue, except that Luna fit <= 2 cards skip the exploit lane.
+
+    Exploit: the highest-priority undecided cards that Luna did not rate <= 2
+    (fit <= 2 cards fill in only if nothing else is left). Explore: the same
+    stratified draw as candidates.build_queue (under-reviewed language x
+    decade x substance strata first) from the middle of the ranking, i.e.
+    after the exploit cards and above the bottom 20%, plus every fit <= 2 card
+    wherever it ranks, so the screen's rejections are still spot-checked.
+    """
+    import collections
+    import random
+
+    pool = sorted((c for c in cands if c["candidate_id"] not in decisions), key=lambda c: -c["scores"]["priority"])
+    n_explore = int(round(n * explore_frac))
+    ok = [c for c in pool if not luna_skip(c)]
+    exploit = ok[: n - n_explore]
+    for c in exploit:
+        c["lane"], c["lane_reason"] = "exploit", "top priority" if c["scores"].get("model_p") is None else "top model score"
+    if len(exploit) < n - n_explore:
+        for c in [c for c in pool if luna_skip(c)][: n - n_explore - len(exploit)]:
+            c["lane"], c["lane_reason"] = "exploit", "pool exhausted: Luna fit <= 2"
+            exploit.append(c)
+    taken = {c["candidate_id"] for c in exploit}
+    cutoff = max(len(exploit) + 1, int(len(pool) * 0.8))
+    middle = [c for i, c in enumerate(pool) if c["candidate_id"] not in taken and (i < cutoff or luna_skip(c))]
+    seen = collections.Counter(C.stratum(d["snapshot"]) for d in decisions.values()
+                               if "snapshot" in d and "terms" in d["snapshot"])
+    rnd = random.Random(seed)
+    rnd.shuffle(middle)
+    by_stratum = collections.defaultdict(list)
+    for c in middle:
+        by_stratum[C.stratum(c)].append(c)
+    explore = []
+    while len(explore) < n_explore and any(by_stratum.values()):
+        for key in sorted((k for k in by_stratum if by_stratum[k]), key=lambda k: (seen[k], rnd.random())):
+            c = by_stratum[key].pop()
+            c["lane"] = "explore"
+            c["lane_reason"] = f"under-reviewed: {key[0]}, {key[1]}, {key[2]}" + ("; Luna fit <= 2" if luna_skip(c) else "")
+            explore.append(c)
+            seen[key] += 1
+            if len(explore) >= n_explore:
+                break
+    queue = exploit + explore
+    rnd.shuffle(queue)  # don't let position reveal the lane
+    for i, c in enumerate(queue, 1):
+        c["rank"] = i
+    return queue
+
+
 def score_candidates(runs: list[Path], emb_dirs: list[Path], seed_dir: Path, *, k: int = 5, junk_k: int = 3,
                      in_archive_sim: float = 0.92, junk_mode: str = "hinge") -> tuple[list[dict], np.ndarray]:
     """Build and score candidates. Returns (candidates, embedding matrix aligned to them)."""
@@ -333,7 +392,7 @@ def main() -> int:
           f"{sum(c['llm'] is not None for c in cands)} with LLM labels, {n_corr} with reviewer year corrections")
     if not args.no_batch:
         decisions = live_decisions()
-        queue = C.build_queue(cands, decisions, n=args.n, explore_frac=args.explore_frac)
+        queue = build_queue(cands, decisions, n=args.n, explore_frac=args.explore_frac)
         out = C.write_batch(args.batch, queue, {
             "source_runs": [str(r) for r in args.runs], "scoring": "embedding",
             "notes": f"relevance = top-5 seed cosine, junk contrast {args.junk_mode}; {len(cands):,} in pool {pool.name}"})

@@ -419,6 +419,13 @@ python scripts/corpus_scan/train_ranker.py $RUN --batch model-2 --n 50
     its fit levels.
 - `novelty` adds an embedding check: a window at least 0.92 similar to an
   archive seed is flagged `in_archive`.
+- Builds the queue with `rank_hits.build_queue`, which wraps
+  `candidates.build_queue`:
+  - Cards Luna rated archive_fit ≤ 2 are skipped in the exploit lane by
+    default. They fill it only if nothing else is left.
+  - They stay eligible for the 20% explore lane wherever they rank, so the
+    screen's rejections still get spot-checked.
+  - The latest label per candidate in `llm.jsonl` wins.
 - Writes the full scored pool to `data/corpus-scan/pool/<batch>.jsonl.gz`,
   which includes `nearest_seed` and `embedding_hit_id`. It also writes the
   batch through `candidates.write_batch`.

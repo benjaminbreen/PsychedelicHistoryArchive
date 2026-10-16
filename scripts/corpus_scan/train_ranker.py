@@ -22,7 +22,8 @@ Contract: docs/corpus-scan/candidate-review.md §2-§5. Steps:
    reasons.
 5. With at least --min-decisions decisions and a held-out AUC at least the
    formula's (or --force), set priority = model_p × novelty^0.5 and write the next batch (80% exploit,
-   20% stratified explore, via candidates.build_queue). Otherwise the
+   20% stratified explore, via rank_hits.build_queue, which keeps
+   Luna fit <= 2 cards out of the exploit lane). Otherwise the
    formula priority stays and the batch is still written.
 
 Writes data/corpus-scan/models/<stamp>.npz and <stamp>.json (the report), the
@@ -46,7 +47,7 @@ import numpy as np
 import candidates as C
 import ranker_model as M
 from postscan_common import embed_to_shards, load_shards
-from rank_hits import FIT_PRIOR, apply_year_corrections, fit_calibration, live_decisions, score_candidates, set_priority, write_pool
+from rank_hits import FIT_PRIOR, apply_year_corrections, build_queue, fit_calibration, live_decisions, score_candidates, set_priority, write_pool
 
 MODEL_ROOT = C.CANDIDATE_ROOT / "models"
 FEATS = M.SCORE_FEATURES + ["fit_prior", "has_llm"]
@@ -190,7 +191,7 @@ def main() -> int:
             c["scores"]["model_p"] = round(float(pi), 4)
         set_priority(c)
     pool = write_pool(args.batch, cands)
-    queue = C.build_queue(cands, decisions, n=args.n, explore_frac=args.explore_frac)
+    queue = build_queue(cands, decisions, n=args.n, explore_frac=args.explore_frac)
     out = C.write_batch(args.batch, queue, {
         "source_runs": [str(r) for r in args.runs], "scoring": "model" if use_model else "embedding",
         "model": f"{stamp}.npz", "notes": f"held-out AUC model {fmt(auc_model)} vs formula {fmt(auc_formula)} "
