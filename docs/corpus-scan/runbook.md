@@ -405,6 +405,18 @@ python scripts/corpus_scan/train_ranker.py $RUN --batch model-2 --n 50
     subtracting them also penalises "looks like an old scan".
 - `kind` and `feasibility` stay at their bootstrap values until a Luna label
   exists.
+- Priority aims to estimate P(add) × novelty^0.5.
+  - **Unlabelled cards:** the spec's formula.
+  - **Cards with a Luna label:** `fit_p^0.75 × (relevance × feasibility^0.3)^0.25`.
+    - `fit_p` is P(add | archive_fit). It starts from a prior: 0.02, 0.07,
+      0.25, 0.55 and 0.85 for fits 1 to 5.
+    - Ben's decisions then calibrate it: each prior value counts as 5
+      pseudo-decisions, and the result is kept non-decreasing in fit.
+    - Kind is not counted again, since the fit already reflects it.
+    - Relevance and feasibility break ties within a fit level.
+  - On Ben's v2 batch, the second fit-5 card (Sahagún) moved from 0.39 to 0.71,
+    joining the other fit-5 card at the top. No pair of cards was ordered against
+    its fit levels.
 - `novelty` adds an embedding check: a window at least 0.92 similar to an
   archive seed is flagged `in_archive`.
 - Writes the full scored pool to `data/corpus-scan/pool/<batch>.jsonl.gz`,
@@ -433,8 +445,14 @@ python scripts/corpus_scan/train_ranker.py $RUN --batch model-2 --n 50
   - add-rate by lane and by batch × lane
   - reject reasons and why tags
 - Saves `data/corpus-scan/models/<stamp>.npz` and `.json`.
-- Below 100 decisions it writes the batch with the formula priority and keeps
-  `model_p_shadow` for comparison. `--force` overrides this.
+- Features also include Luna's archive_fit, through the fixed prior map, plus
+  a has-label flag.
+- `model_p` replaces the formula only when two conditions hold: at least 100
+  decisions exist, and its held-out AUC is at least the formula's. `--force`
+  overrides this. Otherwise the batch uses the formula, and `model_p_shadow`
+  is kept for comparison.
+  - On noisy synthetic decisions driven by the fit alone, the formula won
+    (AUC 0.85 against 0.80 for the model), so this check matters.
 - Reviewer date corrections (`corrections.year`, from the D key) replace the
   catalogue and snapshot years for queue stratification, and are kept across
   later decisions. A reported wrong date never counts as a label. The report

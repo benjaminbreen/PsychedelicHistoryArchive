@@ -18,12 +18,15 @@ AUC was 0.666 for sim_seed alone, 0.550 for subtract and 0.671 for hinge;
 bootstrap relevance was 0.610.
 
 kind and feasibility stay bootstrap until screen_hits.py labels a candidate
-(labels are read from data/corpus-scan/llm.jsonl). novelty is the bootstrap
+(labels are read from data/corpus-scan/llm.jsonl). A labelled candidate's
+archive_fit then becomes the main evidence: see set_priority, where it is
+mapped to P(add) and calibrated on Ben's decisions (fit_calibration). novelty is the bootstrap
 title/canonical check plus an embedding check: a window at least
 --in-archive-sim similar to one archive seed is flagged in_archive.
 
-  priority = relevance × kind^0.7 × novelty^0.5 × feasibility^0.3
-  (with a model from train_ranker.py: priority = model_p × novelty^0.5)
+  priority = relevance × kind^0.7 × novelty^0.5 × feasibility^0.3       (unlabelled)
+  priority = fit_p^0.75 × (relevance × feasibility^0.3)^0.25 × novelty^0.5  (Luna-labelled)
+  priority = model_p × novelty^0.5                         (with a model from train_ranker.py)
 
 Writes:
   data/corpus-scan/pool/<batch>.jsonl.gz      every scored candidate, best first,
@@ -175,17 +178,66 @@ def apply_llm(c: dict, llm: dict | None) -> None:
         s["kind"], s["feasibility"] = s["kind_bootstrap"], s["feasibility_bootstrap"]
 
 
+# P(add | Luna archive_fit): the prior, before Ben's decisions calibrate it (fit_calibration).
+# Roughly: a 5 is usually added, a 4 about half the time, a 3 seldom, 1-2 almost never.
+FIT_PRIOR = {1: 0.02, 2: 0.07, 3: 0.25, 4: 0.55, 5: 0.85}
+FIT_PRIOR_WEIGHT = 5.0   # pseudo-decisions behind each prior value
+FIT_EXP = 0.75           # weight of the fit evidence against the embedding/feasibility evidence
+_FIT_P: dict[int, float] | None = None
+
+
+def fit_calibration(root: Path = C.CANDIDATE_ROOT, verbose: bool = False) -> dict[int, float]:
+    """P(add | archive_fit), shrunk toward FIT_PRIOR, from decisions whose snapshot had a Luna label.
+
+    add = 1, maybe = 0.5, no = 0; each level is a Beta-style posterior mean with
+    FIT_PRIOR_WEIGHT pseudo-counts, then made non-decreasing in fit.
+    """
+    global _FIT_P
+    sums = {f: [0.0, 0] for f in FIT_PRIOR}
+    for d in live_decisions(root).values():
+        fit = ((d.get("snapshot") or {}).get("llm") or {}).get("archive_fit")
+        if fit in sums and d.get("decision") in ("add", "maybe", "no"):
+            sums[fit][0] += {"add": 1.0, "maybe": 0.5, "no": 0.0}[d["decision"]]
+            sums[fit][1] += 1
+    cal, running = {}, 0.0
+    for f in sorted(FIT_PRIOR):
+        y, n = sums[f]
+        running = max(running, (FIT_PRIOR[f] * FIT_PRIOR_WEIGHT + y) / (FIT_PRIOR_WEIGHT + n))
+        cal[f] = round(running, 4)
+    if verbose:
+        print("P(add | archive_fit): " + ", ".join(f"{f}: {cal[f]:.2f} (n={sums[f][1]})" for f in cal), flush=True)
+    _FIT_P = cal
+    return cal
+
+
 def set_priority(c: dict) -> None:
+    """priority ≈ P(add) × novelty^0.5 (novelty stays outside, candidate-review.md §2).
+
+    - model_p available (train_ranker.py): P(add) = model_p.
+    - Luna label: P(add) = fit_p^0.75 × (relevance × feasibility^0.3)^0.25, where fit_p is
+      the calibrated P(add | archive_fit). The fit is the direct judgement of the excerpt
+      and already accounts for kind, so `kind` is not counted twice; embedding relevance and
+      feasibility (OCR, source link, length) break ties within a fit level, and only an
+      extreme relevance gap can reorder adjacent fit levels.
+    - Otherwise the bootstrap formula: relevance × kind^0.7 × feasibility^0.3.
+    """
     s = c["scores"]
+    fit = (c.get("llm") or {}).get("archive_fit")
+    cal = _FIT_P if _FIT_P is not None else fit_calibration()
+    s["fit_p"] = cal.get(fit) if fit else None
     if s.get("model_p") is not None:
-        s["priority"] = round(s["model_p"] * s["novelty"] ** 0.5, 4)
+        p = s["model_p"]
+    elif s["fit_p"] is not None:
+        p = s["fit_p"] ** FIT_EXP * (s["relevance"] * s["feasibility"] ** 0.3) ** (1 - FIT_EXP)
     else:
-        s["priority"] = round(s["relevance"] * s["kind"] ** 0.7 * s["novelty"] ** 0.5 * s["feasibility"] ** 0.3, 4)
+        p = s["relevance"] * s["kind"] ** 0.7 * s["feasibility"] ** 0.3
+    s["priority"] = round(p * s["novelty"] ** 0.5, 4)
 
 
 def score_candidates(runs: list[Path], emb_dirs: list[Path], seed_dir: Path, *, k: int = 5, junk_k: int = 3,
                      in_archive_sim: float = 0.92, junk_mode: str = "hinge") -> tuple[list[dict], np.ndarray]:
     """Build and score candidates. Returns (candidates, embedding matrix aligned to them)."""
+    fit_calibration(verbose=True)
     cands = C.build_candidates(runs)
     pos, H = load_vectors(emb_dirs)
     S, J, seed_meta = load_seeds(seed_dir)

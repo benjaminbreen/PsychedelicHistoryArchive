@@ -13,14 +13,15 @@ Contract: docs/corpus-scan/candidate-review.md §2-§5. Steps:
    snapshot: the best excerpt is embedded (cached under
    data/corpus-scan/decision_emb/) and the snapshot scores are used.
 3. Fit a logistic regression (ranker_model.py) on a PCA projection of the
-   embedding plus relevance, kind and feasibility. Targets are add = 1,
+   embedding plus relevance, kind, feasibility and Luna's archive_fit
+   (with a has-label indicator). Targets are add = 1,
    maybe = 0.5, no = 0. Novelty is left out on purpose, so "already known" is
    never learned as "good".
 4. Report held-out AUC (5-fold, add vs no) next to the formula priority's
    AUC on the same rows, and add-rate by lane and batch, plus the reject
    reasons.
-5. With at least --min-decisions decisions (or --force), set
-   priority = model_p × novelty^0.5 and write the next batch (80% exploit,
+5. With at least --min-decisions decisions and a held-out AUC at least the
+   formula's (or --force), set priority = model_p × novelty^0.5 and write the next batch (80% exploit,
    20% stratified explore, via candidates.build_queue). Otherwise the
    formula priority stays and the batch is still written.
 
@@ -45,10 +46,18 @@ import numpy as np
 import candidates as C
 import ranker_model as M
 from postscan_common import embed_to_shards, load_shards
-from rank_hits import apply_year_corrections, live_decisions, score_candidates, set_priority, write_pool
+from rank_hits import FIT_PRIOR, apply_year_corrections, fit_calibration, live_decisions, score_candidates, set_priority, write_pool
 
 MODEL_ROOT = C.CANDIDATE_ROOT / "models"
-FEATS = M.SCORE_FEATURES
+FEATS = M.SCORE_FEATURES + ["fit_prior", "has_llm"]
+
+
+def features(scores: dict, llm: dict | None) -> list[float]:
+    """Score features plus Luna's archive_fit. The fit enters through the fixed FIT_PRIOR
+    map, not the calibration, so held-out AUC is not fitted to the labels it predicts."""
+    fit = (llm or {}).get("archive_fit")
+    base = [float(scores.get(f) if scores.get(f) is not None else 0.5) for f in M.SCORE_FEATURES]
+    return base + [FIT_PRIOR.get(fit, 0.0), 1.0 if fit else 0.0]
 
 
 def snapshot_vectors(decs: list[dict], cap: float) -> dict[str, np.ndarray]:
@@ -104,6 +113,9 @@ def main() -> int:
 
     emb_dirs = args.emb or [r / "emb" for r in args.runs]
     cands, V = score_candidates(args.runs, emb_dirs, args.seeds, junk_mode=args.junk_mode)
+    fit_calibration(args.decisions_root, verbose=True)  # P(add | fit) from these decisions
+    for c in cands:
+        set_priority(c)
     apply_year_corrections(cands, args.decisions_root)
     idx = {c["candidate_id"]: i for i, c in enumerate(cands)}
     decisions = live_decisions(args.decisions_root)
@@ -119,14 +131,15 @@ def main() -> int:
             continue
         if d["candidate_id"] in idx:
             i = idx[d["candidate_id"]]
-            vec, scores, src = V[i], cands[i]["scores"], "current"
+            vec, scores, llm, src = V[i], cands[i]["scores"], cands[i].get("llm"), "current"
         elif d["candidate_id"] in snap:
-            vec, scores, src = snap[d["candidate_id"]], (d.get("snapshot") or {}).get("scores") or {}, "snapshot"
+            sn = d.get("snapshot") or {}
+            vec, scores, llm, src = snap[d["candidate_id"]], sn.get("scores") or {}, sn.get("llm"), "snapshot"
         else:
             continue
         rows.append({**d, "_src": src, "_formula": scores.get("priority")})
         E.append(vec)
-        F.append([float(scores.get(f) if scores.get(f) is not None else 0.5) for f in FEATS])
+        F.append(features(scores, llm))
     if len(rows) < 10:
         raise SystemExit(f"only {len(rows)} usable decisions; need at least 10 to fit")
     E, F = np.vstack(E), np.array(F)
@@ -141,7 +154,8 @@ def main() -> int:
     auc_formula = M.auc(y[okf].astype(int), formula[okf])
     model = M.train(V, E, F, y, k=args.pca_k, l2=args.l2)
 
-    use_model = args.force or len(rows) >= args.min_decisions
+    beats = auc_model is not None and (auc_formula is None or auc_model >= auc_formula)
+    use_model = args.force or (len(rows) >= args.min_decisions and beats)
     reasons = collections.Counter(r for d in rows if d["decision"] == "no" for r in d.get("reasons") or ["(none)"])
     why = collections.Counter(w for d in rows if d["decision"] in ("add", "maybe") for w in d.get("why") or [])
     fmt = lambda a: "n/a" if a is None else f"{a:.3f}"
@@ -154,7 +168,7 @@ def main() -> int:
         f"reject reasons: {dict(reasons.most_common())}",
         "date reported wrong, by collection (metadata only; not a label):", *date_wrong_table(rows),
         f"why tags: {dict(why.most_common())}",
-        f"model_p {'ACTIVE' if use_model else f'not used yet (needs {args.min_decisions} decisions; --force to override)'}",
+        f"model_p {'ACTIVE' if use_model else 'not used: ' + ('held-out AUC below the formula' if len(rows) >= args.min_decisions else f'needs {args.min_decisions} decisions') + ' (--force to override)'}",
     ]
     print("\n".join(lines))
 
@@ -169,7 +183,7 @@ def main() -> int:
     if args.report_only:
         return 0
 
-    p = model.predict(V, np.array([[c["scores"][f] for f in FEATS] for c in cands]))
+    p = model.predict(V, np.array([features(c["scores"], c.get("llm")) for c in cands]))
     for c, pi in zip(cands, p):
         c["scores"]["model_p_shadow"] = round(float(pi), 4)
         if use_model:
