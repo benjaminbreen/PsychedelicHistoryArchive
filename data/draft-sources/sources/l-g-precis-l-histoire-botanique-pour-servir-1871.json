@@ -1,0 +1,62 @@
+{
+  "slug": "l-g-precis-l-histoire-botanique-pour-servir-1871",
+  "title": "Précis de l'histoire de la botanique pour servir de complément à l'étude du Règne végétal",
+  "author": "L. G",
+  "year": 1871,
+  "displayDate": "1871",
+  "type": "Book",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "To be determined",
+  "language": "French",
+  "substances": [
+    "Hashish"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "This 1871 French botanical history discusses hashish use among Muslims as a means of inducing pleasant, bizarre visions and recounts the legend of the Old Man of the Mountain using its vapors to show followers a fantastic paradise. The passage is brief and embedded in a broader account of ancient plant beliefs and fumigations, but gives a specific historical description of hashish’s visionary effects.",
+  "excerpt": "es Perses marièrent les mêmes croyances à leur propre religion, et les prêtres de ces deux nations, connus des Grecs sous le nom de mages (d'où est venu le nom de magicien), imposèrent à leur tour pour Asclepias acida, le Soma ou Hom des aryas de l'Hindoustan, une vénération qui bientôt se changea en adoration.",
+  "citation": "L. G, *Précis de l'histoire de la botanique pour servir de complément à l'étude du Règne végétal*, 1871, French-PD-diverse (Common Corpus) prcisdelhistoir00ggoog_1.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "https://archive.org/details/prcisdelhistoir00ggoog",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "needs-work",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-16",
+    "bucket": "corpus-scan-review",
+    "rationale": "Visionary cannabis (scope exception): kept in review because the passage describes a psychedelic-like state, not mere intoxication. Editor marked this maybe in corpus-scan review. This 1871 French botanical history discusses hashish use among Muslims as a means of inducing pleasant, bizarre visions and recounts the legend of the Old Man of the Mountain using its vapors to show followers a fantastic paradise. The passage is brief and embedded in a broader account of ancient plant beliefs and fumigations, but gives a specific historical description of hashish’s visionary effects.",
+    "textSource": {
+      "url": "https://archive.org/details/prcisdelhistoir00ggoog",
+      "kind": "internet-archive",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: good. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "french-pd-diverse:prcisdelhistoir00ggoog",
+      "decision": "maybe",
+      "decided_at": "2026-10-16T12:09:30.966Z",
+      "why": [],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "French-PD-diverse",
+      "identifier": "prcisdelhistoir00ggoog_1",
+      "archive_fit": 3,
+      "kind": "medical_or_scientific",
+      "scan_excerpt": "les Perses marièrent les mêmes croyances à leur propre religion, et les prêtres de ces deux nations, connus des Grecs sous le nom de mages (d'où est venu le nom de magicien), imposèrent à leur tour pour Asclepias acida, le Soma ou Hom des aryas de l'Hindoustan, une vénération qui bientôt se changea en adoration. Les mages de Perse donnèrent, en effet, cette plante comme une nourriture céleste, et finirent par la personnifier et la diviniser. Pline l'Ancien indique plusieurs autres plantes, dont il est difficile de retrouver la synonymie exacte, comme ayant été en grande estime et l'objet de beaucoup de superstitions dans l'Assyrie, la Babylonie et la Perse. À la faveur des unes, on pouvait se rendre invisible ; à la faveur des autres, revêtir des formes étranges. Il en était aussi que l'on employait pour deviner et prophétiser. Comme ces plantes étaient généralement douées de propriétés enchantantes, narcotiques, aromatiques, et quelquefois même réellement médicales, il n'était pas surprenant qu'elles produisissent des hallucinations sur des imaginations déjà prédisposées par des cérémonies étranges, surtout quand on les employait en breuvage, ou quand, les brûlant, on respirait leur fumée étourdissante. L'usage du haschisch (préparation faite avec les feuilles et les fleurs du chanvre indien) chez les musulmans, destiné à donner, dans une somnolence hallucinée, des visions bizarres et agréables, n'est autre probablement qu'un héritage des anciens peuples orientaux; et, du temps des croisades, c'était à l'aide de ses vapeurs que le Vieux de la Montagne faisait entrevoir à ses prosélytes un paradis fantastique. Les fumigations ont été l'un des grands moyens employés par les pythonisses, en vénération même chez les peuples les plus éclairés de l'antiquité, tels que les Grecs, et ne devaient pas être négligées par les magiciens et les sorciers des époques byzantine et romaine, du moyen âge,"
+    },
+    "scopeException": "visionary-cannabis"
+  }
+}

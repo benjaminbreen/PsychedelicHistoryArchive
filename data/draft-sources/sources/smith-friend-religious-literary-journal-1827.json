@@ -1,0 +1,63 @@
+{
+  "slug": "smith-friend-religious-literary-journal-1827",
+  "title": "The Friend : a religious and literary journal",
+  "author": "Smith, Robert",
+  "year": 1827,
+  "displayDate": "1827",
+  "type": "Book",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "To be determined",
+  "language": "English",
+  "substances": [
+    "Cannabis",
+    "Hashish"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "A 1827 journal passage explains hemp cultivation in India, distinguishing churrus resin from bhang leaves and twigs and describing their use as narcotics—churrus swallowed and bhang smoked. It also makes a broad claim about the prevalence of use in Asia and Africa; useful as a contemporary account of circulation and cultivation, though brief and unspecific about experiences.",
+  "excerpt": "re superior to either.",
+  "citation": "Smith, Robert, *The Friend : a religious and literary journal*, 1827, English-PD (Common Corpus) friendreligiousl185456smit_102.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "https://archive.org/details/friendreligiousl185456smit",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "needs-work",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-16",
+    "bucket": "corpus-scan-review",
+    "rationale": "Visionary cannabis (scope exception): kept in review because the passage describes a psychedelic-like state, not mere intoxication. Editor marked this maybe in corpus-scan review. A 1827 journal passage explains hemp cultivation in India, distinguishing churrus resin from bhang leaves and twigs and describing their use as narcotics—churrus swallowed and bhang smoked. It also makes a broad claim about the prevalence of use in Asia and Africa; useful as a contemporary account of circulation and cultivation, though brief and unspecific about experiences.",
+    "textSource": {
+      "url": "https://archive.org/details/friendreligiousl185456smit",
+      "kind": "internet-archive",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: fair. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "english-pd:friendreligiousl185456smit",
+      "decision": "maybe",
+      "decided_at": "2026-10-16T12:13:49.244Z",
+      "why": [],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "English-PD",
+      "identifier": "friendreligiousl185456smit_102",
+      "archive_fit": 4,
+      "kind": "ethnographic_observation",
+      "scan_excerpt": "are superior to either. It will be sufficient for our present purpose if we briefly describe the most important of the fibres wc already receive from India, and of the other fibrous materials which ludia might send us, and state the circumstances which render a large importation of all of them either possible or desirable. But first it may interest the reader to be in- formed why hemp fibre should be comparatively little grown, and should not be at all imported from India, although the true hemp plant is de- scribed as a native of that country. There appear to be two reasons for this apparent anomaly. The first is, that the low country of India is so rich in other fibres which are either more rapid in their growth, more easily prepared, more beautifid to the eye, or more durable, that the natives for home use prefer them to hemp. The second is, that hemp is cultivated largely and widely for the sake of the churrus and hhanr/ which it yields. The churrus is the well-known resin of hemp, or the inspissated juice of the leaves obtained from the plant by rubbing between the hands, and bhang is the name usually given to the dried leaves and twigs. Both of these are extensively used as soothing and exhilarating narcotics. The former is swallowed in the form of pills or boluses, the latter is smoked either alone or mixed with a certain proportion of tobacco. It will give an idea of the extent to which the hemp plant is cultivated for this luxurious purpose if we add from another authority that the use of it, as a narcotic, prevails in Asia and Africa among not less than two or three hundred millions of men ! But what becomes of the"
+    },
+    "scopeException": "visionary-cannabis"
+  }
+}

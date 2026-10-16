@@ -20,8 +20,10 @@ validate_draft_sources.mjs flags them.
 Re-running is safe. It only rewrites drafts it created itself
 (draft.proposedBy == "corpus-scan"), and records every nomination in
 data/corpus-scan/nominations.jsonl. Candidates whose only substances are out of
-scope for drafts (cannabis, opium and so on, per the validator) are not written;
-they are listed in nominations-held.jsonl for an editor to decide.
+scope for drafts (opium, coca and so on, per the validator) are not written;
+they are listed in nominations-held.jsonl for an editor to decide. Cannabis-only
+candidates are written with draft.scopeException = "visionary-cannabis" (README
+scope rule), because the scan only admits cannabis near visionary language.
 """
 
 from __future__ import annotations
@@ -38,6 +40,7 @@ import candidates as C
 
 DRAFT_DIR = C.REPO / "data" / "draft-sources" / "sources"
 LLM_PATH = C.CANDIDATE_ROOT / "llm.jsonl"
+CANNABIS = re.compile(r"^(?:cannabis|hashish|hemp|bhang|ganja|charas|marijuana|marihuana)", re.I)
 OUT_OF_SCOPE = re.compile(r"^(?:cannabis|hashish|hemp|bhang|ganja|charas|marijuana|laudanum|opium|morphine|coca|cocaine|alcohol|tobacco)", re.I)
 TPL = "To be determined"
 SUBSTANCE_NAMES = {"peyote": "Peyote", "mescal": "Peyote", "mescal buttons": "Peyote", "anhalonium": "Peyote", "mescaline": "Mescaline",
@@ -193,7 +196,14 @@ def main() -> None:
         if d["decision"] not in ("add", "maybe") or "snapshot" not in d:
             continue
         draft = build(d, labels.get(cid), today)
-        if not draft["substances"] or all(OUT_OF_SCOPE.match(s) for s in draft["substances"]):
+        subs = draft["substances"]
+        if subs and all(CANNABIS.match(s) for s in subs):
+            # Editors kept it, and the scan only admits cannabis near visionary language:
+            # the README's visionary-cannabis exception applies.
+            draft["draft"]["scopeException"] = "visionary-cannabis"
+            draft["draft"]["rationale"] = ("Visionary cannabis (scope exception): kept in review because the passage describes "
+                                           "a psychedelic-like state, not mere intoxication. " + draft["draft"]["rationale"])
+        elif not subs or all(OUT_OF_SCOPE.match(s) for s in subs):
             held.append({"candidate_id": cid, "decision": d["decision"], "title": draft["title"], "substances": draft["substances"],
                          "why_held": "only substances that draft-sources treats as out of scope on their own (see README scope rule)"})
             continue
