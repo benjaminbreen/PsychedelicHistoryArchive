@@ -25,15 +25,16 @@ Files:
 
 ## 1. How the filter works
 
-- **Scope (Ben, 2026-10-16).** Opium, kava, coca/cocaine and generic
-  intoxication are not searched at all: they are not psychedelic, and in the
+- **Scope (Ben, 2026-10-16).** Opium, kava, coca/cocaine, generic
+  intoxication, Vedic soma/haoma, and datura/Jimson weed and other solanaceae
+  are not searched at all: they are not psychedelic, and in the
   first review they produced mostly passing mentions. Cannabis counts only when
   the passage evokes a psychedelic-like state. A mention such as "inebriated by
   hashish" is not a hit.
 - **Strong terms** always count as a hit. Examples: peyote/peyotl/Anhalonium,
   mescaline, ayahuasca/yagé/caapi, harmaline, cohoba/yopo, teonanácatl,
   psilocybin, fly agaric/Fliegenpilz, ololiuqui, LSD-25/lysergic,
-  psychotomimetic, MKULTRA, ibogaine, Jimson weed/toloache, haoma,
+  psychotomimetic, MKULTRA, ibogaine,
   "anaesthetic revelation", éthéromanie, and Davy-style phrasing such as
   "breathed the nitrous oxide".
 - **Weak terms** count only when a rescuing term appears within about 60 words.
@@ -42,7 +43,7 @@ Files:
     marijuana, hemp) is rescued only by visionary language: visions,
     hallucination, ecstasy, depersonalisation, time distortion. Dreams,
     exhilaration and intoxication do not count.
-  - **Generic plant words** (mushroom, datura, soma, ergot, mescal, Banisteria)
+  - **Generic plant words** (mushroom, ergot, mescal, Banisteria)
     are rescued by a strong term or visionary language.
   - **Nitrous oxide, laughing gas and "ether inhalation"** (under, inhaled or
     took ether) are also rescued by dreams and exhilaration.
@@ -51,7 +52,7 @@ Files:
     noise does not.
 - **`needs = "strong"`.** These terms are rescued only by a strong term:
   - bare "ether", which is mostly poetry and physics
-  - chloroform, belladonna/henbane and snuff, which are routine medicine
+  - chloroform and snuff, which are routine medicine
 - **Context terms** never count on their own. They cover visions/hallucination,
   ecstasy/mystical states, altered perception/self, exhilaration,
   dreams/reverie, and drug vocabulary (which rescues LSD only).
@@ -528,7 +529,7 @@ enter the normal draft workflow: `data/draft-sources/` →
   ```
 
 - To demote a noisy term, move it to `tier = "weak"` and add an unambiguous
-  compound form to the strong entry. Kava, datura and nitrous oxide all work
+  compound form to the strong entry. Nitrous oxide works
   this way now.
 - Prefer a negative lookahead for known homographs, such as "mescaline silk"
   and "Mariguana Island", over deleting the term.

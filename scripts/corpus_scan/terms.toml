@@ -320,49 +320,6 @@ group = "other-plants"
 patterns = ['\bibog[aä]\b', '\bibogain[ea]?\b', '\btabernanth[ea]\b', '\bbwiti\b']
 
 [[term]]
-label = "datura"
-tier = "strong"
-group = "solanaceae"
-patterns = [
-  '\bj[i1l]ms[o0]n[- ]?weed\b', '\bjamestown[- ]?weed\b', '\btoloache\b', '\btoloatzin\b',
-  '\bfloripondio\b', '\bborrachero\b', '\bsolanum maniacum\b', '\bdhatoora\b',
-  '\bdatura[- ](?:poison\w*|intoxicat\w*|vision\w*|deliri\w*|seeds? (?:in|into|with)|cult|drink)\b',
-]
-
-[[term]]
-label = "datura (ambiguous)"
-tier = "weak"
-rescued_by = ["strong", "visions/hallucinations", "ecstasy/mystical states", "altered perception/self"]
-group = "solanaceae"
-patterns = [   # Latin future participle "datura", OCR "datum"/"natura", asthma remedies, botany
-  '\bdatura\w*', '\bdhatura\b', '\bthorn[- ]?apple\b', '\bstechapfel\w*\b', '\bpomme[- ][eé]pineuse\b',
-  '\bbrugmansia\b', '\bestramonio\b', '\bestram[oô]nio\b', '\bstramonio\b',
-]
-
-[[term]]
-label = "stramonium/solanaceae (medical)"
-tier = "weak"
-needs = "strong"
-group = "solanaceae"
-patterns = [
-  '\bstram[o0]n[i1l]um\b', '\bbelladonna\b', '\bhyoscyam\w*', '\bhenbane\b', '\bbilsenkraut\b', '\bjusquiame\b',
-  '\bmandrag[o0]r\w*', '\bmandrake\b', '\balraune\b', '\bscopolamin\w*', '\bhyoscin\w*', '\batropin\w*', '\btwilight sleep\b',
-]
-
-[[term]]
-label = "soma/haoma"
-tier = "strong"
-group = "other-plants"
-patterns = ['\bhaoma\b', '\bhom[ae]? juice\b', '\bsoma[- ](?:juice|plant|drink|sacrifice|ritual|cult|libation)\b', '\bsoma[- ]pflanze\b', '\bsomatrank\b']
-
-[[term]]
-label = "soma (ambiguous)"
-tier = "weak"
-needs = "strong"
-group = "other-plants"
-patterns = ['\bsoma\b']
-
-[[term]]
 label = "ergot"
 tier = "weak"
 rescued_by = ["strong", "visions/hallucinations", "ecstasy/mystical states", "altered perception/self"]
@@ -462,8 +419,10 @@ group = "nitrous-ether"
 patterns = ['\bchloroform\w*', '\bchloral\b', '\ban(?:a|ae|æ)?sthe[st]\w*', '\bnarcos[ei]\w*']
 
 # ---------------------------------------------------------------------------
-# (Opium, kava, coca and generic intoxication were removed on 2026-10-16:
-#  not psychedelic, and they flooded review with passing mentions.)
+# (Removed on 2026-10-16 as out of scope for the archive: opium, kava, coca,
+#  generic intoxication, Vedic soma/haoma, and datura / Jimson weed / other
+#  solanaceae. They are not psychedelic in the archive's sense, and they
+#  flooded review with passing mentions.)
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
