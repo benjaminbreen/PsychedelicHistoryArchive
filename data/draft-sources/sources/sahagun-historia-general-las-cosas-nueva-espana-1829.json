@@ -1,0 +1,62 @@
+{
+  "slug": "sahagun-historia-general-las-cosas-nueva-espana-1829",
+  "title": "Historia general de las cosas de Nueva España, : que en doce libros y dos volumenes escribió,",
+  "author": "Sahagún, Bernardino de",
+  "year": 1829,
+  "displayDate": "1829",
+  "type": "Book",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "To be determined",
+  "language": "Spanish",
+  "substances": [
+    "Peyote",
+    "Psilocybin mushrooms"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "Bernardino de Sahagún’s account, in an 1829 edition of his work on Indigenous peoples of New Spain, describes the use of nanacatl mushrooms as an intoxicant: people gathered to dance and sing through the night, then wept the following day. The passage also mentions peyotl, making this a substantive early account of Indigenous psychoactive use.",
+  "excerpt": "… Tenían así mismo gran conocimiento de yerbas y raíces, y conocían sus calidades y virtudes; ellos mismos descubrieron, y usaron primero la raíz que llama peotl, y los que la comían y tomaban, la usaban en lugar de vino, y lo mismo hacían de los que llaman nanacatl que son los hongos malos que emborrachan también como el vino; y se juntaban en un llano después de haberlo bebido, donde bailaban y cantaban de noche y de día a su placer, y esto el primer día, porque el siguiente, lloraban …",
+  "citation": "Sahagún, Bernardino de, *Historia general de las cosas de Nueva España, : que en doce libros y dos volumenes escribió,*, 1829, Spanish-PD-Books (Common Corpus) historiagenerald03saha_5.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "https://archive.org/details/historiagenerald03saha",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-17",
+    "bucket": "corpus-scan-review",
+    "rationale": "Bernardino de Sahagún’s account, in an 1829 edition of his work on Indigenous peoples of New Spain, describes the use of nanacatl mushrooms as an intoxicant: people gathered to dance and sing through the night, then wept the following day. The passage also mentions peyotl, making this a substantive early account of Indigenous psychoactive use.",
+    "textSource": {
+      "url": "https://archive.org/details/historiagenerald03saha",
+      "kind": "internet-archive",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: fair. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "spanish-pd-books:historiagenerald03saha",
+      "decision": "add",
+      "decided_at": "2026-10-16T21:38:51.701Z",
+      "why": [],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "Spanish-PD-Books",
+      "identifier": "historiagenerald03saha_5",
+      "archive_fit": 5,
+      "kind": "ethnographic_observation",
+      "scan_excerpt": "de leones. La condición y calidad de estos tales Teuchihimecas, es que eran lapidarios, porque conocían y labraban los pedernales, y navajas para las puntas de las flechas. También traían espejos consigo, colgados en la cintura, y cuando caminaban iban en horden, siguiendo a la guía, el cual y los demás, llevaban cada uno, un espejo colgado de la cintura de las espaldas, en que se iban mirando, los que iban detrás. También labraban, y aderezaban muy bien las piedras azules, devastándolas que se llaman, en mexicano teoxiuitl, que son turquesas, y hacían de ellas joyas, cuentas, zarcillos y orejeras de muchas maneras. Tenían así mismo gran conocimiento de yerbas y raíces, y conocían sus calidades y virtudes; ellos mismos descubrieron, y usaron primero la raíz que llama peotl, y los que la comían y tomaban, la usaban en lugar de vino, y lo mismo hacían de los que llaman nanacatl que son los hongos malos que emborrachan también como el vino; y se juntaban en un llano después de haberlo bebido, donde bailaban y cantaban de noche y de día a su placer, y esto el primer día, porque el siguiente, lloraban todos mucho, y decían que se limpiaban y lavaban los ojos y caras con sus lágrimas. También eran oficiales de plumas y hacían obras de ella muy pulidas, como los plumajes a manera de ventajas, hechos de pluma encarnada. También había zurradores que aderezaban los pelajes de venados, que les servían de faldellines yropa: hacían las mujeres la comida para los hombres asados como guisados, y no los hombres para las mujeres, la causa de lo cual era, que los hombres decían que eran obligados a guardar la vista de los ojos para poder cazar, y que el humo se los echaba a perder; y así estos tales"
+    }
+  }
+}

@@ -19,6 +19,7 @@ const ACCESS = new Set(["hosted", "external", "metadata_only"]);
 // Substances that cannot carry a draft on their own.
 const OUT_OF_SCOPE = [/^cannabis/i, /^hashish/i, /^hemp/i, /^laudanum/i, /^opium/i, /^morphine/i,
   /^coca$/i, /^cocaine/i, /^alcohol/i, /^tobacco/i];
+const CANNABIS = /^(?:cannabis|hashish|hemp|bhang|ganja|charas|marijuana|marihuana)/i;
 
 const files = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith(".json")).sort() : [];
 const slugs = new Map();
@@ -57,12 +58,18 @@ for (const file of files) {
     if (expected !== d.era) warns.push(`era ${d.era} does not match year ${d.year} (expected ${expected})`);
   }
 
+  const draft = d.draft || {};
   const subs = Array.isArray(d.substances) ? d.substances : [];
   if (subs.length && subs.every((s) => OUT_OF_SCOPE.some((re) => re.test(String(s).trim())))) {
-    problems.push(`out of scope: substances are only ${subs.join(", ")}`);
+    // Visionary cannabis accounts may stand alone when flagged (see README scope rule).
+    const cannabisOnly = subs.every((s) => CANNABIS.test(String(s).trim()));
+    if (cannabisOnly && draft.scopeException === "visionary-cannabis") {
+      if (!draft.rationale) warns.push("visionary-cannabis exception without a rationale");
+    } else {
+      problems.push(`out of scope: substances are only ${subs.join(", ")}`);
+    }
   }
 
-  const draft = d.draft || {};
   if (!draft.rationale) problems.push("draft.rationale missing");
   if (!draft.textSource?.url) problems.push("draft.textSource.url missing");
   if (!draft.textQuality?.confidence) problems.push("draft.textQuality.confidence missing");

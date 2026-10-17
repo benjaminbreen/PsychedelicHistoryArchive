@@ -1,0 +1,73 @@
+{
+ "slug": "murray-system-materia-medica-pharmacy-including-translations-1832",
+ "start": "The modes of preparing these gases are",
+ "end_after": "Nitrous Acid and Chlorine Gas.",
+ "dehyphenate": true,
+ "remove": [
+  "842 OF THE GASES ",
+  "EMPLOYED AS REMEDIES. 843 ",
+  "844 OF THE GASES "
+ ],
+ "breaks": [
+  "The gases that have been employed in medicine",
+  "Oxygen gas is procured",
+  "Oxygen, when respired",
+  "The diseases in which oxygen",
+  "Nitrous oxide gas. —",
+  "The following diagram",
+  "The effects of nitrous oxide gas",
+  "A substance capable of acting",
+  "Nothing satisfactory can be said",
+  "Under the second subdivision"
+ ],
+ "fixes": [
+  [
+   "w’ater",
+   "water"
+  ],
+  [
+   "excite^ and",
+   "excite, and"
+  ],
+  [
+   "about 400^ of",
+   "about 400° of"
+  ],
+  [
+   "The following diagram exhibits more precisely the nature of this re-action : Thus",
+   "The following diagram exhibits more precisely the nature of this re-action: _[diagram not reproduced]_ Thus"
+  ],
+  [
+   "tlie",
+   "the"
+  ],
+  [
+   "convidsions",
+   "convulsions"
+  ]
+ ],
+ "note": "### Of the gases employed as remedies\n\n_[From the section on medicinal gases, pp. 841–845. OCR from the Wellcome Collection scan at the Internet Archive, lightly corrected; the chemical diagram on p. 843 is not reproduced.]_",
+ "fields": {
+  "title": "Nitrous oxide in Murray's System of Materia Medica",
+  "short_title": "Murray on nitrous oxide",
+  "subtitle": "Of the gases employed as remedies",
+  "display_date": "1832",
+  "date_start": 1832,
+  "document_type": "Book",
+  "medium": "Text",
+  "language": "English",
+  "region": "Britain",
+  "publication_title": "A System of Materia Medica and Pharmacy",
+  "summary": "A standard Edinburgh materia medica treats medicinal gases. Its entry on nitrous oxide gives the method of preparation from nitrate of ammonia, then describes the gas's effects on body and mind: \"a peculiar thrilling of the body, with feelings of pleasure not easily described,\" exhilaration in which \"perfect consciousness remains,\" and no following languor. It also records the gas's limited medical use and the hysteric reactions it sometimes caused.",
+  "citation": "John Murray, *A System of Materia Medica and Pharmacy, Including Translations of the Edinburgh, London, and Dublin Pharmacopoeias* (Edinburgh, 1832), 841–845.",
+  "rights_statement": "Public domain (published 1832)",
+  "access_type": "hosted",
+  "hosting_status": "transcript_only",
+  "reader_mode": "transcript"
+ },
+ "author": "John Murray",
+ "editor_notes": "John Murray (d. 1820) wrote the System; the 1832 printing is a posthumous edition, so confirm the editor and place from the title page (Wellcome b29341772). A useful mid-point between Davy's 1800 Researches and the anaesthetic era.",
+ "transcript": "### Of the gases employed as remedies\n\n_[From the section on medicinal gases, pp. 841–845. OCR from the Wellcome Collection scan at the Internet Archive, lightly corrected; the chemical diagram on p. 843 is not reproduced.]_\n\nThe modes of preparing these gases are, in a great measure, peculiar to each. The manner of administering them is nearly the same. They may be breathed from a jar placed in water ; but this is laborious, from the effort required to sustain the column of water within the jar. This may be partly remedied, by poising the jar in water, or by breathing from a gasometer. But the easiest mode is, for the patient to breathe the gas from a silk bag, to which a tube with a stop-cock is affixed. \n\nThe gases that have been employed in medicine may be considered under the divisions of those which excite, and those which depress the functions of life. To the former order belong Oxygen Gas, and Nitrous Oxide Gas. \n\nOxygen gas is procured from black oxide of manganese by heat. A quantity of the oxide is put into an iron retort, connected by a tube with a glass holder, or a large jar filled with water, inverted and placed on the shelf of the pneumatic trough. The retort is exposed to a full red heat ; at this temperature the affinity of the oxygen to the manganese is so far weakened by the repulsive agency of the caloric, that a large portion of it is separated from the combination, and assumes the elastic form ; the gas is transmitted through water, and is allowed to stand over it for some hours before it is breathed. \n\nOxygen, when respired, acts principally by communicating a stimulating quality to the blood, by which the left side of the heart and the arterial system are excited to action ; hence, when its supply by respiration is suspended, the contractions of the heart become feeble, and at length cease, as Goodwyn demonstrated. The state of asphyxia, from its abstraction, proves that it likewise exerts some other operation more immediately subservient to the functions of life ; for in that state the functions of life are suspended, while the contractions of the heart continue, to a certain extent, as the experiments of Coleman shewed. \n\nThe diseases in which oxygen gas has been administered, are principally those of chronic debility, — chlorosis, asthma, scrofula, dropsy, paralysis, and some cutaneous affections. It requires to be diluted with from ten to twenty or more parts of atmospheric air, increasing the proportion of oxygen according to the effects produced. From one to two parts of oxygen are given, by breathing it in its diluted state, at intervals, in the course of the day. It generally increases the force and velocity of the pulse. \n\nNitrous oxide gas. — This gas, a compound of oxygen and nitrogen, in the proportion of one atom of the for- mer, 8, with one atom of the latter, 14, is obtained, in greatest purity, from the decomposition of nitrate of ammonia by heat. When this salt is exposed to a temperature about 400° of Fahrenheit’s scale, its principles re-act on each other, and enter into new combinations. The hydrogen of the ammonia attracts part of the oxygen of the nitric acid, and forms water ; and the remaining oxygen, combining with the nitrogen both of the acid and of the ammonia, forms nitrous oxide, which is disengaged in the gaseous form. \n\nThe following diagram exhibits more precisely the nature of this re-action: _[diagram not reproduced]_ Thus the salt is resolved into three equivalents of water, and two equivalents of nitrous oxide gas. After its production, the gas requires to stand some hours, to deposite a little saline vapour, before it is fit to be breathed. \n\nThe effects of nitrous oxide gas on the system, when it is respired, are scarcely analogous to those of any other agent. The excitement which it produces is extended to the functions of body and mind with more rapidity and force than that arising from the action of the most powerful stimulants. It is accompanied, too, with effects as various as they are peculiar ; it excites usually a peculiar thrilling of the body, with feelings of pleasure not easily described. Muscular vigour is increased, so that unusual exertions are made with alacrity and ease, and there is even strong propensity to muscular exertion ; the mind is also affected : there is usually a high degree of exhilaration, yet even when this is greatest, perfect consciousness remains. What still more marks the singularity of its operation, this high excitement of the functions of life and exhilaration of mind is not followed by proportional languor or debility ; the state of the system gradually returns to the healthy standard, without any apparent waste of power. \n\nA substance capable of acting in such a manner, we might suppose, would prove one of the most valuable remedies. The transient nature of its operation must undoubtedly limit its efficacy ; but still, in diseases of extreme debility, we seem justified in expecting from its administration beneficial effects. It has not, however, been extensively employed. In paralysis it has been used with advantage. In diseases of increased sensibility, it may prove hurtful ; and when breathed by delicate females, it has, in more than one case, induced hysteric affections. The dose requisite to produce its peculiar effects varies from four to nine quarts, which may be breathed pure or diluted with an equal part of atmospheric air. It cannot be breathed undiluted for more than four minutes and a half, insensibility being induced. And it requires to be attended to, in its administration, that its effects are considerably different in different individuals. On some, its operation has even been productive of unpleasant consequences, — palpitation, fainting, and convulsions. \n\nNothing satisfactory can be said as to its mode of action, since we know so little of the connection which subsists between the phenomena of life and the chemical changes which are carried on in the system. It is absorbed by the blood when respired ; but we can discover nothing connected with its composition or chemical agency which can lead to any explanation of its peculiar effects. \n\nUnder the second subdivision of the Gases,— those which depress the functions of life, might probably be placed all the substances existing in the aerial form, oxygen and nitrous oxide excepted. The following are those which have been applied to medicinal purposes ; Hydrogen, Carburetted Hydrogen, Carbonic Acid, Muriatic Acid, Nitrous Acid and Chlorine Gas.",
+ "transcript_words": 1067,
+ "translation_words": 0
+}

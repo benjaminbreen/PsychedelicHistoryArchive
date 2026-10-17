@@ -1,0 +1,51 @@
+{
+ "slug": "newspaper-sn93060416-1897-12-25",
+ "start": "The origin of this singular vice is obscure.",
+ "end_after": "Courier des Etats Uais.",
+ "breaks": [
+  "Thank Heaven, the ether drunkards",
+  "But it is in certain portions of Ireland"
+ ],
+ "fixes": [
+  [
+   "Crooks town",
+   "Crookstown"
+  ],
+  [
+   "by ether roads",
+   "by other roads"
+  ],
+  [
+   "the rapors of ether",
+   "the vapors of ether"
+  ],
+  [
+   "Everybody in that part of Ireland is a mixture of ether and ether. Irelan. Drinks ether. Courier des Etats Uais.",
+   "Everybody in that part of Ireland is a mixture of ether and [?].\n\n_Courier des États-Unis._"
+  ]
+ ],
+ "note": "### Ireland Drinks Ether\n\n_[From page 2 of a Missouri newspaper, 25 December 1897 (Chronicling America LCCN sn93060416), translating an item from the New York French-language Courier des États-Unis. Only the second half of the article survives in this part of the page's OCR; the opening paragraph and headline layout need to be taken from the page image.]_\n\n_[Opening paragraph not captured.]_",
+ "fields": {
+  "title": "\"Ireland Drinks Ether\": ether drinking in Ulster, London and Paris, 1897",
+  "short_title": "Ireland Drinks Ether (1897)",
+  "subtitle": "From the Courier des États-Unis",
+  "display_date": "25 December 1897",
+  "date_start": 1897,
+  "document_type": "Newspaper Article",
+  "medium": "Text",
+  "language": "English",
+  "region": "Ulster, Ireland; London; Paris",
+  "publication_title": "Missouri newspaper (LCCN sn93060416)",
+  "summary": "A translated French item surveys the late-Victorian vogue for drinking ether. It records empty ether vials found in London squares and at Epsom after the races, and above all the \"ether shops\" of mid-Ulster around Draperstown, where 15 grammes of an alcohol-and-ether mixture \"are sufficient to put anyone into a reverie\" and the air on market days is \"charged with the vapors of ether.\" It repeats the common explanation that the habit began during Father Mathew's temperance crusade of the 1840s.",
+  "citation": "\"Ireland Drinks Ether,\" [Missouri newspaper, LCCN sn93060416], 25 December 1897, 2 (from the *Courier des États-Unis*).",
+  "rights_statement": "Public domain (published before 1930)",
+  "access_type": "hosted",
+  "hosting_status": "transcript_only",
+  "reader_mode": "transcript"
+ },
+ "author": "",
+ "editor_notes": "Incomplete: the first paragraph is on a part of the page not in the local OCR, and Chronicling America blocked automated access. Copy it from the page image. The paper is probably from Lafayette County, Missouri (the page has Higginsville Milling Co. adverts), but confirm the title from LCCN sn93060416. Compare the companion French piece on éthéromanie in this batch; Ernest Hart's 1890 BMJ articles are the standard source on Draperstown.",
+ "transcript": "### Ireland Drinks Ether\n\n_[From page 2 of a Missouri newspaper, 25 December 1897 (Chronicling America LCCN sn93060416), translating an item from the New York French-language Courier des États-Unis. Only the second half of the article survives in this part of the page's OCR; the opening paragraph and headline layout need to be taken from the page image.]_\n\n_[Opening paragraph not captured.]_\n\nThe origin of this singular vice is obscure. Some say that the Irish peasants began to drink ether in 1840, at the time when Father Matthew was preaching the crusade against alcohol. Others accuse the doctors of having prescribed ether too liberally. Finally, the question of price has its importance, especially among the poorer classes, for ether produces intoxication easily and is cheaper than alcohol. \n\nThank Heaven, the ether drunkards are at present relatively rare in Paris. In London, the keepers of the various squares and parks often find under the trees empty vials labeled \"ether\" that have been thrown there by the maniacs who quit their homes in order to indulge their favorite passion at their ease. At Epsom after the races, many flasks of ether are picked up among empty champagne bottles. \n\nBut it is in certain portions of Ireland that the vice of ether drinking is most common. There are regular ether shops, the oldest of which was established in 1840 at Draperstown. There they drink a mixture of alcohol and ether, 15 grammes of which are sufficient to put anyone into a reverie. The railroad in the little district of Crookstown carries every year 8,000 tons of ether, and an equal quantity at least is brought there by other roads. Two merchants of the neighboring villages sell every year 4,500 pints of ether. At Draperstown and at Crookstown, the air is charged with the vapors of ether on market days, and this same odor is present constantly in the third-class carriages of the Derry Central railway. Everybody in that part of Ireland is a mixture of ether and [?].\n\n_Courier des États-Unis._",
+ "transcript_words": 276,
+ "translation_words": 0
+}

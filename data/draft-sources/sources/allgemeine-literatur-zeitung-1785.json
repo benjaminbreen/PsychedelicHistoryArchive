@@ -1,0 +1,62 @@
+{
+  "slug": "allgemeine-literatur-zeitung-1785",
+  "title": "Allgemeine Literatur-Zeitung",
+  "author": "Unknown",
+  "year": 1785,
+  "displayDate": "1785",
+  "type": "Book",
+  "medium": "Text",
+  "era": "Pre-1800",
+  "region": "To be determined",
+  "language": "German",
+  "substances": [
+    "DMT snuffs",
+    "Yopo"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "A German account of Indigenous peoples around the Orinoco describes niopo (identified as a plant of the Mimosa genus) as a snuff whose effects are intensified by blowing the powder into the nose. This brief passage is a relevant ethnographic lead, though it gives little detail about the experience itself.",
+  "excerpt": "… Auch von CaiTava und Aliys brauen fie Getrioke und. beraofeli«A 0«b durob ' .die uimpfa det Niopopulvert« üwelMS ftarltet Nk- Jsen veraiilafst. Niopo (Avavia) ift eine baumartige TTabakSffunze von« Gefchlecht der Mim(>Jii.- Die .puniuica und die Omaguas geniefsen viel Federharz «Mlar «erdickte M»lcb d«r Eupitprbien und Neffelo. jD«a'krsmiarti|!eiiOrfiu>ccotabak rauchte maiwbereits als die Spanier in SiMamerica landeten.",
+  "citation": "*Allgemeine Literatur-Zeitung*, 1785, German-PD (Common Corpus) bub_gb_2R44AAAAMAAJ_7.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "https://archive.org/details/bub_gb_2R44AAAAMAAJ",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "needs-work",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-17",
+    "bucket": "corpus-scan-review",
+    "rationale": "Lead: trace the full source before drafting a transcript. Editor marked this maybe in corpus-scan review. A German account of Indigenous peoples around the Orinoco describes niopo (identified as a plant of the Mimosa genus) as a snuff whose effects are intensified by blowing the powder into the nose. This brief passage is a relevant ethnographic lead, though it gives little detail about the experience itself. Editor note: should trace the fuller/original account",
+    "textSource": {
+      "url": "https://archive.org/details/bub_gb_2R44AAAAMAAJ",
+      "kind": "internet-archive",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: fair. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "german-pd:bub_gb_2R44AAAAMAAJ",
+      "decision": "maybe",
+      "decided_at": "2026-10-16T21:35:15.531Z",
+      "why": [],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "German-PD",
+      "identifier": "bub_gb_2R44AAAAMAAJ_7",
+      "archive_fit": 4,
+      "kind": "ethnographic_observation",
+      "scan_excerpt": "Es fchmeckt gut und dient zum ipcin* aud Spelfeöl. Hat die Sonne vor der Ce- winnung der Eyer in einigen fchon kleine Schiidkrö^ Icn gebildet: (o fchmeckt das Oel als verdorbenes. £s wird alsdann bald bi^aun, übelriechend und hat «inen fcbleimtgea Botleoiatz. Das Ufer der Uruana liefSart allein iqoo Boti{aa fojcben Gels, zu 2 bis Piafter. 303 Eyer liefern eine BooteiUe Oei und 5000 eine Uotija. Jede Schildkröte legt lio bis 116 Eyer. Die Eyerlefe dauert 3 Wochen, wahrend folcher haben die .MifQonaricn eine Verbindung mit der Küfte und der Civil. falion nberbavpt. Affen- Äeifch und Ridechren hrlfea di« Indianer mit trnftb- ren. Das HauptgetrSnke (ferTelben am Ortnoeeo ift J»almwein von der Sjgopalmc. In der Periode, da dtefer gewonnen wird, werden liie ilin fiark genie- f^enden Indianer fetter. Auch von CaiTava und Aliys brauen fie Getrioke und. beraofeli«A 0«b durob ' .die uimpfa det Niopopulvert« üwelMS ftarltet Nk- Jsen veraiilafst. Niopo (Avavia) ift eine baumartige TTabakSffunze von« Gefchlecht der Mim(>Jii.- Die .puniuica und die Omaguas geniefsen viel Federharz «Mlar «erdickte M»lcb d«r Eupitprbien und Neffelo. jD«a'krsmiarti|!eiiOrfiu>ccotabak rauchte maiwbereits als die Spanier in SiMamerica landeten. Sie wickel- ten Maysbläuer um ihre Gigarren und kannten die narculil'che Kraft «leffelben (mit offenen Augen zu fcbiafeo}« fe.br wobl. Jetzt raucht der Indianer in jt.L.Z. Ig34. Srß€r Band.. den Miffionen und auch der Creole wenig. Gekauet wird der Tabak auf dem Feftleode nirgends. Der Tabak gedeiht wild in mlfaiger Gebirgsiemperalur der Tropen. Europa empfing den erften Tabak«- faarnen 1559 atis der mexicanifchen Provinz Yucatau. Wenn die Indianer beraufcht find, üben fie befin- DungsJos oft Mordthaten, welches die MiliSottarien. nicht zu verhindern vermögen. — DerSöIin wählt feine £beff«M>rfin frey, die Tochter mufs den Mann annehmen, den ihr der Vater beftimmt. Die erfte Frau wählt der Indianer nicht aus einem niederii Stande als dem (einigen. Bej der Wahl"
+    }
+  }
+}

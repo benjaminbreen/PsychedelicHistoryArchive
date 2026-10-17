@@ -1,0 +1,492 @@
+# Term list for the Common Corpus full-text scan (scripts/corpus_scan/scan_parquet.py).
+#
+# Three tiers:
+#   strong  - always a hit.
+#   weak    - a hit only when a strong or context term falls within
+#             `proximity_words` of it (e.g. "ether", "opium", "intoxication").
+#   context - visionary-experience language; never a hit by itself, but
+#             rescues nearby weak terms and is recorded in matched_terms.
+#
+# rescued_by = [...] limits which nearby terms rescue a weak term: context
+# labels, plus "strong" for any strong term. Cannabis terms are rescued only by
+# visionary language (visions, hallucination, ecstasy, depersonalisation, time
+# distortion), not by dreams, exhilaration or intoxication: the archive takes
+# cannabis accounts only when they evoke psychedelic-like states.
+#
+# A weak term with needs = "strong" is rescued only by a nearby strong term
+# (used for generic medical/metaphorical words: intoxication, chloroform,
+# belladonna). The default, needs = "any", accepts a strong or context term.
+#
+# Pattern conventions:
+#   - Python `re` syntax, matched case-insensitively unless case_sensitive = true.
+#   - Use \b only at the very start or end of a pattern; the scanner rewrites
+#     edge \b into Unicode-aware boundaries for DuckDB's RE2 prefilter.
+#   - No capturing groups; use (?:...).
+#   - OCR tolerance is kept modest: common letter confusions (i/l/1, e/c,
+#     long s as f or s), optional hyphens and spaces in compounds.
+#   - Literal TOML strings ('...') cannot contain a single quote, so apostrophes
+#     are written as `.` (matches ' and ’).
+#   - min_year drops matches in rows dated before that year (undated rows keep
+#     them unless require_year = true); used for modern coinages that collide
+#     with older words or abbreviations.
+#
+# Vocabulary seeds: the archive's own texts (nitrous oxide:ether/,
+# latin-american-psychedelic-research/, data/squarespace-import/body-text/).
+
+[settings]
+proximity_words = 60      # weak term needs strong/context within this many words
+window_words = 300        # total words in each excerpt, centred on the hit
+max_windows_per_doc = 25  # cap per document; strong windows kept first
+
+# ---------------------------------------------------------------------------
+# Peyote, mescaline, San Pedro
+# ---------------------------------------------------------------------------
+
+[[term]]
+label = "peyote"
+tier = "strong"
+group = "peyote-mescaline"
+patterns = [
+  '\bpe[yij][o0]t[l1e]s?\b',          # peyote, peyotl, peiote, peyotes
+  '\bpey[o0]t[e3]ros?\b',
+  '\bpeyotism[eo]?\b',
+  '\bh[ií]kuri\b', '\bh[ií]kul[ií]\b', '\bj[ií]cul[ií]\b',
+  '\bmescal[- ]?(?:buttons?|beans?|button-?s)\b',
+  '\bdry whisk(?:e?y)\b',
+  '\blophophora\b', '\banhal[o0]n(?:ium|ia|in|ine)\b', '\blophophorin[e]?\b',
+  '\bpellotin[e]?\b', '\bechinocactus william[s]?ii\b',
+]
+
+[[term]]
+label = "mescaline"
+tier = "strong"
+group = "peyote-mescaline"
+min_year = 1890            # earlier "Mescaline" is OCR for Muscatine; 1910s silk "messaline" excluded below
+patterns = [
+  '\bmes[ck]al[il1]n[ea]?\b(?! (?:silk|satin|petticoat|dress|gown|waist|skirt|blouse|ribbon|\$))',
+  '\bmezcal[il1]n[ae]?\b', '\bme[sz]kal[il1]n\b',
+]
+
+[[term]]
+label = "san pedro cactus"
+tier = "strong"
+group = "peyote-mescaline"
+patterns = [
+  '\bsan pedro cact(?:us|i)\b', '\btrichocereus\b', '\bhuachuma\b', '\bwachuma\b',
+  '\bachuma\b', '\bcactus de san pedro\b',
+]
+
+# ---------------------------------------------------------------------------
+# Cannabis preparations
+# ---------------------------------------------------------------------------
+
+[[term]]
+label = "hashish"
+tier = "weak"
+rescued_by = ["visions/hallucinations", "ecstasy/mystical states", "altered perception/self"]
+group = "cannabis"
+patterns = [
+  '\bhash[e]?[e]?sh\b', '\bhashish\b', '\bhasheesh\b', '\bhashheesh\b', '\bhachish\b',
+  '\bha[sſf]ch[i1l]s[cſf]?h\b',       # haschisch, haschish, hafchifch
+  '\bhach[i1l]s?ch\b',                 # hachisch, hachich
+  '\bhasch[i1l]sch\b', '\bhasch[i1l]ch\b', '\bhaschischin\b', '\bhaschich\b',
+  '\bhachís\b',                       # Spanish hachís (plain "hachis" = French minced meat)
+  '\bhascisc[ei]?\b', '\bascisc\b', '\bhascisch\b', # Italian
+  '\bhaxixe?\b',                       # Portuguese haxixe
+  '\bhaschisch\w*\b', '\bhachichin\w*\b', '\bhashshash\w*\b',
+  '\bassassin[s]? .{0,30}hash',        # Old Man of the Mountain legend
+  '\bdawamesk\b', '\bdawamesc\b', '\bdawamesque\b',
+  '\besrar\b', '\bchurrus\b', '\bcharas (?:or|and|,) \w+', '\b(?:ganja|bhang),? (?:and|or) charas\b',
+]
+
+[[term]]
+label = "hashish (ambiguous forms)"
+tier = "weak"
+rescued_by = ["visions/hallucinations", "ecstasy/mystical states", "altered perception/self"]
+group = "cannabis"
+patterns = [   # minced meat, Latin "charas", Kiev, OCR surnames, dictionary headwords
+  '\bhachis\b', '\bcharas\b', '\bkif\b', '\bkief\b', '\bmaj[o0][o0]n\b', '\bmaj[o0]un\b', '\bmadj[o0]un\b', '\bma.j[uo]un\b',
+]
+
+[[term]]
+label = "cannabis indica"
+tier = "weak"
+rescued_by = ["visions/hallucinations", "ecstasy/mystical states", "altered perception/self"]
+group = "cannabis"
+patterns = [
+  '\bcannabis indica\b', '\bcannabis sativa var\.? indica\b', '\bcannabi[n]e\b', '\bcannabin(?:on|ol)\b',
+  '\bindian hemp\b', '\bindischer? hanf\w*\b', '\bchanvre indien\b',
+  '\bcanapa indiana\b', '\bc[aá][nñ]amo [ií]ndico\b', '\bc[aâ]nhamo da [ií]ndia\b',
+  '\bextractum cannabis\b', '\btinct(?:ure|ura) (?:of )?cannabis\b',
+]
+
+[[term]]
+label = "bhang/ganja"
+tier = "weak"
+rescued_by = ["visions/hallucinations", "ecstasy/mystical states", "altered perception/self"]
+group = "cannabis"
+patterns = [
+  '\bbhang[a]?\b(?! hai\b)', '\bbanghi?\b(?= ?(?:or|and|,) (?:ganja|hemp|opium))',
+  '\bganjah\b', '\bgunjah?\b', '\bganja (?:plant|smok\w*|leaves|habit|wallah)\b', '\b(?:smok\w*|chew\w*) ganja\b', '\bguaza\b', '\bsiddhi\b(?=.{0,40}(?:hemp|bhang))',
+]
+
+[[term]]
+label = "marijuana"
+tier = "weak"
+rescued_by = ["visions/hallucinations", "ecstasy/mystical states", "altered perception/self"]
+group = "cannabis"
+patterns = ['\bmar[i1l]h?[uo]ana\b', '\bmar[i1l]j[uo]ana\b', '\bmar[i1l]guana\b(?! (?:island|passage|channel|cay))', '\bmaconha\b', '\bdiamba\b']
+
+[[term]]
+label = "hemp (generic)"
+tier = "weak"
+rescued_by = ["visions/hallucinations", "ecstasy/mystical states", "altered perception/self"]
+group = "cannabis"
+patterns = ['\bbangue\b(?! (?:de|du|des|d.)\b)', '\bganja\b', '\bcannabis\b', '\bhemp\b', '\bhanf\b', '\bchanvre\b', '\bc[aá][nñ]amo\b', '\bcanapa\b', '\bc[aâ]nhamo\b']
+
+# ---------------------------------------------------------------------------
+# Ayahuasca / yagé / harmala alkaloids / DMT snuffs
+# ---------------------------------------------------------------------------
+
+[[term]]
+label = "ayahuasca"
+tier = "strong"
+group = "ayahuasca"
+patterns = [
+  '\baya[h]?[uw]a[s]?[ck]a\b', '\bayawaska\b', '\bhoasca\b', '\bnat[eé]m[aä]\b',
+  '\bya[gj]é\b', '\bya[gj]és\b', '\byag[eé]in[ea]?\b', '\byaj[eé]in[ae]?\b', '\byajeinina\b',
+  '\bcaapi\b', '\bbanister[i1l]a caapi\b', '\bbanister[i1l]opsis\b', '\bbanisterin[e]?\b',
+  '\btelepath[i1l]n[ea]?\b', '\bsanto daime\b', '\buni[ã]o do vegetal\b',
+]
+
+[[term]]
+label = "yage/banisteria (ambiguous)"
+tier = "weak"
+rescued_by = ["strong", "visions/hallucinations", "ecstasy/mystical states", "altered perception/self"]
+group = "ayahuasca"
+patterns = ['\bya[gj]e\b', '\bbanister[i1l]a\b']   # "vo-yage" hyphenation; Banisteria = Malpighiaceae genus
+
+[[term]]
+label = "harmala alkaloids"
+tier = "strong"
+group = "ayahuasca"
+patterns = ['\bharm[a]?l[i1l]n[ea]?\b', '\bharm[i1l]ne?\b', '\bharmalol\b', '\btetrahydroharmin\w*\b']
+
+[[term]]
+label = "harmala/peganum (botany, dye)"
+tier = "weak"
+rescued_by = ["strong", "visions/hallucinations", "ecstasy/mystical states", "altered perception/self"]
+group = "ayahuasca"
+patterns = ['\bharmala\b', '\bpeganum\b', '\bharmal\b', '\bharmina\b']   # Harmina is also a ship and given name
+
+[[term]]
+label = "DMT/tryptamine snuffs"
+tier = "strong"
+group = "ayahuasca"
+patterns = [
+  '\bd[i1l]methyltryptam[i1l]n[ea]?\b', '\bbufoten[i1l]n[ea]?\b', '\bbufotenidin\w*\b',
+  '\bcohoba\b', '\by[o0]p[o0]\b', '\bn[i1l][o0]p[o0]\b', '\bepéna\b',
+  '\bvir[o0]la (?:snuff|theiodora|calophylla)\b', '\banadenanthera\b', '\bpiptadenia\b',
+]
+
+[[term]]
+label = "snuffs (ambiguous)"
+tier = "weak"
+rescued_by = ["strong", "visions/hallucinations", "ecstasy/mystical states", "altered perception/self"]
+group = "ayahuasca"
+patterns = ['\bparic[aá]\b', '\bep[eé]na\b', '\beb[eé]na\b', '\bvilca\b', '\bcebil\b']
+
+[[term]]
+label = "DMT"
+tier = "strong"
+group = "ayahuasca"
+case_sensitive = true
+min_year = 1940
+require_year = true
+patterns = ['\bDMT\b', '\bD\.M\.T\.']
+
+# ---------------------------------------------------------------------------
+# Mushrooms
+# ---------------------------------------------------------------------------
+
+[[term]]
+label = "teonanacatl/psilocybin"
+tier = "strong"
+group = "mushrooms"
+patterns = [
+  '\bte[o0]nan[aá]c[a]?tl\b', '\bte[o0]nan[aá]catl\w*\b', '\bnanacatl\b',
+  '\bps[i1l]l[o0]cyb[i1l]n[ea]?\b', '\bps[i1l]l[o0]c[i1l]n[ea]?\b', '\bps[i1l]l[o0]cybe\b',
+  '\bsacred mushrooms?\b', '\bmagic mushrooms?\b', '\bdivine mushrooms?\b',
+  '\bhongos? (?:sagrados?|alucin\w+|m[aá]gicos?|divinos?)\b', '\bchampignons? (?:sacr[eé]s?|hallucin\w+|divins?|magiques?)\b',
+  '\bheilige[n]? pilze?\b', '\bzauberpilz\w*\b', '\brauschpilz\w*\b', '\bfunghi? (?:sacri|allucin\w+|magici)\b',
+]
+
+[[term]]
+label = "fly agaric"
+tier = "strong"
+group = "mushrooms"
+patterns = [
+  '\bfly[- ]?agaric\b', '\bamanita muscaria\b', '\bagaricus muscarius\b', '\bfliegenpilz\w*\b', '\bfliegenschwamm\w*\b',
+  '\bfausse oronge\b', '\bagaric (?:aux mouches|moucheté)\b', '\bamanite tue-mouches?\b', '\bamanita pantherina\b',
+  '\bovolo malefico\b', '\bmatamoscas\b(?=.{0,40}(?:hongo|amanita|seta))',
+]
+
+[[term]]
+label = "mushroom (generic)"
+tier = "weak"
+rescued_by = ["strong", "visions/hallucinations", "ecstasy/mystical states", "altered perception/self"]
+group = "mushrooms"
+patterns = ['\bmushrooms?\b', '\btoadstools?\b', '\bchampignons?\b', '\bpilze?\b', '\bschw[aä]mme?\b', '\bhongos?\b', '\bsetas?\b', '\bfunghi\b', '\bcogumelos?\b', '\bagaric\w*\b']
+
+# ---------------------------------------------------------------------------
+# Morning glory, salvia, other Mesoamerican
+# ---------------------------------------------------------------------------
+
+[[term]]
+label = "ololiuqui/morning glory"
+tier = "strong"
+group = "morning-glory"
+patterns = [
+  '\b[o0]l[o0]l[i1l]uh?q[u]?[i1l]\b', '\b[o0]l[o0]l[i1l]uhqu[i1l]\b', '\bololiuque\b', '\brivea corymbosa\b', '\bturbina corymbosa\b',
+  '\bbad[o0]h(?: negro)?\b', '\btlitliltzin\b', '\bmorning[- ]glory seeds?\b', '\bheavenly blue\b(?=.{0,40}seed)',
+]
+
+[[term]]
+label = "salvia divinorum"
+tier = "strong"
+group = "morning-glory"
+patterns = ['\bsalvia divinorum\b', '\bhierba de la pastora\b', '\bhojas de la pastora\b', '\bska pastora\b']
+
+# ---------------------------------------------------------------------------
+# LSD, synthetic psychedelics, mid-century vocabulary
+# ---------------------------------------------------------------------------
+
+[[term]]
+label = "LSD-25"
+tier = "strong"
+group = "lsd"
+case_sensitive = true
+min_year = 1940
+patterns = ['\bLSD[- ]?25\b', '\bL\.S\.D\.?[- ]?25\b']
+
+[[term]]
+label = "LSD"
+tier = "weak"           # bare "LSD" is OCR noise in undated European papers and US Navy "landing ship, dock"
+rescued_by = ["strong", "drug vocabulary", "visions/hallucinations", "altered perception/self"]
+group = "lsd"
+case_sensitive = true
+min_year = 1940
+patterns = ['\bLSD\b(?! ?\((?:landing|Landing))']
+
+[[term]]
+label = "L.S.D. (dotted)"
+tier = "strong"
+group = "lsd"
+case_sensitive = true
+min_year = 1940
+require_year = true         # "L.S.D." is also pounds, shillings, pence; undated rows dropped
+patterns = ['\bL\.S\.D\.']
+
+[[term]]
+label = "lysergic acid"
+tier = "strong"
+group = "lsd"
+patterns = ['\blyserg\w*', '\bdelysid\b', '\blsd[- ]25\b', '\bergonovin\w*\b(?=.{0,80}(?:hallucin|psych))']
+
+[[term]]
+label = "psychedelic/hallucinogen vocabulary"
+tier = "strong"
+group = "lsd"
+min_year = 1920            # pre-1920 "Psychédélique" etc. are OCR or old botanical names
+patterns = [
+  '\bpsychedel\w*', '\bpsychodel\w*', '\bpsicod[eé]l\w*', '\bpsych[eé]d[eé]l\w*', '\bpsicad[eé]l\w*',
+  '\bhallucinogen\w*', '\bhalluzinogen\w*', '\bhallucinog[eè]ne\w*', '\balucin[oó]geno\w*', '\ballucinogen\w*',
+  '\bpsychotomimetic\w*', '\bpsychotogen\w*', '\bpsychotomim\w*', '\bpsycholytic\w*', '\bpsycholyti\w*',
+  '\bentheogen\w*', '\bphantastica (?:\w+ )?(?:drug|plant|substan|gift|mittel)\w*', '\bphantastika\b',
+  '\bmodel psychos[ie]s\b', '\bexperimental psychos[ie]s\b',
+  '\bmodellpsychose\w*', '\bmind[- ]expanding\b', '\bconsciousness[- ]expanding\b', '\bmind[- ]manifesting\b',
+]
+
+[[term]]
+label = "MKULTRA / CIA drug programmes"
+tier = "strong"
+group = "lsd"
+patterns = ['\bmk[- ]?ultra\b', '\bmk[- ]?naomi\b', '\bmk[- ]?search\b', '\bproject (?:artichoke|bluebird)\b', '\boperation midnight climax\b', '\bedgewood arsenal\b(?=.{0,200}(?:drug|lsd|bz|volunteer))']
+
+[[term]]
+label = "ibogaine"
+tier = "strong"
+group = "other-plants"
+patterns = ['\bibog[aä]\b', '\bibogain[ea]?\b', '\btabernanth[ea]\b', '\bbwiti\b']
+
+[[term]]
+label = "ergot"
+tier = "weak"
+rescued_by = ["strong", "visions/hallucinations", "ecstasy/mystical states", "altered perception/self"]
+group = "lsd"
+patterns = ['\bergot\w*', '\bmutterkorn\w*', '\bseigle ergot[eé]\b', '\bst\.? anthony.s fire\b', '\bfeu de saint[- ]antoine\b', '\bclaviceps\b']
+
+[[term]]
+label = "mescal (ambiguous)"
+tier = "weak"
+rescued_by = ["strong", "visions/hallucinations", "ecstasy/mystical states", "altered perception/self"]
+group = "peyote-mescaline"
+patterns = ['\bmes[ck]al\b', '\bmezcal\b']
+
+[[term]]
+label = "cactus/snuff (generic)"
+tier = "weak"
+needs = "strong"
+group = "other-plants"
+patterns = ['\bsacred cact\w*\b', '\bdivine cact\w*\b', '\bcactus\b', '\bsnuff\b', '\brap[eé]\b']
+
+# ---------------------------------------------------------------------------
+# Nitrous oxide, ether, anaesthetic revelation
+# ---------------------------------------------------------------------------
+
+[[term]]
+label = "anaesthetic revelation"
+tier = "strong"
+group = "nitrous-ether"
+patterns = [
+  '\ban(?:a|ae|æ)?sthetic revelation\b', '\ban(?:a|ae|æ)?sthetic (?:mystic\w*|ecsta\w*|trance)\b',
+  '\bnothing exists but thoughts\b', '\bpluriverse\b',
+  '\bether[- ]?(?:drink\w*|frolic\w*|mania\w*|habit|eat\w*|intoxicat\w*|vision\w*|dream\w*|jag|party|parties|sniff\w*|addict\w*)\b',
+  '\b(?:drink\w*|sniff\w*|inhal\w*) (?:of )?ether (?:for|as) (?:pleasure|an? intoxicant|intoxication)\b',
+  '\b[eé]th[eé]rom[aa]n\w*\b', '\b[aä]therrausch\w*\b', '\b[aä]thers[uü]cht\w*\b', '\b[aä]thertrink\w*\b',
+  '\bchloroform[- ]?(?:dream\w*|vision\w*|habit|mania)\b',
+]
+
+[[term]]
+label = "nitrous oxide experience"
+tier = "strong"
+group = "nitrous-ether"
+patterns = [
+  '\b(?:breath\w*|inhal\w*|respir\w*|took|taken|taking) (?:of )?(?:the |some )?(?:nitrous oxide|laughing gas|gaseous oxide|exhilarating gas)\b',
+  '\b(?:effects?|influence|intoxication|exhilaration|sensations?) (?:of|from|produced by) (?:the )?(?:nitrous oxide|laughing gas|gaseous oxide|protoxyde d.azote|lachgas|stickoxydul)\b',
+  '\blaughing[- ]gas (?:party|parties|frolic\w*|exhibition\w*|lecture\w*|entertainment\w*)\b',
+]
+
+[[term]]
+label = "nitrous oxide"
+tier = "weak"
+rescued_by = ["strong", "visions/hallucinations", "ecstasy/mystical states", "altered perception/self", "exhilaration", "dreams/reverie"]     # mostly chemistry tables and dental adverts on its own
+group = "nitrous-ether"
+patterns = [
+  '\bn[i1l]trous ox[iy]de?\b', '\bgaseous oxide of azote\b', '\bnitrous oxyd\b', '\boxyde? (?:of|d.)azote\b',
+  '\bprotoxyde d.azote\b', '\bprot[oó]xido de az[oó]e\b', '\b[oó]xido nitroso\b', '\bossido nitroso\b', '\bprotossido d.azoto\b',
+  '\bstick(?:stoff)?ox[iy]dul\w*\b', '\bdistickstoffmonox[iy]d\b',
+]
+
+[[term]]
+label = "laughing gas"
+tier = "weak"
+rescued_by = ["strong", "visions/hallucinations", "ecstasy/mystical states", "altered perception/self", "exhilaration", "dreams/reverie"]     # "teeth extracted without pain by laughing gas"
+group = "nitrous-ether"
+patterns = [
+  '\blaughing[- ]gas\b', '\bgaz hilarant\b', '\bgas hilarante\b', '\bg[aá]s hilariante\b', '\bgas esilarante\b',
+  '\blachgas\w*\b', '\bexhilarating gas\b', '\bparadise gas\b',
+]
+
+[[term]]
+label = "ether inhalation"
+tier = "weak"
+rescued_by = ["strong", "visions/hallucinations", "ecstasy/mystical states", "altered perception/self", "exhilaration", "dreams/reverie"]
+group = "nitrous-ether"
+patterns = [
+  '\b(?:under|inhal\w*|breath\w*|took|taking|taken|sniff\w*|drank|drink\w*) (?:the )?(?:influence of )?(?:sulph?uric )?ether\b',
+  '\bether (?:was|had been|being) (?:administered|given|inhaled)\b', '\b[eé]ther (?:inhal[eé]|respir[eé])\b',
+  '\b(?:inhal\w+|respir\w+) (?:de )?l.[eé]ther\b', '\bsous (?:l.influence de )?l.[eé]ther\b', '\b[aä]ther(?:narkose|einatmung)\w*\b',
+]
+
+[[term]]
+label = "ether"
+tier = "weak"
+needs = "strong"        # bare "ether" is mostly poetry ("born of blue ether") and physics
+group = "nitrous-ether"
+# Physics ("ether waves"), poetry ("fields of ether", German "Äther" = sky) and
+# hyphenated "eter-nity" are excluded; Latin/poetic "aether" is dropped.
+patterns = [
+  '\bether\b(?!-| ?(?:waves?|vibrations?|of space|space|drift|theory|ic)\b)', '\béther\b(?! (?:cosmique|lumineux)\b)',
+  '\betere\b(?! cosmico)', '\béter\b', '\bsulph?uric ether\b', '\bschwefeläther\b',
+]
+
+[[term]]
+label = "chloroform/anaesthesia"
+tier = "weak"
+needs = "strong"
+group = "nitrous-ether"
+patterns = ['\bchloroform\w*', '\bchloral\b', '\ban(?:a|ae|æ)?sthe[st]\w*', '\bnarcos[ei]\w*']
+
+# ---------------------------------------------------------------------------
+# (Removed on 2026-10-16 as out of scope for the archive: opium, kava, coca,
+#  generic intoxication, Vedic soma/haoma, and datura / Jimson weed / other
+#  solanaceae. They are not psychedelic in the archive's sense, and they
+#  flooded review with passing mentions.)
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# Context: visionary-experience language (never a hit alone)
+# ---------------------------------------------------------------------------
+
+
+[[term]]
+label = "visions/hallucinations"
+tier = "context"
+group = "context"
+patterns = [
+  '\bvisions\b', '\bvisionary\b',      # singular "vision" is mostly optics/medicine '\bhallucinat\w*', '\bhalluzinat\w*', '\bhalluzination\w*', '\bhallucination\w*',
+  '\bvisione[ns]?\b', '\bvisiones\b', '\bvis[õo]es\b', '\bvisioni\b', '\balucinaci[oó]n\w*', '\balucina[cç][õo]es\b',
+  '\ballucinazion\w*', '\bphantasm\w*', '\bfantasmagor\w*', '\bphantasmagor\w*', '\bsinnest[aä]uschung\w*',
+  '\btrugbild\w*', '\bfarbenvision\w*', '\bkal[ea][i]?dos[ck]op\w*', '\bsyn(?:a|ae|æ)?sthe[st]\w*',
+]
+
+[[term]]
+label = "ecstasy/mystical states"
+tier = "context"
+group = "context"
+patterns = [
+  '\becsta(?:sy|sies|tic|tically)\b', '\bextase\b', '\bextatique\b', '\bekstase\b', '\bverz[uü]ckung\b', '\b[eé]xtasis\b',
+  '\b[eê]xtase\b', '\bestasi\b', '\bestatico\b', '\becstasis\b', '\braptus\b', '\bunio mystica\b',
+  '\bineffab\w*', '\bmystic(?:al)? (?:experience|state|consciousness|revelation|insight|vision)\w*',
+  '\bcosmic consciousness\b', '\bexp(?:ansion|anded) (?:of )?(?:the )?(?:mind|consciousness)\b', '\baltered states?\b',
+  '\bbewu(?:ss|ß)tseinserweiter\w*', '\btrance\b', '\btranse\b', '\bbeatific\b', '\bb[eé]atitude\b',
+]
+
+[[term]]
+label = "altered perception/self"
+tier = "context"
+group = "context"
+patterns = [
+  '\bdepersonali[sz]\w*', '\bderealiz\w*', '\bdouble consciousness\b', '\bdoppeltes? bewu(?:ss|ß)tsein\b',
+  '\bout of (?:the|my) body\b', '\bloss of (?:the )?(?:self|ego|identity)\b', '\bego[- ]?(?:loss|death|dissolution)\b',
+  '\btime (?:seemed|stood still|was annihilated|ceased)\b', '\bsense of time\b', '\bseemed to (?:float|fly|expand|dissolve)\b',
+  '\bsensation of floating\b', '\bintensified colou?rs?\b', '\bcolou?rs? (?:of|more) (?:unearthly|extraordinary|brillian\w+|vivid)\b',
+]
+
+# Weaker context: rescues ether / nitrous oxide / laughing gas (default rescuers),
+# but not cannabis or generic plant terms, whose rescued_by lists leave these out.
+[[term]]
+label = "exhilaration"
+tier = "context"
+group = "context"
+patterns = ['\bexhilarat\w*', '\bthrill\w*', '\bpleasurable (?:sensations?|feelings?)\b']
+
+[[term]]
+label = "dreams/reverie"
+tier = "context"
+group = "context"
+patterns = [
+  '\bdreams?(?:like)?\b', '\breverie\b', '\br[eê]ve(?:rie)?s?\b',
+  '\bträum\w*', '\btraum(?:e|en|bild\w*|zustand\w*|haft\w*|leben|welt)?\b',
+]
+
+# Rescues bare "LSD" only (its rescued_by names it); never a hit alone.
+[[term]]
+label = "drug vocabulary"
+tier = "context"
+group = "context"
+patterns = [
+  '\bdrugs?\b', '\bnarcotics?\b', '\bheroin\b', '\bmari[hj]uana\b', '\bhallucinogen\w*', '\bpsychedel\w*',
+  '\bsandoz\b', '\bleary\b', '\bacid\b', '\btrips?\b', '\baddict\w*', '\bdangerous drugs?\b',
+]

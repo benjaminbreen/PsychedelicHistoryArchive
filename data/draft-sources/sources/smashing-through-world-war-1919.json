@@ -1,0 +1,61 @@
+{
+  "slug": "smashing-through-world-war-1919",
+  "title": "Smashing through \"the world war\"",
+  "author": "Unknown",
+  "year": 1919,
+  "displayDate": "1919",
+  "type": "Book",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "To be determined",
+  "language": "English",
+  "substances": [
+    "Ether"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "A wounded American soldier recounts recovering from surgery at Evacuation Hospital No. 6 in Meaux during World War I and reports a fellow patient’s account of his ether delirium: he claimed to have an invention that could defeat submarine warfare and wipe out the German Army. The vivid, firsthand recollection of altered behavior under ether makes this a strong archival lead.",
+  "excerpt": "… I Avas soon back in the land of dreams again. Thirty-two hours later, I came out of the ether. OAving to my weakened condition it had taken me over twenty-seven hours to recover from the time ether had been administered. The next two days were critical days for me. I had the opportunity to just peep behind the veil, which separates life from death, but with good care and treatment I pulled through.",
+  "citation": "*Smashing through \"the world war\"*, 1919, US-PD-Books (Common Corpus) smashingthrought00sir_8.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "https://archive.org/details/smashingthrought00sir",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-17",
+    "bucket": "corpus-scan-review",
+    "rationale": "A wounded American soldier recounts recovering from surgery at Evacuation Hospital No. 6 in Meaux during World War I and reports a fellow patient’s account of his ether delirium: he claimed to have an invention that could defeat submarine warfare and wipe out the German Army. The vivid, firsthand recollection of altered behavior under ether makes this a strong archival lead.",
+    "textSource": {
+      "url": "https://archive.org/details/smashingthrought00sir",
+      "kind": "internet-archive",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: fair. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "us-pd-books:smashingthrought00sir",
+      "decision": "add",
+      "decided_at": "2026-10-16T21:34:39.017Z",
+      "why": [],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "US-PD-Books",
+      "identifier": "smashingthrought00sir_8",
+      "archive_fit": 5,
+      "kind": "first_person_experience",
+      "scan_excerpt": "v.-hat was u-oing on. I could not understand it. Where was I? What had liap- 128 o H O Xfl o o w o ^ o ^ l-H O WITH FIGHTING BATTERY C pened? Why was it so quiet? Why had the guns stopped fir- ing? I saw myself in bandages, then I remembered that I was hungry; I had not eaten anything for over forty-eight hours. The nurse returned in a short while and making me lie down again rolled up my right sleeve and shot some liquid into my arm from a small syringe. She told me that I was going on the operating table and that she had given me morphine. I Avas soon back in the land of dreams again. Thirty-two hours later, I came out of the ether. OAving to my weakened condition it had taken me over twenty-seven hours to recover from the time ether had been administered. The next two days were critical days for me. I had the opportunity to just peep behind the veil, which separates life from death, but with good care and treatment I pulled through. I discovered that I Avas in Evacu- ation Hospital, Number Six, and that we were in the town of Meaux. As soon as I was allowed to talk to the fellow in the next bed, he told me how I had acted under the influence of the ether. As the other patients glanced towards my bed they were all smiles; I wondered Avhy; so he told me that in my delirium I had informed all and sundry that I alone knew how to over- come submarine warfare. I explained a new invention that was capable of wiping out the entire German Army and that I could not understand Avhy the Government would not accept my invention."
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "murray-system-materia-medica-pharmacy-including-translations-1832",
+  "title": "System of materia medica and pharmacy: including translations of the Edinburgh, London, and Dublin pharmacopoeias",
+  "author": "Murray, J., - n",
+  "year": 1832,
+  "displayDate": "1832",
+  "type": "Book",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "To be determined",
+  "language": "English",
+  "substances": [
+    "Nitrous oxide"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "John Murray’s 1832 materia medica describes the preparation and effects of nitrous oxide, including a rapid mental and bodily excitement, unusual pleasure, and increased muscular vigour. The excerpt gives a substantive account of the gas’s effects, though it does not include a first-person testimony.",
+  "excerpt": "… The hydro¬ gen of the ammonia attracts part of the oxygen of the nitric acid, and forms water ; and the remaining oxygen, combin¬ ing with the nitrogen both of the acid and of the ammonia, forms nitrous oxide, which is disengaged in the gaseous form. The following diagram exhibits more precisely the nature of this re-action : Thus the salt is resolved into three equivalents of water, and two equivalents of nitrous oxide gas.",
+  "citation": "Murray, J., - n, *System of materia medica and pharmacy: including translations of the Edinburgh, London, and Dublin pharmacopoeias*, 1832, English-PD (Common Corpus) b29341772_36.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "https://archive.org/details/b29341772",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "proposed",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-17",
+    "bucket": "corpus-scan-review",
+    "rationale": "John Murray’s 1832 materia medica describes the preparation and effects of nitrous oxide, including a rapid mental and bodily excitement, unusual pleasure, and increased muscular vigour. The excerpt gives a substantive account of the gas’s effects, though it does not include a first-person testimony.",
+    "textSource": {
+      "url": "https://archive.org/details/b29341772",
+      "kind": "internet-archive",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: fair. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "english-pd:b29341772",
+      "decision": "add",
+      "decided_at": "2026-10-16T21:22:46.605Z",
+      "why": [],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "English-PD",
+      "identifier": "b29341772_36",
+      "archive_fit": 4,
+      "kind": "medical_or_scientific",
+      "scan_excerpt": "the effects produced. From one to two parts of oxygen are given, by breathing it in its dilu¬ ted state, at intervals, in the course of the day. It general¬ ly increases the force and velocity of the pulse. Nitrous oxide gas. — This gas, a compound of oxy¬ gen and nitrogen, in the proportion of one atom of the for- EMPLOYED AS REMEDIES. 843 mer, 8, with one atom of the latter, 14, is obtained, in greatest purity, from the decomposition of nitrate of ammo¬ nia by heat. When this salt is exposed to a temperature about 400^ of Fahrenheit’s scale, its principles re-act on each other, and enter into new combinations. The hydro¬ gen of the ammonia attracts part of the oxygen of the nitric acid, and forms water ; and the remaining oxygen, combin¬ ing with the nitrogen both of the acid and of the ammonia, forms nitrous oxide, which is disengaged in the gaseous form. The following diagram exhibits more precisely the nature of this re-action : Thus the salt is resolved into three equivalents of water, and two equivalents of nitrous oxide gas. After its produc¬ tion, the gas requires to stand some hours, to deposite a little saline vapour, before it is fit to be breathed. The effects of nitrous oxide gas on the system, when it is respired, are scarcely analogous to those of any other agent. The excitement which it produces is extended to the functions of body and mind with more rapidity and force than that arising from the action of the most powerful sti¬ mulants. It is accompanied, too, with effects as various as they are peculiar ; it excites usually a peculiar thrilling of the body, with feelings of pleasure not easily described. Muscular vigour is increased, so that unusual"
+    }
+  }
+}

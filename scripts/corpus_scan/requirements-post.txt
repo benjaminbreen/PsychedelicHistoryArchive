@@ -1,0 +1,3 @@
+# Post-scan pipeline (embed_hits, build_seeds, rank_hits, screen_hits, train_ranker).
+# Everything else is the standard library; run from the laptop, not the scan machine.
+numpy==2.5.4

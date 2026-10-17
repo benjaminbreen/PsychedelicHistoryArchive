@@ -1,0 +1,65 @@
+{
+ "slug": "newspaper-sn00065130-1911-05-12",
+ "start": "INDIAN COURT FINDS MENACE IN MEXICAN BEAN",
+ "end_before": "STATE FAIR GROUNDS MUCH ENLARGED",
+ "breaks": [
+  "Pine Ridge May 2.",
+  "Indian Court Confiscates Outfit.",
+  "Bean a “Holy Comforter.”",
+  "Experiment a Success."
+ ],
+ "fixes": [
+  [
+   "INDIAN COURT FINDS MENACE IN MEXICAN BEAN IN CEREMONIES Attempted Introduction of Mescal Berry in Worship Gets Bed Men Into Trouble.",
+   "### Indian Court Finds Menace in Mexican Bean in Ceremonies\n\n**Attempted Introduction of Mescal Berry in Worship Gets Red Men Into Trouble**\n\n"
+  ],
+  [
+   "Indian Court Confiscates Outfit.",
+   "**Indian Court Confiscates Outfit.**"
+  ],
+  [
+   "Bean a “Holy Comforter.”",
+   "**Bean a “Holy Comforter.”**"
+  ],
+  [
+   "Experiment a Success.",
+   "**Experiment a Success.**"
+  ],
+  [
+   "the tales of the Indiana,",
+   "the tales of the Indians,"
+  ],
+  [
+   "series of “worries”",
+   "series of “worries” [?]"
+  ],
+  [
+   "but it has been previously developed",
+   "but it has been [?] developed"
+  ]
+ ],
+ "note": "_[Complete article from page 2 of a South Dakota weekly, 12 May 1911 (Chronicling America LCCN sn00065130). OCR from Chronicling America, lightly corrected; [?] marks readings to check against the page image.]_",
+ "fields": {
+  "title": "\"Indian Court Finds Menace in Mexican Bean\": peyote on trial at Pine Ridge, 1911",
+  "short_title": "Peyote on trial at Pine Ridge (1911)",
+  "subtitle": "A South Dakota newspaper, 12 May 1911",
+  "display_date": "12 May 1911 (datelined Pine Ridge, 2 May)",
+  "date_start": 1911,
+  "document_type": "Newspaper Article",
+  "medium": "Text",
+  "language": "English",
+  "region": "Pine Ridge Reservation, South Dakota",
+  "publication_title": "South Dakota weekly newspaper (LCCN sn00065130)",
+  "summary": "Six Oglala Lakota men of the Pass Creek district are tried before the Pine Ridge Indian court, under agency superintendent John T. Brennan, for introducing peyote (\"the notorious mescal bean\"), previously known in the region among the Winnebago and Omaha. The report describes the confiscated ritual outfit: a drum made from a paint keg, decorated drumsticks, an altar cloth, and a shaving mug used as the cup for peyote \"tea.\" It also records the worshippers' view of peyote as the \"Holy Comforter.\" The court of Lakota judges sentenced the men to jail, an early episode in the peyote religion's arrival among the Lakota.",
+  "citation": "\"Indian Court Finds Menace in Mexican Bean in Ceremonies,\" [South Dakota newspaper, LCCN sn00065130], 12 May 1911, 2.",
+  "rights_statement": "Public domain (published before 1930)",
+  "access_type": "hosted",
+  "hosting_status": "transcript_only",
+  "reader_mode": "transcript"
+ },
+ "author": "",
+ "editor_notes": "Newspaper title not yet identified: look up LCCN sn00065130 at Chronicling America (the site blocked automated access). Likely a state news service story that ran in several South Dakota weeklies. Good companion to Pine Ridge agency records and to the Native American Church's later incorporation in South Dakota.",
+ "transcript": "_[Complete article from page 2 of a South Dakota weekly, 12 May 1911 (Chronicling America LCCN sn00065130). OCR from Chronicling America, lightly corrected; [?] marks readings to check against the page image.]_\n\n### Indian Court Finds Menace in Mexican Bean in Ceremonies\n\n**Attempted Introduction of Mescal Berry in Worship Gets Red Men Into Trouble**\n\n\n\nPine Ridge May 2.—Six of the Indians of Pass Creek district, of this reservation, charged with introducing the notorious mescal bean among their brethren, were recently haled before the celebrated Indian court, by Major John T. Brennan, superintendent of the reservation at this Indian agency. The use of this intoxicating alkaloid has been for some time more or less mixed up with the religious ceremonies of the Winnebagos and Omahas of eastern Nebraska, but this is the first attempt on the part of the aristocrats of the Indian world, the Sioux, to charm themselves into happiness by the use of the subtle vegetable alkaloid. **\n\nIndian Court Confiscates Outfit.** The outfit used in the celebration of the “mescal” service was confiscated by the Indian court. Among the paraphernalia was a homemade drum, for which purpose, use was made of a part of a discarded paint keg, with a buckskin stretched over one end. The drum sticks were decorated with religious emblems and words burned into them. There was a sort of an altar cloth with a small circle worked in the center, in which was placed the “tea” which was brewed from the “peyote” or mescal bean. In this instance the “cup” was a highly colored shaving mug, probably purchased from some trader. The “peyote” or mescal bean was a small dried part of a flower which grows only in the tropics and in this case had been originally imported from Mexico. In looks, it has the appearance of a dried mushroom, but it has been [?] developed in its action on the human system. **\n\nBean a “Holy Comforter.”** According to the tales of the Indians, the wonderful bean is regarded by its devotees, as the Messiah, or “Holy Comforter,” promised the world by Christ at the time of His ascension, but strange to say, after the “bowing down” before his majesty, the bean, they stew up a mess of them, and proceed to seek comfort by drinking the \"tea.\" This seems to produce a sort of mild intoxication and feeling of general ease, comfort and happiness and Mr. Indian goes off to sleep after his service of worship and hymn singing. His slumber lasts for several hours and then he repeats the performance, the whole conference or series of “worries” [?] lasting two or three days, generally beginning Saturday afternoon and continuing until sometime on Monday. **\n\nExperiment a Success.** The court is composed of the most advanced and intelligent members of the Sioux nation, under the direction of Major Brennan after very careful consideration; and his judgment relative to the experiment of starting these Indians on the road toward the Judicial branch of self-government has been amply justified by their decisions. After carefully considering the matter from all points of view, they finally concluded that the attempt on the part of the accused to introduce, under the guise of a new religion, the use of the notorious “mescal,” would very likely result in much harm to the people, and sentenced the offenders to a term in Jail, as well as confiscating the balance of the beans and the outfit.",
+ "transcript_words": 544,
+ "translation_words": 0
+}
