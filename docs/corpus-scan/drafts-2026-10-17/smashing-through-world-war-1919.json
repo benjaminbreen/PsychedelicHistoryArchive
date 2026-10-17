@@ -1,0 +1,89 @@
+{
+ "slug": "smashing-through-world-war-1919",
+ "start": "CHAPTER XV Wounded",
+ "end_before": "I stayed in Hospital No. 8 two days",
+ "dehyphenate": true,
+ "remove": [
+  "128 o H O Xfl o o w o ^ o ^ l-H O WITH FIGHTING BATTERY C ",
+  "126 WITH FIGHTING BATTERY C ",
+  "127 SMASHING THROUGH THE ''WORLD WAR\" "
+ ],
+ "regex_fixes": [
+  [
+   "AA'",
+   "w"
+  ],
+  [
+   "A[vV]",
+   "w"
+  ],
+  [
+   "v/as",
+   "was"
+  ]
+ ],
+ "breaks": [
+  "July 23, 1918 at 10.45",
+  "I was asleep about fifteen minutes",
+  "As the shirt lay on the ground",
+  "We were placed in the ambulance",
+  "Here and there you would hear",
+  "The following morning at 4.00",
+  "The nurse returned",
+  "Thirty-two hours later",
+  "As soon as I was allowed",
+  "He advised me to stay awake",
+  "The next day the doctor",
+  "No praise is too great"
+ ],
+ "fixes": [
+  [
+   "CHAPTER XV Wounded — A Peep Behind the Veil By william McGinnis",
+   "### Chapter XV: Wounded — A Peep Behind the Veil\n\n_By William McGinnis_\n\n"
+  ],
+  [
+   "v.-hat was u-oing on",
+   "what was going on"
+  ],
+  [
+   "liap- pened",
+   "happened"
+  ],
+  [
+   "ol)- ject",
+   "object"
+  ],
+  [
+   "to_ learn",
+   "to learn"
+  ],
+  [
+   "wwater",
+   "water"
+  ]
+ ],
+ "note": "_[Chapter XV, pp. 125–129: McGinnis's account of being wounded on 23 July 1918, during the Aisne-Marne offensive, and his treatment at the clearing station and Evacuation Hospital No. 6. The rest of the chapter, on his convalescence, is omitted. OCR from the Internet Archive full-text file, corrected for its consistent misreading of w.]_",
+ "fields": {
+  "title": "\"A peep behind the veil\": a gunner wounded, and under ether, 1918",
+  "short_title": "A gunner under ether, 1918",
+  "subtitle": "From Smashing Through \"the World War\" with Fighting Battery C",
+  "display_date": "1919 (events of July 1918)",
+  "date_start": 1919,
+  "document_type": "Book",
+  "medium": "Text",
+  "language": "English",
+  "region": "Meaux, France",
+  "publication_title": "Smashing Through \"the World War\" with Fighting Battery C",
+  "summary": "William McGinnis of Battery C, 102nd Field Artillery (26th \"Yankee\" Division), describes being hit by a shell on 23 July 1918: \"I seemed to be floating in space; everything was turning red.\" He goes on to the scenes at a church used as a clearing station and his collapse there. At Evacuation Hospital No. 6 at Meaux he is given morphine and wakes \"thirty-two hours later … out of the ether,\" having \"peep[ed] behind the veil, which separates life from death.\" His neighbour reports the delirious boasts he made under ether, and after that the ward's entertainment is listening to new arrivals raving, \"fighting their battles over again.\"",
+  "citation": "William McGinnis, \"Wounded — A Peep Behind the Veil,\" in Edward D. Sirois and William McGinnis, *Smashing Through \"the World War\" with Fighting Battery C, 102nd F.A., \"Yankee Division\"* (Salem, Mass., 1919), 125–129.",
+  "rights_statement": "Public domain (published 1919)",
+  "access_type": "hosted",
+  "hosting_status": "transcript_only",
+  "reader_mode": "transcript"
+ },
+ "author": "William McGinnis",
+ "editor_notes": "Chapter by William McGinnis in a battery history co-written with Edward D. Sirois; confirm the publication details on the title page. Taken from the Internet Archive full-text file. Pages 125–129 are inferred from the running page numbers.",
+ "transcript": "_[Chapter XV, pp. 125–129: McGinnis's account of being wounded on 23 July 1918, during the Aisne-Marne offensive, and his treatment at the clearing station and Evacuation Hospital No. 6. The rest of the chapter, on his convalescence, is omitted. OCR from the Internet Archive full-text file, corrected for its consistent misreading of w.]_\n\n### Chapter XV: Wounded — A Peep Behind the Veil\n\n_By William McGinnis_\n\nAt the request of many of my friends I have decided to include a chapter describing how it feels to get wounded and the sensation you experience on getting a peep behind the Veil of Death; also the care you receive in the hospitals of the A. E. F. My memory is not so clear today as it was almost a year ago when I started on a trip which almost resulted in my pushing up daisies or as our Indian friends would say, starting off to my Happy Hunting Grounds. I will state clearly what I do remember. \n\nJuly 23, 1918 at 10.45 A. M. I returned to the Battery from a little trip with the Infantry. I had been away almost four hours, but gas, fired by the Huns and machine gun fire prevented me from attaining the object I sought or the object the platoon of Infantry to which I had attached myself were seeking. Out of seventy-five men in the third wave going in, seventeen were killed outright by machine gun fire and several were wounded. Gas (Chlorine) brought the casualties up to fifty-three men. When I reached the battery I decided to have a rest. My eyes were burnt and my throat was parched No amount of water seemed to quench my thirst; still I did not think that I was gassed badly enough to report to the dressing station for treatment. \n\nI was asleep about fifteen minutes along with Sgt. Clarence Davis, Corp. Eddie Sirois and Corp. William Hart when suddenly without the least warning I heard a terrific explosion. I was dazed for a moment and did not know what to do but as my vision became clearer I observed the branches of the trees overhead trembling and the leaves falling to the ground. The odor of burned powder seemed to choke me ; I seemed to be floating in space ; everything was turning red ; I was losing control of myself. I made an effort to stand up, but my legs refused to support me and I fell flat on the ground. I did not know that I was hit. I was conscious of something having happened, but what it was I could not tell. I wanted to talk, but somehow my tongue was cleaved to the roof of my mouth. Peculiar sounds were running in my head. Soon, I felt a burning sensation in my chest, near my throat and in my left shoulder. My left arm was lying stiff across my chest and my head refused to move from right to left. I realized that something was wrong. I pulled myself together again, but found I could not stand erect. However, I started off. I had no idea where I was going, but I felt this was no place for me. I wanted to speak to somebody, to learn what was the matter. I was afraid that I had gone insane from the concussion of the exploding shell. Someone in the Battery ran out and grabbed me. Sgt. Davis and Corp Hart were lying on the ground having their wounds dressed. When I saw the bandage being placed on them, the thought came to me in a flash that I was hit. This was the first time my mind had worked clear. Capt. Howe held me while Norman Barteaux, our first aid man, cut my shirt off so that he could place a bandage on. \n\nAs the shirt lay on the ground there was no doubt in my mind that I had been bumped because the color of the shirt decided that question. A good drink of cool water was worth more than anything that I possessed in the world at that time, but water could not be found here. Someone gave me a cigarette and as I began to smoke all my worries came to an end. In the meanwhile, the doctor arrived and made out my field service tag, which was tied onto me, describing the nature of the wound. It was marked G. S. W. (gun shot wound) left chest and left shoulder. I also received an injection of antitetanus to prevent lock-jaw. I was placed on a stretcher and carried about three hundred meters to the rear, to a dressing station where Father Farrell and Chaplain Stackpole were attending to the wants of the bunch who had been wounded. The station was situated on the edge of a wood and there was a continual stream coming out of these woods to this point, awaiting ambulances. My Buddie, Eddie Sirois, stayed with me until I was placed in the ambulance. We had been bunkies from the start and he was there to see me off. \n\nWe were placed in the ambulance and started off, four in each car. One of the boys in the lower tier who was from the Infantry and who had a fragment enter his stomach died in the ambulance before we reached the clearing station. This place was in an old church in a small village about eight kilometers from the front. Several operating tables were set up and surgeons with aprons covered with blood were attending to the worst cases, mostly amputations. Here I was tagged for evacuation to a hospital. There were several hundred stretcher cases laid out on the floor. The yard surrounding the church was also full of men, with bandaged heads, arms and legs. The groans of the severely wounded were terrible to listen to and above the cries of agony could be heard the everlasting cry for water and cigarettes. Two American aeroplanes circled over this house of misery to prevent Hun aviators from coming over and dropping bombs on the station, a popular sport indulged in by the average Hun flyer. \n\nHere and there you would hear an unearthly yell from a stretcher ; the medical corps men would run over, look at the case, shake their heads and cover the still form with a blanket and they would instruct the bearers to put that stretcher over against the wall. This corner was well filled; no sound came from here and no movement of the blankets was noticed; they were perfectly still and silent; this corner was reserved for the dead. Every so often a couple of stretcher bearers would proceed to that corner and lay their silent burden, with the others; it was a horrible sensation. I was getting weaker, owing to the fact that I was bleeding quite freely. I distinctly remember a peculiar buzzing sound in my ears; everything seemed to change color; I took one hasty glance at that corner and made one supreme effort to pull myself together, but failed and lapsed into unconsciousness. \n\nThe following morning at 4.00 A. M. I heard voices at my head. I opened my eyes and saw strange forms running from one place to another. As I gradually regained my senses I saw the form of a woman all in white near me. She was moistening my lips with a piece of gauze dipped in water and placing wet towels on my forehead. I asked for a drink and then she spoke for the first time. She was speaking English; she told me to keep quiet, but in my semi-delirium, I could not understand why I should, so she left me. I saw that I was in a bed with white sheets and that there were other beds in this place. I sat up to see what was going on. I could not understand it. Where was I? What had happened? Why was it so quiet? Why had the guns stopped firing? I saw myself in bandages, then I remembered that I was hungry; I had not eaten anything for over forty-eight hours. \n\nThe nurse returned in a short while and making me lie down again rolled up my right sleeve and shot some liquid into my arm from a small syringe. She told me that I was going on the operating table and that she had given me morphine. I was soon back in the land of dreams again. \n\nThirty-two hours later, I came out of the ether. Owing to my weakened condition it had taken me over twenty-seven hours to recover from the time ether had been administered. The next two days were critical days for me. I had the opportunity to just peep behind the veil, which separates life from death, but with good care and treatment I pulled through. I discovered that I was in Evacuation Hospital, Number Six, and that we were in the town of Meaux. \n\nAs soon as I was allowed to talk to the fellow in the next bed, he told me how I had acted under the influence of the ether. As the other patients glanced towards my bed they were all smiles; I wondered why; so he told me that in my delirium I had informed all and sundry that I alone knew how to overcome submarine warfare. I explained a new invention that was capable of wiping out the entire German Army and that I could not understand why the Government would not accept my invention. I could only smile, but I felt embarrassed. \n\nHe advised me to stay awake because while I was sleeping they had brought two new cases in from the operating room. They soon began to rave. I realized then what a good time the other fellows had had in listening to me. They were fighting their battles over again, shouting for ammunition and ducking enemy shell fire. This was our only source of entertainment here, listening to the ravings of the other poor victims. \n\nThe next day the doctor arrived to take out my stitches, four in the chest and seven in my shoulder. A few days later, I was evacuated to Evacuation Hospital No. 8, to await shipment to some other part of France. \n\nNo praise is too great for the American nurses in Evacuation Hospital No. 6 which was so close to the front. They worked day and night amid the most horrible surroundings and may God bless them.",
+ "transcript_words": 1706,
+ "translation_words": 0
+}

@@ -1,0 +1,134 @@
+{
+ "slug": "petit-journal-1934",
+ "segments": [
+  {
+   "start": "Le PEYOTE est une plante connue",
+   "end_after": "le tube 20 frs dans toutes les pharmacies."
+  },
+  {
+   "start": "POUR 20 FRANCS Vous aurez des Dragées",
+   "end_after": "Labor. 5, pce Blanche, Paris et ttes pharm. 20 ir.",
+   "join": "\n\n### Le Petit Journal, 1934\n\n"
+  }
+ ],
+ "fixes": [
+  [
+   "Le PEYOTE est une plante connue",
+   "### L'Écho de Paris, 1933\n\nLe PEYOTE est une plante connue"
+  ],
+  [
+   "dont la Faculté nous ia révélé",
+   "dont la Faculté nous a révélé"
+  ],
+  [
+   "considé rer",
+   "considérer"
+  ],
+  [
+   "PEYOTE Tranuti",
+   "PEYOTE Tramni"
+  ],
+  [
+   "provo quant",
+   "provoquant"
+  ],
+  [
+   "une sensation âe viHité/deforcejd'ardeur aux plus Déprimés. ,",
+   "une sensation de virilité, de force, d'ardeur aux plus déprimés."
+  ],
+  [
+   "ef ficace",
+   "efficace"
+  ],
+  [
+   "af fections",
+   "affections"
+  ],
+  [
+   "de vivre, ifc Le PEYOTE",
+   "de vivre. Le PEYOTE"
+  ],
+  [
+   "«e vend",
+   "se vend"
+  ],
+  [
+   "faci- _ les",
+   "faciles"
+  ],
+  [
+   "PeyoteTramni",
+   "Peyote-Tramni"
+  ],
+  [
+   "prendre èt en",
+   "prendre et en"
+  ],
+  [
+   "là joie de -, vivre",
+   "la joie de vivre"
+  ],
+  [
+   "neurasthéniques I prenez",
+   "neurasthéniques ! prenez"
+  ],
+  [
+   "véritable, sève",
+   "véritable sève"
+  ],
+  [
+   "toni que",
+   "tonique"
+  ],
+  [
+   "de \"plénitude et de. vitalité",
+   "de plénitude et de vitalité"
+  ],
+  [
+   "sou lève",
+   "soulève"
+  ],
+  [
+   "decoup.de fouet",
+   "de coup de fouet"
+  ],
+  [
+   "traditionnels",
+   "traditionnels"
+  ],
+  [
+   "ttes pharm. 20 ir.",
+   "toutes pharmacies. 20 fr."
+  ]
+ ],
+ "note": "_[Two advertisements for the same patent medicine: one in L'Écho de Paris, 1933, and one in Le Petit Journal, 1934. Each is transcribed in full. OCR from Gallica, corrected.]_",
+ "translation": "### L'Écho de Paris, 1933\n\n_[Machine-assisted translation; not yet checked by a specialist.]_\n\nPEYOTE is a plant long known to the natives of Mexico, whose marvellous properties the Faculty [of Medicine] has revealed to us. Scientists are unanimous in regarding PEYOTE Tramni as the most prodigious generator of energy: it stimulates all the functions, abolishes fatigue, and gives a sensation of virility, strength and ardour to the most depressed. PEYOTE Tramni is the only preparation of its kind whose scientific dosage is effective. It is the only sovereign specific for nervous ailments, and it alone should be used to regain health and the joy of living promptly. PEYOTE Tramni is sold as easy-to-take lozenges: 20 francs the tube, in all pharmacies.\n\n### Le Petit Journal, 1934\n\nFOR 20 FRANCS you will have Peyote-Tramni lozenges, pleasant and easy to take, and in a short time you will obtain a well-balanced nervous system that will give you the joy of living a calm and healthy life. The nervous, the depressed, neurasthenics: take Peyote-Tramni, the true sap of your life, whose action, at once tonic and sedative, on all your nerve cells seems almost miraculous! **A course of Peyote-Tramni brings an exaltation of all the faculties, a prodigious sensation of well-being, of fullness and of overflowing vitality that erases every trace of fatigue and lifts a man above himself.** Peyote-Tramni gives no whip-crack and has nothing in common with those traditional stimulants that often make you pay rather dearly for their doping. Laboratory: 5, place Blanche, Paris, and all pharmacies. 20 fr.",
+ "fields": {
+  "title": "Peyote-Tramni: peyote as a Paris patent medicine, 1933–1934",
+  "short_title": "Peyote-Tramni advertisements",
+  "subtitle": "Advertisements in L'Écho de Paris (1933) and Le Petit Journal (1934)",
+  "display_date": "1933–1934",
+  "date_start": 1933,
+  "document_type": "Newspaper Article",
+  "medium": "Text",
+  "language": "French",
+  "content_language": "French",
+  "region": "Paris, France",
+  "publication_title": "L'Écho de Paris; Le Petit Journal",
+  "summary": "Two interwar newspaper advertisements sell Peyote-Tramni, peyote lozenges from a laboratory on the Place Blanche, as a cure for nerves, depression and neurasthenia. They invoke Mexican Indigenous knowledge and the authority of the Paris Faculty, and the 1934 version promises \"an exaltation of all the faculties\" that \"lifts a man above himself.\" They show peyote being marketed in Paris as a tonic, in the same years French psychiatrists such as Alexandre Rouhier were studying mescaline.",
+  "citation": "Advertisement for Peyote-Tramni, *L'Écho de Paris*, 1933; advertisement for Peyote-Tramni, *Le Petit Journal* (Paris), 1934.",
+  "rights_statement": "Public domain (anonymous advertisements, published 1933–1934; confirm before hosting images)",
+  "source_url": "https://gallica.bnf.fr/ark:/12148/bpt6k633590d",
+  "access_type": "hosted",
+  "hosting_status": "transcript_only",
+  "reader_mode": "translation",
+  "translation_language": "English",
+  "translation_provider": "llm",
+  "translation_note": "Machine-assisted translation prepared for the archive from the French advertisements; not yet checked by a specialist."
+ },
+ "author": "",
+ "editor_notes": "This record merges two proposals: the Écho de Paris advert (Gallica bpt6k814809v) and the Petit Journal advert (Gallica bpt6k633590d). The separate Écho de Paris proposal was declined as merged. Exact issue dates still need to be found on Gallica. A short note linking to Rouhier's La plante qui fait les yeux émerveillés (1927) would give useful context.",
+ "transcript": "_[Two advertisements for the same patent medicine: one in L'Écho de Paris, 1933, and one in Le Petit Journal, 1934. Each is transcribed in full. OCR from Gallica, corrected.]_\n\n### L'Écho de Paris, 1933\n\nLe PEYOTE est une plante connue depuis longtemps par les naturels du Mexique et dont la Faculté nous a révélé les propriétés merveilleuses. . les Savants sont unanimes à considérer le PEYOTE Tramni comme le plus prodigieux générateur d'énergie; provoquant la suractivité de toutes les fonctions, 'abolissant la fatigue et donnant une sensation de virilité, de force, d'ardeur aux plus déprimés. Le PEYOTE Tramni est la seule préparation de . ce genre dont le dosage scientifique soit efficace. Il est le seul spécifique souverain des affections nerveuses et seul il doit être utilisé pour retrouver promptement la santé et la joie de vivre. Le PEYOTE Tramni se vend sous forme de dragées faciles à prendre ; le tube 20 frs dans toutes les pharmacies.\n\n### Le Petit Journal, 1934\n\nPOUR 20 FRANCS Vous aurez des Dragées au Peyote-Tramni agréables, faciles à prendre et en peu de temps vous obtiendrez un système nerveux bien équilibré qui vous donnera la joie de vivre une vie calme et saine. Nerveux, déprimés, neurasthéniques ! prenez du Peyote-Tramni qui est la véritable sève de votre vie et dont l'action à la fois tonique et sédative sur toutes vos cellules nerveuses semble tenir du miracle ! Une cure de Peyote-Tramni provoque une exaltation de toutes les facultés une prodigieuse sensation de bien-être, de plénitude et de vitalité débordante qui efface toute trace de fatigue et soulève l'homme au-dessus de lui-même. Peyote-Tramni ne donne pas de coup de fouet et n'a rien de commun avec ces excitants traditionnels qui font souvent payer leur dopping un peu cher. Labor. 5, pce Blanche, Paris et toutes pharmacies. 20 fr.",
+ "transcript_words": 275,
+ "translation_words": 259
+}

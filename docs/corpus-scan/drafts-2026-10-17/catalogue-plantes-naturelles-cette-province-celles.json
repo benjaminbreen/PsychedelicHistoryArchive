@@ -1,0 +1,81 @@
+{
+ "slug": "catalogue-plantes-naturelles-cette-province-celles",
+ "start": "LYCOPERDON tuberosum. Linn. Truffe.",
+ "end_before": "Fin des Propriétés.",
+ "breaks": [
+  "1252 LYCOPERDON hoffmannii",
+  "1159 CLAVARIA coralloides",
+  "1262 PHALLUS esculentus",
+  "1263 PHALLUS impudicus",
+  "1264 BOLETUS igniarius",
+  "AGARICUS lenticularis",
+  "AGARICUS muscarius",
+  "Tous les Champignons contiennent",
+  "AGARICUS campestris",
+  "AGARICUS vernus",
+  "AGARICUS piperatus",
+  "AGARICUS lacmus",
+  "AGARICUS squamosus",
+  "AGARICUS quercinus"
+ ],
+ "fixes": [
+  [
+   "M. Whiffing",
+   "M. Whistling [?]"
+  ],
+  [
+   "Vêpes-de-loup",
+   "Vesses-de-loup"
+  ],
+  [
+   "après l'avoir voir dépouillée",
+   "après l'avoir dépouillée"
+  ],
+  [
+   "font les plus propres",
+   "sont les plus propres"
+  ],
+  [
+   "Champignons suspectes",
+   "Champignons suspects"
+  ],
+  [
+   "désseche",
+   "dessèche"
+  ],
+  [
+   "sur l'arête",
+   "sur l'artère [?]"
+  ]
+ ],
+ "note": "### Propriétés des champignons\n\n_[The closing entries on fungi in the \"Propriétés des plantes\" part of Durande's Flore de Bourgogne (1782), vol. 2; the fly agaric (Agaricus muscarius) entry is in the middle. OCR from the Gallica scan, lightly corrected; numbers are Durande's catalogue numbers where the OCR kept them, and [?] marks readings to check.]_",
+ "translation": "### Properties of the fungi\n\n_[Machine-assisted translation of the French above; not yet checked by a specialist.]_\n\n**Lycoperdon tuberosum** (Linnaeus). Truffle. The truffle is a pleasant and much sought-after food. It is heating, digests slowly, binds the bowels, and is held to be an aphrodisiac.\n\n**1252. Lycoperdon hoffmannii** (Linnaeus). Common puffball. Used like agaric, this plant stops haemorrhages; it dries ulcers and wounds that are not of a bad kind. In some countries its powder, boiled in milk, is given to calves with diarrhoea. In Italy young puffballs are eaten. In England they are dried in the oven to make tinder.\n\n**1159. Clavaria coralloides** (Linnaeus). Coral clavaria, goat's-beard. It is eaten, and the Germans regard it as one of the best mushrooms.\n\n**1262. Phallus esculentus** (Linnaeus). Edible morel. The morel has a pleasant flavour and is much used in cookery, where it serves for various seasonings.\n\n**1263. Phallus impudicus** (Linnaeus). Stinking morel [stinkhorn]. Thrown on the fire, it gives off a smell of volatile alkali.\n\n**1264. Boletus igniarius** (Linnaeus). Fire-coloured bolete, or tinder fungus. After removing the rind and outermost part of this bolete, it is boiled in a lye of ashes, then beaten and dried: this is how tinder is prepared. It should be chosen young, for as it ages it becomes as hard as wood. Surgery makes great use of this plant, more commonly known as agaric: it is simply beaten with a hammer after its rind has been stripped, and dried without being steeped in lye. The kind that grows on oak is preferred, and so might seem to be astringent; it is thought, however, that it acts only through the pressure that several layers laid one on another exert on the artery [?]; it nonetheless succeeds in nosebleeds. This agaric is also used in dyeing. The Lapps use it in place of the Chinese moxa to deaden parts affected by rheumatism and gout.\n\n**Agaricus lenticularis** (Linnaeus). Chanterelle agaric. Its smell and taste are fairly pleasant, though a little acrid. It seems it can be eaten without fear, cooked in meat broth.\n\n**Agaricus muscarius** (Linnaeus). Speckled agaric [fly agaric]. **This mushroom is very poisonous to people, and even to animals, although it seems rather to throw flies into a stupor than to kill them. The chief remedy is first an emetic, above all white vitriol, and then, it is claimed, ether. Despite its pernicious qualities, in Kamchatka an intoxicating liquor is made from it.** Mr Whistling [?] has given it internally, dried and reduced to powder, in doses of one scruple, against goitres, paralysis, some encysted tumours and an ulcer, in which this plant seems to have had some success.\n\nAll mushrooms contain volatile alkali, which lime brings out. Those which, when powdered, attract moisture most are the best suited to preparing Prussian blue, according to the experiments of Mr Goettling.\n\n**Agaricus campestris** (Linnaeus). Edible agaric, field mushroom. This is the mushroom most used in cookery: it is always a heavy food, and often becomes dangerous through the mistakes of those who gather it. It is prudent to wash these mushrooms well and to steep them for three or four hours in water charged with sea salt, or in vinegar, which can strip them of the resinous parts in which the poisonous principle resides. Gardeners make beds of these mushrooms with straw, horse manure and earth, and take care to water them often.\n\n**Agaricus vernus** (Linnaeus). Spring agaric, St George's mushroom. It is the most delicate and sought-after of mushrooms.\n\n**Agaricus piperatus** (Linnaeus). Peppery agaric. Its juice is acrid, almost caustic, and dangerous.\n\n**Agaricus lacmus.** Milky agaric. It has been recognised as poisonous.\n\n**Agaricus squamosus.** Scaly agaric. Animals that eat two or three of these agarics are troubled and purged, without being otherwise inconvenienced; in spite of this Mr Paulet finds in them all the characters of suspect mushrooms.\n\n**Agaricus quercinus** (Linnaeus). Oak agaric. It can be used to make tinder. It is prepared like the fire-coloured bolete, to stop haemorrhages.",
+ "fields": {
+  "title": "Fly agaric in Durande's Flore de Bourgogne",
+  "short_title": "Durande on the fly agaric",
+  "subtitle": "Flore de Bourgogne, Propriétés des plantes: the fungi",
+  "display_date": "1782",
+  "date_start": 1782,
+  "document_type": "Book",
+  "medium": "Text",
+  "language": "French",
+  "content_language": "French",
+  "region": "Burgundy, France; Kamchatka",
+  "publisher": "L. N. Frantin (Dijon)",
+  "publication_title": "Flore de Bourgogne, vol. 2",
+  "summary": "Jean-François Durande's flora of Burgundy, written for the public botany courses of the Dijon Academy, closes its account of plant properties with the fungi. Its entry on *Agaricus muscarius*, the fly agaric, calls it very poisonous, though it seems to stupefy flies rather than kill them. It recommends an emetic and then ether as remedies, notes that in Kamchatka \"an intoxicating liquor is made from it,\" and reports trials of the dried powder against goitre and paralysis.",
+  "citation": "Jean-François Durande, *Flore de Bourgogne, ou Catalogue des plantes naturelles à cette province, et de celles qu'on y cultive le plus communément … ouvrage rédigé pour servir aux cours publics de l'Académie de Dijon*, vol. 2 (Dijon: L. N. Frantin, 1782), \"Propriétés des plantes\": fungi.",
+  "rights_statement": "Public domain (published 1782)",
+  "access_type": "hosted",
+  "hosting_status": "transcript_only",
+  "reader_mode": "translation",
+  "translation_language": "English",
+  "translation_provider": "llm",
+  "translation_note": "Machine-assisted translation prepared for the archive from the 1782 French; not yet checked by a specialist against the original."
+ },
+ "author": "Jean-François Durande",
+ "editor_notes": "Attribution to Durande, the 1782 Frantin edition and vol. 2 inferred from the title and scan (Gallica bpt6k6529080s); confirm on the title page and add page numbers. The Kamchatka line reflects the 18th-century circulation of Krasheninnikov and Steller's reports; a brief, early continental mention of fly-agaric intoxication.",
+ "transcript": "### Propriétés des champignons\n\n_[The closing entries on fungi in the \"Propriétés des plantes\" part of Durande's Flore de Bourgogne (1782), vol. 2; the fly agaric (Agaricus muscarius) entry is in the middle. OCR from the Gallica scan, lightly corrected; numbers are Durande's catalogue numbers where the OCR kept them, and [?] marks readings to check.]_\n\nLYCOPERDON tuberosum. Linn. Truffe. La Truffe est un aliment agréable & fort recherché. Elle échauffe, se digère lentement, constipe, & passe pour aphrodisiaque. \n\n1252 LYCOPERDON hoffmannii. Linn. Vesse-de-loup commune. Cette plante arrête les hémorrhagies étant employée comme l'Agaric : elle dessèche les ulcères & les plaies qui ne sont point de mauvaise qualité. Il est des pays où l'on donne sa farine, bouillie avec le lait, aux veaux qui ont la diarrhée. En Italie, on mange les jeunes Vesses-de-loup. En Angleterre, on les fait sécher au four pour en faire de l'amadou. \n\n1159 CLAVARIA coralloides. Linn. Clavaire coralloïde, Barbe-de-chèvre. Il se mange, & les Allemands le regardent comme un des meilleurs Champignons. \n\n1262 PHALLUS esculentus. Linn. Morille comestible. La Morille est d'une faveur agréable, & très-employée dans les cuisines, où elle sert à différents assaisonnements. \n\n1263 PHALLUS impudicus. Linn. Morille fétide. Jetée dans le feu, elle répand une odeur d'alkali volatil. \n\n1264 BOLETUS igniarius. Linn. Bolet couleur de feu, ou Amadouvier. Après avoir enlevé l'écorce & la partie la plus extérieure de ce Bolet, on le fait cuire dans une lessive de cendres, ensuite on le bat & on le séche : c'est la préparation de l'amadou. Il faut le choisir jeune; car en vieillissant, il devient aussi dur que le bois. La Chirurgie fait un grand usage de cette plante, connue plus communément sous le nom d'Agaric : on se contente de la battre à coups de marteau, après l'avoir dépouillée de son écorce, & de la faire sécher sans la lessiver. On préfère, celle qui croît sur le Chêne, & qui conséquemment semblerait devoir être astringente : on croit cependant qu'elle n'agit que par la compression que plusieurs couches, mises l'une sur l'autre, produisent sur l'artère [?] ; elle réussit néanmoins dans les hémorrhagies du nez. On se sert encore de cet Agaric pour la teinture. Les Lapons le substituent au Moxa des Chinois, pour émousser les parties affectées de rhumatisme & de goutte. \n\nAGARICUS lenticularis. Linn. Agaric chanterelle, Gérylle. Il est d'une odeur & d'une saveur assez agréable, cependant un peu acre. Il paraît que l'on peut, sans crainte, le manger cuit dans du bouillon de viande. \n\nAGARICUS muscarius. Linn. Agaric moucheté. Ce Champignon est très-venimeux pour les hommes, & même pour les animaux, quoiqu'il paraisse plutôt jeter les mouches dans la stupeur, que les faire périr. Le principal remède est d'abord l'émétique, & surtout le vitriol blanc, ensuite, à ce qu'on prétend, l'éther. Malgré ses qualités pernicieuses, on en fait, dans le Kamtchatka, une liqueur enivrante. M. Whistling [?] l'a fait prendre intérieurement séché & réduit en poudre, à la dose d'un scrupule, contre les goitres, la paralysie, quelques tumeurs encystées, un ulcère, où cette plante paraît avoir eu quelque succès. \n\nTous les Champignons contiennent de l'alkali volatil, que la chaux y développe. Ceux qui, étant pulvérisés, attirent le plus l'humidité, sont les plus propres à la préparation du bleu de Prusse, suivant les expériences de M. Goethling. \n\nAGARICUS campestris. Linn. Agaric comestible, Champignon. C'est le Champignon dont on fait le plus d'usage dans les cuisines : c'est toujours un aliment lourd, et qui devient souvent dangereux, par les méprises de ceux qui les ramassent. Il est prudent de bien laver ces Champignons, de les faire macérer pendant trois ou quatre heures dans l'eau chargée de sel marin, ou dans le vinaigre qui peuvent les dépouiller des parties résineuses dans lesquelles réside le principe vénéneux. Les Jardiniers font des couches de ces Champignons, avec la paille, le fumier de cheval & la terre; ils ont soin de les arroser souvent. \n\nAGARICUS vernus. Linn. Agaric printanier, Mousseron. C'est le plus délicat & le plus recherché des Champignons. \n\nAGARICUS piperatus. Linn. Agaric poivré. Son suc est acre, presque caustique et dangereux. \n\nAGARICUS lacmus. Agaric laiteux. Il a été reconnu pour venimeux. \n\nAGARICUS squamosus. Agaric écailleux; Les animaux qui mangent deux ou trois de ces Agarics, sont tourmentés, vont du ventre, sans être d'ailleurs incommodés : malgré cela, M. Paulet leur trouve tous les caractères des Champignons suspects. \n\nAGARICUS quercinus. Linn. Agaric de chêne. On peut s'en servir pour faire de l'amadou. On le prépare comme le Bolet couleur de feu, pour arrêter les hémorragies.",
+ "transcript_words": 696,
+ "translation_words": 664
+}
