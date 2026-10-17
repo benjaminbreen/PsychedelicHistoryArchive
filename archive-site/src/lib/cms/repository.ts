@@ -80,16 +80,20 @@ export async function getSource(id: string): Promise<SourceRecord | null> {
 
 export async function listSources(): Promise<SourceListItem[]> {
   await requireEditor();
-  if (localWorkspace) return withWorkspace(w => w.rows.map(r => ({ id: r.id, slug: r.slug, title: String(r.model.document.title || "Untitled source"), date: String(r.model.document.display_date || ""), creator: r.model.people.filter(p => p.role === "author" || p.role === "speaker").map(p => p.name).join(", "), medium: String(r.model.document.medium || "Text"), status: r.status, hasChanges: r.status === "published" && JSON.stringify(r.model) !== JSON.stringify(r.published), updatedAt: r.updated_at })).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)));
+  if (localWorkspace) return withWorkspace(w => w.rows.map(r => ({ id: r.id, slug: r.slug, title: String(r.model.document.title || "Untitled source"), date: String(r.model.document.display_date || ""), creator: r.model.people.filter(p => p.role === "author" || p.role === "speaker").map(p => p.name).join(", "), medium: String(r.model.document.medium || "Text"), status: r.status, hasChanges: r.status === "published" && JSON.stringify(r.model) !== JSON.stringify(r.published), updatedAt: r.updated_at, proposal: r.model.proposal?.status })).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)));
   const client = cmsClient();
   // No transcripts, page lines, or images in the list response.
   const rows: SourceListItem[] = [];
   for (let from = 0; ; from += 500) {
-    const { data, error } = await client.from("documents").select("id, slug, title, display_date, medium, status, updated_at, document_people(role, people(name)), source_working_copies(version, title, display_date, updated_at, dirty)").order("id").range(from, from + 499);
+    const { data, error } = await client.from("documents").select("id, slug, title, display_date, medium, status, updated_at, document_people(role, people(name)), source_working_copies(version, title, display_date, updated_at, dirty, proposal:payload->proposal, draftPeople:payload->people)").order("id").range(from, from + 499);
     if (error) fail(error.message);
     for (const row of data || []) {
-      const copy = row.source_working_copies?.[0];
-      rows.push({ id: row.id, slug: row.slug, title: copy?.title || row.title, date: copy?.display_date || row.display_date || "", medium: row.medium || "Text", status: row.status, hasChanges: !!copy?.dirty, creator: row.document_people.filter(p => ["author", "speaker"].includes(p.role)).flatMap(p => Array.isArray(p.people) ? p.people.map(person => person.name) : [(p.people as { name: string } | null)?.name || ""]).join(", "), updatedAt: copy?.updated_at || row.updated_at });
+      // One working copy per document, so PostgREST returns an object, not an array.
+      const embedded = row.source_working_copies as unknown;
+      const copy = (Array.isArray(embedded) ? embedded[0] : embedded) as { version?: number; title?: string; display_date?: string; updated_at?: string; dirty?: boolean; proposal?: { status?: SourceListItem["proposal"] }; draftPeople?: { name: string; role: string }[] } | null | undefined;
+      rows.push({ id: row.id, slug: row.slug, title: copy?.title || row.title, date: copy?.display_date || row.display_date || "", medium: row.medium || "Text", status: row.status, hasChanges: row.status === "published" && !!copy?.dirty, creator: row.document_people.filter(p => ["author", "speaker"].includes(p.role)).flatMap(p => Array.isArray(p.people) ? p.people.map(person => person.name) : [(p.people as { name: string } | null)?.name || ""]).join(", "), updatedAt: copy?.updated_at || row.updated_at, proposal: copy?.proposal?.status });
+      const last = rows[rows.length - 1];
+      if (!last.creator && copy?.draftPeople?.length) last.creator = copy.draftPeople.filter(p => ["author", "speaker"].includes(p.role)).map(p => p.name).join(", ");
     }
     if (!data || data.length < 500) break;
   }
@@ -110,6 +114,9 @@ export async function createDraft(title: string, url: string) {
 export async function saveDraft(id: string, model: SourceEditModel, version: number) {
   const editor = await requireEditor();
   const payload = validateModel(model);
+  const today = new Date().toISOString().slice(0, 10);
+  if (payload.proposal && !payload.proposal.proposedBy) payload.proposal = { ...payload.proposal, proposedBy: editor.name, proposedOn: today };
+  if (payload.proposal && payload.proposal.status !== "proposed" && !payload.proposal.decidedBy) payload.proposal = { ...payload.proposal, decidedBy: editor.name, decidedOn: today };
   for (const file of payload.files) if (file.private && !file.storage_path.startsWith(`${id}/${file.id}/`)) throw new Error("An attached file belongs to another source.");
   if (localWorkspace) return localSave(id, payload, version);
   const { data, error } = await cmsClient().rpc("cms_save_draft", { source_id: id, edit_payload: payload, expected_version: version, actor_id: editor.id });

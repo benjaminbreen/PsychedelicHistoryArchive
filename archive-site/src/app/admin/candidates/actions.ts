@@ -1,4 +1,6 @@
 "use server";
+import { revalidatePath } from "next/cache";
+import { sendNominationsToWorkspace } from "@/lib/corpus-nominations";
 import { requireEditor } from "@/lib/cms/auth";
 import { appendCandidateDecision, readCandidateBatch } from "@/lib/corpus-candidates";
 import { NO_REASONS, WHY_TAGS, type CandidateCorrections, type CandidateDecision, type CandidateDecisionValue } from "@/lib/corpus-candidate-types";
@@ -45,4 +47,12 @@ function cleanCorrections(input?: CandidateCorrections): CandidateCorrections | 
   const valid = Number.isInteger(year) && year >= 1000 && year <= 2100 ? year : null;
   if (!input.date_wrong && valid === null) return undefined;
   return { date_wrong: true, year: valid };
+}
+
+export async function sendToWorkspace() {
+  await requireEditor();
+  const results = await sendNominationsToWorkspace();
+  revalidatePath("/admin/candidates");
+  revalidatePath("/admin/sources");
+  return { sent: results.filter(r => r.id).length, failed: results.filter(r => r.error).map(r => `${r.candidateId}: ${r.error}`) };
 }

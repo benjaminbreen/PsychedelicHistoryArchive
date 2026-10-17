@@ -20,6 +20,31 @@ Open http://localhost:3000/admin. The workspace loads the staged sources from `d
    `insert into editor_profiles (user_id, display_name, role) values ('<your auth user id>', 'Your Name', 'owner');`
 5. Invite collaborators from **Editors & access** in the workspace sidebar. They get an email link and land in Sources.
 
+## Sign in with a shared workspace password
+
+The simplest way to open the deployed workspace: one shared password, set in the deployment's environment, never in the repository (it is public).
+
+1. In Vercel → Project → Settings → Environment Variables (Production), add:
+   - `CMS_SHARED_PASSWORD`: the workspace password. Changing it later signs everyone out.
+   - `CMS_SHARED_EDITOR_NAME`: the name shown on edits and proposals made with it, for example `Ben Breen`.
+   - `ADMIN_LOCAL_ENABLED`: `true`, which turns the workspace on outside development.
+   - Check that `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are also set there. Saving and publishing need them.
+2. Redeploy. Then open `<site>/admin` and enter the password.
+
+The password signs you in as the workspace owner for 30 days on that browser. On `localhost` in development no sign-in is needed.
+
+## Proposals
+
+A proposal is a private draft marked for the team to review. It appears under **Sources → Proposals** for every editor and never on the public site until someone publishes it.
+
+- **Propose by hand:** tick "Propose this source for the team to review" in **Add source** and say why it belongs.
+- **From the Common Corpus scan:** after reviewing finds in **Candidates**, press **Send … to the workspace**. This runs on the computer that has the scan files. Each add or maybe becomes a proposal with its excerpt, the link to the original, and the scan's provenance.
+- **Reviewing:** each proposal opens with a panel saying who proposed it and why. **Accept and start editing** turns it into an ordinary draft. **Decline** keeps the record but takes it off the list, with an optional note.
+
+## Inviting editors later
+
+Shared-password users are owners, so **Editors & access** offers the invite form. Email invitations also need the one-time setup below: `CMS_SITE_URL`, plus the redirect URL in Supabase. Invited editors sign in with an email link. The password keeps working alongside.
+
 ## For collaborators
 
 The in-app guide (**How to contribute** in the sidebar) is the whole workflow. Decide what to add however you like (a Zoom call, a shared Google Doc). The workspace handles only adding, editing, previewing, and publishing.

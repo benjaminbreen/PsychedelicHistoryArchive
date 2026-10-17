@@ -17,7 +17,7 @@
     "corpus-scan"
   ],
   "summary": "John Murray’s 1832 materia medica describes the preparation and effects of nitrous oxide, including a rapid mental and bodily excitement, unusual pleasure, and increased muscular vigour. The excerpt gives a substantive account of the gas’s effects, though it does not include a first-person testimony.",
-  "excerpt": "Nitrous oxide gas.",
+  "excerpt": "… The hydro¬ gen of the ammonia attracts part of the oxygen of the nitric acid, and forms water ; and the remaining oxygen, combin¬ ing with the nitrogen both of the acid and of the ammonia, forms nitrous oxide, which is disengaged in the gaseous form. The following diagram exhibits more precisely the nature of this re-action : Thus the salt is resolved into three equivalents of water, and two equivalents of nitrous oxide gas.",
   "citation": "Murray, J., - n, *System of materia medica and pharmacy: including translations of the Edinburgh, London, and Dublin pharmacopoeias*, 1832, English-PD (Common Corpus) b29341772_36.",
   "rights": "Public domain (per Common Corpus); confirm before hosting",
   "sourceUrl": "https://archive.org/details/b29341772",
@@ -27,7 +27,7 @@
   "draft": {
     "status": "proposed",
     "proposedBy": "corpus-scan",
-    "proposedOn": "2026-10-16",
+    "proposedOn": "2026-10-17",
     "bucket": "corpus-scan-review",
     "rationale": "John Murray’s 1832 materia medica describes the preparation and effects of nitrous oxide, including a rapid mental and bodily excitement, unusual pleasure, and increased muscular vigour. The excerpt gives a substantive account of the gas’s effects, though it does not include a first-person testimony.",
     "textSource": {

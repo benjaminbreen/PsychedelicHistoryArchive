@@ -17,7 +17,7 @@
     "corpus-scan"
   ],
   "summary": "A 1911 newspaper report from Pine Ridge describes Sioux participation in a peyote ceremony, including a confiscated drum and altar cloth, the preparation and drinking of peyote tea, and its religious significance as a “Holy Comforter.” The account is culturally specific, though framed in sensational language and the excerpt cuts off before describing the effects in detail.",
-  "excerpt": "There was a sort of an altar cloth with a small circle worked in the center, in which was placed the “tea” which was brewed from the “peyote” or mescal bean.",
+  "excerpt": "… The drum sticks were decorated with religious emblems and words burned into them. There was a sort of an altar cloth with a small circle worked in the center, in which was placed the “tea” which was brewed from the “peyote” or mescal bean. In this instance the “cup” was a highly colored shaving mug, probably purchased from some trader.",
   "citation": "*Untitled newspaper item, 1911-05-12 (Chronicling America sn00065130, page 2)*, 1911, US-PD-Newspapers (Common Corpus) sn00065130_1911-05-12_1_2_1.",
   "rights": "Public domain (per Common Corpus); confirm before hosting",
   "sourceUrl": "https://chroniclingamerica.loc.gov/lccn/sn00065130/1911-05-12/ed-1/seq-2/",
@@ -27,7 +27,7 @@
   "draft": {
     "status": "needs-work",
     "proposedBy": "corpus-scan",
-    "proposedOn": "2026-10-16",
+    "proposedOn": "2026-10-17",
     "bucket": "corpus-scan-review",
     "rationale": "Editor marked this maybe in corpus-scan review. A 1911 newspaper report from Pine Ridge describes Sioux participation in a peyote ceremony, including a confiscated drum and altar cloth, the preparation and drinking of peyote tea, and its religious significance as a “Holy Comforter.” The account is culturally specific, though framed in sensational language and the excerpt cuts off before describing the effects in detail.",
     "textSource": {

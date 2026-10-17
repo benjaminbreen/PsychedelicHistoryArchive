@@ -1,5 +1,7 @@
 import { CandidateReview } from "@/components/admin/candidate-review";
 import { listCandidateBatches, readCandidateBatch, readCandidateDecisions } from "@/lib/corpus-candidates";
+import { pendingNominations } from "@/lib/corpus-nominations";
+import { SendToWorkspace } from "@/components/admin/send-to-workspace";
 
 export const dynamic = "force-dynamic";
 
@@ -11,5 +13,5 @@ export default async function CandidatesPage({ searchParams }: { searchParams: P
   }
   const candidates = readCandidateBatch(batch);
   const decisions = Object.fromEntries(readCandidateDecisions());
-  return <CandidateReview batch={batch} batches={batches} candidates={candidates} initialDecisions={decisions} />;
+  return <><SendToWorkspace pending={pendingNominations()} /><CandidateReview batch={batch} batches={batches} candidates={candidates} initialDecisions={decisions} /></>;
 }

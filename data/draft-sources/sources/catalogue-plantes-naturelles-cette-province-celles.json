@@ -17,7 +17,7 @@
     "corpus-scan"
   ],
   "summary": "A French botanical catalogue entry describes fly agaric as poisonous and notes that people in Kamchatka make an intoxicating drink from it, alongside brief medicinal claims. The cultural-use mention is relevant but thin within a botanical reference work.",
-  "excerpt": "inn.",
+  "excerpt": "… cependant qu'elle n'agit que par la compression que plusieurs couches, mises l'une sur l'autre, produisent sur l'arête ; elle réussit néanmoins dans les hémorrhagies du nez. On se sert encore de cet Agaric pour la teinture. Les Lapons le substituent au Moxa des Chinois, pour émousser les parties affectées de rhumatisme & de goutte. AGARICUS lenticularis. Linn. Agaric chanterelle, Gérylle. Il est d'une odeur & d'une saveur assez agréable, cependant un peu acre.",
   "citation": "*Catalogue des plantes naturelles à cette province , & de celles qu'on y cultive le plus communément, avec l'indication du sol où elles croissent, du temps de leur floraison, & de la couleur de leurs fleurs ; ouvrage rédigé pour servir aux cours publics de l'Académie de Dijon. Première [-seconde] partie.. Partie 2*, n.d., French-PD-Books (Common Corpus) bpt6k6529080s_8.",
   "rights": "Public domain (per Common Corpus); confirm before hosting",
   "sourceUrl": "https://gallica.bnf.fr/ark:/12148/bpt6k6529080s",
@@ -27,7 +27,7 @@
   "draft": {
     "status": "proposed",
     "proposedBy": "corpus-scan",
-    "proposedOn": "2026-10-16",
+    "proposedOn": "2026-10-17",
     "bucket": "corpus-scan-review",
     "rationale": "A French botanical catalogue entry describes fly agaric as poisonous and notes that people in Kamchatka make an intoxicating drink from it, alongside brief medicinal claims. The cultural-use mention is relevant but thin within a botanical reference work.",
     "textSource": {

@@ -85,17 +85,19 @@ def text_source_kind(url: str | None) -> str:
     return "other"
 
 
-def excerpt_sentence(text: str, terms: list[str], limit: int = 420) -> str:
-    """One or two sentences around the first matched term, trimmed to whole words."""
-    low = text.lower()
-    at = min((low.find(t.lower()) for t in terms if t and low.find(t.lower()) >= 0), default=0)
-    start = max(text.rfind(". ", 0, at) + 2, at - limit // 2, 0)
-    end = text.find(". ", at)
-    end = len(text) if end < 0 else min(end + 1, start + limit)
-    s = text[start:end].strip()
-    if end < len(text) and not s.endswith("."):
-        s = s.rsplit(" ", 1)[0] + " …"
-    return s
+def excerpt_sentence(text: str, terms: list[str] | None = None, limit: int = 520) -> str:
+    """The middle of a scan window (windows are centred on the hit), trimmed to sentence or word edges."""
+    text = " ".join(text.split())
+    if len(text) <= limit:
+        return text
+    mid = len(text) // 2
+    lo, hi = max(0, mid - limit // 2), min(len(text), mid + limit // 2)
+    dot = text.find(". ", lo, lo + 160)
+    lo = dot + 2 if dot >= 0 else text.find(" ", lo) + 1
+    dot = text.rfind(". ", hi - 160, hi)
+    hi = dot + 1 if dot >= 0 else text.rfind(" ", lo, hi)
+    s = text[lo:hi].strip()
+    return ("… " if lo > 0 else "") + s + ("" if s.endswith(".") else " …")
 
 
 def build(decision: dict, llm: dict | None, today: str) -> dict:
