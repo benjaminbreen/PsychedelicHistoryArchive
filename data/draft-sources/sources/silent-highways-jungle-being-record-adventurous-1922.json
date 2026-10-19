@@ -1,0 +1,61 @@
+{
+  "slug": "silent-highways-jungle-being-record-adventurous-1922",
+  "title": "Silent highways of the jungle : being the record of an adventurous journey across Peru to the Amazon",
+  "author": "Unknown",
+  "year": 1922,
+  "displayDate": "1922",
+  "type": "Book",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "To be determined",
+  "language": "English",
+  "substances": [
+    "Ayahuasca"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "The 1922 travel narrative’s contents identify a chapter section, “The ceremony of Ayahuasca,” during the author’s account of living among Indigenous people in Peru. This is a promising lead to a firsthand description of ceremonial use, though the excerpt gives no details of the ceremony itself.",
+  "excerpt": "… — Savage neighbours. — The deadly blow-gun and poison darts. — Tehi, my constant companion. — Driving out evil spirits. — Women. — Panaguna. — Romance of marriage. — — War. — Family feuds. — Shrinking human heads. — Monkey's meat. — Caterpillars. — A surprise visit. — The ceremony of Ayahuasca. — Strife narrowly averted. CHAPTER XIV My Escape and Return to the Pacific Coast . . . . 294 Hobnobbing with savages. — A virtual prisoner. — An awkward predicament. — Please stay a little longer.",
+  "citation": "*Silent highways of the jungle : being the record of an adventurous journey across Peru to the Amazon*, 1922, US-PD-Books (Common Corpus) cu31924012535781_1.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "https://archive.org/details/cu31924012535781",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "needs-work",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-17",
+    "bucket": "corpus-scan-review",
+    "rationale": "Lead: trace the full source before drafting a transcript. Editor marked this maybe in corpus-scan review. Lead: The 1922 travel narrative’s contents identify a chapter section, “The ceremony of Ayahuasca,” during the author’s account of living among Indigenous people in Peru. This is a promising lead to a firsthand description of ceremonial use, though the excerpt gives no details of the ceremony itself. Editor note: Check the \"the ceremony of ayahuasca\" chapter referenced here - this is a table of contents",
+    "textSource": {
+      "url": "https://archive.org/details/cu31924012535781",
+      "kind": "internet-archive",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: fair. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "us-pd-books:cu31924012535781",
+      "decision": "maybe",
+      "decided_at": "2026-10-16T21:33:28.278Z",
+      "why": [],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "US-PD-Books",
+      "identifier": "cu31924012535781_1",
+      "archive_fit": 3,
+      "kind": "reference_or_index",
+      "scan_excerpt": "for something to turn up. — Starving. — A midnight visitor. — The unending rain. — False hopes. — Still watching. — Getting weaker. — The inevitable in sight. — The world as seen from my last resting-place. CHAPTER XIII Living with Savages 268 Attacked by Indians. — Refused to fight. — A triumph of diplomacy. — Have a banana. — Good-bye till to-morrow. — The next day. — Launched into savage society. — The secret of good trading. — Learning a strange language. — The daily round. — Duties of the men. — Diversions.— Clothing. — Cannot getaway. — Savage neighbours. — The deadly blow-gun and poison darts. — Tehi, my constant companion. — Driving out evil spirits. — Women. — Panaguna. — Romance of marriage. — — War. — Family feuds. — Shrinking human heads. — Monkey's meat. — Caterpillars. — A surprise visit. — The ceremony of Ayahuasca. — Strife narrowly averted. CHAPTER XIV My Escape and Return to the Pacific Coast . . . . 294 Hobnobbing with savages. — A virtual prisoner. — An awkward predicament. — Please stay a little longer. — Animal pets. — The great idea. — Ornaments. — Medicines and miracles. — Old age. — Curious customs. — Weird dreams. — Tehi unfolds a plan. — Arrangements for the trip.— Last hours of captivity. — Good. bye to my friends. — Through the forest once more. — The Wahupaza. — Hilly country. — Stopping for food. — Making a raft. — First signs of life. — A high ridge. — Open country at last. — The Andes. — A mountain cholo. — The parting of the ways. — Safe at last. LIST OF ILLUSTRATIONS i. 2. 3- 4- 5- 6. 7- 8. 9- 10. n. 12. 13- 14- 15- 16. 17-"
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+ "slug": "marin-y-sancho-formulario-medicamentos-modernos-complemento-farmacopea-formulari",
+ "segments": [
+  {
+   "start": "Anhalonina. Alcaloide separado por Merck",
+   "end_before": "Anhalonium Lcwinii ó Lophosphora"
+  },
+  {
+   "start": "reas. Se funde á 85°",
+   "end_after": "de este alcaloide.",
+   "join": ""
+  },
+  {
+   "start": "Anhalonio. MESCAL BUTTONS",
+   "end_after": "MESCAL BUTTONS",
+   "join": "\n\n"
+  },
+  {
+   "start": "Anhalonium Lcwinii ó Lophosphora",
+   "end_after": "náuseas en algunos casos.",
+   "join": "\n\n"
+  }
+ ],
+ "dehyphenate": true,
+ "remove": [
+  "Biblioteca Nacional de España Complemento á la Farmacopea-Formulario Universal. 69 "
+ ],
+ "breaks": [
+  "P. empl. El capítulo",
+  "Pr. tekap. Hipnótico",
+  "Los kiowas y otras tribus",
+  "Muchas autoridades médicas",
+  "Puede la excitación alucinatoria"
+ ],
+ "fixes": [
+  [
+   "Anhalonina. Alcaloide separado por Merck del Anhaloniwn I. etcini.",
+   "### Anhalonina\n\nAlcaloide separado por Merck del *Anhalonium Lewinii*."
+  ],
+  [
+   "soluciones eté­ reas",
+   "soluciones etéreas"
+  ],
+  [
+   "soluciones eté­reas",
+   "soluciones etéreas"
+  ],
+  [
+   "VA clorhidrato",
+   "El clorhidrato"
+  ],
+  [
+   "Anhalonio. MESCAL BUTTONS",
+   "### Anhalonio (Mescal Buttons)"
+  ],
+  [
+   "Anhalonium Lcwinii ó Lophosphora Lewinii, Rusby,",
+   "*Anhalonium Lewinii* ó *Lophophora Lewinii*, Rusby."
+  ],
+  [
+   "Estados Cuidos",
+   "Estados Unidos"
+  ],
+  [
+   "Pr. tekap.",
+   "Pr. terap."
+  ],
+  [
+   "reuni ones",
+   "reuniones"
+  ],
+  [
+   "consiste en. la aparición",
+   "consiste en la aparición"
+  ],
+  [
+   "kaleidóscopo",
+   "kaleidoscopio"
+  ]
+ ],
+ "note": "_[The entries \"Anhalonina\" and \"Anhalonio (Mescal Buttons)\" from Marín y Sancho and Melgosa's formulary (Madrid, 1900), pp. 68–69. The two-column page reached the OCR interleaved; the entries are reassembled here. OCR from the Biblioteca Nacional de España scan, lightly corrected.]_",
+ "translation": "### Anhalonine\n\n_[Machine-assisted translation of the Spanish above; not yet checked by a specialist.]_\n\nAn alkaloid isolated by Merck from *Anhalonium Lewinii*. It has been obtained in amorphous and crystalline form from ethereal solutions. It melts at 85° and at higher temperatures volatilises without decomposing. It dissolves in alcohol and ether, colouring them slightly yellow. The hydrochloride crystallises from its aqueous solution in very pure white needles, of bitter taste, which dissolve in hot water and in alcohol. It acts by increasing the excitability of the reflexes; the therapeutic study of this alkaloid has yet to be made.\n\n### Anhalonium (Mescal Buttons)\n\n*Anhalonium Lewinii* or *Lophophora Lewinii*, Rusby. A cactus of northern Mexico and the Indian territories of the southern United States.\n\n**Part used.** The disc-shaped head [the \"button\"].\n\n**Therapeutic properties.** Hypnotic and exhilarant. The fluid extract of the plant has been tried, with positive results, in angina pectoris, asthmatic dyspnoea and pneumothorax.\n\n**The Kiowa and other Indian tribes of Mexico and the southern territories have used Anhalonium since very ancient times to put themselves into a sleep-like state in the religious gatherings they hold during the night. And indeed, when the heads of this plant are chewed, they produce in these savages, seated in silence during their ceremonies, a delicious state of intoxication, in which the strangest and most brilliant apparitions follow one another.** Many medical authorities of the greatest competence have confirmed these effects by experiencing those of the drug themselves, both physiologically and psychologically. According to these authors, the most salient feature of the vision produced by Mescal Buttons consists in the appearance of coloured images, which change like those of a kaleidoscope, with an indescribable magnificence and brilliance, green and red predominating. These apparitions present themselves at the very moment of closing the eyes and vanish as soon as they are opened again. During the intoxication there arises a suggestive sensation of greatly exaggerated physical capacity, without the bodily or mental functions suffering noticeably, and the images perceived during the vision persist for some time in the memory, so that they can be described exactly. The hallucinatory excitement may last up to several hours, and when it passes it gives way in some individuals to stupor of the senses and to drowsiness, accompanied in some cases by nausea.",
+ "fields": {
+  "title": "Mescal buttons in a Spanish pharmaceutical formulary, 1900",
+  "short_title": "Formulario: Anhalonium (Mescal Buttons)",
+  "subtitle": "Formulario de medicamentos modernos, entries \"Anhalonina\" and \"Anhalonio\"",
+  "display_date": "1900",
+  "date_start": 1900,
+  "document_type": "Book",
+  "medium": "Text",
+  "language": "Spanish",
+  "content_language": "Spanish",
+  "region": "Spain; Mexico; United States",
+  "publication_title": "Formulario de medicamentos modernos: complemento á la Farmacopea-formulario universal",
+  "summary": "A Madrid pharmacists' formulary of new drugs gives two entries on peyote, three years after Arthur Heffter isolated mescaline. One covers Merck's alkaloid anhalonine. The other, on *Anhalonium Lewinii* (\"Mescal Buttons\"), describes Kiowa night ceremonies and, citing physicians who took the drug themselves, the kaleidoscopic coloured visions that appear on closing the eyes. It shows how quickly the peyote self-experiments of Weir Mitchell, Ellis and others entered continental pharmacy.",
+  "citation": "Francisco Marín y Sancho and Miguel Melgosa Olaechea, *Formulario de medicamentos modernos: complemento á la Farmacopea-formulario universal* (Madrid, 1900), 68–69, s.v. \"Anhalonina,\" \"Anhalonio.\"",
+  "rights_statement": "Public domain (published 1900)",
+  "source_url": "https://bdh-rd.bne.es/viewer.vm?id=0000206628",
+  "access_type": "hosted",
+  "hosting_status": "transcript_only",
+  "reader_mode": "translation",
+  "translation_language": "English",
+  "translation_provider": "llm",
+  "translation_note": "Machine-assisted translation prepared for the archive from the 1900 Spanish; not yet checked by a specialist against the original."
+ },
+ "author": "Francisco Marín y Sancho",
+ "editor_notes": "Co-author Miguel Melgosa Olaechea; add as a second creator. Source link points to the Biblioteca Digital Hispánica viewer for BNE id 0000206628 (inferred from the Common Corpus identifier); confirm it resolves and add the publisher. Page numbers inferred from the running head on p. 69.",
+ "transcript": "_[The entries \"Anhalonina\" and \"Anhalonio (Mescal Buttons)\" from Marín y Sancho and Melgosa's formulary (Madrid, 1900), pp. 68–69. The two-column page reached the OCR interleaved; the entries are reassembled here. OCR from the Biblioteca Nacional de España scan, lightly corrected.]_\n\n### Anhalonina\n\nAlcaloide separado por Merck del *Anhalonium Lewinii*. Se ha obtenido bajo el estado amorfo y cristalizado de las soluciones etéreas. Se funde á 85° y á mayor temperatura se volatiliza sin descomponerse. Se disuelve en el alcohol y el éter, coloreándose ligeramente de amarillo. El clorhidrato cristaliza de su solución acuosa en agujas de color blanco muy puro, sabor amargo, y que se disuelven en el agua caliente y en el alcohol. Obra aumentando la excitabilidad de los reflejos; está sin hacerse el estudio terapéutico de este alcaloide.\n\n### Anhalonio (Mescal Buttons)\n\n*Anhalonium Lewinii* ó *Lophophora Lewinii*, Rusby. Cactácea del Norte de Méjico y territorios indios del Sur de los Estados Unidos. \n\nP. empl. El capítulo discoide. Pr. terap. Hipnótico é hilarante. Se ha ensayado el extracto fluido de la planta, con resultados positivos, en la angina de pecho, la dispnea asmática y el neumotorax. \n\nLos kiowas y otras tribus indias de Méjico y los territorios del Sur emplean desde muy antiguo el Anhalonium para adormecerse en las reuniones religiosas que celebran durante la noche. Y, en efecto, masticados los capítulos de esta planta, producen en aquellos salvajes, silenciosamente sentados durante sus ceremonias, un delicioso estado de embriaguez, durante el cual se suceden las apariciones más extrañas y brillantes. \n\nMuchas autoridades médicas de la mayor competencia han comprobado estos efectos, experimentando en sí propios los de la droga, tanto fisiológica como psicológicamente. Según dichos autores, la particularidad más saliente de la visión producida por el Mescal Buttons, consiste en la aparición de imágenes coloreadas, que cambian como las de un kaleidoscopio, con una magnificencia y un brillo indescriptibles, predominando los colores verde y rojo. Estas apariciones se presentan en el momento mismo de cerrar los ojos y se desvanecen en cuanto vuelven á abrirse: durante la embriaguez se produce una sensación sugestiva de capacidad física muy exagerada, sin que sufran notablemente las funciones corporales ni psíquicas, y las imágenes percibidas durante la visión persisten por algún tiempo en la memoria, de modo que pueden describirse con exactitud. \n\nPuede la excitación alucinatoria durar hasta algunas horas, y cuando desaparece da lugar en ciertos individuos al estupor del sensorio y á la somnolencia, acompañada de náuseas en algunos casos.",
+ "transcript_words": 369,
+ "translation_words": 382
+}

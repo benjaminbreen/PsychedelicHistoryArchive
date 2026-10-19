@@ -1,0 +1,62 @@
+{
+  "slug": "newspaper-sn93060416-1897-12-25",
+  "title": "Untitled newspaper item, 1897-12-25 (Chronicling America sn93060416, page 2)",
+  "author": "Unknown",
+  "year": 1897,
+  "displayDate": "1897",
+  "type": "Newspaper Article",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "To be determined",
+  "language": "English",
+  "substances": [
+    "Alcohol",
+    "Ether"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "A 1897 newspaper account describes recreational ether drinking among poorer communities in Ireland, especially Draperstown and Crookstown, and reports ether shops, mixtures with alcohol, and the trade’s scale. It offers a specific contemporary account of the practice and its spread, though the excerpt does not describe individual intoxication in detail.",
+  "excerpt": "… In London, the keepers of the various squares and parks often find under the trees empty vials labeled \"ether\" that have been thrown there by the maniacs who quit their homes in order to indulge their favorite passion at their ease. At Epsom after the races, many flasks of ether are picked up among empty champagne bottles. But it is in certain portions of Ireland that the vice of ether drinking is most common.",
+  "citation": "*Untitled newspaper item, 1897-12-25 (Chronicling America sn93060416, page 2)*, 1897, US-PD-Newspapers (Common Corpus) sn93060416_1897-12-25_1_2_2.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "https://chroniclingamerica.loc.gov/lccn/sn93060416/1897-12-25/ed-1/seq-2/",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "needs-work",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-17",
+    "bucket": "corpus-scan-review",
+    "rationale": "Editor marked this maybe in corpus-scan review. A 1897 newspaper account describes recreational ether drinking among poorer communities in Ireland, especially Draperstown and Crookstown, and reports ether shops, mixtures with alcohol, and the trade’s scale. It offers a specific contemporary account of the practice and its spread, though the excerpt does not describe individual intoxication in detail.",
+    "textSource": {
+      "url": "https://chroniclingamerica.loc.gov/lccn/sn93060416/1897-12-25/ed-1/seq-2/",
+      "kind": "chronicling-america",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: fair. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "us-pd-newspapers:sn93060416_1897-12-25_1_2_2",
+      "decision": "maybe",
+      "decided_at": "2026-10-16T21:23:34.775Z",
+      "why": [],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "US-PD-Newspapers",
+      "identifier": "sn93060416_1897-12-25_1_2_2",
+      "archive_fit": 4,
+      "kind": "ethnographic_observation",
+      "scan_excerpt": "The origin of this singular vice is obscure. Some say that the Irish peasants began to drink ether in 1840, at the time when Father Matthew was preaching the crusade against alcohol. Others accuse the doctors of having prescribed ether too liberally. Finally, the question of price has its importance, especially among the poorer classes, for ether produces intoxication easily and is cheaper than alcohol. Thank Heaven, the ether drunkards are at present relatively rare in Paris. In London, the keepers of the various squares and parks often find under the trees empty vials labeled \"ether\" that have been thrown there by the maniacs who quit their homes in order to indulge their favorite passion at their ease. At Epsom after the races, many flasks of ether are picked up among empty champagne bottles. But it is in certain portions of Ireland that the vice of ether drinking is most common. There are regular ether shops, the oldest of which was established in 1840 at Draperstown. There they drink a mixture of alcohol and ether, 15 grammes of which are sufficient to put anyone into a reverie. The railroad in the little district of Crooks town carries every year 8,000 tons of ether, and an equal quantity at least is brought there by ether roads. Two merchants of the neighboring villages sell every year 4,500 pints of ether. At Draperstown and at Crookstown, the air is charged with the rapors of ether on market days,"
+    }
+  }
+}

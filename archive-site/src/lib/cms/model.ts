@@ -7,10 +7,24 @@ export type Figure = { id: string; image_path: string; caption: string; credit: 
 export type Asset = { id: string; kind: string; storage_path: string; mime_type: string; byte_size: number; name?: string; private?: boolean };
 export type Person = { id?: string; name: string; role: string };
 export type Membership = { collection_id: string; position: number | null; sequence_number: number | null; sequence_label: string | null; issue_date: string | null; editorial_caption: string | null };
-export type SourceEditModel = { document: Fields; sections: Section[]; figures: Figure[]; files: Asset[]; people: Person[]; tagIds: string[]; collections: Membership[]; editorNotes?: string };
+// A proposal marks a private draft as a suggested addition for the team to review.
+// It lives only in the working copy and never reaches the public reader.
+export type Proposal = {
+  status: "proposed" | "accepted" | "declined";
+  proposedBy?: string;
+  proposedOn?: string;
+  rationale: string;
+  excerpt?: string;
+  origin?: "manual" | "corpus-scan";
+  provenance?: Record<string, string | number | null>;
+  decidedBy?: string;
+  decidedOn?: string;
+  decisionNote?: string;
+};
+export type SourceEditModel = { document: Fields; sections: Section[]; figures: Figure[]; files: Asset[]; people: Person[]; tagIds: string[]; collections: Membership[]; editorNotes?: string; proposal?: Proposal };
 export type SourceRecord = { id: string; slug: string; status: string; liveUpdatedAt: string; version: number; savedAt: string | null; savedBy: string | null; model: SourceEditModel; reader: ArchiveSource; revisions: Revision[]; featured: boolean };
 export type Revision = { id: string; created_at: string; change_note: string | null; after_data: SourceEditModel | null };
-export type SourceListItem = { id: string; slug: string; title: string; date: string; creator: string; medium: string; status: string; hasChanges: boolean; updatedAt: string };
+export type SourceListItem = { id: string; slug: string; title: string; date: string; creator: string; medium: string; status: string; hasChanges: boolean; updatedAt: string; proposal?: "proposed" | "accepted" | "declined" };
 export type Choices = { people: { id: string; name: string }[]; tags: { id: string; name: string }[]; collections: { id: string; title: string }[] };
 
 export const editableFields = ["title", "short_title", "subtitle", "display_date", "date_start", "date_end", "document_type", "medium", "language", "content_language", "region", "publisher", "publication_title", "summary", "abstract", "citation", "rights_statement", "source_url", "external_access_url", "access_type", "hosting_status", "source_kind", "parent_collection_id", "sequence_label", "sequence_number", "issue_date", "reader_mode", "media_embed_url", "cover_image_path", "thumbnail_path", "translation_text", "translation_language", "translation_provider", "translation_note"] as const;
@@ -49,6 +63,7 @@ export function validateModel(input: SourceEditModel): SourceEditModel {
   checkIds(input.sections); checkIds(input.figures); checkIds(input.files);
   if (input.sections.length > 200 || input.figures.length > 200 || input.files.length > 200) throw new Error("Split this source into smaller parts before adding more items.");
   if (input.tagIds.some(id => !uuidPattern.test(id)) || input.people.some(p => (p.id && !uuidPattern.test(p.id)) || !p.name.trim() || !/^[\w -]{1,40}$/.test(p.role)) || input.collections.some(c => !uuidPattern.test(c.collection_id))) throw new Error("One of the people, topics, or collections could not be saved.");
+  if (input.proposal !== undefined && (typeof input.proposal !== "object" || !["proposed", "accepted", "declined"].includes(input.proposal.status) || typeof input.proposal.rationale !== "string" || JSON.stringify(input.proposal).length > 40_000)) throw new Error("The proposal note could not be saved.");
   for (const section of input.sections) if (typeof section.body !== "string" || !["plain", "markdown"].includes(section.body_format) || typeof section.heading !== "string" || !/^[\w -]{1,40}$/.test(section.section_type)) throw new Error("One of the text sections could not be saved.");
   for (const file of input.files) {
     if (!file.storage_path || file.storage_path.includes("..") || file.storage_path.startsWith("/") || /[\\\u0000]/.test(file.storage_path)) throw new Error("Invalid file path.");

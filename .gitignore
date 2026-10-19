@@ -46,3 +46,8 @@ data/draft-import/images/
 
 # Upstream originals the served PDFs were derived from — large and re-downloadable
 data/*/source-downloads/
+
+# Common Corpus scan: local venv and downloaded results (large; keep out of git)
+scripts/corpus_scan/.venv/
+scripts/corpus_scan/__pycache__/
+data/corpus-scan/

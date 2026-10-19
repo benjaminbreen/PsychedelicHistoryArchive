@@ -1,0 +1,61 @@
+{
+  "slug": "newspaper-sn00065130-1911-05-12",
+  "title": "Untitled newspaper item, 1911-05-12 (Chronicling America sn00065130, page 2)",
+  "author": "Unknown",
+  "year": 1911,
+  "displayDate": "1911",
+  "type": "Newspaper Article",
+  "medium": "Text",
+  "era": "1800-1950",
+  "region": "To be determined",
+  "language": "English",
+  "substances": [
+    "Peyote"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "A 1911 newspaper report from Pine Ridge describes Sioux participation in a peyote ceremony, including a confiscated drum and altar cloth, the preparation and drinking of peyote tea, and its religious significance as a “Holy Comforter.” The account is culturally specific, though framed in sensational language and the excerpt cuts off before describing the effects in detail.",
+  "excerpt": "… The drum sticks were decorated with religious emblems and words burned into them. There was a sort of an altar cloth with a small circle worked in the center, in which was placed the “tea” which was brewed from the “peyote” or mescal bean. In this instance the “cup” was a highly colored shaving mug, probably purchased from some trader.",
+  "citation": "*Untitled newspaper item, 1911-05-12 (Chronicling America sn00065130, page 2)*, 1911, US-PD-Newspapers (Common Corpus) sn00065130_1911-05-12_1_2_1.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "https://chroniclingamerica.loc.gov/lccn/sn00065130/1911-05-12/ed-1/seq-2/",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "needs-work",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-17",
+    "bucket": "corpus-scan-review",
+    "rationale": "Editor marked this maybe in corpus-scan review. A 1911 newspaper report from Pine Ridge describes Sioux participation in a peyote ceremony, including a confiscated drum and altar cloth, the preparation and drinking of peyote tea, and its religious significance as a “Holy Comforter.” The account is culturally specific, though framed in sensational language and the excerpt cuts off before describing the effects in detail.",
+    "textSource": {
+      "url": "https://chroniclingamerica.loc.gov/lccn/sn00065130/1911-05-12/ed-1/seq-2/",
+      "kind": "chronicling-america",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: good. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "us-pd-newspapers:sn00065130_1911-05-12_1_2_1",
+      "decision": "maybe",
+      "decided_at": "2026-10-16T21:31:27.493Z",
+      "why": [],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "US-PD-Newspapers",
+      "identifier": "sn00065130_1911-05-12_1_2_1",
+      "archive_fit": 4,
+      "kind": "ethnographic_observation",
+      "scan_excerpt": "Indian agency. The use of this intoxicating alkaloid has been for some time more or less mixed up with the religious ceremonies of the Winnebagos and Omahas of eastern Nebraska, but this is the first attempt on the part of the aristocrats of the Indian world, the Sioux, to charm themselves into happiness by the use of the subtle vegetable alkaloid. Indian Court Confiscates Outfit. The outfit used in the celebration of the “mescal” service was confiscated by the Indian court. Among the paraphernalia was a homemade drum, for which purpose, use was made of a part of a discarded paint keg, with a buckskin stretched over one end. The drum sticks were decorated with religious emblems and words burned into them. There was a sort of an altar cloth with a small circle worked in the center, in which was placed the “tea” which was brewed from the “peyote” or mescal bean. In this instance the “cup” was a highly colored shaving mug, probably purchased from some trader. The “peyote” or mescal bean was a small dried part of a flower which grows only in the tropics and in this case had been originally imported from Mexico. In looks, it has the appearance of a dried mushroom, but it has been previously developed in its action on the human system. Bean a “Holy Comforter.” According to the tales of the Indiana, the wonderful bean is regarded by its devotees, as the Messiah, or “Holy Comforter,” promised the world by Christ at the time of His ascension, but strange to say, after the “bowing down” before his majesty, the bean, they stew up a mess of them, and proceed to seek comfort by drinking the \"tea.\" This seems to produce a sort of mild intoxication and feeling of general"
+    }
+  }
+}

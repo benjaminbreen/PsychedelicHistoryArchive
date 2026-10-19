@@ -1,0 +1,52 @@
+{
+ "slug": "newspaper-sn86063790-1916-05-25",
+ "start": "SOMETHING NEW IN NARCOTICS.",
+ "end_after": "Salt Lake City correspondence, Philadelphia Record.",
+ "breaks": [
+  "Peyote constitutes the",
+  "\"At the present time,\"",
+  "The growth of the use",
+  "Peyote is something new",
+  "At first peyote causes",
+  "Peyote was first introduced",
+  "Salt Lake City correspondence"
+ ],
+ "fixes": [
+  [
+   "SOMETHING NEW IN NARCOTICS. Plant Chewed by Indians Contains Properties Like Opium.",
+   "### Something New in Narcotics\n\n**Plant Chewed by Indians Contains Properties Like Opium**\n\n"
+  ],
+  [
+   "constitutes the anea roots",
+   "constitutes the [?] roots"
+  ],
+  [
+   "chewing cocoa leaves",
+   "chewing coca leaves"
+  ]
+ ],
+ "note": "_[Complete article from page 4 of the Bamberg Herald, 25 May 1916, reprinting a Salt Lake City dispatch to the Philadelphia Record. OCR from Chronicling America, lightly corrected; [?] marks a reading to check against the page image.]_",
+ "fields": {
+  "title": "\"Something New in Narcotics\": Utah's state chemist on Ute peyote services, 1916",
+  "short_title": "Something New in Narcotics (1916)",
+  "subtitle": "Bamberg Herald, 25 May 1916",
+  "display_date": "25 May 1916",
+  "date_start": 1916,
+  "document_type": "Newspaper Article",
+  "medium": "Text",
+  "language": "English",
+  "region": "Uinta Basin, Utah",
+  "publication_title": "The Bamberg Herald (Bamberg, S.C.)",
+  "summary": "A wire story reports the investigation of peyote by Herman Harms, Utah's state chemist, after Senator Don B. Colton raised the matter with Governor William Spry. Harms describes weekly Ute \"peyote services\" at Randlett, held every Saturday night until Sunday morning, and urges the legislature to add the plant to the list of prohibited narcotics. The piece is a clear example of the state-level campaigns against the peyote religion that preceded Utah's 1917 ban, and of peyote being cast as \"something new in narcotics\" akin to opium.",
+  "citation": "\"Something New in Narcotics,\" *Bamberg Herald* (Bamberg, S.C.), 25 May 1916, 4 (from the *Philadelphia Record*).",
+  "rights_statement": "Public domain (published before 1930)",
+  "access_type": "hosted",
+  "hosting_status": "transcript_only",
+  "reader_mode": "transcript"
+ },
+ "author": "",
+ "editor_notes": "Wire copy, so the same story likely ran in many papers; the Philadelphia Record original or a Utah paper (Salt Lake Tribune, Deseret News) would be a better copy text. Harms's report to the governor is itself worth tracing. Utah banned peyote in 1917.",
+ "transcript": "_[Complete article from page 4 of the Bamberg Herald, 25 May 1916, reprinting a Salt Lake City dispatch to the Philadelphia Record. OCR from Chronicling America, lightly corrected; [?] marks a reading to check against the page image.]_\n\n### Something New in Narcotics\n\n**Plant Chewed by Indians Contains Properties Like Opium**\n\nDiscovery that the roots and blossoms of a plant known as peyote, chewed by the Indians of the Uinta basin, contain properties like unto opium and which are deadly in their effect, has been made by Herman Harms, Utah State chemist. So seriously does Mr. Harms regard the menace of the weed that he recommends that the next legislature take proper steps to include the plant in the list of prohibited narcotics. \n\nPeyote constitutes the [?] roots and dried blossoms of a small cactus plant that grows in the southwestern section of the United States. Some of it grows in Utah, notably in the Uinta basin. Ute Indians, many of them, are habitual users of peyote and some include it in certain forms of their religious ceremonies. \n\n\"At the present time,\" Chemist Harms says in his report to the governor of Utah, \"the Ute Indians hold their 'peyote service' every Saturday night until Sunday morning at Randlette, Utah, and from all accounts this evil habit is growing at a rapid rate with decidedly demoralizing effects on these people.\" \n\nThe growth of the use of peyote among the Indians and the subsequent effect upon them attracted the attention of some of the white residents of the Uinta basin, including Senator Don B. Colton. He called the attention of Gov. Spry to the matter and the governor ordered an immediate and thorough investigation. \n\nPeyote is something new in the way of narcotics, as Mr. Harms found out during the investigation. Here is a cactus plant, common enough in the Western States, that contains juices as powerful as opium or morphine. Both the roots and blossoms of the plant are chewed by the Indians after the manner in which Peruvians derive the effects of cocaine from chewing coca leaves. The blossoms are more delectable in the eyes of the victims of the habit than the roots. \n\nAt first peyote causes a great state of mental exhilaration and excitement. Then it deadens the senses, produces abnormal dreams, is demoralizing, and finally this peyote causes the Indians to remain drunk or in a stupor for two or three days. \n\nPeyote was first introduced under the form of a religious ceremony, and during the singing and dancing it was passed around until the Indians were drunk with it. It contains, among other constituents, an alkaloidal principle to which, no doubt, is due the powerful narcotic action upon the human system. Its indiscriminate use produces a demoralizing, harmful, and depraved condition. \n\nSalt Lake City correspondence, Philadelphia Record.",
+ "transcript_words": 433,
+ "translation_words": 0
+}

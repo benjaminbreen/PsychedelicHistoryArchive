@@ -1,0 +1,61 @@
+{
+  "slug": "untitled-item-french-pd-newspapers-bpt6k26210881",
+  "title": "Untitled item (French-PD-Newspapers bpt6k26210881_1)",
+  "author": "Unknown",
+  "year": null,
+  "displayDate": "Undated",
+  "type": "Newspaper Article",
+  "medium": "Text",
+  "era": "",
+  "region": "To be determined",
+  "language": "French",
+  "substances": [
+    "Ether"
+  ],
+  "people": [],
+  "tags": [
+    "corpus-scan"
+  ],
+  "summary": "A French newspaper report on ether drinking in 19th-century Paris and Britain, describing the habit as a form of intoxication sought for visions and dreamlike sensations, especially among women. It also reports Ernest Hart’s warning about the spread of ether drinking in northern Ireland and parts of England; a substantive account of the practice and its social framing.",
+  "excerpt": "… Ce n’est plus le fait d’un vice brutal et qui appelle la sensation immédiate du boire, c’est, au contraire, le fait d’un vice pathologique cherchant un au-delà de jouissances raffinées et complexes.L éthéromanie, sous ce rapport, est la sœur cadette de la morphinomanie. Dans les deux cas, l’aberration est la même, non seulement dans les causes mais encore dans les effets.",
+  "citation": "*Untitled item (French-PD-Newspapers bpt6k26210881_1)*, n.d., French-PD-Newspapers (Common Corpus) bpt6k26210881_1.",
+  "rights": "Public domain (per Common Corpus); confirm before hosting",
+  "sourceUrl": "https://gallica.bnf.fr/ark:/12148/bpt6k26210881",
+  "accessType": "external",
+  "hostingStatus": "external_link",
+  "readerMode": "overview",
+  "draft": {
+    "status": "needs-work",
+    "proposedBy": "corpus-scan",
+    "proposedOn": "2026-10-17",
+    "bucket": "corpus-scan-review",
+    "rationale": "Editor marked this maybe in corpus-scan review. A French newspaper report on ether drinking in 19th-century Paris and Britain, describing the habit as a form of intoxication sought for visions and dreamlike sensations, especially among women. It also reports Ernest Hart’s warning about the spread of ether drinking in northern Ireland and parts of England; a substantive account of the practice and its social framing.",
+    "textSource": {
+      "url": "https://gallica.bnf.fr/ark:/12148/bpt6k26210881",
+      "kind": "gallica",
+      "scope": "~300-word OCR excerpt matched by the Common Corpus scan; full text not yet fetched"
+    },
+    "textQuality": {
+      "ocrPass": "none",
+      "confidence": "low",
+      "notes": "Luna OCR rating: fair. Only the scan excerpt has been seen."
+    },
+    "duplicateCheck": "No title match against archive documents, drafts or bibliography at scan time.",
+    "reviewStatus": "unreviewed",
+    "corpusScan": {
+      "candidate_id": "french-pd-newspapers:bpt6k26210881",
+      "decision": "maybe",
+      "decided_at": "2026-10-16T21:22:28.055Z",
+      "why": [],
+      "reasons": [],
+      "corrections": null,
+      "dataset": "culture-sample",
+      "revision": null,
+      "collection": "French-PD-Newspapers",
+      "identifier": "bpt6k26210881_1",
+      "archive_fit": 5,
+      "kind": "ethnographic_observation",
+      "scan_excerpt": "bitant. D’un regard, l’élève interrogeaitle maître. Celui-ci, comme à regret, fit un signe d’assentiment. La dame semblait éprouver une sorte de confusion. Elle prit brusquement le volumineux flacon qu on lui tendait et, d'un pas rapide, elle regagna sa voiture.— Buveuse d’éther, murmura le pharmacien.Qu’cntendait-il par là ? J’en demandai l'explication ; en quelques minutes, je fus initié. Depuis, j ai consulté maints savants et tous m’ont répondu de même. ,. Cela semble incroyable et pour; tant rien n'est plus vrai : buveurs etbuveuses d'éther existent à Paris, non plus selon la tendance de certaines populations portées à l’ivrognerie, comme i. en Irlande et en Angleterre, mais oui-vent un état isolé d’aberration maladive, engendré par des causes multiples. Ce n’est plus le fait d’un vice brutal et qui appelle la sensation immédiate du boire, c’est, au contraire, le fait d’un vice pathologique cherchant un au-delà de jouissances raffinées et complexes.L éthéromanie, sous ce rapport, est la sœur cadette de la morphinomanie. Dans les deux cas, l’aberration est la même, non seulement dans les causes mais encore dans les effets. Une différence, seulement : avec l'éther on se trouve en présence d’une ivresse véritable, qui ne diffère que par ses visions de celle procurée par l'alcool.En gêneras, nos buveurs d éther ou plutôt nos buveuses d’éther, — car ce sont presque toujours des femmes, — cèdent à un besoin de sensations nouvelles, à unenlrainement vers le monde du rêve. Fuyant les maux réels ou bien ceux qu’elles se forgent, elles ne voient d’abord que le remède, mais insensiblement elles trouvent la passion. L’éther essayé goutte à goutte est pris bientôt par cuillerée , puis par petit verre.Les alternatives d’excitation violente et d’ivresse aux joyeux fantômes se succèdent ; alors, l’aberré tombe dans l’excès constant, jusqu’au jour où se déclarent les troubles"
+    }
+  }
+}

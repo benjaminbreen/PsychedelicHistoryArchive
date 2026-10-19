@@ -20,9 +20,16 @@ Every draft must involve an actual psychedelic or related consciousness-altering
 substance in the archive's sense: peyote/mescaline, psilocybin mushrooms, LSD, DMT
 and ayahuasca, iboga, Amanita muscaria, ololiuhqui/morning glory seeds, yopo/cohoba,
 salvia, ketamine, MDMA, nitrous oxide and ether (the archive's anaesthetic-revelation
-track), harmala alkaloids, soma. **Not** cannabis, laudanum, opium, coca/cocaine,
-alcohol, or tobacco on their own. A source that mentions cannabis in passing is fine
-if its subject is a psychedelic.
+track), harmala alkaloids, soma. **Not** cannabis (except as below), laudanum, opium,
+coca/cocaine, alcohol, or tobacco on their own. A source that mentions cannabis in
+passing is fine if its subject is a psychedelic.
+
+**Cannabis exception (Ben Breen, 2026-10-16).** A cannabis or hashish source can stand
+on its own when the passage evokes a psychedelic-like state: visions, hallucination,
+altered time or self. A mention of being drunk, inebriated or soothed by hashish
+does not qualify. Mark these drafts with `"draft": { "scopeException":
+"visionary-cannabis" }` and say in `draft.rationale` what makes the passage
+visionary. The validator accepts cannabis-only drafts only when they carry that flag.
 
 ## Field reference
 

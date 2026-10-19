@@ -1,0 +1,62 @@
+{
+ "slug": "travels-researches-alexander-von-humboldt-being",
+ "start": "From Carichana they went in two days to the mission of Uruana",
+ "end_after": "attentive to any thing that regarded the natives.",
+ "dehyphenate": true,
+ "remove": [
+  "wn 4 ",
+  "- a a ci PROGRESS DOWN THE ORINOCO. 945 ",
+  "__ "
+ ],
+ "breaks": [
+  "The hamlet is inhabited by the Otomacs",
+  "“Every time,” said the monk",
+  "On the 7th June the travellers"
+ ],
+ "fixes": [
+  [
+   "taeir",
+   "their"
+  ],
+  [
+   "the. village",
+   "the village"
+  ],
+  [
+   "several days, . during",
+   "several days, during"
+  ],
+  [
+   "whom Humboldt eulogizes as. the",
+   "whom Humboldt eulogizes as the"
+  ],
+  [
+   "1 suspect",
+   "I suspect"
+  ]
+ ],
+ "note": "### The Otomac at Uruana\n\n_[From the chapter on the descent of the Orinoco in William Macgillivray's abridgement of Humboldt's travels, pp. 244–245. OCR from the Internet Archive scan, lightly corrected. Humboldt's own account of niopo and the Otomac, in chapter 24 of his Personal Narrative (1814–1825), is considerably fuller.]_",
+ "fields": {
+  "title": "Humboldt among the Otomac: niopo snuff at Uruana",
+  "short_title": "Humboldt on the Otomac and niopo",
+  "subtitle": "From The Travels and Researches of Alexander von Humboldt",
+  "display_date": "c. 1833 (Humboldt's visit, June 1800)",
+  "date_start": 1833,
+  "document_type": "Book",
+  "medium": "Text",
+  "language": "English",
+  "region": "Orinoco, Venezuela",
+  "publication_title": "The Travels and Researches of Alexander von Humboldt",
+  "summary": "A popular English abridgement of Alexander von Humboldt's travels describes the Otomac of the mission of Uruana on the Orinoco, whom Humboldt and Aimé Bonpland visited in June 1800. Alongside their earth-eating, it reports that they inhale a powder made from the pods of *Acacia niopo* (now *Anadenanthera peregrina*, the source of yopo snuff), producing an intoxication \"bordering on madness, that lasts several days.\"",
+  "citation": "William Macgillivray, *The Travels and Researches of Alexander von Humboldt* (New York: Harper & Brothers, c. 1833), 244–245.",
+  "rights_statement": "Public domain (published before 1930)",
+  "access_type": "hosted",
+  "hosting_status": "transcript_only",
+  "reader_mode": "transcript"
+ },
+ "author": "William Macgillivray",
+ "editor_notes": "Compiler, edition and page numbers inferred from the scan (travelsresearche00humb_1); confirm against the title page. The stronger primary source is Humboldt's Personal Narrative, ch. 24 (Otomac, niopo, earth-eating): worth tracing and proposing in its own right.",
+ "transcript": "### The Otomac at Uruana\n\n_[From the chapter on the descent of the Orinoco in William Macgillivray's abridgement of Humboldt's travels, pp. 244–245. OCR from the Internet Archive scan, lightly corrected. Humboldt's own account of niopo and the Otomac, in chapter 24 of his Personal Narrative (1814–1825), is considerably fuller.]_\n\nFrom Carichana they went in two days to the mission of Uruana, the situation of which is extremely picturesque, the village being placed at the foot of a lofty granitic mountain, the columnar rocks appearing at intervals above the trees. Here the river is more than 4263 yards broad, and runs in a straight line directly east. \n\nThe hamlet is inhabited by the Otomacs, one of the rudest of the American tribes. These Indians swallow quantities of earth for the purpose of allaying hunger. When the waters are low they live on fish and turtles; but when the rivers swell, and it becomes difficult to procure that food, they eat daily a large portion of clay. The travellers found in their huts heaps of it in the form of balls, piled up in pyramids three or four feet high. This substance is fine and unctuous, of a yellowish-gray colour, containing silica and alumina, with three or four per cent. of lime. Being a restless and turbulent people, with unbridled passions and excessively given to intoxication, the little village of Uruana is more difficult to govern than any of the other missions. By inhaling at the nose the powder obtained from the pods of the Acacia niopo they throw themselves into a state of intoxication bordering on madness, that lasts several days, during which dreadful murders are committed. The most vindictive cover the nail of the thumb with the curare poison, the slightest scratch being thus sufficient to produce death. When this crime is perpetrated at night they throw the body into the river. \n\n“Every time,” said the monk, “that I see the women fetch water from a part of the shore to which they do not usually go for it, I suspect that a murder has been committed in my mission.” \n\nOn the 7th June the travellers took leave of Father Ramon Bueno, whom Humboldt eulogizes as the only one of ten missionaries of Guiana whom they had seen who appeared to be attentive to any thing that regarded the natives.",
+ "transcript_words": 341,
+ "translation_words": 0
+}

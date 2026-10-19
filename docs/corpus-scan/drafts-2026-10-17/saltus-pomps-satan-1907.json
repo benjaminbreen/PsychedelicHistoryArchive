@@ -1,0 +1,90 @@
+{
+ "slug": "saltus-pomps-satan-1907",
+ "start": "Chapter VIII THE QUEST OF PARADISE THERE are people",
+ "end_before": "[92] Chapter IX",
+ "dehyphenate": true,
+ "remove_regex": [
+  "\\[\\d+[\\]J]\\s*THE (?:QUEST OF PARADISE|POMPS OF SATAN)\\s*■?\\s*"
+ ],
+ "breaks": [
+  "The discovery is of a nature",
+  "Possibilities such as these",
+  "Others, though, have been",
+  "Then, also, there is Venezuela",
+  "In the quest of Paradise, therefore",
+  "Even so, it did not embarrass",
+  "Through an inability to imitate",
+  "Another was De Quincey",
+  "In addition to haschish and opium",
+  "This sort of thing continued",
+  "Dissatisfied with the result",
+  "It is into such byways",
+  "It is a wonderful journey",
+  "In an effort to forget",
+  "Happiness is what we think",
+  "We are born with a belief",
+  "These premises admitted"
+ ],
+ "fixes": [
+  [
+   "Chapter VIII THE QUEST OF PARADISE THERE are people",
+   "### Chapter VIII: The Quest of Paradise\n\nThere are people"
+  ],
+  [
+   "lambulus",
+   "Iambulus"
+  ],
+  [
+   "enigmse",
+   "enigmas"
+  ],
+  [
+   "iEolian",
+   "Æolian"
+  ],
+  [
+   "fiowerful",
+   "flowerful [?]"
+  ],
+  [
+   "Mescal is much' in vogue",
+   "Mescal is much in vogue"
+  ],
+  [
+   "The discovery, is of a nature",
+   "The discovery is of a nature"
+  ],
+  [
+   "blumen?",
+   "blühn?"
+  ],
+  [
+   " , Yet we might",
+   " Yet we might"
+  ]
+ ],
+ "note": "_[The complete eighth chapter of Edgar Saltus's The Pomps of Satan, pp. 81–92. OCR from the Cornell University Library scan at the Internet Archive, lightly corrected; [?] marks readings to check.]_",
+ "fields": {
+  "title": "Edgar Saltus, \"The Quest of Paradise\"",
+  "short_title": "Saltus, The Quest of Paradise",
+  "subtitle": "The Pomps of Satan, chapter VIII",
+  "display_date": "1907",
+  "date_start": 1907,
+  "document_type": "Essay",
+  "medium": "Text",
+  "language": "English",
+  "region": "United States",
+  "publication_title": "The Pomps of Satan",
+  "summary": "In a mocking essay on earthly paradises, the American aesthete Edgar Saltus (1855–1921) turns to their \"artificial ascents\": Baudelaire's hashish, De Quincey's laudanum, and mescal (peyote), \"a god\" to the Tarahumara. He then retells, with relish, Havelock Ellis's 1897–98 mescal experiments, from the \"living arabesques\" Ellis saw himself to the terrors of the friend he dosed, before concluding that \"the artificial substitute does not pay.\" It is an early instance of the peyote vision entering American popular letters.",
+  "citation": "Edgar Saltus, \"The Quest of Paradise,\" in *The Pomps of Satan* (New York, 1907), 81–92.",
+  "rights_statement": "Public domain (published before 1930)",
+  "access_type": "hosted",
+  "hosting_status": "transcript_only",
+  "reader_mode": "transcript"
+ },
+ "author": "Edgar Saltus",
+ "editor_notes": "Common Corpus dates this copy 1907 (Cornell cu31924022254621). The Pomps of Satan is often dated 1904; confirm the first edition and publisher. Saltus paraphrases Havelock Ellis, \"Mescal: A New Artificial Paradise\" (Contemporary Review, 1898), which the archive could link.",
+ "transcript": "_[The complete eighth chapter of Edgar Saltus's The Pomps of Satan, pp. 81–92. OCR from the Cornell University Library scan at the Internet Archive, lightly corrected; [?] marks readings to check.]_\n\n### Chapter VIII: The Quest of Paradise\n\nThere are people who charm at sight. There are others who produce sites that charm. There are even some who do both. Dr Lucas is one of them. We never heard of him before, and already we have learned to love him. Dr Lucas is an associate of the Geological Survey. As such he has announced a grand discovery. He has succeeded in locating the Garden of Eden. For reasons sufficient to him, and therefore good enough for anybody, he designates Luzon as the spot. Here, or rather there, is the First Family's Midway Plaisance. Here, too, is not merely a grand discovery but a sort of national thanksgiving. In acquiring the Philippines we have annexed Paradise. What have the antiimperialists to say to that? \n\nThe discovery is of a nature to interest them precisely as it must interest everybody; yet particularly, perhaps, Mr Thomas Cook and Mr Baedeker. Should the site be accepted as exact, we assume without effort that one of these gentlemen will prepare round-trip tickets, and the other the obvious guide-book. The Story of the Fall, which Mr Bae- deker is sure to intercalate among the usual Hints to Travellers, will, for many, have the force and flavour of a new scandal. The doctrine of Original Sin, expounded in the appendix, all conscientious Sunday editors will seize upon as a feature. It will be new to them also. Yet the delights of the guide-book, however manifold, will pale beside the pleasures in store for the tourist. Fancy the sensations which the most satiated of globe trotters will experience on beholding a tree which is certified to be that of Good and Evil! Fancy, too, the travellers' tales of those who have vacated the Gates! \n\nPossibilities such as these are too good to be true. According to Moses, or, more exactly, according to scholastic interpretations of his statements on the subject. Paradise was situated in a garden of gold, of bdellium, and of onyx. Arminius put it in a clear conscience. Villon in the eyes of the well-beloved. Dr Lucas has put it on the map. There is the ideal, or rather, there is progress. \n\nOthers, though, have been as progressive. Consider, for instance, the Canaries. Kennst du das Land wo die Citronen blühn? There it is. According to ancient, yet not standard authorities, there, too, was Paradise. The Canaries are the Fortunate Isles, Iambulus says, or is said to have said, for really we have not read him, and probably could not if we tried, and would not bother to, anyway — however, Iambulus is reported to have stated that these islands were inhabited by a set of people who had elastic bones, bifurcated tongues, whose lives were a succession of sweetnesses, and who, when overtaken by age, lay on a perfumed grass that produced a voluptuous death. That must have been a long time ago. Perhaps, too, the story is not true. In any event, nothing of the kind is encounterable there now. Yet we might just as well have had these islands as the Philippines. Everything being possible, it may be that some day we shall. In which case those whom Dr Lucas' discovery does not satisfy may betake themselves to the Canaries instead. \n\nThen, also, there is Venezuela. From the Gulf of Paria Columbus wrote loyally to Ferdinand and Isabella that just beyond was Paradise. He wrote not merely loyally, but logically. In the neighbourhood were the enchantments of El Dorado. A trifle to the north were Bimini's Waters of Youth, and, more remotely, stretched Tlapallan, the Land of Colours. That land of colours is Yucatan to-day. The enchantments of El Dorado have dissolved in the sultriness of Trinidad, and Bimini's Waters of Youth Ponce de Leon sought and failed to find in Florida. The latter we have, and many of us a few Palm Beach hotel bills by way of reminder. Over the others ultimately our flag will flaunt. \n\nIn the quest of Paradise, therefore, we are by no means limited to Luzon. Yet though there is a trust in the matter there is no monopoly. Others have been quite free to pick and choose. Some old chaps selected Avalon, where rapture was such that a year was a minute. We have not an idea where it can be, otherwise the location would not be withheld from our readers. But it is somewhere. So, also, is Ceylon, where a good bishop said every prospect pleases and only man is vile. So, too, is the Kingdom of Prester John, just beyond which other old chaps declared Paradise to be. Nor is this all. Theologians have placed Eden in Mesopotamia, travellers in Central Africa, ethnologists in Atlantis, mythologists in Limuria, philosophers in Utopia, and litterateurs at the Pole — which, to be as cosmopolitan as the rest of them, constitutes, we think, a real embarrassment of choice. \n\nEven so, it did not embarrass Sven Hedin. Last year — or was it the year before? — he dismissed them all, and, quite as definitely as Dr Lucas put his finger on Luzon, this gentleman indicated Janaidar. Janaidar is a city in the uplands of Asia, to which the Kirghiz look and pray as they pass. Perched on a peak of the Pamirs, provided with flowers that never wither, with delights that never end, with songs that never cease, it surges above the barren plains a mirage of terrestrial bliss. Dr Hedin tried to ascend the height on which it is set. Being mortal, he failed. It is as well, perhaps. He has an illusion left. So have we. Always and everywhere there is an abode of bliss. But on condition that it is treated as the Kirghiz treat Janaidar, that it is looked up to, prayed to, and then passed by. \n\nThrough an inability to imitate the Kirghiz, or, perhaps, because they never heard of them, others have attempted artificial ascents. Among these is Baudelaire. With nothing but haschisch for ladder the ascent was effected; he was there, living in uninterrupted delights, listening to harmonies no mortal ever heard before, contemplating landscapes of amber and emerald, perspectives the colour of dream, and with them, perhaps, the lost arcana, the secrets of the enigmas of the universe, the science that Plutonian cataclysms engulfed, the recitals of the genesis and metamorphosis of the supernal, the chronicles of the forgotten relations of nature and man. \n\nAnother was De Quincey. In the hallucinations of the glass of \" laudanum negus, warm, without sugar,\" which he used for ascent, there were infinite cavalcades, the undulations of tumults, the catas- trophes of mighty dramas, choruses of passion, trepidations of innumerable fugitives, tempests of features, forms, and farewells, shuttled by sudden lambiencies, by the consonance of citterns and clavichords, by Æolian intonations, by revelations of power and beauty, by pomps and glories, until a vault, opening in the zenith of the far blue sky, showed a shaft of light that ran up for ever through millennia, through aeons ; and up that shaft his spirit mounted, mounted ever farther yet, until peace slept upon him as dawn upon the sea. \n\nIn addition to haschish and opium other ladders have been used. Among them mescal is citable — not the agave preparation, but a plant which yields a substance brown and bitter, and of which the effects resemble Indian hemp. Mescal is much in vogue among the Tarahumari, a tribe of Mexican Indians, to whom the plant is a god, approachable only after fastidious rites, the body perfumed with cophal, the heart entirely devout. And no wonder. For, properly placated, the god conducts the worshipper to a series of visions in which he is beckoned into Paradise and then shown out — provided he has absorbed the proper dose. That dose we have personally lacked the opportunity to absorb, but if we may believe everything we hear — and we are always most anxious to — Mr Havelock Ellis has. With it he encountered a vast field of golden jewels, perfumes also, on which flowerful [?] shapes convoluted into gorgeous butterflies, gyrated in loops of flame, and performed skirt dances before him, providing him with living pictures, or, rather, what he, with perhaps a higher conception of the possibilities of language, calls \" living arabesques.\" In the background were, he noted, architectural sweetmeats in the Maori style — whatever style that may be — enhanced \" with the moucharabieh work of Cairo.\" \n\nThis sort of thing continued for hours, until, indeed, Mr Ellis went to bed, when he became, as he expresses it, greatly impressed by the \" red, scaly, bronzed, and pigmented appearance of his limbs,\" particularly — and strange to say — whenever he was not gazing directly at them. \n\nDissatisfied with the result, he experimented on a friend, to whom he amicably distributed an overdose, and who with some pathos relates that thereupon he had a series of paroxysms which made him feel as if he were about to give up the ghost. He enjoyed a sense of speedy dissolution, accompanied, and presumably accentuated, by an entire inability to resist, yet quickly followed by an acuter apprehension that one of his eyes had turned into a pool of dirty water in which millions and millions of minute tadpoles were afloat. Then he, too, was grati- fied with a skirt dance of arabesques that arose, descended, palpitated, and slid, for which, however, he was presently punished by a procession of sudden frights. His left leg became solid, his body immaterial, his arms impalpable, the back of his head emitted flames, to his mouth came the burn of fire, to his ears the buzz of bees, interrupted by the impression of skin disappearing from the brow, of dead flesh, of hot chills, and, finally, of a grinning skull. \n\nIt is into such byways that the quest of Paradise may lead one. Yet there are others, notably those disclosed by drink. Byron used that guide, so did Poe, so did de Musset. Under the influence of the Yellow Fay, whose name is Eau de Vie and should be Au Dela, they left the world, crossed the frontiers of the possible, and in a swift pursuit of larger flowers, rarer perfumes, pleasures unenjoyed, passed from new horizons into visions brutally beautiful, wholly solid, dreamless and real, where, fairer than the desire of a fallen god, the Muse stood, her arms outstretched. \n\nIt is a wonderful journey, but the landscapes it unveils are not suited to common clay. There are colours there to which the rest of us are blind, melodies to which we are deaf, the white assumption of realised ideals. Such things are not for ordinary man. The summit scaled, or even attempted, instead of resplendent perspectives, instead of the pul- sations of higher hopes, the savours of life unto life, the odours and foretastes of immaculate joy, there is stupor when there is not horror, delirium when there is not death. Purgatory instead of Paradise. It is a great place, though, for men who want to drown their sorrows, and always will be until they learn that sorrows know how to swim. \n\nIn an effort to forget, or, rather, not to remember, that the end of life is darkness and the font of it pain, persons more fastidious have turned to love. But that also has its defects. In the smart set it is a game, and a very pretty one too, only when you are old enough to play it properly you are too old to play it at all. In which respect it is inferior to bridge whist. Platonism is much better. The trouble, though, with that arrangement is that either the party of the first part loses her head or the party of the second part loses his temper. Neither result is conducive to happiness, and happiness is but a synonym for Paradise. \n\nHappiness is what we think it is, but only when what we think it is what we have not got. Love is refreshing and wealth delightful. But they do not bring happiness. Even golf may fail. Matrimony too, for that matter. The happiness of matrimony is not, however, a subject that may be lightly talked away. There are and have been, and presumably always will be, a number of marriages that are delicious. Yet none is perfect. But, then, does perfection exist? Personally, we have heard matrimony defined as one woman more and one man less. The definition seemed to us inadequate. Then, too, it is a long time since the noose matrimonial ceased to be news. Yet that noose we have heard praised for the opportunities which it affords for the development of the emotions known as unselfish. Certainly it is highly chastening. But chastened people have no individuality. The big bugs of history were thorough-paced egotists. Caesar at the Rubicon, Napoleon at Marengo, Carnegie at the Steel deal, did not care a rap for a soul save themselves. Do we not honour them for it? It is of such stuff that greatness comes. But, like matrimony, like golf, and bridge whist, greatness is not happiness. When Alexander was tramping India in search of the sight that Dr Lucas has found in Luzon, an ordinary person presumed to tell him that he was on the wrong road. \" The right way,\" said the person, \" is humility.\" We have tried the path and discovered, just as Columbus discovered in the Gulf of Paria, that Paradise lay beyond. \" We are all born in Arcadia,\" said Schiller, who omitted to add that we emigrated at once. But the idea is sound. \n\nWe are born with a belief in Paradise. The quest of it fills our dreams. The delays in getting there furnish our nightmares. Yet of all those who have sought it, nobody has ever got there after the age of forty, or, we may hasten to add, before. Beautiful as an uncommitted sin, it stretches far away, too far, indeed, for laggard steps like ours. It is not in Luzon, as Dr Lucas has announced. It is not in the Fortunate Isles, as the ancients thought. The artificial substitute does not pay, the Biblical Plaisance has ceased to be. In the twentieth century there is no such place. \n\nThese premises admitted, there should be something to take its place, and there is. An epicure provided it. He called it Contentment. Given that, and the possessor can dispense with Paradise every day in the year. The factors are twofold. The first is health; the second indifference. The conjunction of these little things does not produce Elysium, but it steers one clear of Hades. Anyone who expects more than that is too good for the good things, and particularly for the bad things — which are often better — with which this world is bestrewn.",
+ "transcript_words": 2485,
+ "translation_words": 0
+}
