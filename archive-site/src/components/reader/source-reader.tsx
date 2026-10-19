@@ -6,7 +6,7 @@ import { BookOpen, Check, ChevronLeft, ChevronRight, Columns2, Copy, Download, E
 import { MarkdownContent } from "@/components/markdown-content";
 import { CollectionOverview, ExternalSourceViewer, HistoricalContextByline, MediaSourceViewer, TranscriptReader, TranslationReader } from "@/components/source-reader-tabs";
 import { Lightbox } from "@/components/reader/lightbox";
-import { buildReaderModel, creatorLabel, sectionText, sourceCitation, sourceUrl, textStatus, type LineatedPage, type ReaderView } from "@/lib/reader-model";
+import { buildReaderModel, creatorNames, sectionText, sourceCitation, sourceUrl, textStatus, type LineatedPage, type ReaderView } from "@/lib/reader-model";
 import { isAudioFile, isPdfFile, isVideoFile } from "@/lib/source-reader";
 import { getSourceTitleParts } from "@/lib/source-title";
 import type { ArchiveSource, TranscriptSection } from "@/lib/types";
@@ -18,7 +18,7 @@ type Selection = { page: number; a: number; b: number } | null;
 const topicHref = (tag: string) => `/archive?tag=${encodeURIComponent(tag)}`;
 
 // stickyTop: height of any sticky header above the reader (the public site header by default).
-export function SourceReader({ source, transcript, related = [], children, stickyTop = "calc(4.9rem + 1px)" }: { source: ArchiveSource; transcript: string[]; related?: RelatedItem[]; children?: ReactNode; stickyTop?: string }) {
+export function SourceReader({ source, transcript, related = [], biographyHrefs = {}, children, stickyTop = "calc(4.9rem + 1px)" }: { source: ArchiveSource; transcript: string[]; related?: RelatedItem[]; biographyHrefs?: Record<string, string>; children?: ReactNode; stickyTop?: string }) {
   const model = useMemo(() => buildReaderModel(source, transcript), [source, transcript]);
   const status = useMemo(() => textStatus(source, model), [source, model]);
   const titleParts = getSourceTitleParts(source);
@@ -180,7 +180,7 @@ export function SourceReader({ source, transcript, related = [], children, stick
           <h1 className={styles.title}>{titleParts.title}</h1>
           {titleParts.subtitle && <p className={styles.subtitle}>{titleParts.subtitle}</p>}
           <p className={styles.byline}>
-            {creatorLabel(source) && <span className={styles.creator}>{creatorLabel(source)}</span>}
+            {creatorNames(source).length > 0 && <span className={styles.creator}><PersonNames hrefs={biographyHrefs} names={creatorNames(source)} /></span>}
             {source.displayDate && <><span className={styles.sep}>·</span><span>{source.displayDate}</span></>}
             {source.publicationTitle && <><span className={styles.sep}>·</span><span>{source.publicationTitle}</span></>}
           </p>
@@ -276,7 +276,7 @@ export function SourceReader({ source, transcript, related = [], children, stick
           <section className={styles.details} aria-labelledby="about-source">
             <h2 id="about-source">About this source</h2>
             <dl>
-              <Row label="Creator">{source.creators?.length ? source.creators.map(c => `${c.name}${c.role && !/^author$/i.test(c.role) ? ` (${c.role})` : ""}`).join("; ") : source.author}</Row>
+              <Row label="Creator">{source.creators?.length ? source.creators.map((c, i) => <span key={`${c.name}-${i}`}>{i > 0 && "; "}<PersonNames hrefs={biographyHrefs} names={[c.name]} />{c.role && !/^author$/i.test(c.role) ? ` (${c.role})` : ""}</span>) : source.author && <PersonNames hrefs={biographyHrefs} names={[source.author]} />}</Row>
               <Row label="Date">{source.displayDate}</Row>
               <Row label="Type">{source.type}</Row>
               <Row label="Held by">{source.citation}</Row>
@@ -385,6 +385,10 @@ function Intro({ children }: { children: ReactNode }) {
       {(overflows || open) && <button type="button" className={styles.more} aria-expanded={open} onClick={() => setOpen(o => !o)}>{open ? "Show less" : "Read more"}</button>}
     </div>
   );
+}
+
+function PersonNames({ names, hrefs }: { names: string[]; hrefs: Record<string, string> }) {
+  return <>{names.map((name, i) => <span key={`${name}-${i}`}>{i > 0 && ", "}{hrefs[name] ? <Link className={styles.personLink} href={hrefs[name]}>{name}</Link> : name}</span>)}</>;
 }
 
 function Row({ label, children }: { label: string; children?: ReactNode }) {

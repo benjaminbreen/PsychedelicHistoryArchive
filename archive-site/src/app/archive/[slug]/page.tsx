@@ -9,6 +9,8 @@ import { JsonLd, SITE_NAME, buildBreadcrumbJsonLd, buildSourceJsonLd, canonicalP
 import { transcriptParagraphs } from "@/lib/reader-model";
 import { SOURCE_ISSUE_TYPE_OPTIONS } from "@/lib/source-issue-reports";
 import { getArchiveSourceDetailFromSupabase, listArchiveSourceSummariesFromSupabase } from "@/lib/supabase-archive";
+import { listPublishedBiographySlugs } from "@/lib/supabase-biographies";
+import { biographyHrefsFor } from "@/lib/biographies";
 import { LEGACY_SOURCE_SLUGS } from "@/lib/legacy-slugs";
 import { getSourceTitleParts } from "@/lib/source-title";
 import type { ArchiveSource } from "@/lib/types";
@@ -73,9 +75,10 @@ export default async function SourcePage({ params, searchParams }: SourcePagePro
   const paramsValue = await searchParams;
   const reportStatus = normalizeReportStatus(paramsValue?.report);
   if (LEGACY_SOURCE_SLUGS[slug]) permanentRedirect(`/archive/${LEGACY_SOURCE_SLUGS[slug]}`);
-  const [source, sources] = await Promise.all([
+  const [source, sources, publishedBiographySlugs] = await Promise.all([
     getArchiveSourceDetailFromSupabase(slug),
-    listArchiveSourceSummariesFromSupabase()
+    listArchiveSourceSummariesFromSupabase(),
+    listPublishedBiographySlugs()
   ]);
 
   if (!source) notFound();
@@ -91,6 +94,7 @@ export default async function SourcePage({ params, searchParams }: SourcePagePro
     ])
   ];
 
+  const biographyHrefs = biographyHrefsFor([...(source.creators ?? []).map((creator) => creator.name), source.author, ...source.people], publishedBiographySlugs);
   const related = relatedSources.map(r => ({ id: r.id, slug: r.slug, title: getSourceTitleParts(r).title, type: r.type, displayDate: r.displayDate, relatedReason: r.relatedReason }));
 
   return (
@@ -98,7 +102,7 @@ export default async function SourcePage({ params, searchParams }: SourcePagePro
       <JsonLd data={structuredData} />
       <SiteHeader variant="source" />
       <main>
-        <SourceReader related={related} source={source} transcript={transcriptParagraphs(source)}>
+        <SourceReader biographyHrefs={biographyHrefs} related={related} source={source} transcript={transcriptParagraphs(source)}>
           <SourceIssueReportPanel reportStatus={reportStatus} source={source} />
         </SourceReader>
       </main>

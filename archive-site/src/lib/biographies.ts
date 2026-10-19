@@ -651,6 +651,18 @@ export function getBiographyDirectoryMetadata(name: string) {
   return biographyDirectoryMetadata[slugifyPersonName(canonicalizePersonName(name))];
 }
 
+// Links for credited names that have a real biography (curated here or published in the CMS),
+// skipping the generated metadata stubs that exist for every credited person.
+export function biographyHrefsFor(names: string[], publishedSlugs: Set<string>) {
+  const hrefs: Record<string, string> = {};
+  for (const name of names) {
+    if (!name || !isDisplayableBiographyName(name)) continue;
+    const slug = slugifyPersonName(canonicalizePersonName(name));
+    if (publishedSlugs.has(slug) || findBiographyProfile(slug)) hrefs[name] = `/biographies/${slug}`;
+  }
+  return hrefs;
+}
+
 export function findBiographyProfile(slug: string) {
   return biographyProfiles.find((profile) => profile.slug === slug);
 }

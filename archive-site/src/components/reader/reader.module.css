@@ -55,6 +55,8 @@
 .heroSolo .heroText { max-width: 820px; }
 .subtitle { font-family: var(--serif); font-style: italic; font-size: 1.35rem; line-height: 1.4; color: var(--muted); margin: -6px 0 18px; }
 .creator { color: var(--ink); font-weight: 600; }
+.personLink { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); text-underline-offset: 3px; }
+.personLink:hover { color: var(--violet); text-decoration-color: currentColor; }
 .sep { color: var(--faint); }
 .intro { font-family: var(--serif); font-size: 1.2rem; line-height: 1.55; max-width: 38em; margin: 0 0 26px; text-wrap: pretty; }
 .introWrap { margin: 0 0 20px; }

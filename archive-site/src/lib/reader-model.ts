@@ -147,9 +147,13 @@ export function sourceUrl(source: ArchiveSource, origin = "https://www.psychedel
   return `${origin}/archive/${source.slug}`;
 }
 
-export function creatorLabel(source: ArchiveSource) {
+export function creatorNames(source: ArchiveSource) {
   const names = source.creators?.length ? source.creators.filter(c => !/editor|translator/i.test(c.role)).map(c => c.name) : [];
-  return (names.length ? names : [source.author]).filter(Boolean).join(", ");
+  return (names.length ? names : [source.author]).filter(Boolean);
+}
+
+export function creatorLabel(source: ArchiveSource) {
+  return creatorNames(source).join(", ");
 }
 
 export function sourceCitation(source: ArchiveSource, where?: { page: number; a?: number; b?: number }, origin?: string) {
