@@ -1,3 +1,4 @@
+import { SearchMatchExcerpt } from "@/components/search-match-excerpt";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { Chip } from "@/components/ui/chip";
@@ -27,12 +28,7 @@ export function ArchiveResultRow({ match, source }: { match?: SearchMatchSummary
             <p className="mt-1 line-clamp-2 max-w-[32rem] text-[0.82rem] leading-5 text-archive-ink">
               {source.summary}
             </p>
-            {match?.snippet && (
-              <p className="mt-2 line-clamp-2 max-w-[32rem] border-l-2 border-archive-violet/45 pl-3 text-[0.76rem] leading-5 text-archive-muted">
-                <span className="font-semibold text-archive-violet">{match.label}:</span>{" "}
-                {match.snippet}
-              </p>
-            )}
+            <SearchMatchExcerpt className="mt-2 max-w-[32rem] text-[0.76rem] leading-5" clampClassName="line-clamp-2" match={match} />
             {source.accessType === "external" && (
               <span className="sr-only">
                 <ExternalLink className="h-3 w-3" /> External source

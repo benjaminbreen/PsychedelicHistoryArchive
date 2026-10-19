@@ -970,7 +970,7 @@ as $$
       search_chunks.document_id,
       search_chunks.chunk_kind,
       search_chunks.href,
-      left(regexp_replace(search_chunks.chunk_text, '\s+', ' ', 'g'), 320) as snippet,
+      left(regexp_replace(search_chunks.chunk_text, '\s+', ' ', 'g'), 2400) as snippet,
       (
         ts_rank_cd(search_chunks.search_vector, query.ts_query) *
           case search_chunks.chunk_kind
@@ -1036,7 +1036,7 @@ as $$
       search_chunks.document_id,
       search_chunks.chunk_kind,
       search_chunks.href,
-      left(regexp_replace(search_chunks.chunk_text, '\s+', ' ', 'g'), 320) as snippet,
+      left(regexp_replace(search_chunks.chunk_text, '\s+', ' ', 'g'), 2400) as snippet,
       (1 - (search_chunks.embedding <=> query_embedding))::real as score
     from search_chunks
     where search_chunks.embedding is not null

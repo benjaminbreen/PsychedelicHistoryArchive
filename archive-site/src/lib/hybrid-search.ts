@@ -2,6 +2,7 @@ import { filterArchiveSources, type ArchiveSearchParams } from "@/lib/archive-qu
 import { getServerEnv } from "@/lib/server-env";
 import { getSupabaseClient } from "@/lib/supabase";
 import type { ArchiveSource } from "@/lib/types";
+import { buildPassage, cosine, keywordSentenceScores, splitSentences } from "@/lib/search-passages";
 import { parseSearchMode, type SearchMatchSummary, type SearchMode } from "@/lib/search-types";
 
 type SearchRpcRow = {
@@ -24,6 +25,8 @@ export type ArchiveSearchResultSet = {
 };
 
 const SEARCH_RESULT_LIMIT = 400;
+// Results that get a sentence-level highlighted passage; the rest keep a plain snippet.
+const PASSAGE_RESULT_LIMIT = 30;
 const EMBEDDING_MODEL = getServerEnv("OPENAI_EMBEDDING_MODEL") || "text-embedding-3-small";
 const EMBEDDING_DIMENSIONS = Number.parseInt(getServerEnv("OPENAI_EMBEDDING_DIMENSIONS") || "1536", 10);
 
@@ -47,6 +50,7 @@ export async function searchArchiveSourcesWithMode(
   const sourceById = new Map(sources.map((source) => [source.id, source]));
   const rows: RankedRow[] = [];
   let rpcFailed = false;
+  let queryEmbedding: number[] | undefined;
 
   if (mode !== "semantic") {
     const keywordRows = await searchKeywordRows(query);
@@ -57,6 +61,7 @@ export async function searchArchiveSourcesWithMode(
   if (mode !== "keyword") {
     const semanticRows = await searchSemanticRows(query);
     rpcFailed ||= semanticRows.failed;
+    queryEmbedding = semanticRows.embedding;
     rows.push(...semanticRows.rows.map((row) => ({ ...row, mode: "semantic" as const })));
   }
 
@@ -70,6 +75,12 @@ export async function searchArchiveSourcesWithMode(
       sources: applyExplicitSort(fallbackSources, params.sort),
       usedFallback: true,
     };
+  }
+
+  await attachPassages(ranked.slice(0, PASSAGE_RESULT_LIMIT).map((row) => row.match), query, mode === "keyword" ? undefined : queryEmbedding);
+  for (const { match } of ranked) {
+    // The RPCs return whole chunks; plain snippets only need the opening.
+    if (!match.passage && match.snippet && match.snippet.length > 320) match.snippet = `${match.snippet.slice(0, 320).replace(/\s\S*$/, "")}…`;
   }
 
   const rankedSources = ranked
@@ -101,9 +112,9 @@ async function searchKeywordRows(query: string): Promise<{ failed: boolean; rows
   return { failed: false, rows: (data ?? []) as SearchRpcRow[] };
 }
 
-async function searchSemanticRows(query: string): Promise<{ failed: boolean; rows: SearchRpcRow[] }> {
+async function searchSemanticRows(query: string): Promise<{ embedding?: number[]; failed: boolean; rows: SearchRpcRow[] }> {
   const supabase = getSupabaseClient();
-  const embedding = await embedQuery(query);
+  const embedding = (await embedTexts([query]))?.[0];
   if (!supabase || !embedding) return { failed: true, rows: [] };
 
   const { data, error } = await supabase.rpc("search_archive_semantic", {
@@ -117,10 +128,40 @@ async function searchSemanticRows(query: string): Promise<{ failed: boolean; row
     return { failed: true, rows: [] };
   }
 
-  return { failed: false, rows: (data ?? []) as SearchRpcRow[] };
+  return { embedding, failed: false, rows: (data ?? []) as SearchRpcRow[] };
 }
 
-async function embedQuery(query: string) {
+// Highlights the sentences in each matched chunk closest to the query: by embedding
+// similarity when a query embedding is available, otherwise by query-term hits.
+async function attachPassages(matches: SearchMatchSummary[], query: string, queryEmbedding?: number[]) {
+  const items = matches
+    .map((match) => ({ match, sentences: splitSentences(match.snippet ?? "") }))
+    .filter((item) => item.sentences.length > 0);
+  const keywordScores = items.map((item) => keywordSentenceScores(item.sentences, query));
+
+  let semanticScores: number[][] | undefined;
+  if (queryEmbedding && items.length) {
+    const embeddings = await embedTexts(items.flatMap((item) => item.sentences), 2500);
+    if (embeddings) {
+      let offset = 0;
+      semanticScores = items.map((item) => {
+        const scores = item.sentences.map((_, index) => cosine(queryEmbedding, embeddings[offset + index]));
+        offset += item.sentences.length;
+        return scores;
+      });
+    }
+  }
+
+  items.forEach((item, index) => {
+    // A literal hit on the query term nudges the semantic choice toward it.
+    const scores = semanticScores
+      ? semanticScores[index].map((value, i) => value + Math.min(keywordScores[index][i], 1) * 0.04)
+      : keywordScores[index];
+    item.match.passage = buildPassage(item.sentences, scores);
+  });
+}
+
+async function embedTexts(inputs: string[], timeoutMs?: number) {
   const apiKey = getServerEnv("OPENAI_API_KEY");
   if (!apiKey || !Number.isFinite(EMBEDDING_DIMENSIONS)) return undefined;
 
@@ -131,9 +172,10 @@ async function embedQuery(query: string) {
         "Authorization": `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
+      signal: timeoutMs ? AbortSignal.timeout(timeoutMs) : undefined,
       body: JSON.stringify({
         dimensions: EMBEDDING_DIMENSIONS,
-        input: query,
+        input: inputs,
         model: EMBEDDING_MODEL,
       }),
     });
@@ -144,10 +186,12 @@ async function embedQuery(query: string) {
     }
 
     const payload = await response.json() as { data?: Array<{ embedding?: number[] }> };
-    const embedding = payload.data?.[0]?.embedding;
-    return Array.isArray(embedding) && embedding.length === EMBEDDING_DIMENSIONS ? embedding : undefined;
+    const embeddings = (payload.data ?? []).map((item) => item.embedding);
+    const valid = embeddings.length === inputs.length &&
+      embeddings.every((embedding) => Array.isArray(embedding) && embedding.length === EMBEDDING_DIMENSIONS);
+    return valid ? embeddings as number[][] : undefined;
   } catch (error) {
-    console.warn("OpenAI query embedding failed.", error instanceof Error ? error.message : error);
+    console.warn("OpenAI embedding failed.", error instanceof Error ? error.message : error);
     return undefined;
   }
 }
@@ -186,13 +230,13 @@ function rankRows(
       return {
         combinedScore,
         documentId,
-        match: {
+        match: <SearchMatchSummary>{
           href: bestRow?.href ?? undefined,
           label: matchLabel(bestRow?.match_kind, bestRow?.mode ?? mode),
           mode,
           score: combinedScore,
           snippet: cleanSnippet(bestRow?.snippet),
-        } satisfies SearchMatchSummary,
+        },
       };
     })
     .sort((a, b) => b.combinedScore - a.combinedScore);

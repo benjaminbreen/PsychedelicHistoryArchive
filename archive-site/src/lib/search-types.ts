@@ -4,8 +4,15 @@ export type SearchMatchSummary = {
   href?: string;
   label: string;
   mode: SearchMode;
+  passage?: SearchPassage;
   score?: number;
   snippet?: string;
+};
+
+export type SearchPassage = {
+  after?: string;
+  before?: string;
+  highlight: string;
 };
 
 export function parseSearchMode(value?: string): SearchMode {
