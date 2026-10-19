@@ -119,7 +119,7 @@ export default async function BiographyPage({ params }: BiographyPageProps) {
             <p className="mt-3 text-sm text-archive-muted">
               By{" "}
               {profile.authorSlug ? (
-                <Link className="font-semibold text-archive-ink underline-offset-2 hover:text-archive-violet hover:underline" href={`/project-team#${profile.authorSlug}`}>
+                <Link className="font-semibold text-archive-ink underline-offset-2 hover:text-archive-violet hover:underline" href={`/contributors/${profile.authorSlug}`}>
                   {profile.authorName}
                 </Link>
               ) : (

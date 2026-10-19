@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { biographyProfiles, canonicalizePersonName, isDisplayableBiographyName, slugifyPersonName } from "@/lib/biographies";
+import { contributorHref, listContributionsByAuthor } from "@/lib/contributors";
 import { isCoreTopicSlug } from "@/lib/core-topics";
 import { ERAS } from "@/lib/eras";
 import { topicSlug } from "@/lib/internal-links";
@@ -29,10 +30,11 @@ const staticRoutes: Array<{ path: string; priority: number }> = [
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [sources, collections, curatedTopics] = await Promise.all([
+  const [sources, collections, curatedTopics, contributions] = await Promise.all([
     listArchiveSourceSummariesFromSupabase(),
     listCollectionSourceSummariesFromSupabase(),
-    listPublicTopics()
+    listPublicTopics(),
+    listContributionsByAuthor()
   ]);
 
   const sourceEntries = sources.map((source) =>
@@ -64,6 +66,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   );
 
+  const contributorEntries = [...contributions.keys()].sort().map((slug) =>
+    sitemapEntry(contributorHref(slug), {
+      priority: 0.5
+    })
+  );
+
   const eraEntries = ERAS.map((era) =>
     sitemapEntry(`/eras/${era.slug}`, {
       priority: 0.68
@@ -86,6 +94,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...sourceEntries,
     ...collectionEntries,
     ...biographyEntries,
+    ...contributorEntries,
     ...eraEntries,
     ...topicEntries
   ];

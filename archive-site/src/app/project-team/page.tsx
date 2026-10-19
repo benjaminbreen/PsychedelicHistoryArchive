@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { PageShell } from "@/components/page/page-shell";
+import { contributorHref, listContributionsByAuthor } from "@/lib/contributors";
 import { listProjectPeople, type ProjectPerson, type ProjectPersonGroup } from "@/lib/project-team";
 
 export const metadata: Metadata = {
@@ -17,10 +19,12 @@ const groupLabels: Record<ProjectPersonGroup, string> = {
 };
 
 export default async function ProjectTeamPage() {
-  const people = await listProjectPeople();
+  const [people, contributions] = await Promise.all([listProjectPeople(), listContributionsByAuthor()]);
   const team = people.filter((person) => person.group === "team");
   const advisoryBoard = people.filter((person) => person.group === "advisory_board");
-  const pastContributors = people.filter((person) => person.group === "past_contributor");
+  // Past contributors whose writing is published on the site get a card and a contributor page.
+  const contributors = people.filter((person) => person.group === "past_contributor" && contributions.has(person.slug));
+  const pastContributors = people.filter((person) => person.group === "past_contributor" && !contributions.has(person.slug));
 
   return (
     <>
@@ -38,6 +42,12 @@ export default async function ProjectTeamPage() {
 
         <TeamSection people={team} title={groupLabels.team} />
         <TeamSection people={advisoryBoard} title={groupLabels.advisory_board} compact />
+        <TeamSection
+          description="Students whose writing is published in the archive."
+          linkToContributorPage
+          people={contributors}
+          title="Contributors"
+        />
         <PastContributors people={pastContributors} title={groupLabels.past_contributor} />
       </PageShell>
       <SiteFooter />
@@ -45,19 +55,34 @@ export default async function ProjectTeamPage() {
   );
 }
 
-function TeamSection({ compact = false, people, title }: { compact?: boolean; people: ProjectPerson[]; title: string }) {
+function TeamSection({
+  compact = false,
+  description,
+  linkToContributorPage = false,
+  people,
+  title
+}: {
+  compact?: boolean;
+  description?: string;
+  linkToContributorPage?: boolean;
+  people: ProjectPerson[];
+  title: string;
+}) {
   if (!people.length) return null;
 
   return (
     <section className="mt-10 border-t border-archive-line pt-7" aria-labelledby={`${title.toLowerCase().replace(/\s+/g, "-")}-heading`}>
       <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
-        <h2 id={`${title.toLowerCase().replace(/\s+/g, "-")}-heading`} className="source-serif-heading">
-          {title}
-        </h2>
+        <div>
+          <h2 id={`${title.toLowerCase().replace(/\s+/g, "-")}-heading`} className="source-serif-heading">
+            {title}
+          </h2>
+          {description && <p className="mt-2 text-sm leading-6 text-archive-muted">{description}</p>}
+        </div>
       </div>
       <div className={compact ? "grid gap-4 md:grid-cols-2 xl:grid-cols-3" : "grid gap-4 md:grid-cols-2"}>
         {people.map((person) => (
-          <PersonCard key={person.slug} person={person} />
+          <PersonCard href={linkToContributorPage ? contributorHref(person.slug) : undefined} key={person.slug} person={person} />
         ))}
       </div>
     </section>
@@ -92,7 +117,7 @@ function PastContributors({ people, title }: { people: ProjectPerson[]; title: s
   );
 }
 
-function PersonCard({ person }: { person: ProjectPerson }) {
+function PersonCard({ href, person }: { href?: string; person: ProjectPerson }) {
   const content = (
     <>
       <span className="block overflow-hidden rounded-sm border border-archive-line bg-archive-paper transition duration-200 group-hover:border-archive-violet">
@@ -125,6 +150,14 @@ function PersonCard({ person }: { person: ProjectPerson }) {
   );
 
   const className = "project-person-card focus-ring group grid scroll-mt-28 gap-4 rounded-md border border-archive-line bg-archive-surface p-4 shadow-sm transition hover:border-archive-violet/35 sm:grid-cols-[8.25rem_minmax(0,1fr)]";
+
+  if (href) {
+    return (
+      <Link className={className} href={href} id={person.slug}>
+        {content}
+      </Link>
+    );
+  }
 
   if (person.profileUrl) {
     return (

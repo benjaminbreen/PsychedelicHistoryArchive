@@ -421,7 +421,7 @@ export function HistoricalContextByline({ section }: { section: TranscriptSectio
   const attribution = section.attribution;
   if (!attribution?.authorName) return null;
 
-  const authorHref = attribution.authorSlug ? `/project-team#${attribution.authorSlug}` : undefined;
+  const authorHref = attribution.authorSlug ? `/contributors/${attribution.authorSlug}` : undefined;
   const avatar = (
     <span className="source-context-byline-avatar">
       {attribution.authorImage ? (
@@ -436,7 +436,7 @@ export function HistoricalContextByline({ section }: { section: TranscriptSectio
   return (
     <div className="source-context-byline">
       {authorHref ? (
-        <Link aria-label={`View ${attribution.authorName} on the project team page`} className="source-context-byline-author" href={authorHref}>
+        <Link aria-label={`About ${attribution.authorName}`} className="source-context-byline-author" href={authorHref}>
           {avatar}
           <span>By {authorName}</span>
         </Link>
