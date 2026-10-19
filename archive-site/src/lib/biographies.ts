@@ -1,5 +1,6 @@
 import type { ArchiveSource } from "@/lib/types";
 import type { BibliographyItem } from "@/lib/bibliography";
+import wikipediaPortraits from "@/lib/generated/wikipedia-portraits.json";
 
 export type BiographyBibliographyLink = {
   relationshipType: string;
@@ -635,7 +636,9 @@ export function isDisplayableBiographyName(name: string) {
 }
 
 export function getBiographyPortrait(name: string) {
-  return biographyPortraits[slugifyPersonName(canonicalizePersonName(name))];
+  const slug = slugifyPersonName(canonicalizePersonName(name));
+  const wiki = (wikipediaPortraits as Record<string, { imagePath: string; name: string }>)[slug];
+  return biographyPortraits[slug] ?? (wiki ? { imagePath: wiki.imagePath, imageAlt: `Portrait of ${wiki.name}` } : undefined);
 }
 
 export function getBiographyDirectoryMetadata(name: string) {
