@@ -8,7 +8,7 @@ import { MarkdownContent } from "@/components/markdown-content";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Chip } from "@/components/ui/chip";
-import { canonicalizePersonName, slugifyPersonName } from "@/lib/biographies";
+import { canonicalizePersonName, isDisplayableBiographyName, slugifyPersonName } from "@/lib/biographies";
 import { eraHref, getEraForYear } from "@/lib/eras";
 import { findTopicBySlug, getTopicSources, topicHref, topicSlug } from "@/lib/internal-links";
 import { JsonLd, SITE_NAME, buildBreadcrumbJsonLd, canonicalPath, seoDescription } from "@/lib/seo";
@@ -86,7 +86,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
 
   const topicSources = getDisplayTopicSources(sources, topic, curatedBundle?.documentLinks);
   const featuredSources = getFeaturedSources(topicSources, curatedBundle?.documentLinks);
-  const people = topValues(topicSources.flatMap((source) => source.people), biographySlug);
+  const people = topValues(topicSources.flatMap((source) => source.people).filter(isDisplayableBiographyName), biographySlug);
   const eras = topEras(topicSources);
   const relatedTopics = curatedBundle?.relatedTopics.length
     ? curatedBundle.relatedTopics.map((related) => ({ name: related.name, slug: related.slug, count: 0 }))

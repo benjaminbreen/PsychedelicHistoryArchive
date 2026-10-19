@@ -634,6 +634,13 @@ export function isDisplayableBiographyName(name: string) {
   );
 }
 
+// Slugs that /biographies/[slug] can render from source credits alone (a generated profile).
+export function biographySlugsFromSources(sources: Pick<ArchiveSource, "people">[]) {
+  return new Set(
+    sources.flatMap((source) => source.people).filter(isDisplayableBiographyName).map((name) => slugifyPersonName(canonicalizePersonName(name)))
+  );
+}
+
 export function getBiographyPortrait(name: string) {
   return biographyPortraits[slugifyPersonName(canonicalizePersonName(name))];
 }

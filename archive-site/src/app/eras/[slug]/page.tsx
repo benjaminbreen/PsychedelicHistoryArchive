@@ -18,7 +18,8 @@ import {
 import { getBibliographyForEra, itemTypeLabel, primaryUrl } from "@/lib/bibliography";
 import { listArchiveSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { getSourceTitleParts } from "@/lib/source-title";
-import { biographyProfiles } from "@/lib/biographies";
+import { biographyProfiles, biographySlugsFromSources } from "@/lib/biographies";
+import { listPublishedBiographySlugs } from "@/lib/supabase-biographies";
 
 export const revalidate = 3600;
 
@@ -51,8 +52,11 @@ export default async function EraDetailPage({
   const era = getEraBySlug(slug);
   if (!era) notFound();
 
-  const allSources = await listArchiveSourceSummariesFromSupabase();
-  const furtherReading = await getBibliographyForEra(era.slug, 4);
+  const [allSources, furtherReading, publishedBiographySlugs] = await Promise.all([
+    listArchiveSourceSummariesFromSupabase(),
+    getBibliographyForEra(era.slug, 4),
+    listPublishedBiographySlugs()
+  ]);
   const sources = allSources
     .filter((source) => source.year && sourceMatchesEra(source.year, era))
     .sort((a, b) => a.year - b.year);
@@ -68,6 +72,8 @@ export default async function EraDetailPage({
   const { previous, next } = adjacentEras(era.slug);
 
   const profileBySlug = new Map(biographyProfiles.map((profile) => [profile.slug, profile]));
+  // Only link key figures whose biography page exists; the rest stay as plain names.
+  const biographySlugs = new Set([...profileBySlug.keys(), ...publishedBiographySlugs, ...biographySlugsFromSources(allSources)]);
 
   return (
     <>
@@ -226,12 +232,8 @@ export default async function EraDetailPage({
                           .map((word) => word[0])
                           .join("")
                           .toUpperCase();
-                        return (
-                          <Link
-                            className="inline-flex items-center gap-2 rounded-full border border-archive-line bg-archive-surface py-1 pl-1 pr-3 text-[0.86rem] text-archive-ink transition hover:border-archive-violet/45 hover:bg-archive-lavender2/55"
-                            href={`/biographies/${figure.slug}`}
-                            key={figure.slug}
-                          >
+                        const chip = (
+                          <>
                             <span className="grid h-6 w-6 place-items-center overflow-hidden rounded-full border border-archive-warm-line bg-archive-lavender2 font-display text-[0.7rem] text-archive-muted">
                               {profile?.imagePath ? (
                                 <img
@@ -244,8 +246,24 @@ export default async function EraDetailPage({
                               )}
                             </span>
                             {figure.name}
-                          </Link>
+                          </>
                         );
+                        return biographySlugs.has(figure.slug) ? (
+                            <Link
+                              className="inline-flex items-center gap-2 rounded-full border border-archive-line bg-archive-surface py-1 pl-1 pr-3 text-[0.86rem] text-archive-ink transition hover:border-archive-violet/45 hover:bg-archive-lavender2/55"
+                              href={`/biographies/${figure.slug}`}
+                              key={figure.slug}
+                            >
+                              {chip}
+                            </Link>
+                          ) : (
+                            <span
+                              className="inline-flex items-center gap-2 rounded-full border border-archive-line bg-archive-surface py-1 pl-1 pr-3 text-[0.86rem] text-archive-ink"
+                              key={figure.slug}
+                            >
+                              {chip}
+                            </span>
+                          );
                       })}
                     </div>
                   </div>

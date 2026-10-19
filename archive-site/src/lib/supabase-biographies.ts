@@ -83,6 +83,20 @@ export async function getPublishedBiographyProfile(slug: string): Promise<Biogra
   return profile;
 }
 
+export async function listPublishedBiographySlugs(): Promise<Set<string>> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return new Set();
+
+  const { data, error } = await supabase.from("biography_profiles").select("slug").eq("status", "published");
+
+  if (error) {
+    if (!isMissingBiographySchema(error.message)) console.warn("Supabase biography slug query failed.", error.message);
+    return new Set();
+  }
+
+  return new Set((data ?? []).map((row: { slug: string }) => row.slug));
+}
+
 export function rowToBiographyProfile(row: BiographyProfileRow): BiographyProfile {
   const paragraphs = splitMarkdownParagraphs(row.body_markdown);
 
