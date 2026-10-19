@@ -1,0 +1,560 @@
+{
+  "aime-bonpland": {
+    "name": "Aimé Bonpland",
+    "imagePath": "/images/bios/wiki/aime-bonpland.jpg",
+    "title": "Aimé Bonpland",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Aim%C3%A9_Bonpland",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Bonpland_Aim%C3%A9_1773-1858.jpg",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "aldous-huxley": {
+    "name": "Aldous Huxley",
+    "imagePath": "/images/bios/wiki/aldous-huxley.jpg",
+    "title": "Aldous Huxley",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Aldous_Huxley",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:ALDOUS_LEONARD_HUXLEY_1894_-_1963_NOVELISTA_ENSAYISTA_Y_POETA_INGLES_(13451350533).jpg",
+    "license": "No restrictions",
+    "artist": "sinaloaarchivohistorico"
+  },
+  "alexander-shulgin": {
+    "name": "Alexander Shulgin",
+    "imagePath": "/images/bios/wiki/alexander-shulgin.jpg",
+    "title": "Alexander Shulgin",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Alexander_Shulgin",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Shulgin_sasha_2011_hanna_jon.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "JonRHanna"
+  },
+  "alexander-von-humboldt": {
+    "name": "Alexander von Humboldt",
+    "imagePath": "/images/bios/wiki/alexander-von-humboldt.jpg",
+    "title": "Alexander von Humboldt",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Alexander_von_Humboldt",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Stieler,_Joseph_Karl_-_Alexander_von_Humboldt_-_1843.jpg",
+    "license": "Public domain",
+    "artist": "Joseph Karl Stieler"
+  },
+  "alfred-russel-wallace": {
+    "name": "Alfred Russel Wallace",
+    "imagePath": "/images/bios/wiki/alfred-russel-wallace.jpg",
+    "title": "Alfred Russel Wallace",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Alfred_Russel_Wallace",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Alfred-Russel-Wallace-c1895.jpg",
+    "license": "Public domain",
+    "artist": "London Stereoscopic and Photographic Company (active 1855-1922)"
+  },
+  "allen-ginsberg": {
+    "name": "Allen Ginsberg",
+    "imagePath": "/images/bios/wiki/allen-ginsberg.jpg",
+    "title": "Allen Ginsberg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Allen_Ginsberg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Allen_Ginsberg_1979_-_cropped.jpg",
+    "license": "CC0",
+    "artist": "Hans van Dijk for Anefo"
+  },
+  "antonin-scalia": {
+    "name": "Antonin Scalia",
+    "imagePath": "/images/bios/wiki/antonin-scalia.jpg",
+    "title": "Antonin Scalia",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Antonin_Scalia",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Antonin_Scalia_Official_SCOTUS_Portrait.jpg",
+    "license": "Public domain",
+    "artist": "Collection of the Supreme Court of the United States"
+  },
+  "arthur-heffter": {
+    "name": "Arthur Heffter",
+    "imagePath": "/images/bios/wiki/arthur-heffter.jpg",
+    "title": "Arthur Heffter",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Arthur_Heffter",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Arthur_Carl_Wilhelm_Heffter.jpg",
+    "license": "Public domain",
+    "artist": "Erwin Raupp (1863–1931)"
+  },
+  "bernardino-de-sahagun": {
+    "name": "Bernardino de Sahagún",
+    "imagePath": "/images/bios/wiki/bernardino-de-sahagun.jpg",
+    "title": "Bernardino de Sahagún",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Bernardino_de_Sahag%C3%BAn",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Bernardino_de_Sahag%C3%BAn_(2).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "AnonymousUnknown author"
+  },
+  "carl-friedrich-philipp-von-martius": {
+    "name": "Carl Friedrich Philipp von Martius",
+    "imagePath": "/images/bios/wiki/carl-friedrich-philipp-von-martius.jpg",
+    "title": "Carl Friedrich Philipp von Martius",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Carl_Friedrich_Philipp_von_Martius",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Carl_Friedrich_Philipp_von_Martius00.jpg",
+    "license": "Public domain",
+    "artist": "E. Porrens"
+  },
+  "cato-sells": {
+    "name": "Cato Sells",
+    "imagePath": "/images/bios/wiki/cato-sells.jpg",
+    "title": "Cato Sells",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Cato_Sells",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:SELLS,_CATO._COMMR.,_BUREAU_OF_INDIAN_AFFAIRS,_INTERIOR_DEPARTMENT_LCCN2016865119_(cropped).jpg",
+    "license": "Public domain",
+    "artist": "Harris &amp; Ewing, photographer"
+  },
+  "clement-of-alexandria": {
+    "name": "Clement of Alexandria",
+    "imagePath": "/images/bios/wiki/clement-of-alexandria.jpg",
+    "title": "Clement of Alexandria",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Clement_of_Alexandria",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Clement_alexandrin.jpg",
+    "license": "Public domain",
+    "artist": "André Thévet"
+  },
+  "daniel-k-inouye": {
+    "name": "Daniel K. Inouye",
+    "imagePath": "/images/bios/wiki/daniel-k-inouye.jpg",
+    "title": "Daniel Inouye",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Daniel_Inouye",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Daniel_Inouye,_official_Senate_photo_portrait,_2008.jpg",
+    "license": "Public domain",
+    "artist": "United States Senate"
+  },
+  "delmas-c-hill": {
+    "name": "Delmas C. Hill",
+    "imagePath": "/images/bios/wiki/delmas-c-hill.jpg",
+    "title": "Delmas Carl Hill",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Delmas_Carl_Hill",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Delmas_Carl_Hill.jpg",
+    "license": "Public domain",
+    "artist": "United States Government"
+  },
+  "edward-m-kennedy": {
+    "name": "Edward M. Kennedy",
+    "imagePath": "/images/bios/wiki/edward-m-kennedy.jpg",
+    "title": "Ted Kennedy",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Ted_Kennedy",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Ted_Kennedy,_official_photo_portrait_crop.jpg",
+    "license": "Public domain",
+    "artist": "Ted_Kennedy,_official_photo_portrait.jpg: United States Senate\nderivative work: Tktru (talk)"
+  },
+  "ernst-von-bibra": {
+    "name": "Ernst von Bibra",
+    "imagePath": "/images/bios/wiki/ernst-von-bibra.jpg",
+    "title": "Ernst von Bibra",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Ernst_von_Bibra",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:ErnstvonBibra-492x478.png",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "francis-la-flesche": {
+    "name": "Francis La Flesche",
+    "imagePath": "/images/bios/wiki/francis-la-flesche.jpg",
+    "title": "Francis La Flesche",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Francis_La_Flesche",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Francis_La_Flesche.jpg",
+    "license": "Public domain",
+    "artist": "Towles"
+  },
+  "francisco-ximenez": {
+    "name": "Francisco Ximénez",
+    "imagePath": "/images/bios/wiki/francisco-ximenez.jpg",
+    "title": "Francisco Ximénez",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Francisco_Xim%C3%A9nez",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Empiezan_las_historias(titlepage).jpg",
+    "license": "Public domain",
+    "artist": "Francisco Ximénez"
+  },
+  "frank-church": {
+    "name": "Frank Church",
+    "imagePath": "/images/bios/wiki/frank-church.jpg",
+    "title": "Frank Church",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Frank_Church",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Frank_Church_(D-ID).png",
+    "license": "Public domain",
+    "artist": "United States Senate"
+  },
+  "frank-m-coffin": {
+    "name": "Frank M. Coffin",
+    "imagePath": "/images/bios/wiki/frank-m-coffin.jpg",
+    "title": "Frank M. Coffin",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Frank_M._Coffin",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Frank_M._Coffin_(Maine_Congressman).jpg",
+    "license": "Public domain",
+    "artist": "U.S. Government Printing Office."
+  },
+  "fred-lookout": {
+    "name": "Fred Lookout",
+    "imagePath": "/images/bios/wiki/fred-lookout.jpg",
+    "title": "Fred Lookout",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Fred_Lookout",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Fred_Lookout_(cropped).jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "garcia-de-orta": {
+    "name": "Garcia de Orta",
+    "imagePath": "/images/bios/wiki/garcia-de-orta.jpg",
+    "title": "Garcia de Orta",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Garcia_de_Orta",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Garcia_de_Orta_(c._1906)_-_Veloso_Salgado.png",
+    "license": "Public domain",
+    "artist": "Veloso Salgado"
+  },
+  "gary-snyder": {
+    "name": "Gary Snyder",
+    "imagePath": "/images/bios/wiki/gary-snyder.jpg",
+    "title": "Gary Snyder",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Gary_Snyder",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Gary_Snyder,_2007_(cropped).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Fett"
+  },
+  "georg-heinrich-von-langsdorff": {
+    "name": "Georg Heinrich von Langsdorff",
+    "imagePath": "/images/bios/wiki/georg-heinrich-von-langsdorff.jpg",
+    "title": "Georg von Langsdorff",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Georg_von_Langsdorff",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Grigori-langsdorff.jpg",
+    "license": "Public domain",
+    "artist": "Hércules Florence"
+  },
+  "george-kennan": {
+    "name": "George Kennan",
+    "imagePath": "/images/bios/wiki/george-kennan.jpg",
+    "title": "George Kennan (explorer)",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/George_Kennan_(explorer)",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:George_Kennan_1885.jpg",
+    "license": "Public domain",
+    "artist": "Matsaevich &amp; Co."
+  },
+  "gerald-heard": {
+    "name": "Gerald Heard",
+    "imagePath": "/images/bios/wiki/gerald-heard.jpg",
+    "title": "Gerald Heard",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Gerald_Heard",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Gerald_Heard,_ca._1955,_cropped_from_original.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Jay Michael Barrie"
+  },
+  "gerhard-a-gesell": {
+    "name": "Gerhard A. Gesell",
+    "imagePath": "/images/bios/wiki/gerhard-a-gesell.jpg",
+    "title": "Gerhard Gesell",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Gerhard_Gesell",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Preparing_material_on_Life_Insurance_Co._set_for_presentation_to_monopoly_study_comm(...)Washington,_D.C.,_Nov._4._A_preliminary_investigation_by_the_S.E.C._of_Life_Insurance_Co._Corporate_LCCN2016874285.jpg",
+    "license": "Public domain",
+    "artist": "Harris &amp; Ewing, photographer"
+  },
+  "harris-isbell": {
+    "name": "Harris Isbell",
+    "imagePath": "/images/bios/wiki/harris-isbell.jpg",
+    "title": "Harris Isbell",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Harris_Isbell",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Harris_Isbell.tif",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "harry-blackmun": {
+    "name": "Harry Blackmun",
+    "imagePath": "/images/bios/wiki/harry-blackmun.jpg",
+    "title": "Harry Blackmun",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Harry_Blackmun",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Justice_Blackmun_Official.jpg",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "havelock-ellis": {
+    "name": "Havelock Ellis",
+    "imagePath": "/images/bios/wiki/havelock-ellis.jpg",
+    "title": "Havelock Ellis",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Havelock_Ellis",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Havelock_Ellis_cph.3b08675.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "helen-maria-williams": {
+    "name": "Helen Maria Williams",
+    "imagePath": "/images/bios/wiki/helen-maria-williams.jpg",
+    "title": "Helen Maria Williams",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Helen_Maria_Williams",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:HelenMariaWilliams.jpg",
+    "license": "Public domain",
+    "artist": "Unidentified engraver"
+  },
+  "homer": {
+    "name": "Homer",
+    "imagePath": "/images/bios/wiki/homer.jpg",
+    "title": "Homer",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Homer",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Homer_At_the_British_Museum_2024_(3x4_cropped).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Photograph by Mike Peel (www.mikepeel.net)."
+  },
+  "jacques-joseph-moreau": {
+    "name": "Jacques-Joseph Moreau",
+    "imagePath": "/images/bios/wiki/jacques-joseph-moreau.jpg",
+    "title": "Jacques-Joseph Moreau",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Jacques-Joseph_Moreau",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Moreau_de_Tours.jpg",
+    "license": "Public domain",
+    "artist": "Antoine Maurin"
+  },
+  "james-mooney": {
+    "name": "James Mooney",
+    "imagePath": "/images/bios/wiki/james-mooney.jpg",
+    "title": "James Mooney",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/James_Mooney",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:James_Mooney_from_Bureau_of_American_Ethnology_%22Bulletin%22_(1901).jpg",
+    "license": "CC0",
+    "artist": "Internet Archive Book Images"
+  },
+  "jean-bassett-johnson": {
+    "name": "Jean Bassett Johnson",
+    "imagePath": "/images/bios/wiki/jean-bassett-johnson.jpg",
+    "title": "Jean Bassett Johnson",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Jean_Bassett_Johnson",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Jbjohnson.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Bernard Bevan (?)"
+  },
+  "johann-baptist-von-spix": {
+    "name": "Johann Baptist von Spix",
+    "imagePath": "/images/bios/wiki/johann-baptist-von-spix.jpg",
+    "title": "Johann Baptist von Spix",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Johann_Baptist_von_Spix",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Johann_Baptist_von_Spix.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "john-c-lawn": {
+    "name": "John C. Lawn",
+    "imagePath": "/images/bios/wiki/john-c-lawn.jpg",
+    "title": "John C. Lawn",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/John_C._Lawn",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:JohnLawn.jpg",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "john-g-roberts": {
+    "name": "John G. Roberts",
+    "imagePath": "/images/bios/wiki/john-g-roberts.jpg",
+    "title": "John Roberts",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/John_Roberts",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Official_roberts_CJ.jpg",
+    "license": "Public domain",
+    "artist": "Steve Petteway"
+  },
+  "john-huston": {
+    "name": "John Huston",
+    "imagePath": "/images/bios/wiki/john-huston.jpg",
+    "title": "John Huston",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/John_Huston",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:John_Huston_1979.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author, distributed by: Embassy Pictures"
+  },
+  "louis-lewin": {
+    "name": "Louis Lewin",
+    "imagePath": "/images/bios/wiki/louis-lewin.jpg",
+    "title": "Louis Lewin",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Louis_Lewin",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Louis_Lewin_(1850-1929).jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "manuel-villavicencio": {
+    "name": "Manuel Villavicencio",
+    "imagePath": "/images/bios/wiki/manuel-villavicencio.jpg",
+    "title": "Manuel Villavicencio",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Manuel_Villavicencio",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Villavicencio3.jpg",
+    "license": "Public domain",
+    "artist": "Eugenio Courret"
+  },
+  "marie-theophile-griffon-du-bellay": {
+    "name": "Marie-Théophile Griffon du Bellay",
+    "imagePath": "/images/bios/wiki/marie-theophile-griffon-du-bellay.jpg",
+    "title": "Marie-Théophile Griffon du Bellay",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Marie-Th%C3%A9ophile_Griffon_du_Bellay",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Griffonia_simplicifolia_Faguet_1866.jpg",
+    "license": "Public domain",
+    "artist": "A. Faguet"
+  },
+  "mathew-o-tobriner": {
+    "name": "Mathew O. Tobriner",
+    "imagePath": "/images/bios/wiki/mathew-o-tobriner.jpg",
+    "title": "Mathew Tobriner",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Mathew_Tobriner",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Mathew_Tobriner,_1975.jpg",
+    "license": "Public domain",
+    "artist": "California State Printing Office"
+  },
+  "mordecai-cubitt-cooke": {
+    "name": "Mordecai Cubitt Cooke",
+    "imagePath": "/images/bios/wiki/mordecai-cubitt-cooke.jpg",
+    "title": "Mordecai Cubitt Cooke",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Mordecai_Cubitt_Cooke",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Cooke-Mordecai-Cubitt-ex-Kellerman.jpg",
+    "license": "Public domain",
+    "artist": "William Ashbrook Kellerman"
+  },
+  "nelson-a-rockefeller": {
+    "name": "Nelson A. Rockefeller",
+    "imagePath": "/images/bios/wiki/nelson-a-rockefeller.jpg",
+    "title": "Nelson Rockefeller",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Nelson_Rockefeller",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Nelson_Rockefeller.jpg",
+    "license": "Public domain",
+    "artist": "White House"
+  },
+  "owen-m-panner": {
+    "name": "Owen M. Panner",
+    "imagePath": "/images/bios/wiki/owen-m-panner.jpg",
+    "title": "Owen M. Panner",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Owen_M._Panner",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:OwenMPanner.png",
+    "license": "Public domain",
+    "artist": "United States Court of Appeals for the Ninth Circuit"
+  },
+  "pedro-ponce-de-leon": {
+    "name": "Pedro Ponce de León",
+    "imagePath": "/images/bios/wiki/pedro-ponce-de-leon.jpg",
+    "title": "Pedro Ponce de León",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Pedro_Ponce_de_Le%C3%B3n",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:PedroPoncedeLeon.gif",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "peter-orlovsky": {
+    "name": "Peter Orlovsky",
+    "imagePath": "/images/bios/wiki/peter-orlovsky.jpg",
+    "title": "Peter Orlovsky",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Peter_Orlovsky",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Allen_Ginsberg_und_Peter_Orlowski_ArM.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Herbert Rusche"
+  },
+  "philip-johan-von-strahlenberg": {
+    "name": "Philip Johan von Strahlenberg",
+    "imagePath": "/images/bios/wiki/philip-johan-von-strahlenberg.jpg",
+    "title": "Philip Johan von Strahlenberg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Philip_Johan_von_Strahlenberg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Philip_Johan_von_Strahlenberg.jpg",
+    "license": "Public domain",
+    "artist": "Philip Johan Strahlenberg (1677-1747)"
+  },
+  "rafael-karsten": {
+    "name": "Rafael Karsten",
+    "imagePath": "/images/bios/wiki/rafael-karsten.jpg",
+    "title": "Rafael Karsten",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Rafael_Karsten",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Rafael-Karsten.jpg",
+    "license": "Public domain",
+    "artist": "AnonymousUnknown author"
+  },
+  "ralph-metzner": {
+    "name": "Ralph Metzner",
+    "imagePath": "/images/bios/wiki/ralph-metzner.jpg",
+    "title": "Ralph Metzner",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Ralph_Metzner",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Ralph_Metzner.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Joi"
+  },
+  "ravi-shankar": {
+    "name": "Ravi Shankar",
+    "imagePath": "/images/bios/wiki/ravi-shankar.jpg",
+    "title": "Ravi Shankar",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Ravi_Shankar",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Ravi_Shankar.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Markgoff2972"
+  },
+  "richard-evans-schultes": {
+    "name": "Richard Evans Schultes",
+    "imagePath": "/images/bios/wiki/richard-evans-schultes.jpg",
+    "title": "Richard Evans Schultes",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Richard_Evans_Schultes",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Schultes_amazon_1940s.jpg",
+    "license": "Public domain",
+    "artist": "Not Listed"
+  },
+  "richard-spruce": {
+    "name": "Richard Spruce",
+    "imagePath": "/images/bios/wiki/richard-spruce.jpg",
+    "title": "Richard Spruce",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Richard_Spruce",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Spruce_Richard.jpg",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "rick-j-strassman": {
+    "name": "Rick J. Strassman",
+    "imagePath": "/images/bios/wiki/rick-j-strassman.jpg",
+    "title": "Rick Strassman",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Rick_Strassman",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Rick_Strassman_(academic).png",
+    "license": "CC BY 4.0",
+    "artist": "Rick Strassman"
+  },
+  "s-weir-mitchell": {
+    "name": "S. Weir Mitchell",
+    "imagePath": "/images/bios/wiki/s-weir-mitchell.jpg",
+    "title": "Silas Weir Mitchell (physician)",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Silas_Weir_Mitchell_(physician)",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Silas_Weir_Mitchell.jpg",
+    "license": "Public domain",
+    "artist": "Photo by Fr. GuteKunst.[1]\n\n\n↑  Julie Bates Dock (1998) Charlotte Perkins Gilman's \"The Yellow Wall-paper\" and the History of Its Publication and Reception. The Pennsylvania State University Press, Un"
+  },
+  "sidney-gottlieb": {
+    "name": "Sidney Gottlieb",
+    "imagePath": "/images/bios/wiki/sidney-gottlieb.jpg",
+    "title": "Sidney Gottlieb",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Sidney_Gottlieb",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Sidney_Gottlieb_photo.jpg",
+    "license": "Public domain",
+    "artist": "US Federal Government"
+  },
+  "stepan-krasheninnikov": {
+    "name": "Stepan Krasheninnikov",
+    "imagePath": "/images/bios/wiki/stepan-krasheninnikov.jpg",
+    "title": "Stepan Krasheninnikov",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Stepan_Krasheninnikov",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Stepan_Krasheninnikov.jpg",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "thomas-eckert": {
+    "name": "Thomas Eckert",
+    "imagePath": "/images/bios/wiki/thomas-eckert.jpg",
+    "title": "Thomas Eckert",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Thomas_Eckert",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Thomas_T_Eckert_06182.jpg",
+    "license": "Public domain",
+    "artist": "Mathew Benjamin Brady"
+  },
+  "toribio-de-benavente": {
+    "name": "Toribio de Benavente",
+    "imagePath": "/images/bios/wiki/toribio-de-benavente.jpg",
+    "title": "Toribio de Benavente",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Toribio_de_Benavente",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Motolinia.jpg",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "waldemar-jochelson": {
+    "name": "Waldemar Jochelson",
+    "imagePath": "/images/bios/wiki/waldemar-jochelson.jpg",
+    "title": "Vladimir Jochelson",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Vladimir_Jochelson",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Vladimir_Iochel%27son.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "william-mcginnis": {
+    "name": "William McGinnis",
+    "imagePath": "/images/bios/wiki/william-mcginnis.jpg",
+    "title": "William McGinnis",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/William_McGinnis",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Drosophila_melanogaster_Proboscis.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Sanjay Acharya"
+  }
+}
