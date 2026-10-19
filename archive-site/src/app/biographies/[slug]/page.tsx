@@ -115,6 +115,18 @@ export default async function BiographyPage({ params }: BiographyPageProps) {
             )}
           </div>
           {profile.dek && <p className="mt-5 max-w-[680px] text-[1.04rem] font-semibold leading-7 text-archive-ink">{profile.dek}</p>}
+          {profile.authorName && (
+            <p className="mt-3 text-sm text-archive-muted">
+              By{" "}
+              {profile.authorSlug ? (
+                <Link className="font-semibold text-archive-ink underline-offset-2 hover:text-archive-violet hover:underline" href={`/project-team#${profile.authorSlug}`}>
+                  {profile.authorName}
+                </Link>
+              ) : (
+                <span className="font-semibold text-archive-ink">{profile.authorName}</span>
+              )}
+            </p>
+          )}
           {isGeneratedStub && (
             <p className="mt-3 max-w-[680px] rounded-md border border-archive-line bg-archive-surface px-4 py-3 text-sm leading-6 text-archive-muted">
               This page is generated from source metadata while a fuller editorial biography is prepared.

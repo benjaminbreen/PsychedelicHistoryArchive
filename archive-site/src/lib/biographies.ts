@@ -34,6 +34,8 @@ export type BiographyProfile = {
   publications?: string[];
   bibliographyLinks?: BiographyBibliographyLink[];
   collaborators?: string[];
+  authorName?: string;
+  authorSlug?: string;
 };
 
 type BiographyPortrait = {

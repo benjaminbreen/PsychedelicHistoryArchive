@@ -28,6 +28,8 @@ type BiographyProfileRow = {
   related_sources: string[] | null;
   publications: string[] | null;
   collaborators: string[] | null;
+  author_name?: string | null;
+  author_slug?: string | null;
   status: string | null;
 };
 
@@ -57,6 +59,8 @@ const PROFILE_SELECT = `
   related_sources,
   publications,
   collaborators,
+  author_name,
+  author_slug,
   status
 `;
 
@@ -126,6 +130,8 @@ export function rowToBiographyProfile(row: BiographyProfileRow): BiographyProfil
     relatedSources: row.related_sources ?? undefined,
     publications: row.publications ?? undefined,
     collaborators: row.collaborators ?? undefined,
+    authorName: row.author_name || undefined,
+    authorSlug: row.author_slug || undefined,
   };
 }
 
@@ -156,6 +162,8 @@ export function biographyProfileToRow(profile: BiographyProfile, status = "publi
     related_sources: profile.relatedSources ?? [],
     publications: profile.publications ?? [],
     collaborators: profile.collaborators ?? [],
+    author_name: profile.authorName ?? null,
+    author_slug: profile.authorSlug ?? null,
     status,
   };
 }
