@@ -13,7 +13,7 @@ export async function recordCandidateDecision(input: { batch: string; candidateI
   const editor = await requireEditor();
   if (!DECISIONS.includes(input.decision)) throw new Error("Choose add, maybe, or no.");
   // The snapshot comes from the batch file, not the browser, so decisions stay trustworthy training data.
-  const candidate = readCandidateBatch(input.batch).find(item => item.candidate_id === input.candidateId);
+  const candidate = (await readCandidateBatch(input.batch)).find(item => item.candidate_id === input.candidateId);
   if (!candidate) throw new Error("That candidate is not in this batch any more. Reload the queue.");
   const record: CandidateDecision & { snapshot?: unknown } = {
     candidate_id: candidate.candidate_id,
@@ -37,7 +37,7 @@ export async function recordCandidateDecision(input: { batch: string; candidateI
       llm: candidate.llm, best_excerpt: candidate.excerpts[0]?.text ?? ""
     };
   }
-  appendCandidateDecision(record);
+  await appendCandidateDecision(record);
   return { ok: true as const, decidedAt: record.decided_at };
 }
 

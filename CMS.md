@@ -26,10 +26,13 @@ The simplest way to open the deployed workspace: one shared password, set in the
 
 1. In Vercel → Project → Settings → Environment Variables (Production), add:
    - `CMS_SHARED_PASSWORD`: the workspace password. Changing it later signs everyone out.
+   - `CMS_SESSION_SECRET`: an independent long random secret used to sign sessions.
    - `CMS_SHARED_EDITOR_NAME`: the name shown on edits and proposals made with it, for example `Ben Breen`.
    - `ADMIN_LOCAL_ENABLED`: `true`, which turns the workspace on outside development.
    - Check that `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are also set there. Saving and publishing need them.
 2. Redeploy. Then open `<site>/admin` and enter the password.
+
+Set `NEXT_PUBLIC_SITE_URL=https://www.psychedelicarchive.com` in Production so sitemap, canonical, and social URLs use the public domain. Keep service-role credentials and password variables server-only; never prefix them with `NEXT_PUBLIC_`.
 
 The password signs you in as the workspace owner for 30 days on that browser. On `localhost` in development no sign-in is needed.
 
@@ -38,8 +41,10 @@ The password signs you in as the workspace owner for 30 days on that browser. On
 A proposal is a private draft marked for the team to review. It appears under **Sources → Proposals** for every editor and never on the public site until someone publishes it.
 
 - **Propose by hand:** tick "Propose this source for the team to review" in **Add source** and say why it belongs.
-- **From the Common Corpus scan:** after reviewing finds in **Candidates**, press **Send … to the workspace**. This runs on the computer that has the scan files. Each add or maybe becomes a proposal with its excerpt, the link to the original, and the scan's provenance.
+- **From the Common Corpus scan:** after reviewing finds in **Candidates**, press **Send … to the workspace**. Each add or maybe becomes a proposal with its excerpt, the link to the original, and the scan's provenance. On Vercel, batches, decisions, and sent nominations live in private Supabase tables; repeated sends return the existing draft. Development continues to use local scan files.
 - **Reviewing:** each proposal opens with a panel saying who proposed it and why. **Accept and start editing** turns it into an ordinary draft. **Decline** keeps the record but takes it off the list, with an optional note.
+
+Apply the shared queue migration with `supabase db push`, then seed batches with `node scripts/sync_corpus_review.mjs`. The script uses the local environment file, imports existing decision history only when the shared history is empty, and links already-created nominations. It never publishes sources. Run it before opening the shared queue to collaborators; subsequent scans can be synced without overwriting their reviews.
 
 ## Inviting editors later
 

@@ -73,6 +73,24 @@ test("SQL drafts stay private; publication is atomic, versioned, and restricted"
     model.tagIds = []; await save(6);
     await db.query("update documents set updated_at=clock_timestamp() where id=$1", [id]);
     await assert.rejects(publish(7), /changed since this draft/);
+
+    const queueMigration = await fs.readFile(path.resolve("../supabase/migrations/20261022193000_shared_candidate_review.sql"), "utf8");
+    await db.exec(queueMigration); await db.exec(queueMigration);
+    await db.query("insert into corpus_candidate_batches values ('test-batch', '{}')");
+    await db.query("insert into corpus_candidates values ('test-candidate', 'test-batch', 1, '{}')");
+    const proposal = emptySource("A private nomination", "https://example.org/source");
+    proposal.proposal = { status: "proposed", origin: "corpus-scan", rationale: "Review this source", excerpt: "A source excerpt", provenance: { candidate_id: "test-candidate" } };
+    const nominate = () => db.query<{ id: string }>("select cms_nominate_candidate('test-candidate', $1::jsonb, null) as id", [JSON.stringify(proposal)]);
+    const first = (await nominate()).rows[0].id;
+    assert.equal((await nominate()).rows[0].id, first, "Retrying a nomination must not duplicate a draft");
+    assert.equal((await db.query<{ status: string }>("select status from documents where id=$1", [first])).rows[0].status, "draft");
+    assert.equal((await db.query("select * from source_working_copies where document_id=$1", [first])).rows.length, 1);
+    await db.query("insert into corpus_candidate_decisions(candidate_id,batch,payload) values ('test-candidate','test-batch','{\"decision\":\"add\"}'),('test-candidate','test-batch','{\"decision\":\"clear\"}')");
+    assert.deepEqual((await db.query<{ payload: { decision: string } }>("select payload from corpus_candidate_decisions order by id")).rows.map(row => row.payload.decision), ["add", "clear"]);
+    await db.exec("set role anon");
+    for (const table of ["corpus_candidate_batches", "corpus_candidates", "corpus_candidate_decisions", "corpus_workspace_nominations"]) await assert.rejects(db.query(`select * from ${table}`), /permission denied/);
+    await assert.rejects(nominate(), /permission denied/);
+    await db.exec("reset role");
   } finally { await db.close(); }
 });
 

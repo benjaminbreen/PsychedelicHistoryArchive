@@ -3,7 +3,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { createDraft, getSource, saveDraft } from "@/lib/cms/repository";
 import type { Proposal, SourceEditModel } from "@/lib/cms/model";
-import { readCandidateDecisions } from "@/lib/corpus-candidates";
+import { candidateClient, readCandidateDecisions, sharedCandidateQueue } from "@/lib/corpus-candidates";
+import { requireEditor } from "@/lib/cms/auth";
+import { emptySource, validateModel } from "@/lib/cms/model";
 import type { CandidateDecision } from "@/lib/corpus-candidate-types";
 
 // Bridge from the local scan review to the shared workspace: every add / maybe
@@ -25,7 +27,16 @@ function readJsonl<T>(file: string): T[] {
   return fs.readFileSync(file, "utf8").split("\n").filter(Boolean).flatMap(line => { try { return [JSON.parse(line) as T]; } catch { return []; } });
 }
 
-function sentIds() {
+async function sentIds() {
+  if (sharedCandidateQueue) {
+    const ids = new Set<string>();
+    for (let from = 0; ; from += 500) {
+      const { data, error } = await candidateClient().from("corpus_workspace_nominations").select("candidate_id").order("candidate_id").range(from, from + 499);
+      if (error) throw new Error(error.message);
+      for (const row of data || []) ids.add(row.candidate_id);
+      if (!data || data.length < 500) return ids;
+    }
+  }
   return new Set(readJsonl<{ candidate_id: string }>(SENT).map(r => r.candidate_id));
 }
 
@@ -45,10 +56,10 @@ function latestPitches() {
   return out;
 }
 
-export function pendingNominations(): PendingNomination[] {
-  const sent = sentIds();
+export async function pendingNominations(): Promise<PendingNomination[]> {
+  const sent = await sentIds();
   const files = draftFiles();
-  return [...readCandidateDecisions().values()]
+  return [...(await readCandidateDecisions()).values()]
     .filter(d => (d.decision === "add" || d.decision === "maybe") && !sent.has(d.candidate_id) && (d as Decision).snapshot)
     .map(d => {
       const snap = (d as Decision).snapshot!;
@@ -109,14 +120,22 @@ function proposalFor(d: Decision, file: DraftFile | undefined, llm: { pitch?: st
 
 /** Create one private, proposed draft per unsent add/maybe decision. */
 export async function sendNominationsToWorkspace(limit = 200) {
-  const sent = sentIds();
+  const editor = await requireEditor();
+  const sent = await sentIds();
   const files = draftFiles();
   const pitches = latestPitches();
   const results: Array<{ candidateId: string; id?: string; error?: string }> = [];
-  const todo = [...readCandidateDecisions().values()].filter(d => (d.decision === "add" || d.decision === "maybe") && !sent.has(d.candidate_id) && (d as Decision).snapshot).slice(0, limit) as Decision[];
+  const todo = [...(await readCandidateDecisions()).values()].filter(d => (d.decision === "add" || d.decision === "maybe") && !sent.has(d.candidate_id) && (d as Decision).snapshot).slice(0, limit) as Decision[];
   for (const d of todo) {
     try {
       const { document, proposal, author, notes } = proposalFor(d, files.get(d.candidate_id), pitches.get(d.candidate_id));
+      if (sharedCandidateQueue) {
+        const model = validateModel({ ...emptySource(String(document.title), String(document.source_url)), document, people: author ? [{ name: author, role: "author" }] : [], editorNotes: notes, proposal: { ...proposal, proposedBy: editor.name, proposedOn: new Date().toISOString().slice(0, 10) } });
+        const { data, error } = await candidateClient().rpc("cms_nominate_candidate", { candidate_key: d.candidate_id, edit_payload: model, actor_id: editor.id });
+        if (error) throw new Error(error.message);
+        results.push({ candidateId: d.candidate_id, id: data as string });
+        continue;
+      }
       const id = await createDraft(String(document.title), String(document.source_url));
       const source = await getSource(id);
       if (!source) throw new Error("The new draft could not be read back.");
