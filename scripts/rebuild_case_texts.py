@@ -20,10 +20,12 @@ Usage:
   python3 scripts/rebuild_case_texts.py --apply         # also update Supabase transcript sections
 
 Needs SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY (archive-site/.env.local is read
-when they are not set) and, for CourtListener sources, COURTLISTENER_API_TOKEN.
+when they are not set). Cases are read from the Caselaw Access Project; the
+CourtListener fetcher is a fallback and needs COURTLISTENER_API_TOKEN.
 """
 
 import argparse
+import difflib
 import html
 import json
 import os
@@ -35,7 +37,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = ROOT / "data" / "legal-cases"
-SHINGLE = 6
+ORIGINALS_DIR = OUT_DIR / "originals"
 
 CASE_SLUGS = [
     "church-of-the-holy-light-of-the-queen-v-mukasey-2009",
@@ -47,6 +49,26 @@ CASE_SLUGS = [
     "state-v-big-sheep-1926",
     "united-states-v-kuch-1968",
 ]
+
+# Caselaw Access Project copies, used in place of CourtListener (whose API needs a
+# token and whose pages refuse scripted requests). The record's public source_url
+# is left as it is.
+CAP_SOURCES = {
+    "church-of-the-holy-light-of-the-queen-v-mukasey-2009": "https://static.case.law/f-supp-2d/615/cases/1210-01.json",
+    "employment-division-v-smith-1990": "https://static.case.law/us/494/cases/0872-01.json",
+    "gonzales-v-o-centro-2006": "https://static.case.law/us/546/cases/0418-01.json",
+    "native-american-church-v-navajo-tribal-council-1959": "https://static.case.law/f2d/272/cases/0131-01.json",
+    "people-v-woody-1964": "https://static.case.law/cal-2d/61/cases/0716-01.json",
+    "state-v-big-sheep-1926": "https://static.case.law/mont/75/cases/0219-01.json",
+    "united-states-v-kuch-1968": "https://static.case.law/f-supp/288/cases/0439-01.json",
+}
+
+# Corrections to source-only footnote text (raw OCR), each checked against the
+# sense of the passage. Applied as exact (old, new) replacements per case.
+OCR_FIXES = {
+    "employment-division-v-smith-1990": [("1 reluctantly agree", "I reluctantly agree")],
+    "native-american-church-v-navajo-tribal-council-1959": [("Herein failed the church.", "Herein called the church.")],
+}
 
 OMISSION_RE = re.compile(r"^_\[[^\]]*\]_$")
 
@@ -109,6 +131,7 @@ class OpinionParser(HTMLParser):
         self.skip_depth = 0
         self.capture = None  # "fnref" | "page" while inside those anchors
         self.capture_text = []
+        self.capture_key = None
         self.head_matter_depth = 0
 
     def handle_starttag(self, tag, attrs):
@@ -135,7 +158,10 @@ class OpinionParser(HTMLParser):
         )
         if is_footnote_body and self.footnote_key is None:
             self.flush()
-            label = attrs.get("data-label") or re.sub(r"^\D+", "", attrs.get("id") or "") or str(len(self.footnotes) + 1)
+            # Ids such as CAP's footnote_1_6 stay unique when opinions restart numbering.
+            note_id = attrs.get("id") or ""
+            label = note_id.replace("footnote_", "fn").replace("_", "-") if note_id.startswith("footnote_") else (
+                attrs.get("data-label") or re.sub(r"^\D+", "", note_id) or str(len(self.footnotes) + 1))
             self.footnote_key = self.make_key(label)
             self.footnote_depth = len(self.stack)
             self.footnotes[self.footnote_key] = []
@@ -143,9 +169,11 @@ class OpinionParser(HTMLParser):
 
         if tag == "a" and ("footnotemark" in classes or "footnote" in classes) and self.footnote_key is None:
             self.capture, self.capture_text = "fnref", []
+            href = attrs.get("href") or ""
+            self.capture_key = href[1:].replace("footnote_", "fn").replace("_", "-") if href.startswith("#footnote_") else None
             return
         if tag == "sup" and self.footnote_key is None:
-            self.capture, self.capture_text = "fnref-sup", []
+            self.capture, self.capture_text, self.capture_key = "fnref-sup", [], None
             return
         if "page-label" in classes or "star-pagination" in classes:
             label = attrs.get("data-label")
@@ -192,7 +220,7 @@ class OpinionParser(HTMLParser):
         if self.capture and tag in ("a", "sup", "span"):
             text = "".join(self.capture_text).strip()
             if self.capture in ("fnref", "fnref-sup") and re.fullmatch(r"[\[\(]?[0-9*†‡a-z]{1,4}[\]\)]?", text):
-                self.buffer.append(f"[^{self.make_key(text.strip('[]()'))}]")
+                self.buffer.append(f"[^{self.make_key(self.capture_key or text.strip('[]()'))}]")
             elif self.capture == "page" and text:
                 self.buffer.append(f"[{text if text.startswith('*') else '*' + text}]")
             elif text:
@@ -228,8 +256,7 @@ class OpinionParser(HTMLParser):
         if not text:
             return
         if self.footnote_key is not None:
-            # The footnote body repeats its own label first; drop it.
-            text = re.sub(r"^\[\^[^\]]+\]\s*|^[0-9*†‡]{1,4}\s*\.?\s+", "", text)
+            text = re.sub(r"^\[\^[^\]]+\]\s*", "", text)
             self.footnotes[self.footnote_key].append(text)
         else:
             self.blocks.append({"kind": self.block_kind or "p", "text": text})
@@ -244,6 +271,7 @@ def clean_inline(text):
     text = re.sub(r"\s*(\[\*[^\]]+\])\s*", r" \1 ", text)
     text = re.sub(r"__|\*\*\*\*", "", text)  # empty emphasis pairs
     text = re.sub(r"_\s+_", " ", text)
+    text = re.sub(r"_([^_\n]*?\S)\s+_", r"_\1_ ", text)  # "_Gobitis, _" -> "_Gobitis,_ "
     text = re.sub(r"\s+([,.;:)\]])", r"\1", text)
     text = re.sub(r"\s+(\[\^)", r"\1", text)
     return text.strip()
@@ -255,8 +283,10 @@ def parse_opinion_html(source_html, key_prefix=""):
     parser.flush()
     footnotes = {}
     for key, parts in parser.footnotes.items():
-        # The body opens with its own label ("1", sometimes "1 ."); drop it.
-        text = re.sub(r"^[0-9*†‡]{1,4}\s*\.?\s*", "", " ".join(parts)).strip()
+        # The body opens with its own label, usually as a separate "1" part; drop just that.
+        if parts and re.fullmatch(r"[0-9*†‡]{1,4}\.?", parts[0].strip()):
+            parts = parts[1:]
+        text = re.sub(r"^\.\s*", "", " ".join(parts)).strip()
         if text:
             footnotes[key] = text
     return parser.blocks, footnotes
@@ -305,129 +335,185 @@ def fetch_structured(source_url):
     raise RuntimeError(f"No structured fetcher for {source_url}")
 
 
-# --- alignment with the current excerpt -----------------------------------------
+# --- projecting source structure onto the current transcript -------------------
+#
+# The current transcripts are the editors' corrected text; the structured sources
+# are raw OCR ("analo^izeKtoTSisIiop" for "analogized to Bishop"). So the wording
+# always comes from the current transcript, and only structure comes from the
+# source: paragraph and block-quote breaks, opinion and section headings, [*page]
+# markers and footnote references, each placed where the two texts align.
+
+WORD_RE = re.compile(r"[a-z0-9]+")
+FOOTNOTES_HEADING_RE = re.compile(r"^\s*#*\s*Footnotes\s*$", re.I | re.M)
+
 
 def tokens(text):
     text = re.sub(r"\[\^[^\]]+\]|\[\*[^\]]+\]", " ", text)
-    text = text.lower().replace("’", "'")
-    return re.findall(r"[a-z0-9]+", text)
+    return WORD_RE.findall(text.lower().replace("’", "'"))
 
 
-def shingles(toks):
-    if len(toks) < SHINGLE:
-        return {" ".join(toks)} if toks else set()
-    return {" ".join(toks[i:i + SHINGLE]) for i in range(len(toks) - SHINGLE + 1)}
+def word_spans(text):
+    lowered = text.lower().replace("’", "'")
+    return [(match.group(), match.start(), match.end()) for match in WORD_RE.finditer(lowered)]
 
 
-def coverage(text, reference, reference_text=""):
-    toks = tokens(text)
-    if 0 < len(toks) < SHINGLE:
-        # Too short for a shingle: headings, judges' names, "Affirmed."
-        return 1.0 if f" {' '.join(toks)} " in reference_text else 0.0
-    own = shingles(toks)
-    return len(own & reference) / len(own) if own else 0.0
+def split_current(current):
+    """Splits the transcript into body paragraphs and any footnotes section."""
+    parts = FOOTNOTES_HEADING_RE.split(current, maxsplit=1)
+    body, notes = parts[0], (parts[1] if len(parts) > 1 else "")
+    paragraphs = [line.strip() for line in body.splitlines() if line.strip()]
+    # Editors' opinion headings ("Opinion of the Court (Roberts, C.J.)") sit one
+    # level above the opinion's own numbered sections.
+    paragraphs = [re.sub(r"^#{2,4}\s+", "## ", line) for line in paragraphs]
+    note_paragraphs = [re.sub(r"^\[\^[^\]]+\]:\s*|^\d{1,3}\s*\.?\s+", "", line.strip()) for line in notes.splitlines() if line.strip()]
+    return "\n\n".join(paragraphs), note_paragraphs
 
 
-def split_sentences(text):
-    parts = re.split(r"(?<=[.?!])\s+(?=[A-Z“\"(\[])|(?<=[.?!][\"”’)])\s+(?=[A-Z“\"(\[])", text)
-    return [part for part in parts if part and part.strip()]
-
-
-def align(blocks, current_text):
-    """Keeps the parts of `blocks` present in the current transcript, in order."""
-    reference = shingles(tokens(current_text))
-    reference_text = f" {' '.join(tokens(current_text))} "
-    kept = []
+def source_sequence(blocks):
+    """Flattens source blocks into tokens plus structural events keyed to token positions."""
+    toks, events = [], []
     for block in blocks:
-        score = coverage(block["text"], reference, reference_text)
-        if score >= 0.85:
-            kept.append(block)
-        elif score > 0.1:
-            sentences = [s for s in split_sentences(block["text"]) if coverage(s, reference, reference_text) >= 0.6]
-            if sentences:
-                kept.append({**block, "text": " ".join(sentences), "trimmed": True})
-    return kept
+        events.append({"at": len(toks), "type": "break", "kind": block["kind"], "text": block["text"]})
+        for match in re.finditer(r"\[\^([^\]]+)\]|\[\*([^\]]+)\]|[A-Za-z0-9’']+", block["text"]):
+            if match.group(1):
+                events.append({"at": len(toks) - 1, "type": "fn", "key": match.group(1)})
+            elif match.group(2):
+                events.append({"at": len(toks), "type": "page", "label": match.group(2)})
+            else:
+                toks.extend(WORD_RE.findall(match.group().lower().replace("’", "'")))
+    return toks, events
 
 
-def omission_notes(current_text):
-    """Returns (note, preceding tokens) for each editorial omission paragraph."""
-    notes = []
-    paragraphs = [p.strip() for p in re.split(r"\n\s*\n", current_text)]
-    before = []
-    for paragraph in paragraphs:
-        if OMISSION_RE.match(paragraph):
-            notes.append((paragraph, before[-12:]))
-        else:
-            before.extend(tokens(paragraph))
-    return notes
+def token_map(src_tokens, cur_tokens):
+    """Maps source token index -> current token index where the texts correspond."""
+    mapping = {}
+    matcher = difflib.SequenceMatcher(None, src_tokens, cur_tokens, autojunk=False)
+    for op, i1, i2, j1, j2 in matcher.get_opcodes():
+        if op == "equal":
+            for offset in range(i2 - i1):
+                mapping[i1 + offset] = j1 + offset
+        elif op == "replace" and (i2 - i1) <= 12 and (j2 - j1) <= 12:
+            # OCR noise: a short garbled run on one side, the corrected run on the other.
+            for offset in range(i2 - i1):
+                mapping[i1 + offset] = j1 + min(j2 - j1 - 1, offset * (j2 - j1) // (i2 - i1))
+        # "delete" (source only) is text the editors cut; "insert" is editorial text.
+    return mapping
 
-
-def insert_omissions(kept, notes):
-    result = list(kept)
-    for note, preceding in notes:
-        position = 0
-        if preceding:
-            tail = " ".join(preceding)
-            for index, block in enumerate(result):
-                if block.get("kind") == "omission":
-                    continue
-                if tail in " ".join(tokens(block["text"])):
-                    position = index + 1
-        result.insert(position, {"kind": "omission", "text": note})
-    return result
-
-
-# --- Markdown -------------------------------------------------------------------
 
 def is_section_heading(text):
-    """Short numbered divisions such as "I. _Administrative History._" or "B."."""
+    """Short numbered divisions such as "I. Administrative History." or "B."."""
+    if re.fullmatch(r"[IVXL]{1,5}|[A-H]|\d{1,2}", text):  # Supreme Court style: a bare "I" or "B"
+        return True
     return len(text) <= 90 and "[^" not in text and bool(re.match(r"^(?:[IVXL]+|[A-H]|\d{1,2})\.(?:\s+\S.*)?$", text)) \
         and not re.search(r"[a-z]\.\s+[A-Z][a-z]+\s+[a-z]", text)
 
 
-def to_markdown(blocks, footnotes):
-    lines = []
-    for block in blocks:
-        text = block["text"]
-        if block["kind"] == "heading":
-            lines.append(f"## {text}")
-        elif is_section_heading(text):
-            lines.append(f"### {text}")
-        elif block["kind"] == "quote":
-            lines.append(f"> {text}")
+def best_note(text, candidates):
+    own = set(tokens(text))
+    best, score = None, 0.0
+    for index, candidate in enumerate(candidates):
+        theirs = set(tokens(candidate))
+        if own and theirs:
+            overlap = len(own & theirs) / len(own | theirs)
+            if overlap > score:
+                best, score = index, overlap
+    return best if score >= 0.45 else None
+
+
+def project(current, blocks, footnotes):
+    body, old_notes = split_current(current)
+    # When the editors gave the opinions their own headings, the source's
+    # "COFFIN, Circuit Judge." lines stay ordinary paragraphs.
+    editor_headings = bool(re.search(r"^#{1,4}\s", body, re.M))
+    spans = word_spans(body)
+    cur_tokens = [token for token, _, _ in spans]
+    src_tokens, events = source_sequence(blocks)
+    mapping = token_map(src_tokens, cur_tokens)
+
+    inserts = []  # (char position, order, kind, payload)
+    seen_pages, cited = set(), []
+    for event in events:
+        if event["type"] in ("break", "page"):
+            j = mapping.get(event["at"])
+            if j is None:
+                continue
+            position = spans[j][1]
+            if event["type"] == "break":
+                inserts.append((position, 0, "break", event))
+            elif event["label"] not in seen_pages:
+                seen_pages.add(event["label"])
+                inserts.append((position, 1, "page", event["label"]))
+        elif event["type"] == "fn":
+            j = mapping.get(event["at"])
+            if j is None or event["key"] not in footnotes:
+                continue
+            end = spans[j][2]
+            while end < len(body) and body[end] in ".,;:)]\"”’'":
+                end += 1
+            if event["key"] not in cited:
+                cited.append(event["key"])
+            inserts.append((end, 2, "fn", event["key"]))
+
+    out, cursor = [], 0
+    for position, _, kind, payload in sorted(inserts, key=lambda item: (item[0], item[1])):
+        out.append(body[cursor:position])
+        cursor = position
+        if kind == "break":
+            text = "".join(out).rstrip()
+            out = [text]
+            if text and not text.endswith("\n\n"):
+                out.append("\n\n")
+            if payload["kind"] == "quote":
+                out.append("> ")
+            elif payload["kind"] == "heading" and len(payload["text"]) <= 60 and not editor_headings:
+                out.append("## ")
+        elif kind == "page":
+            out.append(f"[*{payload}] ")
         else:
-            lines.append(text)
-    body = "\n\n".join(lines)
-    cited = []
-    for key in re.findall(r"\[\^([^\]]+)\]", body):
-        if key not in cited:
-            cited.append(key)
-    missing = [key for key in cited if key not in footnotes]
-    for key in missing:
-        body = body.replace(f"[^{key}]", "")
-    definitions = [f"[^{key}]: {footnotes[key]}" for key in cited if key in footnotes]
+            out.append(f"[^{payload}]")
+    out.append(body[cursor:])
+
+    paragraphs = []
+    for paragraph in re.split(r"\n\s*\n", "".join(out)):
+        paragraph = re.sub(r"[ \t]+", " ", paragraph).strip()
+        if not paragraph:
+            continue
+        if not paragraph.startswith(("#", ">")) and is_section_heading(re.sub(r"\[\*[^\]]+\]\s*", "", paragraph)):
+            paragraph = f"### {paragraph}"
+        paragraphs.append(paragraph)
+    markdown = "\n\n".join(paragraphs)
+
+    # Footnote text: the editors' version when the transcript had one, else the source's.
+    definitions, unused, from_source = [], list(range(len(old_notes))), 0
+    for key in cited:
+        match = best_note(footnotes[key], [old_notes[i] for i in unused])
+        if match is not None:
+            index = unused.pop(match)
+            definitions.append(f"[^{key}]: {old_notes[index]}")
+        else:
+            definitions.append(f"[^{key}]: {footnotes[key]}")
+            from_source += 1
+    for index in unused:  # editors' notes the source could not place are kept, unanchored
+        definitions.append(f"[^ed{index + 1}]: {old_notes[index]}")
     if definitions:
-        body += "\n\n" + "\n".join(definitions)
-    return body.strip() + "\n", missing
+        markdown += "\n\n" + "\n".join(definitions)
 
-
-def uncovered_words(current_text, markdown):
-    """Words of the current transcript (outside omission notes) missing from the rebuild."""
-    current = "\n\n".join(p for p in re.split(r"\n\s*\n", current_text) if not OMISSION_RE.match(p.strip()))
-    rebuilt = shingles(tokens(markdown))
-    toks = tokens(current)
-    missing_runs, run = [], []
-    for i in range(len(toks)):
-        window = " ".join(toks[i:i + SHINGLE]) if i + SHINGLE <= len(toks) else " ".join(toks[-SHINGLE:])
-        if window in rebuilt:
-            if len(run) >= SHINGLE:
-                missing_runs.append(" ".join(run))
-            run = []
-        else:
-            run.append(toks[i])
-    if len(run) >= SHINGLE:
-        missing_runs.append(" ".join(run))
-    return missing_runs
+    # Wording check: the body's words must be exactly the transcript's words.
+    body_out = "\n".join(line for line in markdown.splitlines() if not line.startswith("[^") or not re.match(r"^\[\^[^\]]+\]:", line))
+    problems = []
+    if tokens(body_out) != cur_tokens:
+        diff = difflib.SequenceMatcher(None, cur_tokens, tokens(body_out), autojunk=False)
+        for op, i1, i2, j1, j2 in diff.get_opcodes():
+            if op != "equal":
+                problems.append(f"{op}: {' '.join(cur_tokens[i1:i2])[:80]!r} -> {' '.join(tokens(body_out)[j1:j2])[:80]!r}")
+    stats = {
+        "pages": len(seen_pages),
+        "footnotes": len(cited),
+        "source_footnotes": from_source,
+        "unplaced_notes": len(unused),
+        "breaks": sum(1 for item in inserts if item[2] == "break"),
+    }
+    return markdown.strip() + "\n", problems, stats
 
 
 # --- main -----------------------------------------------------------------------
@@ -445,32 +531,38 @@ def load_case(slug):
     return doc, section
 
 
+def original_transcript(slug, section):
+    """The pre-rebuild transcript, saved once so reruns always start from it."""
+    path = ORIGINALS_DIR / f"{slug}.txt"
+    if not path.exists():
+        if re.search(r"\[\*\d+[a-z]?\]", section["body"]):
+            raise RuntimeError(f"{slug} is already rebuilt and has no saved original in {path}")
+        ORIGINALS_DIR.mkdir(parents=True, exist_ok=True)
+        path.write_text(section["body"])
+    return path.read_text()
+
+
 def rebuild(slug, apply):
     doc, section = load_case(slug)
-    current = section["body"]
-    blocks, footnotes = fetch_structured(doc["source_url"])
-    is_excerpt = bool(omission_notes(current))
-    kept = align(blocks, current)
-    if is_excerpt:
-        kept = insert_omissions(kept, omission_notes(current))
-    markdown, missing_notes = to_markdown(kept, footnotes)
-    gaps = uncovered_words(current, markdown)
+    current = original_transcript(slug, section)
+    blocks, footnotes = fetch_structured(CAP_SOURCES.get(slug, doc["source_url"]))
+    for key, text in footnotes.items():
+        for old, new in OCR_FIXES.get(slug, []):
+            text = text.replace(old, new)
+        footnotes[key] = text
+    markdown, problems, stats = project(current, blocks, footnotes)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     (OUT_DIR / f"{slug}.md").write_text(markdown)
-    trimmed = sum(1 for block in kept if block.get("trimmed"))
-    refs = len(set(re.findall(r"\[\^([^\]]+)\](?!:)", markdown)))
-    pages = len(re.findall(r"\[\*", markdown))
-    print(f"{slug}: {len(blocks)} source blocks -> {len(kept)} kept ({trimmed} trimmed), "
-          f"{refs} footnotes, {pages} page markers, {len(gaps)} uncovered runs")
-    for gap in gaps[:8]:
-        print(f"    uncovered: {gap[:140]}")
-    if missing_notes:
-        print(f"    footnote refs with no text: {', '.join(missing_notes)}")
+    print(f"{slug}: {stats['breaks']} breaks, {stats['pages']} page markers, {stats['footnotes']} footnotes "
+          f"({stats['source_footnotes']} from source text), {stats['unplaced_notes']} unplaced editor notes, "
+          f"{len(problems)} wording differences")
+    for problem in problems[:8]:
+        print(f"    {problem}")
 
     if apply:
-        if gaps:
-            print("    not applied: the rebuild is missing text from the current transcript")
+        if problems:
+            print("    not applied: wording differs from the current transcript")
             return False
         request = urllib.request.Request(
             supabase_url(f"document_sections?id=eq.{section['id']}"),

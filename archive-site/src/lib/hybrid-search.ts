@@ -313,7 +313,11 @@ function matchLabel(kind?: string | null, mode?: SearchMode) {
 }
 
 function cleanSnippet(value?: string | null) {
-  return value?.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim() || undefined;
+  return value
+    ?.replace(/<[^>]+>/g, " ")
+    .replace(/\[\^[^\]]+\]:?|\[\*[0-9a-z]+\]/g, "") // footnote and page markers
+    .replace(/\s+/g, " ")
+    .trim() || undefined;
 }
 
 function vectorLiteral(values: number[]) {

@@ -1,0 +1,61 @@
+## Opinion of the Court (Callaway, C.J.)
+
+ME. CHIEF JUSTICE CALLAWAY
+
+delivered the opinion of the court.
+
+By the provisions of an Act of the Eighteenth Legislative Assembly it is unlawful for any person to sell, furnish or give away or offer to sell, furnish or give away, or to have in his possession, peyote (pellote), botanically known as Lophophora Williamsii. A person who violates the Act is guilty of a misdemeanor and upon conviction is subject to a fine of not exceeding $500 or imprisonment in the county [*225] jail for a period, of, not to exceed six months, or to both such fine and imprisonment. (Chap. 22, Sess. Laws 1923, p. 40.)
+
+By complaint filed in the justice’s court of Hardin township in Big Horn county, the defendant Big Sheep was charged with the crime of unlawfully having in his possession peyote on or about the ninth day of November, 1924, in the county of Big Horn, state of Montana. The sufficiency of the complaint is not in question. Evidently the case was appealed, because on March 4, 1925, it came on for trial in the district court.
+
+Objection was made seasonably to the jurisdiction of the court on the ground that the defendant, at the time and place mentioned in the complaint, was an Indian, a member of the Crow Tribe, and that the acts alleged to constitute the offense were done upon land within the Crow Indian Reservation, the title to which still remained in the United States.
+
+Want of jurisdiction in the court, if want there was, did not appear upon the face of the complaint. The justice’s court had jurisdiction of the misdemeanor charged if committed within Big Horn county, unless upon land within the exclusive jurisdiction of the United States. It was not necessary to negative the exception, as it was not a constituent part of the offense; that was a matter to be taken advantage of at the trial. Upon the conditions above stated the rule announced in State v. Spotted Hawk, 22 Mont. 33, 55 Pac. 1026, and State v. Tully, 31 Mont. 365, 3 Ann. Cas. 824, 78 Pac. 760, applies. (And see State v. Buckaroo Jack, 30 Nev. 325, 96 Pac. 497.)
+
+However, this objection was lodged at different times during the trial and always overruled. The defendant offered to prove that he was at the time alleged, and for many years theretofore had been, a member in good standing of the Native American Church, and that peyote is used by the members of that church “for sacramental purposes only in the worship of God according to their belief and interpretation [*226] of the Holy Bible, and according to the dictates of their conscience; and that peyote is never used by members of that church except in the worship of God.” They ground their faith upon the Fourteenth Chapter of Romans, the Fifty-third Chapter of Isaiah, second verse, and the Second Chapter of Revelations, seventeenth verse, King James’ Version. The offer was denied.
+
+At the conclusion of the trial the defendant was found guilty as charged and sentenced to pay a fine of $100. His motion for a new trial was denied, whereupon he appealed from the order denying that motion and from the judgment.
+
+1. That the defendant was in the possession of peyote at the home of Austin Stray Calf, which is seven miles south of Hardin within the Crow Indian Reservation, and that defendant is a member of the Crow Tribe is conceded.
+
+The state did not offer any proof to show that title to the land possessed by Austin Stray Calf had passed from the United States. Defendant offered to prove that it had not. The offer was denied. It is evident that the trial court deemed evidence upon the point immaterial.
+
+The question presented is of first impression in this
+
+_[The court's extended review of federal Indian law precedent on tribal sovereignty and citizenship — tracing treaties, the 1871 end of treaty-making, the Dawes Act, and cases from* Cherokee Nation v. Georgia *through* United States v. Nice *— is omitted here. The court frames the central question as follows:]_
+
+(
+
+1) If the defendant obtained his citizenship through being an allottee who has obtained a patent in fee, the inquiry must be answered in the affirmative. In such case he is subject to the laws, both civil and criminal, of this state. (U. S. Comp Stats., sec. 4203; Smith v. Northern Pac. Ry. Co., 57 Mont. 14, 186 Pac. 684; Kitto v. State, 98 Neb. 164, L. R. A. 1915F, 587, 152 N. W. 380.)
+
+(
+
+2) If he is an allottee who has not obtained patent in fee, he is still a ward of the government, although a citizen, and under the provisions of section 4203, unquestionably is “subject to the exclusive jurisdiction of the United States.” Here a negative answer follows. So far as acts committed by him within the reservation may be brought in question, it will be noted that the latter part of that section does not confine jurisdiction to property rights. It was evidently enacted pursuant to the government’s guardian and ward policy with [*234] respect to the Indians who had not yet been fully emancipated.
+
+(
+
+3) If defendant is not an allottee but is a member of the Crow Tribe who has not adopted the habits of civilized life but is still maintaining his tribal relations under the supervision of the Crow Indian agent, he must be deemed a ward of the government, and subject to federal jurisdiction for acts
+
+_[The court works through this four-part test at length, reviewing the allotment status of the Crow Tribe and concluding that a question of fact on defendant's citizenship status must be resolved at a new trial. The opinion then turns to the religious-use argument defendant raised at trial.]_
+
+guardianship over the Indians, was overruled in United States v. Nice, supra.
+
+The decisions of state courts which appear to differ in some particulars from the holdings of the federal courts upon these questions either arise under circumstances different from those here presented, or, as in Re Now-ge-zhuck, 69 Kan. 410, 76 Pac. 877, Kitto v. State, supra, and in State v. Doxtater, 47 [*238] Wis. 278, 2 N. W. 439, fail to give due weight to the fact that the federal government has exercised, and has the right to exercise, sovereignty over its wards upon Indian reservations within a state.
+
+We conclude, therefore, that if the defendant at the time he committed the act charged was a citizen of the United States, and not under federal restriction, as of guardianship or if he committed the offense upon land to which the United States has relinquished title, he is subject to the jurisdiction of the courts of this state for the offense committed; otherwise he is not. (See (1), (2), (3), (4), supra.)
+
+If he is an emancipated Indian, clothed in the full panoply of citizenship, who has broken a state law, he may not defend against the power of the state by claiming as a sanctuary the house of Austin Stray Calf, although the title to that place is still in the United States. A white man could not commit the act with impunity there, and neither can Big Sheep simply because he is of Indian blood.
+
+A question of fact is thus presented which makes it necessary to remand this cause for a new trial. If upon the new trial it shall appear that the court has jurisdiction to proceed, it will then be called upon to decide whether the fact that defendant had peyote in his possession for religious purposes in conformity with his religious belief justified his act. Although considerable effort was spent upon this point in the trial of the case, it is not insisted upon with much seriousness in this court.
+
+Section 4 of Article III of the Constitution provides: “The free exercise and enjoyment of religious profession and worship, without discrimination, shall forever hereafter be guaranteed, and no person shall be denied any civil or political right or privilege on account of his opinions concerning religion, but the liberty of conscience hereby secured shall not be construed to dispense with oaths or affirmations, excuse acts of licentiousness, by bigamous or polygamous marriage, [*239] or otherwise, or justify practices inconsistent with the good order, peace, or safety of the state, or opposed to the civil authority thereof, or of the United States. No person shall be required to attend any place of worship or support any ministry, religious sect, or denomination, against his consent; nor shall any preference be given by law to any religious denomination or mode of worship.” It is idle to urge that the foregoing provision is in conflict with any provision of the federal Constitution.
+
+It was clearly within the power of the legislature to determine whether the practice of using peyote is inconsistent with the good order, peace and safety of the state. We do not find peyote or any like herb mentioned by Isaiah, or by Saint Paul in his Epistle to the Romans, nor does it seem from the language employed that Saint John the Divine had any such in mind. It is true that Isaiah speaks of a root out of a dry ground. There is a slight resemblance here, as peyote is said to be a product of the cactus plant. The Fourteenth Chapter of Romans is a lesson concerning brotherly charity. It teaches that men should not condemn one the other, but take heed that they give no offense. Second verse: “For one believeth that he may eat all things; another, who is weak, eateth herbs.” Third verse: “Let not him that eateth despise him that eateth not; and let not him which eateth not judge him that eateth.” These excellent precepts are worthy of much greater observation than they receive; but if carried to the length defendant insists upon, the use of opium, cocaine and even “moonshine” might be justified under the guise of religious observance.
+
+The supreme court of the United States, in Davis v. Beason, 133 U. S. 333, 33 L. Ed. 637, 10 Sup. Ct. Rep. 299 [see, also, Rose’s U. S. Notes], declared that it was never intended or supposed that the first amendment to the Constitution, that “Congress shall make no law respecting the establishment of religion, or prohibiting the free exercise thereof,” should be invoked as a protection against legislation for the punishment of acts inimical [*240] to the peace, good order and morals of society. . Ruling Case Law says that while laws cannot interfere with mere religious belief and opinions, they may inhibit acts or practices which tend toward the subversion of the civil government, or which are made criminal by the law of the land. (6 R. C. L. 251.) To the same effect, see State v. Neitzel, 69 Wash. 567, Ann. Cas. 1914A, 899, 43 L. R. A. (n. s.) 203, 125 Pac. 939.
+
+For the reasons foregoing the judgment and order are reversed and the cause is remanded to the district court of Big Horn county with direction to grant the defendant a new trial.
+
+Reversed and remanded.
+
+Associate Justices Holloway, Matthews, Galen ' and Stark concur.
