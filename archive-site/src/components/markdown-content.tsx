@@ -323,7 +323,7 @@ function FigureLightbox({ figures, initialIndex, onClose }: { figures: SourceFig
 
 function parseInline(text: string, footnoteMap = new Map<string, Footnote>(), options: InlineParseOptions = {}): ReactNode[] {
   const nodes: ReactNode[] = [];
-  const pattern = /(`[^`]+`|\*\*[^*]+\*\*|__[^_]+__|\*[^*]+\*|_[^_\n]+_|\[\^([^\]]+)\]|\[[^\]]+\]\(([^)\s]+)\))/g;
+  const pattern = /(`[^`]+`|\[\*[0-9a-z]+\]|\*\*[^*]+\*\*|__[^_]+__|\*[^*]+\*|_[^_\n]+_|\[\^([^\]]+)\]|\[[^\]]+\]\(([^)\s]+)\))/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
   let index = 0;
@@ -335,7 +335,15 @@ function parseInline(text: string, footnoteMap = new Map<string, Footnote>(), op
     const token = match[0];
     const key = `${index}-${match.index}`;
 
-    if (token.startsWith("`")) {
+    if (/^\[\*[0-9a-z]+\]$/.test(token)) {
+      // Star pagination from a printed reporter, e.g. [*883] for page 883.
+      const page = token.slice(2, -1);
+      nodes.push(
+        <span aria-label={`Page ${page}`} className="mx-0.5 align-[0.12em] font-sans text-[0.68em] font-medium tracking-wide text-archive-muted" key={key} title={`Start of page ${page} in the printed report`}>
+          *{page}
+        </span>
+      );
+    } else if (token.startsWith("`")) {
       nodes.push(<code className="rounded bg-archive-paper px-1 py-0.5 font-mono text-[0.9em]" key={key}>{token.slice(1, -1)}</code>);
     } else if (token.startsWith("**") || token.startsWith("__")) {
       nodes.push(<strong key={key}>{parseInline(token.slice(2, -2), footnoteMap, options)}</strong>);
