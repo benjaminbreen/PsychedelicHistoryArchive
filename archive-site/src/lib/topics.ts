@@ -1,3 +1,5 @@
+import { unstable_cache } from "next/cache";
+import { ARCHIVE_CACHE_SECONDS, ARCHIVE_CACHE_TAG } from "@/lib/cache-tags";
 import { getSupabaseClient } from "@/lib/supabase";
 
 export type PublicTopic = {
@@ -98,7 +100,7 @@ const TOPIC_SELECT = `
   updated_at
 `;
 
-export async function listPublicTopics(): Promise<PublicTopicListItem[]> {
+async function loadListPublicTopics(): Promise<PublicTopicListItem[]> {
   const supabase = getSupabaseClient();
   if (!supabase) return [];
 
@@ -233,3 +235,8 @@ function warnMissingTopicsSchema(message: string) {
   }
   console.warn("Curated topics query failed; using tag-derived topics.", message);
 }
+
+export const listPublicTopics = unstable_cache(loadListPublicTopics, ["v1-listPublicTopics"], {
+  revalidate: ARCHIVE_CACHE_SECONDS,
+  tags: [ARCHIVE_CACHE_TAG],
+});

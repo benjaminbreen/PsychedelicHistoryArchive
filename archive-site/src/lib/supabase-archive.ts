@@ -1,3 +1,5 @@
+import { unstable_cache } from "next/cache";
+import { ARCHIVE_CACHE_SECONDS, ARCHIVE_CACHE_TAG } from "@/lib/cache-tags";
 import { sources as fallbackSources } from "@/lib/archive-data";
 import { getStoragePublicUrl, getSupabaseClient } from "@/lib/supabase";
 import { getSourceTitleParts } from "@/lib/source-title";
@@ -620,7 +622,7 @@ function errorMessage(error: unknown) {
   return error instanceof Error ? error.message : String(error);
 }
 
-export async function listArchiveSourceSummariesFromSupabase() {
+async function loadListArchiveSourceSummariesFromSupabase() {
   const supabase = getSupabaseClient();
   if (!supabase) return normalizedFallbackSources();
 
@@ -903,7 +905,7 @@ export async function getCollectionSourceDetailFromSupabase(slug: string) {
   return data ? collectionToArchiveSource(data as unknown as CollectionRow) : undefined;
 }
 
-export async function listCollectionSourceSummariesFromSupabase() {
+async function loadListCollectionSourceSummariesFromSupabase() {
   const supabase = getSupabaseClient();
   if (!supabase) return [];
 
@@ -1618,3 +1620,13 @@ function mapFiles(files: FileRow[] = []): SourceFile[] {
       byteSize: file.byte_size ?? undefined
     }));
 }
+
+export const listArchiveSourceSummariesFromSupabase = unstable_cache(loadListArchiveSourceSummariesFromSupabase, ["v1-listArchiveSourceSummariesFromSupabase"], {
+  revalidate: ARCHIVE_CACHE_SECONDS,
+  tags: [ARCHIVE_CACHE_TAG],
+});
+
+export const listCollectionSourceSummariesFromSupabase = unstable_cache(loadListCollectionSourceSummariesFromSupabase, ["v1-listCollectionSourceSummariesFromSupabase"], {
+  revalidate: ARCHIVE_CACHE_SECONDS,
+  tags: [ARCHIVE_CACHE_TAG],
+});

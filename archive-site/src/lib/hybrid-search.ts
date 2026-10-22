@@ -1,3 +1,4 @@
+import { unstable_cache } from "next/cache";
 import { filterArchiveSources, type ArchiveSearchParams } from "@/lib/archive-query";
 import { getServerEnv } from "@/lib/server-env";
 import { getSupabaseClient } from "@/lib/supabase";
@@ -49,24 +50,22 @@ export async function searchArchiveSourcesWithMode(
   const allowedIds = new Set(filteredSources.map((source) => source.id));
   const sourceById = new Map(sources.map((source) => [source.id, source]));
   const rows: RankedRow[] = [];
-  let rpcFailed = false;
-  let queryEmbedding: number[] | undefined;
+  const [semanticRows, hybridKeywordRows] = await Promise.all([
+    mode === "keyword" ? undefined : searchSemanticRows(query),
+    mode === "semantic" ? undefined : searchKeywordRows(query),
+  ]);
+  const semanticFailed = !semanticRows || semanticRows.failed;
+  const queryEmbedding = semanticRows?.embedding;
+  // Keyword rows back up a failed semantic search (missing key, OpenAI outage) so
+  // results degrade to word matches rather than to the in-memory metadata filter.
+  const keywordRows = hybridKeywordRows ?? (semanticFailed ? await searchKeywordRows(query) : undefined);
+  const keywordFailed = !keywordRows || keywordRows.failed;
+  rows.push(...(semanticRows?.rows ?? []).map((row) => ({ ...row, mode: "semantic" as const })));
+  rows.push(...(keywordRows?.rows ?? []).map((row) => ({ ...row, mode: "keyword" as const })));
 
-  if (mode !== "semantic") {
-    const keywordRows = await searchKeywordRows(query);
-    rpcFailed ||= keywordRows.failed;
-    rows.push(...keywordRows.rows.map((row) => ({ ...row, mode: "keyword" as const })));
-  }
-
-  if (mode !== "keyword") {
-    const semanticRows = await searchSemanticRows(query);
-    rpcFailed ||= semanticRows.failed;
-    queryEmbedding = semanticRows.embedding;
-    rows.push(...semanticRows.rows.map((row) => ({ ...row, mode: "semantic" as const })));
-  }
-
-  const ranked = rankRows(rows, sourceById, allowedIds, query, mode);
-  const shouldUseFallback = rpcFailed || ranked.length === 0;
+  const rankMode = mode === "semantic" && semanticFailed ? "keyword" : mode;
+  const ranked = rankRows(rows, sourceById, allowedIds, query, rankMode);
+  const shouldUseFallback = (keywordFailed && semanticFailed) || ranked.length === 0;
   if (shouldUseFallback) {
     const fallbackSources = filterArchiveSources(sources, params);
     return {
@@ -114,7 +113,7 @@ async function searchKeywordRows(query: string): Promise<{ failed: boolean; rows
 
 async function searchSemanticRows(query: string): Promise<{ embedding?: number[]; failed: boolean; rows: SearchRpcRow[] }> {
   const supabase = getSupabaseClient();
-  const embedding = (await embedTexts([query]))?.[0];
+  const embedding = await embedQueryCached(query.toLowerCase()).catch(() => undefined);
   if (!supabase || !embedding) return { failed: true, rows: [] };
 
   const { data, error } = await supabase.rpc("search_archive_semantic", {
@@ -130,6 +129,18 @@ async function searchSemanticRows(query: string): Promise<{ embedding?: number[]
 
   return { embedding, failed: false, rows: (data ?? []) as SearchRpcRow[] };
 }
+
+// Popular searches repeat; caching the query vector saves an OpenAI round trip.
+// Failures throw so they are never cached; the caller treats them as no vector.
+const embedQueryCached = unstable_cache(
+  async (query: string) => {
+    const embedding = (await embedTexts([query]))?.[0];
+    if (!embedding) throw new Error("Query embedding unavailable");
+    return embedding;
+  },
+  ["search-query-embedding", EMBEDDING_MODEL, String(EMBEDDING_DIMENSIONS)],
+  { revalidate: 60 * 60 * 24 * 7 }
+);
 
 // Highlights the sentences in each matched chunk closest to the query: by embedding
 // similarity when a query embedding is available, otherwise by query-term hits.
