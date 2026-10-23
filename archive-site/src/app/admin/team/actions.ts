@@ -1,16 +1,23 @@
 "use server";
+
 import { redirect } from "next/navigation";
-import { revalidatePath } from "next/cache";
 import { requireEditor } from "@/lib/cms/auth";
 import { cmsClient } from "@/lib/cms/repository";
-export async function inviteEditor(form: FormData) {
-  const editor = await requireEditor(); if (editor.role !== "owner") throw new Error("Only the project owner can invite editors.");
-  const email = String(form.get("email") || "").trim(); const name = String(form.get("name") || "").trim(); const origin = process.env.CMS_SITE_URL;
-  if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !origin) redirect("/admin/team?error=setup");
+import { passwordProblem } from "@/lib/cms/password-policy";
+
+export async function resetEditorPassword(form: FormData) {
+  const editor = await requireEditor();
+  if (editor.role !== "owner") throw new Error("Only the project owner can reset passwords.");
   const client = cmsClient();
-  const { data, error } = await client.auth.admin.inviteUserByEmail(email, { redirectTo: `${origin.replace(/\/$/, "")}/auth/editor` });
-  if (error || !data.user) redirect("/admin/team?error=invite");
-  const profile = await client.from("editor_profiles").upsert({ user_id: data.user.id, display_name: name, role: "editor" });
-  if (profile.error) redirect("/admin/team?error=profile");
-  revalidatePath("/admin/team"); redirect("/admin/team?invited=1");
+  const id = String(form.get("user_id") || "");
+  const { data: profile, error: profileError } = await client.from("editor_profiles").select("role").eq("user_id", id).single();
+  if (profileError || !profile || !["owner", "editor"].includes(profile.role)) redirect("/admin/team?error=account");
+  // Backup access lets the owner recover their own named account.
+  if (profile.role === "owner" && editor.via !== "password") redirect("/admin/team?error=owner");
+  const password = String(form.get("new_password") || "");
+  const problem = passwordProblem(password, String(form.get("confirm_password") || ""));
+  if (problem) redirect(`/admin/team?error=${problem}`);
+  const { error } = await client.auth.admin.updateUserById(id, { password, email_confirm: true });
+  if (error) redirect("/admin/team?error=save");
+  redirect("/admin/team?reset=1");
 }

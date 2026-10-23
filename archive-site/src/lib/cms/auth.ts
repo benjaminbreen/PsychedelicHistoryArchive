@@ -11,7 +11,8 @@ export type Editor = { id: string | null; name: string; role: "owner" | "editor"
 // Shared-password sign-in: one workspace password (CMS_SHARED_PASSWORD, set in the
 // deployment's environment, never in the repository) opens the workspace as owner.
 // The session cookie is an HMAC over its issue time and a hash of the password, so
-// changing the password signs everyone out. Invited editors keep using email links.
+// changing the password signs out backup sessions. Named accounts use Supabase
+// password sessions and keep their own names and roles.
 export const PASSWORD_COOKIE = "phs_workspace";
 const SESSION_DAYS = 30;
 const sharedPassword = () => process.env.CMS_SHARED_PASSWORD || "";
@@ -58,16 +59,19 @@ export async function getEditor(): Promise<Editor | null> {
   const host = (await headers()).get("host") || "";
   // Development convenience is confined to loopback, never a production bypass.
   if (process.env.NODE_ENV === "development" && /^(localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/.test(host)) return { id: null, name: "Local editor", role: "owner" };
-  const shared = await passwordEditor();
-  if (shared) return shared;
   const client = await authClient();
   const admin = getAdminSupabaseClient();
-  if (!client || !admin) return null;
-  const { data: { user }, error } = await client.auth.getUser();
-  if (error || !user) return null;
-  const { data } = await admin.from("editor_profiles").select("display_name, role").eq("user_id", user.id).single();
-  if (!data || !["owner", "editor"].includes(data.role)) return null;
-  return { id: user.id, name: data.display_name, role: data.role };
+  if (client && admin) {
+    const { data: { user }, error } = await client.auth.getUser();
+    if (!error && user) {
+      const { data } = await admin.from("editor_profiles").select("display_name, role").eq("user_id", user.id).single();
+      // A named account takes precedence over a leftover shared-owner cookie.
+      // Accounts without an editor profile must not inherit backup access.
+      if (!data || !["owner", "editor"].includes(data.role)) return null;
+      return { id: user.id, name: data.display_name, role: data.role };
+    }
+  }
+  return passwordEditor();
 }
 
 export async function requireEditor(): Promise<Editor> {

@@ -11,30 +11,30 @@ CMS_LOCAL_DATA=true npm run dev
 
 Open http://localhost:3000/admin. The workspace loads the staged sources from `data/*-import/`, and saves to `.cms-local/` (gitignored). Nothing reaches Supabase or the public site. Delete `.cms-local/sources.json` to start over.
 
-## Connect the shared archive (one-time setup)
+## Connect the shared archive
 
-1. In the Supabase SQL editor, run `scripts/supabase_cms_workspace.sql`. It adds private working copies, the save/publish functions, and a private `archive-drafts` storage bucket. It publishes nothing.
-2. In `archive-site/.env.local`, set `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, and `CMS_SITE_URL` (the site's public address, used in invitation emails). On the deployed site, also set `ADMIN_LOCAL_ENABLED=true`.
-3. In Supabase → Authentication → URL configuration, add `<CMS_SITE_URL>/auth/editor` as a redirect URL.
-4. Make yourself the first owner: in Supabase → Authentication → Users, invite your own email, copy your user ID, then in the SQL editor run
-   `insert into editor_profiles (user_id, display_name, role) values ('<your auth user id>', 'Your Name', 'owner');`
-5. Invite collaborators from **Editors & access** in the workspace sidebar. They get an email link and land in Sources.
+1. Apply `scripts/supabase_cms_workspace.sql` (already included in the project's migrations). It adds private working copies, save/publish functions, and a private `archive-drafts` bucket. It publishes nothing.
+2. Set the server-only `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, and `ADMIN_LOCAL_ENABLED=true` in Vercel Production. The browser also needs `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`.
+3. Set `NEXT_PUBLIC_SITE_URL=https://www.psychedelicarchive.com` so sitemap, canonical, and social URLs use the public domain.
+4. Create an individual Supabase Auth user with an email address and password, using the admin API or Authentication → Users → Create user. Confirm the email administratively; do not use Send invitation. Add an `editor_profiles` row with that user's ID, display name, and role (`owner` or `editor`). Public signup never grants editor access.
 
-## Sign in with a shared workspace password
+## Individual password sign-in
 
-The simplest way to open the deployed workspace: one shared password, set in the deployment's environment, never in the repository (it is public).
+Editors sign in at `/editor-login` using their email address and password. No email delivery service, Resend account, or `CMS_SITE_URL` variable is required. Supabase stores the password hashes; the repository never stores account passwords.
 
-1. In Vercel → Project → Settings → Environment Variables (Production), add:
-   - `CMS_SHARED_PASSWORD`: the workspace password. Changing it later signs everyone out.
-   - `CMS_SESSION_SECRET`: an independent long random secret used to sign sessions.
-   - `CMS_SHARED_EDITOR_NAME`: the name shown on edits and proposals made with it, for example `Ben Breen`.
-   - `ADMIN_LOCAL_ENABLED`: `true`, which turns the workspace on outside development.
-   - Check that `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are also set there. Saving and publishing need them.
-2. Redeploy. Then open `<site>/admin` and enter the password.
+- **My account:** each person can change their password by providing their current password and confirming a new password of 12–128 characters.
+- **Editors & access:** only the owner can view the account list and reset a collaborator's password. Share reset passwords privately. Editors cannot reset anyone else's password.
+- **Forgotten owner password:** use the owner backup login to reset the named owner account under Editors & access.
+- **Roles:** editors can prepare drafts, preview, review, and publish. Owners also manage account passwords.
+- **Attribution:** an individual account takes precedence over an old shared-password cookie, so edits retain the person's name and role.
 
-Set `NEXT_PUBLIC_SITE_URL=https://www.psychedelicarchive.com` in Production so sitemap, canonical, and social URLs use the public domain. Keep service-role credentials and password variables server-only; never prefix them with `NEXT_PUBLIC_`.
+Starter credentials are saved in owner-only, Git-ignored `.env.cms-*` files on the owner's computer. Share only the relevant person's credentials, then have them change the starter password under My account. These local files are not updated when someone changes their password.
 
-The password signs you in as the workspace owner for 30 days on that browser. On `localhost` in development no sign-in is needed.
+## Owner backup password
+
+Keep `CMS_SHARED_PASSWORD` and an independent, long random `CMS_SESSION_SECRET` in Vercel Production for owner recovery. The backup form is collapsed under **Owner backup password** on the login page. Give this password only to the owner. Changing it signs out existing backup sessions. Signing in with it signs out the individual session on that browser only.
+
+Never expose service-role credentials or password variables with a `NEXT_PUBLIC_` prefix. On loopback in development, the local workspace remains available without signing in.
 
 ## Proposals
 
@@ -45,10 +45,6 @@ A proposal is a private draft marked for the team to review. It appears under **
 - **Reviewing:** each proposal opens with a panel saying who proposed it and why. **Accept and start editing** turns it into an ordinary draft. **Decline** keeps the record but takes it off the list, with an optional note.
 
 Apply the shared queue migration with `supabase db push`, then seed batches with `node scripts/sync_corpus_review.mjs`. The script uses the local environment file, imports existing decision history only when the shared history is empty, and links already-created nominations. It never publishes sources. Run it before opening the shared queue to collaborators; subsequent scans can be synced without overwriting their reviews.
-
-## Inviting editors later
-
-Shared-password users are owners, so **Editors & access** offers the invite form. Email invitations also need the one-time setup below: `CMS_SITE_URL`, plus the redirect URL in Supabase. Invited editors sign in with an email link. The password keeps working alongside.
 
 ## For collaborators
 

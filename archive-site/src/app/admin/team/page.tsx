@@ -1,9 +1,45 @@
+import { redirect } from "next/navigation";
 import { requireEditor, localWorkspace } from "@/lib/cms/auth";
 import { getAdminSupabaseClient } from "@/lib/admin-cms";
-import { inviteEditor } from "./actions";
-export default async function Team({ searchParams }: { searchParams: Promise<{ invited?: string; error?: string }> }) {
-  const editor = await requireEditor(); const params = await searchParams;
+import { resetEditorPassword } from "./actions";
+
+export default async function Team({ searchParams }: { searchParams: Promise<{ reset?: string; error?: string }> }) {
+  const editor = await requireEditor();
+  if (editor.role !== "owner") redirect("/admin/sources");
+  const params = await searchParams;
   const client = !localWorkspace && getAdminSupabaseClient();
-  const { data } = client ? await client.from("editor_profiles").select("display_name, role").order("display_name") : { data: [] };
-  return <div style={{ maxWidth: 760 }}><div className="cms-heading"><div><h1>Editors & access</h1><p>Invited editors can prepare drafts, preview, and publish sources.</p></div></div><div className="cms-card">{data?.map((p, i) => <div key={i} className="cms-person">{p.display_name}<span className="cms-badge">{p.role}</span></div>)}{!client && <p>Connect Supabase to invite collaborators. The local workspace is available on this computer.</p>}{params.invited && <p className="cms-success" role="status">Invitation sent. Your colleague can sign in from the email link.</p>}{params.error && <p className="cms-error" role="alert">{params.error === "profile" ? "The invitation was sent, but editor access could not be saved. Add their user ID to editor_profiles before they sign in." : "The invitation could not be completed. Check the email, Supabase email settings, and CMS_SITE_URL."}</p>}{editor.role === "owner" && client && <form action={inviteEditor} style={{ marginTop: 24 }}><label>Name<input name="name" required /></label><label>Email<input name="email" type="email" required /></label><button className="cms-primary">Invite editor</button></form>}</div></div>;
+  const { data, error } = client ? await client.from("editor_profiles").select("user_id, display_name, role").order("display_name") : { data: [], error: null };
+  if (error) throw new Error("The account list could not be loaded.");
+  const people = await Promise.all((data || []).map(async profile => {
+    const user = client && await client.auth.admin.getUserById(profile.user_id);
+    return { ...profile, email: user && user.data.user?.email };
+  }));
+  const messages: Record<string, string> = {
+    account: "That editor account could not be found.",
+    owner: "Use My account to change your own password.",
+    length: "Use a password between 12 and 128 characters.",
+    match: "The new passwords do not match.",
+    save: "The password could not be reset. Please try again."
+  };
+  return <div style={{ maxWidth: 760 }}>
+    <div className="cms-heading"><div><h1>Editors & access</h1><p>Each person signs in with their email address and password.</p></div></div>
+    {params.reset && <p className="cms-success" role="status">Password reset. Share the new password privately with that person.</p>}
+    {params.error && <p className="cms-error" role="alert">{messages[params.error] || messages.save}</p>}
+    <div className="cms-card">
+      {people.map(person => <div key={person.user_id} style={{ padding: "16px 0" }}>
+        <div className="cms-person">{person.display_name}<span className="cms-badge">{person.role}</span></div>
+        <p className="cms-field-help">{person.email}</p>
+        {client && (person.role === "editor" || editor.via === "password") && <details>
+          <summary>Reset password for {person.display_name}</summary>
+          <form action={resetEditorPassword} style={{ marginTop: 16 }}>
+            <input type="hidden" name="user_id" value={person.user_id} />
+            <label>New password for {person.display_name}<input name="new_password" type="password" autoComplete="new-password" minLength={12} maxLength={128} required /></label>
+            <label>Confirm password for {person.display_name}<input name="confirm_password" type="password" autoComplete="new-password" minLength={12} maxLength={128} required /></label>
+            <button>Reset password</button>
+          </form>
+        </details>}
+      </div>)}
+      {!client && <p>Account management is available on the shared archive.</p>}
+    </div>
+  </div>;
 }
