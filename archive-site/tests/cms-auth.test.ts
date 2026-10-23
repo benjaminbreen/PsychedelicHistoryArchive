@@ -11,6 +11,7 @@ const state = {
   passwordUpdates: 0,
   resets: 0,
   signedOut: 0,
+  cookieOptions: {} as Record<string, unknown>,
   client: {} as unknown,
   admin: {} as unknown
 };
@@ -31,7 +32,7 @@ const modules: Record<string, string> = {
   "server-only": "export {};",
   "next/headers": `export async function cookies() { return { get: name => { const value = ${fixture}.jar.get(name); return value ? { value } : undefined; }, delete: name => ${fixture}.jar.delete(name), getAll: () => [] }; } export async function headers() { return new Map([["host", "www.psychedelicarchive.com"]]); }`,
   "next/navigation": "export function redirect(url) { throw new Error('Redirect: ' + url); }",
-  "@supabase/ssr": `export function createServerClient() { return ${fixture}.client; }`,
+  "@supabase/ssr": `export function createServerClient(url, key, options) { ${fixture}.cookieOptions = options.cookieOptions; return ${fixture}.client; }`,
   "@/lib/admin-cms": `export const isAdminEnabled = true; export function getAdminSupabaseClient() { return ${fixture}.admin; }`,
   "@/lib/cms/repository": `export function cmsClient() { return ${fixture}.admin; }`
 };
@@ -45,7 +46,22 @@ process.env.CMS_SESSION_SECRET = "test-only-session-secret";
 process.env.SUPABASE_URL = "https://example.supabase.co";
 process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY = "test-only-public-key";
 
-const { getEditor, newPasswordSession } = await import("../src/lib/cms/auth");
+const { getEditor, newPasswordSession, authClient } = await import("../src/lib/cms/auth");
+
+test("production password sessions use secure, HTTP-only cookies", async () => {
+  const environment: Record<string, string | undefined> = process.env;
+  const previous = environment.NODE_ENV;
+  environment.NODE_ENV = "production";
+  try {
+    await authClient();
+    assert.equal(state.cookieOptions.secure, true);
+    assert.equal(state.cookieOptions.httpOnly, true);
+    assert.equal(state.cookieOptions.sameSite, "lax");
+  } finally {
+    if (previous === undefined) delete environment.NODE_ENV;
+    else environment.NODE_ENV = previous;
+  }
+});
 
 test("anonymous requests cannot enter the workspace", async () => {
   state.jar.clear(); state.user = null; state.profile = null;
