@@ -216,3 +216,18 @@ function stripInlineMarkdown(value: string) {
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
     .trim();
 }
+
+// Plain-text version of a Markdown summary for cards and lists, where links and emphasis can't render.
+export function markdownToPlainText(value: string | null | undefined) {
+  return (value ?? "")
+    .replace(/!\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/\[\^[^\]]+\]/g, "")
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/^\s{0,3}(#{1,6}|>)\s*/gm, "")
+    .replace(/(\*\*|__)(.+?)\1/g, "$2")
+    .replace(/(^|[^\w*])[*_]([^*_\n]+)[*_](?=[^\w*]|$)/g, "$1$2")
+    .replace(/`([^`]*)`/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+}

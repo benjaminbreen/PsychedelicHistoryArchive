@@ -1,9 +1,25 @@
 import { clsx } from "clsx";
-import type { ArchiveSource } from "@/lib/types";
+import {
+  AudioLines,
+  BookOpen,
+  Clapperboard,
+  FileText,
+  Landmark,
+  Mail,
+  Mic,
+  Newspaper,
+  NotebookPen,
+  ScrollText,
+  Shapes,
+  Stethoscope,
+  type LucideIcon
+} from "lucide-react";
+import type { ArchiveSource, SourceType } from "@/lib/types";
 
 type SourceThumbnailProps = {
   tone: ArchiveSource["imageTone"];
   title: string;
+  type?: SourceType;
   className?: string;
 };
 
@@ -15,18 +31,31 @@ const toneClasses: Record<ArchiveSource["imageTone"], string> = {
   letter: "from-[#F8F2E8] via-[#EEE0CF] to-[#BBA98E]"
 };
 
-export function SourceThumbnail({ tone, title, className }: SourceThumbnailProps) {
-  const initials = title
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((word) => word[0])
-    .join("")
-    .toUpperCase();
+const typeIcons: Partial<Record<SourceType, LucideIcon>> = {
+  Book: BookOpen,
+  "Ancient Text": ScrollText,
+  Manuscript: ScrollText,
+  Letter: Mail,
+  "Field Notes": NotebookPen,
+  "Newspaper Article": Newspaper,
+  "Audio/Video": AudioLines,
+  Film: Clapperboard,
+  Testimony: Mic,
+  "Patient Report": Stethoscope,
+  "Medical Report": Stethoscope,
+  "Archaeological Site": Landmark,
+  "Architectural Site": Landmark,
+  "Material Artifact": Shapes,
+  Iconography: Shapes
+};
+
+// Stand-in for sources without a scan: a paper card marked with the source's medium.
+export function SourceThumbnail({ tone, title, type, className }: SourceThumbnailProps) {
+  const Icon = (type && typeIcons[type]) || FileText;
 
   return (
     <div
-      aria-label={`Thumbnail for ${title}`}
+      aria-label={type ? `${type}: ${title}` : title}
       className={clsx(
         "relative overflow-hidden rounded-sm border border-archive-line bg-gradient-to-br shadow-sm",
         toneClasses[tone],
@@ -35,9 +64,8 @@ export function SourceThumbnail({ tone, title, className }: SourceThumbnailProps
       role="img"
     >
       <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(0deg,rgba(23,20,23,.14)_1px,transparent_1px)] [background-size:100%_13px]" />
-      <div className="absolute left-[18%] top-[14%] h-[72%] w-[64%] rounded-[2px] border border-archive-ink/15 bg-archive-surface/45" />
-      <div className="absolute inset-x-0 top-[34%] text-center font-display text-[clamp(1.1rem,4vw,2.8rem)] font-semibold tracking-normal text-archive-ink/55">
-        {initials}
+      <div className="absolute inset-0 grid place-items-center">
+        <Icon aria-hidden className="h-[34%] max-h-10 w-[34%] max-w-10 text-archive-ink/45" strokeWidth={1.4} />
       </div>
     </div>
   );

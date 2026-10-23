@@ -4,7 +4,7 @@ import { SourceThumbnail } from "@/components/source-thumbnail";
 import type { ArchiveSource } from "@/lib/types";
 
 type SourceImageProps = {
-  source: Pick<ArchiveSource, "title" | "imagePath" | "thumbnailPath" | "imageAlt" | "imageTone">;
+  source: Pick<ArchiveSource, "title" | "imagePath" | "thumbnailPath" | "imageAlt" | "imageTone"> & Partial<Pick<ArchiveSource, "type">>;
   className?: string;
   imageClassName?: string;
 };
@@ -16,6 +16,7 @@ export function SourceImage({ source, className, imageClassName }: SourceImagePr
         className={className}
         title={source.title}
         tone={source.imageTone}
+        type={source.type}
       />
     );
   }

@@ -14,6 +14,7 @@ import { getFacetCounts } from "@/lib/archive-query";
 import { ERAS, countSourcesInEra, eraHref, getEraForYear } from "@/lib/eras";
 import { listArchiveSourceSummariesFromSupabase, listCollectionSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { getSourceTitleParts } from "@/lib/source-title";
+import { markdownToPlainText } from "@/lib/markdown";
 import type { ArchiveSource, FacetOption } from "@/lib/types";
 
 export const revalidate = 3600;
@@ -108,7 +109,7 @@ export default async function HomePage() {
                       {collection.title}
                     </span>
                     <span className="mt-1 block text-sm leading-5 text-archive-muted">
-                      {collection.summary || collection.subtitle || "Curated collection from the archive."}
+                      {markdownToPlainText(collection.summary) || collection.subtitle || "Curated collection from the archive."}
                     </span>
                     <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-archive-violet transition group-hover:text-archive-violetDark">
                       {collection.collectionItemCount ?? 0} sources <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -170,14 +171,19 @@ export default async function HomePage() {
   );
 }
 
-function eraRangeFacets(sources: Array<{ year: number }>): FacetOption[] {
-  return ERAS.map((era) => ({
-    label: era.label,
-    count: countSourcesInEra(sources, era),
-    href: eraHref(era),
-    imagePath: era.bannerThumbnail ?? era.bannerImage,
-    subtitle: era.eyebrow
-  }));
+// Eras without commissioned art borrow a scan from one of their own sources, preferring editor picks.
+function eraRangeFacets(sources: ArchiveSource[]): FacetOption[] {
+  return ERAS.map((era) => {
+    const withImages = sources.filter((source) => source.imagePath && getEraForYear(source.year)?.slug === era.slug);
+    const fallback = withImages.find((source) => source.featured) ?? withImages[0];
+    return {
+      label: era.label,
+      count: countSourcesInEra(sources, era),
+      href: eraHref(era),
+      imagePath: era.bannerThumbnail ?? era.bannerImage ?? fallback?.thumbnailPath ?? fallback?.imagePath,
+      subtitle: era.eyebrow
+    };
+  });
 }
 
 function browseTypeFacets(counts: Record<string, number>): FacetOption[] {
@@ -210,7 +216,7 @@ function featuredSourcePool(sources: ArchiveSource[]): FeaturedSourceCard[] {
     type: source.type,
     displayDate: source.displayDate,
     title: getSourceTitleParts(source).title,
-    summary: source.summary,
+    summary: markdownToPlainText(source.summary),
     author: source.author,
     imagePath: source.imagePath,
     thumbnailPath: source.thumbnailPath,

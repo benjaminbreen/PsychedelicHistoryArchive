@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { PageShell } from "@/components/page/page-shell";
 import { listCollectionSourceSummariesFromSupabase } from "@/lib/supabase-archive";
+import { markdownToPlainText } from "@/lib/markdown";
 import type { ArchiveSource } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -175,9 +176,9 @@ export default async function CollectionsPage({ searchParams }: CollectionsPageP
 function collectionSourceToCard(source: ArchiveSource): CollectionCard {
   return {
     title: source.title,
-    description: source.summary || source.excerpt || "Curated collection from the archive.",
+    description: markdownToPlainText(source.summary) || source.excerpt || "Curated collection from the archive.",
     href: `/collections/${source.slug}`,
-    imagePath: source.imagePath,
+    imagePath: source.thumbnailPath || source.imagePath,
     imageAlt: source.imageAlt || source.title,
     imageTone: "paper",
     sourceCount: source.collectionItemCount ?? source.collectionItems?.length ?? 0,

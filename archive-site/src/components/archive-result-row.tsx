@@ -4,6 +4,7 @@ import { ExternalLink } from "lucide-react";
 import { Chip } from "@/components/ui/chip";
 import { SourceImage } from "@/components/source-image";
 import { getSourceTitleParts } from "@/lib/source-title";
+import { markdownToPlainText } from "@/lib/markdown";
 import type { SearchMatchSummary } from "@/lib/search-types";
 import type { ArchiveSource } from "@/lib/types";
 
@@ -26,7 +27,7 @@ export function ArchiveResultRow({ match, source }: { match?: SearchMatchSummary
               </p>
             )}
             <p className="mt-1 line-clamp-2 max-w-[32rem] text-[0.82rem] leading-5 text-archive-ink">
-              {source.summary}
+              {markdownToPlainText(source.summary)}
             </p>
             <SearchMatchExcerpt className="mt-2 max-w-[32rem] text-[0.76rem] leading-5" clampClassName="line-clamp-2" match={match} />
             {source.accessType === "external" && (

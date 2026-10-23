@@ -326,7 +326,6 @@ export const ERAS: EraDefinition[] = [
     icon: "lsd",
     bannerGradient:
       "linear-gradient(115deg, #2a223a 0%, #574272 28%, #8b6a4a 62%, #d9c08a 100%)",
-    bannerImage: "/images/eras/1943-1962.jpg",
     keyFigures: [
       { name: "Albert Hofmann", slug: "albert-hofmann" },
       { name: "R. Gordon Wasson", slug: "r-gordon-wasson" },
@@ -384,7 +383,6 @@ export const ERAS: EraDefinition[] = [
     icon: "counterculture",
     bannerGradient:
       "linear-gradient(115deg, #3a224a 0%, #7a3a82 28%, #c26a4a 62%, #f0c280 100%)",
-    bannerImage: "/images/eras/1963-1979.jpg",
     keyFigures: [
       { name: "Timothy Leary", slug: "timothy-leary" },
       { name: "Richard Alpert", slug: "richard-alpert" },
@@ -428,7 +426,6 @@ export const ERAS: EraDefinition[] = [
     icon: "therapy",
     bannerGradient:
       "linear-gradient(115deg, #1f2630 0%, #2f4858 30%, #7a8f9c 60%, #d4d8c8 100%)",
-    bannerImage: "/images/eras/1980-present.jpg",
     keyFigures: [
       { name: "Rick Doblin", slug: "rick-doblin" },
       { name: "Roland Griffiths", slug: "roland-griffiths" },

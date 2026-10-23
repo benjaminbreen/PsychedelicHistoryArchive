@@ -31,14 +31,9 @@
   max-width: 1180px; margin: 0 auto; padding: 30px 32px 26px;
   display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 56px; align-items: start;
 }
-.heroText > * { animation: rise 700ms var(--ease) both; }
-.heroText > *:nth-child(2) { animation-delay: 60ms; }
-.heroText > *:nth-child(3) { animation-delay: 120ms; }
-.heroText > *:nth-child(4) { animation-delay: 180ms; }
-.heroText > *:nth-child(5) { animation-delay: 240ms; }
-.heroText > *:nth-child(6) { animation-delay: 300ms; }
-.heroText > *:nth-child(7) { animation-delay: 360ms; }
-@keyframes rise { from { opacity: 0; transform: translateY(12px); } }
+/* Content arrives readable: a brief fade, no stagger, so the page never looks washed out while loading. */
+.heroText > * { animation: rise 200ms var(--ease) both; }
+@keyframes rise { from { opacity: 0.4; } }
 
 .crumbs { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--faint); margin-bottom: 14px; }
 .crumbs a { color: var(--muted); text-decoration: none; transition: color 150ms; }
@@ -67,7 +62,7 @@
 .intro :global(.source-markdown), .intro > div { font: inherit; }
 .intro p:last-child { margin-bottom: 0; }
 .intro a { color: var(--violet); }
-.stackWrap { display: flex; flex-direction: column; align-items: center; animation: rise 900ms 200ms var(--ease) both; }
+.stackWrap { display: flex; flex-direction: column; align-items: center; animation: rise 200ms var(--ease) both; }
 .status {
   display: flex; gap: 10px; align-items: baseline; width: 100%; max-width: 300px; min-height: 4.6em;
   font-size: 0.84rem; line-height: 1.5; color: var(--muted); margin: 14px 0 0;
@@ -160,8 +155,8 @@
 
 .main { min-width: 0; width: 100%; max-width: 780px; justify-self: center; }
 .body:not(.noRail) .main { translate: -56px 0; }
-.viewPane { animation: fade 380ms var(--ease); }
-@keyframes fade { from { opacity: 0; transform: translateY(6px); } }
+.viewPane { animation: fade 180ms var(--ease); }
+@keyframes fade { from { opacity: 0.4; } }
 
 /* ---------- Transcript ---------- */
 .lineated { font-family: var(--source-serif-family); font-size: calc(var(--source-transcript-size) * 0.9); line-height: 1.75; }
