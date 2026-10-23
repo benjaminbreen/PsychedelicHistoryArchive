@@ -15,6 +15,7 @@ import { searchArchiveSourcesWithMode } from "@/lib/hybrid-search";
 import { searchModeParam } from "@/lib/search-types";
 import { listArchiveSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { getSourceTitleParts } from "@/lib/source-title";
+import { markdownToPlainText } from "@/lib/markdown";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { ArchiveSource } from "@/lib/types";
@@ -298,7 +299,7 @@ function FeaturedArchiveSource({ source }: { source: ArchiveSource }) {
             {source.displayDate} <span className="px-1 text-archive-muted">•</span> {formatFeaturedType(source.type)}
           </div>
           <p className="mt-5 line-clamp-3 max-w-[18rem] text-[0.9rem] leading-6 text-archive-ink">
-            {source.summary}
+            {markdownToPlainText(source.summary)}
           </p>
         </div>
         <Link className="mt-1 block" href={`/archive/${source.slug}`} aria-label={`View source: ${source.title}`}>

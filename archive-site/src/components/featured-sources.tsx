@@ -44,7 +44,7 @@ export function FeaturedSources({ pool }: { pool: FeaturedSourceCard[] }) {
   }, [pool]);
 
   return (
-    <div className={clsx("grid gap-3 transition-opacity duration-300 md:grid-cols-3 xl:grid-cols-4", ready ? "opacity-100" : "opacity-0")}>
+    <div className={clsx("grid gap-3 transition-opacity duration-150 md:grid-cols-3 xl:grid-cols-4", ready ? "opacity-100" : "opacity-0")}>
       {cards.map((source) => (
         <Link
           className="featured-source-card focus-ring group grid min-h-[8.5rem] grid-cols-[6.25rem_minmax(0,1fr)] gap-4 rounded-md border border-[rgb(var(--archive-warm-line))] p-3 transition hover:border-archive-violet/45 hover:bg-[rgb(var(--archive-warm-hover))]"

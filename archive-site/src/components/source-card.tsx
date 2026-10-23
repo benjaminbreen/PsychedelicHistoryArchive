@@ -2,6 +2,7 @@ import { SearchMatchExcerpt } from "@/components/search-match-excerpt";
 import Link from "next/link";
 import { SourceImage } from "@/components/source-image";
 import { getSourceTitleParts } from "@/lib/source-title";
+import { markdownToPlainText } from "@/lib/markdown";
 import type { SearchMatchSummary } from "@/lib/search-types";
 import type { ArchiveSource } from "@/lib/types";
 
@@ -40,7 +41,7 @@ export function SourceCard({ match, source, featured = false }: SourceCardProps)
             </p>
           )}
           <p className="mt-2 line-clamp-3 min-h-[5.25rem] text-[1.04rem] leading-7 text-archive-ink/82">
-            {source.summary}
+            {markdownToPlainText(source.summary)}
           </p>
           <SearchMatchExcerpt className="mt-3 text-[0.82rem] leading-5" clampClassName="line-clamp-3" match={match} />
           <Link href={href} className="mt-4 inline-flex text-[1.02rem] leading-6 text-archive-ink underline decoration-archive-ink/70 underline-offset-4 transition hover:text-archive-violet hover:decoration-archive-violet focus-ring rounded-sm">

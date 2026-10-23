@@ -10,6 +10,7 @@ import { SourceReaderTabs } from "@/components/source-reader-tabs";
 import { Chip } from "@/components/ui/chip";
 import { JsonLd, SITE_NAME, buildBreadcrumbJsonLd, buildCollectionJsonLd, canonicalPath, seoDescription, sourceImageMetadata } from "@/lib/seo";
 import { getCollectionSourceDetailFromSupabase } from "@/lib/supabase-archive";
+import { markdownToPlainText } from "@/lib/markdown";
 import type { ArchiveSource } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -121,7 +122,7 @@ function CollectionSourcePage({ source }: { source: ArchiveSource }) {
               </p>
             )}
             <p className="mt-3 max-w-3xl text-[15px] leading-6 text-archive-muted">
-              {source.summary || "A compound archival source organized into issue- or volume-level records."}
+              {markdownToPlainText(source.summary) || "A compound archival source organized into issue- or volume-level records."}
             </p>
 
             <div className="mt-5 flex flex-wrap items-start text-sm">
