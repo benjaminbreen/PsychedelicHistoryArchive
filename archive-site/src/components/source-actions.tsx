@@ -270,6 +270,11 @@ function sourceAuthors(source: ArchiveSource) {
 function risType(source: ArchiveSource) {
   if (source.type === "Academic Article" || source.type === "Newspaper Article") return "JOUR";
   if (source.type === "Book" || source.type === "Ancient Text") return "BOOK";
+  if (source.type === "Periodical") return "MGZN";
+  if (source.type === "Court Opinion") return "CASE";
+  if (source.type === "Law & Regulation") return "STAT";
+  if (source.type === "Patent") return "PAT";
+  if (source.type === "Government Report") return "GOVDOC";
   if (source.medium === "Audio/Video" || source.type === "Film") return "VIDEO";
   return "GEN";
 }

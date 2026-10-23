@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { SourceImage } from "@/components/source-image";
+import { sourceKicker } from "@/lib/display-date";
 import type { ArchiveSource } from "@/lib/types";
 
 export type FeaturedSourceCard = Pick<ArchiveSource, "id" | "slug" | "type" | "displayDate" | "title" | "summary" | "author" | "imagePath" | "thumbnailPath" | "imageAlt" | "imageTone"> & {
@@ -58,7 +59,7 @@ export function FeaturedSources({ pool }: { pool: FeaturedSourceCard[] }) {
           />
           <span className="min-w-0">
             <span className="display-label block text-[0.8rem] text-archive-olive">
-              {source.type}, {source.displayDate}
+              {sourceKicker(source.type, source.displayDate)}
             </span>
             <span className="mt-2 block font-serif text-[1.03rem] font-semibold leading-snug text-archive-ink group-hover:text-archive-violetDark">
               {source.title}

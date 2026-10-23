@@ -563,11 +563,6 @@ a {
       border-radius: 0.72rem;
     }
 
-    .home-hero-search button {
-      border-left: 0;
-      border-top: 1px solid rgba(204, 190, 166, 0.82);
-    }
-
     .featured-source-card {
       grid-template-columns: 5.25rem minmax(0, 1fr) !important;
       gap: 0.75rem !important;

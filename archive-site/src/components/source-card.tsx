@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SourceImage } from "@/components/source-image";
 import { getSourceTitleParts } from "@/lib/source-title";
 import { markdownToPlainText } from "@/lib/markdown";
+import { sourceKicker } from "@/lib/display-date";
 import type { SearchMatchSummary } from "@/lib/search-types";
 import type { ArchiveSource } from "@/lib/types";
 
@@ -28,7 +29,7 @@ export function SourceCard({ match, source, featured = false }: SourceCardProps)
         </Link>
         <div className="max-w-[21rem]">
           <div className="display-label text-[0.9rem] text-archive-olive">
-            {source.type}, {source.displayDate}
+            {sourceKicker(source.type, source.displayDate)}
           </div>
           <Link href={href} className="block focus-ring rounded-sm">
             <h3 className="mt-3 line-clamp-2 min-h-[3.25rem] font-display text-[1.72rem] font-normal uppercase leading-[0.94] tracking-[0.01em] text-archive-ink transition group-hover:text-archive-violet">

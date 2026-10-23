@@ -15,6 +15,7 @@ import { ERAS, countSourcesInEra, eraHref, getEraForYear } from "@/lib/eras";
 import { listArchiveSourceSummariesFromSupabase, listCollectionSourceSummariesFromSupabase } from "@/lib/supabase-archive";
 import { getSourceTitleParts } from "@/lib/source-title";
 import { markdownToPlainText } from "@/lib/markdown";
+import { shortDisplayDate } from "@/lib/display-date";
 import type { ArchiveSource, FacetOption } from "@/lib/types";
 
 export const revalidate = 3600;
@@ -43,25 +44,18 @@ export default async function HomePage() {
                 <h1 className="home-hero-title max-w-[42rem] text-archive-ink">
                   A scholarly archive of psychedelic history, broadly construed
                 </h1>
-                <div className="mt-4 grid gap-4 text-[0.96rem] leading-[1.64] text-archive-ink/85 md:grid-cols-2 md:gap-7">
-                  <p>
-                    The Psychedelic History Archive is an educational platform
-                    to collect some of the most significant public domain
-                    historical sources relating to the history and culture of
-                    psychedelics from the early modern period to the present.
-                  </p>
-                  <p>
-                    Our goal is to create a free, objective, non-profit resource
-                    for students, researchers, patients, and others who want to
-                    access historical primary sources and learn about
-                    understudied aspects of psychedelic history.
-                  </p>
-                </div>
+                <p className="mt-3 max-w-[42rem] text-[0.98rem] leading-[1.6] text-archive-ink/85">
+                  A free, non-profit collection of significant public domain
+                  sources on the history and culture of psychedelics, from the
+                  early modern period to the present, for students,
+                  researchers, patients, and anyone curious about its
+                  understudied corners.
+                </p>
                 <div className="mt-5">
                   <SearchBar
                     className="home-hero-search"
                     mode="best"
-                    placeholder="Search people, topics, sources, and more..."
+                    placeholder="Search the archive…"
                     showModeOptions
                     size="lg"
                     submitLabel="Search"
@@ -143,10 +137,10 @@ export default async function HomePage() {
                   <BookOpen className="mt-0.5 h-4 w-4 shrink-0 text-archive-muted" />
                   <span>
                     <span className="block font-medium">{getSourceTitleParts(source).title}</span>
-                    <span className="block text-xs text-archive-muted">{source.author}</span>
+                    <span className="block text-[0.8rem] text-archive-muted">{source.author}</span>
                   </span>
                 </span>
-                <span className="text-xs text-archive-muted md:text-sm md:text-archive-ink">{source.displayDate}</span>
+                <span className="text-xs text-archive-muted md:text-sm md:text-archive-ink">{shortDisplayDate(source.displayDate)}</span>
                 <span className="text-xs font-semibold text-archive-muted md:text-sm md:font-normal md:text-archive-ink">{source.type}</span>
                 <span className="flex flex-wrap gap-1">
                   {source.tags.slice(0, 2).map((tag) => (

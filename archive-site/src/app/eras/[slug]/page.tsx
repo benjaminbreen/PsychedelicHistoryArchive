@@ -1,3 +1,4 @@
+import { shortDisplayDate } from "@/lib/display-date";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -168,7 +169,7 @@ export default async function EraDetailPage({
                           ) : null}
                         </div>
                         <span className="font-display text-[0.86rem] tracking-[0.04em] text-archive-muted">
-                          {source.displayDate || source.year}
+                          {shortDisplayDate(source.displayDate) || source.year}
                         </span>
                       </Link>
                     </li>

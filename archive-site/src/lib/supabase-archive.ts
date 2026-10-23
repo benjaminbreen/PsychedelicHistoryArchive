@@ -1501,22 +1501,16 @@ function firstRelated<T>(value: T | T[] | null | undefined) {
   return value;
 }
 
+const SOURCE_TYPES = new Set<string>([
+  "Book", "Academic Article", "Ancient Text", "Archaeological Site", "Architectural Site", "Essay", "Letter",
+  "Iconography", "Material Artifact", "Patient Report", "Medical Report", "Government Report", "Court Opinion",
+  "Law & Regulation", "Patent", "Periodical", "Audio/Video", "Film", "Field Notes", "Manuscript",
+  "Newspaper Article", "Testimony"
+] satisfies SourceType[]);
+
 function normalizeType(value: string | null): SourceType {
-  const type = value || "Source";
-  if (type === "Film") return "Film";
-  if (type === "Newspaper Article") return "Newspaper Article";
-  if (type === "Manuscript") return "Manuscript";
-  if (type === "Field Notes") return "Field Notes";
-  if (type === "Testimony") return "Testimony";
-  if (type === "Audio/Video") return "Audio/Video";
-  if (type === "Academic Article") return "Academic Article";
-  if (type === "Ancient Text") return "Ancient Text";
-  if (type === "Archaeological Site") return "Archaeological Site";
-  if (type === "Architectural Site") return "Architectural Site";
-  if (type === "Iconography") return "Iconography";
-  if (type === "Material Artifact") return "Material Artifact";
-  if (type === "Book") return "Book";
-  return "Source";
+  if (value === "Book Excerpt") return "Book";
+  return value && SOURCE_TYPES.has(value) ? (value as SourceType) : "Source";
 }
 
 function normalizeMedium(value: string | null): ArchiveSource["medium"] {

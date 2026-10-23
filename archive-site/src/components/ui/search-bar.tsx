@@ -46,13 +46,13 @@ export function SearchBar({
         autoComplete="off"
         className={clsx(
           "focus-ring w-full rounded-md border border-archive-line bg-archive-surface text-archive-ink shadow-sm transition placeholder:text-archive-muted",
-          hasSubmit && "sm:rounded-r-none",
+          hasSubmit && "rounded-r-none",
           size === "lg"
             ? hasSubmit
-              ? "h-12 pl-11 pr-4 text-[0.98rem] sm:h-[3.35rem] sm:pr-24"
+              ? "h-12 pl-11 pr-24 text-[0.98rem] sm:h-[3.35rem]"
               : "h-16 pl-12 pr-5 text-base"
             : hasSubmit
-              ? "h-11 pl-11 pr-4 text-sm sm:pr-24"
+              ? "h-11 pl-11 pr-24 text-sm"
               : "h-11 pl-11 pr-4 text-sm"
         )}
         defaultValue={defaultValue}
@@ -86,7 +86,7 @@ export function SearchBar({
       )}
       {submitLabel && (
         <button
-          className="focus-ring mt-2 inline-flex h-11 w-full items-center justify-center rounded-md border border-archive-line bg-archive-lavender px-5 text-sm font-semibold text-archive-ink transition hover:bg-archive-violet hover:text-white sm:absolute sm:right-0 sm:top-0 sm:mt-0 sm:h-full sm:w-auto sm:rounded-l-none sm:rounded-r-md"
+          className="focus-ring absolute right-0 top-0 inline-flex h-full items-center justify-center rounded-l-none rounded-r-md border border-archive-line bg-archive-lavender px-4 text-sm font-semibold text-archive-ink transition hover:bg-archive-violet hover:text-white sm:px-5"
           type="submit"
         >
           {submitLabel}

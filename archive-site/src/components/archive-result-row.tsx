@@ -5,6 +5,7 @@ import { Chip } from "@/components/ui/chip";
 import { SourceImage } from "@/components/source-image";
 import { getSourceTitleParts } from "@/lib/source-title";
 import { markdownToPlainText } from "@/lib/markdown";
+import { shortDisplayDate } from "@/lib/display-date";
 import type { SearchMatchSummary } from "@/lib/search-types";
 import type { ArchiveSource } from "@/lib/types";
 
@@ -37,7 +38,7 @@ export function ArchiveResultRow({ match, source }: { match?: SearchMatchSummary
             )}
           </div>
         </div>
-        <div className="hidden text-sm md:block">{source.displayDate}</div>
+        <div className="hidden text-sm md:block" title={source.displayDate}>{shortDisplayDate(source.displayDate)}</div>
         <div className="hidden text-sm md:block">{source.type}</div>
         <div className="hidden flex-wrap gap-2 md:flex">
           {source.tags.slice(0, 3).map((tag, index) => (
@@ -81,7 +82,7 @@ export function ArchiveCompactRow({ match, source }: { match?: SearchMatchSummar
           </div>
         )}
       </div>
-      <div className="hidden truncate text-archive-muted md:block">{source.displayDate}</div>
+      <div className="hidden truncate text-archive-muted md:block" title={source.displayDate}>{shortDisplayDate(source.displayDate)}</div>
       <div className="hidden truncate text-archive-muted md:block">{source.type}</div>
       <div className="hidden truncate text-archive-muted md:block">{source.people[0] ?? "Unknown"}</div>
       <div className="hidden truncate text-archive-muted md:block">{source.tags.slice(0, 2).join(", ")}</div>

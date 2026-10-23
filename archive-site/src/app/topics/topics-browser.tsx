@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { ArrowDownUp, ArrowRight, Grid2X2, List, Search } from "lucide-react";
 import Link from "next/link";
+import { sourceKicker } from "@/lib/display-date";
 import type { VisibleTopic } from "./page";
 
 type ViewMode = "grid" | "list";
@@ -198,7 +199,7 @@ function TopicFooter({ topic }: { topic: VisibleTopic }) {
               <li key={source.href}>
                 <Link className="focus-ring block rounded-sm text-[0.78rem] font-medium leading-4 text-archive-ink transition hover:text-archive-violet" href={source.href}>
                   <span className="line-clamp-1">{source.title}</span>
-                  <span className="mt-0.5 block text-[0.7rem] text-archive-muted">{source.displayDate} · {source.type}</span>
+                  <span className="mt-0.5 block text-[0.7rem] text-archive-muted">{sourceKicker(source.type, source.displayDate)}</span>
                 </Link>
               </li>
             ))}

@@ -244,7 +244,7 @@ function sourceSchemaType(source: ArchiveSource) {
   if (source.type === "Film" || source.readerMode === "video" || source.mediaEmbedUrl) return "VideoObject";
   if (source.medium === "Audio/Video" || source.readerMode === "audio") return "AudioObject";
   if (source.type === "Book") return "Book";
-  if (["Academic Article", "Essay", "Newspaper Article"].includes(source.type)) return "Article";
+  if (["Academic Article", "Essay", "Newspaper Article", "Periodical"].includes(source.type)) return "Article";
 
   return "CreativeWork";
 }

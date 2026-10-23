@@ -1,3 +1,4 @@
+import { sourceKicker } from "@/lib/display-date";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -159,7 +160,7 @@ export default async function BiographyPage({ params }: BiographyPageProps) {
                   <span>
                     <span className="display-label block text-[0.58rem] text-archive-muted">{source.medium}</span>
                     <span className="mt-1 line-clamp-2 block text-sm font-semibold leading-5 text-archive-ink transition group-hover:text-archive-violet">{source.title}</span>
-                    <span className="mt-1 block text-xs text-archive-muted">{source.displayDate} · {source.type}</span>
+                    <span className="mt-1 block text-xs text-archive-muted">{sourceKicker(source.type, source.displayDate)}</span>
                   </span>
                 </Link>
               ))}

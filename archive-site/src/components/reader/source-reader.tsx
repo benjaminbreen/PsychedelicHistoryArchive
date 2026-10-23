@@ -9,6 +9,7 @@ import { Lightbox } from "@/components/reader/lightbox";
 import { buildReaderModel, creatorNames, sectionText, sourceCitation, sourceUrl, textStatus, type LineatedPage, type ReaderView } from "@/lib/reader-model";
 import { isAudioFile, isPdfFile, isVideoFile } from "@/lib/source-reader";
 import { getSourceTitleParts } from "@/lib/source-title";
+import { sourceKicker } from "@/lib/display-date";
 import type { ArchiveSource, TranscriptSection } from "@/lib/types";
 import styles from "./reader.module.css";
 
@@ -299,7 +300,7 @@ export function SourceReader({ source, transcript, related = [], biographyHrefs 
               <div className={styles.relatedGrid}>
                 {related.slice(0, 4).map(r => (
                   <Link key={r.id} href={`/archive/${r.slug}`} className={styles.relatedCard}>
-                    <span className={styles.relatedMeta}>{r.type} · {r.displayDate}</span>
+                    <span className={styles.relatedMeta}>{sourceKicker(r.type, r.displayDate)}</span>
                     <span className={styles.relatedTitle}>{r.title}</span>
                     <span className={styles.relatedReason}>{r.relatedReason}</span>
                   </Link>

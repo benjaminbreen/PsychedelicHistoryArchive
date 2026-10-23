@@ -78,9 +78,9 @@ export function EraBand({ facets }: { facets: EraFacetOption[] }) {
             <span className="block font-semibold">
               {facet.label}
             </span>
-            <span className="text-xs text-archive-muted">{facet.count.toLocaleString()} sources</span>
+            <span className="text-[0.8rem] text-archive-muted">{facet.count.toLocaleString()} sources</span>
             {facet.subtitle && (
-              <span className="mt-0.5 block text-xs leading-4 text-archive-muted/85">{facet.subtitle}</span>
+              <span className="mt-0.5 block text-[0.8rem] leading-[1.15rem] text-archive-muted">{facet.subtitle}</span>
             )}
           </span>
         </Link>
@@ -103,7 +103,7 @@ export function MediumTiles({ facets }: { facets: FacetOption[] }) {
             <Icon className="h-[1.125rem] w-[1.125rem] shrink-0 text-archive-olive transition group-hover:text-archive-violet" />
             <span className="min-w-0">
               <span className="block truncate text-[0.8rem] font-semibold leading-4">{facet.label}</span>
-              <span className="text-[0.72rem] text-archive-muted">{facet.count.toLocaleString()}</span>
+              <span className="text-[0.78rem] text-archive-muted">{facet.count.toLocaleString()}</span>
             </span>
           </Link>
         );

@@ -1,3 +1,4 @@
+import { shortDisplayDate } from "@/lib/display-date";
 import type { Metadata } from "next";
 import { ArchiveFilterSidebar } from "@/components/archive-filter-sidebar";
 import { ArchiveGridCard } from "@/components/archive-grid-card";
@@ -296,7 +297,7 @@ function FeaturedArchiveSource({ source }: { source: ArchiveSource }) {
             </p>
           )}
           <div className="mt-2 text-[0.84rem] font-medium text-archive-ink">
-            {source.displayDate} <span className="px-1 text-archive-muted">•</span> {formatFeaturedType(source.type)}
+            {shortDisplayDate(source.displayDate)} <span className="px-1 text-archive-muted">•</span> {formatFeaturedType(source.type)}
           </div>
           <p className="mt-5 line-clamp-3 max-w-[18rem] text-[0.9rem] leading-6 text-archive-ink">
             {markdownToPlainText(source.summary)}
