@@ -6,7 +6,7 @@ import { clsx } from "clsx";
 import { SourceImage } from "@/components/source-image";
 import type { ArchiveSource } from "@/lib/types";
 
-export type FeaturedSourceCard = Pick<ArchiveSource, "id" | "slug" | "type" | "displayDate" | "title" | "summary" | "author" | "imagePath" | "imageAlt" | "imageTone"> & {
+export type FeaturedSourceCard = Pick<ArchiveSource, "id" | "slug" | "type" | "displayDate" | "title" | "summary" | "author" | "imagePath" | "thumbnailPath" | "imageAlt" | "imageTone"> & {
   eraSlug: string;
 };
 

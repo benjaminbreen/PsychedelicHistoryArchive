@@ -175,7 +175,7 @@ function eraRangeFacets(sources: Array<{ year: number }>): FacetOption[] {
     label: era.label,
     count: countSourcesInEra(sources, era),
     href: eraHref(era),
-    imagePath: era.bannerImage,
+    imagePath: era.bannerThumbnail ?? era.bannerImage,
     subtitle: era.eyebrow
   }));
 }
@@ -213,6 +213,7 @@ function featuredSourcePool(sources: ArchiveSource[]): FeaturedSourceCard[] {
     summary: source.summary,
     author: source.author,
     imagePath: source.imagePath,
+    thumbnailPath: source.thumbnailPath,
     imageAlt: source.imageAlt,
     imageTone: source.imageTone,
     eraSlug: getEraForYear(source.year)?.slug ?? "undated"

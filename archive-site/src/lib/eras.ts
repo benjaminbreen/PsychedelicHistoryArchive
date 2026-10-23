@@ -12,6 +12,8 @@ export type EraDefinition = {
   icon: string;
   bannerGradient: string;
   bannerImage?: string;
+  /** Small WebP for the home page era circles. */
+  bannerThumbnail?: string;
   keyFigures: { name: string; slug: string }[];
   furtherReading: {
     title: string;
@@ -38,6 +40,7 @@ export const ERAS: EraDefinition[] = [
     bannerGradient:
       "linear-gradient(115deg, #1f1815 0%, #3c2c20 32%, #6c4828 64%, #9a7240 100%)",
     bannerImage: "/images/eras/pre-500.jpg",
+    bannerThumbnail: "/images/eras/thumbs/pre-500.webp",
     keyFigures: [
       { name: "Herodotus", slug: "herodotus" },
       { name: "Hippocrates", slug: "hippocrates" },
@@ -68,6 +71,7 @@ export const ERAS: EraDefinition[] = [
     bannerGradient:
       "linear-gradient(115deg, #2b2018 0%, #5a4028 32%, #9c7038 64%, #c89c50 100%)",
     bannerImage: "/images/eras/500-1500.jpg",
+    bannerThumbnail: "/images/eras/thumbs/500-1500.webp",
     keyFigures: [
       { name: "Avicenna", slug: "avicenna" },
       { name: "Ibn al-Baytar", slug: "ibn-al-baytar" },
@@ -118,6 +122,7 @@ export const ERAS: EraDefinition[] = [
     bannerGradient:
       "linear-gradient(115deg, #3a2a2a 0%, #6b4a3a 32%, #a87a4a 64%, #d4b27a 100%)",
     bannerImage: "/images/eras/1500-1800.jpg",
+    bannerThumbnail: "/images/eras/thumbs/1500-1800.webp",
     keyFigures: [
       { name: "Bernardino de Sahagún", slug: "bernardino-de-sahagun" },
       { name: "José de Acosta", slug: "jose-de-acosta" },
@@ -168,6 +173,7 @@ export const ERAS: EraDefinition[] = [
     bannerGradient:
       "linear-gradient(115deg, #2a1f25 0%, #4a3540 30%, #806060 58%, #c2a08c 100%)",
     bannerImage: "/images/eras/1800-1850.jpg",
+    bannerThumbnail: "/images/eras/thumbs/1800-1850.webp",
     keyFigures: [
       { name: "Humphry Davy", slug: "humphry-davy" },
       { name: "Samuel Taylor Coleridge", slug: "samuel-taylor-coleridge" },
@@ -218,6 +224,7 @@ export const ERAS: EraDefinition[] = [
     bannerGradient:
       "linear-gradient(115deg, #25281a 0%, #4a4a30 30%, #786a4a 58%, #c2a878 100%)",
     bannerImage: "/images/eras/1850-1900.jpg",
+    bannerThumbnail: "/images/eras/thumbs/1850-1900.webp",
     keyFigures: [
       { name: "Weir Mitchell", slug: "weir-mitchell" },
       { name: "Arthur Heffter", slug: "arthur-heffter" },
@@ -268,6 +275,7 @@ export const ERAS: EraDefinition[] = [
     bannerGradient:
       "linear-gradient(115deg, #2a2520 0%, #5a4530 32%, #a07a4a 64%, #d4ae7a 100%)",
     bannerImage: "/images/eras/1900-1942.jpg",
+    bannerThumbnail: "/images/eras/thumbs/1900-1942.webp",
     keyFigures: [
       { name: "Heinrich Klüver", slug: "heinrich-kluver" },
       { name: "Kurt Beringer", slug: "kurt-beringer" },

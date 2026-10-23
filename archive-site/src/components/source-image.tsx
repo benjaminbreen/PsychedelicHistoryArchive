@@ -4,7 +4,7 @@ import { SourceThumbnail } from "@/components/source-thumbnail";
 import type { ArchiveSource } from "@/lib/types";
 
 type SourceImageProps = {
-  source: Pick<ArchiveSource, "title" | "imagePath" | "imageAlt" | "imageTone">;
+  source: Pick<ArchiveSource, "title" | "imagePath" | "thumbnailPath" | "imageAlt" | "imageTone">;
   className?: string;
   imageClassName?: string;
 };
@@ -25,7 +25,7 @@ export function SourceImage({ source, className, imageClassName }: SourceImagePr
       alt={source.imageAlt ?? source.title}
       className={clsx("rounded-sm border border-archive-line", className)}
       imageClassName={clsx("sepia-[.18]", imageClassName)}
-      src={source.imagePath}
+      src={source.thumbnailPath || source.imagePath}
     />
   );
 }

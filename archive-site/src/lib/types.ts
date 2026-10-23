@@ -77,6 +77,8 @@ export type ArchiveSource = {
   featured?: boolean;
   imageTone: "paper" | "portrait" | "botanical" | "clinical" | "letter";
   imagePath?: string;
+  /** Small card-size image for lists; falls back to imagePath. */
+  thumbnailPath?: string;
   imageAlt?: string;
   transcript?: string;
   transcriptSections?: TranscriptSection[];

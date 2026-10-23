@@ -996,7 +996,8 @@ export function documentToArchiveSource(document: DocumentRow): ArchiveSource {
   const pages = mapPages(document.pages);
   const files = mapFiles(document.files);
   const rawTranscript = pages.map((page) => page.ocrText).filter(Boolean).join("\n\n");
-  const imagePath = document.thumbnail_path || document.cover_image_path || firstImagePath(document.files);
+  // thumbnail_path holds a small card-size WebP (scripts/generate_card_thumbnails.mjs); the reader uses the full cover.
+  const imagePath = document.cover_image_path || document.thumbnail_path || firstImagePath(document.files);
   const title = document.title;
   const year = document.date_start ?? yearFromDisplayDate(document.display_date) ?? 0;
   const parsedCreators = document.editorial_status === "published" ? [] : parseCreatorsFromTranscript(rawTranscript);
@@ -1061,6 +1062,7 @@ export function documentToArchiveSource(document: DocumentRow): ArchiveSource {
     featured: Boolean(document.is_featured),
     imageTone: imageToneForType(document.document_type),
     imagePath: getStoragePublicUrl(imagePath),
+    thumbnailPath: getStoragePublicUrl(document.thumbnail_path) || undefined,
     imageAlt: title,
     transcript,
     transcriptSections,
@@ -1090,6 +1092,10 @@ function collectionToArchiveSource(collection: CollectionRow, { includeItems = t
   const citation = sequenceRange
     ? `${collection.title}, nos. ${sequenceRange}. ${displayDate}.`
     : `${collection.title}. ${displayDate}.`;
+  // Collection covers reuse a member's cover image, so borrow that member's card thumbnail.
+  const coverMember = collection.collection_documents
+    ?.map((row) => firstRelated(row.document))
+    .find((document) => document?.cover_image_path && document.cover_image_path === collection.cover_image_path);
 
   return {
     id: collection.id,
@@ -1124,6 +1130,7 @@ function collectionToArchiveSource(collection: CollectionRow, { includeItems = t
     addedDate: "",
     imageTone: "paper",
     imagePath: getStoragePublicUrl(collection.cover_image_path),
+    thumbnailPath: getStoragePublicUrl(coverMember?.thumbnail_path) || undefined,
     imageAlt: collection.title
   };
 }
@@ -1621,12 +1628,12 @@ function mapFiles(files: FileRow[] = []): SourceFile[] {
     }));
 }
 
-export const listArchiveSourceSummariesFromSupabase = unstable_cache(loadListArchiveSourceSummariesFromSupabase, ["v1-listArchiveSourceSummariesFromSupabase"], {
+export const listArchiveSourceSummariesFromSupabase = unstable_cache(loadListArchiveSourceSummariesFromSupabase, ["v2-listArchiveSourceSummariesFromSupabase"], {
   revalidate: ARCHIVE_CACHE_SECONDS,
   tags: [ARCHIVE_CACHE_TAG],
 });
 
-export const listCollectionSourceSummariesFromSupabase = unstable_cache(loadListCollectionSourceSummariesFromSupabase, ["v1-listCollectionSourceSummariesFromSupabase"], {
+export const listCollectionSourceSummariesFromSupabase = unstable_cache(loadListCollectionSourceSummariesFromSupabase, ["v2-listCollectionSourceSummariesFromSupabase"], {
   revalidate: ARCHIVE_CACHE_SECONDS,
   tags: [ARCHIVE_CACHE_TAG],
 });

@@ -40,7 +40,7 @@ export function readerFor(id: string, slug: string, model: SourceEditModel, raw:
     const target = reader.figures?.find(f => f.id === figure.id);
     if (file && target && (file.private || localWorkspace)) target.imagePath = assetUrl(file.id);
   }
-  const cover = model.files.find(f => f.storage_path === (model.document.thumbnail_path || model.document.cover_image_path));
+  const cover = model.files.find(f => f.storage_path === (model.document.cover_image_path || model.document.thumbnail_path));
   if (cover && (cover.private || localWorkspace)) reader.imagePath = assetUrl(cover.id);
   return reader;
 }
